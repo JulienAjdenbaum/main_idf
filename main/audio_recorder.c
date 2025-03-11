@@ -1,123 +1,222 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <string.h>
+#include <math.h>
+
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-#include "driver/i2s.h"
+#include "freertos/event_groups.h"
+
 #include "esp_log.h"
 #include "esp_err.h"
-#include "sd_card_utils.h"
+#include "esp_wifi.h"
+#include "esp_event.h"
+#include "nvs_flash.h"
 
-#define I2S_PORT I2S_NUM_0
-#define I2S_SAMPLE_RATE 22050
-#define I2S_BITS_PER_SAMPLE I2S_BITS_PER_SAMPLE_16BIT
-#define RECORDING_DURATION_SEC 10
-#define I2S_READ_BUF_SIZE 1024
+#include "esp_netif.h"
+#include "esp_websocket_client.h"
+#include "esp_crt_bundle.h"
+#include "lwip/sockets.h"
+#include "esp_sleep.h"
+#include "lwip/netdb.h"  // For getaddrinfo/freeaddrinfo
 
-#define I2S_BCK_IO      26
-#define I2S_WS_IO       25
-#define I2S_DATA_IN_IO  32
-#define I2S_PORT        I2S_NUM_0
-#define I2S_SAMPLE_RATE 22050
-#define I2S_BITS_PER_SAMPLE I2S_BITS_PER_SAMPLE_16BIT
-#define I2S_READ_BUF_SIZE 1024
+#include "audio_recorder.h"  // Include the modified I2S recording functions
 
-static const char *TAG = "AudioRecorder";
+// -------------------- USER CONFIG --------------------
+#define WIFI_SSID       "Partagedeco"
+#define WIFI_PASS       "jesaispasquoimettre"
+#define MAXIMUM_RETRY   5
 
-typedef struct {
-    char chunkID[4];   // "RIFF"
-    uint32_t chunkSize;
-    char format[4];    // "WAVE"
-    char subchunk1ID[4]; // "fmt "
-    uint32_t subchunk1Size;
-    uint16_t audioFormat;
-    uint16_t numChannels;
-    uint32_t sampleRate;
-    uint32_t byteRate;
-    uint16_t blockAlign;
-    uint16_t bitsPerSample;
-    char subchunk2ID[4]; // "data"
-    uint32_t subchunk2Size;
-} WavHeader;
+// WebSocket
+#define WS_URI "wss://api.interaction-labs.com/esp/record"
 
-// Function to write WAV header
-void write_wav_header(FILE *file, uint32_t num_samples) {
-    WavHeader header;
-    memcpy(header.chunkID, "RIFF", 4);
-    memcpy(header.format, "WAVE", 4);
-    memcpy(header.subchunk1ID, "fmt ", 4);
-    memcpy(header.subchunk2ID, "data", 4);
+// -------------------- GLOBALS --------------------
+static const char *TAG = "AudioWebsocket";
 
-    header.chunkSize = 36 + num_samples * 4; // 2 channels * 2 bytes/sample
-    header.subchunk1Size = 16;
-    header.audioFormat = 1; // PCM
-    header.numChannels = 2; // Stereo
-    header.sampleRate = I2S_SAMPLE_RATE;
-    header.bitsPerSample = I2S_BITS_PER_SAMPLE;
-    header.byteRate = header.sampleRate * header.numChannels * (header.bitsPerSample / 8);
-    header.blockAlign = header.numChannels * (header.bitsPerSample / 8);
-    header.subchunk2Size = num_samples * 4; // 2 bytes per channel, 2 channels
+static esp_websocket_client_handle_t s_ws_client = NULL;
+static bool s_ws_connected = false;
+static int s_retry_num = 0;
 
-    fwrite(&header, sizeof(WavHeader), 1, file);
+// -------------------- WIFI EVENT HANDLERS --------------------
+static void event_handler(void *arg, esp_event_base_t event_base,
+                          int32_t event_id, void *event_data)
+{
+    if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_START) {
+        esp_wifi_connect();
+    }
+    else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_DISCONNECTED) {
+        if (s_retry_num < MAXIMUM_RETRY) {
+            esp_wifi_connect();
+            s_retry_num++;
+            ESP_LOGI(TAG, "Retrying Wi-Fi connection...");
+        } else {
+            ESP_LOGE(TAG, "Failed to connect after %d retries", MAXIMUM_RETRY);
+        }
+    }
+    else if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP) {
+        ip_event_got_ip_t *event = (ip_event_got_ip_t *) event_data;
+        ESP_LOGI(TAG, "Got IP: " IPSTR, IP2STR(&event->ip_info.ip));
+        s_retry_num = 0;
+    }
 }
 
-void record_audio_to_sd_card(const char* filename) {
-    char path[128];
-    snprintf(path, sizeof(path), "%s/%s", mount_point, filename);
+// -------------------- WIFI INIT --------------------
+static void wifi_init(void)
+{
+    esp_err_t ret = nvs_flash_init();
+    if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
+        ESP_ERROR_CHECK(nvs_flash_erase());
+        ESP_ERROR_CHECK(nvs_flash_init());
+    }
 
-    FILE* f = fopen(path, "wb");
-    if (f == NULL) {
-        ESP_LOGE(TAG, "Failed to open file for writing: %s", filename);
+    ESP_ERROR_CHECK(esp_netif_init());
+    ESP_ERROR_CHECK(esp_event_loop_create_default());
+
+    esp_netif_create_default_wifi_sta();
+
+    wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
+    ESP_ERROR_CHECK(esp_wifi_init(&cfg));
+
+    esp_event_handler_instance_t instance_any_id;
+    esp_event_handler_instance_t instance_got_ip;
+    ESP_ERROR_CHECK(esp_event_handler_instance_register(
+        WIFI_EVENT, ESP_EVENT_ANY_ID, &event_handler, NULL, &instance_any_id));
+    ESP_ERROR_CHECK(esp_event_handler_instance_register(
+        IP_EVENT, IP_EVENT_STA_GOT_IP, &event_handler, NULL, &instance_got_ip));
+
+    wifi_config_t wifi_config = {
+        .sta = {
+            .ssid = WIFI_SSID,
+            .password = WIFI_PASS,
+            .threshold.authmode = WIFI_AUTH_WPA2_PSK
+        },
+    };
+    ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA));
+    ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &wifi_config));
+    ESP_ERROR_CHECK(esp_wifi_start());
+
+    ESP_LOGI(TAG, "Wi-Fi init done. SSID=%s", WIFI_SSID);
+}
+
+// -------------------- WEBSOCKET HANDLERS --------------------
+static void websocket_event_handler(void *handler_args,
+                                    esp_event_base_t base,
+                                    int32_t event_id,
+                                    void *event_data)
+{
+    esp_websocket_event_data_t *ws_data = (esp_websocket_event_data_t *) event_data;
+    switch (event_id) {
+        case WEBSOCKET_EVENT_CONNECTED:
+            ESP_LOGI(TAG, "WebSocket connected");
+            s_ws_connected = true;
+            break;
+        case WEBSOCKET_EVENT_DISCONNECTED:
+            ESP_LOGW(TAG, "WebSocket disconnected");
+            s_ws_connected = false;
+            break;
+        case WEBSOCKET_EVENT_ERROR:
+            ESP_LOGE(TAG, "WebSocket error");
+            s_ws_connected = false;
+            break;
+        default:
+            break;
+    }
+}
+
+static void websocket_init(void)
+{
+    esp_websocket_client_config_t cfg = {
+        .uri = WS_URI,
+        .crt_bundle_attach = esp_crt_bundle_attach,
+        .reconnect_timeout_ms = 5000,
+        .network_timeout_ms = 10000,
+        .disable_auto_reconnect = false,
+        .keep_alive_enable = true,
+        .ping_interval_sec = 30,
+        .pingpong_timeout_sec = 10,
+    };
+
+    s_ws_client = esp_websocket_client_init(&cfg);
+    if (!s_ws_client) {
+        ESP_LOGE(TAG, "Failed to init WebSocket client");
         return;
     }
 
-    uint32_t total_samples = I2S_SAMPLE_RATE * RECORDING_DURATION_SEC;
-    write_wav_header(f, total_samples);
+    esp_websocket_register_events(
+        s_ws_client,
+        WEBSOCKET_EVENT_ANY,
+        websocket_event_handler,
+        NULL
+    );
 
-    int16_t sample_buffer[I2S_READ_BUF_SIZE / 2]; // Buffer for stereo data
-    size_t bytes_read;
-    uint32_t samples_written = 0;
-    TickType_t start_time = xTaskGetTickCount();
-    
-    ESP_LOGI(TAG, "Recording started...");
-
-    while (samples_written < total_samples) {
-        esp_err_t err = i2s_read(I2S_PORT, sample_buffer, I2S_READ_BUF_SIZE, &bytes_read, portMAX_DELAY);
-        if (err == ESP_OK && bytes_read > 0) {
-            fwrite(sample_buffer, 1, bytes_read, f);
-            samples_written += bytes_read / 4; // Since each stereo sample is 4 bytes (2 bytes per channel)
-        }
-        if ((xTaskGetTickCount() - start_time) * portTICK_PERIOD_MS >= RECORDING_DURATION_SEC * 1000) {
-            break;
-        }
+    esp_err_t err = esp_websocket_client_start(s_ws_client);
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "WebSocket start failed: %s", esp_err_to_name(err));
+        return;
     }
-
-    ESP_LOGI(TAG, "Recording finished. Saved as: %s", filename);
-    fclose(f);
+    ESP_LOGI(TAG, "WebSocket started => %s", WS_URI);
 }
 
-void i2s_init_for_mic(void) {
-    i2s_config_t i2s_config = {
-        .mode = I2S_MODE_MASTER | I2S_MODE_RX,
-        .sample_rate = I2S_SAMPLE_RATE,
-        .bits_per_sample = I2S_BITS_PER_SAMPLE_32BIT,
-        .channel_format = I2S_CHANNEL_FMT_RIGHT_LEFT,
-        .communication_format = I2S_COMM_FORMAT_I2S,
-        .dma_buf_count = 8,
-        .dma_buf_len = 512,
-        .use_apll = false,
-        .intr_alloc_flags = ESP_INTR_FLAG_LEVEL1
-    };
+// -------------------- RECORD & SEND TASK --------------------
+static void record_and_send_audio(void *arg)
+{
+    ESP_LOGI(TAG, "Waiting for WebSocket to connect...");
+    while (!s_ws_connected) {
+        vTaskDelay(pdMS_TO_TICKS(500));
+    }
 
-    i2s_pin_config_t pin_config = {
-        .bck_io_num = I2S_BCK_IO,
-        .ws_io_num = I2S_WS_IO,
-        .data_out_num = I2S_PIN_NO_CHANGE,
-        .data_in_num = I2S_DATA_IN_IO
-    };
+    ESP_LOGI(TAG, "WebSocket connected, starting recording...");
+    
+    // Use the existing recording function
+    record_audio_to_sd_card("recording.wav");
 
-    ESP_ERROR_CHECK(i2s_driver_install(I2S_PORT, &i2s_config, 0, NULL));
-    ESP_ERROR_CHECK(i2s_set_pin(I2S_PORT, &pin_config));
+    ESP_LOGI(TAG, "Finished recording, now sending...");
 
-    ESP_LOGI(TAG, "I2S initialized for stereo microphone input");
+    FILE *file = fopen("/sdcard/recording.wav", "rb");
+    if (!file) {
+        ESP_LOGE(TAG, "Failed to open WAV file");
+        vTaskDelete(NULL);
+        return;
+    }
+
+    uint8_t buffer[1024];
+    size_t bytes_read;
+    
+    while ((bytes_read = fread(buffer, 1, sizeof(buffer), file)) > 0) {
+        if (!s_ws_connected) {
+            ESP_LOGE(TAG, "WebSocket disconnected mid-transfer");
+            break;
+        }
+        esp_websocket_client_send_bin(s_ws_client, (char *)buffer, bytes_read, pdMS_TO_TICKS(100));
+    }
+    
+    fclose(file);
+    ESP_LOGI(TAG, "File sent successfully");
+
+    vTaskDelete(NULL);
+}
+
+// -------------------- MAIN --------------------
+void app_main(void)
+{
+    esp_log_level_set("WEBSOCKET_CLIENT", ESP_LOG_DEBUG);
+
+    // 1) Wi-Fi
+    wifi_init();
+
+    // 2) I2S init (calls function from audio_recorder.c)
+    i2s_init_for_mic();
+
+    // 3) WebSocket init
+    websocket_init();
+
+    // 4) Start recording and sending task
+    xTaskCreate(
+        record_and_send_audio,
+        "record_and_send_audio",
+        16384,
+        NULL,
+        5,
+        NULL
+    );
 }
