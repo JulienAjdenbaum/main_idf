@@ -1,0 +1,130 @@
+Command: /home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/julien/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/julien/Documents/esp32IDF/hello_world/build/hello_world.elf /home/julien/Documents/esp32IDF/hello_world/build/bootloader/bootloader.elf -m '/home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python' '/home/julien/esp/esp-idf/tools/idf.py'
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6368
+load:0x40078000,len:15880
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar 10 2025 16:26:09[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (36) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (76) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+[0;32mI (83) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (93) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=0f058h ( 61528) map[0m
+[0;32mI (121) esp_image: segment 1: paddr=0002f080 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (122) esp_image: segment 2: paddr=0002f0a4 vaddr=3ffb0000 size=00f74h (  3956) load[0m
+[0;32mI (127) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=292e4h (168676) map[0m
+[0;32mI (190) esp_image: segment 4: paddr=0005930c vaddr=3ffb0f74 size=015f4h (  5620) load[0m
+[0;32mI (193) esp_image: segment 5: paddr=0005a908 vaddr=40080000 size=0f4b0h ( 62640) load[0m
+[0;32mI (226) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (226) boot: Disabling RNG early entropy source...[0m
+[0;33mW (247) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;33mW (247) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
+Name: SD128
+Type: SDHC
+Speed: 20.00 MHz (limit: 20.00 MHz)
+Size: 121942MB
+CSD: ver=2, sector_size=512, capacity=249737216 read_bl_len=9
+SSR: bus_width=1
+Card unmounted
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6368
+load:0x40078000,len:15880
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar 10 2025 16:26:09[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (36) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (76) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+[0;32mI (83) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (93) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=0f058h ( 61528) map[0m
+[0;32mI (121) esp_image: segment 1: paddr=0002f080 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (122) esp_image: segment 2: paddr=0002f0a4 vaddr=3ffb0000 size=00f74h (  3956) load[0m
+[0;32mI (127) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=292e4h (168676) map[0m
+[0;32mI (190) esp_image: segment 4: paddr=0005930c vaddr=3ffb0f74 size=015f4h (  5620) load[0m
+[0;32mI (193) esp_image: segment 5: paddr=0005a908 vaddr=40080000 size=0f4b0h ( 62640) load[0m
+[0;32mI (226) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (226) boot: Disabling RNG early entropy source...[0m
+[0;33mW (247) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;33mW (247) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
+Name: SD128
+Type: SDHC
+Speed: 20.00 MHz (limit: 20.00 MHz)
+Size: 121942MB
+CSD: ver=2, sector_size=512, capacity=249737216 read_bl_len=9
+SSR: bus_width=1
+Card unmounted
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6368
+load:0x40078000,len:15880
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar 10 2025 16:26:09[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (36) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (76) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+[0;32mI (83) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (93) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=0f058h ( 61528) map[0m
+[0;32mI (121) esp_image: segment 1: paddr=0002f080 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (122) esp_image: segment 2: paddr=0002f0a4 vaddr=3ffb0000 size=00f74h (  3956) load[0m
+[0;32mI (127) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=292e4h (168676) map[0m
+[0;32mI (190) esp_image: segment 4: paddr=0005930c vaddr=3ffb0f74 size=015f4h (  5620) load[0m
+[0;32mI (193) esp_image: segment 5: paddr=0005a908 vaddr=40080000 size=0f4b0h ( 62640) load[0m
+[0;32mI (226) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (226) boot: Disabling RNG early entropy source...[0m
+[0;33mW (247) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;33mW (247) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
+Name: SD128
+Type: SDHC
+Speed: 20.00 MHz (limit: 20.00 MHz)
+Size: 121942MB
+CSD: ver=2, sector_size=512, capacity=249737216 read_bl_len=9
+SSR: bus_width=1
+Card unmounted
