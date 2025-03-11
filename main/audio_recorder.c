@@ -48,15 +48,15 @@ void write_wav_header(FILE *file, uint32_t num_samples) {
     memcpy(header.subchunk1ID, "fmt ", 4);
     memcpy(header.subchunk2ID, "data", 4);
 
-    header.chunkSize = 36 + num_samples * 2;
+    header.chunkSize = 36 + num_samples * 4; // 2 channels * 2 bytes/sample
     header.subchunk1Size = 16;
     header.audioFormat = 1; // PCM
-    header.numChannels = 1; // Mono
+    header.numChannels = 2; // Stereo
     header.sampleRate = I2S_SAMPLE_RATE;
     header.bitsPerSample = I2S_BITS_PER_SAMPLE;
     header.byteRate = header.sampleRate * header.numChannels * (header.bitsPerSample / 8);
     header.blockAlign = header.numChannels * (header.bitsPerSample / 8);
-    header.subchunk2Size = num_samples * 2;
+    header.subchunk2Size = num_samples * 4; // 2 bytes per channel, 2 channels
 
     fwrite(&header, sizeof(WavHeader), 1, file);
 }
@@ -74,7 +74,7 @@ void record_audio_to_sd_card(const char* filename) {
     uint32_t total_samples = I2S_SAMPLE_RATE * RECORDING_DURATION_SEC;
     write_wav_header(f, total_samples);
 
-    int16_t sample_buffer[I2S_READ_BUF_SIZE / 2];
+    int16_t sample_buffer[I2S_READ_BUF_SIZE / 2]; // Buffer for stereo data
     size_t bytes_read;
     uint32_t samples_written = 0;
     TickType_t start_time = xTaskGetTickCount();
@@ -85,7 +85,7 @@ void record_audio_to_sd_card(const char* filename) {
         esp_err_t err = i2s_read(I2S_PORT, sample_buffer, I2S_READ_BUF_SIZE, &bytes_read, portMAX_DELAY);
         if (err == ESP_OK && bytes_read > 0) {
             fwrite(sample_buffer, 1, bytes_read, f);
-            samples_written += bytes_read / 2; // Since each sample is 2 bytes
+            samples_written += bytes_read / 4; // Since each stereo sample is 4 bytes (2 bytes per channel)
         }
         if ((xTaskGetTickCount() - start_time) * portTICK_PERIOD_MS >= RECORDING_DURATION_SEC * 1000) {
             break;
@@ -100,8 +100,8 @@ void i2s_init_for_mic(void) {
     i2s_config_t i2s_config = {
         .mode = I2S_MODE_MASTER | I2S_MODE_RX,
         .sample_rate = I2S_SAMPLE_RATE,
-        .bits_per_sample = I2S_BITS_PER_SAMPLE,
-        .channel_format = I2S_CHANNEL_FMT_ONLY_LEFT,
+        .bits_per_sample = I2S_BITS_PER_SAMPLE_32BIT,
+        .channel_format = I2S_CHANNEL_FMT_RIGHT_LEFT,
         .communication_format = I2S_COMM_FORMAT_I2S,
         .dma_buf_count = 8,
         .dma_buf_len = 512,
@@ -119,5 +119,5 @@ void i2s_init_for_mic(void) {
     ESP_ERROR_CHECK(i2s_driver_install(I2S_PORT, &i2s_config, 0, NULL));
     ESP_ERROR_CHECK(i2s_set_pin(I2S_PORT, &pin_config));
 
-    ESP_LOGI(TAG, "I2S initialized for microphone input");
+    ESP_LOGI(TAG, "I2S initialized for stereo microphone input");
 }

@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "hello_world",
-    "project_version":    "023147f-dirty",
+    "project_version":    "01f5b0f-dirty",
     "project_path":       "/home/julien/Documents/esp32IDF/hello_world",
     "idf_path":           "/home/julien/esp/esp-idf",
     "build_dir":          "/home/julien/Documents/esp32IDF/hello_world/build",
