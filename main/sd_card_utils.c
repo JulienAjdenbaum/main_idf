@@ -5,7 +5,7 @@
 #include <dirent.h>
 #include "sd_card_utils.h"
 
-static const char mount_point[] = "/sdcard";
+const char mount_point[] = "/sdcard";
 static sdmmc_card_t* card;
 
 esp_err_t initialize_sd_card(void)
@@ -71,3 +71,19 @@ void unmount_sd_card(void)
     printf("Card unmounted\n");
     spi_bus_free(HSPI_HOST);
 } 
+
+esp_err_t write_file_to_sd_card(const char* filename, const char* content) {
+    char path[64];
+    snprintf(path, sizeof(path), "/sdcard/%s", filename);
+
+    FILE* f = fopen(path, "w");
+    if (f == NULL) {
+        printf("Failed to open file for writing: %s\n", filename);
+        return ESP_FAIL;
+    }
+
+    fprintf(f, "%s", content);
+    fclose(f);
+    printf("File written: %s\n", filename);
+    return ESP_OK;
+}

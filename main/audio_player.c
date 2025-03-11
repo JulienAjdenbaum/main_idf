@@ -26,16 +26,15 @@ esp_err_t audio_player_init(void) {
     // I2S configuration
     i2s_config_t i2s_config = {
         .mode = I2S_MODE_MASTER | I2S_MODE_TX,
-        .sample_rate = 44100,  // Set to common base rate (will be overridden)
+        .sample_rate = 44100,
         .bits_per_sample = I2S_BITS_PER_SAMPLE_16BIT,
-        .channel_format = I2S_CHANNEL_FMT_ONLY_LEFT,
+        .channel_format = I2S_CHANNEL_FMT_RIGHT_LEFT,
         .communication_format = I2S_COMM_FORMAT_STAND_I2S,
-        .dma_buf_count = 16,  // Increased from 8
-        .dma_buf_len = 512,   // Reduced from 1024
-        .use_apll = true,
-        .tx_desc_auto_clear = true,
-        .fixed_mclk = true,
+        .dma_buf_count = 8,
+        .dma_buf_len = 512,
+        .use_apll = 0
     };
+
 
     i2s_pin_config_t pin_config = {
         .bck_io_num = I2S_BCK_IO,
@@ -75,6 +74,7 @@ void audio_player_shutdown(void) {
 }
 
 void audio_player_set_sample_rate(uint32_t sample_rate, uint16_t num_channels) {
+    // Legacy I2S only needs these 4 parameters
     i2s_set_clk(I2S_NUM, 
                sample_rate,
                I2S_BITS_PER_SAMPLE_16BIT,
