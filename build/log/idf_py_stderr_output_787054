@@ -1,0 +1,56 @@
+Command: /home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/julien/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/julien/Documents/esp32IDF/hello_world/build/hello_world.elf /home/julien/Documents/esp32IDF/hello_world/build/bootloader/bootloader.elf -m '/home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python' '/home/julien/esp/esp-idf/tools/idf.py'
+[0;33m--- esp-idf-monitor 1.5.0 on /dev/ttyUSB0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x4008134c: call_start_cpu1 at /home/julien/esp/esp-idf/components/esp_system/port/cpu_start.c:191
+[0m
+[0;33m--- 0x400d1f2c: __esp_system_init_fn_init_efuse_check at /home/julien/esp/esp-idf/components/efuse/src/esp_efuse_startup.c:37
+[0m
+[0;33m--- 0x400d2194: __esp_system_init_fn_init_show_cpu_freq at /home/julien/esp/esp-idf/components/esp_system/startup_funcs.c:64
+[0m
+[0;33m--- 0x400d1e6c: __esp_system_init_fn_init_show_app_info at /home/julien/esp/esp-idf/components/esp_app_format/esp_app_desc.c:123
+[0m
+[0;33m--- 0x400d1f40: __esp_system_init_fn_init_efuse_show_app_info at /home/julien/esp/esp-idf/components/efuse/src/esp_efuse_startup.c:47
+[0m
+[0;33m--- 0x400d39b0: __esp_system_init_fn_init_heap at /home/julien/esp/esp-idf/components/heap/heap_caps_init.c:25
+[0m
+[0;33m--- 0x40080000: _WindowOverflow4 at /home/julien/esp/esp-idf/components/xtensa/xtensa_vectors.S:2027
+[0m
+[0;33m--- 0x40080000: _WindowOverflow4 at /home/julien/esp/esp-idf/components/xtensa/xtensa_vectors.S:2027
+[0m
+[0;33m--- 0x40000000: _WindowOverflow4 in ROM
+[0m
+[0;33m--- 0x400d1c94: __esp_system_init_fn_esp_timer_init_nonos at /home/julien/esp/esp-idf/components/esp_timer/src/esp_timer_init.c:28
+[0m
+[0;33m--- 0x400d4a6c: __esp_system_init_fn_init_libc at /home/julien/esp/esp-idf/components/newlib/src/init.c:12
+[0m
+[0;33m--- 0x400d21d8: __esp_system_init_fn_init_brownout at /home/julien/esp/esp-idf/components/esp_system/startup_funcs.c:79
+[0m
+[0;33m--- 0x400d21e4: __esp_system_init_fn_init_newlib_time at /home/julien/esp/esp-idf/components/esp_system/startup_funcs.c:100
+[0m
+[0;33m--- 0x400d5f20: __esp_system_init_fn_init_vfs_uart at /home/julien/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:1148
+[0m
+[0;33m--- 0x400d79d4: __esp_system_init_fn_init_vfs_nullfs at /home/julien/esp/esp-idf/components/vfs/nullfs.c:322
+[0m
+[0;33m--- 0x400d6904: __esp_system_init_fn_init_vfs_console at /home/julien/esp/esp-idf/components/esp_vfs_console/vfs_console.c:271
+[0m
+[0;33m--- 0x400d4a78: __esp_system_init_fn_init_libc_stdio at /home/julien/esp/esp-idf/components/newlib/src/init.c:18
+[0m
+[0;33m--- 0x400d21f0: __esp_system_init_fn_init_flash at /home/julien/esp/esp-idf/components/esp_system/startup_funcs.c:107
+[0m
+[0;33m--- 0x400d1fcc: __esp_system_init_fn_init_efuse at /home/julien/esp/esp-idf/components/efuse/src/esp_efuse_startup.c:158
+[0m
+[0;33m--- 0x400e886c: esp_clock_output_pin_ctrl_init at /home/julien/esp/esp-idf/components/esp_hw_support/esp_clock_output.c:245
+[0m
+[0;33m--- 0x400de4b0: check_adc_oneshot_driver_conflict at /home/julien/esp/esp-idf/components/driver/deprecated/adc_legacy.c:915
+[0m
+[0;33m--- 0x400de410: check_i2s_driver_conflict at /home/julien/esp/esp-idf/components/driver/deprecated/i2s_legacy.c:1994
+[0m
+[0;33m--- 0x40086b44: enable_timer_group0_for_calibration at /home/julien/esp/esp-idf/components/esp_hw_support/port/esp32/rtc_time.c:197
+[0m
+[0;33m--- 0x400d3008: esp_ipc_init at /home/julien/esp/esp-idf/components/esp_system/esp_ipc.c:107
+[0m
+[0;33m--- 0x400f8d28: __esp_system_init_fn_esp_security_init at /home/julien/esp/esp-idf/components/esp_security/src/init.c:38
+[0m
+[0;33m--- 0x400d2220: __esp_system_init_fn_init_disable_rtc_wdt at /home/julien/esp/esp-idf/components/esp_system/startup_funcs.c:164
+[0m
+[0m

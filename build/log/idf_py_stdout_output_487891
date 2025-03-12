@@ -1,0 +1,202 @@
+Command: /home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/julien/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/julien/Documents/esp32IDF/hello_world/build/hello_world.elf /home/julien/Documents/esp32IDF/hello_world/build/bootloader/bootloader.elf -m '/home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python' '/home/julien/esp/esp-idf/tools/idf.py'
+es Jun  8 2016 0022:7
+
+rst:0x1 (POWERO_REET)boot:0x13 (SPI_FST_LAS_BOOT)
+confgsi: 0 SPIWP:0xee
+clkdrv0x0,q_drv:0x00,ddrv0x0,cs0_drv:0x00,h_dr:0x0,wp_drv:0x00
+mde:IO,clock div:2
+oad0x3ff0030,len:6368loa:040078000,len:1588
+lad:x40080400,len386
+etry 0x40080638
+[0;32mI (26) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar 11 2025 12:22:36[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (36) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (76) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+[0;32mI (83) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (93) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=387e8h (231400) map[0m
+[0;32mI (179) esp_image: segment 1: paddr=00058810 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (179) esp_image: segment 2: paddr=00058834 vaddr=3ffb0000 size=0400ch ( 16396) load[0m
+[0;32mI (189) esp_image: segment 3: paddr=0005c848 vaddr=40080000 size=037d0h ( 14288) load[0m
+[0;32mI (196) esp_image: segment 4: paddr=00060020 vaddr=400d0020 size=a25f8h (665080) map[0m
+[0;32mI (425) esp_image: segment 5: paddr=00102620 vaddr=400837d0 size=147f4h ( 83956) load[0m
+[0;32mI (470) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (470) boot: Disabling RNG early entropy source...[0m
+[0;32mI (480) cpu_start: Multicore app[0m
+D (480) cpu_start: Pro cpu up
+D (480) cpu_start: Starting app cpu, entry point is 0x40081540
+D (0) cpu_start: App cpu up
+D (489) clk: RTC_SLOW_CLK calibration value: 3080154
+D (501) cpu_start: calling init function: 0x400d2f88 on core: 0
+D (501) cpu_start: calling init function: 0x400d35f4 on core: 0
+[0;32mI (502) cpu_start: Pro cpu start user code[0m
+[0;32mI (506) cpu_start: cpu freq: 160000000 Hz[0m
+D (510) cpu_start: calling init function: 0x400d2ec8 on core: 0
+[0;32mI (516) app_init: Application information:[0m
+[0;32mI (519) app_init: Project name:     hello_world[0m
+[0;32mI (524) app_init: App version:      210f178-dirty[0m
+[0;32mI (528) app_init: Compile time:     Mar 11 2025 12:22:32[0m
+[0;32mI (533) app_init: ELF file SHA256:  3970077b3...[0m
+[0;32mI (537) app_init: ESP-IDF:          v5.5-dev-2290-g94cfe394fe[0m
+D (543) cpu_start: calling init function: 0x400d2f9c on core: 0
+[0;32mI (548) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (552) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (556) efuse_init: Chip rev:         v1.1[0m
+D (560) cpu_start: calling init function: 0x400d4f64 on core: 0
+D (566) memory_layout: Checking 9 reserved memory ranges:
+D (571) memory_layout: Reserved memory range 0x3ff82000 - 0x3ff82000
+D (577) memory_layout: Reserved memory range 0x3ffae000 - 0x3ffae6e0
+D (583) memory_layout: Reserved memory range 0x3ffb0000 - 0x3ffb8970
+D (589) memory_layout: Reserved memory range 0x3ffe0000 - 0x3ffe0440
+D (595) memory_layout: Reserved memory range 0x3ffe3f20 - 0x3ffe4350
+D (601) memory_layout: Reserved memory range 0x40070000 - 0x40078000
+D (607) memory_layout: Reserved memory range 0x40078000 - 0x40080000
+D (613) memory_layout: Reserved memory range 0x40080000 - 0x40097fc4
+D (619) memory_layout: Reserved memory range 0x50001fe8 - 0x50002000
+D (626) memory_layout: Building list of available memory regions:
+D (631) memory_layout: Available memory region 0x3ffae6e0 - 0x3ffb0000
+D (638) memory_layout: Available memory region 0x3ffb8970 - 0x3ffc0000
+D (644) memory_layout: Available memory region 0x3ffc0000 - 0x3ffc2000
+D (650) memory_layout: Available memory region 0x3ffc2000 - 0x3ffc4000
+D (656) memory_layout: Available memory region 0x3ffc4000 - 0x3ffc6000
+D (663) memory_layout: Available memory region 0x3ffc6000 - 0x3ffc8000
+D (669) memory_layout: Available memory region 0x3ffc8000 - 0x3ffca000
+D (675) memory_layout: Available memory region 0x3ffca000 - 0x3ffcc000
+D (681) memory_layout: Available memory region 0x3ffcc000 - 0x3ffce000
+D (688) memory_layout: Available memory region 0x3ffce000 - 0x3ffd0000
+D (694) memory_layout: Available memory region 0x3ffd0000 - 0x3ffd2000
+D (700) memory_layout: Available memory region 0x3ffd2000 - 0x3ffd4000
+D (706) memory_layout: Available memory region 0x3ffd4000 - 0x3ffd6000
+D (713) memory_layout: Available memory region 0x3ffd6000 - 0x3ffd8000
+D (719) memory_layout: Available memory region 0x3ffd8000 - 0x3ffda000
+D (725) memory_layout: Available memory region 0x3ffda000 - 0x3ffdc000
+D (731) memory_layout: Available memory region 0x3ffdc000 - 0x3ffde000
+D (738) memory_layout: Available memory region 0x3ffde000 - 0x3ffe0000
+D (744) memory_layout: Available memory region 0x3ffe0440 - 0x3ffe3f20
+D (750) memory_layout: Available memory region 0x3ffe4350 - 0x3ffe8000
+D (756) memory_layout: Available memory region 0x3ffe8000 - 0x3fff0000
+D (763) memory_layout: Available memory region 0x3fff0000 - 0x3fff8000
+D (769) memory_layout: Available memory region 0x3fff8000 - 0x3fffc000
+D (775) memory_layout: Available memory region 0x3fffc000 - 0x40000000
+D (781) memory_layout: Available memory region 0x40097fc4 - 0x40098000
+D (788) memory_layout: Available memory region 0x40098000 - 0x4009a000
+D (794) memory_layout: Available memory region 0x4009a000 - 0x4009c000
+D (800) memory_layout: Available memory region 0x4009c000 - 0x4009e000
+D (806) memory_layout: Available memory region 0x4009e000 - 0x400a0000
+[0;32mI (813) heap_init: Initializing. RAM available for dynamic allocation:[0m
+D (819) heap_init: New heap initialised at 0x3ffae6e0
+[0;32mI (824) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+D (829) heap_init: New heap initialised at 0x3ffb8970
+[0;32mI (834) heap_init: At 3FFB8970 len 00027690 (157 KiB): DRAM[0m
+[0;32mI (839) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (844) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+D (850) heap_init: New heap initialised at 0x40097fc4
+[0;32mI (854) heap_init: At 40097FC4 len 0000803C (32 KiB): IRAM[0m
+D (860) cpu_start: calling init function: 0x400d2c18 on core: 0
+D (865) cpu_start: calling init function: 0x400d6090 on core: 0
+D (871) cpu_start: calling init function: 0x400d3638 on core: 0
+D (877) intr_alloc: Connected src 46 to int 1 (cpu 0)
+D (881) cpu_start: calling init function: 0x400d3644 on core: 0
+D (887) cpu_start: calling init function: 0x400d7864 on core: 0
+D (893) cpu_start: calling init function: 0x400d9a58 on core: 0
+D (898) cpu_start: calling init function: 0x400d8268 on core: 0
+D (904) cpu_start: calling init function: 0x400d609c on core: 0
+D (910) cpu_start: calling init function: 0x400d3650 on core: 0
+D (915) spi_flash: trying chip: issi
+D (919) spi_flash: trying chip: gd
+D (922) spi_flash: trying chip: mxic
+D (925) spi_flash: trying chip: winbond
+D (929) spi_flash: trying chip: generic
+[0;32mI (932) spi_flash: detected chip: generic[0m
+[0;32mI (936) spi_flash: flash io: dio[0m
+D (939) cpu_start: calling init function: 0x400d3028 on core: 0
+D (944) cpu_start: calling init function: 0x401543a8
+D (949) cpu_start: calling init function: 0x400ffa64
+D (954) cpu_start: calling init function: 0x400e6124
+D (959) cpu_start: calling init function: 0x400e30f0
+D (963) cpu_start: calling init function: 0x400df9cc
+[0;33mW (968) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+D (975) cpu_start: calling init function: 0x400df92c
+[0;33mW (980) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
+D (991) cpu_start: calling init function: 0x40088c80
+D (996) cpu_start: calling init function: 0x400d4480
+D (1001) cpu_start: calling init function: 0x40143dc0 on core: 0
+D (1007) intr_alloc: Connected src 17 to int 2 (cpu 0)
+D (1011) cpu_start: calling init function: 0x40168774 on core: 0
+D (1017) cpu_start: calling init function: 0x400d3680 on core: 0
+D (1023) intr_alloc: Connected src 24 to int 3 (cpu 0)
+D (1028) app_start: Starting scheduler on CPU0
+I (103D (1032) intr_alloc: Connected src 25 to int 1 (cpu 1)
+D (1032) app_start: Starting scheduler on CPU1
+2) main_task: Started on CPU0
+D (1042) heap_init: New heap initialised at 0x3ffe0440
+D (1042) heap_init: New heap initialised at 0x3ffe4350
+D (1052) intr_alloc: Connected src 16 to int 5 (cpu 0)
+[0;32mI (1052) main_task: Calling app_main()[0m
+[0;32mI (1102) wifi:wifi driver task: 3ffc0a64, prio:23, stack:6656, core=0[0m
+[0;32mI (1112) wifi:wifi firmware version: 3a3aca644[0m
+[0;32mI (1112) wifi:wifi certification version: v7.0[0m
+[0;32mI (1122) wifi:config NVS flash: enabled[0m
+[0;32mI (1122) wifi:config nano formatting: disabled[0m
+[0;32mI (1122) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1132) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1132) wifi:Init management short buffer num: 32[0m
+[0;32mI (1132) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1142) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1142) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1152) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1152) wifi_init: rx ba win: 6[0m
+[0;32mI (1152) wifi_init: accept mbox: 6[0m
+[0;32mI (1162) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1162) wifi_init: udp mbox: 6[0m
+[0;32mI (1162) wifi_init: tcp mbox: 6[0m
+[0;32mI (1162) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1172) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1172) wifi_init: tcp mss: 1440[0m
+[0;32mI (1172) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1182) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1202) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (1282) wifi:mode : sta (94:54:c5:b5:f9:ec)[0m
+[0;32mI (1282) wifi:enable tsf[0m
+[0;32mI (1282) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (1282) WebSocketTest: Wi-Fi init done. SSID=Partagedeco[0m
+[0;32mI (1292) WebSocketTest: Audio player init done.[0m
+[0;32mI (1292) WebSocketTest: Waiting for Wi-Fi + WebSocket connection...[0m
+[0;32mI (1302) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1302) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1312) main_task: Returned from app_main()[0m
+[0;32mI (1312) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1322) wifi:Association refused temporarily time 1269, comeback time 1369 (TUs)[0m
+[0;32mI (2722) wifi:state: assoc -> assoc (0x0)[0m
+[0;32mI (2732) wifi:state: assoc -> init (0x6c0)[0m
+[0;32mI (2742) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2742) WebSocketTest: Retrying Wi-Fi connection...[0m
+[0;32mI (5162) WebSocketTest: Retrying Wi-Fi connection...[0m
+[0;32mI (5172) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (5172) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (5192) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (5202) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (5222) wifi:connected with Partagedeco, aid = 1, channel 6, BW20, bssid = aa:f0:fe:0d:99:0e[0m
+[0;32mI (5222) wifi:security: WPA2-PSK, phy: bgn, rssi: -69[0m
+[0;32mI (5232) wifi:pm start, type: 0[0m
+
+[0;32mI (5232) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (5342) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (5342) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (6302) esp_netif_handlers: sta ip: 10.178.57.71, mask: 255.255.255.0, gw: 10.178.57.21[0m
+[0;32mI (6302) WebSocketTest: Got IP: 10.178.57.71[0m
+[0;32mI (6302) WebSocketTest: Starting WebSocket...[0m
+[0;32mI (6302) websocket_client: Started[0m
+[0;32mI (6302) WebSocketTest: WebSocket started => wss://api.interaction-labs.com/esp/test[0m
+[0;32mI (6382) wifi:<ba-add>idx:0 (ifx:0, aa:f0:fe:0d:99:0e), tid:0, ssn:3, winSize:64[0m

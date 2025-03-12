@@ -1,0 +1,44 @@
+Command: /home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/julien/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/julien/Documents/esp32IDF/hello_world/build/hello_world.elf /home/julien/Documents/esp32IDF/hello_world/build/bootloader/bootloader.elf -m '/home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python' '/home/julien/esp/esp-idf/tools/idf.py'
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6368
+load:0x40078000,len:15880
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar 10 2025 16:26:09[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (36) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (76) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+[0;32mI (83) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (93) boot: No factory image, trying OTA 0[0m
+[0;32mI (97) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=2dc8ch (187532) map[0m
+[0;32mI (168) esp_image: segment 1: paddr=0004dcb4 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (168) esp_image: segment 2: paddr=0004dcd8 vaddr=3ffb0000 size=02340h (  9024) load[0m
+[0;32mI (175) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=9ab44h (633668) map[0m
+[0;32mI (396) esp_image: segment 4: paddr=000eab6c vaddr=3ffb2340 size=01b70h (  7024) load[0m
+[0;32mI (399) esp_image: segment 5: paddr=000ec6e4 vaddr=40080000 size=177ech ( 96236) load[0m
+[0;32mI (449) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (463) boot: Set actual ota_seq=1 in otadata[0][0m
+[0;32mI (463) boot: Disabling RNG early entropy source...[0m
+[1;31mE (670) esp-tls: couldn't get hostname for :api.interaction-labs.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (680) esp-tls: Failed to open new connection[0m
+[1;31mE (680) transport_base: Failed to open a new connection[0m
+[1;31mE (680) transport_ws: Error connecting to host api.interaction-labs.com:443[0m
+[1;31mE (690) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_ERR_ESP_TLS_CANNOT_RESOLVE_HOSTNAME, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=0, errno=0[0m
+[0;33mW (710) WebSocketTest: WebSocket error[0m
+[0;33mW (710) WebSocketTest: WebSocket disconnected[0m
