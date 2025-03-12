@@ -1,0 +1,269 @@
+Command: /home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/julien/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/julien/Documents/esp32IDF/hello_world/build/hello_world.elf /home/julien/Documents/esp32IDF/hello_world/build/bootloader/bootloader.elf -m '/home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python' '/home/julien/esp/esp-idf/tools/idf.py'
+ts Ju  8 2016 00:22:57
+
+rt:0x1 (POWERON_REST),bot:0x13 (SPI_FASTFLASHBOOT)
+configsip:0, SIWP:0xee
+clk_drv0x0,q_drv:0x00,d_drv0x00cs0_drv:0x00,hd_dv:0x0,wpdrv:0x00
+moe:DI, clck div:2
+load:03fff030,len:6368
+lod:0x0078000,len:15880
+load0x40080400,len:380
+etry 0x40080638
+[0;32mI (27) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar 11 2025 23:39:54[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (36) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (76) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+[0;32mI (83) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (92) boot: No factory image, trying OTA 0[0m
+[0;32mI (96) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=2f380h (193408) map[0m
+[0;32mI (170) esp_image: segment 1: paddr=0004f3a8 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (170) esp_image: segment 2: paddr=0004f3cc vaddr=3ffb0000 size=00c4ch (  3148) load[0m
+[0;32mI (175) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=9ec80h (650368) map[0m
+[0;32mI (404) esp_image: segment 4: paddr=000eeca8 vaddr=3ffb0c4c size=03334h ( 13108) load[0m
+[0;32mI (409) esp_image: segment 5: paddr=000f1fe4 vaddr=40080000 size=17e54h ( 97876) load[0m
+[0;32mI (459) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (474) boot: Set actual ota_seq=1 in otadata[0][0m
+[0;32mI (474) boot: Disabling RNG early entropy source...[0m
+[0;33mW (495) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;33mW (495) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
+[1;31mE (738) i2s(legacy): i2s_driver_uninstall(1586): I2S port 0 has not installed[0m
+[1;31mE (748) AudioWebsocket: DNS lookup failed![0m
+[1;31mE (748) esp-tls: couldn't get hostname for :api.interaction-labs.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (748) esp-tls: Failed to open new connection[0m
+[1;31mE (758) transport_base: Failed to open a new connection[0m
+[1;31mE (758) transport_ws: Error connecting to host api.interaction-labs.com:443[0m
+[1;31mE (768) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_ERR_ESP_TLS_CANNOT_RESOLVE_HOSTNAME, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=0, errno=0[0m
+[0;33mW (788) AudioWebsocket: WebSocket ERROR: ERROR[0m
+[0;33mW (788) AudioWebsocket: WebSocket disconnected[0m
+[1;31mE (5798) esp-tls: couldn't get hostname for :api.interaction-labs.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (5798) esp-tls: Failed to open new connection[0m
+[1;31mE (5798) transport_base: Failed to open a new connection[0m
+[1;31mE (5798) transport_ws: Error connecting to host api.interaction-labs.com:443[0m
+[1;31mE (5808) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_ERR_ESP_TLS_CANNOT_RESOLVE_HOSTNAME, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=0, errno=0[0m
+[0;33mW (5828) AudioWebsocket: WebSocket ERROR: ERROR[0m
+[0;33mW (5828) AudioWebsocket: WebSocket disconnected[0m
+[1;31mE (10838) esp-tls: couldn't get hostname for :api.interaction-labs.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (10838) esp-tls: Failed to open new connection[0m
+[1;31mE (10838) transport_base: Failed to open a new connection[0m
+[1;31mE (10838) transport_ws: Error connecting to host api.interaction-labs.com:443[0m
+[1;31mE (10848) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_ERR_ESP_TLS_CANNOT_RESOLVE_HOSTNAME, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=0, errno=0[0m
+[0;33mW (10868) AudioWebsocket: WebSocket ERROR: ERROR[0m
+[0;33mW (10868) AudioWebsocket: WebSocket disconnected[0m
+[1;31mE (15228) AudioWebsocket: Failed to connect after 5 retries[0m
+[1;31mE (15878) esp-tls: couldn't get hostname for :api.interaction-labs.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (15878) esp-tls: Failed to open new connection[0m
+[1;31mE (15878) transport_base: Failed to open a new connection[0m
+[1;31mE (15878) transport_ws: Error connecting to host api.interaction-labs.com:443[0m
+[1;31mE (15888) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_ERR_ESP_TLS_CANNOT_RESOLVE_HOSTNAME, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=0, errno=0[0m
+[0;33mW (15908) AudioWebsocket: WebSocket ERROR: ERROR[0m
+[0;33mW (15908) AudioWebsocket: WebSocket disconnected[0m
+[1;31mE (20918) esp-tls: couldn't get hostname for :api.interaction-labs.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (20918) esp-tls: Failed to open new connection[0m
+[1;31mE (20918) transport_base: Failed to open a new connection[0m
+[1;31mE (20918) transport_ws: Error connecting to host api.interaction-labs.com:443[0m
+[1;31mE (20928) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_ERR_ESP_TLS_CANNOT_RESOLVE_HOSTNAME, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=0, errno=0[0m
+[0;33mW (20948) AudioWebsocket: WebSocket ERROR: ERROR[0m
+[0;33mW (20948) AudioWebsocket: WebSocket disconnected[0m
+[1;31mE (25958) esp-tls: couldn't get hostname for :api.interaction-labs.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (25958) esp-tls: Failed to open new connection[0m
+[1;31mE (25958) transport_base: Failed to open a new connection[0m
+[1;31mE (25958) transport_ws: Error connecting to host api.interaction-labs.com:443[0m
+[1;31mE (25968) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_ERR_ESP_TLS_CANNOT_RESOLVE_HOSTNAME, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=0, errno=0[0m
+[0;33mW (25988) AudioWebsocket: WebSocket ERROR: ERROR[0m
+[0;33mW (25988) AudioWebsocket: WebSocket disconnected[0m
+ets Jun  8 2016 0:22:57
+
+rst:0x1 (POWERO_RESET),boot:0x13(SPI_FAT_FLASH_BOOT)
+cofigsip 0, SPIWP:0xee
+ck_drv:x00,q_drv:0x00,d_rv:0x00,cs0_drv:0x00,hd_rv:0x00,wp_drv:000
+moe:DIO, clock div:
+load0x3fff0030,len:638
+loa:0x40078000,len:1580
+load:0x40080400,len:360
+entry 0x4008638
+[0;32mI (27) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar 11 2025 23:39:54[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (36) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (76) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+[0;32mI (83) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (93) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=2f380h (193408) map[0m
+[0;32mI (166) esp_image: segment 1: paddr=0004f3a8 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (166) esp_image: segment 2: paddr=0004f3cc vaddr=3ffb0000 size=00c4ch (  3148) load[0m
+[0;32mI (171) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=9ec80h (650368) map[0m
+[0;32mI (400) esp_image: segment 4: paddr=000eeca8 vaddr=3ffb0c4c size=03334h ( 13108) load[0m
+[0;32mI (405) esp_image: segment 5: paddr=000f1fe4 vaddr=40080000 size=17e54h ( 97876) load[0m
+[0;32mI (455) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (455) boot: Disabling RNG early entropy source...[0m
+[0;33mW (476) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;33mW (476) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
+[1;31mE (660) i2s(legacy): i2s_driver_uninstall(1586): I2S port 0 has not installed[0m
+[1;31mE (670) AudioWebsocket: DNS lookup failed![0m
+[1;31mE (670) esp-tls: couldn't get hostname for :api.interaction-labs.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (670) esp-tls: Failed to open new connection[0m
+[1;31mE (680) transport_base: Failed to open a new connection[0m
+[1;31mE (680) transport_ws: Error connecting to host api.interaction-labs.com:443[0m
+[1;31mE (690) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_ERR_ESP_TLS_CANNOT_RESOLVE_HOSTNAME, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=0, errno=0[0m
+[0;33mW (710) AudioWebsocket: WebSocket ERROR: ERROR[0m
+[0;33mW (710) AudioWebsocket: WebSocket disconnected[0m
+[1;31mE (8210) esp-tls: couldn't get hostname for :api.interaction-labs.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (8210) esp-tls: Failed to open new connection[0m
+[1;31mE (8210) transport_base: Failed to open a new connection[0m
+[1;31mE (8210) transport_ws: Error connecting to host api.interaction-labs.com:443[0m
+[1;31mE (8220) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_ERR_ESP_TLS_CANNOT_RESOLVE_HOSTNAME, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=0, errno=0[0m
+[0;33mW (8240) AudioWebsocket: WebSocket ERROR: ERROR[0m
+[0;33mW (8240) AudioWebsocket: WebSocket disconnected[0m
+[1;31mE (13250) esp-tls: couldn't get hostname for :api.interaction-labs.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (13250) esp-tls: Failed to open new connection[0m
+[1;31mE (13250) transport_base: Failed to open a new connection[0m
+[1;31mE (13250) transport_ws: Error connecting to host api.interaction-labs.com:443[0m
+[1;31mE (13260) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_ERR_ESP_TLS_CANNOT_RESOLVE_HOSTNAME, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=0, errno=0[0m
+[0;33mW (13280) AudioWebsocket: WebSocket ERROR: ERROR[0m
+[0;33mW (13280) AudioWebsocket: WebSocket disconnected[0m
+[1;31mE (15140) AudioWebsocket: Failed to connect after 5 retries[0m
+[1;31mE (18290) esp-tls: couldn't get hostname for :api.interaction-labs.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (18290) esp-tls: Failed to open new connection[0m
+[1;31mE (18290) transport_base: Failed to open a new connection[0m
+[1;31mE (18290) transport_ws: Error connecting to host api.interaction-labs.com:443[0m
+[1;31mE (18300) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_ERR_ESP_TLS_CANNOT_RESOLVE_HOSTNAME, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=0, errno=0[0m
+[0;33mW (18320) AudioWebsocket: WebSocket ERROR: ERROR[0m
+[0;33mW (18320) AudioWebsocket: WebSocket disconnected[0m
+[1;31mE (23330) esp-tls: couldn't get hostname for :api.interaction-labs.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (23330) esp-tls: Failed to open new connection[0m
+[1;31mE (23330) transport_base: Failed to open a �ets Jun  8 2016 00:22:57[0m
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6368
+load:0x4007800,len:15880
+load:0x4080400,len:3860
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar 11 2025 23:39:54[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (36) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (76) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+[0;32mI (83) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (93) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=2f380h (193408) map[0m
+[0;32mI (166) esp_image: segment 1: paddr=0004f3a8 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (166) esp_image: segment 2: paddr=0004f3cc vaddr=3ffb0000 size=00c4ch (  3148) load[0m
+[0;32mI (171) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=9ec80h (650368) map[0m
+[0;32mI (400) esp_image: segment 4: paddr=000eeca8 vaddr=3ffb0c4c size=03334h ( 13108) load[0m
+[0;32mI (405) esp_image: segment 5: paddr=000f1fe4 vaddr=40080000 size=17e54h ( 97876) load[0m
+[0;32mI (455) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (455) boot: Disabling RNG early entropy source...[0m
+[0;33mW (476) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;33mW (476) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
+[1;31mE (660) i2s(legacy): i2s_driver_uninstall(1586): I2S port 0 has not installed[0m
+[1;31mE (670) AudioWebsocket: DNS lookup failed![0m
+[1;31mE (670) esp-tls: couldn't get hostname for :api.interaction-labs.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (670) esp-tls: Failed to open new connection[0m
+[1;31mE (680) transport_base: Failed to open a new connection[0m
+[1;31mE (680) transport_ws: Error connecting to host api.interaction-labs.com:443[0m
+[1;31mE (690) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_ERR_ESP_TLS_CANNOT_RESOLVE_HOSTNAME, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=0, errno=0[0m
+[0;33mW (710) AudioWebsocket: WebSocket ERROR: ERROR[0m
+[0;33mW (710) AudioWebsocket: WebSocket disconnected[0m
+[1;31mE (8210) esp-tls: couldn't get hostname for :api.interaction-labs.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (8210) esp-tls: Failed to open new connection[0m
+[1;31mE (8210) transport_base: Failed to open a new connection[0m
+[1;31mE (8210) transport_ws: Error connecting to host api.interaction-labs.com:443[0m
+[1;31mE (8220) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_ERR_ESP_TLS_CANNOT_RESOLVE_HOSTNAME, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=0, errno=0[0m
+[0;33mW (8240) AudioWebsocket: WebSocket ERROR: ERROR[0m
+[0;33mW (8240) AudioWebsocket: WebSocket disconnected[0m
+[1;31mE (13250) esp-tls: couldn't get hostname for :api.interaction-labs.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (13250) esp-tls: Failed to open new connection[0m
+[1;31mE (13250) transport_base: Failed to open a new connection[0m
+[1;31mE (13250) transport_ws: Error connecting to host api.interaction-labs.com:443[0m
+[1;31mE (13260) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_ERR_ESP_TLS_CANNOT_RESOLVE_HOSTNAME, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=0, errno=0[0m
+[0;33mW (13280) AudioWebsocket: WebSocket ERROR: ERROR[0m
+[0;33mW (13280) AudioWebsocket: WebSocket disconnected[0m
+[1;31mE (15140) AudioWebsocket: Failed to connect after 5 retries[0m
+[1;31mE (18290) esp-tls: couldn't get hostname for :api.interaction-labs.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (18290) esp-tls: Failed to open new connection[0m
+[1;31mE (18290) transport_base: Failed to open a new connection[0m
+[1;31mE (18290) transport_ws: Error connecting to host api.interaction-labs.com:443[0m
+[1;31mE (18300) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_ERR_ESP_TLS_CANNOT_RESOLVE_HOSTNAME, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=0, errno=0[0m
+[0;33mW (18320) AudioWebsocket: WebSocket ERROR: ERROR[0m
+[0;33mW (18320) AudioWebsocket: WebSocket disconnected[0m
+[1;31mE (23330) esp-tls: couldn't get hostname for :api.interaction-labs.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (23330) esp-tls: Failed to open new connection[0m
+[1;31mE (23330) transport_base: Failed to open a new connection[0m
+[1;31mE (23330) transport_ws: Error connecting to host api.interaction-labs.com:443[0m
+[1;31mE (23340) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_ERR_ESP_TLS_CANNOT_RESOLVE_HOSTNAME, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=0, errno=0[0m
+[0;33mW (23360) AudioWebsocket: WebSocket ERROR: ERROR[0m
+[0;33mW (23360) AudioWebsocket: WebSocket disconnected[0m
+[1;31mE (28370) esp-tls: couldn't get hostname for :api.interaction-labs.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (28370) esp-tls: Failed to open new connection[0m
+[1;31mE (28370) transport_base: Failed to open a new connection[0m
+[1;31mE (28370) transport_ws: Error connecting to host api.interaction-labs.com:443[0m
+[1;31mE (28380) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_ERR_ESP_TLS_CANNOT_RESOLVE_HOSTNAME, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=0, errno=0[0m
+[0;33mW (28400) AudioWebsocket: WebSocket ERROR: ERROR[0m
+[0;33mW (28400) AudioWebsocket: WebSocket disconnected[0m
+[1;31mE (33410) esp-tls: couldn't get hostname for :api.interaction-labs.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (33410) esp-tls: Failed to open new connection[0m
+[1;31mE (33410) transport_base: Failed to open a new connection[0m
+[1;31mE (33410) transport_ws: Error connecting to host api.interaction-labs.com:443[0m
+[1;31mE (33420) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_ERR_ESP_TLS_CANNOT_RESOLVE_HOSTNAME, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=0, errno=0[0m
+[0;33mW (33440) AudioWebsocket: WebSocket ERROR: ERROR[0m
+[0;33mW (33440) AudioWebsocket: WebSocket disconnected[0m
+[1;31mE (38450) esp-tls: couldn't get hostname for :api.interaction-labs.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (38450) esp-tls: Failed to open new connection[0m
+[1;31mE (38450) transport_base: Failed to open a new connection[0m
+[1;31mE (38450) transport_ws: Error connecting to host api.interaction-labs.com:443[0m
+[1;31mE (38460) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_ERR_ESP_TLS_CANNOT_RESOLVE_HOSTNAME, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=0, errno=0[0m
+[0;33mW (38480) AudioWebsocket: WebSocket ERROR: ERROR[0m
+[0;33mW (38480) AudioWebsocket: WebSocket disconnected[0m
+[1;31mE (43490) esp-tls: couldn't get hostname for :api.interaction-labs.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (43490) esp-tls: Failed to open new connection[0m
+[1;31mE (43490) transport_base: Failed to open a new connection[0m
+[1;31mE (43490) transport_ws: Error connecting to host api.interaction-labs.com:443[0m
+[1;31mE (43500) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_ERR_ESP_TLS_CANNOT_RESOLVE_HOSTNAME, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=0, errno=0[0m
+[0;33mW (43520) AudioWebsocket: WebSocket ERROR: ERROR[0m
+[0;33mW (43520) AudioWebsocket: WebSocket disconnected[0m
+[1;31mE (48530) esp-tls: couldn't get hostname for :api.interaction-labs.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (48530) esp-tls: Failed to open new connection[0m
+[1;31mE (48530) transport_base: Failed to open a new connection[0m
+[1;31mE (48530) transport_ws: Error connecting to host api.interaction-labs.com:443[0m
+[1;31mE (48540) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_ERR_ESP_TLS_CANNOT_RESOLVE_HOSTNAME, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=0, errno=0[0m
+[0;33mW (48560) AudioWebsocket: WebSocket ERROR: ERROR[0m
+[0;33mW (48560) AudioWebsocket: WebSocket disconnected[0m
+[1;31mE (53570) esp-tls: couldn't get hostname for :api.interaction-labs.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (53570) esp-tls: Failed to open new connection[0m
+[1;31mE (53570) transport_base: Failed to open a new connection[0m
+[1;31mE (53570) transport_ws: Error connecting to host api.interaction-labs.com:443[0m
+[1;31mE (53580) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_ERR_ESP_TLS_CANNOT_RESOLVE_HOSTNAME, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=0, errno=0[0m
+[0;33mW (53600) AudioWebsocket: WebSocket ERROR: ERROR[0m
+[0;33mW (53600) AudioWebsocket: WebSocket disconnected[0m
