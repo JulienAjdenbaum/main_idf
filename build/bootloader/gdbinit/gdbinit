@@ -1,0 +1,2 @@
+source /home/julien/Documents/esp32IDF/hello_world/build/bootloader/gdbinit/symbols
+source /home/julien/Documents/esp32IDF/hello_world/build/bootloader/gdbinit/connect
