@@ -6,12 +6,6 @@
 
 static const char *TAG = "AudioPlayer";
 
-// Change these if they are different on your board:
-// #define I2S_BCK_IO  26
-// #define I2S_WS_IO   25
-// #define I2S_DO_IO   22
-// #define I2S_DI_IO   -1  // Not used in typical playback-only scenario
-
 static QueueHandle_t audio_queue = NULL;
 
 static void audio_task(void *param)
