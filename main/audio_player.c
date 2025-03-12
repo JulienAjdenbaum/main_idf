@@ -37,8 +37,8 @@ esp_err_t audio_player_init(void)
         .bits_per_sample = I2S_BITS_PER_SAMPLE_16BIT,
         .channel_format = I2S_CHANNEL_FMT_RIGHT_LEFT, // 2 channels
         .communication_format = I2S_COMM_FORMAT_STAND_I2S,
-        .dma_buf_count = 8,
-        .dma_buf_len = 512,
+        .dma_buf_count = 16,
+        .dma_buf_len = 1024,
         .use_apll = false,
         .tx_desc_auto_clear = true, // optional depending on IDF
         .intr_alloc_flags = 0       // default interrupt priority
