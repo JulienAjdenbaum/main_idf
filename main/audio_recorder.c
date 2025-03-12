@@ -63,7 +63,7 @@ void write_wav_header(FILE *file, uint32_t num_samples) {
 
 void record_audio_to_sd_card(const char* filename) {
     char path[128];
-    snprintf(path, sizeof(path), "%s/%s", mount_point, filename);
+    snprintf(path, sizeof(path), "/sdcard/%s", filename);
 
     FILE* f = fopen(path, "wb");
     if (f == NULL) {
