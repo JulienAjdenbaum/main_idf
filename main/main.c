@@ -21,6 +21,7 @@
 #include "esp_sleep.h"
 #include "mbedtls/base64.h"
 #include <sys/param.h>  // For MIN/MAX macros
+#include "lwip/netdb.h"  // For getaddrinfo/freeaddrinfo
 
 // -------------------- USER CONFIG --------------------
 #define WIFI_SSID       "Partagedeco"
@@ -36,7 +37,7 @@
 
 // Audio settings
 #define I2S_SAMPLE_RATE        22050
-#define I2S_BITS_PER_SAMPLE    I2S_BITS_PER_SAMPLE_16BIT
+#define I2S_BITS_PER_SAMPLE    I2S_BITS_PER_SAMPLE_32BIT
 #define I2S_READ_BUF_SIZE      1024   // how many raw bytes to read per i2s_read() call
 #define RECORDING_DURATION_MS  10000  // record for 10s once WebSocket is up
 
@@ -51,7 +52,6 @@ static bool s_ws_connected = false;
 static portMUX_TYPE s_ws_spinlock = portMUX_INITIALIZER_UNLOCKED;
 
 static int s_retry_num = 0;
-
 
 // -------------------- WIFI EVENT HANDLERS --------------------
 static void event_handler(void *arg, esp_event_base_t event_base,
@@ -77,7 +77,7 @@ static void event_handler(void *arg, esp_event_base_t event_base,
     }
 }
 
-
+// -------------------- WIFI INIT --------------------
 static void wifi_init(void)
 {
     esp_err_t ret = nvs_flash_init();
@@ -120,37 +120,59 @@ static void wifi_init(void)
     ESP_ERROR_CHECK(esp_wifi_set_ps(WIFI_PS_NONE));
 
     ESP_LOGI(TAG, "Wi-Fi init done. SSID=%s", WIFI_SSID);
-}
 
+    ESP_LOGI(TAG, "Waiting for IP...");
+    esp_netif_ip_info_t ip_info;
+    int retries = 0;
+    while(1) {
+        if(esp_netif_get_ip_info(esp_netif_get_handle_from_ifkey("WIFI_STA_DEF"), &ip_info) == ESP_OK) {
+            if(ip_info.ip.addr != 0) {
+                ESP_LOGI(TAG, "Got IP: " IPSTR, IP2STR(&ip_info.ip));
+                break;
+            }
+        }
+        if(retries++ > 20) {
+            ESP_LOGE(TAG, "Failed to get IP!");
+            abort();
+        }
+        vTaskDelay(500/portTICK_PERIOD_MS);
+    }
+}
 
 // -------------------- I2S INIT --------------------
 static void i2s_init_for_mic(void)
 {
-    i2s_config_t i2s_config = {
-        .mode = I2S_MODE_MASTER | I2S_MODE_RX,
-        .sample_rate = I2S_SAMPLE_RATE,
-        .bits_per_sample = I2S_BITS_PER_SAMPLE_16BIT,  // **Use 16-bit**
-        .channel_format = I2S_CHANNEL_FMT_ONLY_LEFT,  // **Mono Channel**
-        .communication_format = I2S_COMM_FORMAT_I2S,
+    if(i2s_driver_uninstall(I2S_PORT) == ESP_OK) {
+        ESP_LOGI(TAG, "Reinitializing I2S driver");
+    }
+
+    i2s_config_t i2s_config_0 = {
+        .mode = (i2s_mode_t)(I2S_MODE_MASTER | I2S_MODE_RX),
+        .sample_rate = 22050,
+        .bits_per_sample = I2S_BITS_PER_SAMPLE_32BIT,
+        .channel_format = I2S_CHANNEL_FMT_ONLY_LEFT,
+        .communication_format = I2S_COMM_FORMAT_I2S_MSB,
         .dma_buf_count = 8,
         .dma_buf_len = 512,
         .use_apll = false,
-        .intr_alloc_flags = ESP_INTR_FLAG_LEVEL1
+        .intr_alloc_flags = ESP_INTR_FLAG_LEVEL1,
+        .tx_desc_auto_clear = false,
+        .fixed_mclk = 0
     };
-
-    i2s_pin_config_t pin_config = {
-        .bck_io_num = I2S_BCK_IO,
-        .ws_io_num = I2S_WS_IO,
+    i2s_pin_config_t pin_config_0 = {
+        .bck_io_num = 26,
+        .ws_io_num = 25,
         .data_out_num = I2S_PIN_NO_CHANGE,
-        .data_in_num = I2S_DATA_IN_IO
+        .data_in_num = 32 // Primary mic
     };
+    ESP_ERROR_CHECK(i2s_driver_install(I2S_NUM_0, &i2s_config_0, 0, NULL));
+    ESP_ERROR_CHECK(i2s_set_pin(I2S_NUM_0, &pin_config_0));
 
-    ESP_ERROR_CHECK(i2s_driver_install(I2S_PORT, &i2s_config, 0, NULL));
-    ESP_ERROR_CHECK(i2s_set_pin(I2S_PORT, &pin_config));
-
-    ESP_LOGI(TAG, "I2S initialized for mono microphone input");
+    ESP_LOGI(TAG, "I2S initialized for mic input (port=%d, sr=%d bits=%d)",
+             I2S_PORT, I2S_SAMPLE_RATE, I2S_BITS_PER_SAMPLE);
 }
 
+// -------------------- WEBSOCKET HANDLERS --------------------
 static void websocket_event_handler(void *handler_args,
                                     esp_event_base_t base,
                                     int32_t event_id,
@@ -191,6 +213,15 @@ static void websocket_event_handler(void *handler_args,
 
 static void websocket_init(void)
 {
+    ESP_LOGI(TAG, "Pinging server...");
+    struct addrinfo *res;
+    if(getaddrinfo("api.interaction-labs.com", "443", NULL, &res) != 0) {
+        ESP_LOGE(TAG, "DNS lookup failed!");
+    } else {
+        ESP_LOGI(TAG, "DNS resolved successfully");
+        freeaddrinfo(res);
+    }
+
     esp_websocket_client_config_t cfg = {
         .uri = WS_URI,
         .crt_bundle_attach = esp_crt_bundle_attach,
@@ -223,6 +254,9 @@ static void websocket_init(void)
 }
 
 // -------------------- RECORD + SEND TASK --------------------
+// 1) Global or local buffer for 32-bit samples:
+static int32_t s_audio_buf[256] __attribute__((aligned(4))); 
+
 static void i2s_record_and_send_task(void *arg)
 {
     ESP_LOGI(TAG, "Waiting for WebSocket to connect...");
@@ -231,11 +265,17 @@ static void i2s_record_and_send_task(void *arg)
     }
     ESP_LOGI(TAG, "WebSocket connected, begin recording for %d ms", RECORDING_DURATION_MS);
 
-    TickType_t start_ticks = xTaskGetTickCount();
-    TickType_t stop_ticks  = start_ticks + pdMS_TO_TICKS(RECORDING_DURATION_MS);
+    const TickType_t start_ticks = xTaskGetTickCount();
+    const TickType_t stop_ticks  = start_ticks + pdMS_TO_TICKS(RECORDING_DURATION_MS);
 
-    int16_t sample_buffer[I2S_READ_BUF_SIZE / 2]; // Mono => each sample is 2 bytes
-    size_t bytes_read = 0;
+    // Buffer for our 16-bit samples before base64
+    // If we read up to 256 * 32-bit samples, that becomes up to 512 bytes of 16-bit
+    uint8_t conv_buf[512];
+
+    int num_samples_32 = 0; // Initialize appropriately
+    int out_index = 0;      // Initialize appropriately
+    esp_err_t err = ESP_OK;  // Initialize error variable
+    size_t bytes_read = 0;  // Initialize appropriately
 
     while (xTaskGetTickCount() < stop_ticks)
     {
@@ -244,8 +284,16 @@ static void i2s_record_and_send_task(void *arg)
             break;
         }
 
-        // Read I2S data
-        esp_err_t err = i2s_read(I2S_PORT, sample_buffer, I2S_READ_BUF_SIZE, &bytes_read, portMAX_DELAY);
+        // Add yield point to prevent watchdog trigger
+        vTaskDelay(pdMS_TO_TICKS(1));  // Yield to scheduler
+
+        // Read I2S data in smaller chunks
+        bytes_read = 0;
+        err = i2s_read(I2S_PORT, 
+                       s_audio_buf, 
+                       I2S_READ_BUF_SIZE, 
+                       &bytes_read, 
+                       portMAX_DELAY);
 
         if (err != ESP_OK) {
             ESP_LOGE(TAG, "i2s_read error: %s", esp_err_to_name(err));
@@ -253,22 +301,61 @@ static void i2s_record_and_send_task(void *arg)
         }
 
         if (bytes_read == 0) {
+            // no data, keep going
             continue;
         }
 
-        // Ensure WebSocket is still connected before sending
-        if (esp_websocket_client_is_connected(s_ws_client)) {
-            int sent = esp_websocket_client_send_bin(s_ws_client,
-                                                     (const char *)sample_buffer,
-                                                     bytes_read, // Send raw mono data size
-                                                     pdMS_TO_TICKS(100));
-            if (sent < 0) {
-                ESP_LOGE(TAG, "WebSocket send failed");
-                break;
-            }
+        // 3) Convert 32-bit samples to 16-bit
+        int num_samples_32 = bytes_read / 4;  // each sample is 4 bytes
+        int out_index      = 0;
+        int64_t sum_abs    = 0;              // optional for amplitude debugging
+
+        for (int i = 0; i < num_samples_32; i++) {
+            int32_t s_32 = s_audio_buf[i];
+            // Shift down: adjust "12" as needed depending on your mic's bit alignment
+            int16_t s_16 = (int16_t)(s_32 >> 13);
+
+            // Write 16-bit sample into conv_buf (little-endian)
+            conv_buf[out_index++] = (uint8_t)(s_16 & 0xFF);
+            conv_buf[out_index++] = (uint8_t)((s_16 >> 8) & 0xFF);
+
+            sum_abs += (s_16 >= 0) ? s_16 : -s_16;
         }
 
-        vTaskDelay(pdMS_TO_TICKS(1)); // Small yield to prevent watchdog issues
+        // (Optional) Log average amplitude for debugging
+        int avg_amp = (num_samples_32 > 0) ? (sum_abs / num_samples_32) : 0;
+        ESP_LOGI(TAG, "Read %d bytes => %d samples => %d bytes of 16-bit. AvgAmp=%d",
+                 (int)bytes_read, num_samples_32, out_index, avg_amp);
+
+        // Send data in smaller batches
+        if (out_index > 0) {
+            size_t chunk_size = 256;  // Reduce batch size
+            for (size_t offset = 0; offset < out_index; offset += chunk_size) {
+                size_t send_size = MIN(chunk_size, out_index - offset);
+                
+                // Add non-blocking send check
+                if (esp_websocket_client_is_connected(s_ws_client)) {
+                    int sent = esp_websocket_client_send_bin(s_ws_client,
+                                                           (const char *)(conv_buf + offset),
+                                                           send_size,
+                                                           pdMS_TO_TICKS(100));
+                    if (sent < 0) {
+                        ESP_LOGE(TAG, "WebSocket send failed");
+                        break;
+                    }
+                }
+                vTaskDelay(pdMS_TO_TICKS(1));  // Additional yield point
+            }
+            out_index = 0;  // Reset buffer index
+        }
+    }
+
+    // Stop the WebSocket (existing cleanup code)
+    if (s_ws_client) {
+        ESP_LOGI(TAG, "Stopping WebSocket client...");
+        esp_websocket_client_stop(s_ws_client);
+        esp_websocket_client_destroy(s_ws_client);
+        s_ws_client = NULL;
     }
 
     ESP_LOGI(TAG, "Finished I2S record + WS send task");
@@ -276,13 +363,13 @@ static void i2s_record_and_send_task(void *arg)
 }
 
 
-
+// -------------------- MAIN --------------------
 void app_main(void)
 {
 
-    esp_log_level_set("TRANSPORT", ESP_LOG_DEBUG);
-    esp_log_level_set("esp-tls", ESP_LOG_DEBUG);
-    esp_log_level_set("WEBSOCKET_CLIENT", ESP_LOG_DEBUG);
+    // esp_log_level_set("TRANSPORT", ESP_LOG_DEBUG);
+    // esp_log_level_set("esp-tls", ESP_LOG_DEBUG);
+    // esp_log_level_set("WEBSOCKET_CLIENT", ESP_LOG_DEBUG);
     // 1) Wi-Fi
     wifi_init();
 

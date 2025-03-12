@@ -101,7 +101,7 @@ void i2s_init_for_mic(void) {
         .mode = I2S_MODE_MASTER | I2S_MODE_RX,
         .sample_rate = I2S_SAMPLE_RATE,
         .bits_per_sample = I2S_BITS_PER_SAMPLE_32BIT,
-        .channel_format = I2S_CHANNEL_FMT_RIGHT_LEFT,
+        .channel_format = I2S_CHANNEL_FMT_ONLY_LEFT,
         .communication_format = I2S_COMM_FORMAT_I2S,
         .dma_buf_count = 8,
         .dma_buf_len = 512,
