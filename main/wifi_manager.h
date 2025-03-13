@@ -1,5 +1,5 @@
-// wifi_manager.h
-#pragma once
+#ifndef WIFI_MANAGER_H
+#define WIFI_MANAGER_H
 
 #include "esp_err.h"
 
@@ -7,9 +7,13 @@
 extern "C" {
 #endif
 
-// Initialize Wi-Fi and connect to the configured SSID/PASS
+/**
+ * @brief Initialize Wi-Fi in station mode and connect.
+ */
 esp_err_t wifi_manager_init(void);
 
 #ifdef __cplusplus
 }
 #endif
+
+#endif // WIFI_MANAGER_H

@@ -8,67 +8,65 @@
 #include "freertos/task.h"
 #include <string.h>
 
-#include "audio_stream.h"  // We'll call handle_incoming_audio() here
+#include "audio_player.h" // for the queue-based approach
 
 static const char *TAG = "WS_MGR";
 
 #define WS_URI "wss://api.interaction-labs.com/esp/test"
 
-// Globals
 static esp_websocket_client_handle_t s_ws_client = NULL;
 static bool s_ws_connected = false;
-static int s_message_counter = 0;
 
-// Forward declarations
-static void websocket_event_handler(void *handler_args, esp_event_base_t base,
-                                    int32_t event_id, void *event_data);
-static void websocket_test_task(void *arg);
+static void websocket_event_handler(void *handler_args,
+                                    esp_event_base_t base,
+                                    int32_t event_id,
+                                    void *event_data);
 
 esp_err_t websocket_manager_init(void)
 {
-    // Configure the client
+    if (s_ws_client) {
+        ESP_LOGW(TAG, "WebSocket client already initialized.");
+        return ESP_OK;
+    }
+
     esp_websocket_client_config_t cfg = {
         .uri = WS_URI,
         .crt_bundle_attach = esp_crt_bundle_attach,
         .reconnect_timeout_ms = 5000,
-        .network_timeout_ms = 10000,
+        .network_timeout_ms   = 10000,
         .disable_auto_reconnect = false,
-        .keep_alive_enable = true,
-        .ping_interval_sec = 30,
+        .keep_alive_enable    = true,
+        .ping_interval_sec    = 30,
         .pingpong_timeout_sec = 10,
     };
 
-    // Create the client
     s_ws_client = esp_websocket_client_init(&cfg);
     if (!s_ws_client) {
         ESP_LOGE(TAG, "Failed to init WebSocket client");
         return ESP_FAIL;
     }
 
-    // Register events
     esp_websocket_register_events(
         s_ws_client,
         WEBSOCKET_EVENT_ANY,
         websocket_event_handler,
-        NULL
-    );
+        NULL);
 
-    // Start the client
     esp_err_t err = esp_websocket_client_start(s_ws_client);
     if (err != ESP_OK) {
         ESP_LOGE(TAG, "WebSocket start failed: %s", esp_err_to_name(err));
         return err;
     }
-    ESP_LOGI(TAG, "WebSocket started => %s", WS_URI);
 
-    // Create the test task that sends text frames
-    xTaskCreate(websocket_test_task, "ws_test_task", 4096, NULL, 5, NULL);
+    ESP_LOGI(TAG, "WebSocket started => %s", WS_URI);
     return ESP_OK;
 }
 
-// The event handler
-static void websocket_event_handler(void *handler_args, esp_event_base_t base,
-                                    int32_t event_id, void *event_data)
+
+static void websocket_event_handler(void *handler_args,
+                                    esp_event_base_t base,
+                                    int32_t event_id,
+                                    void *event_data)
 {
     esp_websocket_event_data_t *ws_data = (esp_websocket_event_data_t *) event_data;
 
@@ -76,7 +74,6 @@ static void websocket_event_handler(void *handler_args, esp_event_base_t base,
     case WEBSOCKET_EVENT_CONNECTED:
         ESP_LOGI(TAG, "WebSocket connected");
         s_ws_connected = true;
-        audio_stream_reset_wav_header();  // Let the audio module reset flags
         break;
 
     case WEBSOCKET_EVENT_DISCONNECTED:
@@ -84,46 +81,54 @@ static void websocket_event_handler(void *handler_args, esp_event_base_t base,
         s_ws_connected = false;
         break;
 
-    case WEBSOCKET_EVENT_DATA: {
+    case WEBSOCKET_EVENT_DATA:
+        // We have incoming data
         if (ws_data->data_len > 0) {
             const uint8_t *rx_buf = (const uint8_t *)ws_data->data_ptr;
             uint8_t prefix = rx_buf[0];
 
             if (prefix == 0x02) {
-                size_t audio_len = ws_data->data_len - 1;
+                // This is an audio packet
+                size_t audio_len = ws_data->data_len - 1; // skip prefix
                 if (audio_len > 0) {
-                    // Copy chunk minus prefix
-                    uint8_t *chunk = malloc(audio_len);
-                    if (!chunk) {
-                        ESP_LOGE(TAG, "malloc failed for audio chunk");
-                        return;
-                    }
-                    memcpy(chunk, rx_buf + 1, audio_len);
+                    // Convert from mono -> stereo if needed
+                    // (This is an example; or feed it to your "audio_stream_handle_incoming()")
+                    const uint16_t *mono_samples = (const uint16_t *)(rx_buf + 1);
+                    size_t num_mono_samples = audio_len / 2; // 16-bit samples
+                    size_t stereo_bytes = num_mono_samples * 2 * sizeof(uint16_t);
 
-                    // Pass to the audio module
-                    audio_stream_handle_incoming(chunk, audio_len);
-                    free(chunk);
+                    // Grab an empty buffer
+                    audio_buffer_t *buf = audio_player_get_buffer_blocking();
+                    if (!buf) {
+                        ESP_LOGE(TAG, "No free buffer for incoming audio!");
+                        break;
+                    }
+
+                    if (stereo_bytes > AUDIO_BUFFER_SIZE) {
+                        ESP_LOGW(TAG, "Incoming audio bigger than buffer => truncated");
+                        stereo_bytes = AUDIO_BUFFER_SIZE;
+                    }
+
+                    uint16_t *out = (uint16_t *) buf->data;
+                    size_t out_samples = stereo_bytes / 2; // # of 16-bit slots
+
+                    // replicate each mono sample into left & right
+                    for (size_t i = 0, j = 0; i < num_mono_samples && (j+1) < out_samples; i++, j+=2) {
+                        out[j]   = mono_samples[i];
+                        out[j+1] = mono_samples[i];
+                    }
+
+                    buf->length = stereo_bytes;
+                    audio_player_submit_buffer(buf);
                 }
-            } 
-            else if (prefix == 0x01) {
-                // text frame
-                char text_msg[128];
-                size_t text_len = ws_data->data_len - 1;
-                size_t cpy_len = (text_len < sizeof(text_msg) - 1)
-                                 ? text_len
-                                 : (sizeof(text_msg) - 1);
-                memcpy(text_msg, rx_buf + 1, cpy_len);
-                text_msg[cpy_len] = '\0';
-                ESP_LOGI(TAG, "Received TEXT => %s", text_msg);
-            }
-            else {
-                // treat as text
-                ESP_LOGI(TAG, "Received unknown prefix: %.*s",
+
+            } else {
+                // Probably text or other data
+                ESP_LOGI(TAG, "Received text message: %.*s",
                          ws_data->data_len, (char*)ws_data->data_ptr);
             }
         }
         break;
-    }
 
     case WEBSOCKET_EVENT_ERROR:
         ESP_LOGW(TAG, "WebSocket error");
@@ -135,21 +140,18 @@ static void websocket_event_handler(void *handler_args, esp_event_base_t base,
     }
 }
 
-// A task that periodically sends text frames
-static void websocket_test_task(void *arg)
+bool websocket_manager_is_connected(void)
 {
-    while (true) {
-        if (s_ws_connected && s_ws_client &&
-            esp_websocket_client_is_connected(s_ws_client)) 
-        {
-            char msg[50];
-            int len = snprintf(msg, sizeof(msg),
-                               "Test message %d", ++s_message_counter);
-            esp_websocket_client_send_text(s_ws_client, msg, len, portMAX_DELAY);
-            ESP_LOGI(TAG, "Sent: %s", msg);
-            vTaskDelay(pdMS_TO_TICKS(1000));
-        } else {
-            vTaskDelay(pdMS_TO_TICKS(500));
-        }
+    return s_ws_connected && s_ws_client &&
+           esp_websocket_client_is_connected(s_ws_client);
+}
+
+int websocket_manager_send_bin(const char *data, size_t len)
+{
+    if (!websocket_manager_is_connected()) {
+        return -1; // Not connected
     }
+    // blocks until all data is sent
+    int sent = esp_websocket_client_send_bin(s_ws_client, data, len, portMAX_DELAY);
+    return sent;
 }
