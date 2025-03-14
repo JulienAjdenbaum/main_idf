@@ -22,7 +22,7 @@
 #define MIC_I2S_DATA_OUT_IO     -1  // not used for mic-only
 #define MIC_USE_APLL            false  // ← Add this
 
-#define I2S_SAMPLE_RATE     22050
+#define I2S_SAMPLE_RATE     16000
 #define I2S_BITS_PER_SAMPLE I2S_BITS_PER_SAMPLE_32BIT
 #define I2S_READ_BUF_SIZE   1024 // Number of bytes to read per i2s_read() call
 
