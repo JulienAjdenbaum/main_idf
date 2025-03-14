@@ -6,7 +6,7 @@
 #include "wifi_manager.h"        // your Wi-Fi code
 #include "websocket_manager.h"   // the code above
 #include "audio_player.h"        // queue-based player
-
+#include "audio_record.h"        // audio recording
 static const char *TAG = "MAIN";
 
 void app_main(void)
@@ -15,8 +15,8 @@ void app_main(void)
 
     wifi_manager_init();
     audio_player_init();
-    websocket_manager_init();
-
+    // websocket_manager_init();
+    audio_record_init();
     while (true) {
         vTaskDelay(pdMS_TO_TICKS(1000));
     }

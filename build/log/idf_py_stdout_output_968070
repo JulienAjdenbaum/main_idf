@@ -1,0 +1,1230 @@
+Command: /home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/julien/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/julien/Documents/esp32IDF/hello_world/build/hello_world.elf /home/julien/Documents/esp32IDF/hello_world/build/bootloader/bootloader.elf -m '/home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python' '/home/julien/esp/esp-idf/tools/idf.py'
+es (� �������jrs:�1(PWERN_UM!U�I��0x1 (SIFSTe1�*�%=Q4conigsip: 0, SPWP:0eecl_v0`0qdr:0x0,ddvx01_dv:000,ddv:�,p_rv:000md:D$	��� ��:2
+la03f�Ibb�636
+l+�:�4���bb��158
+�+�J��4����bb�38jetrN ����j
+[0;32mI (26) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar 13 2025 19:56:33[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v1.1[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (36) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (76) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+[0;32mI (83) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (93) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=31628h (202280) map[0m
+[0;32mI (169) esp_image: segment 1: paddr=00051650 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (169) esp_image: segment 2: paddr=00051674 vaddr=3ffb0000 size=03fb0h ( 16304) load[0m
+[0;32mI (179) esp_image: segment 3: paddr=0005562c vaddr=40080000 size=0a9ech ( 43500) load[0m
+[0;32mI (197) esp_image: segment 4: paddr=00060020 vaddr=400d0020 size=9f450h (652368) map[0m
+[0;32mI (421) esp_image: segment 5: paddr=000ff478 vaddr=4008a9ec size=0df58h ( 57176) load[0m
+[0;32mI (455) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (455) boot: Disabling RNG early entropy source...[0m
+[0;32mI (466) cpu_start: Multicore app[0m
+[0;32mI (474) cpu_start: Pro cpu start user code[0m
+[0;32mI (474) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (474) app_init: Application information:[0m
+[0;32mI (474) app_init: Project name:     hello_world[0m
+[0;32mI (478) app_init: App version:      4a322a0-dirty[0m
+[0;32mI (483) app_init: Compile time:     Mar 13 2025 19:56:27[0m
+[0;32mI (488) app_init: ELF file SHA256:  4ad3e71da...[0m
+[0;32mI (492) app_init: ESP-IDF:          v5.5-dev-2290-g94cfe394fe[0m
+[0;32mI (498) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (501) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (505) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (510) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (516) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (521) heap_init: At 3FFBA898 len 00025768 (149 KiB): DRAM[0m
+[0;32mI (526) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (531) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (537) heap_init: At 40098944 len 000076BC (29 KiB): IRAM[0m
+[0;32mI (544) spi_flash: detected chip: generic[0m
+[0;32mI (546) spi_flash: flash io: dio[0m
+[0;33mW (549) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;33mW (556) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
+[0;32mI (568) main_task: Started on CPU0[0m
+[0;32mI (578) main_task: Calling app_main()[0m
+[0;32mI (578) MAIN: Starting app_main...[0m
+[0;32mI (618) wifi:wifi driver task: 3ffc29d8, prio:23, stack:6656, core=0[0m
+[0;32mI (628) wifi:wifi firmware version: 3a3aca644[0m
+[0;32mI (628) wifi:wifi certification version: v7.0[0m
+[0;32mI (628) wifi:config NVS flash: enabled[0m
+[0;32mI (628) wifi:config nano formatting: disabled[0m
+[0;32mI (638) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (638) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (648) wifi:Init management short buffer num: 32[0m
+[0;32mI (648) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (658) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (658) wifi:Init static rx buffer num: 10[0m
+[0;32mI (658) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (668) wifi_init: rx ba win: 6[0m
+[0;32mI (668) wifi_init: accept mbox: 6[0m
+[0;32mI (668) wifi_init: tcpip mbox: 32[0m
+[0;32mI (678) wifi_init: udp mbox: 6[0m
+[0;32mI (678) wifi_init: tcp mbox: 6[0m
+[0;32mI (678) wifi_init: tcp tx win: 5760[0m
+[0;32mI (688) wifi_init: tcp rx win: 5760[0m
+[0;32mI (688) wifi_init: tcp mss: 1440[0m
+[0;32mI (688) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (698) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (708) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (788) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (808) wifi:mode : sta (94:54:c5:b5:f9:ec)[0m
+[0;32mI (808) wifi:enable tsf[0m
+[0;32mI (818) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (818) WIFI_MGR: Wi-Fi init done. SSID=Partagedeco[0m
+[0;32mI (828) AudioPlayer: Audio player initialized. sample_rate=24000[0m
+[0;32mI (828) AudioPlayer: audio_task started[0m
+[1;31mE (828) esp-tls: couldn't get hostname for :api.interaction-labs.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (838) esp-tls: Failed to open new connection[0m
+[1;31mE (838) transport_base: Failed to open a new connection[0m
+[1;31mE (848) transport_ws: Error connecting to host api.interaction-labs.com:443[0m
+[1;31mE (848) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_ERR_ESP_TLS_CANNOT_RESOLVE_HOSTNAME, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=0, errno=0[0m
+[0;33mW (868) WS_MGR: WebSocket error[0m
+[0;32mI (868) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (878) WS_MGR: WebSocket disconnected[0m
+[0;32mI (868) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (888) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (888) websocket_client: Started[0m
+[0;32mI (888) WS_MGR: WebSocket started![0m
+[0;32mI (888) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (908) wifi:Association refused temporarily time 1269, comeback time 1369 (TUs)[0m
+[0;32mI (2308) wifi:state: assoc -> assoc (0x0)[0m
+[0;32mI (2308) wifi:state: assoc -> init (0x6c0)[0m
+[0;32mI (2328) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2328) WIFI_MGR: Retrying Wi-Fi connection...[0m
+[0;32mI (4748) WIFI_MGR: Retrying Wi-Fi connection...[0m
+[0;32mI (4758) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (4758) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (4768) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (4788) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (4808) wifi:connected with Partagedeco, aid = 1, channel 11, BW20, bssid = aa:f0:fe:0d:99:0e[0m
+[0;32mI (4808) wifi:security: WPA2-PSK, phy: bgn, rssi: -58[0m
+[0;32mI (4818) wifi:pm start, type: 0[0m
+
+[0;32mI (4818) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (4858) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (4858) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (5868) esp_netif_handlers: sta ip: 172.19.145.71, mask: 255.255.255.0, gw: 172.19.145.31[0m
+[0;32mI (5868) WIFI_MGR: Got IP: 172.19.145.71[0m
+[0;32mI (5868) websocket_client: Started[0m
+[0;32mI (5868) WS_MGR: WebSocket started![0m
+[0;32mI (5928) wifi:<ba-add>idx:0 (ifx:0, aa:f0:fe:0d:99:0e), tid:0, ssn:3, winSize:64[0m
+[0;32mI (7028) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (7038) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (9228) WS_MGR: WebSocket connected[0m
+[0;32mI (9438) WS_MGR: WebSocket connected[0m
+[0;32mI (10328) WS_MGR: Audio => len=512, first 6 bytes:[0m
+D7 66 42 4D 6E D3  | last 6 bytes: 29 33 35 2D 34 42 
+[0;32mI (10338) WS_MGR: Audio => len=512, first 6 bytes:[0m
+59 BF B5 C5 E7 CE  | last 6 bytes: 4A B5 9F 8D 8C 93 
+[0;32mI (10338) WS_MGR: Audio => len=512, first 6 bytes:[0m
+A2 36 19 18 1F 24  | last 6 bytes: 10 14 19 1E 24 2A 
+[0;32mI (10348) WS_MGR: Audio => len=512, first 6 bytes:[0m
+3E C2 A2 92 8B 87  | last 6 bytes: CA CD CF CD CB C9 
+[0;32mI (10358) WS_MGR: Audio => len=512, first 6 bytes:[0m
+C7 C9 CC CE D1 D8  | last 6 bytes: 2E 2E 2F 33 37 39 
+[0;32mI (10368) WS_MGR: Audio => len=512, first 6 bytes:[0m
+37 36 35 37 3B 40  | last 6 bytes: 48 4A 4B 4A 4A 4B 
+[0;32mI (10398) WS_MGR: Audio => len=512, first 6 bytes:[0m
+4D 4E 4F 4E 4C 4B  | last 6 bytes: F2 F3 F4 F5 F6 F6 
+[0;32mI (10468) WS_MGR: Audio => len=484, first 6 bytes:[0m
+F6 F5 F4 F3 F3 F3  | last 6 bytes: 7D FD FA 7F 7A FD 
+[0;32mI (10478) WS_MGR: Audio => len=512, first 6 bytes:[0m
+F9 FC FE 7E FF F8  | last 6 bytes: F5 FA 7C 7A FD FF 
+[0;32mI (10478) WS_MGR: Audio => len=512, first 6 bytes:[0m
+7E FF 74 78 FA FF  | last 6 bytes: FB FD F7 FD 75 FF 
+[0;32mI (10498) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FD 78 7A 78 7A F3  | last 6 bytes: F8 F7 79 78 FC F9 
+[0;32mI (10498) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FE 77 76 7E F8 F7  | last 6 bytes: FD 7E 7F FF 7E 7E 
+[0;32mI (10508) WS_MGR: Audio => len=512, first 6 bytes:[0m
+7D 7C 7F FE FE FF  | last 6 bytes: 79 74 F5 FE 74 FC 
+[0;32mI (10518) WS_MGR: Audio => len=512, first 6 bytes:[0m
+78 73 7A F8 F9 FE  | last 6 bytes: E8 D8 C3 C1 CA 4A 
+[0;32mI (10538) WS_MGR: Audio => len=512, first 6 bytes:[0m
+3B 3D 37 3E 58 5F  | last 6 bytes: 2E 2A 2C 2D 2E 32 
+[0;32mI (10538) WS_MGR: Audio => len=512, first 6 bytes:[0m
+3F 3D 2C 24 24 2F  | last 6 bytes: AD A6 AA AC A4 A9 
+[0;32mI (10548) WS_MGR: Audio => len=512, first 6 bytes:[0m
+B6 BC EB 4E 5C 3F  | last 6 bytes: D8 EB F0 EA D8 DA 
+[0;32mI (10558) WS_MGR: Audio => len=512, first 6 bytes:[0m
+CB B9 B9 BA B6 BA  | last 6 bytes: 74 61 5C 56 4E 4E 
+[0;32mI (10568) WS_MGR: Audio => len=512, first 6 bytes:[0m
+57 58 50 55 65 5E  | last 6 bytes: F5 F8 F6 76 74 F8 
+[0;32mI (10578) WS_MGR: Audio => len=512, first 6 bytes:[0m
+F1 76 6C FB F4 71  | last 6 bytes: FD FE FE FF 7E 7F 
+[0;32mI (10588) WS_MGR: Audio => len=512, first 6 bytes:[0m
+7E 7E 7F FE FE 7F  | last 6 bytes: 69 67 65 63 60 5F 
+[0;32mI (10598) WS_MGR: Audio => len=512, first 6 bytes:[0m
+5E 5B 5A 5D 67 79  | last 6 bytes: FF FF FF FF 7F FF 
+[0;32mI (10608) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FF 7F 7E FF FF FF  | last 6 bytes: FF 7F FF FF 7F 7F 
+[0;32mI (10618) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FF FF FF FF FF 7F  | last 6 bytes: FF FF FF FE FE FF 
+[0;32mI (10618) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FF 7F 7F 7F 7F FF  | last 6 bytes: FF FF FF FF FF FF 
+[0;32mI (10638) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FF FE FE FF FF FF  | last 6 bytes: FF FF FF FF 7F 7F 
+[0;32mI (10648) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FF 7F 7F 7F 7D 7D  | last 6 bytes: 24 19 1D 1E 26 4C 
+[0;32mI (10648) WS_MGR: Audio => len=512, first 6 bytes:[0m
+7F 7E 7F FF FF 7F  | last 6 bytes: FF FF FF FF FF FF 
+[0;32mI (10658) WS_MGR: Audio => len=512, first 6 bytes:[0m
+32 27 21 19 18 21  | last 6 bytes: F9 7B 48 38 2F 2D 
+[0;32mI (10668) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FF FF 7F 7F 7E 7E  | last 6 bytes: FF 7F 7F 7E 7E 7E 
+[0;32mI (10678) WS_MGR: Audio => len=512, first 6 bytes:[0m
+32 3F 49 70 67 47  | last 6 bytes: 15 15 17 1F 3A B0 
+[0;32mI (10688) WS_MGR: Audio => len=512, first 6 bytes:[0m
+7E 7F 7F 7F FF FF  | last 6 bytes: 7F 7F 7F 7F 7E 7E 
+[0;32mI (10688) WS_MGR: Audio => len=512, first 6 bytes:[0m
+9B 94 93 97 9E AA  | last 6 bytes: 3F 3B 39 38 38 38 
+[0;32mI (10698) WS_MGR: Audio => len=512, first 6 bytes:[0m
+7E 7F 7F 7F 7F 7E  | last 6 bytes: FF FF FF FF FF 7F 
+[0;32mI (10718) WS_MGR: Audio => len=512, first 6 bytes:[0m
+38 37 39 3A 3D 45  | last 6 bytes: F9 6E 69 6D 7C EE 
+[0;32mI (10718) WS_MGR: Audio => len=512, first 6 bytes:[0m
+[0;32mI (10728) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FF EA FF FF FF FF 7F  | last 6 bytes: FE FE FE FF FF FF EF 
+7B 73 7B EE  | last 6 bytes: FE FF 7F 7F 7F 7F 
+[0;32mI (10748) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FF 7F FF FF FF FF  | last 6 bytes: 7E 7E 7E 7E 7E 7E I (10748) WS_MGR: Audio => len=512, first 6 bytes:
+
+FF FE FE FE FE FF  | last 6 bytes: 7E FE 7E FE FE FF 
+[0;32mI (10758) WS_MGR: Audio => len=512, first 6 bytes:[0m
+7E 7E 7E 7F 7E 7E  | last 6 bytes: 7F FF FF 7F FF FF 
+[0;32mI (10768) WS_MGR: Audio => len=484, first 6 bytes:[0m
+[0;32mI (10778) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FA 7F FC 7B 7C FD FC  | last 6 bytes: 7F 7C 7C FF FA F9 FD FF 
+FF 7F 7F  | last 6 bytes: 4B 47 45 48 4A 46 
+[0;32mI (10798) WS_MGR: Audio => len=480, first 6 bytes:[0m
+45 47 45 46 4A 4B  | last 6 bytes: 3D 4E EB FF 5A 4C 
+[0;32mI (10798) WS_MGR: Audio => len=512, first 6 bytes:[0m
+48 4D C6 AF AC AC  | last 6 bytes: 79 77 5F 5F 58 48 
+[0;32mI (10818) WS_MGR: Audio => len=512, first 6 bytes:[0m
+3D I (10818) WS_MGR: Audio => len=512, first 6 bytes:
+3C 7E 3D 3E 42 3D  | last 6 bytes: F1 F9 79 F6 6F 75 
+7F FE FE FF 7D  | last 6 bytes: 7E FE FD FD FE 7E 
+[0;32mI (10828) WS_MGR: Audio => len=512, first 6 bytes:[0m
+E8 F5 77 FE 7B F6  | last 6 bytes: EC FC FD FD 6A E8 
+[0;32mI (10828) WS_MGR: Audio => len=512, first 6 bytes:[0m
+7F FF 7F FF 7E 7E  | last 6 bytes: FE FD FD FE FF 7F 
+[0;32mI (10838) WS_MGR: Audio => len=512, first 6 bytes:[0m
+F4 63 F8 7A FE 79  | last 6 bytes: 6C 68 FE F7 F8 F5 
+[0;32mI (10848) WS_MGR: Audio => len=512, first 6 bytes:[0m
+7F FF FF FF FE FE  | last 6 bytes: 77 75 7D FD FB FA 
+[0;32mI (10858) WS_MGR: Audio => len=512, first 6 bytes:[0m
+6B 6D 77 6D 6F 7E  | last 6 bytes: 79 7E 67 62 65 69 
+[0;32mI (10868) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FF 7B 7B 7E FC 7E  | last 6 bytes: 76 EC 67 F8 D4 FE 
+[0;32mI (10878) WS_MGR: Audio => len=512, first 6 bytes:[0m
+62 5D 60 69 6B 5E  | last 6 bytes: 7A 77 75 7B FF 79 
+[0;32mI (10888) WS_MGR: Audio => len=512, first 6 bytes:[0m
+50 DE 5E 55 C9 DF  | last 6 bytes: BD B5 AD AB A5 A2 
+[0;32mI (10898) WS_MGR: Audio => len=512, first 6 bytes:[0m
+79 7B 7E FD 7A FF  | last 6 bytes: E8 EF 7D 6F 67 61 
+[0;32mI (10908) WS_MGR: Audio => len=512, first 6 bytes:[0m
+[0;32mI (10918) WS_MGR: Audio => len=512, first 6 bytes:[0m
+5F 5D 5A 5A 5A 58  | last 6 bytes: FF 7A 77 75 70 6F 
+AE BD B9 C3 D2 C8  | last 6 bytes: DE CF CF E0 ED 6C 
+[0;32mI (10928) WS_MGR: Audio => len=512, first 6 bytes:[0m
+71 6F 6F 72 73 76  | last 6 bytes: F7 F9 7E FE 7C 7F 
+[0;32mI (10928) WS_MGR: Audio => len=512, first 6 bytes:[0m
+55 4D 43 3A 37 37  | last 6 bytes: I (10938) WS_MGR: Audio => len=512, first 6 bytes:
+4F F9 56 FB 7F 7A 7F FB  | last 6 bytes: CE BD BB C4 BE BA 6F 
+E9 D9 CB 
+[0;32mI (10958) WS_MGR: Audio => len=512, first 6 bytes:[0m
+C1 C8 C6 CE E4 FC  | last 6 bytes: 49 4A DC 71 6B BB 
+[0;32mI (10968) WS_MGR: Audio => len=512, first 6 bytes:[0m
+BD B2 AE A9 A1 A1  | last 6 bytes: BD BB BD C3 C2 BE 
+[0;32mI (10968) WS_MGR: Audio => len=512, first 6 bytes:[0m
+C1 C8 B0 B0 BA AF  | last 6 bytes: 48 51 3A 2E 38 3A 
+[0;32mI (10978) WS_MGR: Audio => len=512, first 6 bytes:[0m
+[0;32mI (10988) WS_MGR: Audio => len=512, first 6 bytes:[0m
+BD 33 C1 C2 BD C3 6E  | last 6 bytes: F7 F0 F7 FC EE E9 3C 
+47 45 52 4A  | last 6 bytes: BC BA BC BF C1 C6 
+[0;32mI (11008) WS_MGR: Audio => len=512, first 6 bytes:[0m
+EF F5 F4 F2 F6 F8  | last 6 bytes: 7E 7E 7E 7E FF 7F 
+[0;32mI (11008) WS_MGR: Audio => len=512, first 6 bytes:[0m
+CA C9 CA CE D7 E5  | last 6 bytes: 68 66 60 5D 5C 65 
+[0;32mI (11018) WS_MGR: Audio => len=512, first 6 bytes:[0m
+7F FF FE FE FE FE  | last 6 bytes: FF FF FF FF FF FF 
+[0;32mI (11028) WS_MGR: Audio => len=512, first 6 bytes:[0m
+7B 7A 6D 62 5A 57  | last 6 bytes: 7C 7D FE FE FE FF 
+[0;32mI (11038) WS_MGR: Audio => len=512, first 6 bytes:[0m
+[0;32mI (11048) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FF FE 7F 7F FF FF FF  | last 6 bytes: FF FF 7F 7F FF FF FE 
+FF FF FF 7F  | last 6 bytes: E8 E7 ED 7C 72 ED 
+[0;32mI (11058) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FF FF FE FF FE FF  | last 6 bytes: FF FF FF 7F 7F FF 
+[0;32mI (11068) WS_MGR: Audio => len=512, first 6 bytes:[0m
+F7 6F 74 6C FE F1  | last 6 bytes: I (11068) WS_MGR: Audio => len=512, first 6 bytes:
+77 FF 6E EB F5 5D 6C FF 
+FF FF FF FE  | last 6 bytes: FF FF FF FF FF FF 
+[0;32mI (11088) WS_MGR: Audio => len=512, first 6 bytes:[0m
+EE 78 7E 69 73 E6  | last 6 bytes: 68 FA F1 7F 79 7C 
+[0;32mI (11098) WS_MGR: Audio => len=512, first 6 bytes:[0m
+7D F7 7D 6D ED F8  | last 6 bytes: F1 F4 F8 66 6D 73 
+[0;32mI (11108) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FF FF I (11108) WS_MGR: Audio => len=512, first 6 bytes:
+FF 74 FE FF FF  | last 6 bytes: FF FF FF FF FF FF EC 7C 6E E9 EA  | last 6 bytes: 7C 74 FE F2 75 73 
+
+[0;32mI (11128) WS_MGR: Audio => len=512, first 6 bytes:[0m
+F9 F2 7C 70 FE 7B  | last 6 bytes: 7E 7C FF F8 79 78 
+[0;32mI (11138) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FF FF FF FF FF FF  | last 6 bytes: 7F 7F FF FF FF FF 
+[0;32mI (11138) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FC FA F1 F7 73 FE  | last 6 bytes: 77 7C F5 78 78 FC 
+[0;32mI (11148) WS_MGR: Audio => len=512, first 6 bytes:[0m
+[0;32mI (11158) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FF FF FF F8 FC 7A FE FA  | last 6 bytes: 7D 7E FD FF 7E 7E FF 
+FF FF FF  | last 6 bytes: 37 33 32 36 3C 3D 
+[0;32mI (11168) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FE FD 7E 7E FE 7E  | last 6 bytes: FE FE FE FE FE FE 
+[0;32mI (11178) WS_MGR: Audio => len=512, first 6 bytes:[0m
+[0;32mI (11178) WS_MGR: Audio => len=512, first 6 bytes:[0m
+3D FE 4D DD D9 F7 EE  | last 6 bytes: 5F 38 3D 77 C6 B5 
+FE FE FE FF FE  | last 6 bytes: E5 6A ED EF 65 E0 
+[0;32mI (11198) WS_MGR: Audio => len=512, first 6 bytes:[0m
+AD B8 B9 B2 B9 B8  | last 6 bytes: 96 B6 27 1B 1F 71 
+[0;32mI (11208) WS_MGR: Audio => len=512, first 6 bytes:[0m
+F2 71 E1 FD FA E2  | last 6 bytes: C2 BF C1 C4 BE BA 
+[0;32mI (11208) WS_MGR: Audio => len=512, first 6 bytes:[0m
+A0 9D A5 BC 34 36  | last 6 bytes: A8 AD B6 AF 9F 8F 
+[0;32mI (11218) WS_MGR: Audio => len=481, first 6 bytes:[0m
+BB BF C7 C9 CA CB  | last 6 bytes: 65 7C F2 61 55 5C 
+[0;32mI (11228) WS_MGR: Audio => len=512, first 6 bytes:[0m
+9C 1B 0D I (11238) WS_MGR: Audio => len=512, first 6 bytes:
+15 32 A0  | last 6 bytes: 5B DF DF 67 FA DB EA 5E 5E 60  | last 6 bytes: E0 D5 CF CF CD CC D5 F8 
+
+[0;32mI (11258) WS_MGR: Audio => len=512, first 6 bytes:[0m
+73 D1 EC DE D2 EE  | last 6 bytes: 33 2F 45 EC BE BD 
+[0;32mI (11268) WS_MGR: Audio => len=512, first 6 bytes:[0m
+C8 C4 C5 C6 C5 C2  | last 6 bytes: B7 B0 B3 B2 B3 B7 
+[0;32mI (11268) WS_MGR: Audio => len=512, first 6 bytes:[0m
+CA BC BF 55 39 2F  | last 6 bytes: 3F 3C 48 68 4D 43 
+[0;32mI (11278) WS_MGR: Audio => len=512, first 6 bytes:[0m
+B3 B4 BC C1 D0 E4  | last 6 bytes: 47 45 40 3D 3E 3F 
+[0;32mI (11288) WS_MGR: Audio => len=512, first 6 bytes:[0m
+D8 B3 B0 C4 4C 3B  | last 6 bytes: DC 5A 4A I (11298) WS_MGR: Audio => len=512, first 6 bytes:
+3F 42 41 
+3E 3F 42 46 4E 4D  | last 6 bytes: EA 70 FD E6 EB 74 
+[0;32mI (11308) WS_MGR: Audio => len=512, first 6 bytes:[0m
+3A 41 54 56 74 D6  | last 6 bytes: 2F 33 53 CB CA BD 
+[0;32mI (11318) WS_MGR: Audio => len=512, first 6 bytes:[0m
+71 I (11318) WS_MGR: Audio => len=512, first 6 bytes:
+F1 F6 78 AD 70 F4  | last 6 bytes: E4 E2 F2 AA AA AA AB AC  | last 6 bytes: BC BA B8 B8 B9 BA FB 
+EB F1 
+[0;32mI (11348) WS_MGR: Audio => len=480, first 6 bytes:[0m
+BE C7 CB CC D4 DF  | last 6 bytes: EE F3 F4 EF F2 FA 
+[0;32mI (11348) WS_MGR: Audio => len=512, first 6 bytes:[0m
+EF E3 E7 EA ED ED I (11348) WS_MGR: Audio => len=512, first 6 bytes:
+ | last 6 bytes: C4 BA B7 BE D5 67 
+7C F9 F9 7C 7D 7A  | last 6 bytes: E0 6B FC ED F7 ED 
+[0;32mI (11368) WS_MGR: Audio => len=512, first 6 bytes:[0m
+6B DF E9 51 41 I (11368) WS_MGR: Audio => len=512, first 6 bytes:
+6E 6F EF 7A 6B 73  | last 6 bytes: A5 A2 B2 AC A9 B5 
+40  | last 6 bytes: FC FE 7D 7D FF FC 
+[0;32mI (11388) WS_MGR: Audio => len=512, first 6 bytes:[0m
+BB C2 C9 70 I (11388) WS_MGR: Audio => len=512, first 6 bytes:
+3B 41  | last 6 bytes: 2E 31 2C 42 47 FC F9 FA 7F 7C 7C  | last 6 bytes: B7 D0 63 FE C9 BF 
+39 
+[0;32mI (11408) WS_MGR: Audio => len=512, first 6 bytes:[0m
+BE BF CB CB BF C6  | last 6 bytes: 4E 4E 4B 4C 54 5D 
+[0;32mI (11408) WS_MGR: Audio => len=512, first 6 bytes:[0m
+CC BD E6 B2 A9 B8  | last 6 bytes: D4 FC 6D CC C8 56 
+[0;32mI (11418) WS_MGR: Audio => len=512, first 6 bytes:[0m
+62 72 6D 61 71 F7  | last 6 bytes: 7C 79 75 72 6F 6F 
+[0;32mI (11428) WS_MGR: Audio => len=512, first 6 bytes:[0m
+3E 33 2C 42 F6 3B  | last 6 bytes: 5D 79 C7 C1 CD C6 I (11438) WS_MGR: Audio => len=512, first 6 bytes:
+
+70 75 7A 7E FE FD  | last 6 bytes: E9 E1 E1 E3 DF DF 
+[0;32mI (11448) WS_MGR: Audio => len=512, first 6 bytes:[0m
+B4 B5 BA B4 AF B0  | last 6 bytes: 61 64 D1 60 6B D4 
+[0;32mI (11458) WS_MGR: Audio => len=512, first 6 bytes:[0m
+DB D8 D9 DA E0 E7  | last 6 bytes: 58 60 71 EE DE I (11458) WS_MGR: Audio => len=512, first 6 bytes:
+D3 
+5B FD D9 59 E6 E2  | last 6 bytes: C0 D1 60 43 3B 36 
+[0;32mI (11478) WS_MGR: Audio => len=512, first 6 bytes:[0m
+CD CB CA C9 C9 C9  | last 6 bytes: 3B 3C 3F 3E 3B 3D 
+[0;32mI (11478) WS_MGR: Audio => len=512, first 6 bytes:[0m
+30 2D 2B 2A I (11488) WS_MGR: Audio => len=512, first 6 bytes:
+2B 44 2D  | last 6 bytes: 4A 54 62 77 F4 EE 42 46 5B 57 CC  | last 6 bytes: BD B7 B7 BC B8 B8 
+
+[0;32mI (11508) WS_MGR: Audio => len=512, first 6 bytes:[0m
+BF BE BE CA CE D3  | last 6 bytes: F9 E9 65 7D E0 69 
+[0;32mI (11518) WS_MGR: Audio => len=512, first 6 bytes:[0m
+DD CE C9 C3 BF BF  | last 6 bytes: 5F 5E 5E 5F 63 6B 
+[0;32mI (11518) WS_MGR: Audio => len=512, first 6 bytes:[0m
+73 E4 69 74 EF 68 I (11528) WS_MGR: Audio => len=512, first 6 bytes:
+ | last 6 bytes: F6 F6 7D FE 74 FD EF E9 E3 DF  | last 6 bytes: CD D4 F5 58 4F FA F5 
+52 
+[1;31mE (11588) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (11588) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11588) WS_MGR: Audio => len=512, first 6 bytes:[0m
+59 54 4B 46 48 4F  | last 6 bytes: B5 B8 BC CF 56 3B 
+[0;32mI (11588) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FB 72 7F 7D 77 F5  | last 6 bytes: FE E6 7B 72 6E 7F 
+[1;31mE (11638) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11638) WS_MGR: Audio => len=512, first 6 bytes:[0m
+2C 2C 33 38 2F 27  | last 6 bytes: 35 2E 3E AA 9D 9F 
+[1;31mE (11648) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11648) WS_MGR: Audio => len=512, first 6 bytes:[0m
+EC 6F 79 F7 FB F9  | last 6 bytes: 7C FB 7C 7C F7 F7 
+[1;31mE (11688) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11688) WS_MGR: Audio => len=512, first 6 bytes:[0m
+AB A5 9C A0 B3 57  | last 6 bytes: 1F 1B 20 24 1D 1D 
+[1;31mE (11698) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11698) WS_MGR: Audio => len=512, first 6 bytes:[0m
+6E 76 F1 70 7B 7B  | last 6 bytes: 7E 7E FF 7E 7D FF 
+[1;31mE (11738) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11738) WS_MGR: Audio => len=512, first 6 bytes:[0m
+37 AD A0 A2 A2 9E  | last 6 bytes: 90 A0 C2 BB AF 3D 
+[1;31mE (11748) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11748) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FE 7E 7E 7E 7E 7F  | last 6 bytes: F3 F2 7B F6 F1 78 
+[1;31mE (11788) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11788) WS_MGR: Audio => len=512, first 6 bytes:[0m
+13 0F 1F 33 25 25  | last 6 bytes: CA 4A 16 0D 19 2E 
+[1;31mE (11798) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11798) WS_MGR: Audio => len=512, first 6 bytes:[0m
+7A F8 F6 FD 7C 7E  | last 6 bytes: 37 3D 6D AE 9E A4 
+[1;31mE (11838) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11838) WS_MGR: Audio => len=512, first 6 bytes:[0m
+2E 2F E2 9F 8E 8F  | last 6 bytes: 8A 8B 9A 2F 26 3F 
+[1;31mE (11848) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11848) WS_MGR: Audio => len=512, first 6 bytes:[0m
+AB 9D 9E B0 B0 B1  | last 6 bytes: 42 4B 4C 43 52 5A 
+[1;31mE (11888) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11888) WS_MGR: Audio => len=512, first 6 bytes:[0m
+34 14 0D 15 26 5A  | last 6 bytes: C7 2C 29 27 1A 11 
+[1;31mE (11898) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11898) WS_MGR: Audio => len=512, first 6 bytes:[0m
+45 51 59 48 4D 5F  | last 6 bytes: EC F6 F4 E8 ED F7 
+[1;31mE (11938) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11938) WS_MGR: Audio => len=512, first 6 bytes:[0m
+10 17 10 0E 4A 92  | last 6 bytes: 1E 18 1B A3 8D 8D 
+[1;31mE (11948) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11948) WS_MGR: Audio => len=512, first 6 bytes:[0m
+ED F6 F7 EC F5 EB  | last 6 bytes: AC A9 B0 B2 AF B7 
+[1;31mE (11988) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11988) WS_MGR: Audio => len=512, first 6 bytes:[0m
+95 98 92 91 9D 1F  | last 6 bytes: 1E 12 16 27 29 22 
+[1;31mE (11998) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11998) WS_MGR: Audio => len=512, first 6 bytes:[0m
+CA CE CF 4F 43 44  | last 6 bytes: 32 3C 4E E1 C8 BC 
+[1;31mE (12038) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12038) WS_MGR: Audio => len=512, first 6 bytes:[0m
+22 1F 1F 14 22 99  | last 6 bytes: 0F 17 24 57 B8 AC 
+[1;31mE (12048) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12048) WS_MGR: Audio => len=512, first 6 bytes:[0m
+BC BA B5 BA C2 CF  | last 6 bytes: AA A0 9E 9E A4 AE 
+[1;31mE (12088) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12088) WS_MGR: Audio => len=512, first 6 bytes:[0m
+AA 9E 91 94 9B BA  | last 6 bytes: A7 B3 B8 CB 3E 2B 
+[1;31mE (12098) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12098) WS_MGR: Audio => len=481, first 6 bytes:[0m
+B3 C5 57 3E 2D 28  | last 6 bytes: C0 52 4C 30 24 2E 
+[1;31mE (12138) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12138) WS_MGR: Audio => len=512, first 6 bytes:[0m
+1F 1C 1A 18 15 13  | last 6 bytes: 3D D2 AA AD AB A6 
+[1;31mE (12148) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12148) WS_MGR: Audio => len=512, first 6 bytes:[0m
+5B BB AE AA AB A9  | last 6 bytes: 6E 79 EC DA DC EE 
+[1;31mE (12188) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12188) WS_MGR: Audio => len=512, first 6 bytes:[0m
+A2 9F AD AF AB BB  | last 6 bytes: DC DF C5 BF BC B9 
+[1;31mE (12198) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12198) WS_MGR: Audio => len=512, first 6 bytes:[0m
+EB E6 68 56 5C 66  | last 6 bytes: FC FA 7A 7E 7E FD 
+[1;31mE (12238) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12238) WS_MGR: Audio => len=512, first 6 bytes:[0m
+BA BB B7 B8 C4 CA  | last 6 bytes: FB 74 6E F4 79 72 
+[1;31mE (12248) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12248) WS_MGR: Audio => len=512, first 6 bytes:[0m
+F6 73 78 F3 FE 7C  | last 6 bytes: 39 3C 39 34 3A 4B 
+[1;31mE (12288) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12288) WS_MGR: Audio => len=512, first 6 bytes:[0m
+F3 F0 F8 F8 EE FA  | last 6 bytes: FC FB FC FD FA F9 
+[1;31mE (12298) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12298) WS_MGR: Audio => len=512, first 6 bytes:[0m
+5D 55 4B 49 4C 47  | last 6 bytes: 39 36 33 31 32 33 
+[1;31mE (12338) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12338) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FA F9 FD 7C 7F FD  | last 6 bytes: CB A3 98 A0 C5 3B 
+[1;31mE (12348) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12348) WS_MGR: Audio => len=512, first 6 bytes:[0m
+36 47 C4 AA A2 A5  | last 6 bytes: 55 7E BC AE AF B4 
+[1;31mE (12388) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12388) WS_MGR: Audio => len=481, first 6 bytes:[0m
+42 C2 C5 4B 2F 2C  | last 6 bytes: AE A4 A8 B1 CD EC 
+[1;31mE (12398) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12398) WS_MGR: Audio => len=512, first 6 bytes:[0m
+B1 B5 CB 5A 4F 49  | last 6 bytes: EE F7 FD 7D 79 78 
+[1;31mE (12438) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12438) WS_MGR: Audio => len=512, first 6 bytes:[0m
+BF BC E0 3B 2D 2F  | last 6 bytes: FB 7F 79 77 79 7B 
+[1;31mE (12448) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12448) WS_MGR: Audio => len=512, first 6 bytes:[0m
+76 6C 71 6C 67 62  | last 6 bytes: 2E 3B 43 3C 41 DC 
+[1;31mE (12488) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12488) WS_MGR: Audio => len=512, first 6 bytes:[0m
+7E FF 7F 7D 7D FD  | last 6 bytes: BF 4F 2D 2E 7B AE 
+[1;31mE (12498) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12498) WS_MGR: Audio => len=512, first 6 bytes:[0m
+BD BA B4 B0 AE AC  | last 6 bytes: 40 C3 BF 39 34 AE 
+[1;31mE (12538) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12538) WS_MGR: Audio => len=512, first 6 bytes:[0m
+AA CA 2C 1B 1A 38  | last 6 bytes: C6 5C 36 2B 21 1F 
+[1;31mE (12548) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12548) WS_MGR: Audio => len=223, first 6 bytes:[0m
+AE 2F 45 AD EC 35  | last 6 bytes: B6 B8 B8 B7 BD D2 
+[1;31mE (12588) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12588) WS_MGR: Audio => len=512, first 6 bytes:[0m
+32 B5 9C 97 9F CD  | last 6 bytes: 7D 7B 7D F7 F6 F2 
+[1;31mE (12598) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12598) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FA 6B 76 5B 4A 46  | last 6 bytes: D7 78 BD A7 AB DB 
+[1;31mE (12638) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12638) WS_MGR: Audio => len=512, first 6 bytes:[0m
+F2 ED EB F6 F1 EE  | last 6 bytes: C5 DA 5C 4C 4A 5F 
+[1;31mE (12648) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12648) WS_MGR: Audio => len=512, first 6 bytes:[0m
+42 3D 38 3C 45 3C  | last 6 bytes: 61 67 60 64 6C 6D 
+[1;31mE (12688) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12688) WS_MGR: Audio => len=512, first 6 bytes:[0m
+DD DD E6 EF 69 68  | last 6 bytes: B8 BD C0 C0 C3 CC 
+[1;31mE (12698) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12698) WS_MGR: Audio => len=512, first 6 bytes:[0m
+6C 7E 6F 61 6B 66  | last 6 bytes: 41 3E 47 5C 6F 74 
+[1;31mE (12738) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12738) WS_MGR: Audio => len=512, first 6 bytes:[0m
+D4 DE FB FC F9 67  | last 6 bytes: 34 31 2D 2A 24 2B 
+[1;31mE (12748) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12748) WS_MGR: Audio => len=512, first 6 bytes:[0m
+4A 3A 33 2F 37 3C  | last 6 bytes: 3E 52 B0 AA AF AA 
+[1;31mE (12788) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12788) WS_MGR: Audio => len=512, first 6 bytes:[0m
+4A 4D F5 AD A8 AC  | last 6 bytes: 5F F2 7D 3B 3D 4B 
+[1;31mE (12798) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12798) WS_MGR: Audio => len=512, first 6 bytes:[0m
+A3 A3 A6 AD C3 EB  | last 6 bytes: F9 F7 F3 FA FB FC 
+[1;31mE (12838) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12838) WS_MGR: Audio => len=512, first 6 bytes:[0m
+35 33 42 34 2C 32  | last 6 bytes: E2 CE CE E7 DA CF 
+[1;31mE (12848) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12848) WS_MGR: Audio => len=512, first 6 bytes:[0m
+78 76 7A 78 79 7E  | last 6 bytes: F9 F8 7A 77 FD FF 
+[1;31mE (12888) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12888) WS_MGR: Audio => len=512, first 6 bytes:[0m
+D0 D1 D1 D4 D2 DA  | last 6 bytes: 7C 7A 79 7A 7B 7C 
+[1;31mE (12898) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12898) WS_MGR: Audio => len=512, first 6 bytes:[0m
+79 7E F5 F3 F9 FB  | last 6 bytes: FF 7F FF 7E 7D 7E 
+[1;31mE (12938) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12938) WS_MGR: Audio => len=512, first 6 bytes:[0m
+7A 7C 7D 7C 7E FF  | last 6 bytes: 7B F3 E8 79 7A EC 
+[1;31mE (12948) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12948) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FE 7D 7D FF FE FD  | last 6 bytes: FE FE FE FF FE FE 
+[1;31mE (12988) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12988) WS_MGR: Audio => len=512, first 6 bytes:[0m
+6D 7E F5 6A E7 E4  | last 6 bytes: F0 63 6D F3 E4 77 
+[1;31mE (12998) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12998) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FE FF FF FF FF FF  | last 6 bytes: BC CD 59 49 49 50 
+[1;31mE (13038) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13038) WS_MGR: Audio => len=512, first 6 bytes:[0m
+6F 6E 78 ED 69 6B  | last 6 bytes: 72 73 6E 5E FA E8 
+[1;31mE (13048) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13048) WS_MGR: Audio => len=512, first 6 bytes:[0m
+67 57 43 43 54 67  | last 6 bytes: 5D 5D 67 7A F4 DC 
+[1;31mE (13088) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13088) WS_MGR: Audio => len=512, first 6 bytes:[0m
+7A FE EC E7 EB 77  | last 6 bytes: FE FE 7E 7E 7F 7D 
+[1;31mE (13098) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13098) WS_MGR: Audio => len=512, first 6 bytes:[0m
+DA 5B 6A D2 DB BB  | last 6 bytes: FD 7C F8 FD F3 E9 
+[1;31mE (13138) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13138) WS_MGR: Audio => len=512, first 6 bytes:[0m
+7E FE FE FF 7E 7E  | last 6 bytes: FE F4 79 65 71 77 
+[1;31mE (13148) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13148) WS_MGR: Audio => len=512, first 6 bytes:[0m
+EB E1 DE E1 DD DF  | last 6 bytes: 4C 4E 4F 4F 4E 4F 
+[1;31mE (13188) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13188) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FC EC E9 E7 7B 74  | last 6 bytes: 27 2A 33 2D 2A 60 
+[1;31mE (13198) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13198) WS_MGR: Audio => len=512, first 6 bytes:[0m
+51 52 53 54 55 54  | last 6 bytes: 4A 48 48 45 40 3E 
+[1;31mE (13238) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13238) WS_MGR: Audio => len=512, first 6 bytes:[0m
+A9 B0 B4 9E 9E AA  | last 6 bytes: 7C 62 56 4C 48 45 
+[1;31mE (13248) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13248) WS_MGR: Audio => len=512, first 6 bytes:[0m
+3E 3F 41 44 46 48  | last 6 bytes: 37 36 39 3D 43 48 
+[1;31mE (13288) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13288) WS_MGR: Audio => len=512, first 6 bytes:[0m
+41 3F 3E 3E 3D 3E  | last 6 bytes: 2F 34 3A 37 3E 47 
+[1;31mE (13298) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13298) WS_MGR: Audio => len=512, first 6 bytes:[0m
+46 4B 55 53 4E 4A  | last 6 bytes: 4D 4E 50 54 58 5E 
+[1;31mE (13338) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13338) WS_MGR: Audio => len=512, first 6 bytes:[0m
+42 4E 54 4E 63 60  | last 6 bytes: E7 B5 A3 9E 9D 99 
+[1;31mE (13348) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13348) WS_MGR: Audio => len=512, first 6 bytes:[0m
+5F 61 6B 72 EA DA  | last 6 bytes: 4D 47 47 49 48 47 
+[1;31mE (13388) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13388) WS_MGR: Audio => len=512, first 6 bytes:[0m
+97 99 9C A2 AA B6  | last 6 bytes: 20 26 3C B4 9F 9A 
+[1;31mE (13398) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13398) WS_MGR: Audio => len=512, first 6 bytes:[0m
+47 49 4D 4B 4A 4E  | last 6 bytes: 5F F8 EC 6E 79 EC 
+[1;31mE (13438) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13438) WS_MGR: Audio => len=512, first 6 bytes:[0m
+99 9D A7 AF C1 53  | last 6 bytes: 3D 3C 36 38 46 6E 
+[1;31mE (13448) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13448) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FA 75 EE F3 76 7D  | last 6 bytes: 76 79 F7 F4 78 7B 
+[1;31mE (13488) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13488) WS_MGR: Audio => len=512, first 6 bytes:[0m
+DA CF C7 BF C4 D9  | last 6 bytes: FC 70 6D 77 77 7C 
+[1;31mE (13498) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13498) WS_MGR: Audio => len=512, first 6 bytes:[0m
+F8 7E 7E 7B 7E FD  | last 6 bytes: 38 31 31 31 30 33 
+[1;31mE (13538) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13538) WS_MGR: Audio => len=512, first 6 bytes:[0m
+F4 70 73 E6 EE 77  | last 6 bytes: 6F FB 6E 7A F4 73 
+[1;31mE (13548) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13548) WS_MGR: Audio => len=512, first 6 bytes:[0m
+36 38 3C 3D 38 35  | last 6 bytes: 47 43 4E CF C4 CC 
+[1;31mE (13588) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13588) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FE F3 79 FE 75 F4  | last 6 bytes: 2A 38 CF AB 9E 9C 
+[1;31mE (13598) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13598) WS_MGR: Audio => len=512, first 6 bytes:[0m
+CF D0 E2 6E 52 43  | last 6 bytes: C4 C9 CC CE D9 E5 
+[1;31mE (13638) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13638) WS_MGR: Audio => len=512, first 6 bytes:[0m
+9E A4 AE BE FA 45  | last 6 bytes: DE B4 AC AE B3 BC 
+[1;31mE (13648) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13648) WS_MGR: Audio => len=512, first 6 bytes:[0m
+F5 6D 60 58 50 4F  | last 6 bytes: 3A 37 38 39 38 3E 
+[1;31mE (13688) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13688) WS_MGR: Audio => len=512, first 6 bytes:[0m
+C8 E0 4E 3A 2E 2C  | last 6 bytes: 31 35 39 39 47 F1 
+[1;31mE (13698) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13698) WS_MGR: Audio => len=512, first 6 bytes:[0m
+5F F8 D5 B9 B3 B5  | last 6 bytes: 3F 3F 41 3D 3C 3D 
+[1;31mE (13738) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13738) WS_MGR: Audio => len=481, first 6 bytes:[0m
+DF D3 BF BA BD BF  | last 6 bytes: FD FB F9 F8 F6 F5 
+[1;31mE (13748) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13748) WS_MGR: Audio => len=512, first 6 bytes:[0m
+3C 3D 48 62 D7 C1  | last 6 bytes: B0 DC 37 2F 3D 64 
+[1;31mE (13788) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13788) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FD F9 F1 F5 FF 79  | last 6 bytes: FE FD F5 F7 FE FF 
+[1;31mE (13798) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13798) WS_MGR: Audio => len=512, first 6 bytes:[0m
+E8 50 3D 39 41 DA  | last 6 bytes: 58 53 4F 4E 4E 4E 
+[1;31mE (13838) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13838) WS_MGR: Audio => len=512, first 6 bytes:[0m
+7E FE FD 7A 78 7E  | last 6 bytes: FD FA 7E 7B 7D 7D 
+[1;31mE (13848) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13848) WS_MGR: Audio => len=512, first 6 bytes:[0m
+4F 4F 50 52 53 54  | last 6 bytes: F9 6D 4F 42 43 48 
+[1;31mE (13888) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13888) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FC FE 7D FF 7C 7A  | last 6 bytes: 7E 7C 7A 7D FF FC 
+[1;31mE (13898) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13898) WS_MGR: Audio => len=512, first 6 bytes:[0m
+47 48 4C 4E 5B FB  | last 6 bytes: F9 F8 F8 F9 F9 F9 
+[1;31mE (13938) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13938) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FA FF 7C FF FF 7B  | last 6 bytes: FF FF FF FF FF FF 
+[1;31mE (13948) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13948) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FA FB FB FD FD FE  | last 6 bytes: 7C 5E 5D 63 4D 42 
+[1;31mE (13988) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13988) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FE FE FE FE FE FE  | last 6 bytes: AC B6 AE A7 AB AF 
+[1;31mE (13998) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13998) WS_MGR: Audio => len=512, first 6 bytes:[0m
+3E 3F 3D 3C 3C 3F  | last 6 bytes: C7 B8 B0 AA AA BE 
+[1;31mE (14038) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14038) WS_MGR: Audio => len=512, first 6 bytes:[0m
+AB AD B6 BB BE CE  | last 6 bytes: 4D 51 C9 C0 5F 55 
+[1;31mE (14048) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14048) WS_MGR: Audio => len=384, first 6 bytes:[0m
+37 24 23 31 DD BA  | last 6 bytes: 5C F5 D8 D7 DA E1 
+[1;31mE (14088) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14088) WS_MGR: Audio => len=132, first 6 bytes:[0m
+CC D8 51 4F 4F 54  | last 6 bytes: C1 D5 DE CD C5 CD 
+[1;31mE (14098) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14098) WS_MGR: Audio => len=512, first 6 bytes:[0m
+ED F0 F4 71 66 5F  | last 6 bytes: 3C 37 30 35 31 2D 
+[1;31mE (14138) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14138) WS_MGR: Audio => len=512, first 6 bytes:[0m
+EA 4B 4D DD 6F 44  | last 6 bytes: 4B 48 44 48 45 44 
+[1;31mE (14148) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14148) WS_MGR: Audio => len=512, first 6 bytes:[0m
+2F 2D 34 3F 33 46  | last 6 bytes: BE BB DA 56 4A 3A 
+[1;31mE (14188) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14188) WS_MGR: Audio => len=512, first 6 bytes:[0m
+4D 4E 4F 5E 75 E1  | last 6 bytes: 71 EE 7E 72 F9 EB 
+[1;31mE (14198) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14198) WS_MGR: Audio => len=512, first 6 bytes:[0m
+3C 3B 32 33 3E 42  | last 6 bytes: 2F 4D C3 B9 B5 B0 
+[1;31mE (14238) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14238) WS_MGR: Audio => len=512, first 6 bytes:[0m
+ED FD FD 7A F1 F7  | last 6 bytes: C0 C7 F3 4E FF D0 
+[1;31mE (14248) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14248) WS_MGR: Audio => len=512, first 6 bytes:[0m
+AD A7 9F 9F A5 B2  | last 6 bytes: 2A 24 1F 1E 21 2E 
+[1;31mE (14288) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14288) WS_MGR: Audio => len=512, first 6 bytes:[0m
+EA 4E 3F 3F 4C 57  | last 6 bytes: 5A 51 53 5F 59 4C 
+[1;31mE (14298) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14298) WS_MGR: Audio => len=512, first 6 bytes:[0m
+DF AC 9F 9D A0 AC  | last 6 bytes: 2C 2B 2F 3B 7D C7 
+[1;31mE (14338) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14338) WS_MGR: Audio => len=512, first 6 bytes:[0m
+4C 50 4E 4C 4F 5B  | last 6 bytes: 7E 79 76 7A F7 F1 
+[1;31mE (14348) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14348) WS_MGR: Audio => len=512, first 6 bytes:[0m
+E1 52 5B 4F 3E 38  | last 6 bytes: 3A 5C CA C8 E4 46 
+[1;31mE (14388) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14388) WS_MGR: Audio => len=512, first 6 bytes:[0m
+F7 7F 7B FF F7 F4  | last 6 bytes: FF 7E 7D 7D 7F FE 
+[1;31mE (14398) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14398) WS_MGR: Audio => len=512, first 6 bytes:[0m
+3A 39 3E 49 4B 40  | last 6 bytes: 5E 66 6C 6C 76 F5 
+[1;31mE (14438) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14438) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FE 7E 7D 7D 7E FF  | last 6 bytes: FF FF 7F 7F FF FF 
+[1;31mE (14448) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14448) WS_MGR: Audio => len=512, first 6 bytes:[0m
+E8 DD D9 DB DF E6  | last 6 bytes: 5D 5F 5E 61 FD EA 
+[1;31mE (14488) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14488) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FF 7F 7F 7F 7E 7E  | last 6 bytes: FE FE FE FF FF FE 
+[1;31mE (14498) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14498) WS_MGR: Audio => len=512, first 6 bytes:[0m
+EB E0 DE E8 DE D6  | last 6 bytes: BB BD BE BD BF C3 
+[1;31mE (14538) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14538) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FF FF FF 7F FF 7F  | last 6 bytes: 7D 75 F5 EB EA 79 
+[1;31mE (14548) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14548) WS_MGR: Audio => len=512, first 6 bytes:[0m
+C5 CA CF CF D6 EC  | last 6 bytes: 4E 46 63 5B 4C 45 
+[1;31mE (14588) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14588) WS_MGR: Audio => len=512, first 6 bytes:[0m
+F9 E2 D9 D5 DC E0  | last 6 bytes: 7E DC F0 4C 3B 35 
+[1;31mE (14598) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14598) WS_MGR: Audio => len=512, first 6 bytes:[0m
+3A 3D 4A 46 41 46  | last 6 bytes: 3E 3A 40 43 3F 4B 
+[1;31mE (14638) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14638) WS_MGR: Audio => len=512, first 6 bytes:[0m
+37 3C 46 47 44 47  | last 6 bytes: 5F 5A 5B 58 4E 4A 
+[1;31mE (14648) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14648) WS_MGR: Audio => len=512, first 6 bytes:[0m
+52 4F 41 52 41 37  | last 6 bytes: BD C0 C2 CD F0 5E 
+[1;31mE (14688) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14688) WS_MGR: Audio => len=512, first 6 bytes:[0m
+46 47 48 49 43 3F  | last 6 bytes: 59 5C 5D 52 47 41 
+[1;31mE (14698) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14698) WS_MGR: Audio => len=512, first 6 bytes:[0m
+54 51 50 51 57 50  | last 6 bytes: 5F E8 64 6C E7 6C 
+[1;31mE (14738) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14738) WS_MGR: Audio => len=512, first 6 bytes:[0m
+44 4C 51 4A 41 46  | last 6 bytes: 67 67 6A 68 5D 50 
+[1;31mE (14748) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14748) WS_MGR: Audio => len=512, first 6 bytes:[0m
+EF ED 65 D6 6E 5F  | last 6 bytes: 37 2D 2F 39 36 36 
+[1;31mE (14788) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14788) WS_MGR: Audio => len=512, first 6 bytes:[0m
+4B 47 47 49 4C 4F  | last 6 bytes: 3B 3C 3C 44 73 C4 
+[1;31mE (14798) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14798) WS_MGR: Audio => len=512, first 6 bytes:[0m
+42 57 77 D9 D0 C4  | last 6 bytes: 69 E8 DE 4B CC B9 
+[1;31mE (14838) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14838) WS_MGR: Audio => len=512, first 6 bytes:[0m
+B7 B3 B6 B8 B5 AE  | last 6 bytes: 23 24 22 1E 1C 1F 
+[1;31mE (14848) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14848) WS_MGR: Audio => len=512, first 6 bytes:[0m
+50 48 CD 4E 3D CF  | last 6 bytes: 4B D3 C0 B6 AA A9 
+[1;31mE (14888) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14888) WS_MGR: Audio => len=512, first 6 bytes:[0m
+29 38 65 BE AF A6  | last 6 bytes: 28 37 46 C7 9F 97 
+[1;31mE (14898) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14898) WS_MGR: Audio => len=512, first 6 bytes:[0m
+AF B4 B9 CB 5E 3E  | last 6 bytes: EA FB 6C 5F 5A 56 
+[1;31mE (14938) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14938) WS_MGR: Audio => len=512, first 6 bytes:[0m
+99 9B 99 9A A9 DC  | last 6 bytes: 2F A7 97 9D 9D 92 
+[1;31mE (14948) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14948) WS_MGR: Audio => len=512, first 6 bytes:[0m
+51 4E 4D 4C 4C 4C  | last 6 bytes: C7 C4 C2 C2 C3 C5 
+[1;31mE (14988) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14988) WS_MGR: Audio => len=512, first 6 bytes:[0m
+8D 97 A5 A8 AD D3  | last 6 bytes: 1C 1E 21 1F 25 29 
+[1;31mE (14998) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14998) WS_MGR: Audio => len=512, first 6 bytes:[0m
+C6 C8 C9 CC CF D6  | last 6 bytes: 46 45 3E 3E 3A 30 
+[1;31mE (15038) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15038) WS_MGR: Audio => len=512, first 6 bytes:[0m
+2D 2F 38 A5 97 9E  | last 6 bytes: 19 29 44 CB AE A3 
+[1;31mE (15048) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15048) WS_MGR: Audio => len=512, first 6 bytes:[0m
+2C 2C 29 20 27 D2  | last 6 bytes: 1B 1F 1B 16 9C 84 
+[1;31mE (15088) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15088) WS_MGR: Audio => len=512, first 6 bytes:[0m
+99 96 9C AE C7 E9  | last 6 bytes: 97 91 90 92 98 A4 
+[1;31mE (15098) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15098) WS_MGR: Audio => len=512, first 6 bytes:[0m
+8F AF A3 A9 2F 1E  | last 6 bytes: B2 AE AE AE AD AD 
+[1;31mE (15138) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15138) WS_MGR: Audio => len=512, first 6 bytes:[0m
+D0 23 15 12 15 1E  | last 6 bytes: 43 C6 B3 AF AB AD 
+[1;31mE (15148) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15148) WS_MGR: Audio => len=512, first 6 bytes:[0m
+AE B0 B3 B8 BD C2  | last 6 bytes: 6A F2 71 FE F7 F1 
+[1;31mE (15188) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15188) WS_MGR: Audio => len=512, first 6 bytes:[0m
+B5 BE 5A 34 2C 27  | last 6 bytes: 59 4D 54 61 51 4A 
+[1;31mE (15198) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15198) WS_MGR: Audio => len=512, first 6 bytes:[0m
+E4 FD E6 DF 78 E8  | last 6 bytes: 5D 5D C8 4F 7B CB 
+[1;31mE (15238) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15238) WS_MGR: Audio => len=512, first 6 bytes:[0m
+58 57 4C 52 59 59  | last 6 bytes: 7A F7 79 6F F6 7B 
+[1;31mE (15248) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15248) WS_MGR: Audio => len=512, first 6 bytes:[0m
+44 F0 D5 4B D9 EA  | last 6 bytes: 4A D4 DF 3E 2F 2E 
+[1;31mE (15288) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15288) WS_MGR: Audio => len=512, first 6 bytes:[0m
+6E 7D 7D 7A FD FB  | last 6 bytes: 78 68 7E F0 7E 76 
+[1;31mE (15298) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15298) WS_MGR: Audio => len=512, first 6 bytes:[0m
+2D 2C 28 29 E5 A3  | last 6 bytes: 36 33 30 2D 2A 32 
+[1;31mE (15338) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15338) WS_MGR: Audio => len=512, first 6 bytes:[0m
+6E 77 EE EF 7C FE  | last 6 bytes: 4A 36 35 52 B7 AE 
+[1;31mE (15348) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15348) WS_MGR: Audio => len=512, first 6 bytes:[0m
+5F BD B5 B9 BC BD  | last 6 bytes: 3C 3C 39 43 FA CD 
+[1;31mE (15388) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15388) WS_MGR: Audio => len=512, first 6 bytes:[0m
+B8 C7 CF CE DC 48  | last 6 bytes: D7 C1 BD BC BC BD 
+[1;31mE (15398) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15398) WS_MGR: Audio => len=512, first 6 bytes:[0m
+CD DC E6 E0 5F 3E  | last 6 bytes: 63 69 D9 CF CC BF 
+[1;31mE (15438) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15438) WS_MGR: Audio => len=512, first 6 bytes:[0m
+BF C9 E2 64 58 4A  | last 6 bytes: B0 AB AB BA CD C5 
+[1;31mE (15448) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15448) WS_MGR: Audio => len=512, first 6 bytes:[0m
+BD BB B4 B3 B2 AF  | last 6 bytes: 7A 7A 6D 6A FB E6 
+[1;31mE (15488) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15488) WS_MGR: Audio => len=512, first 6 bytes:[0m
+DE 3F 38 3E 3B 33  | last 6 bytes: 66 CE BD B7 B5 B4 
+[1;31mE (15498) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15498) WS_MGR: Audio => len=512, first 6 bytes:[0m
+F3 F7 EC EC EF 7A  | last 6 bytes: 78 55 60 77 71 E5 
+[1;31mE (15538) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15538) WS_MGR: Audio => len=512, first 6 bytes:[0m
+B4 B8 BB BD C2 C9  | last 6 bytes: 74 D5 C8 CE 6A 46 
+[1;31mE (15548) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15548) WS_MGR: Audio => len=512, first 6 bytes:[0m
+F3 EB DE F4 E8 F2  | last 6 bytes: 61 E5 DF 5A 7A EC 
+[1;31mE (15588) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15588) WS_MGR: Audio => len=512, first 6 bytes:[0m
+3D 42 5A D9 D4 67  | last 6 bytes: 7A FB FB F6 F5 FE 
+[1;31mE (15598) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15598) WS_MGR: Audio => len=512, first 6 bytes:[0m
+76 E6 5F 61 DC F9  | last 6 bytes: 4A 4D 4E 51 5C 5B 
+[1;31mE (15638) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15638) WS_MGR: Audio => len=512, first 6 bytes:[0m
+6F 63 59 51 4D 4A  | last 6 bytes: 61 EE DE D5 CE CF 
+[1;31mE (15648) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15648) WS_MGR: Audio => len=512, first 6 bytes:[0m
+58 5D 59 59 65 60  | last 6 bytes: FC FC FB F8 F8 F9 
+[1;31mE (15688) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15688) WS_MGR: Audio => len=512, first 6 bytes:[0m
+D2 CF D1 DB E2 F7  | last 6 bytes: EE E9 7E 79 FA FE 
+[1;31mE (15698) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15698) WS_MGR: Audio => len=512, first 6 bytes:[0m
+F9 FB FC F9 FA FB  | last 6 bytes: 30 31 34 38 3B 40 
+[1;31mE (15738) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15738) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FF 6E 69 FA EC ED  | last 6 bytes: AF BF BF BE BD BE 
+[1;31mE (15748) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15748) WS_MGR: Audio => len=512, first 6 bytes:[0m
+45 57 DD C3 AF A8  | last 6 bytes: A9 9C 9A 97 93 91 
+[1;31mE (15788) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15788) WS_MGR: Audio => len=512, first 6 bytes:[0m
+E7 73 C4 BD C9 DD  | last 6 bytes: 6D 4C 3D 37 2F 2F 
+[1;31mE (15798) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15798) WS_MGR: Audio => len=512, first 6 bytes:[0m
+8F 8F 93 9A A1 B7  | last 6 bytes: 87 87 8C A2 B1 23 
+[1;31mE (15838) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15838) WS_MGR: Audio => len=425, first 6 bytes:[0m
+36 4C B9 A8 A4 A8  | last 6 bytes: 63 62 66 6D 75 FE 
+[1;31mE (15848) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15848) WS_MGR: Audio => len=512, first 6 bytes:[0m
+13 1D 1C 3F AF A6  | last 6 bytes: 87 96 A8 BB BA D8 
+[1;31mE (15888) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15888) WS_MGR: Audio => len=512, first 6 bytes:[0m
+F5 EF EF F0 F7 FE  | last 6 bytes: EA 65 53 4C 43 40 
+[1;31mE (15898) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15898) WS_MGR: Audio => len=512, first 6 bytes:[0m
+0E 09 0F 2D 95 8B  | last 6 bytes: A0 39 19 14 1C B2 
+[1;31mE (15938) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15938) WS_MGR: Audio => len=512, first 6 bytes:[0m
+45 44 40 45 4C 49  | last 6 bytes: 39 33 2F 2F 2E 2E 
+[1;31mE (15948) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15948) WS_MGR: Audio => len=512, first 6 bytes:[0m
+9A B3 37 BF 94 97  | last 6 bytes: AE AD AB AA AD AC 
+[1;31mE (15988) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15988) WS_MGR: Audio => len=512, first 6 bytes:[0m
+30 36 47 5E CB AD  | last 6 bytes: B3 AC AB AC B3 CB 
+[1;31mE (15998) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15998) WS_MGR: Audio => len=512, first 6 bytes:[0m
+AB AD B0 B5 B6 BA  | last 6 bytes: 38 38 30 29 28 29 
+[1;31mE (16038) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16038) WS_MGR: Audio => len=512, first 6 bytes:[0m
+4A 39 33 2E 2E 2F  | last 6 bytes: BE A5 9B 9B 9F AA 
+[1;31mE (16048) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16048) WS_MGR: Audio => len=512, first 6 bytes:[0m
+24 27 2A 2E D1 B7  | last 6 bytes: AF AD AD AE AE AF 
+[1;31mE (16088) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16088) WS_MGR: Audio => len=512, first 6 bytes:[0m
+BC FA 56 45 30 29  | last 6 bytes: 2F 32 3F EA C4 C9 
+[1;31mE (16098) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16098) WS_MGR: Audio => len=512, first 6 bytes:[0m
+B5 BA BD C9 DB DC  | last 6 bytes: 46 41 3B 3A 3C 3B 
+[1;31mE (16138) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16138) WS_MGR: Audio => len=512, first 6 bytes:[0m
+F8 4F 44 40 41 3E  | last 6 bytes: E1 FD 6C 5F 58 52 
+[1;31mE (16148) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16148) WS_MGR: Audio => len=512, first 6 bytes:[0m
+3B 3C 38 31 2E 2F  | last 6 bytes: 68 D0 C0 B5 AE AD 
+[1;31mE (16188) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16188) WS_MGR: Audio => len=512, first 6 bytes:[0m
+50 4F 52 5E F9 DA  | last 6 bytes: E5 E7 E9 E5 E6 EA 
+[1;31mE (16198) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (16198) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (16198) task_wdt:  - IDLE1 (CPU 1)[0m
+[1;31mE (16198) task_wdt: Tasks currently running:[0m
+[1;31mE (16198) task_wdt: CPU 0: websocket_task[0m
+[1;31mE (16198) task_wdt: CPU 1: audio_consumer_[0m
+[1;31mE (16198) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x40084836:0x3FFB2660 0x40083745:0x3FFB2680 0x4000BFED:0x3FFE14C0 0x4008A9E6:0x3FFE14D0 0x4008A0AF:0x3FFE14F0 0x400D9A3A:0x3FFE1530 0x400D9D1A:0x3FFE1560 0x400D9A5C:0x3FFE1580 0x4008A689:0x3FFE15B0
+
+[0;32mI (16228) WS_MGR: Audio => len=512, first 6 bytes:[0m
+AE B5 BC C9 5D E (16238) WS_MGR: Ring buffer full => dropped audio!
+3F  | last 6 bytes: B5 BC BB B1 C6 4A 
+[0;32mI (16258) WS_MGR: Audio => len=512, first 6 bytes:[0m
+E9 EB F3 F8 F9 7A  | last 6 bytes: 68 67 67 60 5C 57 
+[1;31mE (16308) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16308) WS_MGR: Audio => len=512, first 6 bytes:[0m
+56 62 3F 39 38 40  | last 6 bytes: CE CE CE CF D3 D7 
+[1;31mE (16318) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16318) WS_MGR: Audio => len=512, first 6 bytes:[0m
+54 56 58 54 54 59  | last 6 bytes: BB 9B 98 A5 B7 DC 
+[1;31mE (16358) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16358) WS_MGR: Audio => len=512, first 6 bytes:[0m
+DC E5 ED F2 7C 6E  | last 6 bytes: 34 34 2E 2F 2F 2F 
+[1;31mE (16368) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16368) WS_MGR: Audio => len=512, first 6 bytes:[0m
+41 49 3A 2B 3F A5  | last 6 bytes: 49 DC C5 C1 D4 7B 
+[1;31mE (16408) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16408) WS_MGR: Audio => len=512, first 6 bytes:[0m
+3C 3F 52 C8 C0 BA  | last 6 bytes: B6 AE AE B0 B0 B0 
+[1;31mE (16418) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16418) WS_MGR: Audio => len=512, first 6 bytes:[0m
+F1 54 3B 3C EF C0  | last 6 bytes: C6 C3 CC FD 56 5C 
+[1;31mE (16458) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16458) WS_MGR: Audio => len=512, first 6 bytes:[0m
+B8 BF C3 CC E2 74  | last 6 bytes: 6E 6A 6A 6C 66 6D 
+[1;31mE (16468) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16468) WS_MGR: Audio => len=512, first 6 bytes:[0m
+DF DA EF E2 DA 77  | last 6 bytes: 57 74 DD E6 D8 CB 
+[1;31mE (16508) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16508) WS_MGR: Audio => len=512, first 6 bytes:[0m
+6D 75 73 6E F2 F9  | last 6 bytes: F2 FC 6D F7 EF F7 
+[1;31mE (16518) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16518) WS_MGR: Audio => len=512, first 6 bytes:[0m
+CF D6 E4 65 5D 4E  | last 6 bytes: 5D DD 5B F6 DF 60 
+[1;31mE (16558) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16558) WS_MGR: Audio => len=512, first 6 bytes:[0m
+7B 74 7E 7D 7C 77  | last 6 bytes: D8 DD E9 FC 6D 61 
+[1;31mE (16568) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16568) WS_MGR: Audio => len=512, first 6 bytes:[0m
+D8 E3 68 CC 68 5C  | last 6 bytes: 44 43 47 45 4E D7 
+[1;31mE (16608) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16608) WS_MGR: Audio => len=512, first 6 bytes:[0m
+5C 59 56 53 53 54  | last 6 bytes: AC AD AF B1 B5 BE 
+[1;31mE (16618) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16618) WS_MGR: Audio => len=512, first 6 bytes:[0m
+E5 53 F4 ED 4A 3F  | last 6 bytes: 69 6A 69 67 65 68 
+[1;31mE (16658) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16658) WS_MGR: Audio => len=512, first 6 bytes:[0m
+C9 D5 65 49 42 3E  | last 6 bytes: C5 C4 C4 C5 C6 C7 
+[1;31mE (16668) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16668) WS_MGR: Audio => len=512, first 6 bytes:[0m
+6F 75 7B F4 EB EB  | last 6 bytes: F2 F3 6F EF ED 5D 
+[1;31mE (16708) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16708) WS_MGR: Audio => len=512, first 6 bytes:[0m
+C7 C9 CA CC CF D5  | last 6 bytes: 7D 7D 7D 7B 79 78 
+[1;31mE (16718) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16718) WS_MGR: Audio => len=512, first 6 bytes:[0m
+E6 DD 51 61 DF 61  | last 6 bytes: 7E 7E 7E FE FF 7E 
+[1;31mE (16758) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16758) WS_MGR: Audio => len=512, first 6 bytes:[0m
+77 76 75 76 77 77  | last 6 bytes: E4 DB DE F3 75 E9 
+[1;31mE (16768) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16768) WS_MGR: Audio => len=512, first 6 bytes:[0m
+7E FE FE 7F FF FF  | last 6 bytes: F6 F5 6E 7B FD F6 
+[1;31mE (16808) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16808) WS_MGR: Audio => len=512, first 6 bytes:[0m
+D2 CC D3 71 4B 3D  | last 6 bytes: 40 2D 2B 2D 33 3A 
+[1;31mE (16818) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16818) WS_MGR: Audio => len=512, first 6 bytes:[0m
+ED 77 72 F8 7D 71  | last 6 bytes: FC 76 72 F2 F9 76 
+[1;31mE (16858) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16858) WS_MGR: Audio => len=512, first 6 bytes:[0m
+44 69 CC BC B5 B0  | last 6 bytes: 3C 4E 2D 2B C5 9E 
+[1;31mE (16868) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16868) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FD F4 F0 79 6E 7E  | last 6 bytes: 70 7B F5 FA 74 73 
+[1;31mE (16908) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16908) WS_MGR: Audio => len=512, first 6 bytes:[0m
+9D AB BB C3 C0 5E  | last 6 bytes: 26 26 23 27 35 BA 
+[1;31mE (16918) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16918) WS_MGR: Audio => len=512, first 6 bytes:[0m
+F9 F7 7D F6 F1 FF  | last 6 bytes: FE FF FF FE FE FF 
+[1;31mE (16958) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16958) WS_MGR: Audio => len=512, first 6 bytes:[0m
+AA AA 9F 9C A4 B7  | last 6 bytes: 2E C3 A4 9F 9E 9B 
+[1;31mE (16968) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16968) WS_MGR: Audio => len=512, first 6 bytes:[0m
+7F 7F 7F 7F 7E 7D  | last 6 bytes: 4A 3F 46 F2 C2 BC 
+[1;31mE (17008) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17008) WS_MGR: Audio => len=512, first 6 bytes:[0m
+9C A5 B3 CC 3E 2A  | last 6 bytes: A4 A3 AA AE B3 C8 
+[1;31mE (17018) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17018) WS_MGR: Audio => len=512, first 6 bytes:[0m
+CA DB D2 EB 48 3D  | last 6 bytes: 4A 41 3C 3A 39 37 
+[1;31mE (17058) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17058) WS_MGR: Audio => len=512, first 6 bytes:[0m
+49 3B 32 2A 24 22  | last 6 bytes: 62 65 69 70 7A F8 
+[1;31mE (17068) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17068) WS_MGR: Audio => len=512, first 6 bytes:[0m
+38 3D 3E 4A CC BE  | last 6 bytes: F9 F8 EF E9 E3 DE 
+[1;31mE (17108) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17108) WS_MGR: Audio => len=512, first 6 bytes:[0m
+EC E8 E4 E3 E4 E7  | last 6 bytes: 73 F9 79 6D F3 72 
+[1;31mE (17118) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17118) WS_MGR: Audio => len=512, first 6 bytes:[0m
+DA D6 D2 CF CE CD  | last 6 bytes: 4A 48 48 48 49 49 
+[1;31mE (17158) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17158) WS_MGR: Audio => len=512, first 6 bytes:[0m
+6A E7 7C 6E EB 77  | last 6 bytes: 6D 79 EF F4 67 F2 
+[1;31mE (17168) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17168) WS_MGR: Audio => len=512, first 6 bytes:[0m
+4A 4B 4C 4E 50 53  | last 6 bytes: DA D8 D7 D3 CE CC 
+[1;31mE (17208) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17208) WS_MGR: Audio => len=512, first 6 bytes:[0m
+E1 61 63 E2 E1 71  | last 6 bytes: F6 7B 6F F9 EC EE 
+[1;31mE (17218) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17218) WS_MGR: Audio => len=512, first 6 bytes:[0m
+CB CA C9 C7 C7 C7  | last 6 bytes: 6E 62 5E 58 51 51 
+[1;31mE (17258) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17258) WS_MGR: Audio => len=512, first 6 bytes:[0m
+EE 7E 6B 6F F9 EF  | last 6 bytes: 4B FC 58 41 44 EF 
+[1;31mE (17268) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17268) WS_MGR: Audio => len=512, first 6 bytes:[0m
+4D 4C 4D 4A 49 4B  | last 6 bytes: C3 A9 9C 9F AD AB 
+[1;31mE (17308) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17308) WS_MGR: Audio => len=512, first 6 bytes:[0m
+BB B3 B6 B9 B8 B7  | last 6 bytes: 3C 6F 60 4C 41 39 
+[1;31mE (17318) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17318) WS_MGR: Audio => len=512, first 6 bytes:[0m
+B8 2C 20 24 2A 3A  | last 6 bytes: 46 BE B2 AC AF B1 
+[1;31mE (17358) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17358) WS_MGR: Audio => len=512, first 6 bytes:[0m
+42 BC A2 9C 9E A6  | last 6 bytes: 2A 2F 36 3D 3F 3C 
+[1;31mE (17368) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17368) WS_MGR: Audio => len=512, first 6 bytes:[0m
+AC C0 3A 3A 39 2E  | last 6 bytes: B8 BB BD BE C3 C6 
+[1;31mE (17408) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17408) WS_MGR: Audio => len=512, first 6 bytes:[0m
+40 73 C8 B8 AE AF  | last 6 bytes: 66 68 64 69 EF FC 
+[1;31mE (17418) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17418) WS_MGR: Audio => len=512, first 6 bytes:[0m
+CC D5 DC F7 6A 5E  | last 6 bytes: 5A 58 59 59 5A 5B 
+[1;31mE (17458) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17458) WS_MGR: Audio => len=512, first 6 bytes:[0m
+7D DB F9 5F FE F1  | last 6 bytes: FD FC FE 7E FC FA 
+[1;31mE (17468) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17468) WS_MGR: Audio => len=512, first 6 bytes:[0m
+5A 5F 60 64 62 63  | last 6 bytes: CE 4D F3 CD 4D 75 
+[1;31mE (17508) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17508) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FC FC FB FE 7D 7F  | last 6 bytes: 96 9E AD 3C 26 1E 
+[1;31mE (17518) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17518) WS_MGR: Audio => len=512, first 6 bytes:[0m
+CF 4F EB D5 4E E2  | last 6 bytes: AF A5 AB AF A7 9F 
+[1;31mE (17558) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17558) WS_MGR: Audio => len=512, first 6 bytes:[0m
+1C 1F 2B 31 46 CD  | last 6 bytes: A5 B0 B9 BC BE B7 
+[1;31mE (17568) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17568) WS_MGR: Audio => len=512, first 6 bytes:[0m
+A5 B0 BA BF CC 78  | last 6 bytes: 2E 2D 35 39 52 AF 
+[1;31mE (17608) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17608) WS_MGR: Audio => len=512, first 6 bytes:[0m
+BF 7D 3C 29 24 25  | last 6 bytes: AD A9 AD A4 9C A9 
+[1;31mE (17618) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17618) WS_MGR: Audio => len=512, first 6 bytes:[0m
+9E 9D A8 AC A3 A1  | last 6 bytes: A1 AC B8 AC A5 AC 
+[1;31mE (17658) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17658) WS_MGR: Audio => len=512, first 6 bytes:[0m
+5C 42 39 3B 3B 26  | last 6 bytes: 3F 3D 3E 3F 43 4B 
+[1;31mE (17668) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17668) WS_MGR: Audio => len=512, first 6 bytes:[0m
+CE 4F FF D8 F4 59  | last 6 bytes: 6C 63 56 54 5E 5A 
+[1;31mE (17708) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17708) WS_MGR: Audio => len=512, first 6 bytes:[0m
+53 5B EE D1 CE CB  | last 6 bytes: 73 74 74 74 76 79 
+[1;31mE (17718) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17718) WS_MGR: Audio => len=512, first 6 bytes:[0m
+57 5E 54 51 5E 68  | last 6 bytes: 72 71 72 72 72 72 
+[1;31mE (17758) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17758) WS_MGR: Audio => len=512, first 6 bytes:[0m
+7E FE FC F9 F5 F0  | last 6 bytes: E8 F3 F3 7A ED FE 
+[1;31mE (17768) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17768) WS_MGR: Audio => len=512, first 6 bytes:[0m
+71 71 73 75 77 78  | last 6 bytes: 7E 7D 7D 7C 7B 7B 
+[1;31mE (17808) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17808) WS_MGR: Audio => len=512, first 6 bytes:[0m
+60 63 74 F4 6C 6B  | last 6 bytes: ED 7C 6C 6B 77 EA 
+[1;31mE (17818) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17818) WS_MGR: Audio => len=512, first 6 bytes:[0m
+7A 7A 7A 7A 79 79  | last 6 bytes: FE FE FE FE FF FF 
+[1;31mE (17858) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17858) WS_MGR: Audio => len=512, first 6 bytes:[0m
+E2 F6 75 6B 64 7C  | last 6 bytes: 28 B5 9D 9F BC 2B 
+[1;31mE (17868) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17868) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FE FE FD FD FD FD  | last 6 bytes: FE FE FF 7F 7E 7E 
+[1;31mE (17908) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17908) WS_MGR: Audio => len=512, first 6 bytes:[0m
+1D 1E 24 27 51 AB  | last 6 bytes: 73 BB 9F 94 9D 3E 
+[1;31mE (17918) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17918) WS_MGR: Audio => len=512, first 6 bytes:[0m
+7F 7F 7F 7F 7F 7E  | last 6 bytes: DC CC D1 4F 47 5A 
+[1;31mE (17958) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17958) WS_MGR: Audio => len=512, first 6 bytes:[0m
+10 0A 18 AD 8D 8A  | last 6 bytes: 2E C0 99 8D 94 3A 
+[1;31mE (17968) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17968) WS_MGR: Audio => len=512, first 6 bytes:[0m
+F2 E3 FE F3 C8 C1  | last 6 bytes: 45 55 C7 C7 D2 CF 
+[1;31mE (18008) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (18008) WS_MGR: Audio => len=512, first 6 bytes:[0m
+0D 07 17 9E 89 8A  | last 6 bytes: DD 91 8D 9C 39 1E 
+[1;31mE (18018) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (18018) WS_MGR: Audio => len=512, first 6 bytes:[0m
+D7 D7 DA 56 4A 57  | last 6 bytes: B6 B7 B6 B9 BC BE 
+[1;31mE (18058) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (18058) WS_MGR: Audio => len=512, first 6 bytes:[0m
+27 6A AF A9 AB B8  | last 6 bytes: 1C 15 26 A5 A2 B4 
+[1;31mE (18068) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (18068) WS_MGR: Audio => len=512, first 6 bytes:[0m
+C4 C8 CB D1 DC F1  | last 6 bytes: B4 B9 BD C1 C9 D4 
+[1;31mE (18108) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (18108) WS_MGR: Audio => len=512, first 6 bytes:[0m
+A3 9D BA 32 30 3C  | last 6 bytes: 1E 2F 31 2C DF B9 
+[1;31mE (18118) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (18118) WS_MGR: Audio => len=512, first 6 bytes:[0m
+E8 60 53 4D 49 49  | last 6 bytes: B9 C9 DF 62 4E 44 
+[1;31mE (18158) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (18158) WS_MGR: Audio => len=512, first 6 bytes:[0m
+D3 B0 A4 B3 B8 A7  | last 6 bytes: 2A 2C 38 41 47 C9 
+[1;31mE (18168) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (18168) WS_MGR: Audio => len=512, first 6 bytes:[0m
+3B 36 33 32 36 3C  | last 6 bytes: C7 C3 D8 48 30 2B 
+[1;31mE (18208) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (18208) WS_MGR: Audio => len=512, first 6 bytes:[0m
+B7 BD AE A6 AC AD  | last 6 bytes: 3B 3B 3E 4D 62 61 
+[1;31mE (18218) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (18218) WS_MGR: Audio => len=512, first 6 bytes:[0m
+22 1F 1E 24 C6 9F  | last 6 bytes: 20 22 1F 1C 1A 1E 
+[1;31mE (18258) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (18258) WS_MGR: Audio => len=512, first 6 bytes:[0m
+DC C9 C8 BB B4 B6  | last 6 bytes: 3C 3D 3D 3F 42 40 
+[1;31mE (18268) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (18268) WS_MGR: Audio => len=512, first 6 bytes:[0m
+2A 3C A1 8E 8D 91  | last 6 bytes: 39 CE 9C 8E 8E 98 
+[1;31mE (18308) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (18308) WS_MGR: Audio => len=512, first 6 bytes:[0m
+43 47 4A 4E 4B 4F  | last 6 bytes: F9 F9 FB FA FB FD 
+[1;31mE (18318) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (18318) WS_MGR: Audio => len=512, first 6 bytes:[0m
+A3 A4 AC FA 27 1D  | last 6 bytes: AF AC A4 9F A4 A4 
+[1;31mE (18358) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (18358) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FD FF 7F 7F 7E 7E  | last 6 bytes: FC 6E FB FC F5 F5 
+[1;31mE (18368) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (18368) WS_MGR: Audio => len=512, first 6 bytes:[0m
+A4 AA AF C0 E0 74  | last 6 bytes: 3A 34 38 3A 35 31 
+[1;31mE (18408) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (18408) WS_MGR: Audio => len=512, first 6 bytes:[0m
+77 79 FD F1 77 68  | last 6 bytes: F6 FC 6D 7C 6D FB 
+[1;31mE (18418) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (18418) WS_MGR: Audio => len=512, first 6 bytes:[0m
+2F 30 2C 2E 34 39  | last 6 bytes: 48 48 49 4A 4A 4A 
+[1;31mE (18458) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (18458) WS_MGR: Audio => len=512, first 6 bytes:[0m
+E8 7D 74 EE EB 7E  | last 6 bytes: 75 6A 73 71 F8 EE 
+[1;31mE (18468) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (18468) WS_MGR: Audio => len=512, first 6 bytes:[0m
+4B 4B 4B 4C 4C 4C  | last 6 bytes: CE 57 4E 4F 47 3B 
+[1;31mE (18508) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (18508) WS_MGR: Audio => len=410, first 6 bytes:[0m
+73 F9 E9 F9 FA F4  | last 6 bytes: FF FF FF FF FF FF 
+[1;31mE (18518) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (18518) WS_MGR: Audio => len=512, first 6 bytes:[0m
+34 31 34 47 C0 AC  | last 6 bytes: 45 45 44 46 4B 58 
+[1;31mE (18558) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (18568) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (18568) WS_MGR: Audio => len=512, first 6 bytes:[0m
+74 EF EB DF D8 D1  | last 6 bytes: 57 53 52 50 51 59 
+[1;31mE (18618) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (18618) WS_MGR: Audio => len=512, first 6 bytes:[0m
+5F 6B F7 E8 DF DC  | last 6 bytes: 4F 47 3E 3B 37 32 
+[1;31mE (18668) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (18668) WS_MGR: Audio => len=512, first 6 bytes:[0m
+3B 4E 48 48 DC BF  | last 6 bytes: 3F 42 4E 4C 47 56 
+[1;31mE (18718) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (18718) WS_MGR: Audio => len=512, first 6 bytes:[0m
+F5 66 7A CD CF DB  | last 6 bytes: 48 46 47 45 44 43 
+[1;31mE (18768) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (18768) WS_MGR: Audio => len=512, first 6 bytes:[0m
+47 49 46 4D 71 DE  | last 6 bytes: FF FC F7 FC FA FC 
+[1;31mE (18818) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (18818) WS_MGR: Audio => len=512, first 6 bytes:[0m
+FC F7 FD F9 F9 FE  | last 6 bytes: DF D5 CC C6 C2 C0 

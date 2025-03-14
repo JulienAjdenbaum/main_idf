@@ -1,0 +1,183 @@
+Command: /home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/julien/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/julien/Documents/esp32IDF/hello_world/build/hello_world.elf /home/julien/Documents/esp32IDF/hello_world/build/bootloader/bootloader.elf -m '/home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python' '/home/julien/esp/esp-idf/tools/idf.py'
+es Ju  8 201 02:7
+
+st:0x1 POEONU,boot:012 (P_ATFASH_BOT)
+cnisp , SPWP:0xee
+l_d�:�0b\E�:0x0,_r:x0,s0_drv:000h_r:x0,wp_dr:0x0md:D�	����div:lad�ff0030,le:638
+od0x007800,len180
+od:0x0080400le���j
+�K��408063
+[0;32mI (26) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar 13 2025 19:56:33[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v1.1[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (36) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (76) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+[0;32mI (83) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (93) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=31628h (202280) map[0m
+[0;32mI (169) esp_image: segment 1: paddr=00051650 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (169) esp_image: segment 2: paddr=00051674 vaddr=3ffb0000 size=03fb0h ( 16304) load[0m
+[0;32mI (179) esp_image: segment 3: paddr=0005562c vaddr=40080000 size=0a9ech ( 43500) load[0m
+[0;32mI (197) esp_image: segment 4: paddr=00060020 vaddr=400d0020 size=9f450h (652368) map[0m
+[0;32mI (421) esp_image: segment 5: paddr=000ff478 vaddr=4008a9ec size=0df58h ( 57176) load[0m
+[0;32mI (455) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (455) boot: Disabling RNG early entropy source...[0m
+[0;32mI (466) cpu_start: Multicore app[0m
+[0;32mI (474) cpu_start: Pro cpu start user code[0m
+[0;32mI (474) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (474) app_init: Application information:[0m
+[0;32mI (474) app_init: Project name:     hello_world[0m
+[0;32mI (478) app_init: App version:      4a322a0-dirty[0m
+[0;32mI (483) app_init: Compile time:     Mar 13 2025 19:56:27[0m
+[0;32mI (488) app_init: ELF file SHA256:  4ad3e71da...[0m
+[0;32mI (492) app_init: ESP-IDF:          v5.5-dev-2290-g94cfe394fe[0m
+[0;32mI (498) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (501) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (505) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (509) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (516) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (521) heap_init: At 3FFBA898 len 00025768 (149 KiB): DRAM[0m
+[0;32mI (526) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (531) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (537) heap_init: At 40098944 len 000076BC (29 KiB): IRAM[0m
+[0;32mI (544) spi_flash: detected chip: generic[0m
+[0;32mI (546) spi_flash: flash io: dio[0m
+[0;33mW (549) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;33mW (556) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
+[0;32mI (568) main_task: Started on CPU0[0m
+[0;32mI (578) main_task: Calling app_main()[0m
+[0;32mI (578) MAIN: Starting app_main...[0m
+[0;32mI (628) wifi:wifi driver task: 3ffc29d8, prio:23, stack:6656, core=0[0m
+[0;32mI (638) wifi:wifi firmware version: 3a3aca644[0m
+[0;32mI (638) wifi:wifi certification version: v7.0[0m
+[0;32mI (638) wifi:config NVS flash: enabled[0m
+[0;32mI (638) wifi:config nano formatting: disabled[0m
+[0;32mI (648) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (648) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (658) wifi:Init management short buffer num: 32[0m
+[0;32mI (658) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (668) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (668) wifi:Init static rx buffer num: 10[0m
+[0;32mI (668) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (678) wifi_init: rx ba win: 6[0m
+[0;32mI (678) wifi_init: accept mbox: 6[0m
+[0;32mI (678) wifi_init: tcpip mbox: 32[0m
+[0;32mI (688) wifi_init: udp mbox: 6[0m
+[0;32mI (688) wifi_init: tcp mbox: 6[0m
+[0;32mI (688) wifi_init: tcp tx win: 5760[0m
+[0;32mI (698) wifi_init: tcp rx win: 5760[0m
+[0;32mI (698) wifi_init: tcp mss: 1440[0m
+[0;32mI (698) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (708) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (718) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (798) wifi:mode : sta (94:54:c5:b5:f9:ec)[0m
+[0;32mI (798) wifi:enable tsf[0m
+[0;32mI (798) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (808) WIFI_MGR: Wi-Fi init done. SSID=Partagedeco[0m
+[0;32mI (808) AudioPlayer: Audio player initialized. sample_rate=24000[0m
+[0;32mI (808) AudioPlayer: audio_task started[0m
+[1;31mE (818) esp-tls: couldn't get hostname for :api.interaction-labs.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[0;32mI (818) wifi:E (818) esp-tls: Failed to open new connection[0m
+new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0E (828) transport_base: Failed to open a new connection
+
+[1;31mE (838) transport_ws: Error connecting to host api.interaction-labs.com:443[0m
+[0;32mI (838) wifi:state: init -> auth (0xb0)[0m
+[1;31mE (838) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_ERR_ESP_TLS_CANNOT_RESOLVE_HOSTNAME, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=0, errno=0[0m
+[0;32mI (848) wifi:W (858) WS_MGR: WebSocket error[0m
+state: auth -> assoc (0x0)
+[0;32mI (868) websocket_client: Reconnect after 5000 ms[0m
+[0;32mI (818) websocket_client: Started[0m
+[0;33mW (868) WS_MGR: WebSocket disconnected[0m
+[0;32mI (878) wifi:Association refused temporarily time 1269, comeback time 1369 (TUs)[0m
+[0;32mI (888) WS_MGR: WebSocket started![0m
+[0;32mI (2288) wifi:state: assoc -> assoc (0x0)[0m
+[0;32mI (2288) wifi:state: assoc -> init (0x6c0)[0m
+[0;32mI (2308) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2308) WIFI_MGR: Retrying Wi-Fi connection...[0m
+[0;32mI (4728) WIFI_MGR: Retrying Wi-Fi connection...[0m
+[0;32mI (4728) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (4738) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (4748) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (4758) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (4768) wifi:connected with Partagedeco, aid = 1, channel 11, BW20, bssid = aa:f0:fe:0d:99:0e[0m
+[0;32mI (4778) wifi:security: WPA2-PSK, phy: bgn, rssi: -55[0m
+[0;32mI (4788) wifi:pm start, type: 0[0m
+
+[0;32mI (4788) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (4868) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (4868) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (5948) esp_netif_handlers: sta ip: 172.19.145.71, mask: 255.255.255.0, gw: 172.19.145.31[0m
+[0;32mI (5948) WIFI_MGR: Got IP: 172.19.145.71[0m
+[0;32mI (5948) websocket_client: Started[0m
+[0;32mI (5948) WS_MGR: WebSocket started![0m
+[0;32mI (6938) wifi:<ba-add>idx:0 (ifx:0, aa:f0:fe:0d:99:0e), tid:0, ssn:3, winSize:64[0m
+[0;32mI (8008) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (8018) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (9258) WS_MGR: WebSocket connected[0m
+[0;32mI (9588) WS_MGR: WebSocket connected[0m
+[0;32mI (10488) WS_MGR: Audio => len=1023, first 6 bytes:[0m
+D8 D6 66 63 FE E2  | last 6 bytes: 26 2F 79 BF DB 2F 
+[0;32mI (10498) WS_MGR: Audio => len=1023, first 6 bytes:[0m
+1F 1C 1F 38 B2 9D  | last 6 bytes: A8 B3 D1 48 3A 33 
+[0;32mI (10508) WS_MGR: Audio => len=1023, first 6 bytes:[0m
+31 2F 2D 2A 28 28  | last 6 bytes: FE FF FB F8 FA FE 
+[0;32mI (10508) WS_MGR: Audio => len=999, first 6 bytes:[0m
+7E 7E 7E FF 7E FF  | last 6 bytes: 73 70 7D ED E4 7A 
+[0;32mI (10518) WS_MGR: Audio => len=1023, first 6 bytes:[0m
+6A 77 74 F9 FA 77  | last 6 bytes: FF FB F9 FC 7E 7E 
+[0;32mI (10528) WS_MGR: Audio => len=1023, first 6 bytes:[0m
+7D 7E FD FD FE 7F  | last 6 bytes: CD B6 B5 B7 D1 3A 
+[0;32mI (10538) WS_MGR: Audio => len=1023, first 6 bytes:[0m
+2F 2F 3A 5B DD EE  | last 6 bytes: 5C 58 3F 32 32 2F 
+[0;32mI (10548) WS_MGR: Audio => len=1023, first 6 bytes:[0m
+2C 2C 31 4C 7D C7  | last 6 bytes: B3 B6 B8 BC C4 C0 
+[0;32mI (10558) WS_MGR: Audio => len=1023, first 6 bytes:[0m
+BE C2 C6 CA CE D0  | last 6 bytes: 7C 7C EF EE 7A 7A 
+[0;32mI (10568) WS_MGR: Audio => len=1023, first 6 bytes:[0m
+F8 7A 7D E9 EA F7  | last 6 bytes: EE ED FF 73 FE FC 
+[0;32mI (10588) WS_MGR: Audio => len=1023, first 6 bytes:[0m
+76 78 F9 FE FF F7  | last 6 bytes: FF FF FF 7F 7F 7F 
+[0;32mI (10608) WS_MGR: Audio => len=1023, first 6 bytes:[0m
+7E 7E 7E 7E 7E 7E  | last 6 bytes: 2A 2A 24 BE 95 8E 
+[0;32mI (10628) WS_MGR: Audio => len=1023, first 6 bytes:[0m
+92 5C 13 13 28 A6  | last 6 bytes: 39 37 3C C5 B4 AE 
+[0;32mI (10648) WS_MGR: Audio => len=1023, first 6 bytes:[0m
+B9 DD C0 BF D7 CC  | last 6 bytes: 4A 47 4A 54 4B 50 
+[0;32mI (10658) WS_MGR: Audio => len=1023, first 6 bytes:[0m
+78 DB D1 CC C7 CE  | last 6 bytes: FA FD FD 7E 7C 7B 
+[0;32mI (10678) WS_MGR: Audio => len=1023, first 6 bytes:[0m
+75 73 73 6F 6E 6D  | last 6 bytes: 4B 48 45 41 3E 3F 
+[0;32mI (10708) WS_MGR: Audio => len=1023, first 6 bytes:[0m
+45 48 4D 5A 69 E6  | last 6 bytes: 70 F8 7C 6E 74 F6 
+[0;32mI (10708) WS_MGR: Audio => len=1023, first 6 bytes:[0m
+E7 D9 E7 DD DE 5C  | last 6 bytes: B5 B3 AC AE BA C4 
+[1;31mE (10758) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (10758) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (10758) WS_MGR: Audio => len=1023, first 6 bytes:[0m
+[0;32mI (10768) WS_MGR: Audio => len=493, first 6 bytes:[0m
+E9 E1 E7 F8 EE E9 54 50 46 3B 39  | last 6 bytes: FC DB E2 60 51 48 F7 
+ | last 6 bytes: DA DA AD B6 B7 A8 
+[1;31mE (10818) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (10818) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (10828) WS_MGR: Audio => len=1023, first 6 bytes:[0m
+AD AF AA AE B3 B9  | last 6 bytes: 9C A9 C6 32 1F 18 
+[0;32mI (10828) WS_MGR: Audio => len=1023, first 6 bytes:[0m
+48 65 DC CC C6 CD  | last 6 bytes: 26 26 29 2E 39 4A 
+[1;31mE (10878) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (10878) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (10878) WS_MGR: Audio => len=999, first 6 bytes:[0m
+E3 BF B3 AC A6 A4  | last 6 bytes: 6F 7D F2 F3 F5 F7 
+[0;32mI (10888) WS_MGR: Audio => len=1023, first 6 bytes:[0m
+15 16 1A 20 37 BF  | last 6 bytes: 53 4C 42 3A 35 31 
+[1;31mE (10938) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (10938) WS_MGR: Ring buffer full => dropped audio![0m
