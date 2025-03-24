@@ -1,0 +1,1559 @@
+Command: /home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/julien/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/julien/Documents/esp32IDF/hello_world/build/hello_world.elf /home/julien/Documents/esp32IDF/hello_world/build/bootloader/bootloader.elf -m '/home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python' '/home/julien/esp/esp-idf/tools/idf.py'
+es Jun  82016002:7
+rst:0x1 (PWRN_EET)boot:0x13 SI_ATFLASH_BOT)
+cnfgip , SPIWP:0xee
+lkdv0x0,q_drv:0x0,_dv000,cs0_rv:0x00h_rv000,wp_drv:000
+oe:I, clock div:lad03ff0030,len:66lod0x4008000,len188lod:0x4008000,en36
+ntry 0x400868
+[0;32mI (26) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar 13 2025 23:19:13[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (36) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (76) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+[0;32mI (83) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (92) boot: No factory image, trying OTA 0[0m
+[0;32mI (96) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=318d8h (202968) map[0m
+[0;32mI (173) esp_image: segment 1: paddr=00051900 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (173) esp_image: segment 2: paddr=00051924 vaddr=3ffb0000 size=03fb0h ( 16304) load[0m
+[0;32mI (183) esp_image: segment 3: paddr=000558dc vaddr=40080000 size=0a73ch ( 42812) load[0m
+[0;32mI (201) esp_image: segment 4: paddr=00060020 vaddr=400d0020 size=9f870h (653424) map[0m
+[0;32mI (425) esp_image: segment 5: paddr=000ff898 vaddr=4008a73c size=0e208h ( 57864) load[0m
+[0;32mI (459) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (475) boot: Set actual ota_seq=1 in otadata[0][0m
+[0;32mI (475) boot: Disabling RNG early entropy source...[0m
+[0;32mI (485) cpu_start: Multicore app[0m
+[0;32mI (493) cpu_start: Pro cpu start user code[0m
+[0;32mI (493) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (493) app_init: Application information:[0m
+[0;32mI (493) app_init: Project name:     hello_world[0m
+[0;32mI (497) app_init: App version:      0925295-dirty[0m
+[0;32mI (502) app_init: Compile time:     Mar 13 2025 23:19:08[0m
+[0;32mI (507) app_init: ELF file SHA256:  0f3ada949...[0m
+[0;32mI (511) app_init: ESP-IDF:          v5.5-dev-2290-g94cfe394fe[0m
+[0;32mI (517) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (521) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (525) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (529) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (535) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (540) heap_init: At 3FFBAEA0 len 00025160 (148 KiB): DRAM[0m
+[0;32mI (545) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (550) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (556) heap_init: At 40098944 len 000076BC (29 KiB): IRAM[0m
+[0;32mI (563) spi_flash: detected chip: generic[0m
+[0;32mI (565) spi_flash: flash io: dio[0m
+[0;33mW (568) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;33mW (575) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
+[0;32mI (588) main_task: Started on CPU0[0m
+[0;32mI (598) main_task: Calling app_main()[0m
+[0;32mI (598) MAIN: Starting app_main...[0m
+[0;32mI (648) wifi:wifi driver task: 3ffc2fe0, prio:23, stack:6656, core=0[0m
+[0;32mI (668) wifi:wifi firmware version: 3a3aca644[0m
+[0;32mI (668) wifi:wifi certification version: v7.0[0m
+[0;32mI (668) wifi:config NVS flash: enabled[0m
+[0;32mI (668) wifi:config nano formatting: disabled[0m
+[0;32mI (668) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (678) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (678) wifi:Init management short buffer num: 32[0m
+[0;32mI (678) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (688) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (688) wifi:Init static rx buffer num: 10[0m
+[0;32mI (698) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (698) wifi_init: rx ba win: 6[0m
+[0;32mI (698) wifi_init: accept mbox: 6[0m
+[0;32mI (708) wifi_init: tcpip mbox: 32[0m
+[0;32mI (708) wifi_init: udp mbox: 6[0m
+[0;32mI (708) wifi_init: tcp mbox: 6[0m
+[0;32mI (708) wifi_init: tcp tx win: 5760[0m
+[0;32mI (718) wifi_init: tcp rx win: 5760[0m
+[0;32mI (718) wifi_init: tcp mss: 1440[0m
+[0;32mI (718) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (728) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (748) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (828) wifi:mode : sta (94:54:c5:b5:f9:ec)[0m
+[0;32mI (828) wifi:enable tsf[0m
+[0;32mI (828) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (838) WIFI_MGR: Wi-Fi init done. SSID=Partagedeco[0m
+[0;32mI (838) AudioPlayer: Audio player initialized. sample_rate=8000[0m
+[0;32mI (838) AudioPlayer: audio_task started[0m
+[0;32mI (838) AUDIO_RECORD: I2S initialized for mic input (sr=8000, bits=32)[0m
+[0;32mI (848) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (858) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (868) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (868) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (888) wifi:connected with Partagedeco, aid = 1, channel 11, BW20, bssid = aa:f0:fe:0d:99:0e[0m
+[0;32mI (888) wifi:security: WPA2-PSK, phy: bgn, rssi: -39[0m
+[0;32mI (898) wifi:pm start, type: 0[0m
+
+[0;32mI (898) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (968) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (968) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (2048) esp_netif_handlers: sta ip: 172.19.145.71, mask: 255.255.255.0, gw: 172.19.145.31[0m
+[0;32mI (2048) WIFI_MGR: Got IP: 172.19.145.71[0m
+[0;32mI (2048) websocket_client: Started[0m
+[0;32mI (2048) WS_MGR: WebSocket started![0m
+[0;32mI (2258) wifi:<ba-add>idx:0 (ifx:0, aa:f0:fe:0d:99:0e), tid:0, ssn:3, winSize:64[0m
+[1;31mE (2348) websocket_client: Websocket client is not connected[0m
+[1;31mE (2348) websocket_client: Websocket client is not connected[0m
+[1;31mE (2348) websocket_client: Websocket client is not connected[0m
+[1;31mE (2348) websocket_client: Websocket client is not connected[0m
+[1;31mE (2358) websocket_client: Websocket client is not connected[0m
+[1;31mE (2358) websocket_client: Websocket client is not connected[0m
+[1;31mE (2368) websocket_client: Websocket client is not connected[0m
+[1;31mE (2368) websocket_client: Websocket client is not connected[0m
+[1;31mE (2378) websocket_client: Websocket client is not connected[0m
+[1;31mE (2378) websocket_client: Websocket client is not connected[0m
+[1;31mE (2388) websocket_client: Websocket client is not connected[0m
+[1;31mE (2388) websocket_client: Websocket client is not connected[0m
+[1;31mE (2398) websocket_client: Websocket client is not connected[0m
+[1;31mE (2398) websocket_client: Websocket client is not connected[0m
+[1;31mE (2408) websocket_client: Websocket client is not connected[0m
+[1;31mE (2418) websocket_client: Websocket client is not connected[0m
+[1;31mE (2438) websocket_client: Websocket client is not connected[0m
+[1;31mE (2438) websocket_client: Websocket client is not connected[0m
+[1;31mE (2508) websocket_client: Websocket client is not connected[0m
+[1;31mE (2508) websocket_client: Websocket client is not connected[0m
+[1;31mE (2568) websocket_client: Websocket client is not connected[0m
+[1;31mE (2568) websocket_client: Websocket client is not connected[0m
+[1;31mE (2638) websocket_client: Websocket client is not connected[0m
+[1;31mE (2638) websocket_client: Websocket client is not connected[0m
+[1;31mE (2698) websocket_client: Websocket client is not connected[0m
+[1;31mE (2698) websocket_client: Websocket client is not connected[0m
+[1;31mE (2758) websocket_client: Websocket client is not connected[0m
+[1;31mE (2758) websocket_client: Websocket client is not connected[0m
+[1;31mE (2828) websocket_client: Websocket client is not connected[0m
+[1;31mE (2828) websocket_client: Websocket client is not connected[0m
+[1;31mE (2888) websocket_client: Websocket client is not connected[0m
+[1;31mE (2888) websocket_client: Websocket client is not connected[0m
+[1;31mE (2958) websocket_client: Websocket client is not connected[0m
+[1;31mE (2958) websocket_client: Websocket client is not connected[0m
+[1;31mE (3018) websocket_client: Websocket client is not connected[0m
+[1;31mE (3018) websocket_client: Websocket client is not connected[0m
+[0;32mI (3068) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (3078) websocket_client: Websocket client is not connected[0m
+[1;31mE (3078) websocket_client: Websocket client is not connected[0m
+[1;31mE (3148) websocket_client: Websocket client is not connected[0m
+[1;31mE (3148) websocket_client: Websocket client is not connected[0m
+[1;31mE (3208) websocket_client: Websocket client is not connected[0m
+[1;31mE (3208) websocket_client: Websocket client is not connected[0m
+[1;31mE (3278) websocket_client: Websocket client is not connected[0m
+[1;31mE (3278) websocket_client: Websocket client is not connected[0m
+[1;31mE (3338) websocket_client: Websocket client is not connected[0m
+[1;31mE (3338) websocket_client: Websocket client is not connected[0m
+[1;31mE (3398) websocket_client: Websocket client is not connected[0m
+[1;31mE (3398) websocket_client: Websocket client is not connected[0m
+[1;31mE (3468) websocket_client: Websocket client is not connected[0m
+[1;31mE (3468) websocket_client: Websocket client is not connected[0m
+[1;31mE (3528) websocket_client: Websocket client is not connected[0m
+[1;31mE (3528) websocket_client: Websocket client is not connected[0m
+[1;31mE (3598) websocket_client: Websocket client is not connected[0m
+[1;31mE (3598) websocket_client: Websocket client is not connected[0m
+[1;31mE (3658) websocket_client: Websocket client is not connected[0m
+[1;31mE (3658) websocket_client: Websocket client is not connected[0m
+[1;31mE (3718) websocket_client: Websocket client is not connected[0m
+[1;31mE (3718) websocket_client: Websocket client is not connected[0m
+[1;31mE (3788) websocket_client: Websocket client is not connected[0m
+[1;31mE (3788) websocket_client: Websocket client is not connected[0m
+[1;31mE (3848) websocket_client: Websocket client is not connected[0m
+[1;31mE (3848) websocket_client: Websocket client is not connected[0m
+[1;31mE (3918) websocket_client: Websocket client is not connected[0m
+[1;31mE (3918) websocket_client: Websocket client is not connected[0m
+[0;32mI (3948) WS_MGR: WebSocket connected[0m
+[0;32mI (5698) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (5748) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (5798) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (5848) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (5898) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (5948) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (5998) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (6048) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (6098) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (6148) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (6198) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (6248) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (6278) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (6298) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (6328) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (6348) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (6378) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (6398) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (6428) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (6448) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (6478) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (6498) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (6528) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (6548) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (6578) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (6598) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (6628) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (6648) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (6678) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (6698) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (6748) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (6798) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (6848) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (6848) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (6898) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (6898) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (6948) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (6948) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (6998) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (7048) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (7078) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (7098) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (7128) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (7148) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (7178) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (7198) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (7228) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (7248) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (7278) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (7298) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (7328) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (7348) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (7378) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (7398) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (7428) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (7448) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (7478) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (7498) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (7528) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (7548) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (7578) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (7598) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (7628) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (7648) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (7678) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (7698) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (7728) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (7748) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (7778) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (7798) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (7828) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (7848) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (7878) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (7898) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (7928) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (7948) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (7978) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (7998) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (8028) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (8048) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (8078) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (8098) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (8128) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (8148) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (8198) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (8248) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (8298) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (8328) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (8348) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (8378) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (8398) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (8428) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (8448) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (8478) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (8498) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (8528) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (8548) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (8578) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (8598) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (8628) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (8648) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (8678) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (8698) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (8728) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (8748) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (8778) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (8798) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (8828) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (8848) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (8878) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (8898) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (8928) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (8948) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (8978) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (8998) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (9048) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (9098) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (9148) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (9198) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (9218) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (9248) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (9268) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (9298) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (9318) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (9348) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (9368) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (9398) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (9418) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (9448) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (9468) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (9498) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (9518) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (9548) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (9568) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (9598) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (9618) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (9648) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (9668) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (9698) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (9718) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (9748) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (9768) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (9798) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (9818) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (9848) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (9868) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (9898) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (9918) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (9948) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (9968) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (9998) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (10018) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (10048) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (10098) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (10148) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (10198) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (10238) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (10248) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (10288) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (10298) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (10338) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (10348) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (10388) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (10398) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (10438) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (10448) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (10488) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (10498) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (10538) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (10548) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (10588) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (10598) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (10638) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (10648) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (10688) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (10698) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (10738) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (10748) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (10788) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (10798) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (10838) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (10848) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (10888) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (10898) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (10938) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (10948) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (10988) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (10998) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (11038) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11048) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (11098) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (11148) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (11198) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (11248) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (11258) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11298) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (11308) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11348) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (11358) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11398) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (11408) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11448) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (11458) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11498) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (11508) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11548) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (11558) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11598) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (11608) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11648) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (11658) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11698) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (11708) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11748) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (11758) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11798) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (11808) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11848) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (11858) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11898) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (11908) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11948) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (11958) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11998) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (12008) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12048) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (12058) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12098) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (12148) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (12198) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (12248) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (12288) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12298) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (12338) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12348) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (12388) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12398) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (12438) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12448) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (12488) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12498) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (12538) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12548) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (12588) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12598) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (12638) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12648) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (12688) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12698) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (12738) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12748) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (12788) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12798) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (12838) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12848) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (12888) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12898) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (12938) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12948) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (12988) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12998) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (13038) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13048) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (13088) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13098) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (13148) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (13198) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (13248) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (13298) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (13348) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (13398) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (13448) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (13498) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (13548) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (13598) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (13648) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (13698) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (13748) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (13798) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (26818) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (26868) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (26918) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (26968) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (27018) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (27068) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (27118) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (27168) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (27218) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (27268) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (27318) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (27348) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (27368) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (27398) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (27418) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (27468) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (27518) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (27568) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (27618) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (27668) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (27718) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (27768) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (27818) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (27868) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (27918) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (27968) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (28018) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (28068) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (28118) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (28168) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (28218) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (28268) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (28318) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (28368) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (28418) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (28468) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (28518) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (28568) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (28618) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (28988) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (29038) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (29088) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (29138) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (29188) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (29198) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (29238) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (29248) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (29288) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (29298) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (29338) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (29348) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (29388) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (29398) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (29438) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (29448) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (29488) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (29498) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (29538) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (29548) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (29588) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (29598) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (29638) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (29648) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (29688) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (29698) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (29738) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (29788) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (29838) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (29888) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (29928) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (29938) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (29978) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (29988) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (30028) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (30038) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (30078) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (30088) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (30128) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (30138) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (30178) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (30188) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (30228) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (30238) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (30278) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (30288) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (30328) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (30338) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (30378) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (30388) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (30428) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (30438) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (30478) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (30488) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (30528) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (30538) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (30578) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (30588) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (30628) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (30638) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (30678) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (30688) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (30728) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (30738) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (30788) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (30838) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (30888) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (30938) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (30948) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (30988) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (30998) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (31038) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (31048) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (31088) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (31098) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (31138) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (31148) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (31188) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (31198) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (31238) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (31248) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (31288) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (31298) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (31338) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (31348) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (31388) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (31398) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (31438) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (31448) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (31488) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (31498) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (31538) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (31548) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (31588) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (31598) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (31638) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (31648) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (31688) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (31698) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (31738) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (31748) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (31788) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (31838) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (31888) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (31938) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (31978) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (31988) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (32028) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (32038) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (32078) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (32088) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (32128) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (32138) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (32178) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (32188) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (32228) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (32238) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (32278) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (32288) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (32328) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (32338) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (32378) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (32388) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (32428) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (32438) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (32478) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (32488) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (32528) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (32538) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (32578) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (32588) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (32628) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (32638) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (32678) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (32688) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (32728) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (32738) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (32778) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (32788) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (32838) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (32888) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (32938) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (32988) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (33038) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (33088) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (33138) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (33188) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (33238) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (33288) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (33338) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (33388) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (33438) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (33488) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (33538) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (33588) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (33638) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (33688) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (33738) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (36558) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (36608) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (36658) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (36708) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (36758) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (36808) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (36858) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (36908) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (36958) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (37008) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (37058) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (37108) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (37158) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (37198) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (37208) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (37248) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (37258) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (37308) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (37358) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (37408) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (37458) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (37508) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (37558) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (37608) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (37658) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (37708) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (37758) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (37808) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (37858) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (37908) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (37958) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (38008) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (38058) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (38108) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (38158) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (38208) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (38258) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (38308) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (38358) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (38408) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (38458) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (38918) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (38968) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (39018) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (39068) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (39118) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (39148) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (39168) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (39198) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (39218) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (39248) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (39268) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (39298) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (39318) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (39368) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (39398) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (39418) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (39448) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (39468) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (39498) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (39518) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (39548) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (39568) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (39598) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (39618) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (39648) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (39668) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (39698) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (39718) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (39748) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (39768) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (39798) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (39818) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (39848) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (39868) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (39898) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (39918) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (39948) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (39968) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (39998) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (40018) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (40048) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (40068) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (40118) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (40168) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (40218) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (40268) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (40268) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (40318) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (40318) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (40368) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (40418) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (40428) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (40468) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (40478) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (40518) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (40528) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (40568) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (40578) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (40618) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (40628) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (40668) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (40678) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (40718) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (40728) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (40768) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (40778) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (40818) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (40828) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (40868) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (40878) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (40918) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (40928) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (40968) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (40978) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (41018) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (41028) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (41068) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (41078) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (41118) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (41168) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (41218) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (41268) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (41278) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (41318) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (41328) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (41368) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (41418) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (41448) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (41468) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (41498) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (41518) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (41548) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (41568) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (41598) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (41618) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (41648) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (41668) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (41698) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (41718) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (41748) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (41768) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (41798) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (41818) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (41848) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (41868) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (41898) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (41918) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (41948) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (41968) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (41998) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (42018) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (42048) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (42068) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (42118) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (42168) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (42218) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (42268) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (42318) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (42368) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (42418) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (42468) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (42518) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (42568) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (45638) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (45688) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (45738) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (45788) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (45838) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (45888) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (45938) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (45988) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (46038) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (46088) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (46138) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (46188) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (46238) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (46288) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (46288) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (46338) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (46338) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (46388) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (46388) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (46438) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (46438) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (46488) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (46488) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (46538) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (46538) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (46588) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (46588) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (46638) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (46638) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (46688) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (46688) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (46738) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (46738) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (46788) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (46838) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (46888) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (46928) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (46938) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (46978) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (46988) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (47028) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (47038) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (47078) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (47088) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (47128) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (47138) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (47178) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (47188) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (47228) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (47238) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (47278) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (47288) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (47328) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (47338) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (47378) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (47388) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (47428) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (47438) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (47478) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (47488) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (47528) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (47538) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (47578) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (47588) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (47628) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (47638) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (47678) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (47688) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (47728) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (47738) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (47788) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (47838) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (47888) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (47938) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (47968) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (47988) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (48018) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (48038) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (48068) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (48088) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (48118) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (48138) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (48168) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (48188) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (48218) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (48238) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (48268) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (48288) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (48318) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (48338) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (48368) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (48388) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (48418) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (48438) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (48468) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (48488) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (48518) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (48538) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (48568) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (48588) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (48618) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (48638) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (48668) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (48688) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (48718) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (48738) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (48768) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (48788) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (48838) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (48888) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (48938) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (48978) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (48988) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (49028) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (49038) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (49078) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (49088) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (49128) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (49138) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (49178) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (49188) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (49228) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (49238) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (49278) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (49288) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (49328) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (49338) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (49378) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (49388) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (49428) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (49438) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (49478) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (49488) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (49528) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (49538) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (49578) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (49588) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (49628) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (49638) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (49678) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (49688) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (49728) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (49738) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (49778) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (49788) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (49838) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (49888) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (49938) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (49988) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (50008) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (50038) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (50058) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (50088) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (50108) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (50138) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (50158) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (50188) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (50208) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (50238) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (50258) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (50288) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (50308) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (50338) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (50358) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (50388) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (50408) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (50438) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (50458) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (50488) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (50508) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (50538) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (50558) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (50588) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (50608) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (50638) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (50658) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (50688) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (50708) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (50738) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (50758) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (50788) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (50808) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (50838) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (50888) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (50938) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (50988) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (51028) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (51038) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (51078) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (51088) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (51128) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (51138) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (51178) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (51188) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (51228) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (51238) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (51278) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (51288) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (51328) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (51338) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (51378) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (51388) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (51428) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (51438) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (51478) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (51488) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (51528) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (51538) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (51578) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (51588) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (51628) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (51638) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (51678) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (51688) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (51728) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (51738) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (51778) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (51788) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (51828) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (51838) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (51888) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (51938) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (51988) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (52038) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (52048) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (52088) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (52098) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (52138) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (52148) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (52188) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (52198) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (52238) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (52248) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (52288) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (52298) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (52338) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (52348) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (52388) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (52398) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (52438) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (52448) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (52488) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (52498) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (52538) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (52548) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (52588) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (52598) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (52638) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (52648) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (52688) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (52698) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (52738) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (52748) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (52788) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (52798) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (52838) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (52848) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (52888) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (52938) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (52988) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (53038) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (53068) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (53088) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (53118) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (53138) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (53168) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (53188) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (53218) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (53238) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (53268) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (53288) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (53318) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (53338) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (53368) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (53388) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (53418) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (53438) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (53468) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (53488) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (53518) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (53538) AUDIO_RECORD: Audio is playing, skipping recording[0m
+R� 8 20602:7�HH�:x1 (O)=}RU�I��0x13 i}(M}1M}	==)cn&����:bPIWP0xec�E�:�00q_dr:0x0ddv:�0,cs_drv0x0h_rvG��0,w_drv:x0
+odY'T�	���� ���:jladF��3���bb��66
+od04007000,ln1�jl�0x408040,lS364
+etry x40003
+[0;32mI (26) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar 13 2025 23:19:13[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v1.1[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (36) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (76) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+[0;32mI (83) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (93) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=318d8h (202968) map[0m
+[0;32mI (169) esp_image: segment 1: paddr=00051900 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (170) esp_image: segment 2: paddr=00051924 vaddr=3ffb0000 size=03fb0h ( 16304) load[0m
+[0;32mI (179) esp_image: segment 3: paddr=000558dc vaddr=40080000 size=0a73ch ( 42812) load[0m
+[0;32mI (197) esp_image: segment 4: paddr=00060020 vaddr=400d0020 size=9f870h (653424) map[0m
+[0;32mI (421) esp_image: segment 5: paddr=000ff898 vaddr=4008a73c size=0e208h ( 57864) load[0m
+[0;32mI (456) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (456) boot: Disabling RNG early entropy source...[0m
+[0;32mI (466) cpu_start: Multicore app[0m
+[0;32mI (475) cpu_start: Pro cpu start user code[0m
+[0;32mI (475) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (475) app_init: Application information:[0m
+[0;32mI (475) app_init: Project name:     hello_world[0m
+[0;32mI (479) app_init: App version:      0925295-dirty[0m
+[0;32mI (483) app_init: Compile time:     Mar 13 2025 23:19:08[0m
+[0;32mI (488) app_init: ELF file SHA256:  0f3ada949...[0m
+[0;32mI (493) app_init: ESP-IDF:          v5.5-dev-2290-g94cfe394fe[0m
+[0;32mI (498) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (502) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (506) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (510) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (516) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (521) heap_init: At 3FFBAEA0 len 00025160 (148 KiB): DRAM[0m
+[0;32mI (527) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (532) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (537) heap_init: At 40098944 len 000076BC (29 KiB): IRAM[0m
+[0;32mI (544) spi_flash: detected chip: generic[0m
+[0;32mI (546) spi_flash: flash io: dio[0m
+[0;33mW (550) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;33mW (557) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
+[0;32mI (569) main_task: Started on CPU0[0m
+[0;32mI (579) main_task: Calling app_main()[0m
+[0;32mI (579) MAIN: Starting app_main...[0m
+[0;32mI (629) wifi:wifi driver task: 3ffc2fe0, prio:23, stack:6656, core=0[0m
+[0;32mI (649) wifi:wifi firmware version: 3a3aca644[0m
+[0;32mI (649) wifi:wifi certification version: v7.0[0m
+[0;32mI (649) wifi:config NVS flash: enabled[0m
+[0;32mI (649) wifi:config nano formatting: disabled[0m
+[0;32mI (649) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (659) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (659) wifi:Init management short buffer num: 32[0m
+[0;32mI (659) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (669) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (669) wifi:Init static rx buffer num: 10[0m
+[0;32mI (679) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (679) wifi_init: rx ba win: 6[0m
+[0;32mI (679) wifi_init: accept mbox: 6[0m
+[0;32mI (689) wifi_init: tcpip mbox: 32[0m
+[0;32mI (689) wifi_init: udp mbox: 6[0m
+[0;32mI (689) wifi_init: tcp mbox: 6[0m
+[0;32mI (689) wifi_init: tcp tx win: 5760[0m
+[0;32mI (699) wifi_init: tcp rx win: 5760[0m
+[0;32mI (699) wifi_init: tcp mss: 1440[0m
+[0;32mI (699) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (709) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (729) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (809) wifi:mode : sta (94:54:c5:b5:f9:ec)[0m
+[0;32mI (809) wifi:enable tsf[0m
+[0;32mI (809) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (819) WIFI_MGR: Wi-Fi init done. SSID=Partagedeco[0m
+[0;32mI (819) AudioPlayer: audio_task started[0m
+[0;32mI (829) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (829) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (829) AudioPlayer: Audio player initialized. sample_rate=8000[0m
+[0;32mI (829) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (839) AUDIO_RECORD: I2S initialized for mic input (sr=8000, bits=32)[0m
+[0;32mI (849) wifi:Association refused temporarily time 1269, comeback time 1369 (TUs)[0m
+[0;32mI (2249) wifi:state: assoc -> assoc (0x0)[0m
+[0;32mI (2259) wifi:state: assoc -> init (0x6c0)[0m
+[0;32mI (2269) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2269) WIFI_MGR: Retrying Wi-Fi connection...[0m
+[0;32mI (4689) WIFI_MGR: Retrying Wi-Fi connection...[0m
+[0;32mI (4699) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (4699) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (4709) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (4719) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (4729) wifi:connected with Partagedeco, aid = 1, channel 11, BW20, bssid = aa:f0:fe:0d:99:0e[0m
+[0;32mI (4729) wifi:security: WPA2-PSK, phy: bgn, rssi: -40[0m
+[0;32mI (4739) wifi:pm start, type: 0[0m
+
+[0;32mI (4739) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (4749) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (4749) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (5899) esp_netif_handlers: sta ip: 172.19.145.71, mask: 255.255.255.0, gw: 172.19.145.31[0m
+[0;32mI (5899) WIFI_MGR: Got IP: 172.19.145.71[0m
+[0;32mI (5899) websocket_client: Started[0m
+[0;32mI (5899) WS_MGR: WebSocket started![0m
+[1;31mE (5939) websocket_client: Websocket client is not connected[0m
+[1;31mE (5939) websocket_client: Websocket client is not connected[0m
+[1;31mE (5939) websocket_client: Websocket client is not connected[0m
+[1;31mE (5939) websocket_client: Websocket client is not connected[0m
+[1;31mE (5949) websocket_client: Websocket client is not connected[0m
+[1;31mE (5949) websocket_client: Websocket client is not connected[0m
+[1;31mE (5959) websocket_client: Websocket client is not connected[0m
+[1;31mE (5959) websocket_client: Websocket client is not connected[0m
+[1;31mE (5969) websocket_client: Websocket client is not connected[0m
+[1;31mE (5969) websocket_client: Websocket client is not connected[0m
+[1;31mE (5979) websocket_client: Websocket client is not connected[0m
+[1;31mE (5979) websocket_client: Websocket client is not connected[0m
+[1;31mE (5989) websocket_client: Websocket client is not connected[0m
+[1;31mE (5989) websocket_client: Websocket client is not connected[0m
+[1;31mE (5999) websocket_client: Websocket client is not connected[0m
+[1;31mE (6009) websocket_client: Websocket client is not connected[0m
+[1;31mE (6029) websocket_client: Websocket client is not connected[0m
+[1;31mE (6029) websocket_client: Websocket client is not connected[0m
+[1;31mE (6089) websocket_client: Websocket client is not connected[0m
+[1;31mE (6089) websocket_client: Websocket client is not connected[0m
+[0;32mI (6119) wifi:<ba-add>idx:0 (ifx:0, aa:f0:fe:0d:99:0e), tid:0, ssn:3, winSize:64[0m
+[1;31mE (6149) websocket_client: Websocket client is not connected[0m
+[1;31mE (6149) websocket_client: Websocket client is not connected[0m
+[1;31mE (6219) websocket_client: Websocket client is not connected[0m
+[1;31mE (6219) websocket_client: Websocket client is not connected[0m
+[1;31mE (6279) websocket_client: Websocket client is not connected[0m
+[1;31mE (6279) websocket_client: Websocket client is not connected[0m
+[1;31mE (6349) websocket_client: Websocket client is not connected[0m
+[1;31mE (6349) websocket_client: Websocket client is not connected[0m
+[1;31mE (6409) websocket_client: Websocket client is not connected[0m
+[1;31mE (6409) websocket_client: Websocket client is not connected[0m
+[1;31mE (6469) websocket_client: Websocket client is not connected[0m
+[1;31mE (6469) websocket_client: Websocket client is not connected[0m
+[1;31mE (6539) websocket_client: Websocket client is not connected[0m
+[1;31mE (6539) websocket_client: Websocket client is not connected[0m
+[1;31mE (6599) websocket_client: Websocket client is not connected[0m
+[1;31mE (6599) websocket_client: Websocket client is not connected[0m
+[1;31mE (6669) websocket_client: Websocket client is not connected[0m
+[1;31mE (6669) websocket_client: Websocket client is not connected[0m
+[1;31mE (6729) websocket_client: Websocket client is not connected[0m
+[1;31mE (6729) websocket_client: Websocket client is not connected[0m
+[1;31mE (6789) websocket_client: Websocket client is not connected[0m
+[1;31mE (6789) websocket_client: Websocket client is not connected[0m
+[1;31mE (6859) websocket_client: Websocket client is not connected[0m
+[1;31mE (6859) websocket_client: Websocket client is not connected[0m
+[1;31mE (6919) websocket_client: Websocket client is not connected[0m
+[1;31mE (6919) websocket_client: Websocket client is not connected[0m
+[0;32mI (6929) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (6989) websocket_client: Websocket client is not connected[0m
+[1;31mE (6989) websocket_client: Websocket client is not connected[0m
+[1;31mE (7049) websocket_client: Websocket client is not connected[0m
+[1;31mE (7049) websocket_client: Websocket client is not connected[0m
+[1;31mE (7109) websocket_client: Websocket client is not connected[0m
+[1;31mE (7109) websocket_client: Websocket client is not connected[0m
+[1;31mE (7179) websocket_client: Websocket client is not connected[0m
+[1;31mE (7179) websocket_client: Websocket client is not connected[0m
+[1;31mE (7239) websocket_client: Websocket client is not connected[0m
+[1;31mE (7239) websocket_client: Websocket client is not connected[0m
+[1;31mE (7309) websocket_client: Websocket client is not connected[0m
+[1;31mE (7309) websocket_client: Websocket client is not connected[0m
+[1;31mE (7369) websocket_client: Websocket client is not connected[0m
+[1;31mE (7369) websocket_client: Websocket client is not connected[0m
+[1;31mE (7429) websocket_client: Websocket client is not connected[0m
+[1;31mE (7429) websocket_client: Websocket client is not connected[0m
+[1;31mE (7499) websocket_client: Websocket client is not connected[0m
+[1;31mE (7499) websocket_client: Websocket client is not connected[0m
+[1;31mE (7559) websocket_client: Websocket client is not connected[0m
+[1;31mE (7559) websocket_client: Websocket client is not connected[0m
+[1;31mE (7629) websocket_client: Websocket client is not connected[0m
+[1;31mE (7629) websocket_client: Websocket client is not connected[0m
+[1;31mE (7689) websocket_client: Websocket client is not connected[0m
+[1;31mE (7689) websocket_client: Websocket client is not connected[0m
+[1;31mE (7749) websocket_client: Websocket client is not connected[0m
+[1;31mE (7749) websocket_client: Websocket client is not connected[0m
+[1;31mE (7819) websocket_client: Websocket client is not connected[0m
+[1;31mE (7819) websocket_client: Websocket client is not connected[0m
+[1;31mE (7879) websocket_client: Websocket client is not connected[0m
+[1;31mE (7879) websocket_client: Websocket client is not connected[0m
+[1;31mE (7949) websocket_client: Websocket client is not connected[0m
+[1;31mE (7949) websocket_client: Websocket client is not connected[0m
+[1;31mE (8009) websocket_client: Websocket client is not connected[0m
+[1;31mE (8009) websocket_client: Websocket client is not connected[0m
+[1;31mE (8069) websocket_client: Websocket client is not connected[0m
+[1;31mE (8069) websocket_client: Websocket client is not connected[0m
+[1;31mE (8139) websocket_client: Websocket client is not connected[0m
+[1;31mE (8139) websocket_client: Websocket client is not connected[0m
+[1;31mE (8199) websocket_client: Websocket client is not connected[0m
+[1;31mE (8199) websocket_client: Websocket client is not connected[0m
+[1;31mE (8269) websocket_client: Websocket client is not connected[0m
+[1;31mE (8269) websocket_client: Websocket client is not connected[0m
+[1;31mE (8329) websocket_client: Websocket client is not connected[0m
+[1;31mE (8329) websocket_client: Websocket client is not connected[0m
+[1;31mE (8389) websocket_client: Websocket client is not connected[0m
+[1;31mE (8389) websocket_client: Websocket client is not connected[0m
+[1;31mE (8459) websocket_client: Websocket client is not connected[0m
+[1;31mE (8459) websocket_client: Websocket client is not connected[0m
+[1;31mE (8519) websocket_client: Websocket client is not connected[0m
+[1;31mE (8519) websocket_client: Websocket client is not connected[0m
+[1;31mE (8589) websocket_client: Websocket client is not connected[0m
+[1;31mE (8589) websocket_client: Websocket client is not connected[0m
+[1;31mE (8649) websocket_client: Websocket client is not connected[0m
+[1;31mE (8649) websocket_client: Websocket client is not connected[0m
+[1;31mE (8709) websocket_client: Websocket client is not connected[0m
+[1;31mE (8709) websocket_client: Websocket client is not connected[0m
+[1;31mE (8779) websocket_client: Websocket client is not connected[0m
+[1;31mE (8779) websocket_client: Websocket client is not connected[0m
+[1;31mE (8839) websocket_client: Websocket client is not connected[0m
+[1;31mE (8839) websocket_client: Websocket client is not connected[0m
+[0;32mI (8899) WS_MGR: WebSocket connected[0m
+[0;32mI (10319) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (10369) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (10419) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (10469) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (10519) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (10569) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (10619) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (10669) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (10719) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (10769) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (10819) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (10869) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (10919) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (10939) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (10969) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (10989) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11019) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (11039) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11069) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (11089) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11119) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (11139) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11169) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (11189) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11219) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (11239) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11269) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (11289) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11319) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (11339) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11369) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (11389) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11419) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (11439) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11469) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (11489) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11519) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (11539) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11569) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (11619) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (11669) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (11719) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (11769) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (11769) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11819) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (11819) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11869) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (11869) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11919) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (11919) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (11969) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (11969) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12019) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (12019) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12069) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (12069) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12119) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (12119) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12169) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (12169) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12219) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (12219) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12269) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (12269) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12319) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (12319) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12369) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (12369) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12419) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (12419) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12469) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (12469) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12519) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (12519) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12569) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (12569) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12619) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (12619) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12669) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (12669) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12719) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (12719) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12769) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (12769) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12819) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (12819) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (12869) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (12919) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (12969) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (13019) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (13039) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13069) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (13089) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13119) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (13139) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13169) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (13189) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13219) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (13239) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13269) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (13289) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13319) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (13339) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13369) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (13389) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13419) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (13439) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13469) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (13489) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13519) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (13539) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13569) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (13589) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13619) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (13639) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13669) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (13689) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13719) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (13769) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (13819) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (13869) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (13919) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (13919) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (13969) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (13969) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14019) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (14019) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14069) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (14069) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14119) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (14119) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14169) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (14169) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14219) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (14219) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14269) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (14269) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14319) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (14319) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14369) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (14369) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14419) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (14419) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14469) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (14469) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14519) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (14519) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14569) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (14569) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14619) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (14619) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14669) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (14669) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14719) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (14719) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14769) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (14819) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (14869) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (14919) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (14949) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (14969) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (14999) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15019) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (15049) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15069) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (15099) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15119) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (15149) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15169) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (15199) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15219) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (15249) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15269) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (15299) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15319) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (15349) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15369) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (15399) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15419) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (15449) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15469) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (15499) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15519) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (15549) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15569) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (15599) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15619) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (15649) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15669) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (15699) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15719) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (15749) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (15769) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (15819) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (15869) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (15919) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (15969) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (15979) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16019) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (16029) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16069) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (16079) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16119) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (16129) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16169) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (16179) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16219) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (16229) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16269) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (16279) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16319) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (16329) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16369) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (16379) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16419) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (16429) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16469) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (16479) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16519) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (16529) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16569) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (16579) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16619) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (16629) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16669) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;33mW (16679) WS_MGR: Unknown prefix=0xF9 => ignoring[0m
+[0;32mI (16719) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;33mW (16719) WS_MGR: Unknown prefix=0x6E => ignoring[0m
+[0;33mW (16749) WS_MGR: Unknown prefix=0x57 => ignoring[0m
+[0;33mW (16759) WS_MGR: Unknown prefix=0xE3 => ignoring[0m
+[0;32mI (16769) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (16809) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16819) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (16859) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16869) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (16909) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (16919) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (16969) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (16999) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17019) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (17049) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17069) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (17099) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17119) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (17149) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17169) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (17199) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17219) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[1;31mE (17249) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (17269) AUDIO_RECORD: Audio is playing, skipping recording[0m

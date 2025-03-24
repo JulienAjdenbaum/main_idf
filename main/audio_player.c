@@ -5,6 +5,8 @@
 #include "freertos/task.h"
 #include "driver/i2s.h"
 #include "esp_log.h"
+#include "esp_timer.h"
+
 
 static const char *TAG = "AudioPlayer";
 
@@ -12,8 +14,12 @@ static audio_buffer_t s_buffers[NUM_AUDIO_BUFFERS];
 static QueueHandle_t  s_empty_queue = NULL;
 static QueueHandle_t  s_ready_queue = NULL;
 
+static int64_t s_last_audio_time = 0;
+
 static void audio_task(void *param);
 static void audio_monitor_task(void *param);
+// static void i2s_monitor_task(void *arg);
+
 
 esp_err_t audio_player_init(void)
 {
@@ -66,7 +72,8 @@ esp_err_t audio_player_init(void)
 
     // Start tasks
     xTaskCreatePinnedToCore(audio_task, "audioTask", 4096, NULL, 7, NULL, 1);
-    // xTaskCreatePinnedToCore(audio_monitor_task, "audioMonitor", 2048, NULL, 4, NULL, 1);
+    xTaskCreatePinnedToCore(audio_monitor_task, "audioMonitor", 2048, NULL, 4, NULL, 1);
+    // xTaskCreatePinnedToCore(i2s_monitor_task, "i2sMonitor", 2048, NULL, 4, NULL, 1);
 
     ESP_LOGI(TAG, "Audio player initialized. sample_rate=%d", SAMPLE_RATE);
     return ESP_OK;
@@ -78,6 +85,8 @@ static void audio_task(void *param)
     while (1) {
         int buf_idx;
         if (xQueueReceive(s_ready_queue, &buf_idx, portMAX_DELAY) == pdTRUE) {
+            s_last_audio_time = esp_timer_get_time();
+            
             if (buf_idx < 0 || buf_idx >= NUM_AUDIO_BUFFERS) {
                 ESP_LOGE(TAG, "Invalid buffer index: %d", buf_idx);
                 continue;
@@ -122,6 +131,7 @@ audio_buffer_t *audio_player_get_buffer_blocking(void)
 
 void audio_player_submit_buffer(audio_buffer_t *buf)
 {
+    s_last_audio_time = esp_timer_get_time();
     int idx = (int)(buf - &s_buffers[0]);
     if (idx < 0 || idx >= NUM_AUDIO_BUFFERS) {
         ESP_LOGE(TAG, "Invalid buffer pointer in submit_buffer");
@@ -151,3 +161,33 @@ void audio_player_shutdown(void)
     }
     ESP_LOGI(TAG, "Audio player shut down.");
 }
+
+bool audio_player_is_playing(void)
+{
+    // Convert microseconds => milliseconds
+    int64_t now_ms       = esp_timer_get_time() / 1000;
+    int64_t last_time_ms = s_last_audio_time / 1000;
+
+    // If time since last audio submission is <= 100 ms
+    if ( (now_ms - last_time_ms) <= 100 ) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// static void i2s_monitor_task(void *arg)
+// {
+//     while (1) {
+//         size_t bytes_in_i2s_tx_buffer = 0;
+//         esp_err_t ret = i2s_write_expand(I2S_NUM_0, NULL, 0, 0, &bytes_in_i2s_tx_buffer);
+
+//         if (ret == ESP_OK) {
+//             ESP_LOGI("I2S_MONITOR", "Buffered data: %d bytes", bytes_in_i2s_tx_buffer);
+//         } else {
+//             ESP_LOGE("I2S_MONITOR", "Failed to get I2S buffer size: %s", esp_err_to_name(ret));
+//         }
+
+//         vTaskDelay(pdMS_TO_TICKS(1000));
+//     }
+// }

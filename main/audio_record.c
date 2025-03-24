@@ -13,6 +13,7 @@
 #include "esp_err.h"
 
 #include "websocket_manager.h" // We'll use websocket_manager_send_bin(), websocket_manager_is_connected()
+#include "audio_player.h"
 
 // -------------------- CONFIG / DEFINES --------------------
 #define MIC_I2S_PORT            I2S_NUM_1
@@ -22,7 +23,7 @@
 #define MIC_I2S_DATA_OUT_IO     -1  // not used for mic-only
 #define MIC_USE_APLL            false  // ← Add this
 
-#define I2S_SAMPLE_RATE     16000
+#define I2S_SAMPLE_RATE     8000
 #define I2S_BITS_PER_SAMPLE I2S_BITS_PER_SAMPLE_32BIT
 #define I2S_READ_BUF_SIZE   1024 // Number of bytes to read per i2s_read() call
 
@@ -30,6 +31,8 @@
 #define AUDIO_PREFIX_BYTE   0x02
 
 static const char *TAG = "AUDIO_RECORD";
+bool was_audio_playing = false;
+
 
 // -------------------- INTERNAL FUNCTION DECLARATIONS --------------------
 static void audio_record_task(void *arg);
@@ -89,6 +92,27 @@ static void audio_record_task(void *arg)
             continue;
         }
 
+
+        // If audio is playing, skip recording
+        if (audio_player_is_playing()) {
+            if (!was_audio_playing) {
+                was_audio_playing = true;
+                ESP_LOGI(TAG, "Audio is playing, skipping recording");
+            }
+
+            // If you want to *completely* pause recording while audio is playing,
+            // If you want to *completely* pause recording while audio is playing,
+            // just skip or delay here:
+            vTaskDelay(pdMS_TO_TICKS(50));
+            // ESP_LOGI(TAG, "Audio is playing, skipping recording");
+            continue;
+        } else {
+            if (was_audio_playing) {
+                was_audio_playing = false;
+                ESP_LOGI(TAG, "Audio is not playing, recording");
+            }
+        }
+
         size_t bytes_read = 0;
         esp_err_t err = i2s_read(MIC_I2S_PORT,
                                  (void *)s_audio_buf,
@@ -126,9 +150,9 @@ static void audio_record_task(void *arg)
 
         int packet_size = out_index + 1;
         int ret = websocket_manager_send_bin((const char *)send_buf, packet_size);
-        if (ret < 0) {
-            ESP_LOGE(TAG, "WebSocket send_bin failed (%d)", ret);
-        }
+        // if (ret < 0) {
+        //     ESP_LOGE(TAG, "WebSocket send_bin failed (%d)", ret);
+        // }
 
         // Just a small delay to avoid hogging CPU
         vTaskDelay(pdMS_TO_TICKS(1));

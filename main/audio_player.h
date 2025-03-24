@@ -15,12 +15,12 @@
 #define I2S_DI_IO       (-1) // not used
 
 // 24 kHz by default
-#define SAMPLE_RATE     (24000)
+#define SAMPLE_RATE     (8000)
 
 #define DMA_BUF_COUNT   (8)
 #define DMA_BUF_LEN     (1024)
 
-#define AUDIO_BUFFER_SIZE  1024  // bytes
+#define AUDIO_BUFFER_SIZE  512  // bytes
 #define NUM_AUDIO_BUFFERS  8
 
 typedef struct {
@@ -33,5 +33,6 @@ void      audio_player_shutdown(void);
 audio_buffer_t *audio_player_get_buffer_blocking(void);
 void      audio_player_submit_buffer(audio_buffer_t *buf);
 void      audio_player_set_sample_rate(uint32_t sample_rate, uint16_t num_channels);
+bool audio_player_is_playing(void);
 
 #endif // AUDIO_PLAYER_H

@@ -7,7 +7,7 @@
 static const char *TAG = "AUDIO_STREAM";
 
 #define SAMPLE_SIZE_BYTES 2  // 16-bit
-#define PCM_SAMPLE_RATE   24000
+#define PCM_SAMPLE_RATE   8000
 
 /**
  * @brief Receives raw PCM (mono, 16-bit, 24000 Hz) and does
@@ -61,3 +61,4 @@ void audio_stream_handle_incoming(const uint8_t *data, size_t length)
     }
     
 }
+

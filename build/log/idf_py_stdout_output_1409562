@@ -1,0 +1,99 @@
+Command: /home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/julien/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/julien/Documents/esp32IDF/hello_world/build/hello_world.elf /home/julien/Documents/esp32IDF/hello_world/build/bootloader/bootloader.elf -m '/home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python' '/home/julien/esp/esp-idf/tools/idf.py'
+ts un   2016 00:22:57
+
+rst0x1 (POWERON_REET)boot0x13 (SPI_FAST_LASHBOO)
+configsip: 0 SPIP:0xee
+clk_drv0x00q_dv:0x00,d_drv:0x0,cs0drv:0x00,hd_drv:0x00wp_rv:0x00
+mode:DI, cock iv:2
+load:0x3ff003,len:6368
+load0x407800,len:15880
+loa:0x4080400,len:3860
+enry 040080638
+[0;32mI (26) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar 13 2025 23:19:13[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (36) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (76) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+[0;32mI (83) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (93) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=31908h (203016) map[0m
+[0;32mI (169) esp_image: segment 1: paddr=00051930 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (170) esp_image: segment 2: paddr=00051954 vaddr=3ffb0000 size=03fb0h ( 16304) load[0m
+[0;32mI (179) esp_image: segment 3: paddr=0005590c vaddr=40080000 size=0a70ch ( 42764) load[0m
+[0;32mI (197) esp_image: segment 4: paddr=00060020 vaddr=400d0020 size=9f8b4h (653492) map[0m
+[0;32mI (421) esp_image: segment 5: paddr=000ff8dc vaddr=4008a70c size=0e26ch ( 57964) load[0m
+[0;32mI (456) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (456) boot: Disabling RNG early entropy source...[0m
+[0;32mI (466) cpu_start: Multicore app[0m
+[0;32mI (475) cpu_start: Pro cpu start user code[0m
+[0;32mI (475) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (475) app_init: Application information:[0m
+[0;32mI (475) app_init: Project name:     hello_world[0m
+[0;32mI (479) app_init: App version:      0925295-dirty[0m
+[0;32mI (483) app_init: Compile time:     Mar 13 2025 23:19:08[0m
+[0;32mI (488) app_init: ELF file SHA256:  b584a302c...[0m
+[0;32mI (493) app_init: ESP-IDF:          v5.5-dev-2290-g94cfe394fe[0m
+[0;32mI (498) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (502) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (506) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (510) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (516) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (521) heap_init: At 3FFBAEA0 len 00025160 (148 KiB): DRAM[0m
+[0;32mI (527) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (532) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (537) heap_init: At 40098978 len 00007688 (29 KiB): IRAM[0m
+[0;32mI (544) spi_flash: detected chip: generic[0m
+[0;32mI (546) spi_flash: flash io: dio[0m
+[0;33mW (550) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;33mW (557) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
+[0;32mI (569) main_task: Started on CPU0[0m
+[0;32mI (579) main_task: Calling app_main()[0m
+[0;32mI (579) MAIN: Starting app_main...[0m
+[0;32mI (629) wifi:wifi driver task: 3ffc2fe0, prio:23, stack:6656, core=0[0m
+[0;32mI (649) wifi:wifi firmware version: 3a3aca644[0m
+[0;32mI (649) wifi:wifi certification version: v7.0[0m
+[0;32mI (649) wifi:config NVS flash: enabled[0m
+[0;32mI (649) wifi:config nano formatting: disabled[0m
+[0;32mI (649) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (659) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (659) wifi:Init management short buffer num: 32[0m
+[0;32mI (659) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (669) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (669) wifi:Init static rx buffer num: 10[0m
+[0;32mI (679) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (679) wifi_init: rx ba win: 6[0m
+[0;32mI (679) wifi_init: accept mbox: 6[0m
+[0;32mI (689) wifi_init: tcpip mbox: 32[0m
+[0;32mI (689) wifi_init: udp mbox: 6[0m
+[0;32mI (689) wifi_init: tcp mbox: 6[0m
+[0;32mI (689) wifi_init: tcp tx win: 5760[0m
+[0;32mI (699) wifi_init: tcp rx win: 5760[0m
+[0;32mI (699) wifi_init: tcp mss: 1440[0m
+[0;32mI (699) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (709) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (719) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (799) wifi:mode : sta (94:54:c5:b5:f9:ec)[0m
+[0;32mI (799) wifi:enable tsf[0m
+[0;32mI (799) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (799) WIFI_MGR: Wi-Fi init done. SSID=Partagedeco[0m
+[0;32mI (809) AudioPlayer: Audio player initialized. sample_rate=8000[0m
+[0;32mI (809) AudioPlayer: audio_task started[0m
+[0;32mI (809) AUDIO_RECORD: I2S initialized for mic input (sr=8000, bits=32)[0m
+[0;32mI (819) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (819) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (829) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (839) wifi:Association refused temporarily time 1269, comeback time 1369 (TUs)[0m
+[0;32mI (2239) wifi:state: assoc -> assoc (0x0)[0m
+[0;32mI (2239) wifi:state: assoc -> init (0x6c0)[0m
+[0;32mI (2259) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2259) WIFI_MGR: Retrying Wi-Fi connection...[0m

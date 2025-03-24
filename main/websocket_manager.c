@@ -25,7 +25,7 @@ static void websocket_event_handler(void *handler_args,
                                     void *event_data);
 
 static void audio_consumer_task(void *arg);
-
+static void ringbuf_monitor_task(void *arg);
 esp_err_t websocket_manager_init(void)
 {
     esp_websocket_client_config_t cfg = {
@@ -68,6 +68,16 @@ esp_err_t websocket_manager_init(void)
     // Create consumer task
     xTaskCreatePinnedToCore(audio_consumer_task, "audio_consumer_task",
                             4096, NULL, 5, NULL, 1);
+
+    xTaskCreatePinnedToCore(
+        ringbuf_monitor_task,  // the function above
+        "ringbuf_monitor",
+        4096,
+        NULL,
+        4,
+        NULL,
+        1
+    ); 
 
     return ESP_OK;
 }
@@ -112,19 +122,6 @@ static void websocket_event_handler(void *handler_args,
             size_t audio_len = ws_data->data_len - 1;
 
             if (prefix == 0x02 && audio_len > 0) {
-                // It's audio data
-                // Debug: print first & last 6 bytes
-                size_t show = (audio_len < 6) ? audio_len : 6;
-                ESP_LOGI(TAG, "Audio => len=%u, first %u bytes:",
-                         (unsigned)audio_len, (unsigned)show);
-                for (int i = 0; i < show; i++) {
-                    printf("%02X ", rx_buf[1 + i]);
-                }
-                printf(" | last %u bytes: ", (unsigned)show);
-                for (int i = 0; i < show; i++) {
-                    printf("%02X ", rx_buf[1 + audio_len - show + i]);
-                }
-                printf("\n");
 
                 // Push into ring buffer minus prefix
                 BaseType_t ok = xRingbufferSend(
@@ -151,5 +148,43 @@ static void websocket_event_handler(void *handler_args,
 
     default:
         break;
+    }
+}
+
+bool websocket_manager_is_connected(void)
+{
+    return s_ws_connected && s_ws_client;
+}
+
+int websocket_manager_send_bin(const char *data, size_t len)
+{
+    if (!s_ws_connected || !s_ws_client) {
+        return -1;
+    }
+    int ret = esp_websocket_client_send_bin(s_ws_client, data, len, portMAX_DELAY);
+    return (ret == ESP_OK) ? (int)len : -1;
+}
+
+static void ringbuf_monitor_task(void *arg)
+{
+    while (1)
+    {
+        // The total size you created the ring buffer with
+        const size_t total_size = 16 * 1024; // example
+
+        // Current free space
+        size_t free_bytes = xRingbufferGetCurFreeSize(s_audio_rb);
+
+        // Or you can call xRingbufferGetInfo() for more detail:
+        // size_t free, read, wait;
+        // vRingbufferGetInfo(s_audio_rb, &free, &read, &wait);
+
+        size_t used_bytes = total_size - free_bytes;
+
+        ESP_LOGI(TAG, "[RingBuf Monitor] used=%u, free=%u (of %u)",
+                 (unsigned)used_bytes, (unsigned)free_bytes, (unsigned)total_size);
+
+        // Sleep 2 seconds
+        vTaskDelay(pdMS_TO_TICKS(2000));
     }
 }

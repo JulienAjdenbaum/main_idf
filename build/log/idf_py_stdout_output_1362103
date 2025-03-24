@@ -1,0 +1,2162 @@
+Command: /home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/julien/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/julien/Documents/esp32IDF/hello_world/build/hello_world.elf /home/julien/Documents/esp32IDF/hello_world/build/bootloader/bootloader.elf -m '/home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python' '/home/julien/esp/esp-idf/tools/idf.py'
+es Jun  8 2016 0:2:7
+rst:0x1 (POWEO_RSE),boot:0x13 (SI_AS_FASH_BOOT)
+conigip 0 SPIWP:0xee
+ck_rv000,q_drv:0x00,ddr:x0,cs0_drv:0x00,d_rv0x0,wp_drv:0x0
+od:IO clock div:2
+lad0xfff0030,len:638
+lad040078000,len188
+oa:0x40080400,le:86
+ntry 0x4008063
+[0;32mI (27) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar 13 2025 23:19:13[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (36) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (76) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+[0;32mI (83) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (92) boot: No factory image, trying OTA 0[0m
+[0;32mI (96) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=318c8h (202952) map[0m
+[0;32mI (173) esp_image: segment 1: paddr=000518f0 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (173) esp_image: segment 2: paddr=00051914 vaddr=3ffb0000 size=03fb0h ( 16304) load[0m
+[0;32mI (183) esp_image: segment 3: paddr=000558cc vaddr=40080000 size=0a74ch ( 42828) load[0m
+[0;32mI (201) esp_image: segment 4: paddr=00060020 vaddr=400d0020 size=9f838h (653368) map[0m
+[0;32mI (425) esp_image: segment 5: paddr=000ff860 vaddr=4008a74c size=0e1f8h ( 57848) load[0m
+[0;32mI (459) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (475) boot: Set actual ota_seq=1 in otadata[0][0m
+[0;32mI (475) boot: Disabling RNG early entropy source...[0m
+[0;32mI (485) cpu_start: Multicore app[0m
+[0;32mI (493) cpu_start: Pro cpu start user code[0m
+[0;32mI (493) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (493) app_init: Application information:[0m
+[0;32mI (493) app_init: Project name:     hello_world[0m
+[0;32mI (497) app_init: App version:      0925295-dirty[0m
+[0;32mI (502) app_init: Compile time:     Mar 13 2025 23:19:08[0m
+[0;32mI (507) app_init: ELF file SHA256:  4b02a729d...[0m
+[0;32mI (511) app_init: ESP-IDF:          v5.5-dev-2290-g94cfe394fe[0m
+[0;32mI (517) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (521) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (525) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (529) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (535) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (540) heap_init: At 3FFBAEA0 len 00025160 (148 KiB): DRAM[0m
+[0;32mI (545) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (550) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (556) heap_init: At 40098944 len 000076BC (29 KiB): IRAM[0m
+[0;32mI (563) spi_flash: detected chip: generic[0m
+[0;32mI (565) spi_flash: flash io: dio[0m
+[0;33mW (568) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;33mW (575) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
+[0;32mI (588) main_task: Started on CPU0[0m
+[0;32mI (598) main_task: Calling app_main()[0m
+[0;32mI (598) MAIN: Starting app_main...[0m
+[0;32mI (638) wifi:wifi driver task: 3ffc2fe0, prio:23, stack:6656, core=0[0m
+[0;32mI (648) wifi:wifi firmware version: 3a3aca644[0m
+[0;32mI (648) wifi:wifi certification version: v7.0[0m
+[0;32mI (648) wifi:config NVS flash: enabled[0m
+[0;32mI (648) wifi:config nano formatting: disabled[0m
+[0;32mI (658) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (658) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (668) wifi:Init management short buffer num: 32[0m
+[0;32mI (668) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (678) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (678) wifi:Init static rx buffer num: 10[0m
+[0;32mI (678) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (688) wifi_init: rx ba win: 6[0m
+[0;32mI (688) wifi_init: accept mbox: 6[0m
+[0;32mI (688) wifi_init: tcpip mbox: 32[0m
+[0;32mI (698) wifi_init: udp mbox: 6[0m
+[0;32mI (698) wifi_init: tcp mbox: 6[0m
+[0;32mI (698) wifi_init: tcp tx win: 5760[0m
+[0;32mI (708) wifi_init: tcp rx win: 5760[0m
+[0;32mI (708) wifi_init: tcp mss: 1440[0m
+[0;32mI (708) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (718) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (728) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (808) wifi:mode : sta (94:54:c5:b5:f9:ec)[0m
+[0;32mI (808) wifi:enable tsf[0m
+[0;32mI (808) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (808) WIFI_MGR: Wi-Fi init done. SSID=Partagedeco[0m
+[0;32mI (818) wifi:I (818) AudioPlayer: audio_task started[0m
+new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0
+[0;32mI (828) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (818) AudioPlayer: Audio player initialized. sample_rate=8000[0m
+[0;32mI (828) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (838) AUDIO_RECORD: I2S initialized for mic input (sr=8000, bits=32)[0m
+[0;32mI (848) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (858) wifi:connected with Partagedeco, aid = 1, channel 11, BW20, bssid = aa:f0:fe:0d:99:0e[0m
+[0;32mI (858) wifi:security: WPA2-PSK, phy: bgn, rssi: -45[0m
+[0;32mI (868) wifi:pm start, type: 0[0m
+
+[0;32mI (868) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (898) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (898) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (2028) esp_netif_handlers: sta ip: 172.19.145.71, mask: 255.255.255.0, gw: 172.19.145.31[0m
+[0;32mI (2028) WIFI_MGR: Got IP: 172.19.145.71[0m
+[0;32mI (2028) websocket_client: Started[0m
+[0;32mI (2028) WS_MGR: WebSocket started![0m
+[1;31mE (2038) websocket_client: Websocket client is not connected[0m
+[1;31mE (2038) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2038) websocket_client: Websocket client is not connected[0m
+[1;31mE (2048) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2048) websocket_client: Websocket client is not connected[0m
+[1;31mE (2058) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2058) websocket_client: Websocket client is not connected[0m
+[1;31mE (2068) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2068) websocket_client: Websocket client is not connected[0m
+[1;31mE (2078) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2078) websocket_client: Websocket client is not connected[0m
+[1;31mE (2088) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2088) websocket_client: Websocket client is not connected[0m
+[1;31mE (2098) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2098) websocket_client: Websocket client is not connected[0m
+[1;31mE (2108) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2108) websocket_client: Websocket client is not connected[0m
+[1;31mE (2118) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2118) websocket_client: Websocket client is not connected[0m
+[1;31mE (2128) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2128) websocket_client: Websocket client is not connected[0m
+[1;31mE (2138) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2138) websocket_client: Websocket client is not connected[0m
+[1;31mE (2148) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2158) websocket_client: Websocket client is not connected[0m
+[1;31mE (2158) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2168) websocket_client: Websocket client is not connected[0m
+[1;31mE (2168) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2178) websocket_client: Websocket client is not connected[0m
+[1;31mE (2178) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2188) websocket_client: Websocket client is not connected[0m
+[1;31mE (2188) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2198) websocket_client: Websocket client is not connected[0m
+[1;31mE (2198) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2208) websocket_client: Websocket client is not connected[0m
+[1;31mE (2208) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2218) websocket_client: Websocket client is not connected[0m
+[1;31mE (2218) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2228) websocket_client: Websocket client is not connected[0m
+[1;31mE (2228) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[0;32mI (2238) wifi:<ba-add>idx:0 (ifx:0, aa:f0:fe:0d:99:0e), tid:0, ssn:3, winSize:64[0m
+[1;31mE (2248) websocket_client: Websocket client is not connected[0m
+[1;31mE (2248) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2248) websocket_client: Websocket client is not connected[0m
+[1;31mE (2258) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2308) websocket_client: Websocket client is not connected[0m
+[1;31mE (2308) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2308) websocket_client: Websocket client is not connected[0m
+[1;31mE (2318) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2378) websocket_client: Websocket client is not connected[0m
+[1;31mE (2378) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2378) websocket_client: Websocket client is not connected[0m
+[1;31mE (2378) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2438) websocket_client: Websocket client is not connected[0m
+[1;31mE (2438) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2438) websocket_client: Websocket client is not connected[0m
+[1;31mE (2438) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2498) websocket_client: Websocket client is not connected[0m
+[1;31mE (2498) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2498) websocket_client: Websocket client is not connected[0m
+[1;31mE (2508) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2568) websocket_client: Websocket client is not connected[0m
+[1;31mE (2568) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2568) websocket_client: Websocket client is not connected[0m
+[1;31mE (2568) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2628) websocket_client: Websocket client is not connected[0m
+[1;31mE (2628) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2628) websocket_client: Websocket client is not connected[0m
+[1;31mE (2638) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2698) websocket_client: Websocket client is not connected[0m
+[1;31mE (2698) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2698) websocket_client: Websocket client is not connected[0m
+[1;31mE (2698) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2758) websocket_client: Websocket client is not connected[0m
+[1;31mE (2758) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2758) websocket_client: Websocket client is not connected[0m
+[1;31mE (2758) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2818) websocket_client: Websocket client is not connected[0m
+[1;31mE (2818) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2818) websocket_client: Websocket client is not connected[0m
+[1;31mE (2828) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2888) websocket_client: Websocket client is not connected[0m
+[1;31mE (2888) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2888) websocket_client: Websocket client is not connected[0m
+[1;31mE (2888) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2948) websocket_client: Websocket client is not connected[0m
+[1;31mE (2948) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (2948) websocket_client: Websocket client is not connected[0m
+[1;31mE (2958) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (3018) websocket_client: Websocket client is not connected[0m
+[1;31mE (3018) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (3018) websocket_client: Websocket client is not connected[0m
+[1;31mE (3018) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[0;32mI (3058) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (3078) websocket_client: Websocket client is not connected[0m
+[1;31mE (3078) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (3078) websocket_client: Websocket client is not connected[0m
+[1;31mE (3078) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (3138) websocket_client: Websocket client is not connected[0m
+[1;31mE (3138) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (3138) websocket_client: Websocket client is not connected[0m
+[1;31mE (3148) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (3208) websocket_client: Websocket client is not connected[0m
+[1;31mE (3208) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (3208) websocket_client: Websocket client is not connected[0m
+[1;31mE (3208) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (3268) websocket_client: Websocket client is not connected[0m
+[1;31mE (3268) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (3268) websocket_client: Websocket client is not connected[0m
+[1;31mE (3278) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (3338) websocket_client: Websocket client is not connected[0m
+[1;31mE (3338) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (3338) websocket_client: Websocket client is not connected[0m
+[1;31mE (3338) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (3398) websocket_client: Websocket client is not connected[0m
+[1;31mE (3398) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (3398) websocket_client: Websocket client is not connected[0m
+[1;31mE (3398) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (3458) websocket_client: Websocket client is not connected[0m
+[1;31mE (3458) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (3458) websocket_client: Websocket client is not connected[0m
+[1;31mE (3468) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (3528) websocket_client: Websocket client is not connected[0m
+[1;31mE (3528) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (3528) websocket_client: Websocket client is not connected[0m
+[1;31mE (3528) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (3588) websocket_client: Websocket client is not connected[0m
+[1;31mE (3588) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (3588) websocket_client: Websocket client is not connected[0m
+[1;31mE (3598) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (3658) websocket_client: Websocket client is not connected[0m
+[1;31mE (3658) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (3658) websocket_client: Websocket client is not connected[0m
+[1;31mE (3658) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (3718) websocket_client: Websocket client is not connected[0m
+[1;31mE (3718) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (3718) websocket_client: Websocket client is not connected[0m
+[1;31mE (3718) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (3778) websocket_client: Websocket client is not connected[0m
+[1;31mE (3778) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (3778) websocket_client: Websocket client is not connected[0m
+[1;31mE (3788) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (3848) websocket_client: Websocket client is not connected[0m
+[1;31mE (3848) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (3848) websocket_client: Websocket client is not connected[0m
+[1;31mE (3848) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (3908) websocket_client: Websocket client is not connected[0m
+[1;31mE (3908) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (3908) websocket_client: Websocket client is not connected[0m
+[1;31mE (3918) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (3968) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (3968) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (3968) WS_MGR: WebSocket error[0m
+[1;31mE (3978) websocket_client: Websocket client is not connected[0m
+[0;32mI (3978) websocket_client: Reconnect after 5000 ms[0m
+[1;31mE (3988) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[0;33mW (3988) WS_MGR: WebSocket disconnected[0m
+[0;32mI (10008) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (11058) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (11058) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (11068) WS_MGR: WebSocket error[0m
+[0;32mI (11078) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (11078) WS_MGR: WebSocket disconnected[0m
+[0;32mI (19578) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (20628) WS_MGR: WebSocket connected[0m
+[1;31mE (20798) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (20808) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (20808) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (20818) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (20818) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (20848) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (20858) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (20858) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (20908) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (20918) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (20918) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (20918) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (20928) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (20958) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (20958) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (20968) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21008) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21008) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21018) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21018) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21028) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21058) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21058) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21068) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21108) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21128) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21138) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21198) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21198) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21258) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21268) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21318) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21328) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21388) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21398) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21448) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21458) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21518) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21518) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21578) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21588) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21648) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21648) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21708) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21708) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21768) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21778) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21838) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21838) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21898) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21908) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21958) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (21968) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (22028) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (22028) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (22088) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (22098) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (22158) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (22168) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (22218) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (22228) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (22278) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (22288) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (22348) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (22358) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (22418) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (22418) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (22478) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (22488) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (22538) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (22548) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (22608) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (22608) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (22668) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (22678) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (22728) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (22738) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (22798) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (22798) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (22858) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (22868) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (22928) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (22928) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (22988) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (22998) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (23048) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (23058) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (23118) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (23138) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (23208) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (23208) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (23268) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (23268) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (23328) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (23328) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (23378) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (23378) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (23438) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (23438) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (23498) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (23498) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (23548) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (23548) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (23608) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (23608) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (23668) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (23668) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (23718) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (23718) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (23778) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (23778) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (23828) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (23828) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (23848) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (23848) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (23858) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (23868) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (23878) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (23898) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (23908) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (23918) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (23968) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (23978) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (23988) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (23998) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (24008) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (24028) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (24038) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (24048) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (24098) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (24108) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (24138) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (24148) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (24228) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (24228) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (24288) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (24288) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (24338) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (24338) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (24398) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (24398) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (24458) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (24458) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (24518) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (24518) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (24578) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (24578) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (24628) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (24628) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (24688) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (24688) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (24728) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (24738) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (24748) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (24758) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (24768) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (24818) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (24828) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (24838) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (24848) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (24858) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (24878) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (24888) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (24898) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (24938) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (24948) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (24978) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (24988) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (25038) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (25048) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (25118) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (25118) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (25178) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (25178) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (25228) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (25228) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (25288) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (25288) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (25338) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (25338) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (25398) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (25398) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (25458) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (25458) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (25518) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (25518) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (25578) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (25578) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (25638) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (25638) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (25688) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (25688) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (25748) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (25748) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (25808) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (25808) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (25858) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (25858) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (25918) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (25918) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (25978) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (25978) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26028) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (26028) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26088) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (26088) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26138) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26148) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26148) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26158) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26188) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26198) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26208) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26218) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26228) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26278) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26278) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26288) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26298) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26308) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26338) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26348) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26358) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26378) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26388) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26438) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26448) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26458) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26468) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26478) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26498) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26508) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26518) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26558) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26578) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26578) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26658) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26668) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26708) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26798) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (26798) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26858) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (26858) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26918) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (26918) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (26978) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (26978) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (27028) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (27028) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (27088) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (27088) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (27148) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (27148) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (27158) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (27168) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (27178) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (27198) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (27208) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (27218) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (27228) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (27238) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (27288) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (27298) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (27308) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (27318) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (27338) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (27398) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (27408) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (27458) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (27458) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (27518) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (27518) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (27578) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (27578) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (27628) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (27628) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (27668) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (27678) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (27688) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (27698) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (27718) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (27728) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (27778) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (27788) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (27788) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (27798) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (27888) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (27888) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (27948) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (27948) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (27998) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (27998) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (28048) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (28048) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (28058) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (28068) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (28078) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (28098) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (28108) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (28118) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (28248) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (28248) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (28258) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (28318) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (28318) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (28378) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (28378) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (28438) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (28438) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (28498) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (28498) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (28558) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (28558) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (28618) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (28618) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (28678) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (28678) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (28738) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (28738) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (28788) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (28788) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (28848) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (28848) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (28908) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (28908) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (28958) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (28958) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29018) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (29018) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29078) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29088) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29088) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29098) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29128) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29138) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29148) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29158) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29168) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29218) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29228) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29238) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29248) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29258) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29278) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29288) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29298) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29318) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29328) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29368) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29378) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29388) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29398) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29408) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29548) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29548) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29558) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29568) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29578) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29608) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29668) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (29668) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29728) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (29728) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29788) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (29788) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29848) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (29848) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29908) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (29908) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (29968) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (29968) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (30028) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (30028) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (30088) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (30088) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (30138) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (30138) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (30198) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (30198) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (30228) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (30238) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (30248) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (30258) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (30278) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (30288) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (30298) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (30318) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (30328) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (30368) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (30378) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (30388) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (30398) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (30408) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (30438) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (30438) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (30538) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (30548) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (30558) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (30568) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (30688) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (30688) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (30748) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (30748) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (30798) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (30798) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (30858) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (30858) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (30918) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (30918) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (30978) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (30978) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31038) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (31038) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31088) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (31088) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31148) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (31148) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31208) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (31208) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31248) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31258) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31268) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31278) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31288) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31308) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31318) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31328) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31338) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31348) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31388) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31398) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31408) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31418) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31428) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31538) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31548) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31558) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31578) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31588) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31598) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31638) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31648) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31678) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31698) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31708) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31868) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (31868) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31878) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31878) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31888) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31888) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31918) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31948) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (31948) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (32008) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (32018) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (32078) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (32078) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (32138) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (32148) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (32208) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (32208) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (32268) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (32268) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (32338) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (32338) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (32398) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (32398) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (32458) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (32468) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (32518) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (32528) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (32588) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (32598) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (32648) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (32658) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (32718) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (32718) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (32778) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (32788) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (32848) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (32848) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (32908) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (32908) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (32978) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (32978) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (33038) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (33038) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (33098) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (33108) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (33158) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (33168) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (33228) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (33238) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (33288) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (33298) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (33358) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (33368) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (33418) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (33428) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (33488) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (33488) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (33548) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (33548) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (33618) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (33618) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (33678) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (33678) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (33738) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (33748) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (33798) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (33808) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (33868) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (33878) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (33928) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (33938) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (33998) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (33998) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (34058) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (34068) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (34128) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (34128) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (34188) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (34188) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (34248) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (34258) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (34318) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (34318) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (34378) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (34388) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (34438) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (34448) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (34508) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (34518) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (34568) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (34578) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (34638) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (34638) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (34698) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (34708) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (34768) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (34768) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (34828) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (34828) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (34898) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (34898) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (34958) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (34958) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (35018) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (35028) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (35078) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (35088) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (35148) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (35158) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (35208) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (35218) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (35278) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (35278) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (35338) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (35348) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (35408) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (35408) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (35468) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (35468) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (35538) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (35538) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (35598) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (35598) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (35658) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (35668) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (35718) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (35728) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (35788) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (35798) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (35848) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (35858) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (35918) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (35918) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (35978) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (35988) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (36048) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (36048) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (36108) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (36108) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (36178) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (36178) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (36238) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (36238) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (36298) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (36308) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (36358) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (36368) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (36428) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (36438) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (36488) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (36498) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (36558) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (36558) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (36618) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (36628) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (36688) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (36688) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (36748) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (36748) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (36818) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (36818) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (36878) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (36878) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (36938) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (36948) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (36998) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (37008) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (37068) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (37078) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (37128) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (37138) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (37198) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (37198) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (37258) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (37268) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (37328) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (37328) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (37388) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (37388) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (37458) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (37458) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (37518) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (37518) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (37578) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (37588) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (37638) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (37648) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (37718) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (37728) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (37778) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (37788) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (37838) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (37838) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (37898) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (37908) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (37968) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (37978) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (38028) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (38038) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (38098) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (38098) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (38158) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (38168) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (38218) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (38228) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (38288) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (38298) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (38348) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (38358) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (38408) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (38418) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (38478) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (38488) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (38538) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (38548) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (38608) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (38618) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (38668) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (38678) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (38738) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (38748) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (38798) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (38798) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (38858) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (38858) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (38918) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (38918) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (38978) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (38978) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (39038) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (39038) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (39088) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (39088) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (39148) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (39148) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (39178) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (39188) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (39198) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (39208) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (39258) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (39268) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (39278) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (39288) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (39298) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (39318) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (39328) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (39408) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (39408) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (39468) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (39468) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (39518) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (39518) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (39568) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (39568) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (39618) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (39618) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (39668) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (39668) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (39688) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (39698) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (39708) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (39728) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (39758) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (39768) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (39778) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (39788) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (39818) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (39828) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (39908) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (39908) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (39968) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (39968) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (40018) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (40018) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (40078) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (40088) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (40098) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (40108) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (40118) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (40138) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (40148) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (40238) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (40238) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (40298) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (40298) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (40348) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (40348) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (40408) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (40408) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (40468) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (40468) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (40528) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (40528) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (40588) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (40588) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (40638) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (40638) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (40698) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (40698) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (40758) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (40758) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (40818) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (40818) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (40878) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (40878) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (40928) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (40928) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (40988) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (40988) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (40998) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (40998) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (41008) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (41008) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (41038) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (41048) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (41048) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (41058) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (41068) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (41088) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (41098) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (41098) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (41108) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (41118) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (41138) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (41148) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (41158) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (41168) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (41228) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (41238) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (41288) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (41298) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (41358) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (41358) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (41418) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (41428) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (41478) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (42628) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (42638) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (42638) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (42678) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (42678) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (42688) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (42688) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (42698) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (42728) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (42728) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (42738) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (42738) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (42748) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (42768) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (42778) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (42788) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (42788) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (42798) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (42818) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (42818) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (42838) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (42838) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (42848) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (42888) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (42898) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (42958) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (42958) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (43018) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (43028) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (43088) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (43088) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (43148) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (43158) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (43208) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (43218) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (43278) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (43278) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (43338) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (43348) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (43398) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (43408) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (43468) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (43468) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (43538) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (43538) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (43598) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (43598) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (43658) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (43668) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (43718) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (43728) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (43788) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (43798) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (43848) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (43858) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (43918) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (43918) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (43978) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (43978) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (44048) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (44048) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (44108) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (44118) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (44168) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (44178) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (44238) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (44238) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (44298) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (44308) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (44368) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (44368) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (44428) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (44428) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (44498) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (44498) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (44558) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (44558) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (44618) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (44628) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (44678) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (44688) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (44748) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (44758) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (44808) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (44818) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (44878) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (44878) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (44938) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (44948) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (45008) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (45008) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (45068) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (45068) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (45138) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (45138) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (45198) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (45198) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (45258) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (45268) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (45318) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (45328) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (45388) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (45398) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (45448) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (45458) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (45518) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (45518) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (45578) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (45588) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (45648) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (45648) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (45708) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (45708) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (45778) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (45778) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (45838) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (45848) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (45898) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (45908) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (45958) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (45968) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (46028) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (46038) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (46088) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (46098) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (46158) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (46168) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (46218) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (46228) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (46288) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (46298) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (46348) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (46358) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (46408) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (46418) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (46478) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (46488) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (46538) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (46548) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (46608) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (46608) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (46668) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (46718) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (46718) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (46738) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (46748) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (46808) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (46808) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (46868) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (46868) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (46928) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (46928) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (46988) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (46988) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (47048) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (47048) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (47098) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (47098) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (47158) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (47158) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (47208) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (47208) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (47268) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (47268) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (47328) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (47328) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (47388) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (47388) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (47448) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (47448) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (47498) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (47508) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (47518) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (47528) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (47538) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (47568) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (47578) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (47588) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (47588) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (47638) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (47648) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (47658) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (47668) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (47698) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (47708) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (47718) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (47728) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (47768) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (47778) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (47778) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (47828) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (47838) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (47928) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (47928) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (47988) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (47988) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (48038) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (48038) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (48098) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (48098) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (48158) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (48158) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (48208) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (48208) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (48258) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (48268) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (48278) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (48288) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (48298) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (48328) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (48328) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (48338) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (48368) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (48378) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (48418) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (48428) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (48478) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (48478) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (48528) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (48528) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (48588) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (48588) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (48648) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (48648) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (48658) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (48668) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (48678) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (48728) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (48738) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (48818) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (48818) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (48828) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (48878) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (48878) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (48888) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (48938) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (48938) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (48998) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (48998) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (49058) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (49058) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (49108) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (49108) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (49168) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (49168) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (49178) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (49228) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (49228) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (49238) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (49288) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (49288) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (49348) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (49348) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (49408) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (49408) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (49458) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (49458) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (49518) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (49518) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (49578) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (49578) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (49628) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (49628) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (49678) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (49678) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (49738) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (49738) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (49798) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (49808) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (49818) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (49828) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (49838) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (49858) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (49868) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (49878) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (49888) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (49898) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (49948) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (49958) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (49968) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (49978) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (49988) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (50008) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (50018) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (50028) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (50058) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (50068) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (50108) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (50128) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (50138) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (50188) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (50198) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (50268) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (50278) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (50318) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (50318) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (50378) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (50388) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (50448) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (50448) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (50508) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (50508) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (50578) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (50578) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (50638) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (50638) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (50698) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (50708) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (50768) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (50768) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (50828) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (50838) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (50888) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (50898) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (50958) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (50958) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (51018) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (51028) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (51088) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (51088) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (51148) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (51148) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (51218) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (51218) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (51278) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (51278) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (51338) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (51348) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (51398) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (51408) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (51468) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (51508) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (51528) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (51538) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (51598) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (51598) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (51658) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (51668) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (51718) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (51728) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (51788) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (51798) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (51848) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (51858) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (51918) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (51918) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (51978) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (51988) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (52048) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (52048) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (52108) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (52108) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (52168) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (52178) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (52238) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (52238) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (52298) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (52308) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (52358) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (52368) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (52428) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (52438) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (52488) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (52498) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (52558) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (52558) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (52618) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (52628) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (52688) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (52688) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (52748) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (52748) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (52818) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (52818) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (52878) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (52878) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (52938) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (52948) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (52998) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (53008) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (53068) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (53078) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (53138) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (53148) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (53198) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (53208) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (53258) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (53268) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (53328) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (53338) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (53388) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (53388) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (53448) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (53458) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (53518) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (53518) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (53578) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (53588) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (53648) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (53648) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (53708) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (53718) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (53768) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (53778) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (53838) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (53848) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (53898) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (53908) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (53968) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (53968) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (54028) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (54028) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (54138) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (54148) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (54198) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (54198) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (54258) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (54258) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (54268) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (54318) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (54318) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (54378) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (54378) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (54428) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (54428) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (54478) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (54478) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (54538) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (54538) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (54598) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (54598) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (54658) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (54658) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (54718) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (54718) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (54768) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (54768) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (54778) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (54788) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (54798) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (54808) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (54838) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (54848) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (54858) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (54868) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (54878) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (54928) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (54938) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (54948) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (54958) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (54958) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (54988) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (54988) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (54998) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (55048) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (55058) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (55118) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (55118) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (55178) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (55188) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (55238) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (55248) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (55308) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (55318) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (55368) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (55378) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (55438) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (55438) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (55498) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (55508) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (55568) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (55568) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (55628) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (55628) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (55698) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (55698) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (55758) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (55758) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (55818) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (55828) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (55888) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (55888) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (55948) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (55958) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (56008) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (56018) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (56078) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (56078) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (56138) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (56148) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (56208) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (56208) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (56268) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (56268) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (56338) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (56338) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (56398) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (56398) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (56458) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (56468) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (56528) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (56528) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (56588) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (56588) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (56658) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (56658) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (56718) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (56718) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (56778) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (56788) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (56838) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (56848) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (56908) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (56918) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (56968) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (56978) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (57038) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (57038) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (57098) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (57108) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (57158) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (57168) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (57228) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (57238) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (57288) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (57298) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (57358) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (57358) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (57418) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (57428) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (57488) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (57488) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (57548) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (57548) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (57608) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (57618) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (57678) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (57678) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (57738) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (57748) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (57808) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (57808) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (57868) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (57868) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (57938) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (57938) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (57998) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (57998) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (58058) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (58068) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (58118) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (58128) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (58188) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (58198) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (58248) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (58258) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (58318) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (58318) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (58378) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (58388) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (58448) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (58448) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (58508) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (58508) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (58578) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (58578) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (58638) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (58638) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (58698) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (58708) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (58758) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (58768) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (58828) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (58838) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (58888) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (58898) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (58958) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (58968) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (59018) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (59028) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (59088) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (59098) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (59148) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (59158) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (59218) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (59218) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (59278) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (59288) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (59338) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (59348) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (59408) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (59408) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (59478) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (59478) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (59528) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (59538) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (59598) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (59598) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (59658) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (59668) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (59718) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (59728) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (59788) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (59798) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (59848) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (59858) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (59918) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (59918) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (59978) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (59988) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (60048) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (60048) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (60108) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (60108) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (60168) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (60178) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (60238) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (60238) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (60298) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (60308) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (60358) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (60368) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (60428) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (60438) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (60488) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (60498) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (60558) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (60558) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (60618) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (60628) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (60688) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (60688) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (60748) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (60748) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (60818) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (60818) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (60878) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (60878) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (60938) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (60948) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (61008) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (61008) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (61068) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (61078) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (61128) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (61138) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (61198) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (61198) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (61258) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (61268) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (61318) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (61328) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (61388) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (61398) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (61448) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (61458) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (61518) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (61518) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (61578) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (61588) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (61648) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (61648) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (61708) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (61708) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (61778) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (61778) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (61838) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (61838) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (61898) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (61908) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (61958) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (61968) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (62028) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (62038) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (62088) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (62098) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (62158) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (62158) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (62218) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (62228) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (62288) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (62288) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (62348) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (62348) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (62408) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (62418) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (62478) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (62478) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (62538) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (62548) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (62598) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (62608) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (62668) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (62678) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (62728) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (62738) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (62798) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (62798) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (62858) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (62868) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (62928) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (62928) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (62988) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (62988) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (63058) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (63058) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (63118) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (63118) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (63178) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (63188) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (63238) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (63248) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (63308) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (63318) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (63368) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (63378) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (63438) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (63438) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (63498) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (63508) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (63558) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (63568) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (63628) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (63638) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (63688) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (63698) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (63758) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (63768) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (63818) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (63828) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (63888) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (63898) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (63948) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (63958) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (64008) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (64018) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (64078) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (64098) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (64138) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (64148) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (64208) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (64218) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (64268) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (64278) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (64328) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (64338) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (64398) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (64408) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (64498) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (64498) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (64558) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (64558) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (64608) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (64608) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (64628) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (64638) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (64648) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (64658) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (64708) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (64718) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (64728) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (64798) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (64798) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (64858) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (64858) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (64918) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (64918) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (64978) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (64978) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (65008) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (65018) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (65028) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (65038) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (65048) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (65098) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (65108) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (65118) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (65178) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (65178) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (65238) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (65238) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (65288) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (65288) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (65338) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (65338) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (65398) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (65398) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (65448) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (65448) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (65498) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (65498) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (65548) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (65548) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (65608) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (65608) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (65648) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (65658) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (65668) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (65678) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (65708) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (65718) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (65768) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (65778) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (65778) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (65788) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (65798) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (65858) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (65868) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (65878) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (65888) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (65978) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (65978) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (66038) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (66038) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (66048) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (66058) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (66078) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (66178) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (66178) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (66238) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (66238) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (66288) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (66288) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (66348) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (66348) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (66408) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (66408) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (66458) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (66458) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (66508) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (66508) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (66568) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (66568) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (66628) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (66628) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (66678) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (66678) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (66688) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (66698) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (66708) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (66738) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (66748) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (66758) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (66768) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (66778) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (66818) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (66828) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (66838) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (66848) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (66858) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (66898) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (66898) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (67048) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (67048) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (67058) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (67068) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (67078) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (67088) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (67108) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (67178) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (67178) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (67238) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (67238) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (67298) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (67298) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (67358) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (67358) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (67418) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (67418) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (67468) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (67468) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (67528) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (67528) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (67578) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (67578) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (67628) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (67628) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (67678) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (67688) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (67698) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (67708) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (67708) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (67718) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (67748) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (67758) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (67768) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (67788) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (67798) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (67838) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (67848) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (67858) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (67868) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (67878) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (67918) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (68018) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (68068) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (68068) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (68078) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (68088) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (68088) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (68118) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (68118) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (68168) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (68178) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (68238) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (68238) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (68298) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (68308) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (68368) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (68368) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (68428) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (68428) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (68498) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (68498) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (68558) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (68558) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (68618) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (68628) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (68688) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (68688) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (68748) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (68758) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (68808) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (68818) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (68878) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (68878) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (68938) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (68948) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (69008) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (69008) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (69068) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (69068) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (69138) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (69138) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (69198) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (69198) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (69258) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (69268) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (69318) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (69328) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[1;31mE (69328) transport_ws: Error read data[0m
+[1;31mE (69328) websocket_client: esp_transport_read() failed with -1, transport_error=ESP_ERR_ESP_TLS_TCP_CLOSED_FIN, tls_error_code=0, tls_flags=0, errno=119[0m
+[0;33mW (69338) WS_MGR: WebSocket error[0m
+[1;31mE (69348) websocket_client: Error receive data[0m
+[0;32mI (69348) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (69358) WS_MGR: WebSocket disconnected[0m
+[1;31mE (69378) AUDIO_RECORD: WebSocket send_bin failed (-1)[0m
+[0;32mI (75358) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (76398) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (76398) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (76398) WS_MGR: WebSocket error[0m
+[0;32mI (76408) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (76408) WS_MGR: WebSocket disconnected[0m
+[0;32mI (82408) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (83438) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (83438) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (83448) WS_MGR: WebSocket error[0m
+[0;32mI (83448) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (83458) WS_MGR: WebSocket disconnected[0m
+[0;32mI (89448) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (90518) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (90518) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (90528) WS_MGR: WebSocket error[0m
+[0;32mI (90528) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (90538) WS_MGR: WebSocket disconnected[0m
+[0;32mI (96528) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (97578) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (97578) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (97588) WS_MGR: WebSocket error[0m
+[0;32mI (97598) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (97598) WS_MGR: WebSocket disconnected[0m
+[0;32mI (106098) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (107148) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (107148) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (107158) WS_MGR: WebSocket error[0m
+[0;32mI (107158) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (107168) WS_MGR: WebSocket disconnected[0m
+[0;32mI (113188) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (114238) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (114238) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (114248) WS_MGR: WebSocket error[0m
+[0;32mI (114248) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (114248) WS_MGR: WebSocket disconnected[0m
+[0;32mI (120278) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (121168) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (121168) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (121178) WS_MGR: WebSocket error[0m
+[0;32mI (121178) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (121178) WS_MGR: WebSocket disconnected[0m
+[0;32mI (127038) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (128288) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (128288) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (128298) WS_MGR: WebSocket error[0m
+[0;32mI (128298) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (128308) WS_MGR: WebSocket disconnected[0m
+[0;32mI (134298) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (135318) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (135318) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (135328) WS_MGR: WebSocket error[0m
+[0;32mI (135328) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (135338) WS_MGR: WebSocket disconnected[0m
+[0;32mI (141328) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (142398) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (142398) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (142408) WS_MGR: WebSocket error[0m
+[0;32mI (142408) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (142418) WS_MGR: WebSocket disconnected[0m
+[0;32mI (148418) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (149478) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (149478) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (149488) WS_MGR: WebSocket error[0m
+[0;32mI (149488) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (149498) WS_MGR: WebSocket disconnected[0m
+[0;32mI (155488) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (156538) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (156538) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (156548) WS_MGR: WebSocket error[0m
+[0;32mI (156558) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (156558) WS_MGR: WebSocket disconnected[0m
+[0;32mI (165048) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (166108) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (166108) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (166118) WS_MGR: WebSocket error[0m
+[0;32mI (166128) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (166128) WS_MGR: WebSocket disconnected[0m
+[0;32mI (174628) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (175708) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (175718) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (175718) WS_MGR: WebSocket error[0m
+[0;32mI (175728) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (175728) WS_MGR: WebSocket disconnected[0m
+[0;32mI (184248) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (185318) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (185318) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (185328) WS_MGR: WebSocket error[0m
+[0;32mI (185338) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (185338) WS_MGR: WebSocket disconnected[0m
+[0;32mI (193828) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (194898) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (194898) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (194908) WS_MGR: WebSocket error[0m
+[0;32mI (194908) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (194908) WS_MGR: WebSocket disconnected[0m
+[0;32mI (200918) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (201978) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (201978) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (201988) WS_MGR: WebSocket error[0m
+[0;32mI (201988) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (201998) WS_MGR: WebSocket disconnected[0m
+[0;32mI (208008) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (209068) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (209068) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (209068) WS_MGR: WebSocket error[0m
+[0;32mI (209078) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (209078) WS_MGR: WebSocket disconnected[0m
+[0;32mI (215088) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (216128) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (216128) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (216138) WS_MGR: WebSocket error[0m
+[0;32mI (216148) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (216148) WS_MGR: WebSocket disconnected[0m
+[0;32mI (224638) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (225678) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (225688) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (225688) WS_MGR: WebSocket error[0m
+[0;32mI (225698) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (225698) WS_MGR: WebSocket disconnected[0m
+[0;32mI (231698) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (232748) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (232748) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (232758) WS_MGR: WebSocket error[0m
+[0;32mI (232768) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (232768) WS_MGR: WebSocket disconnected[0m
+[0;32mI (241258) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (242308) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (242318) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (242318) WS_MGR: WebSocket error[0m
+[0;32mI (242328) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (242328) WS_MGR: WebSocket disconnected[0m
+[0;32mI (248348) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (249408) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (249408) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (249418) WS_MGR: WebSocket error[0m
+[0;32mI (249418) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (249418) WS_MGR: WebSocket disconnected[0m
+[0;32mI (255408) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (256448) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (256458) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (256468) WS_MGR: WebSocket error[0m
+[0;32mI (256468) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (256468) WS_MGR: WebSocket disconnected[0m
+[0;32mI (262478) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (263538) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (263538) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (263548) WS_MGR: WebSocket error[0m
+[0;32mI (263548) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (263558) WS_MGR: WebSocket disconnected[0m
+[0;32mI (269548) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (270628) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (270628) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (270638) WS_MGR: WebSocket error[0m
+[0;32mI (270638) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (270638) WS_MGR: WebSocket disconnected[0m
+[0;32mI (276638) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (277688) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (277688) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (277698) WS_MGR: WebSocket error[0m
+[0;32mI (277698) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (277698) WS_MGR: WebSocket disconnected[0m

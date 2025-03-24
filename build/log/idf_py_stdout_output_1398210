@@ -1,0 +1,1580 @@
+Command: /home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/julien/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/julien/Documents/esp32IDF/hello_world/build/hello_world.elf /home/julien/Documents/esp32IDF/hello_world/build/bootloader/bootloader.elf -m '/home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python' '/home/julien/esp/esp-idf/tools/idf.py'
+etsJu   2016 00:22:57
+rst0x1 (POWERON_RESE),oo:0x13 (SPI_FAS_FAS_BOT)
+configsip 0,SPWP0xee
+clk_drv:x0,q_rv:0x00,d_drv:0x0,c0_dv:0x00,hd_drv0x0,w_dv:0x00
+mode:DO,clck iv:2
+load:0xff000,ln:6368
+load:0407800,len:15880
+oa:04000400,len:3860
+enry0x0080638
+[0;32mI (26) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar 13 2025 23:19:13[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v1.1[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (36) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (76) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+[0;32mI (83) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (93) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=31908h (203016) map[0m
+[0;32mI (169) esp_image: segment 1: paddr=00051930 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (170) esp_image: segment 2: paddr=00051954 vaddr=3ffb0000 size=03fb0h ( 16304) load[0m
+[0;32mI (179) esp_image: segment 3: paddr=0005590c vaddr=40080000 size=0a70ch ( 42764) load[0m
+[0;32mI (197) esp_image: segment 4: paddr=00060020 vaddr=400d0020 size=9f8b4h (653492) map[0m
+[0;32mI (421) esp_image: segment 5: paddr=000ff8dc vaddr=4008a70c size=0e26ch ( 57964) load[0m
+[0;32mI (456) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (456) boot: Disabling RNG early entropy source...[0m
+[0;32mI (466) cpu_start: Multicore app[0m
+[0;32mI (475) cpu_start: Pro cpu start user code[0m
+[0;32mI (475) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (475) app_init: Application information:[0m
+[0;32mI (475) app_init: Project name:     hello_world[0m
+[0;32mI (479) app_init: App version:      0925295-dirty[0m
+[0;32mI (483) app_init: Compile time:     Mar 13 2025 23:19:08[0m
+[0;32mI (488) app_init: ELF file SHA256:  b584a302c...[0m
+[0;32mI (493) app_init: ESP-IDF:          v5.5-dev-2290-g94cfe394fe[0m
+[0;32mI (498) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (502) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (506) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (510) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (516) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (521) heap_init: At 3FFBAEA0 len 00025160 (148 KiB): DRAM[0m
+[0;32mI (527) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (532) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (537) heap_init: At 40098978 len 00007688 (29 KiB): IRAM[0m
+[0;32mI (544) spi_flash: detected chip: generic[0m
+[0;32mI (546) spi_flash: flash io: dio[0m
+[0;33mW (550) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;33mW (557) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
+[0;32mI (569) main_task: Started on CPU0[0m
+[0;32mI (579) main_task: Calling app_main()[0m
+[0;32mI (579) MAIN: Starting app_main...[0m
+[0;32mI (629) wifi:wifi driver task: 3ffc2fe0, prio:23, stack:6656, core=0[0m
+[0;32mI (649) wifi:wifi firmware version: 3a3aca644[0m
+[0;32mI (649) wifi:wifi certification version: v7.0[0m
+[0;32mI (649) wifi:config NVS flash: enabled[0m
+[0;32mI (649) wifi:config nano formatting: disabled[0m
+[0;32mI (649) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (659) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (659) wifi:Init management short buffer num: 32[0m
+[0;32mI (659) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (669) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (669) wifi:Init static rx buffer num: 10[0m
+[0;32mI (679) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (679) wifi_init: rx ba win: 6[0m
+[0;32mI (679) wifi_init: accept mbox: 6[0m
+[0;32mI (689) wifi_init: tcpip mbox: 32[0m
+[0;32mI (689) wifi_init: udp mbox: 6[0m
+[0;32mI (689) wifi_init: tcp mbox: 6[0m
+[0;32mI (689) wifi_init: tcp tx win: 5760[0m
+[0;32mI (699) wifi_init: tcp rx win: 5760[0m
+[0;32mI (699) wifi_init: tcp mss: 1440[0m
+[0;32mI (699) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (709) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (719) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (799) wifi:mode : sta (94:54:c5:b5:f9:ec)[0m
+[0;32mI (799) wifi:enable tsf[0m
+[0;32mI (799) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (809) WIFI_MGR: Wi-Fi init done. SSID=Partagedeco[0m
+[0;32mI (809) AudioPlayer: Audio player initialized. sample_rate=8000[0m
+[0;32mI (809) AudioPlayer: audio_task started[0m
+[0;32mI (809) AUDIO_RECORD: I2S initialized for mic input (sr=8000, bits=32)[0m
+[0;32mI (819) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (829) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (829) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (839) wifi:Association refused temporarily time 1269, comeback time 1369 (TUs)[0m
+[0;32mI (2239) wifi:state: assoc -> assoc (0x0)[0m
+[0;32mI (2249) wifi:state: assoc -> init (0x6c0)[0m
+[0;32mI (2259) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2259) WIFI_MGR: Retrying Wi-Fi connection...[0m
+[0;32mI (4679) WIFI_MGR: Retrying Wi-Fi connection...[0m
+[0;32mI (4689) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (4689) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (4699) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (4709) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (4719) wifi:connected with Partagedeco, aid = 1, channel 11, BW20, bssid = aa:f0:fe:0d:99:0e[0m
+[0;32mI (4719) wifi:security: WPA2-PSK, phy: bgn, rssi: -42[0m
+[0;32mI (4739) wifi:pm start, type: 0[0m
+
+[0;32mI (4739) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (4759) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (4759) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (5899) esp_netif_handlers: sta ip: 172.19.145.71, mask: 255.255.255.0, gw: 172.19.145.31[0m
+[0;32mI (5899) WIFI_MGR: Got IP: 172.19.145.71[0m
+[0;32mI (5899) websocket_client: Started[0m
+[0;32mI (5899) WS_MGR: WebSocket started![0m
+[0;32mI (5899) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (5919) websocket_client: Websocket client is not connected[0m
+[1;31mE (5919) websocket_client: Websocket client is not connected[0m
+[1;31mE (5919) websocket_client: Websocket client is not connected[0m
+[1;31mE (5929) websocket_client: Websocket client is not connected[0m
+[1;31mE (5929) websocket_client: Websocket client is not connected[0m
+[1;31mE (5939) websocket_client: Websocket client is not connected[0m
+[1;31mE (5939) websocket_client: Websocket client is not connected[0m
+[1;31mE (5949) websocket_client: Websocket client is not connected[0m
+[1;31mE (5949) websocket_client: Websocket client is not connected[0m
+[0;32mI (5949) wifi:<ba-add>idx:0 (ifx:0, aa:f0:fe:0d:99:0e), tid:0, ssn:3, winSize:64[0m
+[1;31mE (5959) websocket_client: Websocket client is not connected[0m
+[1;31mE (5969) websocket_client: Websocket client is not connected[0m
+[1;31mE (5979) websocket_client: Websocket client is not connected[0m
+[1;31mE (5979) websocket_client: Websocket client is not connected[0m
+[1;31mE (5989) websocket_client: Websocket client is not connected[0m
+[1;31mE (5989) websocket_client: Websocket client is not connected[0m
+[1;31mE (5999) websocket_client: Websocket client is not connected[0m
+[1;31mE (5999) websocket_client: Websocket client is not connected[0m
+[1;31mE (6009) websocket_client: Websocket client is not connected[0m
+[1;31mE (6059) websocket_client: Websocket client is not connected[0m
+[1;31mE (6059) websocket_client: Websocket client is not connected[0m
+[0;32mI (6109) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (6129) websocket_client: Websocket client is not connected[0m
+[1;31mE (6129) websocket_client: Websocket client is not connected[0m
+[1;31mE (6189) websocket_client: Websocket client is not connected[0m
+[1;31mE (6189) websocket_client: Websocket client is not connected[0m
+[1;31mE (6249) websocket_client: Websocket client is not connected[0m
+[1;31mE (6249) websocket_client: Websocket client is not connected[0m
+[0;32mI (6309) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (6319) websocket_client: Websocket client is not connected[0m
+[1;31mE (6319) websocket_client: Websocket client is not connected[0m
+[1;31mE (6379) websocket_client: Websocket client is not connected[0m
+[1;31mE (6379) websocket_client: Websocket client is not connected[0m
+[1;31mE (6449) websocket_client: Websocket client is not connected[0m
+[1;31mE (6449) websocket_client: Websocket client is not connected[0m
+[0;32mI (6509) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (6509) websocket_client: Websocket client is not connected[0m
+[1;31mE (6509) websocket_client: Websocket client is not connected[0m
+[1;31mE (6569) websocket_client: Websocket client is not connected[0m
+[1;31mE (6569) websocket_client: Websocket client is not connected[0m
+[1;31mE (6639) websocket_client: Websocket client is not connected[0m
+[1;31mE (6639) websocket_client: Websocket client is not connected[0m
+[1;31mE (6699) websocket_client: Websocket client is not connected[0m
+[1;31mE (6699) websocket_client: Websocket client is not connected[0m
+[1;31mE (6769) websocket_client: Websocket client is not connected[0m
+[1;31mE (6769) websocket_client: Websocket client is not connected[0m
+[0;32mI (6809) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (6829) websocket_client: Websocket client is not connected[0m
+[1;31mE (6829) websocket_client: Websocket client is not connected[0m
+[1;31mE (6889) websocket_client: Websocket client is not connected[0m
+[1;31mE (6889) websocket_client: Websocket client is not connected[0m
+[1;31mE (6959) websocket_client: Websocket client is not connected[0m
+[1;31mE (6959) websocket_client: Websocket client is not connected[0m
+[1;31mE (7019) websocket_client: Websocket client is not connected[0m
+[1;31mE (7019) websocket_client: Websocket client is not connected[0m
+[1;31mE (7089) websocket_client: Websocket client is not connected[0m
+[1;31mE (7089) websocket_client: Websocket client is not connected[0m
+[1;31mE (7149) websocket_client: Websocket client is not connected[0m
+[1;31mE (7149) websocket_client: Websocket client is not connected[0m
+[1;31mE (7209) websocket_client: Websocket client is not connected[0m
+[1;31mE (7209) websocket_client: Websocket client is not connected[0m
+[1;31mE (7279) websocket_client: Websocket client is not connected[0m
+[1;31mE (7279) websocket_client: Websocket client is not connected[0m
+[1;31mE (7339) websocket_client: Websocket client is not connected[0m
+[1;31mE (7339) websocket_client: Websocket client is not connected[0m
+[1;31mE (7409) websocket_client: Websocket client is not connected[0m
+[1;31mE (7409) websocket_client: Websocket client is not connected[0m
+[1;31mE (7469) websocket_client: Websocket client is not connected[0m
+[1;31mE (7469) websocket_client: Websocket client is not connected[0m
+[1;31mE (7529) websocket_client: Websocket client is not connected[0m
+[1;31mE (7529) websocket_client: Websocket client is not connected[0m
+[0;32mI (7569) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (7599) websocket_client: Websocket client is not connected[0m
+[1;31mE (7599) websocket_client: Websocket client is not connected[0m
+[1;31mE (7659) websocket_client: Websocket client is not connected[0m
+[1;31mE (7659) websocket_client: Websocket client is not connected[0m
+[1;31mE (7729) websocket_client: Websocket client is not connected[0m
+[1;31mE (7729) websocket_client: Websocket client is not connected[0m
+[0;32mI (7769) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (7789) websocket_client: Websocket client is not connected[0m
+[1;31mE (7789) websocket_client: Websocket client is not connected[0m
+[1;31mE (7849) websocket_client: Websocket client is not connected[0m
+[1;31mE (7849) websocket_client: Websocket client is not connected[0m
+[0;32mI (7869) WS_MGR: WebSocket connected[0m
+[0;32mI (7969) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (8169) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (8369) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (8569) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (8769) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (8969) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (9169) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (9369) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (9569) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (9769) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (9969) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (10169) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (10369) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (10569) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (10769) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (10969) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (11169) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (11369) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (11569) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (11769) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (11969) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (12169) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (12369) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (12569) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (12769) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (12969) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (13169) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (13369) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (13569) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (13769) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (13969) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (14169) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (14369) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (14569) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (14769) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (14969) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (15169) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (15369) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (15569) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (15769) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (15969) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (16169) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (16369) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (16569) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (16769) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (16969) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (17169) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (17369) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (17569) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (17769) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (17969) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (18179) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (18379) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (18579) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (18779) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (18979) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (19179) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (19379) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (19579) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (19779) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (19979) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (20179) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (20379) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (20579) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (20779) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (20979) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (21179) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (21379) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (21579) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (21779) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (21979) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (22179) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (22379) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (22589) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (22789) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (22989) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (23189) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (23389) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (23589) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (23789) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (23989) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (24189) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (24389) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (24589) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (24789) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (24989) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (25189) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (25389) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (25589) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (25799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (25999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (26199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (26399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (26599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (26799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (26999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (27199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (27399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (27599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (27799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (27999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (28199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (28399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (28599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (28799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (28999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (29199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (29399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (29599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (29799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (29999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (30199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (30399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (30599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (30799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (30999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (31199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (31399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (31599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (31799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (31999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (32199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (32399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (32599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (32799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (32999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (33199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (33399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (33599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (33799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (33999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (34199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (34399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (34599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (34799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (34999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (35199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (35399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (35599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (35799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (35999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (36199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (36399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (36599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (36799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (36999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (37199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (37399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (37599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (37799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (37999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (38199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (38399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (38599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (38799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (38999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (39199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (39399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (39599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (39799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (39999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (40199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (40399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (40599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (40799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (40999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (41199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (41399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (41599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (41799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (41999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (42199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (42399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (42599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (42799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (42999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (43199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (43399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (43599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (43799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (43999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (44199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (44399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (44599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (44799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (44999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (45199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (45399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (45599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (45799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (45999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (46199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (46399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (46599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (46799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (46999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (47199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (47399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (47599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (47799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (47999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (48199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (48399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (48599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (48799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (48999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (49199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (49399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (49599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (49799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (49999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (50199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (50399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (50599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (50799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (50999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (51199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (51399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (51599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (51799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (51999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (52199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (52399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (52599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (52799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (52999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (53199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (53399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (53599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (53799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (53999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (54199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (54399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (54599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (54799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (54999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (55199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (55399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (55599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (55799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (55999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (56199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (56399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (56599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (56799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (56999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (57199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (57399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (57599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (57799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (57999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (58199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (58399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (58599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (58799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (58999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (59199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (59399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (59599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (59799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (59809) transport_ws: Error read data[0m
+[1;31mE (59809) websocket_client: esp_transport_read() failed with -1, transport_error=ESP_ERR_ESP_TLS_TCP_CLOSED_FIN, tls_error_code=0, tls_flags=0, errno=119[0m
+[0;33mW (59819) WS_MGR: WebSocket error[0m
+[1;31mE (59819) websocket_client: Error receive data[0m
+[0;32mI (59829) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (59829) WS_MGR: WebSocket disconnected[0m
+[0;32mI (59999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (60199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (60399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (60599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (60799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (60999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (61199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (61399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (61599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (61799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (61999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (62199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (62399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (62599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (62799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (62999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (63199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (63399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (63599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (63799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (63999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (64199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (64399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (64599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (64799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (64999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (65199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (65399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (65599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (65799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (65999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (66199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (66399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (66599) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (66799) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (66999) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (67199) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (67399) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (68189) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (68949) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (69119) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (69119) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (69129) WS_MGR: WebSocket error[0m
+[0;32mI (69129) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (69139) WS_MGR: WebSocket disconnected[0m
+[0;32mI (69149) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (69349) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (69549) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (69749) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (69949) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (70149) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (70349) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (70549) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (70749) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (70949) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (71149) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (71349) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (71549) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (71749) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (71949) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (72149) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (72349) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (72549) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (72749) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (72949) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (73149) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (73349) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (73549) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (73749) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (73949) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (74149) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (74349) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (75139) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (75139) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (76079) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (76089) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;32mI (76089) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;33mW (76089) WS_MGR: WebSocket error[0m
+[0;32mI (76109) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (76109) WS_MGR: WebSocket disconnected[0m
+[0;32mI (76299) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (76499) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (76699) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (76899) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (77099) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (77299) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (77499) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (77699) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (77899) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (78099) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (78299) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (78499) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (78699) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (78899) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (79099) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (79299) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (79499) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (79699) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (79899) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (80099) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (80299) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (80499) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (80699) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (80899) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (81099) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (81299) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (81499) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (81699) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (81899) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (82099) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (82299) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (82499) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (82699) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (82899) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (83099) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (83299) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (83499) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (83699) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (84629) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (84629) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (85579) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (85689) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (85689) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (85699) WS_MGR: WebSocket error[0m
+[0;32mI (85699) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (85699) WS_MGR: WebSocket disconnected[0m
+[0;32mI (85779) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (85979) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (86179) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (86379) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (86579) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (86779) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (86979) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (87179) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (87379) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (87579) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (87779) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (87979) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (88179) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (88379) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (88579) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (88779) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (88979) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (89179) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (89379) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (89579) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (89779) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (89979) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (90179) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (90379) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (90579) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (90779) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (91709) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (91709) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (92659) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (92769) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (92769) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (92779) WS_MGR: WebSocket error[0m
+[0;32mI (92779) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (92789) WS_MGR: WebSocket disconnected[0m
+[0;32mI (92859) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (93059) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (93259) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (93459) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (93659) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (93859) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (94059) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (94259) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (94459) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (94659) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (94859) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (95059) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (95259) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (95459) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (95659) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (95859) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (96059) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (96259) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (96459) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (96659) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (96859) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (97059) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (97259) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (97459) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (97659) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (97859) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (98819) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (98819) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (99769) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (99919) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (99919) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (99929) WS_MGR: WebSocket error[0m
+[0;32mI (99929) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (99929) WS_MGR: WebSocket disconnected[0m
+[0;32mI (99969) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (100169) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (100369) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (100569) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (100769) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (100969) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (101169) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (101369) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (101569) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (101769) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (101969) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (102169) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (102369) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (102569) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (102769) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (102969) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (103169) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (103369) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (103569) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (103769) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (103969) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (104169) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (104369) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (104569) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (104769) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (104969) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (105939) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (106709) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (106909) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (106989) WS_MGR: WebSocket connected[0m
+[0;32mI (107109) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (107309) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (107509) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (107709) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (107909) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (108109) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (108309) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (108509) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (108709) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (108909) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (109109) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (109309) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (109509) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (109709) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (109909) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (110109) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (110309) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (110509) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (110709) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (110909) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (111109) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (111309) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (111509) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (111709) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (111909) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (112109) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (112309) WS_MGR: [RingBuf Monitor] used=1536, free=14848 (of 16384)[0m
+[0;32mI (112509) WS_MGR: [RingBuf Monitor] used=1024, free=15360 (of 16384)[0m
+[0;32mI (112709) WS_MGR: [RingBuf Monitor] used=3010, free=13374 (of 16384)[0m
+[0;32mI (112909) WS_MGR: [RingBuf Monitor] used=4230, free=12154 (of 16384)[0m
+[0;32mI (113109) WS_MGR: [RingBuf Monitor] used=5632, free=10752 (of 16384)[0m
+[0;32mI (113309) WS_MGR: [RingBuf Monitor] used=6414, free=9970 (of 16384)[0m
+[0;32mI (113509) WS_MGR: [RingBuf Monitor] used=6144, free=10240 (of 16384)[0m
+[0;32mI (113709) WS_MGR: [RingBuf Monitor] used=9728, free=6656 (of 16384)[0m
+[0;32mI (113909) WS_MGR: [RingBuf Monitor] used=8704, free=7680 (of 16384)[0m
+[0;32mI (114109) WS_MGR: [RingBuf Monitor] used=12800, free=3584 (of 16384)[0m
+[0;32mI (114309) WS_MGR: [RingBuf Monitor] used=10534, free=5850 (of 16384)[0m
+[0;32mI (114509) WS_MGR: [RingBuf Monitor] used=14630, free=1754 (of 16384)[0m
+[1;31mE (114659) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (114709) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (114709) WS_MGR: [RingBuf Monitor] used=16166, free=218 (of 16384)[0m
+[0;32mI (114909) WS_MGR: [RingBuf Monitor] used=12288, free=4096 (of 16384)[0m
+[0;32mI (115109) WS_MGR: [RingBuf Monitor] used=16384, free=0 (of 16384)[0m
+[1;31mE (115169) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (115219) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (115309) WS_MGR: [RingBuf Monitor] used=12070, free=4314 (of 16384)[0m
+[0;32mI (115509) WS_MGR: [RingBuf Monitor] used=16166, free=218 (of 16384)[0m
+[1;31mE (115579) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (115629) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (115679) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (115709) WS_MGR: [RingBuf Monitor] used=16166, free=218 (of 16384)[0m
+[1;31mE (115729) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (115779) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (115829) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (115879) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (115909) WS_MGR: [RingBuf Monitor] used=8192, free=8192 (of 16384)[0m
+[0;32mI (116109) WS_MGR: [RingBuf Monitor] used=14848, free=1536 (of 16384)[0m
+[1;31mE (116249) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (116309) WS_MGR: [RingBuf Monitor] used=11558, free=4826 (of 16384)[0m
+[0;32mI (116509) WS_MGR: [RingBuf Monitor] used=15654, free=730 (of 16384)[0m
+[1;31mE (116609) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (116659) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (116709) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (116709) WS_MGR: [RingBuf Monitor] used=16166, free=218 (of 16384)[0m
+[1;31mE (116759) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (116809) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (116859) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (116909) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (116909) WS_MGR: [RingBuf Monitor] used=16166, free=218 (of 16384)[0m
+[0;32mI (117109) WS_MGR: [RingBuf Monitor] used=13824, free=2560 (of 16384)[0m
+[1;31mE (117299) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (117309) WS_MGR: [RingBuf Monitor] used=10534, free=5850 (of 16384)[0m
+[0;32mI (117509) WS_MGR: [RingBuf Monitor] used=15142, free=1242 (of 16384)[0m
+[1;31mE (117629) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (117679) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (117709) WS_MGR: [RingBuf Monitor] used=16166, free=218 (of 16384)[0m
+[1;31mE (117729) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (117779) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (117829) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (117879) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (117909) WS_MGR: [RingBuf Monitor] used=16166, free=218 (of 16384)[0m
+[1;31mE (117929) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (118109) WS_MGR: [RingBuf Monitor] used=13312, free=3072 (of 16384)[0m
+[0;32mI (118309) WS_MGR: [RingBuf Monitor] used=16384, free=0 (of 16384)[0m
+[1;31mE (118319) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (118509) WS_MGR: [RingBuf Monitor] used=14630, free=1754 (of 16384)[0m
+[1;31mE (118659) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (118709) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (118709) WS_MGR: [RingBuf Monitor] used=16166, free=218 (of 16384)[0m
+[1;31mE (118759) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (118809) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (118859) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (118909) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (118909) WS_MGR: [RingBuf Monitor] used=16166, free=218 (of 16384)[0m
+[1;31mE (118959) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (119109) WS_MGR: [RingBuf Monitor] used=12288, free=4096 (of 16384)[0m
+[0;32mI (119309) WS_MGR: [RingBuf Monitor] used=16384, free=0 (of 16384)[0m
+[0;32mI (119509) WS_MGR: [RingBuf Monitor] used=11928, free=4456 (of 16384)[0m
+[0;32mI (119709) WS_MGR: [RingBuf Monitor] used=11928, free=4456 (of 16384)[0m
+[0;32mI (119909) WS_MGR: [RingBuf Monitor] used=11928, free=4456 (of 16384)[0m
+[0;32mI (120109) WS_MGR: [RingBuf Monitor] used=882, free=15502 (of 16384)[0m
+[0;32mI (120309) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (120519) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (120719) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (120919) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (121119) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (121319) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (121519) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (121719) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (121919) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (122119) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (122319) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (122519) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (122719) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (122919) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (123119) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (123319) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (123519) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (123719) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (123919) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (124119) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (124319) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (124519) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (124719) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (124919) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (125119) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (125319) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (125519) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (125719) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (125919) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (126119) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (126319) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (126519) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (126719) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (126919) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (127119) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (127319) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (127519) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (127719) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (127919) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (128119) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (128319) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (128519) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (128719) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (128919) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (129119) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (129319) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (129519) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (129719) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (129919) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (130119) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (130319) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (130519) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (130719) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (130919) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (131119) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (131319) WS_MGR: [RingBuf Monitor] used=1474, free=14910 (of 16384)[0m
+[0;32mI (131519) WS_MGR: [RingBuf Monitor] used=3072, free=13312 (of 16384)[0m
+[0;32mI (131719) WS_MGR: [RingBuf Monitor] used=4608, free=11776 (of 16384)[0m
+[0;32mI (131919) WS_MGR: [RingBuf Monitor] used=4742, free=11642 (of 16384)[0m
+[0;32mI (132119) WS_MGR: [RingBuf Monitor] used=8838, free=7546 (of 16384)[0m
+[0;32mI (132319) WS_MGR: [RingBuf Monitor] used=8704, free=7680 (of 16384)[0m
+[0;32mI (132519) WS_MGR: [RingBuf Monitor] used=7680, free=8704 (of 16384)[0m
+[0;32mI (132719) WS_MGR: [RingBuf Monitor] used=11776, free=4608 (of 16384)[0m
+[0;32mI (132919) WS_MGR: [RingBuf Monitor] used=8326, free=8058 (of 16384)[0m
+[0;32mI (133119) WS_MGR: [RingBuf Monitor] used=12422, free=3962 (of 16384)[0m
+[0;32mI (133319) WS_MGR: [RingBuf Monitor] used=15942, free=442 (of 16384)[0m
+[1;31mE (133349) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (133399) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (133519) WS_MGR: [RingBuf Monitor] used=11712, free=4672 (of 16384)[0m
+[0;32mI (133719) WS_MGR: [RingBuf Monitor] used=16160, free=224 (of 16384)[0m
+[1;31mE (133789) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (133839) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (133889) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (133919) WS_MGR: [RingBuf Monitor] used=16160, free=224 (of 16384)[0m
+[0;32mI (134119) WS_MGR: [RingBuf Monitor] used=13734, free=2650 (of 16384)[0m
+[1;31mE (134299) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (134319) WS_MGR: [RingBuf Monitor] used=16294, free=90 (of 16384)[0m
+[1;31mE (134349) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (134399) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (134519) WS_MGR: [RingBuf Monitor] used=12288, free=4096 (of 16384)[0m
+[0;32mI (134719) WS_MGR: [RingBuf Monitor] used=16384, free=0 (of 16384)[0m
+[1;31mE (134779) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (134829) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (134879) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (134919) WS_MGR: [RingBuf Monitor] used=16384, free=0 (of 16384)[0m
+[1;31mE (134929) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (135119) WS_MGR: [RingBuf Monitor] used=14694, free=1690 (of 16384)[0m
+[1;31mE (135269) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (135319) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (135319) WS_MGR: [RingBuf Monitor] used=16230, free=154 (of 16384)[0m
+[1;31mE (135369) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (135419) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (135519) WS_MGR: [RingBuf Monitor] used=11712, free=4672 (of 16384)[0m
+[0;32mI (135719) WS_MGR: [RingBuf Monitor] used=15808, free=576 (of 16384)[0m
+[1;31mE (135809) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (135859) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (135909) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (135919) WS_MGR: [RingBuf Monitor] used=16320, free=64 (of 16384)[0m
+[1;31mE (135959) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (136119) WS_MGR: [RingBuf Monitor] used=14182, free=2202 (of 16384)[0m
+[1;31mE (136289) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (136319) WS_MGR: [RingBuf Monitor] used=16230, free=154 (of 16384)[0m
+[1;31mE (136339) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (136389) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (136439) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (136519) WS_MGR: [RingBuf Monitor] used=11202, free=5182 (of 16384)[0m
+[0;32mI (136719) WS_MGR: [RingBuf Monitor] used=15298, free=1086 (of 16384)[0m
+[1;31mE (136829) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (136879) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (136919) WS_MGR: [RingBuf Monitor] used=16322, free=62 (of 16384)[0m
+[1;31mE (136929) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (136979) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (137119) WS_MGR: [RingBuf Monitor] used=13608, free=2776 (of 16384)[0m
+[1;31mE (137289) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (137319) WS_MGR: [RingBuf Monitor] used=16168, free=216 (of 16384)[0m
+[1;31mE (137339) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (137389) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (137439) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (137489) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (137519) WS_MGR: [RingBuf Monitor] used=16168, free=216 (of 16384)[0m
+[1;31mE (137539) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (137589) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (137719) WS_MGR: [RingBuf Monitor] used=12800, free=3584 (of 16384)[0m
+[0;32mI (137919) WS_MGR: [RingBuf Monitor] used=16322, free=62 (of 16384)[0m
+[1;31mE (137929) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (137979) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (138119) WS_MGR: [RingBuf Monitor] used=13068, free=3316 (of 16384)[0m
+[1;31mE (138319) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (138319) WS_MGR: [RingBuf Monitor] used=16140, free=244 (of 16384)[0m
+[1;31mE (138369) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (138419) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (138469) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (138519) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (138519) WS_MGR: [RingBuf Monitor] used=16140, free=244 (of 16384)[0m
+[1;31mE (138569) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (138619) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (138719) WS_MGR: [RingBuf Monitor] used=10274, free=6110 (of 16384)[0m
+[0;32mI (138919) WS_MGR: [RingBuf Monitor] used=15906, free=478 (of 16384)[0m
+[1;31mE (138989) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (139039) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (139119) WS_MGR: [RingBuf Monitor] used=12556, free=3828 (of 16384)[0m
+[0;32mI (139319) WS_MGR: [RingBuf Monitor] used=16140, free=244 (of 16384)[0m
+[1;31mE (139369) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (139419) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (139469) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (139519) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (139519) WS_MGR: [RingBuf Monitor] used=16140, free=244 (of 16384)[0m
+[1;31mE (139569) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (139619) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (139669) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (139719) WS_MGR: [RingBuf Monitor] used=11264, free=5120 (of 16384)[0m
+[0;32mI (139919) WS_MGR: [RingBuf Monitor] used=15360, free=1024 (of 16384)[0m
+[1;31mE (140029) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (140119) WS_MGR: [RingBuf Monitor] used=12044, free=4340 (of 16384)[0m
+[0;32mI (140319) WS_MGR: [RingBuf Monitor] used=16140, free=244 (of 16384)[0m
+[1;31mE (140389) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (140439) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (140489) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (140519) WS_MGR: [RingBuf Monitor] used=16140, free=244 (of 16384)[0m
+[1;31mE (140539) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (140589) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (140639) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (140689) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (140719) WS_MGR: [RingBuf Monitor] used=9216, free=7168 (of 16384)[0m
+[0;32mI (140919) WS_MGR: [RingBuf Monitor] used=14336, free=2048 (of 16384)[0m
+[1;31mE (141079) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (141119) WS_MGR: [RingBuf Monitor] used=11532, free=4852 (of 16384)[0m
+[0;32mI (141319) WS_MGR: [RingBuf Monitor] used=15116, free=1268 (of 16384)[0m
+[1;31mE (141419) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (141469) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (141519) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (141519) WS_MGR: [RingBuf Monitor] used=16140, free=244 (of 16384)[0m
+[1;31mE (141569) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (141619) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (141669) WS_MGR: Ring buffer full => dropped audio![0m
+[1;31mE (141719) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (141719) WS_MGR: [RingBuf Monitor] used=16140, free=244 (of 16384)[0m
+[0;32mI (141919) WS_MGR: [RingBuf Monitor] used=7792, free=8592 (of 16384)[0m
+[0;32mI (142119) WS_MGR: [RingBuf Monitor] used=1916, free=14468 (of 16384)[0m
+[0;32mI (142319) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (142519) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (142719) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (142919) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (143119) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (143319) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (143519) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (143719) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (143919) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (144119) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (144319) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (144519) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (144719) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (144919) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (145119) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (145319) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (145519) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (145719) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (145729) transport_ws: Error read data[0m
+[1;31mE (145729) websocket_client: esp_transport_read() failed with -1, transport_error=ESP_ERR_ESP_TLS_TCP_CLOSED_FIN, tls_error_code=0, tls_flags=0, errno=119[0m
+[0;33mW (145729) WS_MGR: WebSocket error[0m
+[1;31mE (145739) websocket_client: Error receive data[0m
+[0;32mI (145749) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (145749) WS_MGR: WebSocket disconnected[0m
+[0;32mI (145919) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (146119) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (146319) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (146519) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (146719) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (146919) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (147119) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (147319) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (147519) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (147719) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (147919) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (148119) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (148319) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (148519) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (148719) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (148919) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (149119) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (149319) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (149519) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (149719) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (149919) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (150119) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (150319) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (150519) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (150719) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (150919) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (151119) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (151319) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (151519) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (151719) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (151919) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (152119) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (152319) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (152519) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (152719) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (152919) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (153119) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (153319) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (154259) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (155029) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (155229) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (155309) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (155309) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (155319) WS_MGR: WebSocket error[0m
+[0;32mI (155319) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (155329) WS_MGR: WebSocket disconnected[0m
+[0;32mI (155429) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (155629) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (155829) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (156029) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (156229) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (156429) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (156629) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (156829) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (157029) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (157229) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (157429) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (157629) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (157829) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (158029) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (158229) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (158429) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (158629) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (158829) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (159029) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (159229) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (159429) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (159629) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (159829) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (160029) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (160229) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (160429) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (161349) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (161349) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (162299) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (162429) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (162429) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (162439) WS_MGR: WebSocket error[0m
+[0;32mI (162439) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (162439) WS_MGR: WebSocket disconnected[0m
+[0;32mI (162499) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (162699) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (162899) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (163099) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (163299) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (163499) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (163699) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (163899) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (164099) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (164299) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (164499) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (164699) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (164899) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (165099) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (165299) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (165499) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (165699) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (165899) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (166099) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (166299) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (166499) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (166699) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (166899) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (167099) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (167299) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (167499) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (168459) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (168459) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (169409) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (169529) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (169529) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (169539) WS_MGR: WebSocket error[0m
+[0;32mI (169539) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (169549) WS_MGR: WebSocket disconnected[0m
+[0;32mI (169609) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (169809) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (170009) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (170209) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (170409) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (170609) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (170809) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (171009) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (171209) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (171409) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (171609) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (171809) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (172009) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (172209) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (172409) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (172609) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (172809) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (173009) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (173209) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (173409) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (173609) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (173809) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (174009) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (174209) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (174409) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (174609) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (175579) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (175579) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (176539) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (176669) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (176669) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (176679) WS_MGR: WebSocket error[0m
+[0;32mI (176689) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (176689) WS_MGR: WebSocket disconnected[0m
+[0;32mI (176739) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (176939) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (177139) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (177339) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (177539) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (177739) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (177939) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (178139) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (178339) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (178539) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (178739) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (178939) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (179139) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (179339) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (179539) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (179739) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (179939) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (180139) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (180339) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (180539) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (180739) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (180939) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (181139) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (181339) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (181539) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (181739) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (181939) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (182139) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (182339) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (182539) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (182739) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (182939) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (183139) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (183339) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (183539) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (183739) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (183939) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (184139) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (184339) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (184539) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (184739) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (184939) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (185139) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (185219) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (185339) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (185649) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (186169) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (186169) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;32mI (186179) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;33mW (186179) WS_MGR: WebSocket error[0m
+[0;32mI (186189) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (186199) WS_MGR: WebSocket disconnected[0m
+[0;32mI (186389) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (186589) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (186789) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (186989) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (187189) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (187219) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (187389) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (187589) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (187789) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (187989) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (188189) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (188389) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (188589) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (188789) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (188989) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (189189) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (189389) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (189589) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (189789) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (189989) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (190189) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (190389) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (190589) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (190789) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (190989) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (191189) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (191389) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (191589) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (191789) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (191989) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (192189) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (192389) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (192589) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (192789) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (192989) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (193189) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (193389) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (193589) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (194549) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (195329) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (195499) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (195499) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (195509) WS_MGR: WebSocket error[0m
+[0;32mI (195509) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (195509) WS_MGR: WebSocket disconnected[0m
+[0;32mI (195529) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (195729) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (195929) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (196129) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (196329) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (196529) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (196729) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (196929) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (197129) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (197329) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (197529) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (197729) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (197929) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (198129) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (198329) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (198529) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (198729) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (198929) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (199129) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (199329) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (199529) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (199729) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (199929) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (200129) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (200329) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (200529) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (201389) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (201389) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (202309) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (202309) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (202319) WS_MGR: WebSocket error[0m
+[0;32mI (202329) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (202329) WS_MGR: WebSocket disconnected[0m
+[0;32mI (202349) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (202549) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (202749) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (202949) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (203149) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (203349) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (203549) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (203749) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (203949) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (204149) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (204349) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (204549) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (204749) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (204949) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (205149) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (205349) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (205549) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (205749) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (205949) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (206149) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (206349) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (206549) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (206749) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (206949) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (207149) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (207349) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (207549) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (207749) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (207949) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (208149) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (208349) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (208549) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (208749) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (208949) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (209149) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (209349) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (209549) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (209749) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (210719) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (210719) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (211639) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (211639) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (211649) WS_MGR: WebSocket error[0m
+[0;32mI (211659) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (211659) WS_MGR: WebSocket disconnected[0m
+[0;32mI (211679) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (211879) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (212079) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (212279) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (212479) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (212679) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (212879) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (213079) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (213279) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (213479) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (213679) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (213879) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (214079) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (214279) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (214479) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (214679) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (214879) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (215079) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (215279) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (215479) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (215679) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (215879) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (216079) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (216279) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (216479) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (216679) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (216879) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (217079) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (217279) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (217479) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (217679) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (217879) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (218079) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (218279) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (218479) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (218679) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (218879) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (219079) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (219279) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (220079) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (220079) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (221019) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (221019) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (221029) WS_MGR: WebSocket error[0m
+[0;32mI (221029) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (221029) WS_MGR: WebSocket disconnected[0m
+[0;32mI (221039) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (221239) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (221439) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (221639) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (221839) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (222039) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (222239) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (222439) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (222639) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (222839) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (223039) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (223239) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (223439) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (223639) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (223839) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (224039) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (224239) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (224439) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (224639) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (224839) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (225039) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (225239) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (225439) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (225639) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (225839) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (226039) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (226909) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (226919) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (227819) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (227819) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (227829) WS_MGR: WebSocket error[0m
+[0;32mI (227839) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (227839) WS_MGR: WebSocket disconnected[0m
+[0;32mI (227869) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (228069) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (228269) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (228469) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (228669) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (228869) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (229069) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (229269) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (229469) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (229669) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (229869) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (230069) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (230269) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (230469) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (230669) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (230869) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (231069) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (231269) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (231469) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (231669) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (231869) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (232069) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (232269) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (232469) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (232669) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (232869) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (233069) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (233269) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (233469) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (233669) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (233869) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (234069) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (234269) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (234469) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (234669) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (234869) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (235069) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (235269) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (235469) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (236269) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (236269) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (237219) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (237229) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (237229) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (237239) WS_MGR: WebSocket error[0m
+[0;32mI (237239) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (237239) WS_MGR: WebSocket disconnected[0m
+[0;32mI (237419) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (237619) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (237819) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (238019) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (238219) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (238419) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (238619) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (238819) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (239019) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (239219) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (239419) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (239619) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (239819) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (240019) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (240219) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (240419) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (240619) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (240819) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (241019) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (241219) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (241419) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (241619) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (241819) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (242019) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (242219) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (243109) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (243119) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (244059) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (244259) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (244299) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (244309) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (244309) WS_MGR: WebSocket error[0m
+[0;32mI (244319) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (244319) WS_MGR: WebSocket disconnected[0m
+[0;32mI (244459) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (244659) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (244859) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (245059) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (245259) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (245459) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (245659) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (245859) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (246059) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (246259) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (246459) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (246659) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (246859) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (247059) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (247259) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (247459) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (247659) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (247859) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (248059) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (248259) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (248459) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (248659) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (248859) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (249059) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (249259) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (249459) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (249659) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (249859) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (250059) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (250259) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (250459) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (250659) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (250859) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (251059) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (251259) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (251459) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (251659) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (251859) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (252729) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (252729) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (253679) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (253729) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (253729) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (253739) WS_MGR: WebSocket error[0m
+[0;32mI (253749) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (253749) WS_MGR: WebSocket disconnected[0m
+[0;32mI (253879) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (254079) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (254279) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (254479) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (254679) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (254879) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (255079) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (255279) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (255479) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (255679) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (255879) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (256079) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (256279) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (256479) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (256679) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (256879) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (257079) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (257279) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (257479) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (257679) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (257879) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (258079) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (258279) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (258479) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (258679) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (258879) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (259079) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (259279) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (259479) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (259679) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (259879) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (260079) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (260279) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (260449) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (260479) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (260679) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (260879) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (261079) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (261279) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (262149) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (262919) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (263119) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (263199) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (263199) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (263199) WS_MGR: WebSocket error[0m
+[0;32mI (263209) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (263209) WS_MGR: WebSocket disconnected[0m
+[0;32mI (263319) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (263519) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (263719) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (263919) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (264119) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (264319) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (264519) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (264719) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (264919) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (265119) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (265319) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
