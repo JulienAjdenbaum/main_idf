@@ -2,6 +2,7 @@
 #include "esp_log.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+#include "tag_reader.h"
 
 #include "wifi_manager.h"        // your Wi-Fi code
 #include "websocket_manager.h"   // the code above
@@ -17,6 +18,7 @@ void app_main(void)
     audio_player_init();
     // websocket_manager_init();
     audio_record_init();
+    tag_reader_init();
     while (true) {
         vTaskDelay(pdMS_TO_TICKS(1000));
     }

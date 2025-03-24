@@ -9,9 +9,12 @@
 #include "freertos/ringbuf.h"
 #include <string.h>
 #include <stdio.h>
+#include "rc522_picc.h"
 
 #include "audio_stream.h"
-
+#ifndef RC522_PICC_MAX_UID_SIZE
+#define RC522_PICC_MAX_UID_SIZE 10
+#endif
 static const char *TAG = "WS_MGR";
 static esp_websocket_client_handle_t s_ws_client = NULL;
 static bool s_ws_connected = false;
@@ -186,5 +189,28 @@ static void ringbuf_monitor_task(void *arg)
 
         // Sleep 2 seconds
         vTaskDelay(pdMS_TO_TICKS(2000));
+    }
+}
+void websocket_manager_send_rfid_event(const uint8_t *uid, size_t uid_len, bool tag_removed)
+{
+    if (!s_ws_connected || !s_ws_client) {
+        ESP_LOGW(TAG, "WebSocket not connected: RFID event not sent");
+        return;
+    }
+
+    if (tag_removed) {
+        uint8_t buffer[1] = {0x03};
+        ESP_LOGI(TAG, "Sending tag REMOVED (0x03)");
+        websocket_manager_send_bin((const char *)buffer, 1);
+    } else {
+        uint8_t buffer[1 + RC522_PICC_MAX_UID_SIZE];
+        buffer[0] = 0x03;
+        if (uid_len > RC522_PICC_MAX_UID_SIZE) {
+            ESP_LOGW(TAG, "UID too long, skipping send");
+            return;
+        }
+        memcpy(&buffer[1], uid, uid_len);
+        ESP_LOGI(TAG, "Sending tag UID (0x03...) len=%d", (int)uid_len);
+        websocket_manager_send_bin((const char *)buffer, 1 + uid_len);
     }
 }

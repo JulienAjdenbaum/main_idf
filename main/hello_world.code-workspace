@@ -7,5 +7,17 @@
 			"path": "../../../talkingBox"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"files.associations": {
+			"websocket_manager.h": "c",
+			"wifi_manager.h": "c",
+			"*.ipp": "c",
+			"array": "c",
+			"bitset": "c",
+			"string_view": "c",
+			"initializer_list": "c",
+			"regex": "c",
+			"utility": "c"
+		}
+	}
 }

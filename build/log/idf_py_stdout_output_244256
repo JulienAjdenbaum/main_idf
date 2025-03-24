@@ -1,0 +1,459 @@
+Command: /home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/julien/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/julien/Documents/esp32IDF/hello_world/build/hello_world.elf /home/julien/Documents/esp32IDF/hello_world/build/bootloader/bootloader.elf -m '/home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python' '/home/julien/esp/esp-idf/tools/idf.py'
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6368
+load:0x40078000,len:15880
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar 13 2025 23:19:13[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (36) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (76) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+[0;32mI (83) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (93) boot: No factory image, trying OTA 0[0m
+[0;32mI (97) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=345c0h (214464) map[0m
+[0;32mI (177) esp_image: segment 1: paddr=000545e8 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (178) esp_image: segment 2: paddr=0005460c vaddr=3ffb0000 size=041a4h ( 16804) load[0m
+[0;32mI (187) esp_image: segment 3: paddr=000587b8 vaddr=40080000 size=07860h ( 30816) load[0m
+[0;32mI (201) esp_image: segment 4: paddr=00060020 vaddr=400d0020 size=a567ch (677500) map[0m
+[0;32mI (432) esp_image: segment 5: paddr=001056a4 vaddr=40087860 size=12fd8h ( 77784) load[0m
+[0;32mI (476) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (490) boot: Set actual ota_seq=1 in otadata[0][0m
+[0;32mI (490) boot: Disabling RNG early entropy source...[0m
+[0;32mI (500) cpu_start: Multicore app[0m
+[0;32mI (509) cpu_start: Pro cpu start user code[0m
+[0;32mI (509) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (509) app_init: Application information:[0m
+[0;32mI (509) app_init: Project name:     hello_world[0m
+[0;32mI (513) app_init: App version:      cdf8a71-dirty[0m
+[0;32mI (517) app_init: Compile time:     Mar 23 2025 21:57:14[0m
+[0;32mI (522) app_init: ELF file SHA256:  100d4a40e...[0m
+[0;32mI (527) app_init: ESP-IDF:          v5.5-dev-2290-g94cfe394fe[0m
+[0;32mI (532) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (536) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (540) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (544) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (550) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (555) heap_init: At 3FFBA0E0 len 00025F20 (151 KiB): DRAM[0m
+[0;32mI (561) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (566) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (571) heap_init: At 4009A838 len 000057C8 (21 KiB): IRAM[0m
+[0;32mI (578) spi_flash: detected chip: generic[0m
+[0;32mI (580) spi_flash: flash io: dio[0m
+[0;33mW (584) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;33mW (591) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
+[0;32mI (603) main_task: Started on CPU0[0m
+[0;32mI (613) main_task: Calling app_main()[0m
+[0;32mI (613) MAIN: Starting app_main...[0m
+[0;32mI (653) wifi:wifi driver task: 3ffc2220, prio:23, stack:6656, core=0[0m
+[0;32mI (663) wifi:wifi firmware version: 3a3aca644[0m
+[0;32mI (663) wifi:wifi certification version: v7.0[0m
+[0;32mI (663) wifi:config NVS flash: enabled[0m
+[0;32mI (663) wifi:config nano formatting: disabled[0m
+[0;32mI (673) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (673) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (683) wifi:Init management short buffer num: 32[0m
+[0;32mI (683) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (693) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (693) wifi:Init static rx buffer num: 10[0m
+[0;32mI (693) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (703) wifi_init: rx ba win: 6[0m
+[0;32mI (703) wifi_init: accept mbox: 6[0m
+[0;32mI (703) wifi_init: tcpip mbox: 32[0m
+[0;32mI (713) wifi_init: udp mbox: 6[0m
+[0;32mI (713) wifi_init: tcp mbox: 6[0m
+[0;32mI (713) wifi_init: tcp tx win: 5760[0m
+[0;32mI (723) wifi_init: tcp rx win: 5760[0m
+[0;32mI (723) wifi_init: tcp mss: 1440[0m
+[0;32mI (723) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (733) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (743) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (823) wifi:mode : sta (94:54:c5:b5:f9:ec)[0m
+[0;32mI (823) wifi:enable tsf[0m
+[0;32mI (823) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (823) WIFI_MGR: Wi-Fi init done. SSID=Partagedeco[0m
+[0;32mI (833) AudioPlayer: audio_task started[0m
+[0;32mI (833) AudioPlayer: Audio player initialized. sample_rate=8000[0m
+[0;32mI (833) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (833) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (843) AUDIO_RECORD: I2S initialized for mic input (sr=8000, bits=32)[0m
+[0;32mI (843) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (863) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (873) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (873) rc522: PCD (fw=v2.0) initialized[0m
+[0;32mI (873) RC522_TAG_READER: RC522 tag reader initialized[0m
+[0;32mI (883) wifi:connected with Partagedeco, aid = 1, channel 11, BW20, bssid = aa:f0:fe:0d:99:0e[0m
+[0;32mI (883) wifi:security: WPA2-PSK, phy: bgn, rssi: -37[0m
+[0;32mI (893) wifi:pm start, type: 0[0m
+
+[0;32mI (893) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (973) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (973) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (1943) esp_netif_handlers: sta ip: 10.179.61.71, mask: 255.255.255.0, gw: 10.179.61.75[0m
+[0;32mI (1943) WIFI_MGR: Got IP: 10.179.61.71[0m
+[0;32mI (1943) websocket_client: Started[0m
+[0;32mI (1943) WS_MGR: WebSocket started![0m
+[0;32mI (1943) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (1993) wifi:<ba-add>idx:0 (ifx:0, aa:f0:fe:0d:99:0e), tid:0, ssn:3, winSize:64[0m
+[1;31mE (2053) websocket_client: Websocket client is not connected[0m
+[1;31mE (2053) websocket_client: Websocket client is not connected[0m
+[1;31mE (2053) websocket_client: Websocket client is not connected[0m
+[1;31mE (2053) websocket_client: Websocket client is not connected[0m
+[1;31mE (2063) websocket_client: Websocket client is not connected[0m
+[1;31mE (2063) websocket_client: Websocket client is not connected[0m
+[1;31mE (2073) websocket_client: Websocket client is not connected[0m
+[1;31mE (2073) websocket_client: Websocket client is not connected[0m
+[1;31mE (2083) websocket_client: Websocket client is not connected[0m
+[1;31mE (2083) websocket_client: Websocket client is not connected[0m
+[1;31mE (2093) websocket_client: Websocket client is not connected[0m
+[1;31mE (2093) websocket_client: Websocket client is not connected[0m
+[1;31mE (2103) websocket_client: Websocket client is not connected[0m
+[1;31mE (2103) websocket_client: Websocket client is not connected[0m
+[1;31mE (2113) websocket_client: Websocket client is not connected[0m
+[1;31mE (2123) websocket_client: Websocket client is not connected[0m
+[1;31mE (2123) websocket_client: Websocket client is not connected[0m
+[1;31mE (2133) websocket_client: Websocket client is not connected[0m
+[1;31mE (2133) rc522: rc522_picc_send(86): [0m
+[1;31mE (2183) websocket_client: Websocket client is not connected[0m
+[1;31mE (2183) websocket_client: Websocket client is not connected[0m
+[1;31mE (2243) websocket_client: Websocket client is not connected[0m
+[1;31mE (2243) websocket_client: Websocket client is not connected[0m
+[1;31mE (2313) websocket_client: Websocket client is not connected[0m
+[1;31mE (2313) websocket_client: Websocket client is not connected[0m
+[1;31mE (2373) websocket_client: Websocket client is not connected[0m
+[1;31mE (2373) websocket_client: Websocket client is not connected[0m
+[1;31mE (2443) websocket_client: Websocket client is not connected[0m
+[1;31mE (2443) websocket_client: Websocket client is not connected[0m
+[1;31mE (2503) websocket_client: Websocket client is not connected[0m
+[1;31mE (2503) websocket_client: Websocket client is not connected[0m
+[1;31mE (2563) websocket_client: Websocket client is not connected[0m
+[1;31mE (2563) websocket_client: Websocket client is not connected[0m
+[1;31mE (2633) websocket_client: Websocket client is not connected[0m
+[1;31mE (2633) websocket_client: Websocket client is not connected[0m
+[1;31mE (2693) websocket_client: Websocket client is not connected[0m
+[1;31mE (2693) websocket_client: Websocket client is not connected[0m
+[1;31mE (2763) websocket_client: Websocket client is not connected[0m
+[1;31mE (2763) websocket_client: Websocket client is not connected[0m
+[1;31mE (2823) websocket_client: Websocket client is not connected[0m
+[1;31mE (2823) websocket_client: Websocket client is not connected[0m
+[0;32mI (2833) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (2833) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[1;31mE (2883) websocket_client: Websocket client is not connected[0m
+[1;31mE (3583) websocket_client: Websocket client is not connected[0m
+[1;31mE (3593) websocket_client: Websocket client is not connected[0m
+[1;31mE (3593) websocket_client: Websocket client is not connected[0m
+[1;31mE (3603) websocket_client: Websocket client is not connected[0m
+[1;31mE (3603) websocket_client: Websocket client is not connected[0m
+[1;31mE (3613) websocket_client: Websocket client is not connected[0m
+[1;31mE (3613) websocket_client: Websocket client is not connected[0m
+[1;31mE (3623) websocket_client: Websocket client is not connected[0m
+[1;31mE (3633) websocket_client: Websocket client is not connected[0m
+[1;31mE (3633) websocket_client: Websocket client is not connected[0m
+[1;31mE (3643) websocket_client: Websocket client is not connected[0m
+[1;31mE (3643) websocket_client: Websocket client is not connected[0m
+[1;31mE (3653) websocket_client: Websocket client is not connected[0m
+[1;31mE (3653) websocket_client: Websocket client is not connected[0m
+[1;31mE (3663) websocket_client: Websocket client is not connected[0m
+[1;31mE (3663) websocket_client: Websocket client is not connected[0m
+[1;31mE (3673) websocket_client: Websocket client is not connected[0m
+[1;31mE (3673) websocket_client: Websocket client is not connected[0m
+[1;31mE (3683) websocket_client: Websocket client is not connected[0m
+[1;31mE (3723) websocket_client: Websocket client is not connected[0m
+[1;31mE (3723) websocket_client: Websocket client is not connected[0m
+[1;31mE (3783) websocket_client: Websocket client is not connected[0m
+[1;31mE (3783) websocket_client: Websocket client is not connected[0m
+[0;32mI (3793) WS_MGR: WebSocket connected[0m
+[0;32mI (3953) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (4763) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (5603) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (5953) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (7603) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (7953) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (9603) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (9953) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (11563) AUDIO_RECORD: Audio is not playing, recording[0m
+[0;32mI (11603) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (11953) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (13603) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (13953) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (15603) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (15763) RC522_TAG_READER: New card present[0m
+[0;32mI (15763) WS_MGR: Sending tag UID (0x03...) len=7[0m
+[0;32mI (15953) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (17363) RC522_TAG_READER: Card removed[0m
+[0;32mI (17363) WS_MGR: Sending tag REMOVED (0x03)[0m
+[0;32mI (17603) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (17953) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (19603) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (19953) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (21603) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (21953) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (23603) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (23953) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (25603) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (25953) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (27603) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (27953) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (29603) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (29953) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6368
+load:0x40078000,len:15880
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar 13 2025 23:19:13[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (36) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (76) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+[0;32mI (83) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (93) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=345c0h (214464) map[0m
+[0;32mI (173) esp_image: segment 1: paddr=000545e8 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (174) esp_image: segment 2: paddr=0005460c vaddr=3ffb0000 size=041a4h ( 16804) load[0m
+[0;32mI (183) esp_image: segment 3: paddr=000587b8 vaddr=40080000 size=07860h ( 30816) load[0m
+[0;32mI (197) esp_image: segment 4: paddr=00060020 vaddr=400d0020 size=a567ch (677500) map[0m
+[0;32mI (428) esp_image: segment 5: paddr=001056a4 vaddr=40087860 size=12fd8h ( 77784) load[0m
+[0;32mI (472) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (472) boot: Disabling RNG early entropy source...[0m
+[0;32mI (482) cpu_start: Multicore app[0m
+[0;32mI (491) cpu_start: Pro cpu start user code[0m
+[0;32mI (491) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (491) app_init: Application information:[0m
+[0;32mI (491) app_init: Project name:     hello_world[0m
+[0;32mI (495) app_init: App version:      cdf8a71-dirty[0m
+[0;32mI (500) app_init: Compile time:     Mar 23 2025 21:57:14[0m
+[0;32mI (505) app_init: ELF file SHA256:  100d4a40e...[0m
+[0;32mI (509) app_init: ESP-IDF:          v5.5-dev-2290-g94cfe394fe[0m
+[0;32mI (514) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (518) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (522) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (526) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (532) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (537) heap_init: At 3FFBA0E0 len 00025F20 (151 KiB): DRAM[0m
+[0;32mI (543) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (548) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (554) heap_init: At 4009A838 len 000057C8 (21 KiB): IRAM[0m
+[0;32mI (560) spi_flash: detected chip: generic[0m
+[0;32mI (563) spi_flash: flash io: dio[0m
+[0;33mW (566) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;33mW (573) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
+[0;32mI (585) main_task: Started on CPU0[0m
+[0;32mI (595) main_task: Calling app_main()[0m
+[0;32mI (595) MAIN: Starting app_main...[0m
+[0;32mI (635) wifi:wifi driver task: 3ffc2220, prio:23, stack:6656, core=0[0m
+[0;32mI (645) wifi:wifi firmware version: 3a3aca644[0m
+[0;32mI (645) wifi:wifi certification version: v7.0[0m
+[0;32mI (645) wifi:config NVS flash: enabled[0m
+[0;32mI (645) wifi:config nano formatting: disabled[0m
+[0;32mI (655) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (655) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (665) wifi:Init management short buffer num: 32[0m
+[0;32mI (665) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (675) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (675) wifi:Init static rx buffer num: 10[0m
+[0;32mI (675) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (685) wifi_init: rx ba win: 6[0m
+[0;32mI (685) wifi_init: accept mbox: 6[0m
+[0;32mI (685) wifi_init: tcpip mbox: 32[0m
+[0;32mI (695) wifi_init: udp mbox: 6[0m
+[0;32mI (695) wifi_init: tcp mbox: 6[0m
+[0;32mI (695) wifi_init: tcp tx win: 5760[0m
+[0;32mI (705) wifi_init: tcp rx win: 5760[0m
+[0;32mI (705) wifi_init: tcp mss: 1440[0m
+[0;32mI (705) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (715) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (725) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (805) wifi:mode : sta (94:54:c5:b5:f9:ec)[0m
+[0;32mI (805) wifi:enable tsf[0m
+[0;32mI (805) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (805) WIFI_MGR: Wi-Fi init done. SSID=Partagedeco[0m
+[0;32mI (815) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (815) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (825) AudioPlayer: audio_task started[0m
+[0;32mI (825) AudioPlayer: Audio player initialized. sample_rate=8000[0m
+[0;32mI (825) wifi:I (825) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+state: auth -> assoc (0x0)I (825) AUDIO_RECORD: I2S initialized for mic input (sr=8000, bits=32)
+
+[0;32mI (845) wifi:Association refused temporarily time 1269, comeback time 1369 (TUs)[0m
+[0;32mI (855) rc522: PCD (fw=v2.0) initialized[0m
+[0;32mI (855) RC522_TAG_READER: RC522 tag reader initialized[0m
+[0;32mI (2255) wifi:state: assoc -> assoc (0x0)[0m
+[0;32mI (2255) wifi:state: assoc -> init (0x6c0)[0m
+[0;32mI (2265) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2265) WIFI_MGR: Retrying Wi-Fi connection...[0m
+[0;32mI (2835) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (4685) WIFI_MGR: Retrying Wi-Fi connection...[0m
+[0;32mI (4705) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (4705) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (4715) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (4765) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (4775) wifi:connected with Partagedeco, aid = 1, channel 11, BW20, bssid = aa:f0:fe:0d:99:0e[0m
+[0;32mI (4775) wifi:security: WPA2-PSK, phy: bgn, rssi: -34[0m
+[0;32mI (4785) wifi:pm start, type: 0[0m
+
+[0;32mI (4785) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (4825) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (4825) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (4835) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (6325) esp_netif_handlers: sta ip: 10.179.61.71, mask: 255.255.255.0, gw: 10.179.61.75[0m
+[0;32mI (6325) WIFI_MGR: Got IP: 10.179.61.71[0m
+[0;32mI (6325) websocket_client: Started[0m
+[0;32mI (6325) WS_MGR: WebSocket started![0m
+[0;32mI (6325) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (6425) wifi:<ba-add>idx:0 (ifx:0, aa:f0:fe:0d:99:0e), tid:0, ssn:3, winSize:64[0m
+[1;31mE (6545) websocket_client: Websocket client is not connected[0m
+[1;31mE (6545) websocket_client: Websocket client is not connected[0m
+[1;31mE (6545) websocket_client: Websocket client is not connected[0m
+[1;31mE (6545) websocket_client: Websocket client is not connected[0m
+[1;31mE (6555) websocket_client: Websocket client is not connected[0m
+[1;31mE (6555) websocket_client: Websocket client is not connected[0m
+[1;31mE (6565) websocket_client: Websocket client is not connected[0m
+[1;31mE (6565) websocket_client: Websocket client is not connected[0m
+[1;31mE (6575) websocket_client: Websocket client is not connected[0m
+[1;31mE (6575) websocket_client: Websocket client is not connected[0m
+[1;31mE (6585) websocket_client: Websocket client is not connected[0m
+[1;31mE (6585) websocket_client: Websocket client is not connected[0m
+[1;31mE (6595) websocket_client: Websocket client is not connected[0m
+[1;31mE (6595) websocket_client: Websocket client is not connected[0m
+[1;31mE (6605) websocket_client: Websocket client is not connected[0m
+[1;31mE (6615) websocket_client: Websocket client is not connected[0m
+[1;31mE (6655) websocket_client: Websocket client is not connected[0m
+[1;31mE (6655) websocket_client: Websocket client is not connected[0m
+[1;31mE (6715) websocket_client: Websocket client is not connected[0m
+[1;31mE (6715) websocket_client: Websocket client is not connected[0m
+[1;31mE (6785) websocket_client: Websocket client is not connected[0m
+[1;31mE (6785) websocket_client: Websocket client is not connected[0m
+[1;31mE (6845) websocket_client: Websocket client is not connected[0m
+[1;31mE (6845) websocket_client: Websocket client is not connected[0m
+[1;31mE (6905) websocket_client: Websocket client is not connected[0m
+[1;31mE (6905) websocket_client: Websocket client is not connected[0m
+[1;31mE (6975) websocket_client: Websocket client is not connected[0m
+[1;31mE (6975) websocket_client: Websocket client is not connected[0m
+[1;31mE (7035) websocket_client: Websocket client is not connected[0m
+[1;31mE (7035) websocket_client: Websocket client is not connected[0m
+[1;31mE (7105) websocket_client: Websocket client is not connected[0m
+[1;31mE (7105) websocket_client: Websocket client is not connected[0m
+[1;31mE (7165) websocket_client: Websocket client is not connected[0m
+[1;31mE (7165) websocket_client: Websocket client is not connected[0m
+[1;31mE (7225) websocket_client: Websocket client is not connected[0m
+[1;31mE (7225) websocket_client: Websocket client is not connected[0m
+[0;32mI (7265) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (7265) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[1;31mE (7295) websocket_client: Websocket client is not connected[0m
+[1;31mE (8025) websocket_client: Websocket client is not connected[0m
+[1;31mE (8035) websocket_client: Websocket client is not connected[0m
+[1;31mE (8035) websocket_client: Websocket client is not connected[0m
+[1;31mE (8045) websocket_client: Websocket client is not connected[0m
+[1;31mE (8045) websocket_client: Websocket client is not connected[0m
+[1;31mE (8055) websocket_client: Websocket client is not connected[0m
+[1;31mE (8055) websocket_client: Websocket client is not connected[0m
+[1;31mE (8065) websocket_client: Websocket client is not connected[0m
+[1;31mE (8065) websocket_client: Websocket client is not connected[0m
+[1;31mE (8075) websocket_client: Websocket client is not connected[0m
+[1;31mE (8075) websocket_client: Websocket client is not connected[0m
+[1;31mE (8085) websocket_client: Websocket client is not connected[0m
+[1;31mE (8085) websocket_client: Websocket client is not connected[0m
+[1;31mE (8095) websocket_client: Websocket client is not connected[0m
+[1;31mE (8105) websocket_client: Websocket client is not connected[0m
+[1;31mE (8105) websocket_client: Websocket client is not connected[0m
+[1;31mE (8115) websocket_client: Websocket client is not connected[0m
+[1;31mE (8125) websocket_client: Websocket client is not connected[0m
+[1;31mE (8125) websocket_client: Websocket client is not connected[0m
+[1;31mE (8185) websocket_client: Websocket client is not connected[0m
+[1;31mE (8195) websocket_client: Websocket client is not connected[0m
+[0;32mI (8235) WS_MGR: WebSocket connected[0m
+[0;32mI (8335) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (9345) AUDIO_RECORD: Audio is playing, skipping recording[0m
+[0;32mI (10045) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (10335) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (11395) RC522_TAG_READER: New card present[0m
+[0;32mI (11395) WS_MGR: Sending tag UID (0x03...) len=7[0m
+[0;32mI (12045) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (12335) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (12435) RC522_TAG_READER: Card removed[0m
+[0;32mI (12435) WS_MGR: Sending tag REMOVED (0x03)[0m
+[0;32mI (12695) AUDIO_RECORD: Audio is not playing, recording[0m
+[0;32mI (14045) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (14335) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (16045) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (16335) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (18045) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (18335) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (20045) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (20335) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (22045) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (22335) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (24045) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (24335) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (26045) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (26335) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (28045) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (28335) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (30045) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (30335) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (32045) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (32335) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (34045) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (34335) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (36045) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (36335) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+����������������������������������������������������������������nitor] empty=8, ready=0
+[0;32mI (38335) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (40045) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (40335) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (42045) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (42335) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (44045) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (44335) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (46045) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (46335) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (48045) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (48335) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (50045) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (50335) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (52045) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (52335) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (54045) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (54335) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (56045) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (56335) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (58045) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (58335) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (60045) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (60335) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (62045) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (62335) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (64045) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (64335) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m

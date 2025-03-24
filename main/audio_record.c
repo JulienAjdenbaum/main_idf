@@ -92,7 +92,6 @@ static void audio_record_task(void *arg)
             continue;
         }
 
-
         // If audio is playing, skip recording
         if (audio_player_is_playing()) {
             if (!was_audio_playing) {
@@ -101,10 +100,8 @@ static void audio_record_task(void *arg)
             }
 
             // If you want to *completely* pause recording while audio is playing,
-            // If you want to *completely* pause recording while audio is playing,
             // just skip or delay here:
             vTaskDelay(pdMS_TO_TICKS(50));
-            // ESP_LOGI(TAG, "Audio is playing, skipping recording");
             continue;
         } else {
             if (was_audio_playing) {
@@ -145,7 +142,7 @@ static void audio_record_task(void *arg)
         // Now send it out via WebSocket, prefixing with 0x02
         // We'll build a small buffer that has 1 extra byte for the prefix
         static uint8_t send_buf[1 + sizeof(conv_buf)];
-        send_buf[0] = AUDIO_PREFIX_BYTE;  // 0x02
+        send_buf[0] = 0x02;  // Ensure prefix is \x02
         memcpy(send_buf + 1, conv_buf, out_index);
 
         int packet_size = out_index + 1;

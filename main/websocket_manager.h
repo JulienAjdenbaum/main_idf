@@ -23,6 +23,7 @@ bool websocket_manager_is_connected(void);
  * @brief Send binary data if connected. Returns the number of bytes sent on success, negative on error.
  */
 int websocket_manager_send_bin(const char *data, size_t len);
+void websocket_manager_send_rfid_event(const uint8_t *uid, size_t uid_len, bool tag_removed);
 
 #ifdef __cplusplus
 }
