@@ -25,11 +25,11 @@ $<TARGET_FILE:__idf_newlib>
 $<TARGET_FILE:__idf_pthread>
 $<TARGET_FILE:__idf_cxx>
 $<TARGET_FILE:__idf_esp_ringbuf>
+$<TARGET_FILE:__idf_esp_driver_i2s>
 $<TARGET_FILE:__idf_esp_driver_pcnt>
 $<TARGET_FILE:__idf_esp_driver_gptimer>
 $<TARGET_FILE:__idf_esp_driver_spi>
 $<TARGET_FILE:__idf_esp_driver_mcpwm>
-$<TARGET_FILE:__idf_esp_driver_i2s>
 $<TARGET_FILE:__idf_sdmmc>
 $<TARGET_FILE:__idf_esp_driver_sdmmc>
 $<TARGET_FILE:__idf_esp_driver_sdspi>
@@ -41,6 +41,7 @@ $<TARGET_FILE:__idf_esp_driver_i2c>
 $<TARGET_FILE:__idf_esp_driver_uart>
 $<TARGET_FILE:__idf_esp_driver_ledc>
 $<TARGET_FILE:__idf_driver>
+$<TARGET_FILE:__idf_esp_adc>
 $<TARGET_FILE:__idf_nvs_flash>
 $<TARGET_FILE:__idf_esp_vfs_console>
 $<TARGET_FILE:__idf_vfs>

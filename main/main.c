@@ -8,12 +8,14 @@
 #include "websocket_manager.h"   // the code above
 #include "audio_player.h"        // queue-based player
 #include "audio_record.h"        // audio recording
+#include "LED_button.h"
 static const char *TAG = "MAIN";
 
 void app_main(void)
 {
     ESP_LOGI(TAG, "Starting app_main...");
-
+    init_button();
+    init_led_strip();
     wifi_manager_init();
     audio_player_init();
     // websocket_manager_init();

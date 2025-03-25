@@ -10,7 +10,7 @@
 #include <string.h>
 #include <stdio.h>
 #include "rc522_picc.h"
-
+#include "tag_reader.h"
 #include "audio_stream.h"
 #ifndef RC522_PICC_MAX_UID_SIZE
 #define RC522_PICC_MAX_UID_SIZE 10
@@ -113,6 +113,10 @@ static void websocket_event_handler(void *handler_args,
     case WEBSOCKET_EVENT_CONNECTED:
         ESP_LOGI(TAG, "WebSocket connected");
         s_ws_connected = true;
+        if (s_card_active && s_last_uid_len > 0) {
+            ESP_LOGI(TAG, "Sending current RFID UID to server (upon connect)");
+            websocket_manager_send_rfid_event(s_last_uid, s_last_uid_len, false);
+        }
         break;
     case WEBSOCKET_EVENT_DISCONNECTED:
         ESP_LOGW(TAG, "WebSocket disconnected");

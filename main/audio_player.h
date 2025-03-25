@@ -35,4 +35,7 @@ void      audio_player_submit_buffer(audio_buffer_t *buf);
 void      audio_player_set_sample_rate(uint32_t sample_rate, uint16_t num_channels);
 bool audio_player_is_playing(void);
 
+void  audio_player_set_volume(float vol);
+float audio_player_get_volume(void);
+
 #endif // AUDIO_PLAYER_H

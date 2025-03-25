@@ -24,6 +24,11 @@ static const char *TAG = "RC522_TAG_READER";
 #define RC522_PICC_MAX_UID_SIZE 10
 #endif
 
+// Define the external variables
+bool s_card_active = false;
+uint8_t s_last_uid[RC522_PICC_MAX_UID_SIZE];
+size_t s_last_uid_len = 0;
+
 static rc522_spi_config_t driver_config = {
     .host_id = SPI3_HOST,
     .bus_config = &(spi_bus_config_t){
@@ -65,10 +70,13 @@ static void on_picc_state_changed(void *arg,
     if (picc->state == RC522_PICC_STATE_ACTIVE) {
         ESP_LOGI(TAG, "New card present");
 
+        s_card_active = true;
+        s_last_uid_len = picc->uid.length;
+        memcpy(s_last_uid, picc->uid.value, s_last_uid_len);
+
         msg.tag_removed = false;
         msg.uid_len = picc->uid.length;
         memcpy(msg.uid, picc->uid.value, msg.uid_len);
-
 
         xQueueSend(s_rfid_queue, &msg, 0);
     }
@@ -76,6 +84,11 @@ static void on_picc_state_changed(void *arg,
              evt->old_state >= RC522_PICC_STATE_ACTIVE) {
         // Card was removed
         ESP_LOGI(TAG, "Card removed");
+
+        s_card_active = false;
+        s_last_uid_len = 0; 
+        memset(s_last_uid, 0, sizeof(s_last_uid));
+
         msg.tag_removed = true;
         // Optional: if you want to know which card was removed, you could 
         // store the old UID before going idle. But typically once removed,

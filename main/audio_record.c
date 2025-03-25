@@ -11,7 +11,7 @@
 #include "driver/i2s.h"
 #include "esp_log.h"
 #include "esp_err.h"
-
+#include "LED_button.h" 
 #include "websocket_manager.h" // We'll use websocket_manager_send_bin(), websocket_manager_is_connected()
 #include "audio_player.h"
 
@@ -23,29 +23,22 @@
 #define MIC_I2S_DATA_OUT_IO     -1  // not used for mic-only
 #define MIC_USE_APLL            false  // ← Add this
 
-#define I2S_SAMPLE_RATE     8000
-#define I2S_BITS_PER_SAMPLE I2S_BITS_PER_SAMPLE_32BIT
-#define I2S_READ_BUF_SIZE   1024 // Number of bytes to read per i2s_read() call
+#define I2S_SAMPLE_RATE         8000
+#define I2S_BITS_PER_SAMPLE     I2S_BITS_PER_SAMPLE_32BIT
+#define I2S_READ_BUF_SIZE       1024 // Number of bytes to read per i2s_read() call
 
 // We will send audio prefixed by 0x02
-#define AUDIO_PREFIX_BYTE   0x02
+#define AUDIO_PREFIX_BYTE       0x02
 
 static const char *TAG = "AUDIO_RECORD";
-bool was_audio_playing = false;
-
 
 // -------------------- INTERNAL FUNCTION DECLARATIONS --------------------
 static void audio_record_task(void *arg);
-// static void i2s_init_for_mic(void);
+static void i2s_init_for_mic(void);
 
 // -------------------- I2S INIT --------------------
 static void i2s_init_for_mic(void)
 {
-    // Only uninstall if already installed
-    // if (i2s_is_driver_installed(I2S_PORT)) {
-    // i2s_driver_uninstall(MIC_I2S_PORT);
-    // }
-
     i2s_config_t i2s_config = {
         .mode = (i2s_mode_t)(I2S_MODE_MASTER | I2S_MODE_RX),
         .sample_rate = I2S_SAMPLE_RATE,
@@ -88,28 +81,13 @@ static void audio_record_task(void *arg)
     while (true) {
         // Only record + send if WebSocket is connected
         if (!websocket_manager_is_connected()) {
-            vTaskDelay(pdMS_TO_TICKS(300));
-            continue;
-        }
-
-        // If audio is playing, skip recording
-        if (audio_player_is_playing()) {
-            if (!was_audio_playing) {
-                was_audio_playing = true;
-                ESP_LOGI(TAG, "Audio is playing, skipping recording");
-            }
-
-            // If you want to *completely* pause recording while audio is playing,
-            // just skip or delay here:
+            turn_off_leds();
             vTaskDelay(pdMS_TO_TICKS(50));
             continue;
-        } else {
-            if (was_audio_playing) {
-                was_audio_playing = false;
-                ESP_LOGI(TAG, "Audio is not playing, recording");
-            }
         }
 
+        // Read audio data from I2S
+        
         size_t bytes_read = 0;
         esp_err_t err = i2s_read(MIC_I2S_PORT,
                                  (void *)s_audio_buf,
@@ -131,7 +109,7 @@ static void audio_record_task(void *arg)
 
         for (int i = 0; i < num_samples_32; i++) {
             int32_t s_32 = s_audio_buf[i];
-            // shift down to get 16-bit, the >>13 is an example shift
+            // shift down to get 16-bit, e.g. >>13 is an example shift
             int16_t s_16 = (int16_t)(s_32 >> 13);
 
             // Write 16-bit sample into conv_buf (little-endian)
@@ -139,11 +117,18 @@ static void audio_record_task(void *arg)
             conv_buf[out_index++] = (uint8_t)((s_16 >> 8) & 0xFF);
         }
 
-        // Now send it out via WebSocket, prefixing with 0x02
-        // We'll build a small buffer that has 1 extra byte for the prefix
+        // Build a small buffer that has 1 extra byte for the prefix
         static uint8_t send_buf[1 + sizeof(conv_buf)];
-        send_buf[0] = 0x02;  // Ensure prefix is \x02
-        memcpy(send_buf + 1, conv_buf, out_index);
+        send_buf[0] = AUDIO_PREFIX_BYTE;  // Ensure prefix is 0x02
+
+        // If audio is currently playing, send zeros instead of the actual samples
+        if (audio_player_is_playing()) {
+            memset(send_buf + 1, 0, out_index);
+            turn_off_leds();
+        } else {
+            set_leds_color(0, 0, 0, 255);
+            memcpy(send_buf + 1, conv_buf, out_index);
+        }
 
         int packet_size = out_index + 1;
         int ret = websocket_manager_send_bin((const char *)send_buf, packet_size);
@@ -151,7 +136,7 @@ static void audio_record_task(void *arg)
         //     ESP_LOGE(TAG, "WebSocket send_bin failed (%d)", ret);
         // }
 
-        // Just a small delay to avoid hogging CPU
+        // Small delay to avoid hogging CPU
         vTaskDelay(pdMS_TO_TICKS(1));
     }
 }

@@ -189,6 +189,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/esp_driver_i2s/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/esp_driver_pcnt/cmake_install.cmake")
 endif()
 
@@ -210,11 +215,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
   include("/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/esp_driver_ana_cmpr/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/esp_driver_i2s/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
@@ -285,6 +285,11 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
   include("/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/driver/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/esp_adc/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)

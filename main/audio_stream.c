@@ -42,9 +42,14 @@ void audio_stream_handle_incoming(const uint8_t *data, size_t length)
         const uint16_t *src = (const uint16_t *)(data);
         uint16_t *dst       = (uint16_t *)buf->data;
 
+        float volume = audio_player_get_volume();
+
         for (size_t i = 0; i < convert_samples; i++) {
-            dst[2*i]   = src[i];  // Left
-            dst[2*i+1] = src[i];  // Right
+
+            int16_t s = src[i];
+            s = (int16_t)(s * volume);
+            dst[2*i]   = s;  // Left
+            dst[2*i+1] = s;  // Right
         }
 
         // The resulting stereo bytes is convert_samples * 2ch * 2 bytes:

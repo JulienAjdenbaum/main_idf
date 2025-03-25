@@ -6,7 +6,8 @@
 #include "driver/i2s.h"
 #include "esp_log.h"
 #include "esp_timer.h"
-
+#include "esp_adc_cal.h"
+#include "driver/adc.h"
 
 static const char *TAG = "AudioPlayer";
 
@@ -18,8 +19,26 @@ static int64_t s_last_audio_time = 0;
 
 static void audio_task(void *param);
 static void audio_monitor_task(void *param);
+static void volume_task(void *param);
 // static void i2s_monitor_task(void *arg);
 
+#define POT_PIN ADC1_CHANNEL_7  // Adjust as needed
+#define DEFAULT_VREF    1100    // For calibration (if needed)
+
+static float s_volume = 1.0f;
+
+void audio_player_set_volume(float vol)
+{
+    // Clamp vol between 0.0f and 1.0f if necessary
+    if (vol < 0.0f) vol = 0.0f;
+    if (vol > 1.0f) vol = 1.0f;
+    s_volume = vol;
+}
+
+float audio_player_get_volume(void)
+{
+    return s_volume;
+}
 
 esp_err_t audio_player_init(void)
 {
@@ -73,11 +92,47 @@ esp_err_t audio_player_init(void)
     // Start tasks
     xTaskCreatePinnedToCore(audio_task, "audioTask", 4096, NULL, 7, NULL, 1);
     xTaskCreatePinnedToCore(audio_monitor_task, "audioMonitor", 2048, NULL, 4, NULL, 1);
+    xTaskCreate(
+        volume_task,     // Task code
+        "volume_task",   // Name for debugging
+        4096,            // Stack size (bytes)
+        NULL,            // Task parameter
+        5,               // Priority
+        NULL             // Task handle (not used here)
+    );
     // xTaskCreatePinnedToCore(i2s_monitor_task, "i2sMonitor", 2048, NULL, 4, NULL, 1);
 
     ESP_LOGI(TAG, "Audio player initialized. sample_rate=%d", SAMPLE_RATE);
     return ESP_OK;
 }
+
+static void volume_task(void *param)
+{
+    // Configure ADC only once.
+    adc1_config_width(ADC_WIDTH_BIT_12);               // 0..4095
+    adc1_config_channel_atten(POT_PIN, ADC_ATTEN_DB_11); // up to ~3.3V
+
+    while (1) {
+        // Read ADC
+        int raw = adc1_get_raw(POT_PIN);
+
+        // Normalize to 0.0–1.0
+        float vol = (float)raw / 4095.0f;
+
+        // Update audio volume
+        audio_player_set_volume(vol);
+
+        // Optional debug
+        ESP_LOGI(TAG, "ADC raw: %d => volume %.2f", raw, vol);
+
+        // Delay so we don't hammer the ADC or spamming logs
+        vTaskDelay(pdMS_TO_TICKS(200));
+    }
+
+    // If it ever leaves the loop (unlikely), delete the task
+    vTaskDelete(NULL);
+}
+
 
 static void audio_task(void *param)
 {
@@ -106,6 +161,8 @@ static void audio_task(void *param)
     }
     vTaskDelete(NULL);
 }
+
+
 
 static void audio_monitor_task(void *param)
 {
@@ -169,12 +226,14 @@ bool audio_player_is_playing(void)
     int64_t last_time_ms = s_last_audio_time / 1000;
 
     // If time since last audio submission is <= 100 ms
-    if ( (now_ms - last_time_ms) <= 100 ) {
+    if ( (now_ms - last_time_ms) <= 300 ) {
         return true;
     } else {
         return false;
     }
 }
+
+
 
 // static void i2s_monitor_task(void *arg)
 // {
