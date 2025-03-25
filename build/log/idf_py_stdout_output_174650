@@ -1,0 +1,276 @@
+Command: ninja all
+[1/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/wifi.c.obj
+[2/10] Performing build step for 'bootloader'
+[1/1] cd /home/julien/Documents/esp32IDF/hello_world/build/bootloader/esp-idf/esptool_py && /home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/julien/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/julien/Documents/esp32IDF/hello_world/build/bootloader/bootloader.bin
+Bootloader binary size 0x6650 bytes. 0x9b0 bytes (9%) free.
+[3/8] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+FAILED: esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj 
+/home/julien/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc -DESP_MDNS_VERSION_NUMBER=\"1.8.0\" -DESP_PLATFORM -DIDF_VER=\"v5.5-dev-2290-g94cfe394fe\" -DMBEDTLS_CONFIG_FILE=\"mbedtls/esp_config.h\" -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DSOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ -D_GLIBCXX_HAVE_POSIX_SEMAPHORE -D_GLIBCXX_USE_POSIX_SEMAPHORE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -I/home/julien/Documents/esp32IDF/hello_world/build/config -I/home/julien/Documents/esp32IDF/hello_world/main -I/home/julien/esp/esp-idf/components/newlib/platform_include -I/home/julien/esp/esp-idf/components/freertos/config/include -I/home/julien/esp/esp-idf/components/freertos/config/include/freertos -I/home/julien/esp/esp-idf/components/freertos/config/xtensa/include -I/home/julien/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include -I/home/julien/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -I/home/julien/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos -I/home/julien/esp/esp-idf/components/freertos/esp_additions/include -I/home/julien/esp/esp-idf/components/esp_hw_support/include -I/home/julien/esp/esp-idf/components/esp_hw_support/include/soc -I/home/julien/esp/esp-idf/components/esp_hw_support/include/soc/esp32 -I/home/julien/esp/esp-idf/components/esp_hw_support/dma/include -I/home/julien/esp/esp-idf/components/esp_hw_support/ldo/include -I/home/julien/esp/esp-idf/components/esp_hw_support/debug_probe/include -I/home/julien/esp/esp-idf/components/esp_hw_support/mspi_timing_tuning/include -I/home/julien/esp/esp-idf/components/esp_hw_support/power_supply/include -I/home/julien/esp/esp-idf/components/esp_hw_support/port/esp32/. -I/home/julien/esp/esp-idf/components/esp_hw_support/port/esp32/include -I/home/julien/esp/esp-idf/components/heap/include -I/home/julien/esp/esp-idf/components/heap/tlsf -I/home/julien/esp/esp-idf/components/log/include -I/home/julien/esp/esp-idf/components/soc/include -I/home/julien/esp/esp-idf/components/soc/esp32 -I/home/julien/esp/esp-idf/components/soc/esp32/include -I/home/julien/esp/esp-idf/components/soc/esp32/register -I/home/julien/esp/esp-idf/components/hal/platform_port/include -I/home/julien/esp/esp-idf/components/hal/esp32/include -I/home/julien/esp/esp-idf/components/hal/include -I/home/julien/esp/esp-idf/components/esp_rom/include -I/home/julien/esp/esp-idf/components/esp_rom/esp32/include -I/home/julien/esp/esp-idf/components/esp_rom/esp32/include/esp32 -I/home/julien/esp/esp-idf/components/esp_rom/esp32 -I/home/julien/esp/esp-idf/components/esp_common/include -I/home/julien/esp/esp-idf/components/esp_system/include -I/home/julien/esp/esp-idf/components/esp_system/port/soc -I/home/julien/esp/esp-idf/components/esp_system/port/include/private -I/home/julien/esp/esp-idf/components/xtensa/esp32/include -I/home/julien/esp/esp-idf/components/xtensa/include -I/home/julien/esp/esp-idf/components/xtensa/deprecated_include -I/home/julien/esp/esp-idf/components/lwip/include -I/home/julien/esp/esp-idf/components/lwip/include/apps -I/home/julien/esp/esp-idf/components/lwip/include/apps/sntp -I/home/julien/esp/esp-idf/components/lwip/lwip/src/include -I/home/julien/esp/esp-idf/components/lwip/port/include -I/home/julien/esp/esp-idf/components/lwip/port/freertos/include -I/home/julien/esp/esp-idf/components/lwip/port/esp32xx/include -I/home/julien/esp/esp-idf/components/lwip/port/esp32xx/include/arch -I/home/julien/esp/esp-idf/components/lwip/port/esp32xx/include/sys -I/home/julien/esp/esp-idf/components/wifi_provisioning/include -I/home/julien/esp/esp-idf/components/protocomm/include/common -I/home/julien/esp/esp-idf/components/protocomm/include/security -I/home/julien/esp/esp-idf/components/protocomm/include/transports -I/home/julien/esp/esp-idf/components/protocomm/include/crypto/srp6a -I/home/julien/esp/esp-idf/components/protocomm/proto-c -I/home/julien/esp/esp-idf/components/esp_timer/include -I/home/julien/esp/esp-idf/components/esp_wifi/include -I/home/julien/esp/esp-idf/components/esp_wifi/include/local -I/home/julien/esp/esp-idf/components/esp_wifi/wifi_apps/include -I/home/julien/esp/esp-idf/components/esp_wifi/wifi_apps/nan_app/include -I/home/julien/esp/esp-idf/components/esp_event/include -I/home/julien/esp/esp-idf/components/esp_phy/include -I/home/julien/esp/esp-idf/components/esp_phy/esp32/include -I/home/julien/esp/esp-idf/components/esp_netif/include -I/home/julien/esp/esp-idf/components/esp_adc/include -I/home/julien/esp/esp-idf/components/esp_adc/interface -I/home/julien/esp/esp-idf/components/esp_adc/esp32/include -I/home/julien/esp/esp-idf/components/esp_adc/deprecated/include -I/home/julien/esp/esp-idf/components/driver/deprecated -I/home/julien/esp/esp-idf/components/driver/i2c/include -I/home/julien/esp/esp-idf/components/driver/touch_sensor/include -I/home/julien/esp/esp-idf/components/driver/twai/include -I/home/julien/esp/esp-idf/components/driver/touch_sensor/esp32/include -I/home/julien/esp/esp-idf/components/esp_pm/include -I/home/julien/esp/esp-idf/components/esp_ringbuf/include -I/home/julien/esp/esp-idf/components/esp_driver_gpio/include -I/home/julien/esp/esp-idf/components/esp_driver_pcnt/include -I/home/julien/esp/esp-idf/components/esp_driver_gptimer/include -I/home/julien/esp/esp-idf/components/esp_driver_spi/include -I/home/julien/esp/esp-idf/components/esp_driver_mcpwm/include -I/home/julien/esp/esp-idf/components/esp_driver_ana_cmpr/include -I/home/julien/esp/esp-idf/components/esp_driver_i2s/include -I/home/julien/esp/esp-idf/components/esp_driver_sdmmc/include -I/home/julien/esp/esp-idf/components/sdmmc/include -I/home/julien/esp/esp-idf/components/esp_driver_sdspi/include -I/home/julien/esp/esp-idf/components/esp_driver_sdio/include -I/home/julien/esp/esp-idf/components/esp_driver_dac/include -I/home/julien/esp/esp-idf/components/esp_driver_rmt/include -I/home/julien/esp/esp-idf/components/esp_driver_tsens/include -I/home/julien/esp/esp-idf/components/esp_driver_sdm/include -I/home/julien/esp/esp-idf/components/esp_driver_i2c/include -I/home/julien/esp/esp-idf/components/esp_driver_uart/include -I/home/julien/esp/esp-idf/components/vfs/include -I/home/julien/esp/esp-idf/components/esp_driver_ledc/include -I/home/julien/esp/esp-idf/components/esp_driver_parlio/include -I/home/julien/esp/esp-idf/components/esp_driver_usb_serial_jtag/include -I/home/julien/Documents/esp32IDF/hello_world/components/esp32-wifi-manager/src -I/home/julien/esp/esp-idf/components/nvs_flash/include -I/home/julien/esp/esp-idf/components/esp_partition/include -I/home/julien/Documents/esp32IDF/hello_world/managed_components/espressif__mdns/include -I/home/julien/esp/esp-idf/components/console -I/home/julien/esp/esp-idf/components/esp_vfs_console/include -I/home/julien/esp/esp-idf/components/wpa_supplicant/include -I/home/julien/esp/esp-idf/components/wpa_supplicant/port/include -I/home/julien/esp/esp-idf/components/wpa_supplicant/esp_supplicant/include -I/home/julien/esp/esp-idf/components/esp_http_server/include -I/home/julien/esp/esp-idf/components/http_parser -I/home/julien/Documents/esp32IDF/hello_world/components/esp_websocket_client/include -I/home/julien/esp/esp-idf/components/esp-tls -I/home/julien/esp/esp-idf/components/esp-tls/esp-tls-crypto -I/home/julien/esp/esp-idf/components/mbedtls/port/include -I/home/julien/esp/esp-idf/components/mbedtls/mbedtls/include -I/home/julien/esp/esp-idf/components/mbedtls/mbedtls/library -I/home/julien/esp/esp-idf/components/mbedtls/esp_crt_bundle/include -I/home/julien/esp/esp-idf/components/mbedtls/mbedtls/3rdparty/everest/include -I/home/julien/esp/esp-idf/components/mbedtls/mbedtls/3rdparty/p256-m -I/home/julien/esp/esp-idf/components/mbedtls/mbedtls/3rdparty/p256-m/p256-m -I/home/julien/esp/esp-idf/components/tcp_transport/include -I/home/julien/esp/esp-idf/components/fatfs/diskio -I/home/julien/esp/esp-idf/components/fatfs/src -I/home/julien/esp/esp-idf/components/fatfs/vfs -I/home/julien/esp/esp-idf/components/wear_levelling/include -I/home/julien/Documents/esp32IDF/hello_world/managed_components/abobija__rc522/include -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -ffunction-sections -fdata-sections -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-error=extra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Og -fno-shrink-wrap -fmacro-prefix-map=/home/julien/Documents/esp32IDF/hello_world=. -fmacro-prefix-map=/home/julien/esp/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu17 -Wno-old-style-declaration -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj -MF esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj.d -o esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj -c /home/julien/Documents/esp32IDF/hello_world/main/main.c
+/home/julien/Documents/esp32IDF/hello_world/main/main.c: In function 'event_handler':
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:27:17: error: unknown type name 'wifi_prov_sta_conf_t'; did you mean 'wifi_prov_mgr_config_t'?
+   27 |                 wifi_prov_sta_conf_t *wifi_sta_cfg = (wifi_prov_sta_conf_t *)event_data;
+      |                 ^~~~~~~~~~~~~~~~~~~~
+      |                 wifi_prov_mgr_config_t
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:27:55: error: 'wifi_prov_sta_conf_t' undeclared (first use in this function); did you mean 'wifi_prov_mgr_config_t'?
+   27 |                 wifi_prov_sta_conf_t *wifi_sta_cfg = (wifi_prov_sta_conf_t *)event_data;
+      |                                                       ^~~~~~~~~~~~~~~~~~~~
+      |                                                       wifi_prov_mgr_config_t
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:27:55: note: each undeclared identifier is reported only once for each function it appears in
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:27:77: error: expected expression before ')' token
+   27 |                 wifi_prov_sta_conf_t *wifi_sta_cfg = (wifi_prov_sta_conf_t *)event_data;
+      |                                                                             ^
+In file included from /home/julien/Documents/esp32IDF/hello_world/main/main.c:5:
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:30:53: error: request for member 'ssid' in something not a structure or union
+   30 |                          (const char *) wifi_sta_cfg->ssid,
+      |                                                     ^~
+/home/julien/esp/esp-idf/components/log/include/esp_log.h:218:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  218 |         if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_ERROR)        { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_ERROR),   tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/home/julien/esp/esp-idf/components/log/include/esp_log.h:125:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  125 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:28:17: note: in expansion of macro 'ESP_LOGI'
+   28 |                 ESP_LOGI(TAG, "Received Wi-Fi credentials"
+      |                 ^~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:31:53: error: request for member 'password' in something not a structure or union
+   31 |                          (const char *) wifi_sta_cfg->password);
+      |                                                     ^~
+/home/julien/esp/esp-idf/components/log/include/esp_log.h:218:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  218 |         if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_ERROR)        { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_ERROR),   tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/home/julien/esp/esp-idf/components/log/include/esp_log.h:125:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  125 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:28:17: note: in expansion of macro 'ESP_LOGI'
+   28 |                 ESP_LOGI(TAG, "Received Wi-Fi credentials"
+      |                 ^~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:30:53: error: request for member 'ssid' in something not a structure or union
+   30 |                          (const char *) wifi_sta_cfg->ssid,
+      |                                                     ^~
+/home/julien/esp/esp-idf/components/log/include/esp_log.h:219:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  219 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_WARN)    { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_WARN),    tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/home/julien/esp/esp-idf/components/log/include/esp_log.h:125:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  125 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:28:17: note: in expansion of macro 'ESP_LOGI'
+   28 |                 ESP_LOGI(TAG, "Received Wi-Fi credentials"
+      |                 ^~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:31:53: error: request for member 'password' in something not a structure or union
+   31 |                          (const char *) wifi_sta_cfg->password);
+      |                                                     ^~
+/home/julien/esp/esp-idf/components/log/include/esp_log.h:219:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  219 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_WARN)    { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_WARN),    tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/home/julien/esp/esp-idf/components/log/include/esp_log.h:125:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  125 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:28:17: note: in expansion of macro 'ESP_LOGI'
+   28 |                 ESP_LOGI(TAG, "Received Wi-Fi credentials"
+      |                 ^~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:30:53: error: request for member 'ssid' in something not a structure or union
+   30 |                          (const char *) wifi_sta_cfg->ssid,
+      |                                                     ^~
+/home/julien/esp/esp-idf/components/log/include/esp_log.h:220:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  220 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_DEBUG)   { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_DEBUG),   tag, LOG_FORMAT(D, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/home/julien/esp/esp-idf/components/log/include/esp_log.h:125:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  125 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:28:17: note: in expansion of macro 'ESP_LOGI'
+   28 |                 ESP_LOGI(TAG, "Received Wi-Fi credentials"
+      |                 ^~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:31:53: error: request for member 'password' in something not a structure or union
+   31 |                          (const char *) wifi_sta_cfg->password);
+      |                                                     ^~
+/home/julien/esp/esp-idf/components/log/include/esp_log.h:220:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  220 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_DEBUG)   { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_DEBUG),   tag, LOG_FORMAT(D, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/home/julien/esp/esp-idf/components/log/include/esp_log.h:125:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  125 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:28:17: note: in expansion of macro 'ESP_LOGI'
+   28 |                 ESP_LOGI(TAG, "Received Wi-Fi credentials"
+      |                 ^~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:30:53: error: request for member 'ssid' in something not a structure or union
+   30 |                          (const char *) wifi_sta_cfg->ssid,
+      |                                                     ^~
+/home/julien/esp/esp-idf/components/log/include/esp_log.h:221:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  221 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_VERBOSE) { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_VERBOSE), tag, LOG_FORMAT(V, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/home/julien/esp/esp-idf/components/log/include/esp_log.h:125:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  125 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:28:17: note: in expansion of macro 'ESP_LOGI'
+   28 |                 ESP_LOGI(TAG, "Received Wi-Fi credentials"
+      |                 ^~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:31:53: error: request for member 'password' in something not a structure or union
+   31 |                          (const char *) wifi_sta_cfg->password);
+      |                                                     ^~
+/home/julien/esp/esp-idf/components/log/include/esp_log.h:221:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  221 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_VERBOSE) { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_VERBOSE), tag, LOG_FORMAT(V, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/home/julien/esp/esp-idf/components/log/include/esp_log.h:125:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  125 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:28:17: note: in expansion of macro 'ESP_LOGI'
+   28 |                 ESP_LOGI(TAG, "Received Wi-Fi credentials"
+      |                 ^~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:30:53: error: request for member 'ssid' in something not a structure or union
+   30 |                          (const char *) wifi_sta_cfg->ssid,
+      |                                                     ^~
+/home/julien/esp/esp-idf/components/log/include/esp_log.h:222:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  222 |         else                                                  { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_INFO),    tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/home/julien/esp/esp-idf/components/log/include/esp_log.h:125:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  125 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:28:17: note: in expansion of macro 'ESP_LOGI'
+   28 |                 ESP_LOGI(TAG, "Received Wi-Fi credentials"
+      |                 ^~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:31:53: error: request for member 'password' in something not a structure or union
+   31 |                          (const char *) wifi_sta_cfg->password);
+      |                                                     ^~
+/home/julien/esp/esp-idf/components/log/include/esp_log.h:222:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  222 |         else                                                  { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_INFO),    tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/home/julien/esp/esp-idf/components/log/include/esp_log.h:125:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  125 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:28:17: note: in expansion of macro 'ESP_LOGI'
+   28 |                 ESP_LOGI(TAG, "Received Wi-Fi credentials"
+      |                 ^~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/main.c: In function 'app_main':
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:66:5: error: unknown type name 'wifi_prov_mgr_init_config_t'; did you mean 'wifi_prov_mgr_config_t'?
+   66 |     wifi_prov_mgr_init_config_t init_config = WIFI_PROV_INIT_CONFIG_DEFAULT();
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |     wifi_prov_mgr_config_t
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:66:47: error: implicit declaration of function 'WIFI_PROV_INIT_CONFIG_DEFAULT'; did you mean 'WIFI_INIT_CONFIG_DEFAULT'? [-Wimplicit-function-declaration]
+   66 |     wifi_prov_mgr_init_config_t init_config = WIFI_PROV_INIT_CONFIG_DEFAULT();
+      |                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                               WIFI_INIT_CONFIG_DEFAULT
+In file included from /home/julien/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:53,
+                 from /home/julien/Documents/esp32IDF/hello_world/main/main.c:3:
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:67:40: error: incompatible type for argument 1 of 'wifi_prov_mgr_init'
+   67 |     ESP_ERROR_CHECK(wifi_prov_mgr_init(init_config));
+      |                                        ^~~~~~~~~~~
+      |                                        |
+      |                                        int
+/home/julien/esp/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+In file included from /home/julien/Documents/esp32IDF/hello_world/main/main.c:7:
+/home/julien/esp/esp-idf/components/wifi_provisioning/include/wifi_provisioning/manager.h:268:53: note: expected 'wifi_prov_mgr_config_t' but argument is of type 'int'
+  268 | esp_err_t wifi_prov_mgr_init(wifi_prov_mgr_config_t config);
+      |                              ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:81:9: error: unknown type name 'wifi_prov_mgr_configure_provisioning_manager_t'
+   81 |         wifi_prov_mgr_configure_provisioning_manager_t config = {
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:82:13: error: field name not in record or union initializer
+   82 |             .scheme = wifi_prov_scheme_softap,
+      |             ^
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:82:13: note: (near initialization for 'config')
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:82:23: error: incompatible types when initializing type 'int' using type 'wifi_prov_scheme_t' {aka 'struct wifi_prov_scheme'}
+   82 |             .scheme = wifi_prov_scheme_softap,
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:83:13: error: field name not in record or union initializer
+   83 |             .scheme_event_handler = WIFI_PROV_EVENT_HANDLER_NONE
+      |             ^
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:83:13: note: (near initialization for 'config')
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:83:13: warning: braces around scalar initializer
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:83:13: note: (near initialization for 'config')
+/home/julien/esp/esp-idf/components/wifi_provisioning/include/wifi_provisioning/manager.h:100:5: error: field name not in record or union initializer
+  100 |     .event_cb  = NULL,                 \
+      |     ^
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:83:37: note: in expansion of macro 'WIFI_PROV_EVENT_HANDLER_NONE'
+   83 |             .scheme_event_handler = WIFI_PROV_EVENT_HANDLER_NONE
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/julien/esp/esp-idf/components/wifi_provisioning/include/wifi_provisioning/manager.h:100:5: note: (near initialization for 'config')
+  100 |     .event_cb  = NULL,                 \
+      |     ^
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:83:37: note: in expansion of macro 'WIFI_PROV_EVENT_HANDLER_NONE'
+   83 |             .scheme_event_handler = WIFI_PROV_EVENT_HANDLER_NONE
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:83:37: error: initialization of 'int' from 'void *' makes integer from pointer without a cast [-Wint-conversion]
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:83:37: note: (near initialization for 'config')
+/home/julien/esp/esp-idf/components/wifi_provisioning/include/wifi_provisioning/manager.h:101:5: error: field name not in record or union initializer
+  101 |     .user_data = NULL                  \
+      |     ^
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:83:37: note: in expansion of macro 'WIFI_PROV_EVENT_HANDLER_NONE'
+   83 |             .scheme_event_handler = WIFI_PROV_EVENT_HANDLER_NONE
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/julien/esp/esp-idf/components/wifi_provisioning/include/wifi_provisioning/manager.h:101:5: note: (near initialization for 'config')
+  101 |     .user_data = NULL                  \
+      |     ^
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:83:37: note: in expansion of macro 'WIFI_PROV_EVENT_HANDLER_NONE'
+   83 |             .scheme_event_handler = WIFI_PROV_EVENT_HANDLER_NONE
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:83:37: warning: excess elements in scalar initializer
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:83:37: note: (near initialization for 'config')
+/home/julien/esp/esp-idf/components/wifi_provisioning/include/wifi_provisioning/manager.h:99:38: warning: excess elements in scalar initializer
+   99 | #define WIFI_PROV_EVENT_HANDLER_NONE { \
+      |                                      ^
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:83:37: note: in expansion of macro 'WIFI_PROV_EVENT_HANDLER_NONE'
+   83 |             .scheme_event_handler = WIFI_PROV_EVENT_HANDLER_NONE
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/julien/esp/esp-idf/components/wifi_provisioning/include/wifi_provisioning/manager.h:99:38: note: (near initialization for 'config')
+   99 | #define WIFI_PROV_EVENT_HANDLER_NONE { \
+      |                                      ^
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:83:37: note: in expansion of macro 'WIFI_PROV_EVENT_HANDLER_NONE'
+   83 |             .scheme_event_handler = WIFI_PROV_EVENT_HANDLER_NONE
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:87:58: error: incompatible type for argument 2 of 'wifi_prov_mgr_start_provisioning'
+   87 |                                                          security,
+      |                                                          ^~~~~~~~
+      |                                                          |
+      |                                                          wifi_prov_security_t {aka enum wifi_prov_security}
+/home/julien/esp/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/home/julien/esp/esp-idf/components/wifi_provisioning/include/wifi_provisioning/manager.h:361:87: note: expected 'const void *' but argument is of type 'wifi_prov_security_t' {aka 'enum wifi_prov_security'}
+  361 | esp_err_t wifi_prov_mgr_start_provisioning(wifi_prov_security_t security, const void *wifi_prov_sec_params, const char *service_name, const char *service_key);
+      |                                                                           ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:86:25: error: too many arguments to function 'wifi_prov_mgr_start_provisioning'
+   86 |         ESP_ERROR_CHECK(wifi_prov_mgr_start_provisioning(config,
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/julien/esp/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/home/julien/esp/esp-idf/components/wifi_provisioning/include/wifi_provisioning/manager.h:361:11: note: declared here
+  361 | esp_err_t wifi_prov_mgr_start_provisioning(wifi_prov_security_t security, const void *wifi_prov_sec_params, const char *service_name, const char *service_key);
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:97:61: error: passing argument 3 of 'esp_event_handler_instance_register' from incompatible pointer type [-Wincompatible-pointer-types]
+   97 |                                                             &event_handler,
+      |                                                             ^~~~~~~~~~~~~~
+      |                                                             |
+      |                                                             void (*)(void *, const char *, int,  void *)
+/home/julien/esp/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+In file included from /home/julien/esp/esp-idf/components/esp_wifi/include/esp_wifi.h:55:
+/home/julien/esp/esp-idf/components/esp_event/include/esp_event.h:247:67: note: expected 'esp_event_handler_t' {aka 'void (*)(void *, const char *, long int,  void *)'} but argument is of type 'void (*)(void *, const char *, int,  void *)'
+  247 |                                               esp_event_handler_t event_handler,
+      |                                               ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:102:61: error: passing argument 3 of 'esp_event_handler_instance_register' from incompatible pointer type [-Wincompatible-pointer-types]
+  102 |                                                             &event_handler,
+      |                                                             ^~~~~~~~~~~~~~
+      |                                                             |
+      |                                                             void (*)(void *, const char *, int,  void *)
+/home/julien/esp/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/home/julien/esp/esp-idf/components/esp_event/include/esp_event.h:247:67: note: expected 'esp_event_handler_t' {aka 'void (*)(void *, const char *, long int,  void *)'} but argument is of type 'void (*)(void *, const char *, int,  void *)'
+  247 |                                               esp_event_handler_t event_handler,
+      |                                               ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/main.c:120:61: error: passing argument 3 of 'esp_event_handler_instance_register' from incompatible pointer type [-Wincompatible-pointer-types]
+  120 |                                                             &event_handler,
+      |                                                             ^~~~~~~~~~~~~~
+      |                                                             |
+      |                                                             void (*)(void *, const char *, int,  void *)
+/home/julien/esp/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/home/julien/esp/esp-idf/components/esp_event/include/esp_event.h:247:67: note: expected 'esp_event_handler_t' {aka 'void (*)(void *, const char *, long int,  void *)'} but argument is of type 'void (*)(void *, const char *, int,  void *)'
+  247 |                                               esp_event_handler_t event_handler,
+      |                                               ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+ninja: build stopped: subcommand failed.

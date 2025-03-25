@@ -1,0 +1,463 @@
+Command: /home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/julien/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/julien/Documents/esp32IDF/hello_world/build/hello_world.elf /home/julien/Documents/esp32IDF/hello_world/build/bootloader/bootloader.elf -m '/home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python' '/home/julien/esp/esp-idf/tools/idf.py'
+ets Jun   21600:22:57
+
+rst:01 (OWRON_RESET),boo:013 SP_FAST_FLASH_BOT)
+cofigsip: 0, SPIP:xe
+ck_drv:0x00,q_dv:000d_drv:0x00,cs0drv0x0,d_drv:0x00,wp_dv:x0
+mode:DIO, clck iv2
+oad:0x3fff003,le:668
+load:0x4007800,ln:1880
+load:0x408040,en:3860
+entry0x408638
+[0;32mI (27) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar 24 2025 16:46:37[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (36) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (76) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+[0;32mI (83) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (92) boot: No factory image, trying OTA 0[0m
+[0;32mI (96) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=22614h (140820) map[0m
+[0;32mI (152) esp_image: segment 1: paddr=0004263c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (152) esp_image: segment 2: paddr=00042660 vaddr=3ffb0000 size=03f60h ( 16224) load[0m
+[0;32mI (162) esp_image: segment 3: paddr=000465c8 vaddr=40080000 size=09a50h ( 39504) load[0m
+[0;32mI (179) esp_image: segment 4: paddr=00050020 vaddr=400d0020 size=8f170h (586096) map[0m
+[0;32mI (379) esp_image: segment 5: paddr=000df198 vaddr=40089a50 size=0e5cch ( 58828) load[0m
+[0;32mI (414) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (429) boot: Set actual ota_seq=1 in otadata[0][0m
+[0;32mI (429) boot: Disabling RNG early entropy source...[0m
+[0;32mI (439) cpu_start: Multicore app[0m
+[0;32mI (448) cpu_start: Pro cpu start user code[0m
+[0;32mI (448) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (448) app_init: Application information:[0m
+[0;32mI (448) app_init: Project name:     hello_world[0m
+[0;32mI (452) app_init: App version:      5a1f48d-dirty[0m
+[0;32mI (456) app_init: Compile time:     Mar 24 2025 17:30:36[0m
+[0;32mI (461) app_init: ELF file SHA256:  53e1fffc1...[0m
+[0;32mI (466) app_init: ESP-IDF:          v5.5-dev-2290-g94cfe394fe[0m
+[0;32mI (471) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (475) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (479) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (483) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (489) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (494) heap_init: At 3FFB83B0 len 00027C50 (159 KiB): DRAM[0m
+[0;32mI (499) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (505) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (510) heap_init: At 4009801C len 00007FE4 (31 KiB): IRAM[0m
+[0;32mI (517) spi_flash: detected chip: generic[0m
+[0;32mI (519) spi_flash: flash io: dio[0m
+[0;32mI (523) main_task: Started on CPU0[0m
+[0;32mI (533) main_task: Calling app_main()[0m
+Starting ESP32 WiFi Manager...
+[0;32mI (573) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (603) wifi_init: rx ba win: 6[0m
+[0;32mI (603) wifi_init: accept mbox: 6[0m
+[0;32mI (603) wifi_init: tcpip mbox: 32[0m
+[0;32mI (603) wifi_init: udp mbox: 6[0m
+[0;32mI (603) wifi_init: tcp mbox: 6[0m
+[0;32mI (603) wifi_init: tcp tx win: 5760[0m
+[0;32mI (603) wifi_init: tcp rx win: 5760[0m
+[0;32mI (613) wifi_init: tcp mss: 1440[0m
+[0;32mI (613) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (613) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (623) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (703) wifi_manager: [0m
+[0;32mI (703) http_server: Registering URI handlers[0m
+[0;32mI (703) wifi_manager: MESSAGE: ORDER_LOAD_AND_RESTORE_STA[0m
+[0;32mI (703) wifi_manager: wifi_manager_fetch_wifi_sta_config: ssid:Gallifrey password:Vallejo858$@[0m
+[0;32mI (713) wifi_manager: Saved wifi found on startup. Will attempt to connect.[0m
+[0;32mI (723) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (3133) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (3133) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (3133) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (8143) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (8143) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (10553) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (10553) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (10553) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (15563) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (15563) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (17973) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (17973) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (17973) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (22983) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (22983) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (25393) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (25393) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (25393) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (25403) wifi_manager: MESSAGE: ORDER_START_AP[0m
+[0;32mI (25413) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 10.10.0.1[0m
+[0;32mI (25413) wifi_manager: WIFI_EVENT_AP_START[0m
+[0;32mI (25513) http_server: Registering URI handlers[0m
+[0;32mI (25513) dns_server: DNS Server listening on 53/udp[0m
+[0;32mI (30403) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (30403) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+����������������������������������������������������������������NT_STA_DISCONNECTED
+[0;32mI (33243) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (33243) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (35153) wifi_manager: WIFI_EVENT_AP_STACONNECTED[0m
+[0;32mI (36233) esp_netif_lwip: DHCP server assigned IP to a client, IP is: 10.10.0.2[0m
+[0;32mI (36353) dns_server: Replying to DNS request for www.google.com from 10.10.0.2[0m
+[0;32mI (36353) dns_server: Replying to DNS request for connectivitycheck.gstatic.com from 10.10.0.2[0m
+[0;32mI (36363) dns_server: Replying to DNS request for www.google.com from 10.10.0.2[0m
+[0;32mI (36363) dns_server: Replying to DNS request for connectivitycheck.gstatic.com from 10.10.0.2[0m
+[0;32mI (36413) dns_server: Replying to DNS request for mtalk.google.com from 10.10.0.2[0m
+[0;32mI (36483) dns_server: Replying to DNS request for alt3-mtalk.google.com from 10.10.0.2[0m
+[0;32mI (37503) dns_server: Replying to DNS request for connectivitycheck.gstatic.com from 10.10.0.2[0m
+[0;32mI (37513) dns_server: Replying to DNS request for www.google.com from 10.10.0.2[0m
+[0;32mI (37553) dns_server: Replying to DNS request for content-autofill.googleapis.com from 10.10.0.2[0m
+[0;32mI (37623) dns_server: Replying to DNS request for connectivitycheck.gstatic.com from 10.10.0.2[0m
+[0;32mI (37623) dns_server: Replying to DNS request for www.google.com from 10.10.0.2[0m
+[0;32mI (38243) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (38243) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (41083) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (41083) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (41083) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (41153) dns_server: Replying to DNS request for mtalk.google.com from 10.10.0.2[0m
+[0;32mI (41183) dns_server: Replying to DNS request for alt8-mtalk.google.com from 10.10.0.2[0m
+[0;32mI (46093) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (46093) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (48933) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (48933) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (48933) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (49233) dns_server: Replying to DNS request for mtalk.google.com from 10.10.0.2[0m
+[0;32mI (49253) dns_server: Replying to DNS request for alt7-mtalk.google.com from 10.10.0.2[0m
+[0;32mI (53943) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (53943) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x3006 (ESP_ERR_WIFI_STATE) at 0x400d9b69
+file: "./components/esp32-wifi-manager/src/wifi_manager.c" line 1020
+func: wifi_manager
+expression: esp_wifi_scan_start(&scan_config, false)
+
+abort() was called at PC 0x40088bb3 on core 1
+
+
+Backtrace: 0x40081d2d:0x3ffbe1d0 0x40088bbd:0x3ffbe1f0 0x40090f51:0x3ffbe210 0x40088bb3:0x3ffbe280 0x400d9b69:0x3ffbe2b0 0x40089689:0x3ffbe470
+
+
+
+
+ELF file SHA256: 53e1fffc1
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6368
+load:0x40078000,len:15880
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar 24 2025 16:46:37[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (77) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+[0;32mI (83) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000[0m
+[0;32mI (90) boot: End of partition table[0m
+[0;32mI (93) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=22614h (140820) map[0m
+[0;32mI (149) esp_image: segment 1: paddr=0004263c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (149) esp_image: segment 2: paddr=00042660 vaddr=3ffb0000 size=03f60h ( 16224) load[0m
+[0;32mI (159) esp_image: segment 3: paddr=000465c8 vaddr=40080000 size=09a50h ( 39504) load[0m
+[0;32mI (176) esp_image: segment 4: paddr=00050020 vaddr=400d0020 size=8f170h (586096) map[0m
+[0;32mI (376) esp_image: segment 5: paddr=000df198 vaddr=40089a50 size=0e5cch ( 58828) load[0m
+[0;32mI (411) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (411) boot: Disabling RNG early entropy source...[0m
+[0;32mI (421) cpu_start: Multicore app[0m
+[0;32mI (430) cpu_start: Pro cpu start user code[0m
+[0;32mI (430) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (430) app_init: Application information:[0m
+[0;32mI (430) app_init: Project name:     hello_world[0m
+[0;32mI (434) app_init: App version:      5a1f48d-dirty[0m
+[0;32mI (439) app_init: Compile time:     Mar 24 2025 17:30:36[0m
+[0;32mI (444) app_init: ELF file SHA256:  53e1fffc1...[0m
+[0;32mI (448) app_init: ESP-IDF:          v5.5-dev-2290-g94cfe394fe[0m
+[0;32mI (453) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (457) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (461) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (465) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (471) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (476) heap_init: At 3FFB83B0 len 00027C50 (159 KiB): DRAM[0m
+[0;32mI (482) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (487) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (493) heap_init: At 4009801C len 00007FE4 (31 KiB): IRAM[0m
+[0;32mI (499) spi_flash: detected chip: generic[0m
+[0;32mI (502) spi_flash: flash io: dio[0m
+[0;32mI (506) main_task: Started on CPU0[0m
+[0;32mI (516) main_task: Calling app_main()[0m
+Starting ESP32 WiFi Manager...
+[0;32mI (556) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (586) wifi_init: rx ba win: 6[0m
+[0;32mI (586) wifi_init: accept mbox: 6[0m
+[0;32mI (586) wifi_init: tcpip mbox: 32[0m
+[0;32mI (586) wifi_init: udp mbox: 6[0m
+[0;32mI (586) wifi_init: tcp mbox: 6[0m
+[0;32mI (586) wifi_init: tcp tx win: 5760[0m
+[0;32mI (586) wifi_init: tcp rx win: 5760[0m
+[0;32mI (596) wifi_init: tcp mss: 1440[0m
+[0;32mI (596) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (596) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (606) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (686) wifi_manager: [0m
+[0;32mI (686) http_server: Registering URI handlers[0m
+[0;32mI (686) wifi_manager: MESSAGE: ORDER_LOAD_AND_RESTORE_STA[0m
+[0;32mI (696) wifi_manager: wifi_manager_fetch_wifi_sta_config: ssid:Gallifrey password:Vallejo858$@[0m
+[0;32mI (696) wifi_manager: Saved wifi found on startup. Will attempt to connect.[0m
+[0;32mI (706) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (3116) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (3126) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (3126) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (8126) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (8126) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (10536) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (10536) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (10536) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (15546) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (15546) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (17956) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (17956) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (17956) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (22966) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (22966) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (25376) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (25376) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (25376) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (25386) wifi_manager: MESSAGE: ORDER_START_AP[0m
+[0;32mI (25396) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 10.10.0.1[0m
+[0;32mI (25396) wifi_manager: WIFI_EVENT_AP_START[0m
+[0;32mI (25496) http_server: Registering URI handlers[0m
+[0;32mI (25496) dns_server: DNS Server listening on 53/udp[0m
+[0;32mI (30386) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (30386) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (33226) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (33226) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (33226) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (38226) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (38226) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (41066) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (41066) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (41066) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (46066) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (46066) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (48906) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (48906) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (48906) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (53906) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (53906) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (56746) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (56746) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (56746) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (61746) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (61746) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (64586) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (64586) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (64586) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (69586) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (69586) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (72426) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (72426) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (72426) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (77426) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (77426) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (80266) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (80266) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (80266) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (85266) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (85266) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (88106) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (88106) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (88106) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (93106) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (93106) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (95946) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (95946) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (95946) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (100946) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (100946) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (103786) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (103786) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (103786) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (108786) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (108786) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (111626) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (111626) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (111626) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (116626) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (116626) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (119466) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (119466) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (119466) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (123116) wifi_manager: IP_EVENT_STA_LOST_IP[0m
+[0;32mI (124466) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (124466) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (127306) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (127306) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (127306) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (132306) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (132306) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (135146) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (135146) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (135146) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (140146) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (140146) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (142986) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (142986) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (142986) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (147986) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (147986) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (150826) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (150826) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (150826) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (155826) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (155826) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (158666) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (158666) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (158666) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (163666) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (163666) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (166506) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (166506) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (166506) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (171506) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (171506) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (174346) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (174346) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (174346) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (179346) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (179346) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (182186) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (182186) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (182186) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (187186) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (187186) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (190026) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (190026) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (190026) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (195026) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (195026) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (197866) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (197866) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (197866) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (202866) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (202866) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (205706) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (205706) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (205706) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (210706) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (210706) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (213546) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (213546) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (213546) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (218546) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (218546) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (221386) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (221386) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (221386) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (226386) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (226386) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (229226) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (229226) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (229226) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (234226) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (234226) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (237066) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (237066) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (237066) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (242066) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (242066) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (244906) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (244906) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (244906) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (247306) wifi_manager: IP_EVENT_STA_LOST_IP[0m
+[0;32mI (249906) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (249906) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (252746) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (252746) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (252746) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (257746) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (257746) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (260586) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (260586) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (260586) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (265586) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (265586) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (268426) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (268426) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (268426) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (273426) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (273426) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (276266) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (276266) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (276266) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (281266) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (281266) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (284106) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (284106) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (284106) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (289106) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (289106) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (291946) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (291946) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (291946) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (296946) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (296946) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (299786) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (299786) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (299786) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (304786) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (304786) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (307626) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (307626) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (307626) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (312626) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (312626) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (315466) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (315466) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (315466) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (320466) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (320466) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (323306) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (323306) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (323306) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (328306) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (328306) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (331146) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (331146) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (331146) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (336146) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (336146) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (338986) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (338986) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (338986) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (343986) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (343986) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (346826) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (346826) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (346826) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (351826) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (351826) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (354666) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (354666) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (354666) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (359666) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (359666) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m

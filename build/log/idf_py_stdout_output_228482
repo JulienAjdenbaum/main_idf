@@ -1,0 +1,723 @@
+Command: /home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/julien/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/julien/Documents/esp32IDF/hello_world/build/hello_world.elf /home/julien/Documents/esp32IDF/hello_world/build/bootloader/bootloader.elf -m '/home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python' '/home/julien/esp/esp-idf/tools/idf.py'
+ets un 8 216 00:22:57
+
+st:x1(POWERON_RESET)boo:013 (SPI_FAST_FLAH_OOT
+configsip: 0, PIP:0ee
+clk_drv:0x0,q_rv:x00,d_drv:0x00,s0drv0x00,hd_drv:0x0,wpdr:0x00
+mode:DIO,clok dv:2
+load:0x3fff03,le:6368
+load:0x407800len:15880
+load0x408000,len:3860
+enry0x4080638
+[0;32mI (27) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar 24 2025 16:46:37[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (36) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (76) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+[0;32mI (83) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (92) boot: No factory image, trying OTA 0[0m
+[0;32mI (96) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=3e060h (254048) map[0m
+[0;32mI (191) esp_image: segment 1: paddr=0005e088 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (191) esp_image: segment 2: paddr=0005e0ac vaddr=3ffb0000 size=01f6ch (  8044) load[0m
+[0;32mI (198) esp_image: segment 3: paddr=00060020 vaddr=400d0020 size=b1cc8h (728264) map[0m
+[0;32mI (451) esp_image: segment 4: paddr=00111cf0 vaddr=3ffb1f6c size=02588h (  9608) load[0m
+[0;32mI (455) esp_image: segment 5: paddr=00114280 vaddr=40080000 size=1b9bch (113084) load[0m
+[0;32mI (512) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (528) boot: Set actual ota_seq=1 in otadata[0][0m
+[0;32mI (528) boot: Disabling RNG early entropy source...[0m
+[0;32mI (538) cpu_start: Multicore app[0m
+[0;32mI (546) cpu_start: Pro cpu start user code[0m
+[0;32mI (546) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (546) app_init: Application information:[0m
+[0;32mI (546) app_init: Project name:     hello_world[0m
+[0;32mI (551) app_init: App version:      5a1f48d-dirty[0m
+[0;32mI (555) app_init: Compile time:     Mar 24 2025 17:30:36[0m
+[0;32mI (560) app_init: ELF file SHA256:  0b85a9ffd...[0m
+[0;32mI (564) app_init: ESP-IDF:          v5.5-dev-2290-g94cfe394fe[0m
+[0;32mI (570) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (574) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (578) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (582) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (588) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (593) heap_init: At 3FFBA5F8 len 00025A08 (150 KiB): DRAM[0m
+[0;32mI (598) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (604) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (609) heap_init: At 4009B9BC len 00004644 (17 KiB): IRAM[0m
+[0;32mI (616) spi_flash: detected chip: generic[0m
+[0;32mI (618) spi_flash: flash io: dio[0m
+[0;33mW (621) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
+[0;33mW (632) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;32mI (641) main_task: Started on CPU0[0m
+[0;32mI (651) main_task: Calling app_main()[0m
+[0;32mI (651) MAIN: Starting app_main...[0m
+[0;32mI (691) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (721) wifi_init: rx ba win: 6[0m
+[0;32mI (721) wifi_init: accept mbox: 6[0m
+[0;32mI (721) wifi_init: tcpip mbox: 32[0m
+[0;32mI (721) wifi_init: udp mbox: 6[0m
+[0;32mI (721) wifi_init: tcp mbox: 6[0m
+[0;32mI (721) wifi_init: tcp tx win: 5760[0m
+[0;32mI (721) wifi_init: tcp rx win: 5760[0m
+[0;32mI (731) wifi_init: tcp mss: 1440[0m
+[0;32mI (731) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (731) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (741) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (821) wifi_manager: [0m
+[0;32mI (821) http_server: Registering URI handlers[0m
+[0;32mI (821) wifi_manager: MESSAGE: ORDER_LOAD_AND_RESTORE_STA[0m
+[0;32mI (821) wifi_manager: wifi_manager_fetch_wifi_sta_config: ssid:Gallifrey password:Vallejo858$@[0m
+[0;32mI (831) wifi_manager: Saved wifi found on startup. Will attempt to connect.[0m
+[0;32mI (841) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (1191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (1691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (2191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (2691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (3191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (3261) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (3261) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (3261) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (3691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (4191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (4691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (5191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (5691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (6191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (6691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (7191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (7691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (8191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (8261) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (8261) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (8691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (9191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (9691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (10191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (10671) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (10671) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (10671) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (10691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (11191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (11691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (12191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (12691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (13191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (13691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (14191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (14691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (15191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (15681) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (15681) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (15691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (16191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (16691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (17191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (17691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (18091) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (18091) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (18091) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (18191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (18691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (19191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (19691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (20191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (20691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (21191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (21691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (22191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (22691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (23101) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (23101) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (23191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (23691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (24191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (24691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (25191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (25511) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (25511) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (25511) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (25521) wifi_manager: MESSAGE: ORDER_START_AP[0m
+[0;32mI (25531) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 10.10.0.1[0m
+[0;32mI (25531) wifi_manager: WIFI_EVENT_AP_START[0m
+[0;32mI (25631) http_server: Registering URI handlers[0m
+[0;32mI (25631) dns_server: DNS Server listening on 53/udp[0m
+[0;32mI (25691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (26191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (26691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (27191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (27691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (28191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (28691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (29191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (29691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (30191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (30521) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (30521) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (30691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (31191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (31691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (32191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (32691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (33191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (33361) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (33361) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (33361) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (33691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (34191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (34691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (35191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (35691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (36191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (36691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (36941) wifi_manager: WIFI_EVENT_AP_STACONNECTED[0m
+[0;32mI (37191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (37361) esp_netif_lwip: DHCP server assigned IP to a client, IP is: 10.10.0.2[0m
+[0;32mI (37471) dns_server: Replying to DNS request for connectivitycheck.gstatic.com from 10.10.0.2[0m
+[0;32mI (37471) dns_server: Replying to DNS request for www.google.com from 10.10.0.2[0m
+[0;32mI (37491) dns_server: Replying to DNS request for connectivitycheck.gstatic.com from 10.10.0.2[0m
+[0;32mI (37491) dns_server: Replying to DNS request for www.google.com from 10.10.0.2[0m
+[0;32mI (37521) dns_server: Replying to DNS request for mtalk.google.com from 10.10.0.2[0m
+[0;32mI (37571) dns_server: Replying to DNS request for alt6-mtalk.google.com from 10.10.0.2[0m
+[0;32mI (37691) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (38181) dns_server: Replying to DNS request for connectivitycheck.gstatic.com from 10.10.0.2[0m
+[0;32mI (38181) dns_server: Replying to DNS request for www.google.com from 10.10.0.2[0m
+[0;32mI (38191) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (38191) dns_server: Replying to DNS request for content-autofill.googleapis.com from 10.10.0.2[0m
+[0;32mI (38291) dns_server: Replying to DNS request for connectivitycheck.gstatic.com from 10.10.0.2[0m
+[0;32mI (38291) dns_server: Replying to DNS request for www.google.com from 10.10.0.2[0m
+[0;32mI (38361) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (38361) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (38701) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (39201) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (39701) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (40201) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (40701) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (41201) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (41201) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (41201) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (41201) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (41701) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (42201) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (42701) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (43201) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (43701) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (44201) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (44701) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (45201) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (45701) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (46191) dns_server: Replying to DNS request for mtalk.google.com from 10.10.0.2[0m
+[0;32mI (46201) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (46211) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (46211) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (46701) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (47201) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (47701) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (48201) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (48701) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (49051) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (49051) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (49051) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (49181) dns_server: Replying to DNS request for mtalk.google.com from 10.10.0.2[0m
+[0;32mI (49201) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (49251) dns_server: Replying to DNS request for alt3-mtalk.google.com from 10.10.0.2[0m
+[0;32mI (49701) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (50201) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (50701) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (51201) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (51701) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (52201) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (52701) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (53201) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (53701) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (54061) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (54061) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (54201) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (54701) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (54961) http_server: POST /connect.json[0m
+[0;32mI (54961) http_server: ssid: Partagedeco, password: jesaispasqupimettre[0m
+[0;32mI (54961) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x3007 (ESP_ERR_WIFI_CONN) at 0x400dbf3a
+file: "./components/esp32-wifi-manager/src/wifi_manager.c" line 1069
+func: wifi_manager
+expression: esp_wifi_connect()
+
+abort() was called at PC 0x4008b93f on core 1
+
+
+Backtrace: 0x40081fd1:0x3ffc0410 0x4008b949:0x3ffc0430 0x400948a5:0x3ffc0450 0x4008b93f:0x3ffc04c0 0x400dbf3a:0x3ffc04f0 0x4008c43d:0x3ffc06b0
+
+
+
+
+ELF file SHA256: 0b85a9ffd
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6368
+load:0x40078000,len:15880
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar 24 2025 16:46:37[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (77) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+[0;32mI (83) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000[0m
+[0;32mI (90) boot: End of partition table[0m
+[0;32mI (93) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=3e060h (254048) map[0m
+[0;32mI (187) esp_image: segment 1: paddr=0005e088 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (188) esp_image: segment 2: paddr=0005e0ac vaddr=3ffb0000 size=01f6ch (  8044) load[0m
+[0;32mI (194) esp_image: segment 3: paddr=00060020 vaddr=400d0020 size=b1cc8h (728264) map[0m
+[0;32mI (448) esp_image: segment 4: paddr=00111cf0 vaddr=3ffb1f6c size=02588h (  9608) load[0m
+[0;32mI (451) esp_image: segment 5: paddr=00114280 vaddr=40080000 size=1b9bch (113084) load[0m
+[0;32mI (509) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (509) boot: Disabling RNG early entropy source...[0m
+[0;32mI (519) cpu_start: Multicore app[0m
+[0;32mI (528) cpu_start: Pro cpu start user code[0m
+[0;32mI (528) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (528) app_init: Application information:[0m
+[0;32mI (528) app_init: Project name:     hello_world[0m
+[0;32mI (532) app_init: App version:      5a1f48d-dirty[0m
+[0;32mI (536) app_init: Compile time:     Mar 24 2025 17:30:36[0m
+[0;32mI (542) app_init: ELF file SHA256:  0b85a9ffd...[0m
+[0;32mI (546) app_init: ESP-IDF:          v5.5-dev-2290-g94cfe394fe[0m
+[0;32mI (551) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (555) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (559) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (563) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (569) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (574) heap_init: At 3FFBA5F8 len 00025A08 (150 KiB): DRAM[0m
+[0;32mI (580) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (585) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (591) heap_init: At 4009B9BC len 00004644 (17 KiB): IRAM[0m
+[0;32mI (597) spi_flash: detected chip: generic[0m
+[0;32mI (599) spi_flash: flash io: dio[0m
+[0;33mW (603) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
+[0;33mW (614) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;32mI (622) main_task: Started on CPU0[0m
+[0;32mI (632) main_task: Calling app_main()[0m
+[0;32mI (632) MAIN: Starting app_main...[0m
+[0;32mI (672) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (702) wifi_init: rx ba win: 6[0m
+[0;32mI (702) wifi_init: accept mbox: 6[0m
+[0;32mI (702) wifi_init: tcpip mbox: 32[0m
+[0;32mI (702) wifi_init: udp mbox: 6[0m
+[0;32mI (702) wifi_init: tcp mbox: 6[0m
+[0;32mI (702) wifi_init: tcp tx win: 5760[0m
+[0;32mI (702) wifi_init: tcp rx win: 5760[0m
+[0;32mI (712) wifi_init: tcp mss: 1440[0m
+[0;32mI (712) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (712) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (722) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (802) wifi_manager: [0m
+[0;32mI (802) http_server: Registering URI handlers[0m
+[0;32mI (802) wifi_manager: MESSAGE: ORDER_LOAD_AND_RESTORE_STA[0m
+[0;32mI (812) wifi_manager: wifi_manager_fetch_wifi_sta_config: ssid:Gallifrey password:Vallejo858$@[0m
+[0;32mI (812) wifi_manager: Saved wifi found on startup. Will attempt to connect.[0m
+[0;32mI (822) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (1172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (1672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (2172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (2672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (3172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (3242) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (3242) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (3242) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (3672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (4172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (4672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (5172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (5672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (6172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (6672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (7172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (7672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (8172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (8242) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (8242) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (8672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (9172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (9672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (10172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (10652) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (10652) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (10652) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (10672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (11172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (11672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (12172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (12672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (13172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (13672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (14172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (14672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (15172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (15662) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (15662) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (15672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (16172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (16672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (17172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (17672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (18072) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (18072) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (18072) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (18172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (18672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (19172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (19672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (20172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (20672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (21172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (21672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (22172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (22672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (23082) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (23082) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (23172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (23672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (24172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (24672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (25172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (25492) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (25492) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (25492) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (25502) wifi_manager: MESSAGE: ORDER_START_AP[0m
+[0;32mI (25512) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 10.10.0.1[0m
+[0;32mI (25512) wifi_manager: WIFI_EVENT_AP_START[0m
+[0;32mI (25612) http_server: Registering URI handlers[0m
+[0;32mI (25612) dns_server: DNS Server listening on 53/udp[0m
+[0;32mI (25672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (26172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (26672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (27172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (27672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (28172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (28672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (29172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (29672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (30172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (30502) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (30502) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (30672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (31172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (31672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (32172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (32672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (33172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (33342) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (33342) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (33342) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (33672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (34172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (34672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (35172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (35672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (36172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (36672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (37172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (37562) wifi_manager: WIFI_EVENT_AP_STACONNECTED[0m
+[0;32mI (37672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (38032) esp_netif_lwip: DHCP server assigned IP to a client, IP is: 10.10.0.2[0m
+[0;32mI (38162) dns_server: Replying to DNS request for www.google.com from 10.10.0.2[0m
+[0;32mI (38162) dns_server: Replying to DNS request for connectivitycheck.gstatic.com from 10.10.0.2[0m
+[0;32mI (38172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (38172) dns_server: Replying to DNS request for www.google.com from 10.10.0.2[0m
+[0;32mI (38182) dns_server: Replying to DNS request for connectivitycheck.gstatic.com from 10.10.0.2[0m
+[0;32mI (38342) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (38342) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (38672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (39172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (39672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (40172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (40672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (41172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (41182) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (41182) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (41182) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (41672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (42032) dns_server: Replying to DNS request for play.googleapis.com from 10.10.0.2[0m
+[0;32mI (42042) dns_server: Replying to DNS request for connectivitycheck.gstatic.com from 10.10.0.2[0m
+[0;32mI (42042) dns_server: Replying to DNS request for www.google.com from 10.10.0.2[0m
+[0;32mI (42162) dns_server: Replying to DNS request for connectivitycheck.gstatic.com from 10.10.0.2[0m
+[0;32mI (42162) dns_server: Replying to DNS request for www.google.com from 10.10.0.2[0m
+[0;32mI (42172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (42672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (43172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (43672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (44172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (44672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (45172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (45672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (46172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (46192) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (46192) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (46282) dns_server: Replying to DNS request for connectivitycheck.gstatic.com from 10.10.0.2[0m
+[0;32mI (46282) dns_server: Replying to DNS request for www.google.com from 10.10.0.2[0m
+[0;32mI (46292) dns_server: Replying to DNS request for www.google.com from 10.10.0.2[0m
+[0;32mI (46302) dns_server: Replying to DNS request for www.google.com from 10.10.0.2[0m
+[0;32mI (46302) dns_server: Replying to DNS request for connectivitycheck.gstatic.com from 10.10.0.2[0m
+[0;32mI (46672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (47172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (47672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (48172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (48672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (49032) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (49032) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (49032) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (49172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (49672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (49862) dns_server: Replying to DNS request for content-autofill.googleapis.com from 10.10.0.2[0m
+[0;32mI (49872) dns_server: Replying to DNS request for content-autofill.googleapis.com from 10.10.0.2[0m
+[0;32mI (50172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (50672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (51172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (51672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (52172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (52672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (53172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (53672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (54042) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (54042) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (54172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (54322) http_server: POST /connect.json[0m
+[0;32mI (54322) http_server: ssid: Partagedeco, password: jesaispasquoimettre[0m
+[0;32mI (54322) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x3007 (ESP_ERR_WIFI_CONN) at 0x400dbf3a
+file: "./components/esp32-wifi-manager/src/wifi_manager.c" line 1069
+func: wifi_manager
+expression: esp_wifi_connect()
+
+abort() was called at PC 0x4008b93f on core 0
+
+
+Backtrace: 0x40081fd1:0x3ffc0410 0x4008b949:0x3ffc0430 0x400948a5:0x3ffc0450 0x4008b93f:0x3ffc04c0 0x400dbf3a:0x3ffc04f0 0x4008c43d:0x3ffc06b0
+
+
+
+
+ELF file SHA256: 0b85a9ffd
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6368
+load:0x40078000,len:15880
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar 24 2025 16:46:37[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (77) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+[0;32mI (83) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000[0m
+[0;32mI (90) boot: End of partition table[0m
+[0;32mI (93) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=3e060h (254048) map[0m
+[0;32mI (187) esp_image: segment 1: paddr=0005e088 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (188) esp_image: segment 2: paddr=0005e0ac vaddr=3ffb0000 size=01f6ch (  8044) load[0m
+[0;32mI (194) esp_image: segment 3: paddr=00060020 vaddr=400d0020 size=b1cc8h (728264) map[0m
+[0;32mI (448) esp_image: segment 4: paddr=00111cf0 vaddr=3ffb1f6c size=02588h (  9608) load[0m
+[0;32mI (451) esp_image: segment 5: paddr=00114280 vaddr=40080000 size=1b9bch (113084) load[0m
+[0;32mI (509) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (509) boot: Disabling RNG early entropy source...[0m
+[0;32mI (519) cpu_start: Multicore app[0m
+[0;32mI (528) cpu_start: Pro cpu start user code[0m
+[0;32mI (528) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (528) app_init: Application information:[0m
+[0;32mI (528) app_init: Project name:     hello_world[0m
+[0;32mI (532) app_init: App version:      5a1f48d-dirty[0m
+[0;32mI (537) app_init: Compile time:     Mar 24 2025 17:30:36[0m
+[0;32mI (542) app_init: ELF file SHA256:  0b85a9ffd...[0m
+[0;32mI (546) app_init: ESP-IDF:          v5.5-dev-2290-g94cfe394fe[0m
+[0;32mI (551) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (555) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (559) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (563) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (570) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (574) heap_init: At 3FFBA5F8 len 00025A08 (150 KiB): DRAM[0m
+[0;32mI (580) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (585) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (591) heap_init: At 4009B9BC len 00004644 (17 KiB): IRAM[0m
+[0;32mI (597) spi_flash: detected chip: generic[0m
+[0;32mI (600) spi_flash: flash io: dio[0m
+[0;33mW (603) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
+[0;33mW (614) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;32mI (622) main_task: Started on CPU0[0m
+[0;32mI (632) main_task: Calling app_main()[0m
+[0;32mI (632) MAIN: Starting app_main...[0m
+[0;32mI (672) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (702) wifi_init: rx ba win: 6[0m
+[0;32mI (702) wifi_init: accept mbox: 6[0m
+[0;32mI (702) wifi_init: tcpip mbox: 32[0m
+[0;32mI (702) wifi_init: udp mbox: 6[0m
+[0;32mI (702) wifi_init: tcp mbox: 6[0m
+[0;32mI (702) wifi_init: tcp tx win: 5760[0m
+[0;32mI (702) wifi_init: tcp rx win: 5760[0m
+[0;32mI (712) wifi_init: tcp mss: 1440[0m
+[0;32mI (712) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (712) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (722) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (802) wifi_manager: [0m
+[0;32mI (802) http_server: Registering URI handlers[0m
+[0;32mI (802) wifi_manager: MESSAGE: ORDER_LOAD_AND_RESTORE_STA[0m
+[0;32mI (812) wifi_manager: wifi_manager_fetch_wifi_sta_config: ssid:Gallifrey password:Vallejo858$@[0m
+[0;32mI (812) wifi_manager: Saved wifi found on startup. Will attempt to connect.[0m
+[0;32mI (822) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (1172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (1672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (2172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (2672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (3172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (3242) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (3242) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (3242) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (3672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (4172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (4672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (5172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (5672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (6172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (6672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (7172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (7672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (8172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (8242) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (8242) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (8672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (9172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (9672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (10172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (10652) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (10652) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (10652) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (10672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (11172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (11672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (12172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (12672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (13172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (13672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (14172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (14672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (15172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (15662) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (15662) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (15672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (16172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (16672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (17172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (17672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (18072) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (18072) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (18072) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (18172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (18672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (19172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (19672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (20172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (20672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (21172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (21672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (22172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (22672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (23082) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (23082) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (23172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (23672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (24172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (24672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (25172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (25492) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (25492) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (25492) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (25502) wifi_manager: MESSAGE: ORDER_START_AP[0m
+[0;32mI (25512) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 10.10.0.1[0m
+[0;32mI (25512) wifi_manager: WIFI_EVENT_AP_START[0m
+[0;32mI (25612) http_server: Registering URI handlers[0m
+[0;32mI (25612) dns_server: DNS Server listening on 53/udp[0m
+[0;32mI (25672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (26172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (26672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (27172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (27672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (28172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (28672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (29172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (29672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (30172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (30502) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (30502) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (30672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (31172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (31672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (32172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (32672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (33172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (33342) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (33342) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (33342) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (33672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (34172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (34672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (35172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (35672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (36172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (36672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (37172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (37672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (38172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (38342) wifi_manager: Retry Timer Tick! Sending ORDER_CONNECT_STA with reason CONNECTION_REQUEST_AUTO_RECONNECT[0m
+[0;32mI (38342) wifi_manager: MESSAGE: ORDER_CONNECT_STA[0m
+[0;32mI (38672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (39172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (39672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (40172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (40672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (41172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (41182) wifi_manager: WIFI_EVENT_STA_DISCONNECTED[0m
+[0;32mI (41182) wifi_manager: MESSAGE: EVENT_STA_DISCONNECTED with Reason code: 201[0m
+[0;32mI (41182) wifi_manager: Set STA IP String to: 0.0.0.0[0m
+[0;32mI (41672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (42172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (42672) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (43172) MAIN: Waiting for Wi-Fi...[0m
+[0;32mI (43672) MAIN: Waiting for Wi-Fi...[0m

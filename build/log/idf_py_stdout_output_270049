@@ -1,0 +1,587 @@
+Command: /home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/julien/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/julien/Documents/esp32IDF/hello_world/build/hello_world.elf /home/julien/Documents/esp32IDF/hello_world/build/bootloader/bootloader.elf -m '/home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python' '/home/julien/esp/esp-idf/tools/idf.py'
+ts un  8 2016 00:2:57
+rs:0x1 (POWERON_RSET,boot:0x13 (SPI_FASTFLAH_BOOT)
+configip: , SIWP:0xee
+clk_dv:0x0,q_rv:0x00,d_drv:x00cs0_drv:0x00,hd_drv0x00wp_drv:0x00
+moe:DI, cock div:2
+loa:0x3ff000,len:6368
+lod:04007000,len:15880loa:0x4080400,len:3860
+enty 0x40080638
+[0;32mI (26) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar 24 2025 16:46:37[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (36) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (76) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+[0;32mI (83) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (92) boot: No factory image, trying OTA 0[0m
+[0;32mI (96) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=37ed0h (229072) map[0m
+[0;32mI (182) esp_image: segment 1: paddr=00057ef8 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (182) esp_image: segment 2: paddr=00057f1c vaddr=3ffb0000 size=04454h ( 17492) load[0m
+[0;32mI (192) esp_image: segment 3: paddr=0005c378 vaddr=40080000 size=03ca0h ( 15520) load[0m
+[0;32mI (200) esp_image: segment 4: paddr=00060020 vaddr=400d0020 size=af080h (716928) map[0m
+[0;32mI (446) esp_image: segment 5: paddr=0010f0a8 vaddr=40083ca0 size=176fch ( 95996) load[0m
+[0;32mI (497) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (512) boot: Set actual ota_seq=1 in otadata[0][0m
+[0;32mI (512) boot: Disabling RNG early entropy source...[0m
+[0;32mI (522) cpu_start: Multicore app[0m
+[0;32mI (530) cpu_start: Pro cpu start user code[0m
+[0;32mI (531) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (531) app_init: Application information:[0m
+[0;32mI (531) app_init: Project name:     hello_world[0m
+[0;32mI (535) app_init: App version:      5a1f48d-dirty[0m
+[0;32mI (539) app_init: Compile time:     Mar 24 2025 21:56:34[0m
+[0;32mI (544) app_init: ELF file SHA256:  a68aff640...[0m
+[0;32mI (549) app_init: ESP-IDF:          v5.5-dev-2290-g94cfe394fe[0m
+[0;32mI (554) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (558) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (562) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (566) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (572) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (577) heap_init: At 3FFBA3C8 len 00025C38 (151 KiB): DRAM[0m
+[0;32mI (582) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (588) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (593) heap_init: At 4009B39C len 00004C64 (19 KiB): IRAM[0m
+[0;32mI (600) spi_flash: detected chip: generic[0m
+[0;32mI (602) spi_flash: flash io: dio[0m
+[0;33mW (606) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
+[0;33mW (617) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;32mI (625) main_task: Started on CPU0[0m
+[0;32mI (635) main_task: Calling app_main()[0m
+[0;32mI (635) MAIN: Starting app_main...[0m
+[0;33mW (675) WIFI_MGR: No stored Wi-Fi creds. Starting AP...[0m
+[0;32mI (685) wifi:wifi driver task: 3ffc25a0, prio:23, stack:6656, core=0[0m
+[0;32mI (695) wifi:wifi firmware version: 3a3aca644[0m
+[0;32mI (695) wifi:wifi certification version: v7.0[0m
+[0;32mI (695) wifi:config NVS flash: enabled[0m
+[0;32mI (695) wifi:config nano formatting: disabled[0m
+[0;32mI (705) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (705) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (715) wifi:Init management short buffer num: 32[0m
+[0;32mI (715) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (725) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (725) wifi:Init static rx buffer num: 10[0m
+[0;32mI (725) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (735) wifi_init: rx ba win: 6[0m
+[0;32mI (735) wifi_init: accept mbox: 6[0m
+[0;32mI (735) wifi_init: tcpip mbox: 32[0m
+[0;32mI (745) wifi_init: udp mbox: 6[0m
+[0;32mI (745) wifi_init: tcp mbox: 6[0m
+[0;32mI (745) wifi_init: tcp tx win: 5760[0m
+[0;32mI (755) wifi_init: tcp rx win: 5760[0m
+[0;32mI (755) wifi_init: tcp mss: 1440[0m
+[0;32mI (755) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (765) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (775) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (845) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (925) wifi:mode : softAP (94:54:c5:b5:f9:ed)[0m
+[0;32mI (925) wifi:Total power save buffer number: 16[0m
+[0;32mI (925) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (925) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (935) WIFI_MGR: AP mode init done. SSID=MyESP32_OpenAP (Open), Channel=1[0m
+[0;32mI (935) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1[0m
+[0;32mI (945) WIFI_MGR: AP started. SSID=MyESP32_OpenAP, IP=192.168.4.1[0m
+[0;32mI (955) HTTP_SERVER: Starting HTTP server on port 80[0m
+[0;32mI (955) HTTP_SERVER: HTTP server started.[0m
+[0;32mI (965) DNS_SERVER: DNS server started on port 53, hijacking to 192.168.4.1[0m
+[0;32mI (11605) wifi:new:<1,0>, old:<1,1>, ap:<1,1>, sta:<255,255>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (11605) wifi:station: da:60:c3:86:83:ad join, AID=1, bgn, 20[0m
+[0;32mI (11605) WIFI_MGR: Station da:60:c3:86:83:ad connected (AID=1)[0m
+[0;32mI (12355) wifi:<ba-add>idx:2 (ifx:1, da:60:c3:86:83:ad), tid:0, ssn:0, winSize:64[0m
+[0;32mI (12865) esp_netif_lwip: DHCP server assigned IP to a client, IP is: 192.168.4.2[0m
+[0;33mW (14355) httpd_uri: httpd_uri: URI '/favicon.ico' not found[0m
+[0;33mW (14355) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (29265) HTTP_SERVER: Form data: ssid=Partagedeco&pass=jesaispasquoimettre[0m
+[0;32mI (29265) HTTP_SERVER: Received new creds: SSID='Partagedeco', PASS='jesaispasquoimettre'[0m
+[0;32mI (29265) WIFI_MGR: Storing new Wi-Fi creds: SSID=Partagedeco[0m
+[0;32mI (29275) wifi:station: da:60:c3:86:83:ad leave, AID = 1, reason = 2, bss_flags is 33721443, bss:0x3ffcca78[0m
+[0;32mI (29285) wifi:new:<1,0>, old:<1,0>, ap:<1,1>, sta:<255,255>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (29285) wifi:<ba-del>idx:2, tid:0[0m
+[0;32mI (29355) wifi:flush txq[0m
+[0;32mI (29355) wifi:stop sw txq[0m
+[0;32mI (29355) wifi:lmac stop hw txq[0m
+[0;32mI (29375) wifi:mode : sta (94:54:c5:b5:f9:ec)[0m
+[0;32mI (29375) wifi:enable tsf[0m
+[0;32mI (29375) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (29375) WIFI_MGR: STA init done. Trying SSID: Partagedeco[0m
+[0;33mW (29375) httpd_txrx: httpd_sock_err: error in send : 113[0m
+[1;31mE (29385) wifi:sta is connecting, return error[0m
+[0;33mW (29385) httpd_txrx: httpd_sock_err: error in recv : 113[0m
+[0;32mI (31795) WIFI_MGR: Retrying STA... (1/5)[0m
+[1;31mE (31795) wifi:sta is connecting, return error[0m
+[0;32mI (31795) WIFI_MGR: Retrying STA... (2/5)[0m
+[0;32mI (34205) WIFI_MGR: Retrying STA... (3/5)[0m
+[1;31mE (34215) wifi:sta is connecting, return error[0m
+[0;32mI (34215) WIFI_MGR: Retrying STA... (4/5)[0m
+[0;32mI (36625) WIFI_MGR: Retrying STA... (5/5)[0m
+[1;31mE (36625) WIFI_MGR: Failed STA after 5 retries; fallback to AP...[0m
+[0;32mI (36625) wifi:flush txq[0m
+[0;32mI (36625) wifi:stop sw txq[0m
+[0;32mI (36625) wifi:lmac stop hw txq[0m
+[1;31mE (36635) esp_netif_lwip: esp_netif_new_api: Failed to configure netif with config=0x3ffbf9f0 (config or if_key is NULL or duplicate key)[0m
+
+assert failed: esp_netif_create_default_wifi_ap wifi_default.c:408 (netif)
+
+
+Backtrace: 0x40081f69:0x3ffbf890 0x4008b8e5:0x3ffbf8b0 0x400943bd:0x3ffbf8d0 0x40107d13:0x3ffbf9f0 0x400db06f:0x3ffbfa20 0x400db24b:0x3ffbfba0 0x4017bcc5:0x3ffbfbf0 0x4017b631:0x3ffbfc20 0x4017b719:0x3ffbfc60 0x4008c3b1:0x3ffbfc80
+
+
+
+
+ELF file SHA256: a68aff640
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6368
+load:0x40078000,len:15880
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar 24 2025 16:46:37[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (77) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+I (83) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000
+[0;32mI (90) boot: End of partition table[0m
+[0;32mI (93) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=37ed0h (229072) map[0m
+[0;32mI (179) esp_image: segment 1: paddr=00057ef8 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (179) esp_image: segment 2: paddr=00057f1c vaddr=3ffb0000 size=04454h ( 17492) load[0m
+[0;32mI (189) esp_image: segment 3: paddr=0005c378 vaddr=40080000 size=03ca0h ( 15520) load[0m
+[0;32mI (196) esp_image: segment 4: paddr=00060020 vaddr=400d0020 size=af080h (716928) map[0m
+[0;32mI (443) esp_image: segment 5: paddr=0010f0a8 vaddr=40083ca0 size=176fch ( 95996) load[0m
+[0;32mI (493) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (494) boot: Disabling RNG early entropy source...[0m
+[0;32mI (504) cpu_start: Multicore app[0m
+[0;32mI (512) cpu_start: Pro cpu start user code[0m
+[0;32mI (513) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (513) app_init: Application information:[0m
+[0;32mI (513) app_init: Project name:     hello_world[0m
+[0;32mI (517) app_init: App version:      5a1f48d-dirty[0m
+[0;32mI (521) app_init: Compile time:     Mar 24 2025 21:56:34[0m
+[0;32mI (526) app_init: ELF file SHA256:  a68aff640...[0m
+[0;32mI (531) app_init: ESP-IDF:          v5.5-dev-2290-g94cfe394fe[0m
+[0;32mI (536) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (540) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (544) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (548) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (554) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (559) heap_init: At 3FFBA3C8 len 00025C38 (151 KiB): DRAM[0m
+[0;32mI (564) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (570) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (575) heap_init: At 4009B39C len 00004C64 (19 KiB): IRAM[0m
+[0;32mI (582) spi_flash: detected chip: generic[0m
+[0;32mI (584) spi_flash: flash io: dio[0m
+[0;33mW (588) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
+[0;33mW (599) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;32mI (607) main_task: Started on CPU0[0m
+[0;32mI (617) main_task: Calling app_main()[0m
+[0;32mI (617) MAIN: Starting app_main...[0m
+[0;32mI (657) WIFI_MGR: Loaded Wi-Fi creds from NVS: SSID=Partagedeco[0m
+[0;32mI (667) wifi:wifi driver task: 3ffc2570, prio:23, stack:6656, core=0[0m
+[0;32mI (677) wifi:wifi firmware version: 3a3aca644[0m
+[0;32mI (677) wifi:wifi certification version: v7.0[0m
+[0;32mI (677) wifi:config NVS flash: enabled[0m
+[0;32mI (687) wifi:config nano formatting: disabled[0m
+[0;32mI (687) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (687) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (697) wifi:Init management short buffer num: 32[0m
+[0;32mI (697) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (707) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (707) wifi:Init static rx buffer num: 10[0m
+[0;32mI (707) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (717) wifi_init: rx ba win: 6[0m
+[0;32mI (717) wifi_init: accept mbox: 6[0m
+[0;32mI (717) wifi_init: tcpip mbox: 32[0m
+[0;32mI (727) wifi_init: udp mbox: 6[0m
+[0;32mI (727) wifi_init: tcp mbox: 6[0m
+[0;32mI (727) wifi_init: tcp tx win: 5760[0m
+[0;32mI (737) wifi_init: tcp rx win: 5760[0m
+[0;32mI (737) wifi_init: tcp mss: 1440[0m
+[0;32mI (737) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (747) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (757) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (827) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (847) wifi:mode : sta (94:54:c5:b5:f9:ec)[0m
+[0;32mI (847) wifi:enable tsf[0m
+[0;32mI (857) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (857) WIFI_MGR: STA init done. Trying SSID: Partagedeco[0m
+[0;32mI (2107) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2107) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (3147) wifi:state: auth -> init (0x200)[0m
+[0;32mI (3157) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (3157) WIFI_MGR: Retrying STA... (1/5)[0m
+[0;32mI (5577) WIFI_MGR: Retrying STA... (2/5)[0m
+[0;32mI (7987) WIFI_MGR: Retrying STA... (3/5)[0m
+[0;32mI (7997) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (7997) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (8007) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (8017) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (8027) wifi:connected with Partagedeco, aid = 1, channel 11, BW20, bssid = aa:f0:fe:0d:99:0e[0m
+[0;32mI (8027) wifi:security: WPA2-PSK, phy: bgn, rssi: -43[0m
+[0;32mI (8057) wifi:pm start, type: 0[0m
+
+[0;32mI (8057) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (8057) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (8067) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (9107) esp_netif_handlers: sta ip: 10.179.61.71, mask: 255.255.255.0, gw: 10.179.61.75[0m
+[0;32mI (9107) WIFI_MGR: STA got IP: 10.179.61.71[0m
+[0;32mI (9107) websocket_client: Started[0m
+[0;32mI (9107) WS_MGR: WebSocket started![0m
+[0;32mI (9107) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (9107) MAIN: STA connected! Starting other services...[0m
+[0;32mI (9117) led_button_blink: Create RMT TX channel[0m
+[0;32mI (9127) led_button_blink: Install LED strip encoder[0m
+[0;32mI (9127) led_button_blink: Configuring button on GPIO 4[0m
+[0;32mI (9137) gpio: GPIO[4]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (9147) AudioPlayer: audio_task started[0m
+[0;32mI (9147) AudioPlayer: ADC raw: 175 => volume 0.04[0m
+[0;32mI (9147) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (9147) AudioPlayer: Audio player initialized. sample_rate=8000[0m
+[0;32mI (9167) websocket_client: Started[0m
+[0;32mI (9167) WS_MGR: WebSocket started![0m
+[0;32mI (9167) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (9167) AUDIO_RECORD: I2S initialized for mic input (sr=8000, bits=32)[0m
+[0;32mI (9197) rc522: PCD (fw=v2.0) initialized[0m
+[0;32mI (9197) RC522_TAG_READER: RC522 tag reader initialized[0m
+[1;31mE (9237) websocket_client: Websocket client is not connected[0m
+[1;31mE (9237) websocket_client: Websocket client is not connected[0m
+[1;31mE (9297) websocket_client: Websocket client is not connected[0m
+[1;31mE (9297) websocket_client: Websocket client is not connected[0m
+[0;32mI (9347) AudioPlayer: ADC raw: 190 => volume 0.05[0m
+[1;31mE (9367) websocket_client: Websocket client is not connected[0m
+[1;31mE (9367) websocket_client: Websocket client is not connected[0m
+[1;31mE (9427) websocket_client: Websocket client is not connected[0m
+[1;31mE (9427) websocket_client: Websocket client is not connected[0m
+[1;31mE (9487) websocket_client: Websocket client is not connected[0m
+[1;31mE (9497) websocket_client: Websocket client is not connected[0m
+[0;32mI (9547) AudioPlayer: ADC raw: 192 => volume 0.05[0m
+[1;31mE (9557) websocket_client: Websocket client is not connected[0m
+[1;31mE (9557) websocket_client: Websocket client is not connected[0m
+[1;31mE (9567) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (9587) rc522: rc522_task(282): select failed (err=F528)[0m
+[1;31mE (9617) websocket_client: Websocket client is not connected[0m
+[1;31mE (9617) websocket_client: Websocket client is not connected[0m
+[1;31mE (9687) websocket_client: Websocket client is not connected[0m
+[1;31mE (9687) websocket_client: Websocket client is not connected[0m
+[1;31mE (9737) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (9737) rc522: rc522_task(282): select failed (err=F524)[0m
+[0;32mI (9747) AudioPlayer: ADC raw: 197 => volume 0.05[0m
+[1;31mE (9747) websocket_client: Websocket client is not connected[0m
+[1;31mE (9747) websocket_client: Websocket client is not connected[0m
+[0;32mI (9797) wifi:<ba-add>idx:0 (ifx:0, aa:f0:fe:0d:99:0e), tid:0, ssn:3, winSize:64[0m
+[1;31mE (9817) websocket_client: Websocket client is not connected[0m
+[1;31mE (9817) websocket_client: Websocket client is not connected[0m
+[1;31mE (9897) websocket_client: Websocket client is not connected[0m
+[1;31mE (9947) websocket_client: Websocket client is not connected[0m
+[0;32mI (9957) AudioPlayer: ADC raw: 192 => volume 0.05[0m
+[1;31mE (9987) websocket_client: Websocket client is not connected[0m
+[1;31mE (10067) websocket_client: Websocket client is not connected[0m
+[1;31mE (10137) websocket_client: Websocket client is not connected[0m
+[1;31mE (10177) websocket_client: Websocket client is not connected[0m
+[1;31mE (10207) websocket_client: Websocket client is not connected[0m
+[1;31mE (10237) websocket_client: Websocket client is not connected[0m
+[0;32mI (10257) AudioPlayer: ADC raw: 193 => volume 0.05[0m
+[1;31mE (10277) websocket_client: Websocket client is not connected[0m
+[1;31mE (10357) websocket_client: Websocket client is not connected[0m
+[1;31mE (10377) websocket_client: Websocket client is not connected[0m
+[1;31mE (10407) websocket_client: Websocket client is not connected[0m
+[1;31mE (10427) websocket_client: Websocket client is not connected[0m
+[1;31mE (10457) websocket_client: Websocket client is not connected[0m
+[1;31mE (10477) websocket_client: Websocket client is not connected[0m
+[1;31mE (10507) websocket_client: Websocket client is not connected[0m
+[0;32mI (10557) AudioPlayer: ADC raw: 192 => volume 0.05[0m
+[1;31mE (10567) websocket_client: Websocket client is not connected[0m
+[1;31mE (10637) websocket_client: Websocket client is not connected[0m
+[1;31mE (10677) websocket_client: Websocket client is not connected[0m
+[1;31mE (10697) websocket_client: Websocket client is not connected[0m
+[1;31mE (10757) esp-x509-crt-bundle: PK verify failed with error 0x4290[0m
+[1;31mE (10757) esp-x509-crt-bundle: Certificate matched but signature verification failed[0m
+[1;31mE (10757) esp-x509-crt-bundle: Failed to verify certificate[0m
+[1;31mE (10767) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x3000[0m
+[0;32mI (10767) esp-tls-mbedtls: Failed to verify peer certificate![0m
+[1;31mE (10777) esp-tls: Failed to open new connection[0m
+[1;31mE (10777) transport_base: Failed to open a new connection[0m
+[1;31mE (10787) transport_ws: Error connecting to host api.interaction-labs.com:443[0m
+[1;31mE (10787) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_ERR_MBEDTLS_SSL_HANDSHAKE_FAILED, tls_error_code=12288, tls_flags=-1, esp_ws_handshake_status_code=0, errno=119[0m
+[0;33mW (10807) WS_MGR: WebSocket error[0m
+[0;32mI (10807) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (10817) WS_MGR: WebSocket disconnected[0m
+[0;32mI (10817) AudioPlayer: ADC raw: 184 => volume 0.04[0m
+[1;31mE (9987) rc522: rc522_picc_send(86): [0m
+[0;32mI (10847) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (10947) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (10967) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (11027) AudioPlayer: ADC raw: 177 => volume 0.04[0m
+[1;31mE (11117) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (11117) rc522: rc522_task(282): select failed (err=F524)[0m
+[0;32mI (11227) AudioPlayer: ADC raw: 178 => volume 0.04[0m
+[0;32mI (11257) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (11597) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (11597) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (11637) AudioPlayer: ADC raw: 174 => volume 0.04[0m
+[1;31mE (11757) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (11787) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (11807) WS_MGR: WebSocket connected[0m
+[0;32mI (11837) AudioPlayer: ADC raw: 187 => volume 0.05[0m
+[0;32mI (12037) AudioPlayer: ADC raw: 196 => volume 0.05[0m
+[0;32mI (12237) AudioPlayer: ADC raw: 193 => volume 0.05[0m
+[0;33mW (12327) rc522: rc522_task(282): select failed (err=F52C)[0m
+[0;32mI (12437) AudioPlayer: ADC raw: 192 => volume 0.05[0m
+[1;31mE (12497) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (12517) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (12637) AudioPlayer: ADC raw: 195 => volume 0.05[0m
+[1;31mE (12807) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (12827) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (12837) AudioPlayer: ADC raw: 192 => volume 0.05[0m
+[1;31mE (12987) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (12987) rc522: rc522_task(282): select failed (err=F524)[0m
+[0;32mI (13037) AudioPlayer: ADC raw: 195 => volume 0.05[0m
+[1;31mE (13157) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (13177) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (13237) AudioPlayer: ADC raw: 198 => volume 0.05[0m
+[0;32mI (13347) RC522_TAG_READER: New card present[0m
+[0;32mI (13347) WS_MGR: Sending tag UID (0x03...) len=7[0m
+[0;32mI (13437) AudioPlayer: ADC raw: 197 => volume 0.05[0m
+[0;32mI (13597) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (13597) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (13607) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (13617) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (13637) AudioPlayer: ADC raw: 192 => volume 0.05[0m
+[0;32mI (13817) RC522_TAG_READER: Card removed[0m
+[0;32mI (13817) WS_MGR: Sending tag REMOVED (0x03)[0m
+[0;32mI (13837) AudioPlayer: ADC raw: 196 => volume 0.05[0m
+[1;31mE (13937) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (13957) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (14037) AudioPlayer: ADC raw: 193 => volume 0.05[0m
+[1;31mE (14127) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (14147) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (14237) AudioPlayer: ADC raw: 182 => volume 0.04[0m
+[0;33mW (14317) rc522: rc522_task(282): select failed (err=F52C)[0m
+[0;32mI (14437) AudioPlayer: ADC raw: 176 => volume 0.04[0m
+[1;31mE (14497) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (14517) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (14637) AudioPlayer: ADC raw: 195 => volume 0.05[0m
+[1;31mE (14687) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (14687) rc522: rc522_task(282): select failed (err=F524)[0m
+[0;32mI (14837) AudioPlayer: ADC raw: 192 => volume 0.05[0m
+[1;31mE (14927) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (14947) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (15037) AudioPlayer: ADC raw: 192 => volume 0.05[0m
+[1;31mE (15097) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (15117) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (15237) AudioPlayer: ADC raw: 199 => volume 0.05[0m
+[1;31mE (15267) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (15287) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (15437) AudioPlayer: ADC raw: 186 => volume 0.05[0m
+[1;31mE (15447) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (15477) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (15597) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (15597) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (15607) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (15627) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (15627) rc522: rc522_task(282): select failed (err=F524)[0m
+[0;32mI (15637) AudioPlayer: ADC raw: 199 => volume 0.05[0m
+[1;31mE (15797) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (15797) rc522: rc522_task(282): select failed (err=F524)[0m
+[0;32mI (15837) AudioPlayer: ADC raw: 193 => volume 0.05[0m
+[1;31mE (15967) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (15997) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (16037) AudioPlayer: ADC raw: 192 => volume 0.05[0m
+[1;31mE (16147) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (16147) rc522: rc522_task(282): select failed (err=F524)[0m
+[0;32mI (16237) AudioPlayer: ADC raw: 198 => volume 0.05[0m
+[0;33mW (16317) rc522: rc522_task(282): select failed (err=F52C)[0m
+[0;32mI (16437) AudioPlayer: ADC raw: 190 => volume 0.05[0m
+[1;31mE (16557) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (16577) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (16637) AudioPlayer: ADC raw: 191 => volume 0.05[0m
+[0;32mI (16727) esp-x509-crt-bundle: Certificate validated[0m
+[0;33mW (16757) rc522: rc522_task(282): select failed (err=F52C)[0m
+[0;32mI (16837) AudioPlayer: ADC raw: 194 => volume 0.05[0m
+[0;32mI (17037) AudioPlayer: ADC raw: 199 => volume 0.05[0m
+[0;32mI (17237) AudioPlayer: ADC raw: 192 => volume 0.05[0m
+[1;31mE (17387) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (17407) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (17437) AudioPlayer: ADC raw: 195 => volume 0.05[0m
+[0;32mI (17597) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (17597) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (17607) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (17637) AudioPlayer: ADC raw: 182 => volume 0.04[0m
+[0;32mI (17707) WS_MGR: WebSocket connected[0m
+[1;31mE (17827) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (17837) AudioPlayer: ADC raw: 192 => volume 0.05[0m
+[0;33mW (17857) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (18037) AudioPlayer: ADC raw: 189 => volume 0.05[0m
+[1;31mE (18147) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (18167) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (18237) AudioPlayer: ADC raw: 196 => volume 0.05[0m
+[1;31mE (18317) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (18337) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (18437) AudioPlayer: ADC raw: 198 => volume 0.05[0m
+[1;31mE (18627) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (18637) AudioPlayer: ADC raw: 193 => volume 0.05[0m
+[0;33mW (18657) rc522: rc522_task(282): select failed (err=F528)[0m
+[1;31mE (18807) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (18807) rc522: rc522_task(282): select failed (err=F524)[0m
+[0;32mI (18837) AudioPlayer: ADC raw: 195 => volume 0.05[0m
+[1;31mE (18977) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (18997) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (19037) AudioPlayer: ADC raw: 191 => volume 0.05[0m
+[0;32mI (19237) AudioPlayer: ADC raw: 194 => volume 0.05[0m
+[1;31mE (19297) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (19317) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (19437) AudioPlayer: ADC raw: 192 => volume 0.05[0m
+[1;31mE (19467) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (19487) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (19597) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (19597) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (19607) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (19637) AudioPlayer: ADC raw: 198 => volume 0.05[0m
+[0;32mI (19837) AudioPlayer: ADC raw: 188 => volume 0.05[0m
+[1;31mE (19907) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (19937) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (20037) AudioPlayer: ADC raw: 197 => volume 0.05[0m
+[1;31mE (20107) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (20127) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (20237) AudioPlayer: ADC raw: 196 => volume 0.05[0m
+[1;31mE (20297) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (20317) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (20437) AudioPlayer: ADC raw: 195 => volume 0.05[0m
+[1;31mE (20487) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (20507) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (20637) AudioPlayer: ADC raw: 186 => volume 0.05[0m
+[1;31mE (20667) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (20687) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (20837) AudioPlayer: ADC raw: 194 => volume 0.05[0m
+[1;31mE (20837) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (20857) rc522: rc522_task(282): select failed (err=F528)[0m
+[1;31mE (21007) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (21027) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (21037) AudioPlayer: ADC raw: 195 => volume 0.05[0m
+[1;31mE (21197) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (21197) rc522: rc522_task(282): select failed (err=F524)[0m
+[0;32mI (21237) AudioPlayer: ADC raw: 192 => volume 0.05[0m
+[1;31mE (21367) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (21387) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (21437) AudioPlayer: ADC raw: 210 => volume 0.05[0m
+[1;31mE (21537) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (21557) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (21597) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (21597) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (21607) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (21637) AudioPlayer: ADC raw: 187 => volume 0.05[0m
+[0;32mI (21837) AudioPlayer: ADC raw: 207 => volume 0.05[0m
+[1;31mE (21857) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (21887) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (22037) AudioPlayer: ADC raw: 192 => volume 0.05[0m
+[1;31mE (22037) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (22037) rc522: rc522_task(282): select failed (err=F524)[0m
+[0;33mW (22207) rc522: rc522_task(282): select failed (err=F52C)[0m
+[0;32mI (22237) AudioPlayer: ADC raw: 208 => volume 0.05[0m
+[0;32mI (22437) AudioPlayer: ADC raw: 193 => volume 0.05[0m
+[0;32mI (22637) AudioPlayer: ADC raw: 186 => volume 0.05[0m
+[0;33mW (22687) rc522: rc522_task(282): select failed (err=F52C)[0m
+[0;32mI (22837) AudioPlayer: ADC raw: 205 => volume 0.05[0m
+[1;31mE (22867) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (22887) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (23037) AudioPlayer: ADC raw: 191 => volume 0.05[0m
+[0;32mI (23237) AudioPlayer: ADC raw: 192 => volume 0.05[0m
+[1;31mE (23427) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (23437) AudioPlayer: ADC raw: 193 => volume 0.05[0m
+[0;33mW (23447) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (23597) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (23597) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (23607) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (23637) AudioPlayer: ADC raw: 187 => volume 0.05[0m
+[0;32mI (23837) AudioPlayer: ADC raw: 193 => volume 0.05[0m
+[1;31mE (23987) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (24007) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (24037) AudioPlayer: ADC raw: 195 => volume 0.05[0m
+[1;31mE (24167) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (24187) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (24237) AudioPlayer: ADC raw: 194 => volume 0.05[0m
+[1;31mE (24337) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (24357) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (24437) AudioPlayer: ADC raw: 187 => volume 0.05[0m
+[0;32mI (24637) AudioPlayer: ADC raw: 191 => volume 0.05[0m
+[1;31mE (24647) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (24677) rc522: rc522_task(282): select failed (err=F528)[0m
+[1;31mE (24827) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (24827) rc522: rc522_task(282): select failed (err=F524)[0m
+[0;32mI (24837) AudioPlayer: ADC raw: 193 => volume 0.05[0m
+[1;31mE (24997) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (25027) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (25037) AudioPlayer: ADC raw: 203 => volume 0.05[0m
+[1;31mE (25177) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (25197) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (25237) AudioPlayer: ADC raw: 180 => volume 0.04[0m
+[1;31mE (25347) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (25367) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (25437) AudioPlayer: ADC raw: 194 => volume 0.05[0m
+[1;31mE (25537) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (25537) rc522: rc522_task(282): select failed (err=F524)[0m
+[0;32mI (25597) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (25597) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (25607) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (25637) AudioPlayer: ADC raw: 189 => volume 0.05[0m
+[1;31mE (25707) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (25727) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (25837) AudioPlayer: ADC raw: 193 => volume 0.05[0m
+[1;31mE (25877) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (25877) rc522: rc522_task(282): select failed (err=F524)[0m
+[0;32mI (26037) AudioPlayer: ADC raw: 195 => volume 0.05[0m
+[1;31mE (26047) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (26047) rc522: rc522_task(282): select failed (err=F524)[0m
+[1;31mE (26217) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (26237) AudioPlayer: ADC raw: 193 => volume 0.05[0m
+[0;33mW (26237) rc522: rc522_task(282): select failed (err=F528)[0m
+[1;31mE (26407) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (26427) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (26437) AudioPlayer: ADC raw: 192 => volume 0.05[0m
+[0;32mI (26637) AudioPlayer: ADC raw: 186 => volume 0.05[0m
+[0;32mI (26837) AudioPlayer: ADC raw: 177 => volume 0.04[0m
+[1;31mE (26837) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (26857) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (27037) AudioPlayer: ADC raw: 193 => volume 0.05[0m
+[1;31mE (27037) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (27067) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (27237) AudioPlayer: ADC raw: 204 => volume 0.05[0m
+[0;32mI (27437) AudioPlayer: ADC raw: 198 => volume 0.05[0m
+[1;31mE (27487) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (27487) rc522: rc522_task(282): select failed (err=F524)[0m
+[0;32mI (27597) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (27597) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (27607) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (27637) AudioPlayer: ADC raw: 185 => volume 0.05[0m
+[1;31mE (27727) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (27747) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (27837) AudioPlayer: ADC raw: 195 => volume 0.05[0m
+[1;31mE (27897) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (27917) rc522: rc522_task(282): select failed (err=F528)[0m
+[0;32mI (28037) AudioPlayer: ADC raw: 192 => volume 0.05[0m
+[0;32mI (28237) AudioPlayer: ADC raw: 193 => volume 0.05[0m

@@ -20,7 +20,12 @@
 			"utility": "c",
 			"led_button.h": "c",
 			"rc522_picc.h": "c",
-			"rc522_spi.h": "c"
+			"rc522_spi.h": "c",
+			"atomic": "c",
+			"condition_variable": "c",
+			"future": "c",
+			"audio_player.h": "c",
+			"string": "cpp"
 		}
 	}
 }

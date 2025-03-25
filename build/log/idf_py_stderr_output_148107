@@ -1,0 +1,64 @@
+Command: /home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/julien/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/julien/Documents/esp32IDF/hello_world/build/hello_world.elf /home/julien/Documents/esp32IDF/hello_world/build/bootloader/bootloader.elf -m '/home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python' '/home/julien/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyUSB0'
+[0;33m--- esp-idf-monitor 1.6.0 on /dev/ttyUSB0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x40081f31: panic_abort at /home/julien/esp/esp-idf/components/esp_system/panic.c:468
+--- 0x4008b2d5: esp_system_abort at /home/julien/esp/esp-idf/components/esp_system/port/esp_system_chip.c:92
+--- 0x40093d15: __assert_func at /home/julien/esp/esp-idf/components/newlib/src/assert.c:80
+--- 0x4008c56f: xEventGroupWaitBits at /home/julien/esp/esp-idf/components/freertos/FreeRTOS-Kernel/event_groups.c:345 (discriminator 1)
+--- 0x400da0b0: app_main at /home/julien/Documents/esp32IDF/hello_world/main/main.c:23
+--- 0x4017b1cc: main_task at /home/julien/esp/esp-idf/components/freertos/app_startup.c:208
+--- 0x4008bda1: vPortTaskWrapper at /home/julien/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40080400: _invalid_pc_placeholder at /home/julien/esp/esp-idf/components/xtensa/xtensa_vectors.S:2235
+[0m
+[0;33m--- 0x40080638: call_start_cpu0 at /home/julien/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c:25
+[0m
+[0;33m--- 0x40081f31: panic_abort at /home/julien/esp/esp-idf/components/esp_system/panic.c:468
+--- 0x4008b2d5: esp_system_abort at /home/julien/esp/esp-idf/components/esp_system/port/esp_system_chip.c:92
+--- 0x40093d15: __assert_func at /home/julien/esp/esp-idf/components/newlib/src/assert.c:80
+--- 0x4008c56f: xEventGroupWaitBits at /home/julien/esp/esp-idf/components/freertos/FreeRTOS-Kernel/event_groups.c:345 (discriminator 1)
+--- 0x400da0b0: app_main at /home/julien/Documents/esp32IDF/hello_world/main/main.c:23
+--- 0x4017b1cc: main_task at /home/julien/esp/esp-idf/components/freertos/app_startup.c:208
+--- 0x4008bda1: vPortTaskWrapper at /home/julien/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40080400: _invalid_pc_placeholder at /home/julien/esp/esp-idf/components/xtensa/xtensa_vectors.S:2235
+[0m
+[0;33m--- 0x40080638: call_start_cpu0 at /home/julien/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c:25
+[0m
+[0;33m--- 0x40081f31: panic_abort at /home/julien/esp/esp-idf/components/esp_system/panic.c:468
+--- 0x4008b2d5: esp_system_abort at /home/julien/esp/esp-idf/components/esp_system/port/esp_system_chip.c:92
+--- 0x40093d15: __assert_func at /home/julien/esp/esp-idf/components/newlib/src/assert.c:80
+--- 0x4008c56f: xEventGroupWaitBits at /home/julien/esp/esp-idf/components/freertos/FreeRTOS-Kernel/event_groups.c:345 (discriminator 1)
+--- 0x400da0b0: app_main at /home/julien/Documents/esp32IDF/hello_world/main/main.c:23
+--- 0x4017b1cc: main_task at /home/julien/esp/esp-idf/components/freertos/app_startup.c:208
+--- 0x4008bda1: vPortTaskWrapper at /home/julien/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40080400: _invalid_pc_placeholder at /home/julien/esp/esp-idf/components/xtensa/xtensa_vectors.S:2235
+[0m
+[0;33m--- 0x40080638: call_start_cpu0 at /home/julien/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c:25
+[0m
+[0;33m--- 0x40081f31: panic_abort at /home/julien/esp/esp-idf/components/esp_system/panic.c:468
+--- 0x4008b2d5: esp_system_abort at /home/julien/esp/esp-idf/components/esp_system/port/esp_system_chip.c:92
+--- 0x40093d15: __assert_func at /home/julien/esp/esp-idf/components/newlib/src/assert.c:80
+--- 0x4008c56f: xEventGroupWaitBits at /home/julien/esp/esp-idf/components/freertos/FreeRTOS-Kernel/event_groups.c:345 (discriminator 1)
+--- 0x400da0b0: app_main at /home/julien/Documents/esp32IDF/hello_world/main/main.c:23
+--- 0x4017b1cc: main_task at /home/julien/esp/esp-idf/components/freertos/app_startup.c:208
+--- 0x4008bda1: vPortTaskWrapper at /home/julien/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40080400: _invalid_pc_placeholder at /home/julien/esp/esp-idf/components/xtensa/xtensa_vectors.S:2235
+[0m
+[0;33m--- 0x40080638: call_start_cpu0 at /home/julien/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c:25
+[0m
+[0;33m--- 0x40081f31: panic_abort at /home/julien/esp/esp-idf/components/esp_system/panic.c:468
+--- 0x4008b2d5: esp_system_abort at /home/julien/esp/esp-idf/components/esp_system/port/esp_system_chip.c:92
+--- 0x40093d15: __assert_func at /home/julien/esp/esp-idf/components/newlib/src/assert.c:80
+--- 0x4008c56f: xEventGroupWaitBits at /home/julien/esp/esp-idf/components/freertos/FreeRTOS-Kernel/event_groups.c:345 (discriminator 1)
+--- 0x400da0b0: app_main at /home/julien/Documents/esp32IDF/hello_world/main/main.c:23
+--- 0x4017b1cc: main_task at /home/julien/esp/esp-idf/components/freertos/app_startup.c:208
+--- 0x4008bda1: vPortTaskWrapper at /home/julien/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40080400: _invalid_pc_placeholder at /home/julien/esp/esp-idf/components/xtensa/xtensa_vectors.S:2235
+[0m
+[0;33m--- 0x40080638: call_start_cpu0 at /home/julien/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c:25
+[0m
+[0m
