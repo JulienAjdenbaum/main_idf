@@ -6,6 +6,8 @@
 #include "driver/rmt_tx.h"
 #include "led_strip_encoder.h"
 #include "LED_button.h"
+#include "wifi.h"
+#include "websocket_manager.h"
 
 #define RMT_LED_STRIP_RESOLUTION_HZ  (10 * 1000 * 1000) // 10MHz -> 0.1us per tick
 #define RMT_LED_STRIP_GPIO_NUM       15                 // GPIO connected to SK6812 data
@@ -105,4 +107,58 @@ void turn_off_leds(void) {
 
 bool check_button_press(void) {
     return gpio_get_level(BUTTON_GPIO) == 0;
+}
+
+void led_debug_task(void *pvParam)
+{
+    const char *TAG = "LED_DEBUG_TASK";
+    while (true) {
+        bool wifi_ok = wifi_manager_is_connected();       // is STA connected to Wi-Fi?
+        bool ap_mode = wifi_manager_is_in_ap_mode();      // did we fail STA and fall back to AP?
+        bool ws_ok   = websocket_manager_is_connected();  // is WebSocket connected?
+
+        if (ap_mode) {
+            // ==============================
+            // (A) AP fallback => flash YELLOW @1Hz
+            // ==============================
+            ESP_LOGI(TAG, "Blinking YELLOW (fallback AP mode)");
+            // Turn on (yellow = R+G)
+            set_leds_color(255, 180, 0, 0);
+            vTaskDelay(pdMS_TO_TICKS(500));
+            // Turn off
+            set_leds_color(0, 0, 0, 0);
+            vTaskDelay(pdMS_TO_TICKS(500));
+        }
+        else if (!wifi_ok) {
+            // ==============================
+            // (B) Still connecting to Wi-Fi => blink RED @1Hz
+            // ==============================
+            ESP_LOGI(TAG, "Blinking RED (Wi-Fi not connected)");
+            // Turn on
+            set_leds_color(255, 0, 0, 0);
+            vTaskDelay(pdMS_TO_TICKS(500));
+            // Turn off
+            set_leds_color(0, 0, 0, 0);
+            vTaskDelay(pdMS_TO_TICKS(500));
+        }
+        else if (wifi_ok && !ws_ok) {
+            // ==============================
+            // (C) Wi-Fi connected, but WebSocket isn't => solid RED
+            // ==============================
+            ESP_LOGI(TAG, "Solid RED (Wi-Fi connected, WS not connected)");
+            set_leds_color(255, 0, 0, 0);
+            vTaskDelay(pdMS_TO_TICKS(1000));
+        }
+        else {
+            // ==============================
+            // (D) Wi-Fi + WS both connected => stop debug
+            // ==============================
+            ESP_LOGI(TAG, "All connected => stopping LED debug");
+            // Optionally turn LEDs off or set them to some final color
+            set_leds_color(0, 0, 0, 0);
+
+            vTaskDelete(NULL); // kill this debug task
+            return; // just in case
+        }
+    }
 }

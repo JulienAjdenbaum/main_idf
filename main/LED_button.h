@@ -21,5 +21,6 @@ void turn_off_leds(void);
 // Button functions
 void init_button(void);
 bool check_button_press(void);
+void led_debug_task(void *pvParam);
 
 #endif // LED_BUTTON_H

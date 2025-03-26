@@ -7,36 +7,34 @@
 
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-
 #include "driver/i2s.h"
 #include "esp_log.h"
 #include "esp_err.h"
 #include "LED_button.h" 
-#include "websocket_manager.h" // We'll use websocket_manager_send_bin(), websocket_manager_is_connected()
+#include "websocket_manager.h"  // for websocket_manager_send_bin(), is_shutdown_requested()
 #include "audio_player.h"
 
-// -------------------- CONFIG / DEFINES --------------------
 #define MIC_I2S_PORT            I2S_NUM_1
 #define MIC_I2S_BCK_IO          14
 #define MIC_I2S_WS_IO           13
 #define MIC_I2S_DATA_IN_IO      12
-#define MIC_I2S_DATA_OUT_IO     -1  // not used for mic-only
-#define MIC_USE_APLL            false  // ← Add this
+#define MIC_I2S_DATA_OUT_IO     -1 
+#define MIC_USE_APLL            false
 
 #define I2S_SAMPLE_RATE         8000
 #define I2S_BITS_PER_SAMPLE     I2S_BITS_PER_SAMPLE_32BIT
-#define I2S_READ_BUF_SIZE       1024 // Number of bytes to read per i2s_read() call
+#define I2S_READ_BUF_SIZE       1024 
 
-// We will send audio prefixed by 0x02
 #define AUDIO_PREFIX_BYTE       0x02
 
 static const char *TAG = "AUDIO_RECORD";
 
-// -------------------- INTERNAL FUNCTION DECLARATIONS --------------------
+// For debugging, store the task handle
+static TaskHandle_t s_audio_record_handle = NULL;
+
 static void audio_record_task(void *arg);
 static void i2s_init_for_mic(void);
 
-// -------------------- I2S INIT --------------------
 static void i2s_init_for_mic(void)
 {
     i2s_config_t i2s_config = {
@@ -44,7 +42,7 @@ static void i2s_init_for_mic(void)
         .sample_rate = I2S_SAMPLE_RATE,
         .bits_per_sample = I2S_BITS_PER_SAMPLE,
         .channel_format = I2S_CHANNEL_FMT_ONLY_LEFT,
-        .communication_format = I2S_COMM_FORMAT_I2S_MSB,
+        .communication_format = I2S_COMM_FORMAT_I2S_MSB, // yes it's deprecated
         .dma_buf_count = 8,
         .dma_buf_len = 512,
         .use_apll = MIC_USE_APLL,
@@ -57,7 +55,7 @@ static void i2s_init_for_mic(void)
         .mck_io_num = I2S_PIN_NO_CHANGE,
         .bck_io_num = MIC_I2S_BCK_IO,
         .ws_io_num = MIC_I2S_WS_IO,
-        .data_out_num = MIC_I2S_DATA_OUT_IO,     // not used for mic-only
+        .data_out_num = MIC_I2S_DATA_OUT_IO,
         .data_in_num = MIC_I2S_DATA_IN_IO
     };
 
@@ -68,26 +66,22 @@ static void i2s_init_for_mic(void)
              I2S_SAMPLE_RATE, I2S_BITS_PER_SAMPLE);
 }
 
-// -------------------- AUDIO RECORD TASK --------------------
 static void audio_record_task(void *arg)
 {
-    // Initialize I2S once at startup
     i2s_init_for_mic();
 
     // Buffers for reading and converting
-    static int32_t s_audio_buf[256]; // 256 x 32-bit = 1024 bytes
-    uint8_t conv_buf[512];           // 256 x 16-bit = 512 bytes
+    static int32_t s_audio_buf[256]; // 256 x 32-bit => 1024 bytes
+    uint8_t conv_buf[512];          // 256 x 16-bit => 512 bytes
 
-    while (true) {
-        // Only record + send if WebSocket is connected
+    while (!websocket_manager_is_shutdown_requested()) {
+        // Only record+send if WebSocket is connected
         if (!websocket_manager_is_connected()) {
-            turn_off_leds();
+            // turn_off_leds();
             vTaskDelay(pdMS_TO_TICKS(50));
             continue;
         }
 
-        // Read audio data from I2S
-        
         size_t bytes_read = 0;
         esp_err_t err = i2s_read(MIC_I2S_PORT,
                                  (void *)s_audio_buf,
@@ -99,30 +93,31 @@ static void audio_record_task(void *arg)
             continue;
         }
         if (bytes_read == 0) {
-            // No data; keep looping
+            // No data
             continue;
         }
 
-        // Convert 32-bit samples (in s_audio_buf) down to 16-bit (into conv_buf)
-        int num_samples_32 = bytes_read / 4; // each sample is 4 bytes
-        int out_index      = 0;
+        // Convert 32-bit => 16-bit
+        int num_samples_32 = bytes_read / 4;
+        int out_index = 0;
 
         for (int i = 0; i < num_samples_32; i++) {
             int32_t s_32 = s_audio_buf[i];
-            // shift down to get 16-bit, e.g. >>13 is an example shift
             int16_t s_16 = (int16_t)(s_32 >> 13);
 
-            // Write 16-bit sample into conv_buf (little-endian)
-            conv_buf[out_index++] = (uint8_t)(s_16 & 0xFF);
-            conv_buf[out_index++] = (uint8_t)((s_16 >> 8) & 0xFF);
+            // little-endian => 2 bytes
+            conv_buf[out_index++] = (s_16 & 0xFF);
+            conv_buf[out_index++] = (s_16 >> 8) & 0xFF;
         }
 
-        // Build a small buffer that has 1 extra byte for the prefix
+        // Build buffer with prefix=0x02
         static uint8_t send_buf[1 + sizeof(conv_buf)];
-        send_buf[0] = AUDIO_PREFIX_BYTE;  // Ensure prefix is 0x02
+        send_buf[0] = AUDIO_PREFIX_BYTE;
 
-        // If audio is currently playing, send zeros instead of the actual samples
+        int packet_size = out_index + 1;
+
         if (audio_player_is_playing()) {
+            // Send zeros if playing
             memset(send_buf + 1, 0, out_index);
             turn_off_leds();
         } else {
@@ -130,20 +125,28 @@ static void audio_record_task(void *arg)
             memcpy(send_buf + 1, conv_buf, out_index);
         }
 
-        int packet_size = out_index + 1;
         int ret = websocket_manager_send_bin((const char *)send_buf, packet_size);
-        // if (ret < 0) {
-        //     ESP_LOGE(TAG, "WebSocket send_bin failed (%d)", ret);
-        // }
+        // if (ret < 0) { ... handle error }
 
-        // Small delay to avoid hogging CPU
+        // Small delay
         vTaskDelay(pdMS_TO_TICKS(1));
     }
+
+    ESP_LOGI(TAG, "audio_record_task stopping!");
+    vTaskDelete(NULL);
 }
 
-// -------------------- PUBLIC API --------------------
 void audio_record_init(void)
 {
-    // Create a dedicated task that will indefinitely record and stream
-    xTaskCreate(audio_record_task, "audio_record_task", 4096, NULL, 5, NULL);
+    BaseType_t rc = xTaskCreate(
+        audio_record_task,
+        "audio_record_task",
+        4096,
+        NULL,
+        5,
+        &s_audio_record_handle
+    );
+    if (rc != pdPASS) {
+        ESP_LOGE(TAG, "Failed to create audio_record_task");
+    }
 }

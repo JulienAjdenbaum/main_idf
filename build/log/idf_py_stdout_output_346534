@@ -1,0 +1,491 @@
+Command: /home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/julien/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/julien/Documents/esp32IDF/hello_world/build/hello_world.elf /home/julien/Documents/esp32IDF/hello_world/build/bootloader/bootloader.elf -m '/home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python' '/home/julien/esp/esp-idf/tools/idf.py'
+tsJu  8 2016 00:2:7
+st:0x1 (POWERON_EST)bot:0x13 (SPI_AS_FAS_BOOT)
+configsp:0,SPWP:0xee
+clkdr:000qdrv:0x00,d_dv:x0,s0drv:0x00,hd_rv0x0,p_drv:0x00
+mod:DO,clck div:2
+loa:03ff030,len:6368
+lod:x407000,len:1588
+oa:040080400,len:380enry0x40080638
+[0;32mI (26) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar 25 2025 20:56:55[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (36) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (76) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+[0;32mI (83) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (93) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=39d10h (236816) map[0m
+[0;32mI (181) esp_image: segment 1: paddr=00059d38 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (181) esp_image: segment 2: paddr=00059d5c vaddr=3ffb0000 size=04454h ( 17492) load[0m
+[0;32mI (191) esp_image: segment 3: paddr=0005e1b8 vaddr=40080000 size=01e60h (  7776) load[0m
+[0;32mI (195) esp_image: segment 4: paddr=00060020 vaddr=400d0020 size=b3070h (733296) map[0m
+[0;32mI (450) esp_image: segment 5: paddr=00113098 vaddr=40081e60 size=19568h (103784) load[0m
+[0;32mI (504) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (504) boot: Disabling RNG early entropy source...[0m
+[0;32mI (515) cpu_start: Multicore app[0m
+[0;32mI (523) cpu_start: Pro cpu start user code[0m
+[0;32mI (523) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (523) app_init: Application information:[0m
+[0;32mI (523) app_init: Project name:     hello_world[0m
+[0;32mI (527) app_init: App version:      d4a2b16-dirty[0m
+[0;32mI (532) app_init: Compile time:     Mar 25 2025 20:56:49[0m
+[0;32mI (537) app_init: ELF file SHA256:  089c93fd5...[0m
+[0;32mI (541) app_init: ESP-IDF:          v5.5-dev-2290-g94cfe394fe[0m
+[0;32mI (547) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (551) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (555) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (559) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (565) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (570) heap_init: At 3FFBA3E0 len 00025C20 (151 KiB): DRAM[0m
+[0;32mI (575) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (580) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (586) heap_init: At 4009B3C8 len 00004C38 (19 KiB): IRAM[0m
+[0;32mI (593) spi_flash: detected chip: generic[0m
+[0;32mI (595) spi_flash: flash io: dio[0m
+[0;33mW (598) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
+[0;33mW (609) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;32mI (617) main_task: Started on CPU0[0m
+[0;32mI (627) main_task: Calling app_main()[0m
+[0;32mI (627) MAIN: Starting app_main...[0m
+[0;32mI (627) led_button_blink: Create RMT TX channel[0m
+[0;32mI (627) led_button_blink: Install LED strip encoder[0m
+[0;32mI (627) MAIN: Initializing Wi-Fi...[0m
+[0;32mI (677) WIFI_MGR: Loaded Wi-Fi creds from NVS: SSID=Partagedeco[0m
+[0;32mI (687) wifi:wifi driver task: 3ffc291c, prio:23, stack:6656, core=0[0m
+[0;32mI (697) wifi:wifi firmware version: 3a3aca644[0m
+[0;32mI (697) wifi:wifi certification version: v7.0[0m
+[0;32mI (697) wifi:config NVS flash: enabled[0m
+[0;32mI (697) wifi:config nano formatting: disabled[0m
+[0;32mI (707) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (707) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (717) wifi:Init management short buffer num: 32[0m
+[0;32mI (717) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (727) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (727) wifi:Init static rx buffer num: 10[0m
+[0;32mI (727) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (737) wifi_init: rx ba win: 6[0m
+[0;32mI (737) wifi_init: accept mbox: 6[0m
+[0;32mI (737) wifi_init: tcpip mbox: 32[0m
+[0;32mI (747) wifi_init: udp mbox: 6[0m
+[0;32mI (747) wifi_init: tcp mbox: 6[0m
+[0;32mI (747) wifi_init: tcp tx win: 5760[0m
+[0;32mI (757) wifi_init: tcp rx win: 5760[0m
+[0;32mI (757) wifi_init: tcp mss: 1440[0m
+[0;32mI (757) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (767) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (777) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (857) wifi:mode : sta (94:54:c5:b5:f9:ec)[0m
+[0;32mI (857) wifi:enable tsf[0m
+[0;32mI (857) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (867) WIFI_MGR: STA init done. Trying SSID: Partagedeco[0m
+[0;32mI (867) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (877) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (877) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (887) wifi:Association refused temporarily time 1269, comeback time 1369 (TUs)[0m
+[0;32mI (2287) wifi:state: assoc -> assoc (0x0)[0m
+[0;32mI (2287) wifi:state: assoc -> init (0x6c0)[0m
+[0;32mI (2297) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2297) WIFI_MGR: Retrying STA... (1/5)[0m
+[0;32mI (4717) WIFI_MGR: Retrying STA... (2/5)[0m
+[0;32mI (4727) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (4727) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (4737) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (4757) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (4767) wifi:connected with Partagedeco, aid = 1, channel 11, BW20, bssid = aa:f0:fe:0d:99:0e[0m
+[0;32mI (4767) wifi:security: WPA2-PSK, phy: bgn, rssi: -60[0m
+[0;32mI (4787) wifi:pm start, type: 0[0m
+
+[0;32mI (4787) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (4827) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (4827) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (5827) esp_netif_handlers: sta ip: 10.179.61.71, mask: 255.255.255.0, gw: 10.179.61.75[0m
+[0;32mI (5827) WIFI_MGR: STA got IP: 10.179.61.71[0m
+[0;32mI (5827) websocket_client: Started[0m
+[0;32mI (5827) WS_MGR: WebSocket started![0m
+[0;32mI (5827) MAIN: STA connected. Starting other services...[0m
+[0;32mI (5827) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (5837) websocket_client: Started[0m
+[0;32mI (5847) WS_MGR: WebSocket started![0m
+[0;32mI (5847) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (5847) led_button_blink: Configuring button on GPIO 4[0m
+[0;32mI (5857) gpio: GPIO[4]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (5867) LED_DEBUG_TASK: All connected => stopping LED debug[0m
+[0;32mI (5877) AudioPlayer: audio_task started[0m
+[0;32mI (5877) AudioPlayer: Audio player initialized. sample_rate=8000[0m
+[0;32mI (5877) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (5887) AUDIO_RECORD: I2S initialized for mic input (sr=8000, bits=32)[0m
+[0;32mI (5887) wifi:<ba-add>idx:0 (ifx:0, aa:f0:fe:0d:99:0e), tid:0, ssn:3, winSize:64[0m
+[0;32mI (5917) rc522: PCD (fw=v2.0) initialized[0m
+[0;32mI (5917) RC522_TAG_READER: RC522 tag reader initialized[0m
+[1;31mE (5947) websocket_client: Websocket client is not connected[0m
+[1;31mE (5947) websocket_client: Websocket client is not connected[0m
+[1;31mE (6037) websocket_client: Websocket client is not connected[0m
+[1;31mE (6077) websocket_client: Websocket client is not connected[0m
+[1;31mE (6097) websocket_client: Websocket client is not connected[0m
+[1;31mE (6117) websocket_client: Websocket client is not connected[0m
+[1;31mE (6147) websocket_client: Websocket client is not connected[0m
+[1;31mE (6157) websocket_client: Websocket client is not connected[0m
+[1;31mE (6217) websocket_client: Websocket client is not connected[0m
+[1;31mE (6297) websocket_client: Websocket client is not connected[0m
+[1;31mE (6327) websocket_client: Websocket client is not connected[0m
+[1;31mE (6347) websocket_client: Websocket client is not connected[0m
+[1;31mE (6377) websocket_client: Websocket client is not connected[0m
+[1;31mE (6417) websocket_client: Websocket client is not connected[0m
+[1;31mE (6437) websocket_client: Websocket client is not connected[0m
+[1;31mE (6467) websocket_client: Websocket client is not connected[0m
+[1;31mE (6477) websocket_client: Websocket client is not connected[0m
+[1;31mE (6497) websocket_client: Websocket client is not connected[0m
+[1;31mE (6527) websocket_client: Websocket client is not connected[0m
+[1;31mE (6547) websocket_client: Websocket client is not connected[0m
+[1;31mE (6597) websocket_client: Websocket client is not connected[0m
+[1;31mE (6627) websocket_client: Websocket client is not connected[0m
+[1;31mE (6707) websocket_client: Websocket client is not connected[0m
+[1;31mE (6727) websocket_client: Websocket client is not connected[0m
+[1;31mE (6747) websocket_client: Websocket client is not connected[0m
+[1;31mE (6777) websocket_client: Websocket client is not connected[0m
+[1;31mE (6797) websocket_client: Websocket client is not connected[0m
+[1;31mE (6847) websocket_client: Websocket client is not connected[0m
+[1;31mE (6847) websocket_client: Websocket client is not connected[0m
+[1;31mE (6857) websocket_client: Websocket client is not connected[0m
+[1;31mE (6887) esp-x509-crt-bundle: PK verify failed with error 0x4290[0m
+[1;31mE (6887) esp-x509-crt-bundle: Certificate matched but signature verification failed[0m
+[1;31mE (6887) esp-x509-crt-bundle: Failed to verify certificate[0m
+[1;31mE (6897) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x3000[0m
+[0;32mI (6907) esp-tls-mbedtls: Failed to verify peer certificate![0m
+[1;31mE (6907) esp-tls: Failed to open new connection[0m
+[1;31mE (6907) transport_base: Failed to open a new connection[0m
+[1;31mE (6917) transport_ws: Error connecting to host api.interaction-labs.com:443[0m
+[1;31mE (6927) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_ERR_MBEDTLS_SSL_HANDSHAKE_FAILED, tls_error_code=12288, tls_flags=-1, esp_ws_handshake_status_code=0, errno=119[0m
+[0;33mW (6937) WS_MGR: WebSocket error[0m
+[0;32mI (6947) websocket_client: Reconnect after 5000 ms[0m
+[0;32mI (6947) esp-x509-crt-bundle: Certificate validated[0m
+[0;33mW (6947) WS_MGR: WebSocket disconnected[0m
+[0;32mI (6957) RC522_TAG_READER: New card present[0m
+[0;33mW (6957) WS_MGR: WebSocket not connected: RFID event not sent[0m
+[0;32mI (7837) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (7857) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (7897) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[1;31mE (7907) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (7907) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (7917) WS_MGR: WebSocket error[0m
+[0;32mI (7927) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (7927) WS_MGR: WebSocket disconnected[0m
+[0;32mI (9837) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (9857) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (9897) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (11837) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (11857) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (11897) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (12917) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (13837) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (13857) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (13897) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[1;31mE (13907) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (13907) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (13917) WS_MGR: WebSocket error[0m
+[0;32mI (13927) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (13927) WS_MGR: WebSocket disconnected[0m
+[0;32mI (16367) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (17157) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (17157) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (17167) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[1;31mE (17357) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (17357) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (17367) WS_MGR: WebSocket error[0m
+[0;32mI (17377) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (17377) WS_MGR: WebSocket disconnected[0m
+[0;32mI (19157) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (19157) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (19167) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (21157) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (21157) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (21167) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (22497) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (23277) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (23277) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (23277) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (23607) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (23607) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (23607) WS_MGR: WebSocket error[0m
+[0;32mI (23617) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (23617) WS_MGR: WebSocket disconnected[0m
+[0;32mI (25957) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (26747) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (26747) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (26747) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (27067) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (27067) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (27077) WS_MGR: WebSocket error[0m
+[0;32mI (27087) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (27087) WS_MGR: WebSocket disconnected[0m
+[0;32mI (28747) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (28747) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (28757) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (29677) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (30687) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (30687) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (30697) WS_MGR: WebSocket error[0m
+[0;32mI (30697) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (30697) WS_MGR: WebSocket disconnected[0m
+[0;32mI (30747) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (30747) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (30757) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (32747) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (32747) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (32757) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (34747) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (34747) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (34757) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (35667) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (36827) esp-x509-crt-bundle: PK verify failed with error 0x4290[0m
+[1;31mE (36827) esp-x509-crt-bundle: Certificate matched but signature verification failed[0m
+[1;31mE (36827) esp-x509-crt-bundle: Failed to verify certificate[0m
+[0;32mI (36837) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (36837) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x3000[0m
+[0;32mI (36847) esp-tls-mbedtls: Failed to verify peer certificate![0m
+[1;31mE (36847) esp-tls: Failed to open new connection[0m
+[1;31mE (36857) transport_base: Failed to open a new connection[0m
+[0;32mI (36867) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[1;31mE (36867) transport_ws: Error connecting to host api.interaction-labs.com:443[0m
+[1;31mE (36877) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_ERR_MBEDTLS_SSL_HANDSHAKE_FAILED, tls_error_code=12288, tls_flags=-1, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (36887) WS_MGR: WebSocket error[0m
+[0;32mI (36897) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (36897) WS_MGR: WebSocket disconnected[0m
+[0;32mI (36897) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (36907) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (36907) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (36927) WS_MGR: WebSocket error[0m
+[0;32mI (36937) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (36937) WS_MGR: WebSocket disconnected[0m
+[0;32mI (38867) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (38907) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (38907) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (40867) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (40907) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (40907) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+����������������������������������������������������������������or] used=0, free=16384 (of 16384)
+[0;32mI (42907) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (42907) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+
+***ERROR*** A stack overflow in task audioMonitor has been detected.
+
+
+Backtrace: 0x40081f6d:0x3ffdf540 0x4008b911:0x3ffdf560 0x4008c7a2:0x3ffdf580 0x4008dbaf:0x3ffdf600 0x4008c8ac:0x3ffdf620 0x4008c85e:0xa5a5a5a5 |<-CORRUPTED
+
+
+
+
+ELF file SHA256: 089c93fd5
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6368
+load:0x40078000,len:15880
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar 25 2025 20:56:55[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (77) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+I (83) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000
+[0;32mI (90) boot: End of partition table[0m
+[0;32mI (93) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=39d10h (236816) map[0m
+[0;32mI (182) esp_image: segment 1: paddr=00059d38 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (182) esp_image: segment 2: paddr=00059d5c vaddr=3ffb0000 size=04454h ( 17492) load[0m
+[0;32mI (192) esp_image: segment 3: paddr=0005e1b8 vaddr=40080000 size=01e60h (  7776) load[0m
+[0;32mI (196) esp_image: segment 4: paddr=00060020 vaddr=400d0020 size=b3070h (733296) map[0m
+Fatal exception (28): LoadProhibited
+epc1=0x4007a52c, epc2=0x00000000, epc3=0x00000000, excvaddr=0xfd39d500, depc=0x00000000
+t JI��������SSHH��0x0 (TCD_CRSEUI���0x3(PFSFLSH_BOT)
+co˥� , PIW:0xe
+ldvx00q_dv:0x0,A�00,cs_dr:0x0,�}�:�0,w_drv0x0
+m��Y'T�	���di:ld0fff030len:36jld04008000le:50
+od0x408040,e36
+ntr 0x00868
+[0;32mI (27) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar 25 2025 20:56:55[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (36) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (76) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+[0;32mI (83) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (93) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=39d10h (236816) map[0m
+[0;32mI (181) esp_image: segment 1: paddr=00059d38 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (181) esp_image: segment 2: paddr=00059d5c vaddr=3ffb0000 size=04454h ( 17492) load[0m
+[0;32mI (192) esp_image: segment 3: paddr=0005e1b8 vaddr=40080000 size=01e60h (  7776) load[0m
+[0;32mI (196) esp_image: segment 4: paddr=00060020 vaddr=400d0020 size=b3070h (733296) map[0m
+[0;32mI (451) esp_image: segment 5: paddr=00113098 vaddr=40081e60 size=19568h (103784) load[0m
+[0;32mI (504) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (504) boot: Disabling RNG early entropy source...[0m
+[0;32mI (515) cpu_start: Multicore app[0m
+[0;32mI (523) cpu_start: Pro cpu start user code[0m
+[0;32mI (523) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (523) app_init: Application information:[0m
+[0;32mI (524) app_init: Project name:     hello_world[0m
+[0;32mI (528) app_init: App version:      d4a2b16-dirty[0m
+[0;32mI (532) app_init: Compile time:     Mar 25 2025 20:56:49[0m
+[0;32mI (537) app_init: ELF file SHA256:  089c93fd5...[0m
+[0;32mI (542) app_init: ESP-IDF:          v5.5-dev-2290-g94cfe394fe[0m
+[0;32mI (547) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (551) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (555) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (559) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (565) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (570) heap_init: At 3FFBA3E0 len 00025C20 (151 KiB): DRAM[0m
+[0;32mI (575) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (581) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (586) heap_init: At 4009B3C8 len 00004C38 (19 KiB): IRAM[0m
+[0;32mI (593) spi_flash: detected chip: generic[0m
+[0;32mI (595) spi_flash: flash io: dio[0m
+[0;33mW (598) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
+[0;33mW (610) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;32mI (618) main_task: Started on CPU0[0m
+[0;32mI (628) main_task: Calling app_main()[0m
+[0;32mI (628) MAIN: Starting app_main...[0m
+[0;32mI (628) led_button_blink: Create RMT TX channel[0m
+[0;32mI (628) led_button_blink: Install LED strip encoder[0m
+[0;32mI (628) MAIN: Initializing Wi-Fi...[0m
+[0;32mI (678) WIFI_MGR: Loaded Wi-Fi creds from NVS: SSID=Partagedeco[0m
+[0;32mI (688) wifi:wifi driver task: 3ffc291c, prio:23, stack:6656, core=0[0m
+[0;32mI (698) wifi:wifi firmware version: 3a3aca644[0m
+[0;32mI (698) wifi:wifi certification version: v7.0[0m
+[0;32mI (698) wifi:config NVS flash: enabled[0m
+[0;32mI (698) wifi:config nano formatting: disabled[0m
+[0;32mI (708) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (708) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (718) wifi:Init management short buffer num: 32[0m
+[0;32mI (718) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (728) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (728) wifi:Init static rx buffer num: 10[0m
+[0;32mI (728) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (738) wifi_init: rx ba win: 6[0m
+[0;32mI (738) wifi_init: accept mbox: 6[0m
+[0;32mI (738) wifi_init: tcpip mbox: 32[0m
+[0;32mI (748) wifi_init: udp mbox: 6[0m
+[0;32mI (748) wifi_init: tcp mbox: 6[0m
+[0;32mI (748) wifi_init: tcp tx win: 5760[0m
+[0;32mI (758) wifi_init: tcp rx win: 5760[0m
+[0;32mI (758) wifi_init: tcp mss: 1440[0m
+[0;32mI (758) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (768) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (778) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (858) wifi:mode : sta (94:54:c5:b5:f9:ec)[0m
+[0;32mI (858) wifi:enable tsf[0m
+[0;32mI (858) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (868) WIFI_MGR: STA init done. Trying SSID: Partagedeco[0m
+[0;32mI (868) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (878) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (878) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (888) wifi:Association refused temporarily time 1269, comeback time 1369 (TUs)[0m
+[0;32mI (2288) wifi:state: assoc -> assoc (0x0)[0m
+[0;32mI (2288) wifi:state: assoc -> init (0x6c0)[0m
+[0;32mI (2308) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2308) WIFI_MGR: Retrying STA... (1/5)[0m
+[0;32mI (4728) WIFI_MGR: Retrying STA... (2/5)[0m
+[0;32mI (4738) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (4738) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (4748) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (4758) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (4768) wifi:connected with Partagedeco, aid = 1, channel 11, BW20, bssid = aa:f0:fe:0d:99:0e[0m
+[0;32mI (4768) wifi:security: WPA2-PSK, phy: bgn, rssi: -58[0m
+[0;32mI (4788) wifi:pm start, type: 0[0m
+
+[0;32mI (4788) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (4858) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (4858) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (4948) wifi:<ba-add>idx:0 (ifx:0, aa:f0:fe:0d:99:0e), tid:0, ssn:0, winSize:64[0m
+[0;32mI (5958) esp_netif_handlers: sta ip: 10.179.61.71, mask: 255.255.255.0, gw: 10.179.61.75[0m
+[0;32mI (5958) WIFI_MGR: STA got IP: 10.179.61.71[0m
+[0;32mI (5958) websocket_client: Started[0m
+[0;32mI (5958) WS_MGR: WebSocket started![0m
+[0;32mI (5958) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (5958) MAIN: STA connected. Starting other services...[0m
+[0;32mI (5978) websocket_client: Started[0m
+[0;32mI (5978) WS_MGR: WebSocket started![0m
+[0;32mI (5978) led_button_blink: Configuring button on GPIO 4[0m
+[0;32mI (5978) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (5988) gpio: GPIO[4]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (5998) AudioPlayer: audio_task started[0m
+[0;32mI (5998) AudioPlayer: Audio player initialized. sample_rate=8000[0m
+[0;32mI (5998) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (6008) AUDIO_RECORD: I2S initialized for mic input (sr=8000, bits=32)[0m
+[0;32mI (6038) rc522: PCD (fw=v2.0) initialized[0m
+[0;32mI (6038) RC522_TAG_READER: RC522 tag reader initialized[0m
+[1;31mE (6098) websocket_client: Websocket client is not connected[0m
+[1;31mE (6148) websocket_client: Websocket client is not connected[0m
+[1;31mE (6158) websocket_client: Websocket client is not connected[0m
+[1;31mE (6168) websocket_client: Websocket client is not connected[0m
+[1;31mE (6208) websocket_client: Websocket client is not connected[0m
+[1;31mE (6228) websocket_client: Websocket client is not connected[0m
+[1;31mE (6268) websocket_client: Websocket client is not connected[0m
+[1;31mE (6288) websocket_client: Websocket client is not connected[0m
+[1;31mE (6358) websocket_client: Websocket client is not connected[0m
+[1;31mE (6398) websocket_client: Websocket client is not connected[0m
+[1;31mE (6418) websocket_client: Websocket client is not connected[0m
+[1;31mE (6448) websocket_client: Websocket client is not connected[0m
+[1;31mE (6468) websocket_client: Websocket client is not connected[0m
+[1;31mE (6488) websocket_client: Websocket client is not connected[0m
+[1;31mE (6538) websocket_client: Websocket client is not connected[0m
+[1;31mE (6568) websocket_client: Websocket client is not connected[0m
+[1;31mE (6588) websocket_client: Websocket client is not connected[0m
+[1;31mE (6598) websocket_client: Websocket client is not connected[0m
+[1;31mE (6648) websocket_client: Websocket client is not connected[0m
+[1;31mE (6668) websocket_client: Websocket client is not connected[0m
+[1;31mE (6718) websocket_client: Websocket client is not connected[0m
+[1;31mE (6788) websocket_client: Websocket client is not connected[0m
+[1;31mE (6818) websocket_client: Websocket client is not connected[0m
+[1;31mE (6848) websocket_client: Websocket client is not connected[0m
+[1;31mE (6868) websocket_client: Websocket client is not connected[0m
+[0;32mI (6868) LED_DEBUG_TASK: All connected => stopping LED debug[0m
+[1;31mE (6908) websocket_client: Websocket client is not connected[0m
+[1;31mE (6928) websocket_client: Websocket client is not connected[0m
+[1;31mE (6978) esp-x509-crt-bundle: PK verify failed with error 0x4290[0m
+[1;31mE (6978) esp-x509-crt-bundle: Certificate matched but signature verification failed[0m
+[1;31mE (6988) esp-x509-crt-bundle: Failed to verify certificate[0m
+[1;31mE (6998) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x3000[0m
+[0;32mI (6998) esp-tls-mbedtls: Failed to verify peer certificate![0m
+[1;31mE (7008) esp-tls: Failed to open new connection[0m
+[1;31mE (7008) transport_base: Failed to open a new connection[0m
+[1;31mE (7018) transport_ws: Error connecting to host api.interaction-labs.com:443[0m
+[1;31mE (7018) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_ERR_MBEDTLS_SSL_HANDSHAKE_FAILED, tls_error_code=12288, tls_flags=-1, esp_ws_handshake_status_code=0, errno=119[0m
+[0;33mW (7038) WS_MGR: WebSocket error[0m
+[0;32mI (7038) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (7048) WS_MGR: WebSocket disconnected[0m
+[0;32mI (7058) RC522_TAG_READER: New card present[0m
+[0;33mW (7058) WS_MGR: WebSocket not connected: RFID event not sent[0m
+[0;32mI (7068) esp-x509-crt-bundle: Certificate validated[0m

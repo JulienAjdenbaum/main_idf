@@ -15184,6 +15184,64 @@
                     {
                         "children": [],
                         "depends_on": null,
+                        "help": "This option will enable https protocol by linking esp-tls library and initializing SSL transport",
+                        "id": "ESP_HTTP_CLIENT_ENABLE_HTTPS",
+                        "name": "ESP_HTTP_CLIENT_ENABLE_HTTPS",
+                        "range": null,
+                        "title": "Enable https",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "This option will enable HTTP Basic Authentication. It is disabled by default as Basic\nauth uses unencrypted encoding, so it introduces a vulnerability when not using TLS",
+                        "id": "ESP_HTTP_CLIENT_ENABLE_BASIC_AUTH",
+                        "name": "ESP_HTTP_CLIENT_ENABLE_BASIC_AUTH",
+                        "range": null,
+                        "title": "Enable HTTP Basic Authentication",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "This option will enable HTTP Digest Authentication. It is enabled by default, but use of this\nconfiguration is not recommended as the password can be derived from the exchange, so it introduces\na vulnerability when not using TLS",
+                        "id": "ESP_HTTP_CLIENT_ENABLE_DIGEST_AUTH",
+                        "name": "ESP_HTTP_CLIENT_ENABLE_DIGEST_AUTH",
+                        "range": null,
+                        "title": "Enable HTTP Digest Authentication",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "This option will enable injection of a custom tcp_transport handle, so the http operation\nwill be performed on top of the user defined transport abstraction (if configured)",
+                        "id": "ESP_HTTP_CLIENT_ENABLE_CUSTOM_TRANSPORT",
+                        "name": "ESP_HTTP_CLIENT_ENABLE_CUSTOM_TRANSPORT",
+                        "range": null,
+                        "title": "Enable custom transport",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "This config option helps in setting the time in millisecond to wait for event to be posted to the\nsystem default event loop. Set it to -1 if you need to set timeout to portMAX_DELAY.",
+                        "id": "ESP_HTTP_CLIENT_EVENT_POST_TIMEOUT",
+                        "name": "ESP_HTTP_CLIENT_EVENT_POST_TIMEOUT",
+                        "range": null,
+                        "title": "Time in millisecond to wait for posting event",
+                        "type": "int"
+                    }
+                ],
+                "depends_on": null,
+                "id": "component-config-esp-http-client",
+                "title": "ESP HTTP client",
+                "type": "menu"
+            },
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "depends_on": null,
                         "help": "This sets the default limit for the HTTP request header length. The limit can be\nconfigured at run time by setting max_req_hdr_len member of httpd_config_t structure.\nThe memory allocated will depend on the actual header length. Hence keeping a sufficiently\nlarge max header length is recommended.",
                         "id": "HTTPD_MAX_REQ_HDR_LEN",
                         "name": "HTTPD_MAX_REQ_HDR_LEN",
@@ -15268,6 +15326,44 @@
                 "depends_on": null,
                 "id": "component-config-http-server",
                 "title": "HTTP Server",
+                "type": "menu"
+            },
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "Exposes an additional callback whereby firmware data could be decrypted\nbefore being processed by OTA update component. This can help to integrate\nexternal encryption related format and removal of such encapsulation layer\nfrom firmware image.",
+                        "id": "ESP_HTTPS_OTA_DECRYPT_CB",
+                        "name": "ESP_HTTPS_OTA_DECRYPT_CB",
+                        "range": null,
+                        "title": "Provide decryption callback",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "It is highly recommended to keep HTTPS (along with server certificate validation) enabled.\nEnabling this option comes with potential risk of:\n- Non-encrypted communication channel with server\n- Accepting firmware upgrade image from server with fake identity",
+                        "id": "ESP_HTTPS_OTA_ALLOW_HTTP",
+                        "name": "ESP_HTTPS_OTA_ALLOW_HTTP",
+                        "range": null,
+                        "title": "Allow HTTP for OTA (WARNING: ONLY FOR TESTING PURPOSE, READ HELP)",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "This config option helps in setting the time in millisecond to wait for event to be posted to the\nsystem default event loop. Set it to -1 if you need to set timeout to portMAX_DELAY.",
+                        "id": "ESP_HTTPS_OTA_EVENT_POST_TIMEOUT",
+                        "name": "ESP_HTTPS_OTA_EVENT_POST_TIMEOUT",
+                        "range": null,
+                        "title": "Time in millisecond to wait for posting event",
+                        "type": "int"
+                    }
+                ],
+                "depends_on": null,
+                "id": "component-config-esp-https-ota",
+                "title": "ESP HTTPS OTA",
                 "type": "menu"
             },
             {

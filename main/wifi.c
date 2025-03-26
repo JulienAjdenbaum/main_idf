@@ -20,7 +20,7 @@ static const char *TAG = "WIFI_MGR";
 #define MAXIMUM_RETRY   5
 
 // Access Point (Open) Wi-Fi config
-#define AP_SSID         "MyESP32_OpenAP"
+#define AP_SSID         "Tolki"
 #define AP_CHANNEL      1
 #define AP_MAX_CONN     4  // Max clients
 
@@ -36,6 +36,7 @@ static esp_netif_t* s_ap_netif = NULL;
 static int  s_retry_num       = 0;
 static bool s_wifi_connected  = false;
 static bool s_sta_init_done   = false;
+
 
 // Our global event group
 EventGroupHandle_t s_wifi_event_group = NULL;
@@ -331,3 +332,18 @@ static esp_err_t save_wifi_creds_to_nvs(const char* ssid, const char* pass)
     nvs_close(nvs_handle);
     return err;
 }
+
+bool wifi_manager_is_connected(void)
+{
+    // True if STA got an IP and hasn't disconnected
+    // (See where we set s_wifi_connected = true in wifi_event_handler)
+    return s_wifi_connected;
+}
+
+bool wifi_manager_is_in_ap_mode(void)
+{
+    // If AP netif is created, that usually means we started AP mode.
+    // You could also check esp_wifi_get_mode() if you prefer.
+    return (s_ap_netif != NULL);
+}
+

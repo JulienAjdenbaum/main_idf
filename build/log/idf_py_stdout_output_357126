@@ -1,0 +1,511 @@
+Command: /home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/julien/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/julien/Documents/esp32IDF/hello_world/build/hello_world.elf /home/julien/Documents/esp32IDF/hello_world/build/bootloader/bootloader.elf -m '/home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python' '/home/julien/esp/esp-idf/tools/idf.py'
+es un  8 2016 0:2:7rst:0x1 (POWEONRSE)boot:0x13 (SP_FS_FAH_BOOT)
+confgip , PIWP:0xee
+ck_r:00,q_drv:0x00,ddv:x0,s0_drv:0x00,h_rv000wp_drv:0x00
+oe:I, lock div:2
+la:03ff030,len:6368lad04078000,len:1580
+la:040080400,len:80etr 0x40080638
+[0;32mI (27) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar 25 2025 20:56:55[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (36) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (76) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+[0;32mI (83) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (92) boot: No factory image, trying OTA 0[0m
+[0;32mI (96) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=39db0h (236976) map[0m
+[0;32mI (185) esp_image: segment 1: paddr=00059dd8 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (185) esp_image: segment 2: paddr=00059dfc vaddr=3ffb0000 size=04454h ( 17492) load[0m
+[0;32mI (195) esp_image: segment 3: paddr=0005e258 vaddr=40080000 size=01dc0h (  7616) load[0m
+[0;32mI (199) esp_image: segment 4: paddr=00060020 vaddr=400d0020 size=b30b0h (733360) map[0m
+[0;32mI (454) esp_image: segment 5: paddr=001130d8 vaddr=40081dc0 size=19608h (103944) load[0m
+[0;32mI (508) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (523) boot: Set actual ota_seq=1 in otadata[0][0m
+[0;32mI (523) boot: Disabling RNG early entropy source...[0m
+[0;32mI (533) cpu_start: Multicore app[0m
+[0;32mI (541) cpu_start: Pro cpu start user code[0m
+[0;32mI (541) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (541) app_init: Application information:[0m
+[0;32mI (541) app_init: Project name:     hello_world[0m
+[0;32mI (545) app_init: App version:      d4a2b16-dirty[0m
+[0;32mI (550) app_init: Compile time:     Mar 25 2025 20:56:49[0m
+[0;32mI (555) app_init: ELF file SHA256:  07604ff39...[0m
+[0;32mI (559) app_init: ESP-IDF:          v5.5-dev-2290-g94cfe394fe[0m
+[0;32mI (565) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (569) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (573) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (577) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (583) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (588) heap_init: At 3FFBA3E0 len 00025C20 (151 KiB): DRAM[0m
+[0;32mI (593) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (598) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (604) heap_init: At 4009B3C8 len 00004C38 (19 KiB): IRAM[0m
+[0;32mI (611) spi_flash: detected chip: generic[0m
+[0;32mI (613) spi_flash: flash io: dio[0m
+[0;33mW (616) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
+[0;33mW (627) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;32mI (635) main_task: Started on CPU0[0m
+[0;32mI (645) main_task: Calling app_main()[0m
+[0;32mI (645) MAIN: Starting app_main...[0m
+[0;32mI (645) led_button_blink: Create RMT TX channel[0m
+[0;32mI (645) led_button_blink: Install LED strip encoder[0m
+[0;32mI (645) MAIN: Initializing Wi-Fi...[0m
+[0;32mI (695) WIFI_MGR: Loaded Wi-Fi creds from NVS: SSID=Partagedeco[0m
+[0;32mI (705) wifi:wifi driver task: 3ffc291c, prio:23, stack:6656, core=0[0m
+[0;32mI (715) wifi:wifi firmware version: 3a3aca644[0m
+[0;32mI (715) wifi:wifi certification version: v7.0[0m
+[0;32mI (715) wifi:config NVS flash: enabled[0m
+[0;32mI (715) wifi:config nano formatting: disabled[0m
+[0;32mI (725) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (725) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (735) wifi:Init management short buffer num: 32[0m
+[0;32mI (735) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (745) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (745) wifi:Init static rx buffer num: 10[0m
+[0;32mI (745) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (755) wifi_init: rx ba win: 6[0m
+[0;32mI (755) wifi_init: accept mbox: 6[0m
+[0;32mI (755) wifi_init: tcpip mbox: 32[0m
+[0;32mI (765) wifi_init: udp mbox: 6[0m
+[0;32mI (765) wifi_init: tcp mbox: 6[0m
+[0;32mI (765) wifi_init: tcp tx win: 5760[0m
+[0;32mI (775) wifi_init: tcp rx win: 5760[0m
+[0;32mI (775) wifi_init: tcp mss: 1440[0m
+[0;32mI (775) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (785) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (795) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (875) wifi:mode : sta (94:54:c5:b5:f9:ec)[0m
+[0;32mI (875) wifi:enable tsf[0m
+[0;32mI (875) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (875) WIFI_MGR: STA init done. Trying SSID: Partagedeco[0m
+[0;32mI (875) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (975) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (985) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (985) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (995) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1005) wifi:connected with Partagedeco, aid = 1, channel 11, BW20, bssid = aa:f0:fe:0d:99:0e[0m
+[0;32mI (1005) wifi:security: WPA2-PSK, phy: bgn, rssi: -56[0m
+[0;32mI (1025) wifi:pm start, type: 0[0m
+
+[0;32mI (1025) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1075) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (1075) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (1885) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (2195) esp_netif_handlers: sta ip: 10.179.61.71, mask: 255.255.255.0, gw: 10.179.61.75[0m
+[0;32mI (2195) WIFI_MGR: STA got IP: 10.179.61.71[0m
+[0;32mI (2195) websocket_client: Started[0m
+[0;32mI (2195) WS_MGR: WebSocket started![0m
+[0;32mI (2195) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (2195) MAIN: STA connected. Starting other services...[0m
+[0;32mI (2215) websocket_client: Started[0m
+[0;32mI (2215) WS_MGR: WebSocket started![0m
+[0;32mI (2215) led_button_blink: Configuring button on GPIO 4[0m
+[0;32mI (2215) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (2225) gpio: GPIO[4]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2235) AudioPlayer: audio_task started[0m
+[0;32mI (2235) AudioPlayer: Audio player initialized. sample_rate=8000[0m
+[0;32mI (2235) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (2245) AUDIO_RECORD: I2S initialized for mic input (sr=8000, bits=32)[0m
+[0;32mI (2265) rc522: PCD (fw=v2.0) initialized[0m
+[0;32mI (2265) RC522_TAG_READER: RC522 tag reader initialized[0m
+[0;32mI (2395) RC522_TAG_READER: New card present[0m
+[0;33mW (2405) WS_MGR: WebSocket not connected: RFID event not sent[0m
+[0;32mI (2415) wifi:<ba-add>idx:0 (ifx:0, aa:f0:fe:0d:99:0e), tid:0, ssn:3, winSize:64[0m
+[0;32mI (2885) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[1;31mE (3375) esp-x509-crt-bundle: PK verify failed with error 0x4290[0m
+[1;31mE (3375) esp-x509-crt-bundle: Certificate matched but signature verification failed[0m
+[1;31mE (3375) esp-x509-crt-bundle: Failed to verify certificate[0m
+[1;31mE (3385) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x3000[0m
+[0;32mI (3385) esp-tls-mbedtls: Failed to verify peer certificate![0m
+[1;31mE (3395) esp-tls: Failed to open new connection[0m
+[1;31mE (3395) transport_base: Failed to open a new connection[0m
+[1;31mE (3405) transport_ws: Error connecting to host api.interaction-labs.com:443[0m
+[1;31mE (3415) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_ERR_MBEDTLS_SSL_HANDSHAKE_FAILED, tls_error_code=12288, tls_flags=-1, esp_ws_handshake_status_code=0, errno=119[0m
+[0;33mW (3425) WS_MGR: WebSocket error[0m
+[0;32mI (3435) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (3435) WS_MGR: WebSocket disconnected[0m
+[0;32mI (3475) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (3965) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (4255) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (4255) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (4255) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (4555) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (4565) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (4565) WS_MGR: WebSocket error[0m
+[0;32mI (4575) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (4575) WS_MGR: WebSocket disconnected[0m
+[0;32mI (4965) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (5965) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (6255) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (6255) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (6265) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (6965) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (7965) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (8255) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (8255) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (8265) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (8965) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (9495) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (9965) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (10275) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (10275) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (10275) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (10595) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (10595) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (10605) WS_MGR: WebSocket error[0m
+[0;32mI (10615) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (10615) WS_MGR: WebSocket disconnected[0m
+[0;32mI (10965) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (11965) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (12275) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (12275) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (12295) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (12965) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (13135) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (13965) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[1;31mE (14235) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (14235) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (14245) WS_MGR: WebSocket error[0m
+[0;32mI (14255) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (14255) WS_MGR: WebSocket disconnected[0m
+[0;32mI (14275) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (14275) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (14295) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (14965) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (15965) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (16275) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (16275) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (16295) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (16965) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (17965) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (18275) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (18275) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (18295) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (18965) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (19165) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (19965) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (20275) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (20275) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[1;31mE (20275) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (20285) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (20295) WS_MGR: WebSocket error[0m
+[0;32mI (20295) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (20295) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (20305) WS_MGR: WebSocket disconnected[0m
+[0;32mI (20965) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (21965) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (22845) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (22845) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (22845) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (22965) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (23625) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[1;31mE (23785) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (23785) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (23795) WS_MGR: WebSocket error[0m
+[0;32mI (23805) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (23805) WS_MGR: WebSocket disconnected[0m
+[0;32mI (24625) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (24845) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (25625) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (26355) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (26625) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (27145) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (27145) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (27145) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (27485) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (27485) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (27495) WS_MGR: WebSocket error[0m
+[0;32mI (27505) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (27505) WS_MGR: WebSocket disconnected[0m
+[0;32mI (27625) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (28625) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (29145) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (29145) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (29155) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (29625) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (30625) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (31145) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (31145) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (31155) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (31625) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (32375) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (32625) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (33155) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (33155) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (33155) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[1;31mE (33455) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (33455) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (33465) WS_MGR: WebSocket error[0m
+[0;32mI (33475) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (33475) WS_MGR: WebSocket disconnected[0m
+[0;32mI (33625) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (34625) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (35155) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (35155) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (35175) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (35625) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (36055) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (36625) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[1;31mE (37145) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (37145) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;32mI (37155) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;33mW (37155) WS_MGR: WebSocket error[0m
+[0;32mI (37155) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (37165) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (37175) WS_MGR: WebSocket disconnected[0m
+[0;32mI (37175) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (37625) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (38625) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (39165) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (39175) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (39185) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (39625) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (40625) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (41165) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (41175) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (41185) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (41625) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (42025) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (42625) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[1;31mE (43235) esp-x509-crt-bundle: PK verify failed with error 0x4290[0m
+[1;31mE (43235) esp-x509-crt-bundle: Certificate matched but signature verification failed[0m
+[1;31mE (43245) esp-x509-crt-bundle: Failed to verify certificate[0m
+[1;31mE (43245) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (43245) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x3000[0m
+[1;31mE (43255) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;32mI (43255) esp-tls-mbedtls: Failed to verify peer certificate![0m
+[0;33mW (43275) WS_MGR: WebSocket error[0m
+[1;31mE (43275) esp-tls: Failed to open new connection[0m
+[1;31mE (43285) transport_base: Failed to open a new connection[0m
+[0;32mI (43285) websocket_client: Reconnect after 5000 ms[0m
+[1;31mE (43295) transport_ws: Error connecting to host api.interaction-labs.com:443[0m
+[0;33mW (43295) WS_MGR: WebSocket disconnected[0m
+[1;31mE (43305) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_ERR_MBEDTLS_SSL_HANDSHAKE_FAILED, tls_error_code=12288, tls_flags=-1, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (43325) WS_MGR: WebSocket error[0m
+[0;32mI (43325) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (43325) WS_MGR: WebSocket disconnected[0m
+[0;32mI (43255) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (43255) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (43255) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (43685) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (44685) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (45335) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (45345) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (45345) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (45685) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (46685) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (47335) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (47345) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (47345) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (47685) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (48685) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[1;31mE (48815) esp-x509-crt-bundle: PK verify failed with error 0x10[0m
+[1;31mE (48815) esp-x509-crt-bundle: Certificate matched but signature verification failed[0m
+[1;31mE (48815) esp-x509-crt-bundle: Failed to verify certificate[0m
+[1;31mE (49195) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x3000[0m
+[0;32mI (49195) esp-tls-mbedtls: Failed to verify peer certificate![0m
+[1;31mE (49195) esp-tls: Failed to open new connection[0m
+[1;31mE (49195) transport_base: Failed to open a new connection[0m
+[1;31mE (49205) transport_ws: Error connecting to host api.interaction-labs.com:443[0m
+[1;31mE (49215) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_ERR_MBEDTLS_SSL_HANDSHAKE_FAILED, tls_error_code=12288, tls_flags=-1, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (49225) WS_MGR: WebSocket error[0m
+[0;32mI (49235) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (49235) WS_MGR: WebSocket disconnected[0m
+[0;32mI (49435) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (49725) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (50215) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (50215) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (50225) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[1;31mE (50515) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (50525) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (50525) WS_MGR: WebSocket error[0m
+[0;32mI (50535) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (50535) WS_MGR: WebSocket disconnected[0m
+[0;32mI (50725) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (51725) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (52215) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (52215) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (52225) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (52725) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (53725) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (54215) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (54215) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (54225) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (54725) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (55725) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (56215) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (56215) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (56225) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (56725) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (57725) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (57775) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (58205) rc522: rc522_picc_send(86): [0m
+[0;32mI (58215) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (58215) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (58235) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (58725) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[1;31mE (58875) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (58875) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (58885) WS_MGR: WebSocket error[0m
+[0;32mI (58895) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (58895) WS_MGR: WebSocket disconnected[0m
+[0;32mI (59085) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (59725) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[1;31mE (60185) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (60195) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (60195) WS_MGR: WebSocket error[0m
+[0;32mI (60205) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (60205) WS_MGR: WebSocket disconnected[0m
+[0;32mI (60275) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (60285) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (60305) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (60725) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (61725) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (62275) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (62285) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (62305) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (62725) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (63725) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (64275) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (64285) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (64305) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (64725) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (65725) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (66275) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (66285) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (66305) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (66725) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (67445) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (67725) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (68275) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (68605) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (68625) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (68635) WS_MGR: WebSocket error[0m
+[0;32mI (68645) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (68645) WS_MGR: WebSocket disconnected[0m
+[1;31mE (68645) rc522: rc522_picc_send(86): [0m
+[0;32mI (68725) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (68845) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (68285) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (69625) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (69725) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[1;31mE (69965) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (69965) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (69965) WS_MGR: WebSocket error[0m
+[0;32mI (69975) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (69975) WS_MGR: WebSocket disconnected[0m
+[0;32mI (70775) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (71625) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (71625) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (71625) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (71825) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (72875) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (73625) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (73625) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (73625) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (73925) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (74975) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (76025) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (76035) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (76395) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (76415) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (76415) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[1;31mE (77045) esp-x509-crt-bundle: PK verify failed with error 0x4290[0m
+[1;31mE (77045) esp-x509-crt-bundle: Certificate matched but signature verification failed[0m
+[1;31mE (77045) esp-x509-crt-bundle: Failed to verify certificate[0m
+[1;31mE (77055) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x3000[0m
+[0;32mI (77055) esp-tls-mbedtls: Failed to verify peer certificate![0m
+[1;31mE (77065) esp-tls: Failed to open new connection[0m
+[1;31mE (77065) transport_base: Failed to open a new connection[0m
+[0;32mI (77075) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[1;31mE (77075) transport_ws: Error connecting to host api.interaction-labs.com:443[0m
+[1;31mE (77085) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_ERR_MBEDTLS_SSL_HANDSHAKE_FAILED, tls_error_code=12288, tls_flags=-1, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (77105) WS_MGR: WebSocket error[0m
+[0;32mI (77105) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (77115) WS_MGR: WebSocket disconnected[0m
+[1;31mE (77245) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (77245) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (77255) WS_MGR: WebSocket error[0m
+[0;32mI (77255) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (77255) WS_MGR: WebSocket disconnected[0m
+[0;32mI (78135) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (78445) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (78455) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (78475) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (79185) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (80235) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (80445) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (80455) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (80475) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (81285) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (82335) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[1;31mE (82415) rc522: rc522_picc_send(86): [0m
+[0;32mI (82445) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (82455) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (82475) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[1;31mE (82645) esp-x509-crt-bundle: PK verify failed with error 0x4290[0m
+[1;31mE (82645) esp-x509-crt-bundle: Certificate matched but signature verification failed[0m
+[1;31mE (82645) esp-x509-crt-bundle: Failed to verify certificate[0m
+[1;31mE (82655) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x3000[0m
+[0;32mI (82655) esp-tls-mbedtls: Failed to verify peer certificate![0m
+[1;31mE (82665) esp-tls: Failed to open new connection[0m
+[1;31mE (82665) transport_base: Failed to open a new connection[0m
+[1;31mE (82675) transport_ws: Error connecting to host api.interaction-labs.com:443[0m
+[1;31mE (82675) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_ERR_MBEDTLS_SSL_HANDSHAKE_FAILED, tls_error_code=12288, tls_flags=-1, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (82695) WS_MGR: WebSocket error[0m
+[0;32mI (82695) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (82705) WS_MGR: WebSocket disconnected[0m
+[0;32mI (83245) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (83405) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[1;31mE (84355) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (84355) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (84365) WS_MGR: WebSocket error[0m
+[0;32mI (84365) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (84365) WS_MGR: WebSocket disconnected[0m
+[0;32mI (84455) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (84475) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (84495) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (84505) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (85505) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (86475) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (86495) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (86505) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (86555) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (87605) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (88655) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (88755) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (89535) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (89535) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (89535) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (89705) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (89705) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (89705) WS_MGR: WebSocket error[0m
+[0;32mI (89715) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (89715) WS_MGR: WebSocket disconnected[0m
+[0;32mI (89725) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (90445) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (90775) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[1;31mE (91515) transport_ws: Sec-WebSocket-Accept not found[0m
+[1;31mE (91515) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
+[0;33mW (91525) WS_MGR: WebSocket error[0m
+[0;32mI (91535) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (91535) WS_MGR: WebSocket disconnected[0m
+[0;32mI (91535) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (91545) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (91545) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (91825) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (92875) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (93545) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (93545) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (93555) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (93925) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m

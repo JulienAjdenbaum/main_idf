@@ -219,6 +219,31 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/http_parser/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/esp-tls/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/tcp_transport/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/esp_http_client/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/esp_https_ota/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/nvs_flash/cmake_install.cmake")
 endif()
 
@@ -275,11 +300,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
   include("/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/console/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/http_parser/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
@@ -400,16 +420,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
   include("/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/esp32-wifi-manager/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/esp-tls/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/tcp_transport/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)

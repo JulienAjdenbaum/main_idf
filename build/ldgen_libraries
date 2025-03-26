@@ -30,6 +30,11 @@
 /home/julien/Documents/esp32IDF/hello_world/build/esp-idf/vfs/libvfs.a
 /home/julien/Documents/esp32IDF/hello_world/build/esp-idf/lwip/liblwip.a
 /home/julien/Documents/esp32IDF/hello_world/build/esp-idf/esp_event/libesp_event.a
+/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/http_parser/libhttp_parser.a
+/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/esp-tls/libesp-tls.a
+/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/tcp_transport/libtcp_transport.a
+/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/esp_http_client/libesp_http_client.a
+/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/esp_https_ota/libesp_https_ota.a
 /home/julien/Documents/esp32IDF/hello_world/build/esp-idf/nvs_flash/libnvs_flash.a
 /home/julien/Documents/esp32IDF/hello_world/build/esp-idf/esp_phy/libesp_phy.a
 /home/julien/Documents/esp32IDF/hello_world/build/esp-idf/esp_netif/libesp_netif.a
@@ -40,7 +45,6 @@
 /home/julien/Documents/esp32IDF/hello_world/build/esp-idf/esp_gdbstub/libesp_gdbstub.a
 /home/julien/Documents/esp32IDF/hello_world/build/esp-idf/protobuf-c/libprotobuf-c.a
 /home/julien/Documents/esp32IDF/hello_world/build/esp-idf/console/libconsole.a
-/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/http_parser/libhttp_parser.a
 /home/julien/Documents/esp32IDF/hello_world/build/esp-idf/esp_http_server/libesp_http_server.a
 /home/julien/Documents/esp32IDF/hello_world/build/esp-idf/protocomm/libprotocomm.a
 /home/julien/Documents/esp32IDF/hello_world/build/esp-idf/json/libjson.a
@@ -62,8 +66,6 @@
 /home/julien/Documents/esp32IDF/hello_world/build/esp-idf/esp_adc/libesp_adc.a
 /home/julien/Documents/esp32IDF/hello_world/build/esp-idf/espressif__mdns/libespressif__mdns.a
 /home/julien/Documents/esp32IDF/hello_world/build/esp-idf/esp32-wifi-manager/libesp32-wifi-manager.a
-/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/esp-tls/libesp-tls.a
-/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/tcp_transport/libtcp_transport.a
 /home/julien/Documents/esp32IDF/hello_world/build/esp-idf/esp_websocket_client/libesp_websocket_client.a
 /home/julien/Documents/esp32IDF/hello_world/build/esp-idf/wear_levelling/libwear_levelling.a
 /home/julien/Documents/esp32IDF/hello_world/build/esp-idf/fatfs/libfatfs.a

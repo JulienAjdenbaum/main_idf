@@ -91,7 +91,7 @@ esp_err_t audio_player_init(void)
 
     // Start tasks
     xTaskCreatePinnedToCore(audio_task, "audioTask", 4096, NULL, 7, NULL, 1);
-    xTaskCreatePinnedToCore(audio_monitor_task, "audioMonitor", 2048, NULL, 4, NULL, 1);
+    xTaskCreatePinnedToCore(audio_monitor_task, "audioMonitor", 4096, NULL, 4, NULL, 1);
     xTaskCreate(
         volume_task,     // Task code
         "volume_task",   // Name for debugging
@@ -123,7 +123,7 @@ static void volume_task(void *param)
         audio_player_set_volume(vol);
 
         // Optional debug
-        ESP_LOGI(TAG, "ADC raw: %d => volume %.2f", raw, vol);
+        // ESP_LOGI(TAG, "ADC raw: %d => volume %.2f", raw, vol);
 
         // Delay so we don't hammer the ADC or spamming logs
         vTaskDelay(pdMS_TO_TICKS(200));
@@ -226,7 +226,7 @@ bool audio_player_is_playing(void)
     int64_t last_time_ms = s_last_audio_time / 1000;
 
     // If time since last audio submission is <= 100 ms
-    if ( (now_ms - last_time_ms) <= 300 ) {
+    if ( (now_ms - last_time_ms) <= 500 ) {
         return true;
     } else {
         return false;

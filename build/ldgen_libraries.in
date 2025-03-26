@@ -30,6 +30,11 @@ $<TARGET_FILE:__idf_esp_vfs_console>
 $<TARGET_FILE:__idf_vfs>
 $<TARGET_FILE:__idf_lwip>
 $<TARGET_FILE:__idf_esp_event>
+$<TARGET_FILE:__idf_http_parser>
+$<TARGET_FILE:__idf_esp-tls>
+$<TARGET_FILE:__idf_tcp_transport>
+$<TARGET_FILE:__idf_esp_http_client>
+$<TARGET_FILE:__idf_esp_https_ota>
 $<TARGET_FILE:__idf_nvs_flash>
 $<TARGET_FILE:__idf_esp_phy>
 $<TARGET_FILE:__idf_esp_netif>
@@ -40,7 +45,6 @@ $<TARGET_FILE:__idf_esp_driver_spi>
 $<TARGET_FILE:__idf_esp_gdbstub>
 $<TARGET_FILE:__idf_protobuf-c>
 $<TARGET_FILE:__idf_console>
-$<TARGET_FILE:__idf_http_parser>
 $<TARGET_FILE:__idf_esp_http_server>
 $<TARGET_FILE:__idf_protocomm>
 $<TARGET_FILE:__idf_json>
@@ -62,8 +66,6 @@ $<TARGET_FILE:__idf_driver>
 $<TARGET_FILE:__idf_esp_adc>
 $<TARGET_FILE:__idf_espressif__mdns>
 $<TARGET_FILE:__idf_esp32-wifi-manager>
-$<TARGET_FILE:__idf_esp-tls>
-$<TARGET_FILE:__idf_tcp_transport>
 $<TARGET_FILE:__idf_esp_websocket_client>
 $<TARGET_FILE:__idf_wear_levelling>
 $<TARGET_FILE:__idf_fatfs>

@@ -1,0 +1,45 @@
+Command: /home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/julien/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/julien/Documents/esp32IDF/hello_world/build/hello_world.elf /home/julien/Documents/esp32IDF/hello_world/build/bootloader/bootloader.elf -m '/home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python' '/home/julien/esp/esp-idf/tools/idf.py'
+[0;33m--- esp-idf-monitor 1.6.0 on /dev/ttyUSB0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x40080400: _invalid_pc_placeholder at /home/julien/esp/esp-idf/components/xtensa/xtensa_vectors.S:2235
+[0m
+[0;33m--- 0x40080638: call_start_cpu0 at /home/julien/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c:25
+[0m
+[0;33m--- 0x40081f6d: panic_abort at /home/julien/esp/esp-idf/components/esp_system/panic.c:468
+--- 0x4008b911: esp_system_abort at /home/julien/esp/esp-idf/components/esp_system/port/esp_system_chip.c:92
+--- 0x400943e9: __assert_func at /home/julien/esp/esp-idf/components/newlib/src/assert.c:80
+--- 0x4008b6b6: xRingbufferGetCurFreeSize at /home/julien/esp/esp-idf/components/esp_ringbuf/ringbuf.c:1267 (discriminator 1)
+--- 0x400daa64: ringbuf_monitor_task at /home/julien/Documents/esp32IDF/hello_world/main/websocket_manager.c:215
+--- 0x4008c3dd: vPortTaskWrapper at /home/julien/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40080400: _invalid_pc_placeholder at /home/julien/esp/esp-idf/components/xtensa/xtensa_vectors.S:2235
+[0m
+[0;33m--- 0x40080638: call_start_cpu0 at /home/julien/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c:25
+[0m
+[0;33m--- 0x4007a52c: process_segment_data at /home/julien/esp/esp-idf/components/bootloader_support/src/esp_image_format.c:750
+---  (inlined by) process_segment at /home/julien/esp/esp-idf/components/bootloader_support/src/esp_image_format.c:629
+---  (inlined by) process_segments at /home/julien/esp/esp-idf/components/bootloader_support/src/esp_image_format.c:541
+[0m
+[0;33m--- 0x40080400: _invalid_pc_placeholder at /home/julien/esp/esp-idf/components/xtensa/xtensa_vectors.S:2235
+[0m
+[0;33m--- 0x40080638: call_start_cpu0 at /home/julien/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c:25
+[0m
+[0;33m--- 0x400dc5c9: esp_websocket_client_dispatch_event at /home/julien/Documents/esp32IDF/hello_world/components/esp_websocket_client/esp_websocket_client.c:199
+[0m
+[0;33m--- 0x400014fd: strlen in ROM
+--- 0x4000150d: strlen in ROM
+[0m
+[0;33m--- 0x400dc5c6: esp_websocket_client_dispatch_event at /home/julien/Documents/esp32IDF/hello_world/components/esp_websocket_client/esp_websocket_client.c:198
+--- 0x400dc6dd: esp_websocket_client_error at /home/julien/Documents/esp32IDF/hello_world/components/esp_websocket_client/esp_websocket_client.c:275
+--- 0x400dd836: esp_websocket_client_send_with_exact_opcode at /home/julien/Documents/esp32IDF/hello_world/components/esp_websocket_client/esp_websocket_client.c:637
+--- 0x400dd8a1: esp_websocket_client_send_with_opcode at /home/julien/Documents/esp32IDF/hello_world/components/esp_websocket_client/esp_websocket_client.c:1286
+--- 0x400dd8b5: esp_websocket_client_send_bin at /home/julien/Documents/esp32IDF/hello_world/components/esp_websocket_client/esp_websocket_client.c:1271
+--- 0x400dabf1: websocket_manager_send_bin at /home/julien/Documents/esp32IDF/hello_world/main/websocket_manager.c:203
+--- 0x400daa30: audio_record_task at /home/julien/Documents/esp32IDF/hello_world/main/audio_record.c:134
+--- 0x4008c3dd: vPortTaskWrapper at /home/julien/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40080400: _invalid_pc_placeholder at /home/julien/esp/esp-idf/components/xtensa/xtensa_vectors.S:2235
+[0m
+[0;33m--- 0x40080638: call_start_cpu0 at /home/julien/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c:25
+[0m
+[0m

@@ -1,0 +1,1194 @@
+Command: /home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/julien/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/julien/Documents/esp32IDF/hello_world/build/hello_world.elf /home/julien/Documents/esp32IDF/hello_world/build/bootloader/bootloader.elf -m '/home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python' '/home/julien/esp/esp-idf/tools/idf.py'
+ets Jun 8 2016 0:22:57
+
+rst:0x (POERON_RESET),boot:x12 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIP:0xee
+clk_drv:0x00,q_drv:0x0,d_drv:0x00,cs0_dr:0x00,hd_drv:0x00,wp_drv:000
+mode:DIO, clok div:
+load:0x3fff000,len6368
+load:0x4007800,len:5880
+load:0x4008000,len:3860
+entr 0x4008638
+[0;32mI (27) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar 25 2025 20:56:55[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (36) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (76) boot:  3 ota_0            OTA app          00 10 00020000 001a9000[0m
+[0;32mI (83) boot:  4 ota_1            OTA app          00 11 001d0000 001a9000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (93) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=39980h (235904) map[0m
+[0;32mI (181) esp_image: segment 1: paddr=000599a8 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (181) esp_image: segment 2: paddr=000599cc vaddr=3ffb0000 size=04454h ( 17492) load[0m
+[0;32mI (191) esp_image: segment 3: paddr=0005de28 vaddr=40080000 size=021f0h (  8688) load[0m
+[0;32mI (196) esp_image: segment 4: paddr=00060020 vaddr=400d0020 size=b2ba8h (732072) map[0m
+[0;32mI (450) esp_image: segment 5: paddr=00112bd0 vaddr=400821f0 size=191ach (102828) load[0m
+[0;32mI (503) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (503) boot: Disabling RNG early entropy source...[0m
+[0;32mI (514) cpu_start: Multicore app[0m
+[0;32mI (522) cpu_start: Pro cpu start user code[0m
+[0;32mI (522) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (522) app_init: Application information:[0m
+[0;32mI (522) app_init: Project name:     hello_world[0m
+[0;32mI (526) app_init: App version:      d4a2b16-dirty[0m
+[0;32mI (531) app_init: Compile time:     Mar 25 2025 20:56:49[0m
+[0;32mI (536) app_init: ELF file SHA256:  9654f8778...[0m
+[0;32mI (540) app_init: ESP-IDF:          v5.5-dev-2290-g94cfe394fe[0m
+[0;32mI (546) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (549) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (553) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (558) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (564) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (569) heap_init: At 3FFBA3D0 len 00025C30 (151 KiB): DRAM[0m
+[0;32mI (574) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (579) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (585) heap_init: At 4009B39C len 00004C64 (19 KiB): IRAM[0m
+[0;32mI (592) spi_flash: detected chip: generic[0m
+[0;32mI (594) spi_flash: flash io: dio[0m
+[0;33mW (597) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
+[0;33mW (608) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;32mI (616) main_task: Started on CPU0[0m
+[0;32mI (626) main_task: Calling app_main()[0m
+[0;32mI (626) MAIN: Starting app_main...[0m
+[0;32mI (666) WIFI_MGR: Loaded Wi-Fi creds from NVS: SSID=Partagedeco[0m
+[0;32mI (676) wifi:wifi driver task: 3ffc2578, prio:23, stack:6656, core=0[0m
+[0;32mI (686) wifi:wifi firmware version: 3a3aca644[0m
+[0;32mI (686) wifi:wifi certification version: v7.0[0m
+[0;32mI (686) wifi:config NVS flash: enabled[0m
+[0;32mI (686) wifi:config nano formatting: disabled[0m
+[0;32mI (696) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (696) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (706) wifi:Init management short buffer num: 32[0m
+[0;32mI (706) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (716) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (716) wifi:Init static rx buffer num: 10[0m
+[0;32mI (716) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (726) wifi_init: rx ba win: 6[0m
+[0;32mI (726) wifi_init: accept mbox: 6[0m
+[0;32mI (726) wifi_init: tcpip mbox: 32[0m
+[0;32mI (736) wifi_init: udp mbox: 6[0m
+[0;32mI (736) wifi_init: tcp mbox: 6[0m
+[0;32mI (736) wifi_init: tcp tx win: 5760[0m
+[0;32mI (746) wifi_init: tcp rx win: 5760[0m
+[0;32mI (746) wifi_init: tcp mss: 1440[0m
+[0;32mI (746) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (756) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (766) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (846) wifi:mode : sta (94:54:c5:b5:f9:ec)[0m
+[0;32mI (846) wifi:enable tsf[0m
+[0;32mI (846) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (846) WIFI_MGR: STA init done. Trying SSID: Partagedeco[0m
+[0;32mI (856) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (856) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (866) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (876) wifi:Association refused temporarily time 1269, comeback time 1369 (TUs)[0m
+[0;32mI (2276) wifi:state: assoc -> assoc (0x0)[0m
+[0;32mI (2276) wifi:state: assoc -> init (0x6c0)[0m
+[0;32mI (2286) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2286) WIFI_MGR: Retrying STA... (1/5)[0m
+[0;32mI (4706) WIFI_MGR: Retrying STA... (2/5)[0m
+[0;32mI (4746) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (4746) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (4756) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (4766) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (4786) wifi:connected with Partagedeco, aid = 1, channel 1, BW20, bssid = aa:f0:fe:0d:99:0e[0m
+[0;32mI (4786) wifi:security: WPA2-PSK, phy: bgn, rssi: -39[0m
+[0;32mI (4796) wifi:pm start, type: 0[0m
+
+[0;32mI (4796) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (4846) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (4846) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (5966) esp_netif_handlers: sta ip: 10.179.61.71, mask: 255.255.255.0, gw: 10.179.61.75[0m
+[0;32mI (5966) WIFI_MGR: STA got IP: 10.179.61.71[0m
+[0;32mI (5966) websocket_client: Started[0m
+[0;32mI (5966) WS_MGR: WebSocket started![0m
+[0;32mI (5966) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (5966) MAIN: STA connected! Starting other services...[0m
+[0;32mI (5976) led_button_blink: Create RMT TX channel[0m
+[0;32mI (5986) led_button_blink: Install LED strip encoder[0m
+[0;32mI (5986) led_button_blink: Configuring button on GPIO 4[0m
+[0;32mI (5996) gpio: GPIO[4]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (6006) AudioPlayer: audio_task started[0m
+[0;32mI (6006) AudioPlayer: ADC raw: 441 => volume 0.11[0m
+[0;32mI (6006) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (6006) AudioPlayer: Audio player initialized. sample_rate=8000[0m
+[0;32mI (6026) websocket_client: Started[0m
+[0;32mI (6026) WS_MGR: WebSocket started![0m
+[0;32mI (6026) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (6026) AUDIO_RECORD: I2S initialized for mic input (sr=8000, bits=32)[0m
+[0;32mI (6056) rc522: PCD (fw=v2.0) initialized[0m
+[0;32mI (6056) RC522_TAG_READER: RC522 tag reader initialized[0m
+[1;31mE (6096) websocket_client: Websocket client is not connected[0m
+[1;31mE (6096) websocket_client: Websocket client is not connected[0m
+[0;32mI (6136) wifi:<ba-add>idx:0 (ifx:0, aa:f0:fe:0d:99:0e), tid:0, ssn:3, winSize:64[0m
+[1;31mE (6156) websocket_client: Websocket client is not connected[0m
+[1;31mE (6156) websocket_client: Websocket client is not connected[0m
+[0;32mI (6176) RC522_TAG_READER: New card present[0m
+[0;32mI (6186) WS_MGR: Sending tag UID (0x03...) len=7[0m
+[1;31mE (6186) websocket_client: Websocket client is not connected[0m
+[0;32mI (6206) AudioPlayer: ADC raw: 428 => volume 0.10[0m
+[1;31mE (6236) websocket_client: Websocket client is not connected[0m
+[1;31mE (6236) websocket_client: Websocket client is not connected[0m
+[1;31mE (6286) websocket_client: Websocket client is not connected[0m
+[1;31mE (6286) websocket_client: Websocket client is not connected[0m
+[1;31mE (6346) websocket_client: Websocket client is not connected[0m
+[1;31mE (6346) websocket_client: Websocket client is not connected[0m
+[0;32mI (6406) AudioPlayer: ADC raw: 424 => volume 0.10[0m
+[1;31mE (6416) websocket_client: Websocket client is not connected[0m
+[1;31mE (6416) websocket_client: Websocket client is not connected[0m
+[1;31mE (6486) websocket_client: Websocket client is not connected[0m
+[1;31mE (6486) websocket_client: Websocket client is not connected[0m
+[1;31mE (6486) rc522: rc522_picc_send(86): [0m
+[1;31mE (6546) websocket_client: Websocket client is not connected[0m
+[1;31mE (6546) websocket_client: Websocket client is not connected[0m
+[0;32mI (6606) AudioPlayer: ADC raw: 432 => volume 0.11[0m
+[1;31mE (6606) websocket_client: Websocket client is not connected[0m
+[1;31mE (6606) websocket_client: Websocket client is not connected[0m
+[1;31mE (6676) websocket_client: Websocket client is not connected[0m
+[1;31mE (6676) websocket_client: Websocket client is not connected[0m
+[1;31mE (6736) websocket_client: Websocket client is not connected[0m
+[1;31mE (6736) websocket_client: Websocket client is not connected[0m
+[1;31mE (6796) websocket_client: Websocket client is not connected[0m
+[1;31mE (6796) websocket_client: Websocket client is not connected[0m
+[0;32mI (6806) AudioPlayer: ADC raw: 435 => volume 0.11[0m
+[1;31mE (6876) websocket_client: Websocket client is not connected[0m
+[1;31mE (6876) websocket_client: Websocket client is not connected[0m
+[1;31mE (6926) websocket_client: Websocket client is not connected[0m
+[1;31mE (6926) websocket_client: Websocket client is not connected[0m
+[1;31mE (6986) websocket_client: Websocket client is not connected[0m
+[1;31mE (6986) websocket_client: Websocket client is not connected[0m
+[0;32mI (7006) AudioPlayer: ADC raw: 432 => volume 0.11[0m
+[1;31mE (7056) websocket_client: Websocket client is not connected[0m
+[1;31mE (7056) websocket_client: Websocket client is not connected[0m
+[1;31mE (7116) esp-x509-crt-bundle: PK verify failed with error 0x4290[0m
+[1;31mE (7116) esp-x509-crt-bundle: Certificate matched but signature verification failed[0m
+[1;31mE (7126) esp-x509-crt-bundle: Failed to verify certificate[0m
+[1;31mE (7126) websocket_client: Websocket client is not connected[0m
+[1;31mE (7136) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x3000[0m
+[0;32mI (7136) esp-tls-mbedtls: Failed to verify peer certificate![0m
+[1;31mE (7146) esp-tls: Failed to open new connection[0m
+[1;31mE (7146) transport_base: Failed to open a new connection[0m
+[1;31mE (7156) websocket_client: Websocket client is not connected[0m
+[1;31mE (7156) transport_ws: Error connecting to host api.interaction-labs.com:443[0m
+[1;31mE (7166) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_ERR_MBEDTLS_SSL_HANDSHAKE_FAILED, tls_error_code=12288, tls_flags=-1, esp_ws_handshake_status_code=0, errno=119[0m
+[0;33mW (7186) WS_MGR: WebSocket error[0m
+[0;32mI (7186) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (7186) WS_MGR: WebSocket disconnected[0m
+[0;32mI (7196) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (7206) AudioPlayer: ADC raw: 402 => volume 0.10[0m
+[0;32mI (7406) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (7606) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (7806) AudioPlayer: ADC raw: 385 => volume 0.09[0m
+[0;32mI (7976) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (8006) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (8016) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (8036) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (8136) WS_MGR: WebSocket connected[0m
+[1;31mE (8136) OTA: Failed to send OTA version info[0m
+[0;32mI (8146) WS_MGR: Sending current RFID UID to server (upon connect)[0m
+[0;32mI (8146) WS_MGR: Sending tag UID (0x03...) len=7[0m
+[0;32mI (8206) AudioPlayer: ADC raw: 433 => volume 0.11[0m
+[0;32mI (8206) WS_MGR: Got server OTA message => OTA=http://api.interaction-labs.com/esp/software/version_200.bin[0m
+[0;32mI (8206) WS_MGR: Server says new firmware at: http://api.interaction-labs.com/esp/software/version_200.bin[0m
+[0;32mI (8216) OTA: OTA: Waiting for audio to finish...[0m
+[0;32mI (8216) OTA: Audio is finished. Proceeding with OTA.[0m
+[0;32mI (8276) OTA: Writing to OTA partition subtype 17 at offset 0x1d0000[0m
+[0;32mI (8466) AudioPlayer: ADC raw: 420 => volume 0.10[0m
+[0;32mI (8686) AudioPlayer: ADC raw: 436 => volume 0.11[0m
+[1;31mE (8886) rc522: rc522_picc_send(86): [0m
+[0;32mI (9056) AudioPlayer: ADC raw: 427 => volume 0.10[0m
+[1;31mE (9166) rc522: rc522_picc_send(86): [0m
+[0;32mI (9356) AudioPlayer: ADC raw: 427 => volume 0.10[0m
+[1;31mE (9556) rc522: rc522_picc_send(86): [0m
+[0;32mI (9776) AudioPlayer: ADC raw: 432 => volume 0.11[0m
+[1;31mE (9976) rc522: rc522_picc_send(86): [0m
+[0;32mI (10076) AudioPlayer: ADC raw: 435 => volume 0.11[0m
+[0;32mI (10286) AudioPlayer: ADC raw: 396 => volume 0.10[0m
+[0;32mI (10376) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (10576) AudioPlayer: ADC raw: 405 => volume 0.10[0m
+[1;31mE (10476) rc522: rc522_picc_send(86): [0m
+[0;32mI (10576) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (10176) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (10636) rc522: rc522_picc_send(86): [0m
+[0;32mI (10846) AudioPlayer: ADC raw: 330 => volume 0.08[0m
+[0;32mI (10896) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[1;31mE (10996) rc522: rc522_picc_send(86): [0m
+[0;32mI (11056) AudioPlayer: ADC raw: 405 => volume 0.10[0m
+[1;31mE (11056) OTA: esp_ota_end failed![0m
+[1;31mE (11056) OTA: OTA failed or ended early.[0m
+[0;32mI (11256) AudioPlayer: ADC raw: 403 => volume 0.10[0m
+[0;32mI (11456) AudioPlayer: ADC raw: 389 => volume 0.09[0m
+[0;32mI (11656) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (11856) AudioPlayer: ADC raw: 370 => volume 0.09[0m
+[0;32mI (12056) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (12256) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (12456) AudioPlayer: ADC raw: 402 => volume 0.10[0m
+[1;31mE (12626) rc522: rc522_picc_send(86): [0m
+[0;32mI (12656) AudioPlayer: ADC raw: 418 => volume 0.10[0m
+[0;32mI (12856) AudioPlayer: ADC raw: 432 => volume 0.11[0m
+[0;32mI (13056) AudioPlayer: ADC raw: 431 => volume 0.11[0m
+[0;32mI (13186) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (13256) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (13456) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (13656) AudioPlayer: ADC raw: 390 => volume 0.10[0m
+[1;31mE (13666) rc522: rc522_picc_send(86): [0m
+[0;32mI (13856) AudioPlayer: ADC raw: 404 => volume 0.10[0m
+[0;32mI (13996) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (13996) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (13996) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (14056) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (14176) WS_MGR: WebSocket connected[0m
+[1;31mE (14176) OTA: Failed to send OTA version info[0m
+[0;32mI (14176) WS_MGR: Sending current RFID UID to server (upon connect)[0m
+[0;32mI (14176) WS_MGR: Sending tag UID (0x03...) len=7[0m
+[0;32mI (14246) WS_MGR: Got server OTA message => OTA=http://api.interaction-labs.com/esp/software/version_200.bin[0m
+[0;32mI (14246) WS_MGR: Server says new firmware at: http://api.interaction-labs.com/esp/software/version_200.bin[0m
+[0;32mI (14246) OTA: OTA: Waiting for audio to finish...[0m
+[0;32mI (14256) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (14456) OTA: Audio is finished. Proceeding with OTA.[0m
+[0;32mI (14456) AudioPlayer: ADC raw: 432 => volume 0.11[0m
+[0;32mI (14656) AudioPlayer: ADC raw: 417 => volume 0.10[0m
+[0;32mI (14856) AudioPlayer: ADC raw: 466 => volume 0.11[0m
+[0;32mI (15056) AudioPlayer: ADC raw: 430 => volume 0.11[0m
+[0;32mI (15256) AudioPlayer: ADC raw: 387 => volume 0.09[0m
+[1;31mE (15326) websocket_client: esp_websocket_new_buf(167): Memory exhausted[0m
+[1;31mE (15336) websocket_client: Failed to setup rx buffer[0m
+[1;31mE (15336) websocket_client: Error receive data[0m
+[0;32mI (15336) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (15336) WS_MGR: WebSocket disconnected[0m
+[0;32mI (15346) OTA: Writing to OTA partition subtype 17 at offset 0x1d0000[0m
+[1;31mE (15796) rc522: rc522_picc_send(86): [0m
+[0;32mI (15846) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[1;31mE (15906) rc522: rc522_picc_send(86): [0m
+[0;32mI (16076) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (16076) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (16076) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (16076) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[1;31mE (16196) rc522: rc522_picc_send(86): [0m
+[0;32mI (16306) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[1;31mE (16486) rc522: rc522_picc_send(86): [0m
+[0;32mI (16546) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[1;31mE (16726) rc522: rc522_picc_send(86): [0m
+[0;32mI (16786) AudioPlayer: ADC raw: 391 => volume 0.10[0m
+[1;31mE (16966) rc522: rc522_picc_send(86): [0m
+[0;32mI (17006) AudioPlayer: ADC raw: 387 => volume 0.09[0m
+[1;31mE (17096) rc522: rc522_picc_send(86): [0m
+[0;32mI (17216) AudioPlayer: ADC raw: 389 => volume 0.09[0m
+[1;31mE (17216) OTA: esp_ota_end failed![0m
+[1;31mE (17216) rc522: rc522_picc_send(86): [0m
+[1;31mE (17216) OTA: OTA failed or ended early.[0m
+[0;32mI (17416) AudioPlayer: ADC raw: 380 => volume 0.09[0m
+[0;32mI (17616) AudioPlayer: ADC raw: 390 => volume 0.10[0m
+[0;32mI (17816) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (18016) AudioPlayer: ADC raw: 402 => volume 0.10[0m
+[0;32mI (18076) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (18076) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (18136) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (18216) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (18416) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (18616) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (18816) AudioPlayer: ADC raw: 379 => volume 0.09[0m
+[0;32mI (19016) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (19216) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (19416) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (19616) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (19816) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (20016) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (20076) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (20076) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (20136) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (20216) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (20416) AudioPlayer: ADC raw: 388 => volume 0.09[0m
+[0;32mI (20616) AudioPlayer: ADC raw: 405 => volume 0.10[0m
+[0;32mI (20816) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (21016) AudioPlayer: ADC raw: 416 => volume 0.10[0m
+[0;32mI (21216) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (21416) AudioPlayer: ADC raw: 387 => volume 0.09[0m
+[0;32mI (21426) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (21616) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (21816) AudioPlayer: ADC raw: 389 => volume 0.09[0m
+[0;32mI (22016) AudioPlayer: ADC raw: 384 => volume 0.09[0m
+[0;32mI (22216) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (22226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (22226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (22226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (22416) AudioPlayer: ADC raw: 403 => volume 0.10[0m
+[0;32mI (22556) WS_MGR: WebSocket connected[0m
+[1;31mE (22566) OTA: Failed to send OTA version info[0m
+[0;32mI (22566) WS_MGR: Sending current RFID UID to server (upon connect)[0m
+[0;32mI (22566) WS_MGR: Sending tag UID (0x03...) len=7[0m
+[0;32mI (22616) AudioPlayer: ADC raw: 432 => volume 0.11[0m
+[0;32mI (22636) WS_MGR: Got server OTA message => OTA=http://api.interaction-labs.com/esp/software/version_200.bin[0m
+[0;32mI (22636) WS_MGR: Server says new firmware at: http://api.interaction-labs.com/esp/software/version_200.bin[0m
+[0;32mI (22816) AudioPlayer: ADC raw: 416 => volume 0.10[0m
+[0;32mI (23016) AudioPlayer: ADC raw: 438 => volume 0.11[0m
+[0;32mI (23216) AudioPlayer: ADC raw: 441 => volume 0.11[0m
+[0;32mI (23416) AudioPlayer: ADC raw: 425 => volume 0.10[0m
+[0;32mI (23616) AudioPlayer: ADC raw: 420 => volume 0.10[0m
+[0;32mI (23816) AudioPlayer: ADC raw: 434 => volume 0.11[0m
+[0;32mI (24016) AudioPlayer: ADC raw: 431 => volume 0.11[0m
+[0;32mI (24216) AudioPlayer: ADC raw: 430 => volume 0.11[0m
+[0;32mI (24226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (24226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (24236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (24416) AudioPlayer: ADC raw: 432 => volume 0.11[0m
+[0;32mI (24616) AudioPlayer: ADC raw: 391 => volume 0.10[0m
+[0;32mI (24816) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (25016) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (25216) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (25416) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (25616) AudioPlayer: ADC raw: 385 => volume 0.09[0m
+[0;32mI (25816) AudioPlayer: ADC raw: 390 => volume 0.10[0m
+[0;32mI (26016) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (26216) AudioPlayer: ADC raw: 381 => volume 0.09[0m
+[0;32mI (26226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (26226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (26236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (26416) AudioPlayer: ADC raw: 448 => volume 0.11[0m
+[0;32mI (26616) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (26816) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (27016) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (27216) AudioPlayer: ADC raw: 406 => volume 0.10[0m
+[0;32mI (27416) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (27616) AudioPlayer: ADC raw: 390 => volume 0.10[0m
+[0;32mI (27816) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (28016) AudioPlayer: ADC raw: 402 => volume 0.10[0m
+[0;32mI (28216) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (28226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (28226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (28236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (28416) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (28616) AudioPlayer: ADC raw: 387 => volume 0.09[0m
+[0;32mI (28816) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (29016) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (29216) AudioPlayer: ADC raw: 392 => volume 0.10[0m
+[0;32mI (29416) AudioPlayer: ADC raw: 391 => volume 0.10[0m
+[0;32mI (29616) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (29816) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (30016) AudioPlayer: ADC raw: 420 => volume 0.10[0m
+[0;32mI (30216) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (30226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (30226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (30236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (30416) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (30616) AudioPlayer: ADC raw: 413 => volume 0.10[0m
+[0;32mI (30816) AudioPlayer: ADC raw: 401 => volume 0.10[0m
+[0;32mI (31016) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (31216) AudioPlayer: ADC raw: 402 => volume 0.10[0m
+[0;32mI (31416) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (31616) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (31816) AudioPlayer: ADC raw: 387 => volume 0.09[0m
+[0;32mI (32016) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (32216) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (32226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (32226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (32236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (32416) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (32616) AudioPlayer: ADC raw: 396 => volume 0.10[0m
+[0;32mI (32816) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (33016) AudioPlayer: ADC raw: 388 => volume 0.09[0m
+[0;32mI (33216) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (33416) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (33616) AudioPlayer: ADC raw: 386 => volume 0.09[0m
+[0;32mI (33816) AudioPlayer: ADC raw: 384 => volume 0.09[0m
+[0;32mI (34016) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (34216) AudioPlayer: ADC raw: 402 => volume 0.10[0m
+[0;32mI (34226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (34226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (34236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (34416) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (34616) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (34816) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (35016) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (35216) AudioPlayer: ADC raw: 390 => volume 0.10[0m
+[0;32mI (35416) AudioPlayer: ADC raw: 404 => volume 0.10[0m
+[0;32mI (35616) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (35816) AudioPlayer: ADC raw: 406 => volume 0.10[0m
+[0;32mI (36016) AudioPlayer: ADC raw: 390 => volume 0.10[0m
+[0;32mI (36216) AudioPlayer: ADC raw: 384 => volume 0.09[0m
+[0;32mI (36226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (36226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (36236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (36416) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (36616) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (36816) AudioPlayer: ADC raw: 401 => volume 0.10[0m
+[0;32mI (37016) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (37216) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (37416) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[1;31mE (37506) transport_base: esp_tls_conn_write error, errno=No more processes[0m
+[1;31mE (37506) transport_ws: Error write header[0m
+[0;32mI (37616) AudioPlayer: ADC raw: 387 => volume 0.09[0m
+[0;32mI (37816) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (38016) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (38216) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (38226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (38226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (38236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (38416) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (38616) AudioPlayer: ADC raw: 396 => volume 0.10[0m
+[0;32mI (38816) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (39016) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (39216) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (39416) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (39616) AudioPlayer: ADC raw: 401 => volume 0.10[0m
+[0;32mI (39816) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (40016) AudioPlayer: ADC raw: 405 => volume 0.10[0m
+[0;32mI (40216) AudioPlayer: ADC raw: 403 => volume 0.10[0m
+[0;32mI (40226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (40226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (40236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (40416) AudioPlayer: ADC raw: 384 => volume 0.09[0m
+[0;32mI (40616) AudioPlayer: ADC raw: 383 => volume 0.09[0m
+[0;32mI (40816) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (41016) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (41216) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (41416) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (41616) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (41816) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (42016) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (42216) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (42226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (42226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (42236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (42416) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (42616) AudioPlayer: ADC raw: 390 => volume 0.10[0m
+[0;32mI (42816) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (43016) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (43216) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (43416) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (43616) AudioPlayer: ADC raw: 391 => volume 0.10[0m
+[0;32mI (43816) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (44016) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (44216) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (44226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (44226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (44236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (44416) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (44616) AudioPlayer: ADC raw: 402 => volume 0.10[0m
+[0;32mI (44816) AudioPlayer: ADC raw: 392 => volume 0.10[0m
+[0;32mI (45016) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (45216) AudioPlayer: ADC raw: 405 => volume 0.10[0m
+[0;32mI (45416) AudioPlayer: ADC raw: 404 => volume 0.10[0m
+[0;32mI (45616) AudioPlayer: ADC raw: 389 => volume 0.09[0m
+[0;32mI (45816) AudioPlayer: ADC raw: 387 => volume 0.09[0m
+[0;32mI (46016) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (46216) AudioPlayer: ADC raw: 402 => volume 0.10[0m
+[0;32mI (46226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (46226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (46236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (46416) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (46616) AudioPlayer: ADC raw: 401 => volume 0.10[0m
+[0;32mI (46816) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (47016) AudioPlayer: ADC raw: 383 => volume 0.09[0m
+[0;32mI (47216) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (47416) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (47616) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (47816) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (48016) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (48216) AudioPlayer: ADC raw: 401 => volume 0.10[0m
+[0;32mI (48226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (48226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (48236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (48416) AudioPlayer: ADC raw: 389 => volume 0.09[0m
+[0;32mI (48616) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (48816) AudioPlayer: ADC raw: 403 => volume 0.10[0m
+[0;32mI (49016) AudioPlayer: ADC raw: 384 => volume 0.09[0m
+[0;32mI (49216) AudioPlayer: ADC raw: 390 => volume 0.10[0m
+[0;32mI (49416) AudioPlayer: ADC raw: 388 => volume 0.09[0m
+[1;31mE (49506) transport_base: esp_tls_conn_write error, errno=No more processes[0m
+[1;31mE (49506) transport_ws: Error write header[0m
+[0;32mI (49616) AudioPlayer: ADC raw: 384 => volume 0.09[0m
+[0;32mI (49816) AudioPlayer: ADC raw: 391 => volume 0.10[0m
+[0;32mI (50016) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (50216) AudioPlayer: ADC raw: 391 => volume 0.10[0m
+[0;32mI (50226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (50226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (50236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (50416) AudioPlayer: ADC raw: 389 => volume 0.09[0m
+[0;32mI (50616) AudioPlayer: ADC raw: 383 => volume 0.09[0m
+[0;32mI (50816) AudioPlayer: ADC raw: 387 => volume 0.09[0m
+[0;32mI (51016) AudioPlayer: ADC raw: 402 => volume 0.10[0m
+[0;32mI (51216) AudioPlayer: ADC raw: 401 => volume 0.10[0m
+[0;32mI (51416) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (51616) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (51816) AudioPlayer: ADC raw: 390 => volume 0.10[0m
+[0;32mI (52016) AudioPlayer: ADC raw: 387 => volume 0.09[0m
+[0;32mI (52216) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (52226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (52226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (52236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (52416) AudioPlayer: ADC raw: 390 => volume 0.10[0m
+[0;32mI (52616) AudioPlayer: ADC raw: 389 => volume 0.09[0m
+[0;32mI (52816) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (53016) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (53216) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (53416) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (53616) AudioPlayer: ADC raw: 404 => volume 0.10[0m
+[0;32mI (53816) AudioPlayer: ADC raw: 401 => volume 0.10[0m
+[0;32mI (54016) AudioPlayer: ADC raw: 386 => volume 0.09[0m
+[0;32mI (54216) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (54226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (54226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (54236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (54416) AudioPlayer: ADC raw: 387 => volume 0.09[0m
+[0;32mI (54616) AudioPlayer: ADC raw: 379 => volume 0.09[0m
+[0;32mI (54816) AudioPlayer: ADC raw: 396 => volume 0.10[0m
+[0;32mI (55016) AudioPlayer: ADC raw: 390 => volume 0.10[0m
+[0;32mI (55216) AudioPlayer: ADC raw: 404 => volume 0.10[0m
+[0;32mI (55416) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (55616) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (55816) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (56016) AudioPlayer: ADC raw: 389 => volume 0.09[0m
+[0;32mI (56216) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (56226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (56226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (56236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (56416) AudioPlayer: ADC raw: 401 => volume 0.10[0m
+[0;32mI (56616) AudioPlayer: ADC raw: 396 => volume 0.10[0m
+[0;32mI (56816) AudioPlayer: ADC raw: 390 => volume 0.10[0m
+[0;32mI (57016) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (57216) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (57416) AudioPlayer: ADC raw: 405 => volume 0.10[0m
+[0;32mI (57616) AudioPlayer: ADC raw: 406 => volume 0.10[0m
+[0;32mI (57816) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (58016) AudioPlayer: ADC raw: 402 => volume 0.10[0m
+[0;32mI (58216) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (58226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (58226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (58236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (58416) AudioPlayer: ADC raw: 396 => volume 0.10[0m
+[0;32mI (58616) AudioPlayer: ADC raw: 404 => volume 0.10[0m
+[0;32mI (58816) AudioPlayer: ADC raw: 396 => volume 0.10[0m
+[0;32mI (59016) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (59216) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (59416) AudioPlayer: ADC raw: 401 => volume 0.10[0m
+[0;32mI (59616) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (59816) AudioPlayer: ADC raw: 403 => volume 0.10[0m
+[0;32mI (60016) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (60216) AudioPlayer: ADC raw: 396 => volume 0.10[0m
+[0;32mI (60226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (60226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (60236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (60416) AudioPlayer: ADC raw: 390 => volume 0.10[0m
+[0;32mI (60616) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (60816) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (61016) AudioPlayer: ADC raw: 401 => volume 0.10[0m
+[0;32mI (61216) AudioPlayer: ADC raw: 389 => volume 0.09[0m
+[0;32mI (61416) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[1;31mE (61506) transport_base: esp_tls_conn_write error, errno=No more processes[0m
+[1;31mE (61506) transport_ws: Error write header[0m
+[0;32mI (61616) AudioPlayer: ADC raw: 387 => volume 0.09[0m
+[0;32mI (61816) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (62016) AudioPlayer: ADC raw: 396 => volume 0.10[0m
+[0;32mI (62216) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (62226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (62226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (62236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (62416) AudioPlayer: ADC raw: 391 => volume 0.10[0m
+[0;32mI (62616) AudioPlayer: ADC raw: 396 => volume 0.10[0m
+[0;32mI (62816) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (63016) AudioPlayer: ADC raw: 401 => volume 0.10[0m
+[0;32mI (63216) AudioPlayer: ADC raw: 403 => volume 0.10[0m
+[0;32mI (63416) AudioPlayer: ADC raw: 384 => volume 0.09[0m
+[0;32mI (63616) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (63816) AudioPlayer: ADC raw: 391 => volume 0.10[0m
+[0;32mI (64016) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (64216) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (64226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (64226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (64236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (64416) AudioPlayer: ADC raw: 389 => volume 0.09[0m
+[0;32mI (64616) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (64816) AudioPlayer: ADC raw: 390 => volume 0.10[0m
+[0;32mI (65016) AudioPlayer: ADC raw: 387 => volume 0.09[0m
+[0;32mI (65216) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (65416) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (65616) AudioPlayer: ADC raw: 392 => volume 0.10[0m
+[0;32mI (65816) AudioPlayer: ADC raw: 381 => volume 0.09[0m
+[0;32mI (66016) AudioPlayer: ADC raw: 413 => volume 0.10[0m
+[0;32mI (66216) AudioPlayer: ADC raw: 392 => volume 0.10[0m
+[0;32mI (66226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (66226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (66236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (66416) AudioPlayer: ADC raw: 386 => volume 0.09[0m
+[0;32mI (66616) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (66816) AudioPlayer: ADC raw: 389 => volume 0.09[0m
+[0;32mI (67016) AudioPlayer: ADC raw: 389 => volume 0.09[0m
+[0;32mI (67216) AudioPlayer: ADC raw: 391 => volume 0.10[0m
+[0;32mI (67416) AudioPlayer: ADC raw: 406 => volume 0.10[0m
+[0;32mI (67616) AudioPlayer: ADC raw: 389 => volume 0.09[0m
+[0;32mI (67816) AudioPlayer: ADC raw: 401 => volume 0.10[0m
+[0;32mI (68016) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (68216) AudioPlayer: ADC raw: 419 => volume 0.10[0m
+[0;32mI (68226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (68226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (68236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (68416) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (68616) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (68816) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (69016) AudioPlayer: ADC raw: 387 => volume 0.09[0m
+[0;32mI (69216) AudioPlayer: ADC raw: 413 => volume 0.10[0m
+[0;32mI (69416) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (69616) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (69816) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (70016) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (70216) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (70226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (70226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (70236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (70416) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (70616) AudioPlayer: ADC raw: 383 => volume 0.09[0m
+[0;32mI (70816) AudioPlayer: ADC raw: 391 => volume 0.10[0m
+[0;32mI (71016) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (71216) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (71416) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (71616) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (71816) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (72016) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (72216) AudioPlayer: ADC raw: 404 => volume 0.10[0m
+[0;32mI (72226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (72226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (72236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (72416) AudioPlayer: ADC raw: 389 => volume 0.09[0m
+[0;32mI (72616) AudioPlayer: ADC raw: 388 => volume 0.09[0m
+[0;32mI (72816) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (73016) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (73216) AudioPlayer: ADC raw: 390 => volume 0.10[0m
+[0;32mI (73416) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[1;31mE (73506) transport_base: esp_tls_conn_write error, errno=No more processes[0m
+[1;31mE (73506) transport_ws: Error write header[0m
+[0;32mI (73616) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (73816) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (74016) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (74216) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (74226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (74226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (74236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (74416) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (74616) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (74816) AudioPlayer: ADC raw: 401 => volume 0.10[0m
+[0;32mI (75016) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (75216) AudioPlayer: ADC raw: 391 => volume 0.10[0m
+[0;32mI (75416) AudioPlayer: ADC raw: 401 => volume 0.10[0m
+[0;32mI (75616) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (75816) AudioPlayer: ADC raw: 391 => volume 0.10[0m
+[0;32mI (76016) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (76216) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (76226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (76226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (76236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (76416) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (76616) AudioPlayer: ADC raw: 386 => volume 0.09[0m
+[0;32mI (76816) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (77016) AudioPlayer: ADC raw: 407 => volume 0.10[0m
+[0;32mI (77216) AudioPlayer: ADC raw: 391 => volume 0.10[0m
+[0;32mI (77416) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (77616) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (77816) AudioPlayer: ADC raw: 389 => volume 0.09[0m
+[0;32mI (78016) AudioPlayer: ADC raw: 386 => volume 0.09[0m
+[0;32mI (78216) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (78226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (78226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (78236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (78416) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (78616) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (78816) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (79016) AudioPlayer: ADC raw: 392 => volume 0.10[0m
+[0;32mI (79216) AudioPlayer: ADC raw: 385 => volume 0.09[0m
+[0;32mI (79416) AudioPlayer: ADC raw: 390 => volume 0.10[0m
+[0;32mI (79616) AudioPlayer: ADC raw: 384 => volume 0.09[0m
+[0;32mI (79816) AudioPlayer: ADC raw: 389 => volume 0.09[0m
+[0;32mI (80016) AudioPlayer: ADC raw: 386 => volume 0.09[0m
+[0;32mI (80216) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (80226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (80226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (80236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (80416) AudioPlayer: ADC raw: 401 => volume 0.10[0m
+[0;32mI (80616) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (80816) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (81016) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (81216) AudioPlayer: ADC raw: 392 => volume 0.10[0m
+[0;32mI (81416) AudioPlayer: ADC raw: 387 => volume 0.09[0m
+[0;32mI (81616) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (81816) AudioPlayer: ADC raw: 389 => volume 0.09[0m
+[0;32mI (82016) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (82216) AudioPlayer: ADC raw: 390 => volume 0.10[0m
+[0;32mI (82226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (82226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (82236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (82416) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (82616) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (82816) AudioPlayer: ADC raw: 391 => volume 0.10[0m
+[0;32mI (83016) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (83216) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (83416) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (83616) AudioPlayer: ADC raw: 391 => volume 0.10[0m
+[0;32mI (83816) AudioPlayer: ADC raw: 387 => volume 0.09[0m
+[0;32mI (84016) AudioPlayer: ADC raw: 388 => volume 0.09[0m
+[0;32mI (84216) AudioPlayer: ADC raw: 404 => volume 0.10[0m
+[0;32mI (84226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (84226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (84236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (84416) AudioPlayer: ADC raw: 390 => volume 0.10[0m
+[0;32mI (84616) AudioPlayer: ADC raw: 405 => volume 0.10[0m
+[0;32mI (84816) AudioPlayer: ADC raw: 391 => volume 0.10[0m
+[0;32mI (85016) AudioPlayer: ADC raw: 392 => volume 0.10[0m
+[0;32mI (85216) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (85416) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[1;31mE (85506) transport_base: esp_tls_conn_write error, errno=No more processes[0m
+[1;31mE (85506) transport_ws: Error write header[0m
+[0;32mI (85616) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (85816) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (86016) AudioPlayer: ADC raw: 383 => volume 0.09[0m
+[0;32mI (86216) AudioPlayer: ADC raw: 401 => volume 0.10[0m
+[0;32mI (86226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (86226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (86236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (86416) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (86616) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (86816) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (87016) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (87216) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (87416) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (87616) AudioPlayer: ADC raw: 406 => volume 0.10[0m
+[0;32mI (87816) AudioPlayer: ADC raw: 389 => volume 0.09[0m
+[0;32mI (88016) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (88216) AudioPlayer: ADC raw: 406 => volume 0.10[0m
+[0;32mI (88226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (88226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (88236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (88416) AudioPlayer: ADC raw: 403 => volume 0.10[0m
+[0;32mI (88616) AudioPlayer: ADC raw: 401 => volume 0.10[0m
+[0;32mI (88816) AudioPlayer: ADC raw: 389 => volume 0.09[0m
+[0;32mI (89016) AudioPlayer: ADC raw: 389 => volume 0.09[0m
+[0;32mI (89216) AudioPlayer: ADC raw: 390 => volume 0.10[0m
+[0;32mI (89416) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (89616) AudioPlayer: ADC raw: 389 => volume 0.09[0m
+[0;32mI (89816) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (90016) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (90216) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (90226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (90226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (90236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (90416) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (90616) AudioPlayer: ADC raw: 385 => volume 0.09[0m
+[0;32mI (90816) AudioPlayer: ADC raw: 389 => volume 0.09[0m
+[0;32mI (91016) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (91216) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (91416) AudioPlayer: ADC raw: 388 => volume 0.09[0m
+[0;32mI (91616) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (91816) AudioPlayer: ADC raw: 401 => volume 0.10[0m
+[0;32mI (92016) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (92216) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (92226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (92226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (92236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (92416) AudioPlayer: ADC raw: 401 => volume 0.10[0m
+[0;32mI (92616) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (92816) AudioPlayer: ADC raw: 403 => volume 0.10[0m
+[0;32mI (93016) AudioPlayer: ADC raw: 390 => volume 0.10[0m
+[0;32mI (93216) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (93416) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (93616) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (93816) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (94016) AudioPlayer: ADC raw: 391 => volume 0.10[0m
+[0;32mI (94216) AudioPlayer: ADC raw: 411 => volume 0.10[0m
+[0;32mI (94226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (94226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (94236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (94416) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (94616) AudioPlayer: ADC raw: 391 => volume 0.10[0m
+[0;32mI (94816) AudioPlayer: ADC raw: 402 => volume 0.10[0m
+[0;32mI (95016) AudioPlayer: ADC raw: 404 => volume 0.10[0m
+[0;32mI (95216) AudioPlayer: ADC raw: 403 => volume 0.10[0m
+[0;32mI (95416) AudioPlayer: ADC raw: 401 => volume 0.10[0m
+[0;32mI (95616) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (95816) AudioPlayer: ADC raw: 396 => volume 0.10[0m
+[0;32mI (96016) AudioPlayer: ADC raw: 403 => volume 0.10[0m
+[0;32mI (96216) AudioPlayer: ADC raw: 409 => volume 0.10[0m
+[0;32mI (96226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (96226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (96236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (96416) AudioPlayer: ADC raw: 390 => volume 0.10[0m
+[0;32mI (96616) AudioPlayer: ADC raw: 402 => volume 0.10[0m
+[0;32mI (96816) AudioPlayer: ADC raw: 387 => volume 0.09[0m
+[0;32mI (97016) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (97216) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (97416) AudioPlayer: ADC raw: 387 => volume 0.09[0m
+[1;31mE (97506) transport_base: esp_tls_conn_write error, errno=No more processes[0m
+[1;31mE (97506) transport_ws: Error write header[0m
+[0;32mI (97616) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (97816) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (98016) AudioPlayer: ADC raw: 391 => volume 0.10[0m
+[0;32mI (98216) AudioPlayer: ADC raw: 390 => volume 0.10[0m
+[0;32mI (98226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (98226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (98236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (98416) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (98616) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (98816) AudioPlayer: ADC raw: 396 => volume 0.10[0m
+[0;32mI (99016) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (99216) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (99416) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (99616) AudioPlayer: ADC raw: 383 => volume 0.09[0m
+[0;32mI (99816) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (100016) AudioPlayer: ADC raw: 403 => volume 0.10[0m
+[0;32mI (100216) AudioPlayer: ADC raw: 391 => volume 0.10[0m
+[0;32mI (100226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (100226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (100236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (100416) AudioPlayer: ADC raw: 390 => volume 0.10[0m
+[0;32mI (100616) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (100816) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (101016) AudioPlayer: ADC raw: 391 => volume 0.10[0m
+[0;32mI (101216) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (101416) AudioPlayer: ADC raw: 387 => volume 0.09[0m
+[0;32mI (101616) AudioPlayer: ADC raw: 404 => volume 0.10[0m
+[0;32mI (101816) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (102016) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (102216) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (102226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (102226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (102236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (102416) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (102616) AudioPlayer: ADC raw: 374 => volume 0.09[0m
+[0;32mI (102816) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (103016) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (103216) AudioPlayer: ADC raw: 382 => volume 0.09[0m
+[0;32mI (103416) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (103616) AudioPlayer: ADC raw: 387 => volume 0.09[0m
+[0;32mI (103816) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (104016) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (104216) AudioPlayer: ADC raw: 389 => volume 0.09[0m
+[0;32mI (104226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (104226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (104236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (104416) AudioPlayer: ADC raw: 396 => volume 0.10[0m
+[0;32mI (104616) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (104816) AudioPlayer: ADC raw: 403 => volume 0.10[0m
+[0;32mI (105016) AudioPlayer: ADC raw: 390 => volume 0.10[0m
+[0;32mI (105216) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (105416) AudioPlayer: ADC raw: 402 => volume 0.10[0m
+[0;32mI (105616) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (105816) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (106016) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (106216) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (106226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (106226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (106236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (106416) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (106616) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (106816) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (107016) AudioPlayer: ADC raw: 404 => volume 0.10[0m
+[0;32mI (107216) AudioPlayer: ADC raw: 401 => volume 0.10[0m
+[0;32mI (107416) AudioPlayer: ADC raw: 402 => volume 0.10[0m
+[0;32mI (107616) AudioPlayer: ADC raw: 386 => volume 0.09[0m
+[0;32mI (107816) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (108016) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (108216) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (108226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (108226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (108236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (108416) AudioPlayer: ADC raw: 389 => volume 0.09[0m
+[0;32mI (108616) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (108816) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (109016) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (109216) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (109416) AudioPlayer: ADC raw: 406 => volume 0.10[0m
+[1;31mE (109506) transport_base: esp_tls_conn_write error, errno=No more processes[0m
+[1;31mE (109506) transport_ws: Error write header[0m
+[0;32mI (109616) AudioPlayer: ADC raw: 381 => volume 0.09[0m
+[0;32mI (109816) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (110016) AudioPlayer: ADC raw: 401 => volume 0.10[0m
+[0;32mI (110216) AudioPlayer: ADC raw: 387 => volume 0.09[0m
+[0;32mI (110226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (110226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (110236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (110416) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (110616) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (110816) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (111016) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (111216) AudioPlayer: ADC raw: 384 => volume 0.09[0m
+[0;32mI (111416) AudioPlayer: ADC raw: 402 => volume 0.10[0m
+[0;32mI (111616) AudioPlayer: ADC raw: 401 => volume 0.10[0m
+[0;32mI (111816) AudioPlayer: ADC raw: 405 => volume 0.10[0m
+[0;32mI (112016) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (112216) AudioPlayer: ADC raw: 385 => volume 0.09[0m
+[0;32mI (112226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (112226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (112236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (112416) AudioPlayer: ADC raw: 403 => volume 0.10[0m
+[0;32mI (112616) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (112816) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (113016) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (113216) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (113416) AudioPlayer: ADC raw: 387 => volume 0.09[0m
+[0;32mI (113616) AudioPlayer: ADC raw: 415 => volume 0.10[0m
+[0;32mI (113816) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (114016) AudioPlayer: ADC raw: 391 => volume 0.10[0m
+[0;32mI (114216) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (114226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (114226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (114236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (114416) AudioPlayer: ADC raw: 401 => volume 0.10[0m
+[0;32mI (114616) AudioPlayer: ADC raw: 401 => volume 0.10[0m
+[0;32mI (114816) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (115016) AudioPlayer: ADC raw: 396 => volume 0.10[0m
+[0;32mI (115216) AudioPlayer: ADC raw: 402 => volume 0.10[0m
+[0;32mI (115416) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (115616) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (115816) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (116016) AudioPlayer: ADC raw: 384 => volume 0.09[0m
+[0;32mI (116216) AudioPlayer: ADC raw: 392 => volume 0.10[0m
+[0;32mI (116226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (116226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (116236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (116416) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (116616) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (116816) AudioPlayer: ADC raw: 379 => volume 0.09[0m
+[0;32mI (117016) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (117216) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (117416) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (117616) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (117816) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (118016) AudioPlayer: ADC raw: 385 => volume 0.09[0m
+[0;32mI (118216) AudioPlayer: ADC raw: 387 => volume 0.09[0m
+[0;32mI (118226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (118226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (118236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (118416) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (118616) AudioPlayer: ADC raw: 386 => volume 0.09[0m
+[0;32mI (118816) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (119016) AudioPlayer: ADC raw: 390 => volume 0.10[0m
+[0;32mI (119216) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (119416) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (119616) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (119816) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (120016) AudioPlayer: ADC raw: 386 => volume 0.09[0m
+[0;32mI (120216) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (120226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (120226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (120236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (120416) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (120616) AudioPlayer: ADC raw: 404 => volume 0.10[0m
+[0;32mI (120816) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (121016) AudioPlayer: ADC raw: 389 => volume 0.09[0m
+[0;32mI (121216) AudioPlayer: ADC raw: 389 => volume 0.09[0m
+[0;32mI (121416) AudioPlayer: ADC raw: 391 => volume 0.10[0m
+[1;31mE (121506) transport_base: esp_tls_conn_write error, errno=No more processes[0m
+[1;31mE (121506) transport_ws: Error write header[0m
+[0;32mI (121616) AudioPlayer: ADC raw: 389 => volume 0.09[0m
+[0;32mI (121816) AudioPlayer: ADC raw: 389 => volume 0.09[0m
+[0;32mI (122016) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (122216) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (122226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (122226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (122236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (122416) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (122616) AudioPlayer: ADC raw: 415 => volume 0.10[0m
+[0;32mI (122816) AudioPlayer: ADC raw: 391 => volume 0.10[0m
+[0;32mI (123016) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (123216) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (123416) AudioPlayer: ADC raw: 391 => volume 0.10[0m
+[0;32mI (123616) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (123816) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (124016) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (124216) AudioPlayer: ADC raw: 401 => volume 0.10[0m
+[0;32mI (124226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (124226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (124236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (124416) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (124616) AudioPlayer: ADC raw: 402 => volume 0.10[0m
+[0;32mI (124816) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (125016) AudioPlayer: ADC raw: 402 => volume 0.10[0m
+[0;32mI (125216) AudioPlayer: ADC raw: 402 => volume 0.10[0m
+[0;32mI (125416) AudioPlayer: ADC raw: 396 => volume 0.10[0m
+[0;32mI (125616) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (125816) AudioPlayer: ADC raw: 401 => volume 0.10[0m
+[0;32mI (126016) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (126216) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (126226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (126226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (126236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (126416) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (126616) AudioPlayer: ADC raw: 403 => volume 0.10[0m
+[0;32mI (126816) AudioPlayer: ADC raw: 389 => volume 0.09[0m
+[0;32mI (127016) AudioPlayer: ADC raw: 387 => volume 0.09[0m
+[0;32mI (127216) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (127416) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (127616) AudioPlayer: ADC raw: 391 => volume 0.10[0m
+[0;32mI (127816) AudioPlayer: ADC raw: 406 => volume 0.10[0m
+[0;32mI (128016) AudioPlayer: ADC raw: 391 => volume 0.10[0m
+[0;32mI (128216) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (128226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (128226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (128236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (128416) AudioPlayer: ADC raw: 396 => volume 0.10[0m
+[0;32mI (128616) AudioPlayer: ADC raw: 401 => volume 0.10[0m
+[0;32mI (128816) AudioPlayer: ADC raw: 396 => volume 0.10[0m
+[0;32mI (129016) AudioPlayer: ADC raw: 365 => volume 0.09[0m
+[0;32mI (129216) AudioPlayer: ADC raw: 392 => volume 0.10[0m
+[0;32mI (129416) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (129616) AudioPlayer: ADC raw: 401 => volume 0.10[0m
+[0;32mI (129816) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (130016) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (130216) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (130226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (130226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (130236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (130416) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (130616) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (130816) AudioPlayer: ADC raw: 385 => volume 0.09[0m
+[0;32mI (131016) AudioPlayer: ADC raw: 404 => volume 0.10[0m
+[0;32mI (131216) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (131416) AudioPlayer: ADC raw: 387 => volume 0.09[0m
+[0;32mI (131616) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (131816) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (132016) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (132216) AudioPlayer: ADC raw: 391 => volume 0.10[0m
+[0;32mI (132226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (132226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (132236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (132416) AudioPlayer: ADC raw: 384 => volume 0.09[0m
+[0;32mI (132616) AudioPlayer: ADC raw: 384 => volume 0.09[0m
+[0;32mI (132816) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (133016) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (133216) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (133416) AudioPlayer: ADC raw: 390 => volume 0.10[0m
+[1;31mE (133506) transport_base: esp_tls_conn_write error, errno=No more processes[0m
+[1;31mE (133506) transport_ws: Error write header[0m
+[0;32mI (133616) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (133816) AudioPlayer: ADC raw: 392 => volume 0.10[0m
+[0;32mI (134016) AudioPlayer: ADC raw: 387 => volume 0.09[0m
+[0;32mI (134216) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (134226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (134226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (134236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (134416) AudioPlayer: ADC raw: 385 => volume 0.09[0m
+[0;32mI (134616) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (134816) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (135016) AudioPlayer: ADC raw: 403 => volume 0.10[0m
+[0;32mI (135216) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (135416) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (135616) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (135816) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (136016) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (136216) AudioPlayer: ADC raw: 391 => volume 0.10[0m
+[0;32mI (136226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (136226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (136236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (136416) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (136616) AudioPlayer: ADC raw: 391 => volume 0.10[0m
+[0;32mI (136816) AudioPlayer: ADC raw: 403 => volume 0.10[0m
+[0;32mI (137016) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (137216) AudioPlayer: ADC raw: 388 => volume 0.09[0m
+[0;32mI (137416) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (137616) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (137816) AudioPlayer: ADC raw: 406 => volume 0.10[0m
+[0;32mI (138016) AudioPlayer: ADC raw: 403 => volume 0.10[0m
+[0;32mI (138216) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (138226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (138226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (138236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (138416) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (138616) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (138816) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (139016) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (139216) AudioPlayer: ADC raw: 385 => volume 0.09[0m
+[0;32mI (139416) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (139616) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (139816) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (140016) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (140216) AudioPlayer: ADC raw: 390 => volume 0.10[0m
+[0;32mI (140226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (140226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (140236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (140416) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (140616) AudioPlayer: ADC raw: 388 => volume 0.09[0m
+[0;32mI (140816) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (141016) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (141216) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (141416) AudioPlayer: ADC raw: 401 => volume 0.10[0m
+[0;32mI (141616) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (141816) AudioPlayer: ADC raw: 401 => volume 0.10[0m
+[0;32mI (142016) AudioPlayer: ADC raw: 396 => volume 0.10[0m
+[0;32mI (142216) AudioPlayer: ADC raw: 391 => volume 0.10[0m
+[0;32mI (142226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (142226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (142236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (142416) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (142616) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (142816) AudioPlayer: ADC raw: 393 => volume 0.10[0m
+[0;32mI (143016) AudioPlayer: ADC raw: 408 => volume 0.10[0m
+[0;32mI (143216) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (143416) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (143616) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (143816) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (144016) AudioPlayer: ADC raw: 324 => volume 0.08[0m
+[0;32mI (144216) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (144226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (144226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (144236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (144416) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (144616) AudioPlayer: ADC raw: 394 => volume 0.10[0m
+[0;32mI (144816) AudioPlayer: ADC raw: 396 => volume 0.10[0m
+[0;32mI (145016) AudioPlayer: ADC raw: 386 => volume 0.09[0m
+[0;32mI (145216) AudioPlayer: ADC raw: 401 => volume 0.10[0m
+[0;32mI (145416) AudioPlayer: ADC raw: 396 => volume 0.10[0m
+[1;31mE (145506) transport_base: esp_tls_conn_write error, errno=No more processes[0m
+[1;31mE (145506) transport_ws: Error write header[0m
+[0;32mI (145616) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (145816) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (146016) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (146216) AudioPlayer: ADC raw: 402 => volume 0.10[0m
+[0;32mI (146226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (146226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (146236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (146416) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (146616) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (146816) AudioPlayer: ADC raw: 396 => volume 0.10[0m
+[0;32mI (147016) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (147216) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (147416) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (147616) AudioPlayer: ADC raw: 401 => volume 0.10[0m
+[0;32mI (147816) AudioPlayer: ADC raw: 391 => volume 0.10[0m
+[0;32mI (148016) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (148216) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (148226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (148226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (148236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (148416) AudioPlayer: ADC raw: 401 => volume 0.10[0m
+[0;32mI (148616) AudioPlayer: ADC raw: 401 => volume 0.10[0m
+[0;32mI (148816) AudioPlayer: ADC raw: 403 => volume 0.10[0m
+[0;32mI (149016) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (149216) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (149416) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (149616) AudioPlayer: ADC raw: 389 => volume 0.09[0m
+[0;32mI (149816) AudioPlayer: ADC raw: 386 => volume 0.09[0m
+[0;32mI (150016) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (150216) AudioPlayer: ADC raw: 384 => volume 0.09[0m
+[0;32mI (150226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (150226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (150236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (150416) AudioPlayer: ADC raw: 395 => volume 0.10[0m
+[0;32mI (150616) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (150816) AudioPlayer: ADC raw: 391 => volume 0.10[0m
+[0;32mI (151016) AudioPlayer: ADC raw: 390 => volume 0.10[0m
+[0;32mI (151216) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (151416) AudioPlayer: ADC raw: 397 => volume 0.10[0m
+[0;32mI (151616) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (151816) AudioPlayer: ADC raw: 398 => volume 0.10[0m
+[0;32mI (152016) AudioPlayer: ADC raw: 399 => volume 0.10[0m
+[0;32mI (152216) AudioPlayer: ADC raw: 400 => volume 0.10[0m
+[0;32mI (152226) AudioPlayer: [Audio Monitor] empty=8, ready=0[0m
+[0;32mI (152226) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (152236) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m

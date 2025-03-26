@@ -32,6 +32,8 @@ esp_err_t wifi_manager_init(void);
  * @return esp_err_t
  */
 esp_err_t wifi_manager_set_sta_credentials(const char *ssid, const char *pass);
+bool wifi_manager_is_connected(void);
+bool wifi_manager_is_in_ap_mode(void);
 
 #ifdef __cplusplus
 }
