@@ -15,10 +15,10 @@
 static const char *TAG = "RC522_TAG_READER";
 
 // Adjust these per your hardware setup
-#define RC522_SPI_BUS_GPIO_MISO    (34)
-#define RC522_SPI_BUS_GPIO_MOSI    (23)
-#define RC522_SPI_BUS_GPIO_SCLK    (32)
-#define RC522_SPI_SCANNER_GPIO_SDA (33)
+#define RC522_SPI_BUS_GPIO_MISO    (5)
+#define RC522_SPI_BUS_GPIO_MOSI    (18)
+#define RC522_SPI_BUS_GPIO_SCLK    (19)
+#define RC522_SPI_SCANNER_GPIO_SDA (21)
 #define RC522_SCANNER_GPIO_RST     (-1) // soft-reset
 #ifndef RC522_PICC_MAX_UID_SIZE
 #define RC522_PICC_MAX_UID_SIZE 10

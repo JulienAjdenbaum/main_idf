@@ -15,9 +15,9 @@
 #include "audio_player.h"
 
 #define MIC_I2S_PORT            I2S_NUM_1
-#define MIC_I2S_BCK_IO          14
-#define MIC_I2S_WS_IO           13
-#define MIC_I2S_DATA_IN_IO      12
+#define MIC_I2S_BCK_IO          4
+#define MIC_I2S_WS_IO           15
+#define MIC_I2S_DATA_IN_IO      2
 #define MIC_I2S_DATA_OUT_IO     -1 
 #define MIC_USE_APLL            false
 
