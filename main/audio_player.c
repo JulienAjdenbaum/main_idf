@@ -8,6 +8,7 @@
 #include "esp_timer.h"
 #include "esp_adc_cal.h"
 #include "driver/adc.h"
+#include "pins.h"
 
 static const char *TAG = "AudioPlayer";
 
@@ -21,8 +22,6 @@ static void audio_task(void *param);
 static void audio_monitor_task(void *param);
 static void volume_task(void *param);
 // static void i2s_monitor_task(void *arg);
-
-#define POT_PIN ADC1_CHANNEL_7  // Adjust as needed
 #define DEFAULT_VREF    1100    // For calibration (if needed)
 
 static float s_volume = 1.0f;
@@ -108,28 +107,50 @@ esp_err_t audio_player_init(void)
 
 static void volume_task(void *param)
 {
-    // Configure ADC only once.
+    // If there is no potentiometer in use, just set the volume to 1.0 forever
+    if (POT_PIN == -1) {
+        ESP_LOGI(TAG, "No pot detected (POT_PIN == -1). Volume set to 1.0f");
+        while (1) {
+            audio_player_set_volume(1.0f);
+            vTaskDelay(pdMS_TO_TICKS(200));
+        }
+        // vTaskDelete(NULL); // unreachable, but here for completeness
+    }
+
+    // Otherwise, configure ADC to read from the pot
     adc1_config_width(ADC_WIDTH_BIT_12);               // 0..4095
     adc1_config_channel_atten(POT_PIN, ADC_ATTEN_DB_11); // up to ~3.3V
 
     while (1) {
-        // Read ADC
+        // Read the raw ADC value
         int raw = adc1_get_raw(POT_PIN);
 
-        // Normalize to 0.0–1.0
-        float vol = (float)raw / 4095.0f;
+        // 0..4095 => 0.0..1.0
+        float normalized = (float)raw / 4095.0f;
 
-        // Update audio volume
+        // Option A: Simple square mapping (makes the pot “quieter” near 0)
+        // float vol = normalized * normalized;
+
+        // Option B: Slightly stronger curve
+        // float vol = powf(normalized, 3.0f);
+
+        // Option C: Straight linear (original)
+        // float vol = normalized;
+
+        float vol = normalized * normalized; // pick whichever feels best
+
+        // Update the actual audio volume
         audio_player_set_volume(vol);
 
-        // Optional debug
-        // ESP_LOGI(TAG, "ADC raw: %d => volume %.2f", raw, vol);
+        // Optional debug:
+        ESP_LOGI(TAG, "ADC raw: %d => normalized=%.3f => finalVolume=%.3f",
+                 raw, normalized, vol);
 
-        // Delay so we don't hammer the ADC or spamming logs
+        // Don’t spam the ADC or the log
         vTaskDelay(pdMS_TO_TICKS(200));
     }
 
-    // If it ever leaves the loop (unlikely), delete the task
+    // If it ever leaves the loop
     vTaskDelete(NULL);
 }
 

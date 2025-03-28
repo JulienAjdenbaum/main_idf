@@ -8,11 +8,9 @@
 #include "LED_button.h"
 #include "wifi.h"
 #include "websocket_manager.h"
+#include "pins.h"
 
 #define RMT_LED_STRIP_RESOLUTION_HZ  (10 * 1000 * 1000) // 10MHz -> 0.1us per tick
-#define RMT_LED_STRIP_GPIO_NUM       15                 // GPIO connected to SK6812 data
-#define EXAMPLE_LED_NUMBERS          1                  // Number of LEDs in the strip
-#define BUTTON_GPIO                  4                  // GPIO for push button
 #define BLINK_DELAY_MS               300                // LED on/off time when blinking
 
 static const char *TAG = "led_button_blink";

@@ -9,17 +9,12 @@
 #include "rc522.h"
 #include "driver/rc522_spi.h"
 #include "rc522_picc.h"
+#include "LED_button.h"
 
 #include "websocket_manager.h" // so we can call websocket_manager_send_bin()
-
+#include "pins.h"
 static const char *TAG = "RC522_TAG_READER";
 
-// Adjust these per your hardware setup
-#define RC522_SPI_BUS_GPIO_MISO    (5)
-#define RC522_SPI_BUS_GPIO_MOSI    (18)
-#define RC522_SPI_BUS_GPIO_SCLK    (19)
-#define RC522_SPI_SCANNER_GPIO_SDA (21)
-#define RC522_SCANNER_GPIO_RST     (-1) // soft-reset
 #ifndef RC522_PICC_MAX_UID_SIZE
 #define RC522_PICC_MAX_UID_SIZE 10
 #endif
@@ -84,7 +79,7 @@ static void on_picc_state_changed(void *arg,
              evt->old_state >= RC522_PICC_STATE_ACTIVE) {
         // Card was removed
         ESP_LOGI(TAG, "Card removed");
-
+        set_leds_color(255, 0, 255, 0);
         s_card_active = false;
         s_last_uid_len = 0; 
         memset(s_last_uid, 0, sizeof(s_last_uid));

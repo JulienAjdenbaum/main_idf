@@ -7,13 +7,6 @@
 #include "esp_err.h"
 #include "driver/i2s.h"
 
-// I2S pins, etc.
-#define I2S_NUM         (I2S_NUM_0)
-#define I2S_BCK_IO      (25)
-#define I2S_WS_IO       (27)
-#define I2S_DO_IO       (26)
-#define I2S_DI_IO       (-1) // not used
-
 // 24 kHz by default
 #define SAMPLE_RATE     (8000)
 

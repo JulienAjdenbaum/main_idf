@@ -13,14 +13,8 @@
 #include "LED_button.h" 
 #include "websocket_manager.h"  // for websocket_manager_send_bin(), is_shutdown_requested()
 #include "audio_player.h"
-
-#define MIC_I2S_PORT            I2S_NUM_1
-#define MIC_I2S_BCK_IO          4
-#define MIC_I2S_WS_IO           15
-#define MIC_I2S_DATA_IN_IO      2
-#define MIC_I2S_DATA_OUT_IO     -1 
-#define MIC_USE_APLL            false
-
+#include "pins.h"
+#include "tag_reader.h"
 #define I2S_SAMPLE_RATE         8000
 #define I2S_BITS_PER_SAMPLE     I2S_BITS_PER_SAMPLE_32BIT
 #define I2S_READ_BUF_SIZE       1024 
@@ -116,10 +110,17 @@ static void audio_record_task(void *arg)
 
         int packet_size = out_index + 1;
 
-        if (audio_player_is_playing()) {
-            // Send zeros if playing
+        if (audio_player_is_playing() && !check_button_press()) {
+            // Send zeros if playing or card is not active
+            if (!check_button_press()) {
+                ESP_LOGI(TAG, "Button not pressed, sending zeros");
+            }
             memset(send_buf + 1, 0, out_index);
             turn_off_leds();
+        }else if (!s_card_active){
+            ESP_LOGI(TAG, "Card not active, sending zeros");
+            memset(send_buf + 1, 0, out_index);
+            set_leds_color(255, 0, 255, 0);
         } else {
             set_leds_color(0, 0, 0, 255);
             memcpy(send_buf + 1, conv_buf, out_index);
