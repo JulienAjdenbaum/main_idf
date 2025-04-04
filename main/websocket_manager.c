@@ -17,6 +17,8 @@
 #include "tag_reader.h"
 #include "audio_stream.h"
 #include "OTA.h"
+#include "esp_timer.h"
+
 
 #ifndef RC522_PICC_MAX_UID_SIZE
 #define RC522_PICC_MAX_UID_SIZE 10
@@ -38,6 +40,11 @@ static bool s_ws_connected = false;
 static char s_api_key[API_KEY_RANDOM_BYTES * 2 + 1] = {0};  // e.g. 32 hex chars + null
 static char s_api_key_header[64] = {0};                    // "X-API-Key: <key>\r\n"
 
+static TaskHandle_t s_ws_monitor_handle = NULL;
+static volatile int64_t s_last_ping_time = 0;
+static volatile bool s_ws_just_connected = false;
+#define WS_CONNECT_DELAY_MS  1000
+#define WS_PING_TIMEOUT_MS   4000
 
 /**
  * Task handles for ringbuf monitor & audio consumer. 
@@ -63,6 +70,51 @@ static void websocket_event_handler(void *handler_args,
                                     void *event_data);
 static void audio_consumer_task(void *arg);
 static void ringbuf_monitor_task(void *arg);
+
+static void ws_monitor_task(void *arg)
+{
+    // Convert ms => microseconds for our checks
+    int64_t ping_timeout_us  = WS_PING_TIMEOUT_MS * 1000;  // 4000 ms
+    int64_t connect_delay_us = WS_CONNECT_DELAY_MS * 1000; // 1000 ms
+
+    while (!g_shutdown_requested) {
+        if (s_ws_connected) {
+            // If we just connected, wait 1 second and clear the flag
+            if (s_ws_just_connected) {
+                vTaskDelay(pdMS_TO_TICKS(WS_CONNECT_DELAY_MS));
+                s_ws_just_connected = false;
+            }
+
+            // Check how long since last ping
+            int64_t now_us = esp_timer_get_time();
+            int64_t elapsed_us = now_us - s_last_ping_time;
+
+            if (elapsed_us > ping_timeout_us) {
+                ESP_LOGE(TAG, "No ping received in %d ms => restarting WebSocket",
+                         WS_PING_TIMEOUT_MS);
+
+                // Cleanly stop current WS
+                websocket_manager_stop();
+
+                // Small delay before re-init
+                vTaskDelay(pdMS_TO_TICKS(500));
+
+                // Re-initialize WS
+                websocket_manager_init();
+
+                // Because we reconnected inside this task, let's
+                // give it a second or two before next check:
+                vTaskDelay(pdMS_TO_TICKS(2000));
+                continue;
+            }
+        }
+
+        // Sleep a bit between checks
+        vTaskDelay(pdMS_TO_TICKS(1000));
+    }
+    ESP_LOGI(TAG, "ws_monitor_task stopping!");
+    vTaskDelete(NULL);
+}
 
 static esp_err_t get_or_create_api_key(char *out_key, size_t out_key_size)
 {
@@ -171,6 +223,19 @@ esp_err_t websocket_manager_init(void)
         return ESP_FAIL;
     }
 
+    BaseType_t rc = xTaskCreatePinnedToCore(
+        ws_monitor_task,
+        "ws_monitor_task",
+        4096,
+        NULL,
+        4,
+        &s_ws_monitor_handle,
+        1
+    );
+    if (rc != pdPASS) {
+        ESP_LOGE(TAG, "Failed to create ws_monitor_task");
+    }
+
     // Start the WebSocket client
     err = esp_websocket_client_start(s_ws_client);
     if (err != ESP_OK) {
@@ -180,7 +245,7 @@ esp_err_t websocket_manager_init(void)
     ESP_LOGI(TAG, "WebSocket started with header [%s]", s_api_key_header);
 
     // Create consumer task (audio_consumer_task)
-    BaseType_t rc = xTaskCreatePinnedToCore(
+    rc = xTaskCreatePinnedToCore(
         audio_consumer_task,
         "audio_consumer_task",
         4096,
@@ -331,7 +396,10 @@ static void websocket_event_handler(void *handler_args,
     switch (event_id) {
     case WEBSOCKET_EVENT_CONNECTED:
         ESP_LOGI(TAG, "WebSocket connected");
-        s_ws_connected = true;
+        s_ws_connected      = true;
+        s_ws_just_connected = true;
+        s_last_ping_time    = esp_timer_get_time(); // reset ping timer
+
         // Immediately send device version info
         ota_send_device_version();
 
@@ -355,10 +423,13 @@ static void websocket_event_handler(void *handler_args,
             size_t audio_len = ws_data->data_len - 1;
             
             if (prefix == 0x05) {
-                // 1) Received a custom "Ping" from server => respond with Pong 0x06
+                // 1) Received custom "Ping" from server => respond with Pong (0x06)
                 ESP_LOGI(TAG, "Received custom Ping (0x05) => sending Pong (0x06).");
                 uint8_t pong_data[1] = { 0x06 };
                 websocket_manager_send_bin((const char *)pong_data, 1);
+
+                // 2) Update last-ping time
+                s_last_ping_time = esp_timer_get_time();
             }
 
             else if (prefix == 0x02 && audio_len > 0) {

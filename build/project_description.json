@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "hello_world",
-    "project_version":    "afc293f-dirty",
+    "project_version":    "483effa-dirty",
     "project_path":       "/home/julien/Documents/esp32IDF/hello_world",
     "idf_path":           "/home/julien/esp/esp-idf",
     "build_dir":          "/home/julien/Documents/esp32IDF/hello_world/build",
@@ -1011,7 +1011,7 @@
             "type": "LIBRARY",
             "lib": "__idf_main",
             "reqs": [],
-            "priv_reqs": [ "app_update", "esp_bootloader_format", "esp_https_ota", "wifi_provisioning", "esp_adc", "driver", "esp32-wifi-manager", "esp_wifi", "esp_netif", "esp_event", "nvs_flash", "esp_websocket_client", "fatfs", "sdmmc", "esp_driver_rmt", "abobija__rc522", "espressif__mdns" ],
+            "priv_reqs": [ "esp_system", "app_update", "esp_bootloader_format", "esp_https_ota", "wifi_provisioning", "esp_adc", "driver", "esp32-wifi-manager", "esp_wifi", "esp_netif", "esp_event", "nvs_flash", "esp_websocket_client", "fatfs", "sdmmc", "esp_driver_rmt", "abobija__rc522", "espressif__mdns" ],
             "managed_reqs": [],
             "managed_priv_reqs": [ "abobija__rc522", "espressif__mdns" ],
             "file": "/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/main/libmain.a",
@@ -2551,7 +2551,7 @@
             "dir": "/home/julien/Documents/esp32IDF/hello_world/main",
             "lib": "__idf_main",
             "reqs": [],
-            "priv_reqs": [ "app_update", "esp_bootloader_format", "esp_https_ota", "wifi_provisioning", "esp_adc", "driver", "esp32-wifi-manager", "esp_wifi", "esp_netif", "esp_event", "nvs_flash", "esp_websocket_client", "fatfs", "sdmmc", "esp_driver_rmt", "abobija__rc522", "espressif__mdns" ],
+            "priv_reqs": [ "esp_system", "app_update", "esp_bootloader_format", "esp_https_ota", "wifi_provisioning", "esp_adc", "driver", "esp32-wifi-manager", "esp_wifi", "esp_netif", "esp_event", "nvs_flash", "esp_websocket_client", "fatfs", "sdmmc", "esp_driver_rmt", "abobija__rc522", "espressif__mdns" ],
             "managed_reqs": [],
             "managed_priv_reqs": [ "abobija__rc522", "espressif__mdns" ],
             "include_dirs": [ "." ]
