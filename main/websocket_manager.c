@@ -8,6 +8,11 @@
 #include <string.h>
 #include <stdio.h>
 
+// Include NVS headers for storing/loading API key
+#include "nvs_flash.h"
+#include "nvs.h"
+#include "esp_system.h"    // for esp_fill_random()
+
 #include "rc522_picc.h"
 #include "tag_reader.h"
 #include "audio_stream.h"
@@ -17,11 +22,22 @@
 #define RC522_PICC_MAX_UID_SIZE 10
 #endif
 
+#define NVS_NAMESPACE_API_KEY   "api_store"
+#define NVS_KEY_API_KEY         "api_key"
+
+
 static const char *TAG = "WS_MGR";
+
+#define API_KEY_RANDOM_BYTES    16 
+#define API_KEY_HEADER_NAME     "X-API-Key"
 
 // The actual WebSocket client handle
 static esp_websocket_client_handle_t s_ws_client = NULL;
 static bool s_ws_connected = false;
+
+static char s_api_key[API_KEY_RANDOM_BYTES * 2 + 1] = {0};  // e.g. 32 hex chars + null
+static char s_api_key_header[64] = {0};                    // "X-API-Key: <key>\r\n"
+
 
 /**
  * Task handles for ringbuf monitor & audio consumer. 
@@ -48,16 +64,90 @@ static void websocket_event_handler(void *handler_args,
 static void audio_consumer_task(void *arg);
 static void ringbuf_monitor_task(void *arg);
 
+static esp_err_t get_or_create_api_key(char *out_key, size_t out_key_size)
+{
+    if (!out_key || out_key_size < (API_KEY_RANDOM_BYTES * 2 + 1)) {
+        return ESP_ERR_INVALID_ARG;
+    }
+
+    // Initialize with zero
+    memset(out_key, 0, out_key_size);
+
+    nvs_handle_t nvs_handle;
+    esp_err_t err = nvs_open(NVS_NAMESPACE_API_KEY, NVS_READWRITE, &nvs_handle);
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to open NVS namespace (%s)", esp_err_to_name(err));
+        return err;
+    }
+
+    // Try to get the existing key
+    size_t required_size = out_key_size;
+    err = nvs_get_str(nvs_handle, NVS_KEY_API_KEY, out_key, &required_size);
+
+    if (err == ESP_OK) {
+        // We successfully loaded an existing API key
+        ESP_LOGI(TAG, "Loaded existing API key from NVS: %s", out_key);
+        nvs_close(nvs_handle);
+        return ESP_OK;
+    } 
+    else if (err == ESP_ERR_NVS_NOT_FOUND) {
+        // Not found: generate a new random key
+        uint8_t random_bytes[API_KEY_RANDOM_BYTES];
+        esp_fill_random(random_bytes, sizeof(random_bytes));
+
+        // Convert to hex
+        for (int i = 0; i < API_KEY_RANDOM_BYTES; i++) {
+            sprintf(out_key + (i * 2), "%02X", random_bytes[i]);
+        }
+        out_key[API_KEY_RANDOM_BYTES * 2] = '\0'; // Null-terminate
+
+        ESP_LOGI(TAG, "Generated new API key: %s", out_key);
+
+        // Store in NVS
+        err = nvs_set_str(nvs_handle, NVS_KEY_API_KEY, out_key);
+        if (err == ESP_OK) {
+            err = nvs_commit(nvs_handle);
+        }
+        if (err != ESP_OK) {
+            ESP_LOGE(TAG, "Error storing API key in NVS: %s", esp_err_to_name(err));
+            nvs_close(nvs_handle);
+            return err;
+        }
+
+        nvs_close(nvs_handle);
+        return ESP_OK;
+    } 
+    else {
+        // Some other error
+        ESP_LOGE(TAG, "Error reading API key from NVS: %s", esp_err_to_name(err));
+        nvs_close(nvs_handle);
+        return err;
+    }
+}
 
 // ============================= PUBLIC API =============================
 
 esp_err_t websocket_manager_init(void)
 {
+    // 1. Get or create the API key from NVS
+    esp_err_t err = get_or_create_api_key(s_api_key, sizeof(s_api_key));
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to get/create API key: %s", esp_err_to_name(err));
+        return err;
+    }
+
+    // 2. Build the custom header string
+    //    Typical format: "X-API-Key: xxxxxxxxxxxxxxxx\r\n"
+    snprintf(s_api_key_header, sizeof(s_api_key_header),
+             API_KEY_HEADER_NAME ": %s\r\n", s_api_key);
+
+    // 3. Prepare the WebSocket config, adding our custom header
     esp_websocket_client_config_t cfg = {
         .uri = "wss://api.interaction-labs.com/esp/api/chat",
         .crt_bundle_attach = esp_crt_bundle_attach,
         .reconnect_timeout_ms = 5000,
         .network_timeout_ms = 10000,
+        .headers = s_api_key_header, // <---- CUSTOM HEADER HERE
     };
 
     s_ws_client = esp_websocket_client_init(&cfg);
@@ -82,15 +172,14 @@ esp_err_t websocket_manager_init(void)
     }
 
     // Start the WebSocket client
-    esp_err_t err = esp_websocket_client_start(s_ws_client);
+    err = esp_websocket_client_start(s_ws_client);
     if (err != ESP_OK) {
         ESP_LOGE(TAG, "Failed to start WS client: %s", esp_err_to_name(err));
         return err;
     }
-    ESP_LOGI(TAG, "WebSocket started!");
-    // s_ws_connected = true;
+    ESP_LOGI(TAG, "WebSocket started with header [%s]", s_api_key_header);
 
-    // Create consumer task (audio_consumer_task) 
+    // Create consumer task (audio_consumer_task)
     BaseType_t rc = xTaskCreatePinnedToCore(
         audio_consumer_task,
         "audio_consumer_task",
@@ -264,8 +353,15 @@ static void websocket_event_handler(void *handler_args,
             const uint8_t *rx_buf = (const uint8_t *)ws_data->data_ptr;
             uint8_t prefix = rx_buf[0];
             size_t audio_len = ws_data->data_len - 1;
+            
+            if (prefix == 0x05) {
+                // 1) Received a custom "Ping" from server => respond with Pong 0x06
+                ESP_LOGI(TAG, "Received custom Ping (0x05) => sending Pong (0x06).");
+                uint8_t pong_data[1] = { 0x06 };
+                websocket_manager_send_bin((const char *)pong_data, 1);
+            }
 
-            if (prefix == 0x02 && audio_len > 0) {
+            else if (prefix == 0x02 && audio_len > 0) {
                 if (s_audio_rb) {
                     // copy minus prefix
                     BaseType_t ok = xRingbufferSend(s_audio_rb, 

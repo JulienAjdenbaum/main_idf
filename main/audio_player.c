@@ -31,7 +31,7 @@ void audio_player_set_volume(float vol)
     // Clamp vol between 0.0f and 1.0f if necessary
     if (vol < 0.0f) vol = 0.0f;
     if (vol > 1.0f) vol = 1.0f;
-    s_volume = vol;
+    s_volume = (1.0f - vol) * 0.2f;
 }
 
 float audio_player_get_volume(void)
@@ -137,14 +137,14 @@ static void volume_task(void *param)
         // Option C: Straight linear (original)
         // float vol = normalized;
 
-        float vol = normalized * normalized; // pick whichever feels best
+        float vol = (normalized * normalized); // pick whichever feels best
 
         // Update the actual audio volume
         audio_player_set_volume(vol);
 
         // Optional debug:
-        ESP_LOGI(TAG, "ADC raw: %d => normalized=%.3f => finalVolume=%.3f",
-                 raw, normalized, vol);
+        // ESP_LOGI(TAG, "ADC raw: %d => normalized=%.3f => finalVolume=%.3f",
+        //          raw, normalized, vol);
 
         // Don’t spam the ADC or the log
         vTaskDelay(pdMS_TO_TICKS(200));
@@ -190,8 +190,8 @@ static void audio_monitor_task(void *param)
     while (1) {
         UBaseType_t empty_count = uxQueueMessagesWaiting(s_empty_queue);
         UBaseType_t ready_count = uxQueueMessagesWaiting(s_ready_queue);
-        ESP_LOGI(TAG, "[Audio Monitor] empty=%u, ready=%u",
-                 (unsigned)empty_count, (unsigned)ready_count);
+        // ESP_LOGI(TAG, "[Audio Monitor] empty=%u, ready=%u",
+        //          (unsigned)empty_count, (unsigned)ready_count);
         vTaskDelay(pdMS_TO_TICKS(2000));
     }
 }
