@@ -160,6 +160,13 @@ static esp_err_t post_set_creds_handler(httpd_req_t *req)
     const char *resp_str = "<html><body><h2>Credentials saved. Trying to connect...</h2></body></html>";
     httpd_resp_set_type(req, "text/html");
     httpd_resp_send(req, resp_str, strlen(resp_str));
+
+        // 4) Delay briefly so the HTTP response can go out
+    vTaskDelay(pdMS_TO_TICKS(1000));
+
+    // 5) Reboot
+    esp_restart();
+    
     return ESP_OK;
 }
 

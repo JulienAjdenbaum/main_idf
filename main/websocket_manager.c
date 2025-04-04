@@ -7,6 +7,7 @@
 #include "freertos/ringbuf.h"
 #include <string.h>
 #include <stdio.h>
+#include <stdbool.h>
 
 // Include NVS headers for storing/loading API key
 #include "nvs_flash.h"
@@ -18,7 +19,7 @@
 #include "audio_stream.h"
 #include "OTA.h"
 #include "esp_timer.h"
-
+#include "coredump_manager.h"
 
 #ifndef RC522_PICC_MAX_UID_SIZE
 #define RC522_PICC_MAX_UID_SIZE 10
@@ -70,6 +71,60 @@ static void websocket_event_handler(void *handler_args,
                                     void *event_data);
 static void audio_consumer_task(void *arg);
 static void ringbuf_monitor_task(void *arg);
+
+static bool s_crash_triggered = false;
+
+static void coredump_test_task(void *arg)
+{
+    // Wait a few seconds so logs can flush and Wi-Fi can stabilize
+    vTaskDelay(pdMS_TO_TICKS(5000));
+
+    ESP_LOGW("CORE_TEST", "About to forcibly crash => testing coredump handling...");
+
+    // Option 1: Call abort() (preferred because it's a standard IDF panic)
+    abort();
+
+    // Option 2: Could do assert(0) or something similarly guaranteed to crash
+    // assert(false);
+
+    // We'll never get here, but in case:
+    vTaskDelete(NULL);
+}
+
+static void stop_audio_consumer_and_ringbuf(void)
+{
+    ESP_LOGI(TAG, "Stopping audio consumer tasks...");
+
+    // 1) Signal tasks to exit
+    g_shutdown_requested = true;
+
+    // 2) Wait for audio_consumer_task to exit (if handle is known)
+    if (s_audio_consumer_handle) {
+        ESP_LOGI(TAG, "Waiting for audio_consumer_task to stop...");
+        // Wait until the task deletes itself
+        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+        s_audio_consumer_handle = NULL; 
+    }
+
+    // 3) Also wait for ringbuf_monitor_task if you want
+    if (s_ringbuf_monitor_handle) {
+        ESP_LOGI(TAG, "Waiting for ringbuf_monitor_task to stop...");
+        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+        s_ringbuf_monitor_handle = NULL;
+    }
+
+    // 4) Now we can safely delete the ring buffer
+    if (s_audio_rb) {
+        ESP_LOGI(TAG, "Deleting ring buffer...");
+        vRingbufferDelete(s_audio_rb);
+        s_audio_rb = NULL;
+    }
+
+    // Reset our shutdown flag for the next time
+    g_shutdown_requested = false;
+    ESP_LOGI(TAG, "Audio consumer + ringbuf fully stopped.");
+}
+
 
 static void ws_monitor_task(void *arg)
 {
@@ -181,17 +236,30 @@ static esp_err_t get_or_create_api_key(char *out_key, size_t out_key_size)
 
 esp_err_t websocket_manager_init(void)
 {
+    coredump_manager_check_and_load();
+
     // 1. Get or create the API key from NVS
     esp_err_t err = get_or_create_api_key(s_api_key, sizeof(s_api_key));
     if (err != ESP_OK) {
         ESP_LOGE(TAG, "Failed to get/create API key: %s", esp_err_to_name(err));
         return err;
     }
+    // 3) Build your header with or without X-Coredump
+    memset(s_api_key_header, 0, sizeof(s_api_key_header));
 
-    // 2. Build the custom header string
-    //    Typical format: "X-API-Key: xxxxxxxxxxxxxxxx\r\n"
-    snprintf(s_api_key_header, sizeof(s_api_key_header),
-             API_KEY_HEADER_NAME ": %s\r\n", s_api_key);
+    if (coredump_manager_found()) {
+        const char* coredump_b64 = coredump_manager_get_base64();
+        snprintf(s_api_key_header, sizeof(s_api_key_header),
+                 "X-API-Key: %s\r\nX-Coredump: %s\r\n",
+                 s_api_key, coredump_b64);
+    } else {
+        snprintf(s_api_key_header, sizeof(s_api_key_header),
+                 "X-API-Key: %s\r\n",
+                 s_api_key);
+    }
+
+    ESP_LOGI(TAG, "Final WebSocket headers:\n%s", s_api_key_header);
+
 
     // 3. Prepare the WebSocket config, adding our custom header
     esp_websocket_client_config_t cfg = {
@@ -278,6 +346,7 @@ esp_err_t websocket_manager_init(void)
 esp_err_t websocket_manager_stop(void)
 {
     ESP_LOGI(TAG, "Stopping WebSocket client...");
+    stop_audio_consumer_and_ringbuf();
     if (s_ws_client) {
         esp_websocket_client_stop(s_ws_client);
         esp_websocket_client_destroy(s_ws_client);
@@ -348,6 +417,7 @@ void websocket_manager_send_rfid_event(const uint8_t *uid, size_t uid_len, bool 
 
 static void ringbuf_monitor_task(void *arg)
 {
+    ESP_LOGI(TAG, "ringbuf_monitor_task starting!");
     while (!g_shutdown_requested) {
         if (s_audio_rb) {
             const size_t total_size = 16 * 1024; 
@@ -360,11 +430,14 @@ static void ringbuf_monitor_task(void *arg)
         vTaskDelay(pdMS_TO_TICKS(2000));
     }
     ESP_LOGI(TAG, "ringbuf_monitor_task stopping!");
+    
+    xTaskNotifyGive(xTaskGetCurrentTaskHandle());
     vTaskDelete(NULL);
 }
 
 static void audio_consumer_task(void *arg)
 {
+    ESP_LOGI(TAG, "audio_consumer_task starting!");
     while (!g_shutdown_requested) {
         if (s_audio_rb) {
             size_t item_size = 0;
@@ -381,6 +454,7 @@ static void audio_consumer_task(void *arg)
         // else either no ringbuf or timed out => loop
     }
     ESP_LOGI(TAG, "audio_consumer_task stopping!");
+    xTaskNotifyGive(xTaskGetCurrentTaskHandle());
     vTaskDelete(NULL);
 }
 
@@ -433,6 +507,7 @@ static void websocket_event_handler(void *handler_args,
             }
 
             else if (prefix == 0x02 && audio_len > 0) {
+
                 if (s_audio_rb) {
                     // copy minus prefix
                     BaseType_t ok = xRingbufferSend(s_audio_rb, 

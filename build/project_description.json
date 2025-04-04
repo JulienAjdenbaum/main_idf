@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "hello_world",
-    "project_version":    "483effa-dirty",
+    "project_version":    "52cfeb8-dirty",
     "project_path":       "/home/julien/Documents/esp32IDF/hello_world",
     "idf_path":           "/home/julien/esp/esp-idf",
     "build_dir":          "/home/julien/Documents/esp32IDF/hello_world/build",
@@ -21,12 +21,12 @@
     "monitor_toolprefix": "xtensa-esp32-elf-",
     "c_compiler":         "/home/julien/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc",
     "config_environment" : {
-        "COMPONENT_KCONFIGS" : "/home/julien/esp/esp-idf/components/bt/Kconfig;/home/julien/esp/esp-idf/components/console/Kconfig;/home/julien/esp/esp-idf/components/driver/Kconfig;/home/julien/esp/esp-idf/components/efuse/Kconfig;/home/julien/esp/esp-idf/components/esp-tls/Kconfig;/home/julien/esp/esp-idf/components/esp_adc/Kconfig;/home/julien/esp/esp-idf/components/esp_coex/Kconfig;/home/julien/esp/esp-idf/components/esp_common/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_ana_cmpr/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_dac/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_gpio/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_gptimer/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_i2c/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_i2s/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_ledc/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_mcpwm/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_parlio/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_pcnt/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_rmt/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_sdm/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_spi/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_tsens/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_uart/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_usb_serial_jtag/Kconfig;/home/julien/esp/esp-idf/components/esp_event/Kconfig;/home/julien/esp/esp-idf/components/esp_gdbstub/Kconfig;/home/julien/esp/esp-idf/components/esp_http_client/Kconfig;/home/julien/esp/esp-idf/components/esp_http_server/Kconfig;/home/julien/esp/esp-idf/components/esp_https_ota/Kconfig;/home/julien/esp/esp-idf/components/esp_hw_support/Kconfig;/home/julien/esp/esp-idf/components/esp_mm/Kconfig;/home/julien/esp/esp-idf/components/esp_netif/Kconfig;/home/julien/esp/esp-idf/components/esp_partition/Kconfig;/home/julien/esp/esp-idf/components/esp_phy/Kconfig;/home/julien/esp/esp-idf/components/esp_pm/Kconfig;/home/julien/esp/esp-idf/components/esp_ringbuf/Kconfig;/home/julien/esp/esp-idf/components/esp_security/Kconfig;/home/julien/esp/esp-idf/components/esp_system/Kconfig;/home/julien/esp/esp-idf/components/esp_timer/Kconfig;/home/julien/esp/esp-idf/components/esp_wifi/Kconfig;/home/julien/esp/esp-idf/components/fatfs/Kconfig;/home/julien/esp/esp-idf/components/freertos/Kconfig;/home/julien/esp/esp-idf/components/hal/Kconfig;/home/julien/esp/esp-idf/components/heap/Kconfig;/home/julien/esp/esp-idf/components/log/Kconfig;/home/julien/esp/esp-idf/components/lwip/Kconfig;/home/julien/esp/esp-idf/components/mbedtls/Kconfig;/home/julien/esp/esp-idf/components/newlib/Kconfig;/home/julien/esp/esp-idf/components/nvs_flash/Kconfig;/home/julien/esp/esp-idf/components/protocomm/Kconfig;/home/julien/esp/esp-idf/components/pthread/Kconfig;/home/julien/esp/esp-idf/components/soc/Kconfig;/home/julien/esp/esp-idf/components/spi_flash/Kconfig;/home/julien/esp/esp-idf/components/tcp_transport/Kconfig;/home/julien/esp/esp-idf/components/vfs/Kconfig;/home/julien/esp/esp-idf/components/wear_levelling/Kconfig;/home/julien/esp/esp-idf/components/wifi_provisioning/Kconfig;/home/julien/Documents/esp32IDF/hello_world/components/esp32-wifi-manager/Kconfig;/home/julien/Documents/esp32IDF/hello_world/components/esp_websocket_client/Kconfig;/home/julien/Documents/esp32IDF/hello_world/managed_components/abobija__rc522/Kconfig;/home/julien/Documents/esp32IDF/hello_world/managed_components/espressif__mdns/Kconfig",
+        "COMPONENT_KCONFIGS" : "/home/julien/esp/esp-idf/components/app_trace/Kconfig;/home/julien/esp/esp-idf/components/bt/Kconfig;/home/julien/esp/esp-idf/components/console/Kconfig;/home/julien/esp/esp-idf/components/driver/Kconfig;/home/julien/esp/esp-idf/components/efuse/Kconfig;/home/julien/esp/esp-idf/components/esp-tls/Kconfig;/home/julien/esp/esp-idf/components/esp_adc/Kconfig;/home/julien/esp/esp-idf/components/esp_coex/Kconfig;/home/julien/esp/esp-idf/components/esp_common/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_ana_cmpr/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_cam/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_dac/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_gpio/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_gptimer/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_i2c/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_i2s/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_isp/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_jpeg/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_ledc/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_mcpwm/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_parlio/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_pcnt/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_rmt/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_sdm/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_spi/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_touch_sens/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_tsens/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_uart/Kconfig;/home/julien/esp/esp-idf/components/esp_driver_usb_serial_jtag/Kconfig;/home/julien/esp/esp-idf/components/esp_eth/Kconfig;/home/julien/esp/esp-idf/components/esp_event/Kconfig;/home/julien/esp/esp-idf/components/esp_gdbstub/Kconfig;/home/julien/esp/esp-idf/components/esp_hid/Kconfig;/home/julien/esp/esp-idf/components/esp_http_client/Kconfig;/home/julien/esp/esp-idf/components/esp_http_server/Kconfig;/home/julien/esp/esp-idf/components/esp_https_ota/Kconfig;/home/julien/esp/esp-idf/components/esp_https_server/Kconfig;/home/julien/esp/esp-idf/components/esp_hw_support/Kconfig;/home/julien/esp/esp-idf/components/esp_lcd/Kconfig;/home/julien/esp/esp-idf/components/esp_mm/Kconfig;/home/julien/esp/esp-idf/components/esp_netif/Kconfig;/home/julien/esp/esp-idf/components/esp_partition/Kconfig;/home/julien/esp/esp-idf/components/esp_phy/Kconfig;/home/julien/esp/esp-idf/components/esp_pm/Kconfig;/home/julien/esp/esp-idf/components/esp_psram/Kconfig;/home/julien/esp/esp-idf/components/esp_ringbuf/Kconfig;/home/julien/esp/esp-idf/components/esp_security/Kconfig;/home/julien/esp/esp-idf/components/esp_system/Kconfig;/home/julien/esp/esp-idf/components/esp_timer/Kconfig;/home/julien/esp/esp-idf/components/esp_wifi/Kconfig;/home/julien/esp/esp-idf/components/espcoredump/Kconfig;/home/julien/esp/esp-idf/components/fatfs/Kconfig;/home/julien/esp/esp-idf/components/freertos/Kconfig;/home/julien/esp/esp-idf/components/hal/Kconfig;/home/julien/esp/esp-idf/components/heap/Kconfig;/home/julien/esp/esp-idf/components/ieee802154/Kconfig;/home/julien/esp/esp-idf/components/log/Kconfig;/home/julien/esp/esp-idf/components/lwip/Kconfig;/home/julien/esp/esp-idf/components/mbedtls/Kconfig;/home/julien/esp/esp-idf/components/mqtt/esp-mqtt/Kconfig;/home/julien/esp/esp-idf/components/newlib/Kconfig;/home/julien/esp/esp-idf/components/nvs_flash/Kconfig;/home/julien/esp/esp-idf/components/nvs_sec_provider/Kconfig;/home/julien/esp/esp-idf/components/openthread/Kconfig;/home/julien/esp/esp-idf/components/protocomm/Kconfig;/home/julien/esp/esp-idf/components/pthread/Kconfig;/home/julien/esp/esp-idf/components/soc/Kconfig;/home/julien/esp/esp-idf/components/spi_flash/Kconfig;/home/julien/esp/esp-idf/components/spiffs/Kconfig;/home/julien/esp/esp-idf/components/tcp_transport/Kconfig;/home/julien/esp/esp-idf/components/ulp/Kconfig;/home/julien/esp/esp-idf/components/unity/Kconfig;/home/julien/esp/esp-idf/components/usb/Kconfig;/home/julien/esp/esp-idf/components/vfs/Kconfig;/home/julien/esp/esp-idf/components/wear_levelling/Kconfig;/home/julien/esp/esp-idf/components/wifi_provisioning/Kconfig;/home/julien/Documents/esp32IDF/hello_world/components/esp32-wifi-manager/Kconfig;/home/julien/Documents/esp32IDF/hello_world/components/esp_websocket_client/Kconfig;/home/julien/Documents/esp32IDF/hello_world/managed_components/abobija__rc522/Kconfig;/home/julien/Documents/esp32IDF/hello_world/managed_components/espressif__mdns/Kconfig",
         "COMPONENT_KCONFIGS_PROJBUILD" : "/home/julien/esp/esp-idf/components/bootloader/Kconfig.projbuild;/home/julien/esp/esp-idf/components/esp_app_format/Kconfig.projbuild;/home/julien/esp/esp-idf/components/esp_rom/Kconfig.projbuild;/home/julien/esp/esp-idf/components/esptool_py/Kconfig.projbuild;/home/julien/esp/esp-idf/components/partition_table/Kconfig.projbuild"
     },
     "common_component_reqs": [ "cxx", "newlib", "freertos", "esp_hw_support", "heap", "log", "soc", "hal", "esp_rom", "esp_common", "esp_system", "xtensa" ],
-    "build_components" : [ "abobija__rc522", "app_update", "bootloader", "bootloader_support", "bt", "console", "cxx", "driver", "efuse", "esp-tls", "esp32-wifi-manager", "esp_adc", "esp_app_format", "esp_bootloader_format", "esp_coex", "esp_common", "esp_driver_ana_cmpr", "esp_driver_dac", "esp_driver_gpio", "esp_driver_gptimer", "esp_driver_i2c", "esp_driver_i2s", "esp_driver_ledc", "esp_driver_mcpwm", "esp_driver_parlio", "esp_driver_pcnt", "esp_driver_rmt", "esp_driver_sdio", "esp_driver_sdm", "esp_driver_sdmmc", "esp_driver_sdspi", "esp_driver_spi", "esp_driver_tsens", "esp_driver_uart", "esp_driver_usb_serial_jtag", "esp_event", "esp_gdbstub", "esp_http_client", "esp_http_server", "esp_https_ota", "esp_hw_support", "esp_mm", "esp_netif", "esp_netif_stack", "esp_partition", "esp_phy", "esp_pm", "esp_ringbuf", "esp_rom", "esp_security", "esp_system", "esp_timer", "esp_vfs_console", "esp_websocket_client", "esp_wifi", "espressif__mdns", "esptool_py", "fatfs", "freertos", "hal", "heap", "http_parser", "json", "log", "lwip", "main", "mbedtls", "newlib", "nvs_flash", "partition_table", "protobuf-c", "protocomm", "pthread", "sdmmc", "soc", "spi_flash", "tcp_transport", "vfs", "wear_levelling", "wifi_provisioning", "wpa_supplicant", "xtensa", "" ],
-    "build_component_paths" : [ "/home/julien/Documents/esp32IDF/hello_world/managed_components/abobija__rc522", "/home/julien/esp/esp-idf/components/app_update", "/home/julien/esp/esp-idf/components/bootloader", "/home/julien/esp/esp-idf/components/bootloader_support", "/home/julien/esp/esp-idf/components/bt", "/home/julien/esp/esp-idf/components/console", "/home/julien/esp/esp-idf/components/cxx", "/home/julien/esp/esp-idf/components/driver", "/home/julien/esp/esp-idf/components/efuse", "/home/julien/esp/esp-idf/components/esp-tls", "/home/julien/Documents/esp32IDF/hello_world/components/esp32-wifi-manager", "/home/julien/esp/esp-idf/components/esp_adc", "/home/julien/esp/esp-idf/components/esp_app_format", "/home/julien/esp/esp-idf/components/esp_bootloader_format", "/home/julien/esp/esp-idf/components/esp_coex", "/home/julien/esp/esp-idf/components/esp_common", "/home/julien/esp/esp-idf/components/esp_driver_ana_cmpr", "/home/julien/esp/esp-idf/components/esp_driver_dac", "/home/julien/esp/esp-idf/components/esp_driver_gpio", "/home/julien/esp/esp-idf/components/esp_driver_gptimer", "/home/julien/esp/esp-idf/components/esp_driver_i2c", "/home/julien/esp/esp-idf/components/esp_driver_i2s", "/home/julien/esp/esp-idf/components/esp_driver_ledc", "/home/julien/esp/esp-idf/components/esp_driver_mcpwm", "/home/julien/esp/esp-idf/components/esp_driver_parlio", "/home/julien/esp/esp-idf/components/esp_driver_pcnt", "/home/julien/esp/esp-idf/components/esp_driver_rmt", "/home/julien/esp/esp-idf/components/esp_driver_sdio", "/home/julien/esp/esp-idf/components/esp_driver_sdm", "/home/julien/esp/esp-idf/components/esp_driver_sdmmc", "/home/julien/esp/esp-idf/components/esp_driver_sdspi", "/home/julien/esp/esp-idf/components/esp_driver_spi", "/home/julien/esp/esp-idf/components/esp_driver_tsens", "/home/julien/esp/esp-idf/components/esp_driver_uart", "/home/julien/esp/esp-idf/components/esp_driver_usb_serial_jtag", "/home/julien/esp/esp-idf/components/esp_event", "/home/julien/esp/esp-idf/components/esp_gdbstub", "/home/julien/esp/esp-idf/components/esp_http_client", "/home/julien/esp/esp-idf/components/esp_http_server", "/home/julien/esp/esp-idf/components/esp_https_ota", "/home/julien/esp/esp-idf/components/esp_hw_support", "/home/julien/esp/esp-idf/components/esp_mm", "/home/julien/esp/esp-idf/components/esp_netif", "/home/julien/esp/esp-idf/components/esp_netif_stack", "/home/julien/esp/esp-idf/components/esp_partition", "/home/julien/esp/esp-idf/components/esp_phy", "/home/julien/esp/esp-idf/components/esp_pm", "/home/julien/esp/esp-idf/components/esp_ringbuf", "/home/julien/esp/esp-idf/components/esp_rom", "/home/julien/esp/esp-idf/components/esp_security", "/home/julien/esp/esp-idf/components/esp_system", "/home/julien/esp/esp-idf/components/esp_timer", "/home/julien/esp/esp-idf/components/esp_vfs_console", "/home/julien/Documents/esp32IDF/hello_world/components/esp_websocket_client", "/home/julien/esp/esp-idf/components/esp_wifi", "/home/julien/Documents/esp32IDF/hello_world/managed_components/espressif__mdns", "/home/julien/esp/esp-idf/components/esptool_py", "/home/julien/esp/esp-idf/components/fatfs", "/home/julien/esp/esp-idf/components/freertos", "/home/julien/esp/esp-idf/components/hal", "/home/julien/esp/esp-idf/components/heap", "/home/julien/esp/esp-idf/components/http_parser", "/home/julien/esp/esp-idf/components/json", "/home/julien/esp/esp-idf/components/log", "/home/julien/esp/esp-idf/components/lwip", "/home/julien/Documents/esp32IDF/hello_world/main", "/home/julien/esp/esp-idf/components/mbedtls", "/home/julien/esp/esp-idf/components/newlib", "/home/julien/esp/esp-idf/components/nvs_flash", "/home/julien/esp/esp-idf/components/partition_table", "/home/julien/esp/esp-idf/components/protobuf-c", "/home/julien/esp/esp-idf/components/protocomm", "/home/julien/esp/esp-idf/components/pthread", "/home/julien/esp/esp-idf/components/sdmmc", "/home/julien/esp/esp-idf/components/soc", "/home/julien/esp/esp-idf/components/spi_flash", "/home/julien/esp/esp-idf/components/tcp_transport", "/home/julien/esp/esp-idf/components/vfs", "/home/julien/esp/esp-idf/components/wear_levelling", "/home/julien/esp/esp-idf/components/wifi_provisioning", "/home/julien/esp/esp-idf/components/wpa_supplicant", "/home/julien/esp/esp-idf/components/xtensa", "" ],
+    "build_components" : [ "abobija__rc522", "app_trace", "app_update", "bootloader", "bootloader_support", "bt", "cmock", "console", "cxx", "driver", "efuse", "esp-tls", "esp32-wifi-manager", "esp_adc", "esp_app_format", "esp_bootloader_format", "esp_coex", "esp_common", "esp_driver_ana_cmpr", "esp_driver_bitscrambler", "esp_driver_cam", "esp_driver_dac", "esp_driver_gpio", "esp_driver_gptimer", "esp_driver_i2c", "esp_driver_i2s", "esp_driver_isp", "esp_driver_jpeg", "esp_driver_ledc", "esp_driver_mcpwm", "esp_driver_parlio", "esp_driver_pcnt", "esp_driver_ppa", "esp_driver_rmt", "esp_driver_sdio", "esp_driver_sdm", "esp_driver_sdmmc", "esp_driver_sdspi", "esp_driver_spi", "esp_driver_touch_sens", "esp_driver_tsens", "esp_driver_uart", "esp_driver_usb_serial_jtag", "esp_eth", "esp_event", "esp_gdbstub", "esp_hid", "esp_http_client", "esp_http_server", "esp_https_ota", "esp_https_server", "esp_hw_support", "esp_lcd", "esp_local_ctrl", "esp_mm", "esp_netif", "esp_netif_stack", "esp_partition", "esp_phy", "esp_pm", "esp_psram", "esp_ringbuf", "esp_rom", "esp_security", "esp_system", "esp_timer", "esp_vfs_console", "esp_websocket_client", "esp_wifi", "espcoredump", "espressif__mdns", "esptool_py", "fatfs", "freertos", "hal", "heap", "http_parser", "idf_test", "ieee802154", "json", "log", "lwip", "main", "mbedtls", "mqtt", "newlib", "nvs_flash", "nvs_sec_provider", "openthread", "partition_table", "perfmon", "protobuf-c", "protocomm", "pthread", "rt", "sdmmc", "soc", "spi_flash", "spiffs", "tcp_transport", "ulp", "unity", "usb", "vfs", "wear_levelling", "wifi_provisioning", "wpa_supplicant", "xtensa", "" ],
+    "build_component_paths" : [ "/home/julien/Documents/esp32IDF/hello_world/managed_components/abobija__rc522", "/home/julien/esp/esp-idf/components/app_trace", "/home/julien/esp/esp-idf/components/app_update", "/home/julien/esp/esp-idf/components/bootloader", "/home/julien/esp/esp-idf/components/bootloader_support", "/home/julien/esp/esp-idf/components/bt", "/home/julien/esp/esp-idf/components/cmock", "/home/julien/esp/esp-idf/components/console", "/home/julien/esp/esp-idf/components/cxx", "/home/julien/esp/esp-idf/components/driver", "/home/julien/esp/esp-idf/components/efuse", "/home/julien/esp/esp-idf/components/esp-tls", "/home/julien/Documents/esp32IDF/hello_world/components/esp32-wifi-manager", "/home/julien/esp/esp-idf/components/esp_adc", "/home/julien/esp/esp-idf/components/esp_app_format", "/home/julien/esp/esp-idf/components/esp_bootloader_format", "/home/julien/esp/esp-idf/components/esp_coex", "/home/julien/esp/esp-idf/components/esp_common", "/home/julien/esp/esp-idf/components/esp_driver_ana_cmpr", "/home/julien/esp/esp-idf/components/esp_driver_bitscrambler", "/home/julien/esp/esp-idf/components/esp_driver_cam", "/home/julien/esp/esp-idf/components/esp_driver_dac", "/home/julien/esp/esp-idf/components/esp_driver_gpio", "/home/julien/esp/esp-idf/components/esp_driver_gptimer", "/home/julien/esp/esp-idf/components/esp_driver_i2c", "/home/julien/esp/esp-idf/components/esp_driver_i2s", "/home/julien/esp/esp-idf/components/esp_driver_isp", "/home/julien/esp/esp-idf/components/esp_driver_jpeg", "/home/julien/esp/esp-idf/components/esp_driver_ledc", "/home/julien/esp/esp-idf/components/esp_driver_mcpwm", "/home/julien/esp/esp-idf/components/esp_driver_parlio", "/home/julien/esp/esp-idf/components/esp_driver_pcnt", "/home/julien/esp/esp-idf/components/esp_driver_ppa", "/home/julien/esp/esp-idf/components/esp_driver_rmt", "/home/julien/esp/esp-idf/components/esp_driver_sdio", "/home/julien/esp/esp-idf/components/esp_driver_sdm", "/home/julien/esp/esp-idf/components/esp_driver_sdmmc", "/home/julien/esp/esp-idf/components/esp_driver_sdspi", "/home/julien/esp/esp-idf/components/esp_driver_spi", "/home/julien/esp/esp-idf/components/esp_driver_touch_sens", "/home/julien/esp/esp-idf/components/esp_driver_tsens", "/home/julien/esp/esp-idf/components/esp_driver_uart", "/home/julien/esp/esp-idf/components/esp_driver_usb_serial_jtag", "/home/julien/esp/esp-idf/components/esp_eth", "/home/julien/esp/esp-idf/components/esp_event", "/home/julien/esp/esp-idf/components/esp_gdbstub", "/home/julien/esp/esp-idf/components/esp_hid", "/home/julien/esp/esp-idf/components/esp_http_client", "/home/julien/esp/esp-idf/components/esp_http_server", "/home/julien/esp/esp-idf/components/esp_https_ota", "/home/julien/esp/esp-idf/components/esp_https_server", "/home/julien/esp/esp-idf/components/esp_hw_support", "/home/julien/esp/esp-idf/components/esp_lcd", "/home/julien/esp/esp-idf/components/esp_local_ctrl", "/home/julien/esp/esp-idf/components/esp_mm", "/home/julien/esp/esp-idf/components/esp_netif", "/home/julien/esp/esp-idf/components/esp_netif_stack", "/home/julien/esp/esp-idf/components/esp_partition", "/home/julien/esp/esp-idf/components/esp_phy", "/home/julien/esp/esp-idf/components/esp_pm", "/home/julien/esp/esp-idf/components/esp_psram", "/home/julien/esp/esp-idf/components/esp_ringbuf", "/home/julien/esp/esp-idf/components/esp_rom", "/home/julien/esp/esp-idf/components/esp_security", "/home/julien/esp/esp-idf/components/esp_system", "/home/julien/esp/esp-idf/components/esp_timer", "/home/julien/esp/esp-idf/components/esp_vfs_console", "/home/julien/Documents/esp32IDF/hello_world/components/esp_websocket_client", "/home/julien/esp/esp-idf/components/esp_wifi", "/home/julien/esp/esp-idf/components/espcoredump", "/home/julien/Documents/esp32IDF/hello_world/managed_components/espressif__mdns", "/home/julien/esp/esp-idf/components/esptool_py", "/home/julien/esp/esp-idf/components/fatfs", "/home/julien/esp/esp-idf/components/freertos", "/home/julien/esp/esp-idf/components/hal", "/home/julien/esp/esp-idf/components/heap", "/home/julien/esp/esp-idf/components/http_parser", "/home/julien/esp/esp-idf/components/idf_test", "/home/julien/esp/esp-idf/components/ieee802154", "/home/julien/esp/esp-idf/components/json", "/home/julien/esp/esp-idf/components/log", "/home/julien/esp/esp-idf/components/lwip", "/home/julien/Documents/esp32IDF/hello_world/main", "/home/julien/esp/esp-idf/components/mbedtls", "/home/julien/esp/esp-idf/components/mqtt", "/home/julien/esp/esp-idf/components/newlib", "/home/julien/esp/esp-idf/components/nvs_flash", "/home/julien/esp/esp-idf/components/nvs_sec_provider", "/home/julien/esp/esp-idf/components/openthread", "/home/julien/esp/esp-idf/components/partition_table", "/home/julien/esp/esp-idf/components/perfmon", "/home/julien/esp/esp-idf/components/protobuf-c", "/home/julien/esp/esp-idf/components/protocomm", "/home/julien/esp/esp-idf/components/pthread", "/home/julien/esp/esp-idf/components/rt", "/home/julien/esp/esp-idf/components/sdmmc", "/home/julien/esp/esp-idf/components/soc", "/home/julien/esp/esp-idf/components/spi_flash", "/home/julien/esp/esp-idf/components/spiffs", "/home/julien/esp/esp-idf/components/tcp_transport", "/home/julien/esp/esp-idf/components/ulp", "/home/julien/esp/esp-idf/components/unity", "/home/julien/esp/esp-idf/components/usb", "/home/julien/esp/esp-idf/components/vfs", "/home/julien/esp/esp-idf/components/wear_levelling", "/home/julien/esp/esp-idf/components/wifi_provisioning", "/home/julien/esp/esp-idf/components/wpa_supplicant", "/home/julien/esp/esp-idf/components/xtensa", "" ],
     "build_component_info" : {
         "abobija__rc522": {
             "alias": "idf::abobija__rc522",
@@ -41,6 +41,21 @@
             "managed_priv_reqs": [],
             "file": "/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/abobija__rc522/libabobija__rc522.a",
             "sources": [ "/home/julien/Documents/esp32IDF/hello_world/managed_components/abobija__rc522/src/rc522.c", "/home/julien/Documents/esp32IDF/hello_world/managed_components/abobija__rc522/src/rc522_helpers.c", "/home/julien/Documents/esp32IDF/hello_world/managed_components/abobija__rc522/src/rc522_pcd.c", "/home/julien/Documents/esp32IDF/hello_world/managed_components/abobija__rc522/src/rc522_picc.c", "/home/julien/Documents/esp32IDF/hello_world/managed_components/abobija__rc522/src/picc/rc522_mifare.c", "/home/julien/Documents/esp32IDF/hello_world/managed_components/abobija__rc522/src/picc/rc522_nxp.c", "/home/julien/Documents/esp32IDF/hello_world/managed_components/abobija__rc522/src/rc522_driver.c", "/home/julien/Documents/esp32IDF/hello_world/managed_components/abobija__rc522/src/driver/rc522_spi.c", "/home/julien/Documents/esp32IDF/hello_world/managed_components/abobija__rc522/src/driver/rc522_i2c.c" ],
+            "include_dirs": [ "include" ]
+        },
+        "app_trace": {
+            "alias": "idf::app_trace",
+            "target": "___idf_app_trace",
+            "prefix": "idf",
+            "dir": "/home/julien/esp/esp-idf/components/app_trace",
+            "type": "LIBRARY",
+            "lib": "__idf_app_trace",
+            "reqs": [ "esp_timer" ],
+            "priv_reqs": [ "esp_driver_gptimer", "esp_driver_gpio", "esp_driver_uart" ],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/app_trace/libapp_trace.a",
+            "sources": [ "/home/julien/esp/esp-idf/components/app_trace/app_trace.c", "/home/julien/esp/esp-idf/components/app_trace/app_trace_util.c", "/home/julien/esp/esp-idf/components/app_trace/host_file_io.c", "/home/julien/esp/esp-idf/components/app_trace/port/port_uart.c" ],
             "include_dirs": [ "include" ]
         },
         "app_update": {
@@ -102,6 +117,21 @@
             "file": "",
             "sources": [],
             "include_dirs": []
+        },
+        "cmock": {
+            "alias": "idf::cmock",
+            "target": "___idf_cmock",
+            "prefix": "idf",
+            "dir": "/home/julien/esp/esp-idf/components/cmock",
+            "type": "LIBRARY",
+            "lib": "__idf_cmock",
+            "reqs": [ "unity" ],
+            "priv_reqs": [],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/cmock/libcmock.a",
+            "sources": [ "/home/julien/esp/esp-idf/components/cmock/CMock/src/cmock.c" ],
+            "include_dirs": [ "CMock/src" ]
         },
         "console": {
             "alias": "idf::console",
@@ -283,6 +313,36 @@
             "sources": [],
             "include_dirs": [ "include" ]
         },
+        "esp_driver_bitscrambler": {
+            "alias": "idf::esp_driver_bitscrambler",
+            "target": "___idf_esp_driver_bitscrambler",
+            "prefix": "idf",
+            "dir": "/home/julien/esp/esp-idf/components/esp_driver_bitscrambler",
+            "type": "CONFIG_ONLY",
+            "lib": "__idf_esp_driver_bitscrambler",
+            "reqs": [],
+            "priv_reqs": [ "esp_mm" ],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "",
+            "sources": [],
+            "include_dirs": [ "include" ]
+        },
+        "esp_driver_cam": {
+            "alias": "idf::esp_driver_cam",
+            "target": "___idf_esp_driver_cam",
+            "prefix": "idf",
+            "dir": "/home/julien/esp/esp-idf/components/esp_driver_cam",
+            "type": "LIBRARY",
+            "lib": "__idf_esp_driver_cam",
+            "reqs": [ "esp_driver_isp", "esp_mm" ],
+            "priv_reqs": [ "esp_driver_gpio" ],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/esp_driver_cam/libesp_driver_cam.a",
+            "sources": [ "/home/julien/esp/esp-idf/components/esp_driver_cam/esp_cam_ctlr.c", "/home/julien/esp/esp-idf/components/esp_driver_cam/dvp_share_ctrl.c" ],
+            "include_dirs": [ "include", "interface" ]
+        },
         "esp_driver_dac": {
             "alias": "idf::esp_driver_dac",
             "target": "___idf_esp_driver_dac",
@@ -358,6 +418,36 @@
             "sources": [ "/home/julien/esp/esp-idf/components/esp_driver_i2s/i2s_common.c", "/home/julien/esp/esp-idf/components/esp_driver_i2s/i2s_std.c", "/home/julien/esp/esp-idf/components/esp_driver_i2s/i2s_pdm.c", "/home/julien/esp/esp-idf/components/esp_driver_i2s/i2s_platform.c" ],
             "include_dirs": [ "include" ]
         },
+        "esp_driver_isp": {
+            "alias": "idf::esp_driver_isp",
+            "target": "___idf_esp_driver_isp",
+            "prefix": "idf",
+            "dir": "/home/julien/esp/esp-idf/components/esp_driver_isp",
+            "type": "CONFIG_ONLY",
+            "lib": "__idf_esp_driver_isp",
+            "reqs": [ "esp_mm" ],
+            "priv_reqs": [ "esp_driver_gpio" ],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "",
+            "sources": [],
+            "include_dirs": [ "include" ]
+        },
+        "esp_driver_jpeg": {
+            "alias": "idf::esp_driver_jpeg",
+            "target": "___idf_esp_driver_jpeg",
+            "prefix": "idf",
+            "dir": "/home/julien/esp/esp-idf/components/esp_driver_jpeg",
+            "type": "CONFIG_ONLY",
+            "lib": "__idf_esp_driver_jpeg",
+            "reqs": [],
+            "priv_reqs": [ "esp_mm", "esp_pm" ],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "",
+            "sources": [],
+            "include_dirs": [ "include" ]
+        },
         "esp_driver_ledc": {
             "alias": "idf::esp_driver_ledc",
             "target": "___idf_esp_driver_ledc",
@@ -416,6 +506,21 @@
             "managed_priv_reqs": [],
             "file": "/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/esp_driver_pcnt/libesp_driver_pcnt.a",
             "sources": [ "/home/julien/esp/esp-idf/components/esp_driver_pcnt/src/pulse_cnt.c" ],
+            "include_dirs": [ "include" ]
+        },
+        "esp_driver_ppa": {
+            "alias": "idf::esp_driver_ppa",
+            "target": "___idf_esp_driver_ppa",
+            "prefix": "idf",
+            "dir": "/home/julien/esp/esp-idf/components/esp_driver_ppa",
+            "type": "CONFIG_ONLY",
+            "lib": "__idf_esp_driver_ppa",
+            "reqs": [],
+            "priv_reqs": [ "esp_mm", "esp_pm" ],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "",
+            "sources": [],
             "include_dirs": [ "include" ]
         },
         "esp_driver_rmt": {
@@ -508,6 +613,21 @@
             "sources": [ "/home/julien/esp/esp-idf/components/esp_driver_spi/src/gpspi/spi_common.c", "/home/julien/esp/esp-idf/components/esp_driver_spi/src/gpspi/spi_master.c", "/home/julien/esp/esp-idf/components/esp_driver_spi/src/gpspi/spi_slave.c", "/home/julien/esp/esp-idf/components/esp_driver_spi/src/gpspi/spi_dma.c" ],
             "include_dirs": [ "include" ]
         },
+        "esp_driver_touch_sens": {
+            "alias": "idf::esp_driver_touch_sens",
+            "target": "___idf_esp_driver_touch_sens",
+            "prefix": "idf",
+            "dir": "/home/julien/esp/esp-idf/components/esp_driver_touch_sens",
+            "type": "LIBRARY",
+            "lib": "__idf_esp_driver_touch_sens",
+            "reqs": [],
+            "priv_reqs": [ "esp_driver_gpio", "esp_timer" ],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/esp_driver_touch_sens/libesp_driver_touch_sens.a",
+            "sources": [ "/home/julien/esp/esp-idf/components/esp_driver_touch_sens/common/touch_sens_common.c", "/home/julien/esp/esp-idf/components/esp_driver_touch_sens/hw_ver1/touch_version_specific.c" ],
+            "include_dirs": [ "include", "hw_ver1/include" ]
+        },
         "esp_driver_tsens": {
             "alias": "idf::esp_driver_tsens",
             "target": "___idf_esp_driver_tsens",
@@ -553,6 +673,21 @@
             "sources": [],
             "include_dirs": [ "include" ]
         },
+        "esp_eth": {
+            "alias": "idf::esp_eth",
+            "target": "___idf_esp_eth",
+            "prefix": "idf",
+            "dir": "/home/julien/esp/esp-idf/components/esp_eth",
+            "type": "LIBRARY",
+            "lib": "__idf_esp_eth",
+            "reqs": [ "esp_event" ],
+            "priv_reqs": [ "log", "esp_timer", "esp_driver_spi", "esp_driver_gpio" ],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/esp_eth/libesp_eth.a",
+            "sources": [ "/home/julien/esp/esp-idf/components/esp_eth/src/esp_eth.c", "/home/julien/esp/esp-idf/components/esp_eth/src/phy/esp_eth_phy_802_3.c", "/home/julien/esp/esp-idf/components/esp_eth/src/esp_eth_netif_glue.c", "/home/julien/esp/esp-idf/components/esp_eth/src/mac/esp_eth_mac_esp.c", "/home/julien/esp/esp-idf/components/esp_eth/src/mac/esp_eth_mac_esp_dma.c", "/home/julien/esp/esp-idf/components/esp_eth/src/mac/esp_eth_mac_esp_gpio.c", "/home/julien/esp/esp-idf/components/esp_eth/src/phy/esp_eth_phy_generic.c", "/home/julien/esp/esp-idf/components/esp_eth/src/phy/esp_eth_phy_dp83848.c", "/home/julien/esp/esp-idf/components/esp_eth/src/phy/esp_eth_phy_ip101.c", "/home/julien/esp/esp-idf/components/esp_eth/src/phy/esp_eth_phy_ksz80xx.c", "/home/julien/esp/esp-idf/components/esp_eth/src/phy/esp_eth_phy_lan87xx.c", "/home/julien/esp/esp-idf/components/esp_eth/src/phy/esp_eth_phy_rtl8201.c" ],
+            "include_dirs": [ "include" ]
+        },
         "esp_event": {
             "alias": "idf::esp_event",
             "target": "___idf_esp_event",
@@ -581,6 +716,21 @@
             "managed_priv_reqs": [],
             "file": "/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/esp_gdbstub/libesp_gdbstub.a",
             "sources": [ "/home/julien/esp/esp-idf/components/esp_gdbstub/src/gdbstub.c", "/home/julien/esp/esp-idf/components/esp_gdbstub/src/gdbstub_transport.c", "/home/julien/esp/esp-idf/components/esp_gdbstub/src/packet.c", "/home/julien/esp/esp-idf/components/esp_gdbstub/src/port/xtensa/gdbstub_xtensa.c", "/home/julien/esp/esp-idf/components/esp_gdbstub/src/port/xtensa/gdbstub-entry.S", "/home/julien/esp/esp-idf/components/esp_gdbstub/src/port/xtensa/xt_debugexception.S" ],
+            "include_dirs": [ "include" ]
+        },
+        "esp_hid": {
+            "alias": "idf::esp_hid",
+            "target": "___idf_esp_hid",
+            "prefix": "idf",
+            "dir": "/home/julien/esp/esp-idf/components/esp_hid",
+            "type": "LIBRARY",
+            "lib": "__idf_esp_hid",
+            "reqs": [ "esp_event", "bt" ],
+            "priv_reqs": [],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/esp_hid/libesp_hid.a",
+            "sources": [ "/home/julien/esp/esp-idf/components/esp_hid/src/esp_hidd.c", "/home/julien/esp/esp-idf/components/esp_hid/src/esp_hidh.c", "/home/julien/esp/esp-idf/components/esp_hid/src/esp_hid_common.c" ],
             "include_dirs": [ "include" ]
         },
         "esp_http_client": {
@@ -628,6 +778,21 @@
             "sources": [ "/home/julien/esp/esp-idf/components/esp_https_ota/src/esp_https_ota.c" ],
             "include_dirs": [ "include" ]
         },
+        "esp_https_server": {
+            "alias": "idf::esp_https_server",
+            "target": "___idf_esp_https_server",
+            "prefix": "idf",
+            "dir": "/home/julien/esp/esp-idf/components/esp_https_server",
+            "type": "LIBRARY",
+            "lib": "__idf_esp_https_server",
+            "reqs": [ "esp_http_server", "esp-tls", "esp_event" ],
+            "priv_reqs": [ "lwip" ],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/esp_https_server/libesp_https_server.a",
+            "sources": [ "/home/julien/esp/esp-idf/components/esp_https_server/src/https_server.c" ],
+            "include_dirs": [ "include" ]
+        },
         "esp_hw_support": {
             "alias": "idf::esp_hw_support",
             "target": "___idf_esp_hw_support",
@@ -642,6 +807,36 @@
             "file": "/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/esp_hw_support/libesp_hw_support.a",
             "sources": [ "/home/julien/esp/esp-idf/components/esp_hw_support/cpu.c", "/home/julien/esp/esp-idf/components/esp_hw_support/port/esp32/esp_cpu_intr.c", "/home/julien/esp/esp-idf/components/esp_hw_support/esp_memory_utils.c", "/home/julien/esp/esp-idf/components/esp_hw_support/port/esp32/cpu_region_protect.c", "/home/julien/esp/esp-idf/components/esp_hw_support/esp_clk.c", "/home/julien/esp/esp-idf/components/esp_hw_support/clk_ctrl_os.c", "/home/julien/esp/esp-idf/components/esp_hw_support/hw_random.c", "/home/julien/esp/esp-idf/components/esp_hw_support/intr_alloc.c", "/home/julien/esp/esp-idf/components/esp_hw_support/mac_addr.c", "/home/julien/esp/esp-idf/components/esp_hw_support/periph_ctrl.c", "/home/julien/esp/esp-idf/components/esp_hw_support/revision.c", "/home/julien/esp/esp-idf/components/esp_hw_support/rtc_module.c", "/home/julien/esp/esp-idf/components/esp_hw_support/regi2c_ctrl.c", "/home/julien/esp/esp-idf/components/esp_hw_support/esp_gpio_reserve.c", "/home/julien/esp/esp-idf/components/esp_hw_support/sar_periph_ctrl_common.c", "/home/julien/esp/esp-idf/components/esp_hw_support/port/esp32/io_mux.c", "/home/julien/esp/esp-idf/components/esp_hw_support/port/esp32/esp_clk_tree.c", "/home/julien/esp/esp-idf/components/esp_hw_support/port/esp_clk_tree_common.c", "/home/julien/esp/esp-idf/components/esp_hw_support/dma/esp_dma_utils.c", "/home/julien/esp/esp-idf/components/esp_hw_support/dma/gdma_link.c", "/home/julien/esp/esp-idf/components/esp_hw_support/spi_bus_lock.c", "/home/julien/esp/esp-idf/components/esp_hw_support/spi_share_hw_ctrl.c", "/home/julien/esp/esp-idf/components/esp_hw_support/adc_share_hw_ctrl.c", "/home/julien/esp/esp-idf/components/esp_hw_support/sleep_modem.c", "/home/julien/esp/esp-idf/components/esp_hw_support/sleep_modes.c", "/home/julien/esp/esp-idf/components/esp_hw_support/sleep_console.c", "/home/julien/esp/esp-idf/components/esp_hw_support/sleep_usb.c", "/home/julien/esp/esp-idf/components/esp_hw_support/sleep_gpio.c", "/home/julien/esp/esp-idf/components/esp_hw_support/sleep_event.c", "/home/julien/esp/esp-idf/components/esp_hw_support/rtc_wdt.c", "/home/julien/esp/esp-idf/components/esp_hw_support/mspi_timing_tuning/mspi_timing_tuning.c", "/home/julien/esp/esp-idf/components/esp_hw_support/sleep_wake_stub.c", "/home/julien/esp/esp-idf/components/esp_hw_support/esp_clock_output.c", "/home/julien/esp/esp-idf/components/esp_hw_support/power_supply/brownout.c", "/home/julien/esp/esp-idf/components/esp_hw_support/port/esp32/rtc_clk.c", "/home/julien/esp/esp-idf/components/esp_hw_support/port/esp32/rtc_clk_init.c", "/home/julien/esp/esp-idf/components/esp_hw_support/port/esp32/rtc_init.c", "/home/julien/esp/esp-idf/components/esp_hw_support/port/esp32/rtc_sleep.c", "/home/julien/esp/esp-idf/components/esp_hw_support/port/esp32/rtc_time.c", "/home/julien/esp/esp-idf/components/esp_hw_support/port/esp32/chip_info.c", "/home/julien/esp/esp-idf/components/esp_hw_support/port/esp32/cache_sram_mmu.c", "/home/julien/esp/esp-idf/components/esp_hw_support/port/esp32/sar_periph_ctrl.c", "/home/julien/esp/esp-idf/components/esp_hw_support/lowpower" ],
             "include_dirs": [ "include", "include/soc", "include/soc/esp32", "dma/include", "ldo/include", "debug_probe/include", "mspi_timing_tuning/include", "power_supply/include" ]
+        },
+        "esp_lcd": {
+            "alias": "idf::esp_lcd",
+            "target": "___idf_esp_lcd",
+            "prefix": "idf",
+            "dir": "/home/julien/esp/esp-idf/components/esp_lcd",
+            "type": "LIBRARY",
+            "lib": "__idf_esp_lcd",
+            "reqs": [ "driver", "esp_driver_gpio", "esp_driver_i2c", "esp_driver_spi" ],
+            "priv_reqs": [ "esp_mm", "esp_psram", "esp_pm", "esp_driver_i2s" ],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/esp_lcd/libesp_lcd.a",
+            "sources": [ "/home/julien/esp/esp-idf/components/esp_lcd/src/esp_lcd_common.c", "/home/julien/esp/esp-idf/components/esp_lcd/src/esp_lcd_panel_io.c", "/home/julien/esp/esp-idf/components/esp_lcd/src/esp_lcd_panel_nt35510.c", "/home/julien/esp/esp-idf/components/esp_lcd/src/esp_lcd_panel_ssd1306.c", "/home/julien/esp/esp-idf/components/esp_lcd/src/esp_lcd_panel_st7789.c", "/home/julien/esp/esp-idf/components/esp_lcd/src/esp_lcd_panel_ops.c", "/home/julien/esp/esp-idf/components/esp_lcd/i2c/esp_lcd_panel_io_i2c_v1.c", "/home/julien/esp/esp-idf/components/esp_lcd/i2c/esp_lcd_panel_io_i2c_v2.c", "/home/julien/esp/esp-idf/components/esp_lcd/spi/esp_lcd_panel_io_spi.c", "/home/julien/esp/esp-idf/components/esp_lcd/i80/esp_lcd_panel_io_i2s.c" ],
+            "include_dirs": [ "include", "interface" ]
+        },
+        "esp_local_ctrl": {
+            "alias": "idf::esp_local_ctrl",
+            "target": "___idf_esp_local_ctrl",
+            "prefix": "idf",
+            "dir": "/home/julien/esp/esp-idf/components/esp_local_ctrl",
+            "type": "LIBRARY",
+            "lib": "__idf_esp_local_ctrl",
+            "reqs": [ "protocomm", "esp_https_server" ],
+            "priv_reqs": [ "protobuf-c" ],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/esp_local_ctrl/libesp_local_ctrl.a",
+            "sources": [ "/home/julien/esp/esp-idf/components/esp_local_ctrl/src/esp_local_ctrl.c", "/home/julien/esp/esp-idf/components/esp_local_ctrl/src/esp_local_ctrl_handler.c", "/home/julien/esp/esp-idf/components/esp_local_ctrl/proto-c/esp_local_ctrl.pb-c.c", "/home/julien/esp/esp-idf/components/esp_local_ctrl/src/esp_local_ctrl_transport_httpd.c" ],
+            "include_dirs": [ "include" ]
         },
         "esp_mm": {
             "alias": "idf::esp_mm",
@@ -731,6 +926,21 @@
             "managed_priv_reqs": [],
             "file": "/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/esp_pm/libesp_pm.a",
             "sources": [ "/home/julien/esp/esp-idf/components/esp_pm/pm_locks.c", "/home/julien/esp/esp-idf/components/esp_pm/pm_trace.c", "/home/julien/esp/esp-idf/components/esp_pm/pm_impl.c" ],
+            "include_dirs": [ "include" ]
+        },
+        "esp_psram": {
+            "alias": "idf::esp_psram",
+            "target": "___idf_esp_psram",
+            "prefix": "idf",
+            "dir": "/home/julien/esp/esp-idf/components/esp_psram",
+            "type": "CONFIG_ONLY",
+            "lib": "__idf_esp_psram",
+            "reqs": [],
+            "priv_reqs": [ "heap", "spi_flash", "esp_mm", "bootloader_support", "esp_driver_spi", "esp_driver_gpio" ],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "",
+            "sources": [],
             "include_dirs": [ "include" ]
         },
         "esp_ringbuf": {
@@ -853,6 +1063,21 @@
             "sources": [ "/home/julien/esp/esp-idf/components/esp_wifi/src/lib_printf.c", "/home/julien/esp/esp-idf/components/esp_wifi/src/mesh_event.c", "/home/julien/esp/esp-idf/components/esp_wifi/src/smartconfig.c", "/home/julien/esp/esp-idf/components/esp_wifi/src/wifi_init.c", "/home/julien/esp/esp-idf/components/esp_wifi/src/wifi_default.c", "/home/julien/esp/esp-idf/components/esp_wifi/src/wifi_netif.c", "/home/julien/esp/esp-idf/components/esp_wifi/src/wifi_default_ap.c", "/home/julien/esp/esp-idf/components/esp_wifi/esp32/esp_adapter.c", "/home/julien/esp/esp-idf/components/esp_wifi/src/smartconfig_ack.c" ],
             "include_dirs": [ "include", "include/local", "wifi_apps/include", "wifi_apps/nan_app/include" ]
         },
+        "espcoredump": {
+            "alias": "idf::espcoredump",
+            "target": "___idf_espcoredump",
+            "prefix": "idf",
+            "dir": "/home/julien/esp/esp-idf/components/espcoredump",
+            "type": "LIBRARY",
+            "lib": "__idf_espcoredump",
+            "reqs": [],
+            "priv_reqs": [ "esp_partition", "spi_flash", "bootloader_support", "mbedtls", "esp_rom", "soc", "esp_system", "esp_driver_gpio" ],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/espcoredump/libespcoredump.a",
+            "sources": [ "/home/julien/esp/esp-idf/components/espcoredump/src/core_dump_init.c", "/home/julien/esp/esp-idf/components/espcoredump/src/core_dump_common.c", "/home/julien/esp/esp-idf/components/espcoredump/src/core_dump_flash.c", "/home/julien/esp/esp-idf/components/espcoredump/src/core_dump_uart.c", "/home/julien/esp/esp-idf/components/espcoredump/src/core_dump_elf.c", "/home/julien/esp/esp-idf/components/espcoredump/src/core_dump_binary.c", "/home/julien/esp/esp-idf/components/espcoredump/src/core_dump_sha.c", "/home/julien/esp/esp-idf/components/espcoredump/src/core_dump_crc.c", "/home/julien/esp/esp-idf/components/espcoredump/src/port/xtensa/core_dump_port.c" ],
+            "include_dirs": [ "include", "include/port/xtensa" ]
+        },
         "espressif__mdns": {
             "alias": "idf::espressif__mdns",
             "target": "___idf_espressif__mdns",
@@ -925,7 +1150,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/hal/libhal.a",
-            "sources": [ "/home/julien/esp/esp-idf/components/hal/hal_utils.c", "/home/julien/esp/esp-idf/components/hal/mpu_hal.c", "/home/julien/esp/esp-idf/components/hal/efuse_hal.c", "/home/julien/esp/esp-idf/components/hal/esp32/efuse_hal.c", "/home/julien/esp/esp-idf/components/hal/wdt_hal_iram.c", "/home/julien/esp/esp-idf/components/hal/mmu_hal.c", "/home/julien/esp/esp-idf/components/hal/esp32/cache_hal_esp32.c", "/home/julien/esp/esp-idf/components/hal/color_hal.c", "/home/julien/esp/esp-idf/components/hal/spi_flash_hal.c", "/home/julien/esp/esp-idf/components/hal/spi_flash_hal_iram.c", "/home/julien/esp/esp-idf/components/hal/spi_flash_encrypt_hal_iram.c", "/home/julien/esp/esp-idf/components/hal/esp32/clk_tree_hal.c", "/home/julien/esp/esp-idf/components/hal/uart_hal.c", "/home/julien/esp/esp-idf/components/hal/uart_hal_iram.c", "/home/julien/esp/esp-idf/components/hal/gpio_hal.c", "/home/julien/esp/esp-idf/components/hal/rtc_io_hal.c", "/home/julien/esp/esp-idf/components/hal/timer_hal.c", "/home/julien/esp/esp-idf/components/hal/ledc_hal.c", "/home/julien/esp/esp-idf/components/hal/ledc_hal_iram.c", "/home/julien/esp/esp-idf/components/hal/i2c_hal.c", "/home/julien/esp/esp-idf/components/hal/i2c_hal_iram.c", "/home/julien/esp/esp-idf/components/hal/rmt_hal.c", "/home/julien/esp/esp-idf/components/hal/pcnt_hal.c", "/home/julien/esp/esp-idf/components/hal/mcpwm_hal.c", "/home/julien/esp/esp-idf/components/hal/twai_hal.c", "/home/julien/esp/esp-idf/components/hal/twai_hal_iram.c", "/home/julien/esp/esp-idf/components/hal/i2s_hal.c", "/home/julien/esp/esp-idf/components/hal/sdm_hal.c", "/home/julien/esp/esp-idf/components/hal/sdmmc_hal.c", "/home/julien/esp/esp-idf/components/hal/adc_hal_common.c", "/home/julien/esp/esp-idf/components/hal/adc_oneshot_hal.c", "/home/julien/esp/esp-idf/components/hal/adc_hal.c", "/home/julien/esp/esp-idf/components/hal/mpi_hal.c", "/home/julien/esp/esp-idf/components/hal/sha_hal.c", "/home/julien/esp/esp-idf/components/hal/aes_hal.c", "/home/julien/esp/esp-idf/components/hal/brownout_hal.c", "/home/julien/esp/esp-idf/components/hal/spi_hal.c", "/home/julien/esp/esp-idf/components/hal/spi_hal_iram.c", "/home/julien/esp/esp-idf/components/hal/spi_slave_hal.c", "/home/julien/esp/esp-idf/components/hal/spi_slave_hal_iram.c", "/home/julien/esp/esp-idf/components/hal/sdio_slave_hal.c", "/home/julien/esp/esp-idf/components/hal/esp32/touch_sensor_hal.c", "/home/julien/esp/esp-idf/components/hal/touch_sensor_hal.c", "/home/julien/esp/esp-idf/components/hal/touch_sens_hal.c", "/home/julien/esp/esp-idf/components/hal/esp32/gpio_hal_workaround.c" ],
+            "sources": [ "/home/julien/esp/esp-idf/components/hal/hal_utils.c", "/home/julien/esp/esp-idf/components/hal/mpu_hal.c", "/home/julien/esp/esp-idf/components/hal/efuse_hal.c", "/home/julien/esp/esp-idf/components/hal/esp32/efuse_hal.c", "/home/julien/esp/esp-idf/components/hal/wdt_hal_iram.c", "/home/julien/esp/esp-idf/components/hal/mmu_hal.c", "/home/julien/esp/esp-idf/components/hal/esp32/cache_hal_esp32.c", "/home/julien/esp/esp-idf/components/hal/color_hal.c", "/home/julien/esp/esp-idf/components/hal/spi_flash_hal.c", "/home/julien/esp/esp-idf/components/hal/spi_flash_hal_iram.c", "/home/julien/esp/esp-idf/components/hal/spi_flash_encrypt_hal_iram.c", "/home/julien/esp/esp-idf/components/hal/esp32/clk_tree_hal.c", "/home/julien/esp/esp-idf/components/hal/uart_hal.c", "/home/julien/esp/esp-idf/components/hal/uart_hal_iram.c", "/home/julien/esp/esp-idf/components/hal/gpio_hal.c", "/home/julien/esp/esp-idf/components/hal/rtc_io_hal.c", "/home/julien/esp/esp-idf/components/hal/timer_hal.c", "/home/julien/esp/esp-idf/components/hal/ledc_hal.c", "/home/julien/esp/esp-idf/components/hal/ledc_hal_iram.c", "/home/julien/esp/esp-idf/components/hal/i2c_hal.c", "/home/julien/esp/esp-idf/components/hal/i2c_hal_iram.c", "/home/julien/esp/esp-idf/components/hal/rmt_hal.c", "/home/julien/esp/esp-idf/components/hal/pcnt_hal.c", "/home/julien/esp/esp-idf/components/hal/mcpwm_hal.c", "/home/julien/esp/esp-idf/components/hal/twai_hal.c", "/home/julien/esp/esp-idf/components/hal/twai_hal_iram.c", "/home/julien/esp/esp-idf/components/hal/i2s_hal.c", "/home/julien/esp/esp-idf/components/hal/sdm_hal.c", "/home/julien/esp/esp-idf/components/hal/sdmmc_hal.c", "/home/julien/esp/esp-idf/components/hal/emac_hal.c", "/home/julien/esp/esp-idf/components/hal/adc_hal_common.c", "/home/julien/esp/esp-idf/components/hal/adc_oneshot_hal.c", "/home/julien/esp/esp-idf/components/hal/adc_hal.c", "/home/julien/esp/esp-idf/components/hal/mpi_hal.c", "/home/julien/esp/esp-idf/components/hal/sha_hal.c", "/home/julien/esp/esp-idf/components/hal/aes_hal.c", "/home/julien/esp/esp-idf/components/hal/brownout_hal.c", "/home/julien/esp/esp-idf/components/hal/spi_hal.c", "/home/julien/esp/esp-idf/components/hal/spi_hal_iram.c", "/home/julien/esp/esp-idf/components/hal/spi_slave_hal.c", "/home/julien/esp/esp-idf/components/hal/spi_slave_hal_iram.c", "/home/julien/esp/esp-idf/components/hal/sdio_slave_hal.c", "/home/julien/esp/esp-idf/components/hal/esp32/touch_sensor_hal.c", "/home/julien/esp/esp-idf/components/hal/touch_sensor_hal.c", "/home/julien/esp/esp-idf/components/hal/touch_sens_hal.c", "/home/julien/esp/esp-idf/components/hal/esp32/gpio_hal_workaround.c" ],
             "include_dirs": [ "platform_port/include", "esp32/include", "include" ]
         },
         "heap": {
@@ -957,6 +1182,36 @@
             "file": "/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/http_parser/libhttp_parser.a",
             "sources": [ "/home/julien/esp/esp-idf/components/http_parser/http_parser.c" ],
             "include_dirs": [ "." ]
+        },
+        "idf_test": {
+            "alias": "idf::idf_test",
+            "target": "___idf_idf_test",
+            "prefix": "idf",
+            "dir": "/home/julien/esp/esp-idf/components/idf_test",
+            "type": "CONFIG_ONLY",
+            "lib": "__idf_idf_test",
+            "reqs": [],
+            "priv_reqs": [],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "",
+            "sources": [],
+            "include_dirs": [ "include", "include/esp32" ]
+        },
+        "ieee802154": {
+            "alias": "idf::ieee802154",
+            "target": "___idf_ieee802154",
+            "prefix": "idf",
+            "dir": "/home/julien/esp/esp-idf/components/ieee802154",
+            "type": "CONFIG_ONLY",
+            "lib": "__idf_ieee802154",
+            "reqs": [ "esp_coex" ],
+            "priv_reqs": [ "esp_phy", "esp_timer", "soc", "hal", "esp_pm" ],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "",
+            "sources": [],
+            "include_dirs": [ "include" ]
         },
         "json": {
             "alias": "idf::json",
@@ -1011,11 +1266,11 @@
             "type": "LIBRARY",
             "lib": "__idf_main",
             "reqs": [],
-            "priv_reqs": [ "esp_system", "app_update", "esp_bootloader_format", "esp_https_ota", "wifi_provisioning", "esp_adc", "driver", "esp32-wifi-manager", "esp_wifi", "esp_netif", "esp_event", "nvs_flash", "esp_websocket_client", "fatfs", "sdmmc", "esp_driver_rmt", "abobija__rc522", "espressif__mdns" ],
+            "priv_reqs": [ "spi_flash", "espcoredump", "app_update", "esp_bootloader_format", "esp_https_ota", "wifi_provisioning", "esp_adc", "driver", "esp32-wifi-manager", "esp_wifi", "esp_netif", "esp_event", "nvs_flash", "esp_websocket_client", "fatfs", "sdmmc", "esp_driver_rmt", "abobija__rc522", "espressif__mdns" ],
             "managed_reqs": [],
             "managed_priv_reqs": [ "abobija__rc522", "espressif__mdns" ],
             "file": "/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/main/libmain.a",
-            "sources": [ "/home/julien/Documents/esp32IDF/hello_world/main/error_store.c", "/home/julien/Documents/esp32IDF/hello_world/main/led_strip_encoder.c", "/home/julien/Documents/esp32IDF/hello_world/main/OTA.c", "/home/julien/Documents/esp32IDF/hello_world/main/http_server.c", "/home/julien/Documents/esp32IDF/hello_world/main/dns_server.c", "/home/julien/Documents/esp32IDF/hello_world/main/main.c", "/home/julien/Documents/esp32IDF/hello_world/main/LED_button.c", "/home/julien/Documents/esp32IDF/hello_world/main/sd_card_utils.c", "/home/julien/Documents/esp32IDF/hello_world/main/audio_player.c", "/home/julien/Documents/esp32IDF/hello_world/main/tag_reader.c", "/home/julien/Documents/esp32IDF/hello_world/main/audio_record.c", "/home/julien/Documents/esp32IDF/hello_world/main/websocket_manager.c", "/home/julien/Documents/esp32IDF/hello_world/main/audio_stream.c", "/home/julien/Documents/esp32IDF/hello_world/main/wifi.c", "/home/julien/Documents/esp32IDF/hello_world/build/server_cert.pem.S" ],
+            "sources": [ "/home/julien/Documents/esp32IDF/hello_world/main/coredump_manager.c", "/home/julien/Documents/esp32IDF/hello_world/main/led_strip_encoder.c", "/home/julien/Documents/esp32IDF/hello_world/main/OTA.c", "/home/julien/Documents/esp32IDF/hello_world/main/http_server.c", "/home/julien/Documents/esp32IDF/hello_world/main/dns_server.c", "/home/julien/Documents/esp32IDF/hello_world/main/main.c", "/home/julien/Documents/esp32IDF/hello_world/main/LED_button.c", "/home/julien/Documents/esp32IDF/hello_world/main/sd_card_utils.c", "/home/julien/Documents/esp32IDF/hello_world/main/audio_player.c", "/home/julien/Documents/esp32IDF/hello_world/main/tag_reader.c", "/home/julien/Documents/esp32IDF/hello_world/main/audio_record.c", "/home/julien/Documents/esp32IDF/hello_world/main/websocket_manager.c", "/home/julien/Documents/esp32IDF/hello_world/main/audio_stream.c", "/home/julien/Documents/esp32IDF/hello_world/main/wifi.c", "/home/julien/Documents/esp32IDF/hello_world/build/server_cert.pem.S" ],
             "include_dirs": [ "." ]
         },
         "mbedtls": {
@@ -1032,6 +1287,21 @@
             "file": "/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/mbedtls/libmbedtls.a",
             "sources": [ "/home/julien/esp/esp-idf/components/mbedtls/esp_crt_bundle/esp_crt_bundle.c", "/home/julien/Documents/esp32IDF/hello_world/build/x509_crt_bundle.S" ],
             "include_dirs": [ "port/include", "mbedtls/include", "mbedtls/library", "esp_crt_bundle/include" ]
+        },
+        "mqtt": {
+            "alias": "idf::mqtt",
+            "target": "___idf_mqtt",
+            "prefix": "idf",
+            "dir": "/home/julien/esp/esp-idf/components/mqtt",
+            "type": "LIBRARY",
+            "lib": "__idf_mqtt",
+            "reqs": [ "esp_event", "tcp_transport" ],
+            "priv_reqs": [ "esp_timer", "http_parser", "esp_hw_support", "heap" ],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/mqtt/libmqtt.a",
+            "sources": [ "/home/julien/esp/esp-idf/components/mqtt/esp-mqtt/mqtt_client.c", "/home/julien/esp/esp-idf/components/mqtt/esp-mqtt/lib/mqtt_msg.c", "/home/julien/esp/esp-idf/components/mqtt/esp-mqtt/lib/mqtt_outbox.c", "/home/julien/esp/esp-idf/components/mqtt/esp-mqtt/lib/platform_esp32_idf.c" ],
+            "include_dirs": [ "/home/julien/esp/esp-idf/components/mqtt/esp-mqtt/include" ]
         },
         "newlib": {
             "alias": "idf::newlib",
@@ -1063,6 +1333,36 @@
             "sources": [ "/home/julien/esp/esp-idf/components/nvs_flash/src/nvs_api.cpp", "/home/julien/esp/esp-idf/components/nvs_flash/src/nvs_cxx_api.cpp", "/home/julien/esp/esp-idf/components/nvs_flash/src/nvs_item_hash_list.cpp", "/home/julien/esp/esp-idf/components/nvs_flash/src/nvs_page.cpp", "/home/julien/esp/esp-idf/components/nvs_flash/src/nvs_pagemanager.cpp", "/home/julien/esp/esp-idf/components/nvs_flash/src/nvs_storage.cpp", "/home/julien/esp/esp-idf/components/nvs_flash/src/nvs_handle_simple.cpp", "/home/julien/esp/esp-idf/components/nvs_flash/src/nvs_handle_locked.cpp", "/home/julien/esp/esp-idf/components/nvs_flash/src/nvs_partition.cpp", "/home/julien/esp/esp-idf/components/nvs_flash/src/nvs_partition_lookup.cpp", "/home/julien/esp/esp-idf/components/nvs_flash/src/nvs_partition_manager.cpp", "/home/julien/esp/esp-idf/components/nvs_flash/src/nvs_types.cpp", "/home/julien/esp/esp-idf/components/nvs_flash/src/nvs_platform.cpp", "/home/julien/esp/esp-idf/components/nvs_flash/src/nvs_bootloader.c", "/home/julien/esp/esp-idf/components/nvs_flash/src/nvs_encrypted_partition.cpp", "/home/julien/esp/esp-idf/components/nvs_flash/src/nvs_bootloader_aes.c", "/home/julien/esp/esp-idf/components/nvs_flash/src/nvs_bootloader_xts_aes.c" ],
             "include_dirs": [ "include" ]
         },
+        "nvs_sec_provider": {
+            "alias": "idf::nvs_sec_provider",
+            "target": "___idf_nvs_sec_provider",
+            "prefix": "idf",
+            "dir": "/home/julien/esp/esp-idf/components/nvs_sec_provider",
+            "type": "LIBRARY",
+            "lib": "__idf_nvs_sec_provider",
+            "reqs": [],
+            "priv_reqs": [ "bootloader_support", "efuse", "esp_partition", "nvs_flash" ],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/nvs_sec_provider/libnvs_sec_provider.a",
+            "sources": [ "/home/julien/esp/esp-idf/components/nvs_sec_provider/nvs_sec_provider.c" ],
+            "include_dirs": [ "include" ]
+        },
+        "openthread": {
+            "alias": "idf::openthread",
+            "target": "___idf_openthread",
+            "prefix": "idf",
+            "dir": "/home/julien/esp/esp-idf/components/openthread",
+            "type": "CONFIG_ONLY",
+            "lib": "__idf_openthread",
+            "reqs": [ "esp_netif", "lwip", "esp_driver_uart", "driver" ],
+            "priv_reqs": [ "console", "esp_coex", "esp_event", "esp_partition", "esp_timer", "ieee802154", "mbedtls", "nvs_flash" ],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "",
+            "sources": [],
+            "include_dirs": []
+        },
         "partition_table": {
             "alias": "idf::partition_table",
             "target": "___idf_partition_table",
@@ -1077,6 +1377,21 @@
             "file": "",
             "sources": [],
             "include_dirs": []
+        },
+        "perfmon": {
+            "alias": "idf::perfmon",
+            "target": "___idf_perfmon",
+            "prefix": "idf",
+            "dir": "/home/julien/esp/esp-idf/components/perfmon",
+            "type": "LIBRARY",
+            "lib": "__idf_perfmon",
+            "reqs": [ "xtensa" ],
+            "priv_reqs": [],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/perfmon/libperfmon.a",
+            "sources": [ "/home/julien/esp/esp-idf/components/perfmon/xtensa_perfmon_access.c", "/home/julien/esp/esp-idf/components/perfmon/xtensa_perfmon_apis.c", "/home/julien/esp/esp-idf/components/perfmon/xtensa_perfmon_masks.c" ],
+            "include_dirs": [ "include" ]
         },
         "protobuf-c": {
             "alias": "idf::protobuf-c",
@@ -1121,6 +1436,21 @@
             "managed_priv_reqs": [],
             "file": "/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/pthread/libpthread.a",
             "sources": [ "/home/julien/esp/esp-idf/components/pthread/pthread.c", "/home/julien/esp/esp-idf/components/pthread/pthread_cond_var.c", "/home/julien/esp/esp-idf/components/pthread/pthread_local_storage.c", "/home/julien/esp/esp-idf/components/pthread/pthread_rwlock.c", "/home/julien/esp/esp-idf/components/pthread/pthread_semaphore.c" ],
+            "include_dirs": [ "include" ]
+        },
+        "rt": {
+            "alias": "idf::rt",
+            "target": "___idf_rt",
+            "prefix": "idf",
+            "dir": "/home/julien/esp/esp-idf/components/rt",
+            "type": "LIBRARY",
+            "lib": "__idf_rt",
+            "reqs": [],
+            "priv_reqs": [],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/rt/librt.a",
+            "sources": [ "/home/julien/esp/esp-idf/components/rt/FreeRTOS_POSIX_mqueue.c", "/home/julien/esp/esp-idf/components/rt/FreeRTOS_POSIX_utils.c" ],
             "include_dirs": [ "include" ]
         },
         "sdmmc": {
@@ -1168,6 +1498,21 @@
             "sources": [ "/home/julien/esp/esp-idf/components/spi_flash/flash_brownout_hook.c", "/home/julien/esp/esp-idf/components/spi_flash/spi_flash_chip_drivers.c", "/home/julien/esp/esp-idf/components/spi_flash/spi_flash_chip_generic.c", "/home/julien/esp/esp-idf/components/spi_flash/spi_flash_chip_issi.c", "/home/julien/esp/esp-idf/components/spi_flash/spi_flash_chip_mxic.c", "/home/julien/esp/esp-idf/components/spi_flash/spi_flash_chip_gd.c", "/home/julien/esp/esp-idf/components/spi_flash/spi_flash_chip_winbond.c", "/home/julien/esp/esp-idf/components/spi_flash/spi_flash_chip_boya.c", "/home/julien/esp/esp-idf/components/spi_flash/spi_flash_chip_mxic_opi.c", "/home/julien/esp/esp-idf/components/spi_flash/spi_flash_chip_th.c", "/home/julien/esp/esp-idf/components/spi_flash/memspi_host_driver.c", "/home/julien/esp/esp-idf/components/spi_flash/cache_utils.c", "/home/julien/esp/esp-idf/components/spi_flash/flash_mmap.c", "/home/julien/esp/esp-idf/components/spi_flash/flash_ops.c", "/home/julien/esp/esp-idf/components/spi_flash/spi_flash_wrap.c", "/home/julien/esp/esp-idf/components/spi_flash/esp_flash_api.c", "/home/julien/esp/esp-idf/components/spi_flash/esp_flash_spi_init.c", "/home/julien/esp/esp-idf/components/spi_flash/spi_flash_os_func_app.c", "/home/julien/esp/esp-idf/components/spi_flash/spi_flash_os_func_noos.c" ],
             "include_dirs": [ "include" ]
         },
+        "spiffs": {
+            "alias": "idf::spiffs",
+            "target": "___idf_spiffs",
+            "prefix": "idf",
+            "dir": "/home/julien/esp/esp-idf/components/spiffs",
+            "type": "LIBRARY",
+            "lib": "__idf_spiffs",
+            "reqs": [ "esp_partition" ],
+            "priv_reqs": [ "bootloader_support", "esptool_py", "vfs" ],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/spiffs/libspiffs.a",
+            "sources": [ "/home/julien/esp/esp-idf/components/spiffs/spiffs_api.c", "/home/julien/esp/esp-idf/components/spiffs/spiffs/src/spiffs_cache.c", "/home/julien/esp/esp-idf/components/spiffs/spiffs/src/spiffs_check.c", "/home/julien/esp/esp-idf/components/spiffs/spiffs/src/spiffs_gc.c", "/home/julien/esp/esp-idf/components/spiffs/spiffs/src/spiffs_hydrogen.c", "/home/julien/esp/esp-idf/components/spiffs/spiffs/src/spiffs_nucleus.c", "/home/julien/esp/esp-idf/components/spiffs/esp_spiffs.c" ],
+            "include_dirs": [ "include" ]
+        },
         "tcp_transport": {
             "alias": "idf::tcp_transport",
             "target": "___idf_tcp_transport",
@@ -1182,6 +1527,51 @@
             "file": "/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/tcp_transport/libtcp_transport.a",
             "sources": [ "/home/julien/esp/esp-idf/components/tcp_transport/transport.c", "/home/julien/esp/esp-idf/components/tcp_transport/transport_ssl.c", "/home/julien/esp/esp-idf/components/tcp_transport/transport_internal.c", "/home/julien/esp/esp-idf/components/tcp_transport/transport_socks_proxy.c", "/home/julien/esp/esp-idf/components/tcp_transport/transport_ws.c" ],
             "include_dirs": [ "include" ]
+        },
+        "ulp": {
+            "alias": "idf::ulp",
+            "target": "___idf_ulp",
+            "prefix": "idf",
+            "dir": "/home/julien/esp/esp-idf/components/ulp",
+            "type": "CONFIG_ONLY",
+            "lib": "__idf_ulp",
+            "reqs": [ "driver", "esp_adc" ],
+            "priv_reqs": [],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "",
+            "sources": [],
+            "include_dirs": []
+        },
+        "unity": {
+            "alias": "idf::unity",
+            "target": "___idf_unity",
+            "prefix": "idf",
+            "dir": "/home/julien/esp/esp-idf/components/unity",
+            "type": "LIBRARY",
+            "lib": "__idf_unity",
+            "reqs": [],
+            "priv_reqs": [],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/unity/libunity.a",
+            "sources": [ "/home/julien/esp/esp-idf/components/unity/unity/src/unity.c", "/home/julien/esp/esp-idf/components/unity/unity_compat.c", "/home/julien/esp/esp-idf/components/unity/unity_runner.c", "/home/julien/esp/esp-idf/components/unity/unity_utils_freertos.c", "/home/julien/esp/esp-idf/components/unity/unity_utils_cache.c", "/home/julien/esp/esp-idf/components/unity/unity_utils_memory.c", "/home/julien/esp/esp-idf/components/unity/unity_port_esp32.c", "/home/julien/esp/esp-idf/components/unity/port/esp/unity_utils_memory_esp.c" ],
+            "include_dirs": [ "include", "unity/src" ]
+        },
+        "usb": {
+            "alias": "idf::usb",
+            "target": "___idf_usb",
+            "prefix": "idf",
+            "dir": "/home/julien/esp/esp-idf/components/usb",
+            "type": "CONFIG_ONLY",
+            "lib": "__idf_usb",
+            "reqs": [],
+            "priv_reqs": [ "esp_driver_gpio", "esp_mm" ],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "",
+            "sources": [],
+            "include_dirs": []
         },
         "vfs": {
             "alias": "idf::vfs",
@@ -1714,7 +2104,7 @@
             "priv_reqs": [ "esp_driver_gpio", "esp_timer" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "include_dirs": []
+            "include_dirs": [ "include", "hw_ver1/include" ]
         },
         "esp_driver_tsens": {
             "alias": "idf::esp_driver_tsens",
@@ -1762,7 +2152,7 @@
             "priv_reqs": [ "log", "esp_timer", "esp_driver_spi", "esp_driver_gpio" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "include_dirs": []
+            "include_dirs": [ "include" ]
         },
         "esp_event": {
             "alias": "idf::esp_event",
@@ -2074,7 +2464,7 @@
             "priv_reqs": [ "esp_partition", "spi_flash", "bootloader_support", "mbedtls", "esp_rom", "soc", "esp_system", "esp_driver_gpio" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "include_dirs": [ "include" ]
+            "include_dirs": [ "include", "include/port/xtensa" ]
         },
         "esptool_py": {
             "alias": "idf::esptool_py",
@@ -2551,7 +2941,7 @@
             "dir": "/home/julien/Documents/esp32IDF/hello_world/main",
             "lib": "__idf_main",
             "reqs": [],
-            "priv_reqs": [ "esp_system", "app_update", "esp_bootloader_format", "esp_https_ota", "wifi_provisioning", "esp_adc", "driver", "esp32-wifi-manager", "esp_wifi", "esp_netif", "esp_event", "nvs_flash", "esp_websocket_client", "fatfs", "sdmmc", "esp_driver_rmt", "abobija__rc522", "espressif__mdns" ],
+            "priv_reqs": [ "spi_flash", "espcoredump", "app_update", "esp_bootloader_format", "esp_https_ota", "wifi_provisioning", "esp_adc", "driver", "esp32-wifi-manager", "esp_wifi", "esp_netif", "esp_event", "nvs_flash", "esp_websocket_client", "fatfs", "sdmmc", "esp_driver_rmt", "abobija__rc522", "espressif__mdns" ],
             "managed_reqs": [],
             "managed_priv_reqs": [ "abobija__rc522", "espressif__mdns" ],
             "include_dirs": [ "." ]
