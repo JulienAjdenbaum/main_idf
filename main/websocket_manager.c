@@ -74,6 +74,8 @@ static void ringbuf_monitor_task(void *arg);
 
 static bool s_crash_triggered = false;
 
+static TaskHandle_t s_ws_manager_task = NULL;
+
 static void coredump_test_task(void *arg)
 {
     // Wait a few seconds so logs can flush and Wi-Fi can stabilize
@@ -94,6 +96,8 @@ static void coredump_test_task(void *arg)
 static void stop_audio_consumer_and_ringbuf(void)
 {
     ESP_LOGI(TAG, "Stopping audio consumer tasks...");
+
+    s_ws_manager_task = xTaskGetCurrentTaskHandle();
 
     // 1) Signal tasks to exit
     g_shutdown_requested = true;
@@ -119,7 +123,7 @@ static void stop_audio_consumer_and_ringbuf(void)
         vRingbufferDelete(s_audio_rb);
         s_audio_rb = NULL;
     }
-
+    s_ws_manager_task = NULL;
     // Reset our shutdown flag for the next time
     g_shutdown_requested = false;
     ESP_LOGI(TAG, "Audio consumer + ringbuf fully stopped.");
@@ -346,20 +350,40 @@ esp_err_t websocket_manager_init(void)
 esp_err_t websocket_manager_stop(void)
 {
     ESP_LOGI(TAG, "Stopping WebSocket client...");
+
+    // (1) Stop audio-related stuff first
     stop_audio_consumer_and_ringbuf();
+
+    // (2) Immediately mark WebSocket disconnected to block other logic
+    s_ws_connected = false;
+
     if (s_ws_client) {
-        esp_websocket_client_stop(s_ws_client);
+        // (3) Stop the WebSocket client
+        esp_err_t stop_err = esp_websocket_client_stop(s_ws_client);
+        if (stop_err != ESP_OK) {
+            ESP_LOGW(TAG, "WebSocket stop failed: %s", esp_err_to_name(stop_err));
+        }
+
+        // (4) Unregister all events before destroying
+        esp_websocket_unregister_events(
+            s_ws_client,
+            WEBSOCKET_EVENT_ANY,
+            websocket_event_handler
+        );
+
+        // (5) Destroy the client handle
         esp_websocket_client_destroy(s_ws_client);
         s_ws_client = NULL;
     }
-    s_ws_connected = false;
 
+    // (6) Delete ring buffer if it still exists (safety)
     if (s_audio_rb) {
         ESP_LOGI(TAG, "Deleting ring buffer...");
         vRingbufferDelete(s_audio_rb);
         s_audio_rb = NULL;
     }
-    ESP_LOGI(TAG, "WebSocket + ring buffer freed");
+
+    ESP_LOGI(TAG, "WebSocket + ring buffer fully stopped.");
     return ESP_OK;
 }
 
@@ -431,7 +455,9 @@ static void ringbuf_monitor_task(void *arg)
     }
     ESP_LOGI(TAG, "ringbuf_monitor_task stopping!");
     
-    xTaskNotifyGive(xTaskGetCurrentTaskHandle());
+    if (s_ws_manager_task) {
+        xTaskNotifyGive(s_ws_manager_task);
+    }
     vTaskDelete(NULL);
 }
 
@@ -454,7 +480,11 @@ static void audio_consumer_task(void *arg)
         // else either no ringbuf or timed out => loop
     }
     ESP_LOGI(TAG, "audio_consumer_task stopping!");
-    xTaskNotifyGive(xTaskGetCurrentTaskHandle());
+    
+    if (s_ws_manager_task) {
+        xTaskNotifyGive(s_ws_manager_task);
+    }
+    // xTaskNotifyGive(xTaskGetCurrentTaskHandle());
     vTaskDelete(NULL);
 }
 
