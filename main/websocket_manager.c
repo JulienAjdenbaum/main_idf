@@ -267,7 +267,7 @@ esp_err_t websocket_manager_init(void)
 
     // 3. Prepare the WebSocket config, adding our custom header
     esp_websocket_client_config_t cfg = {
-        .uri = "ws://api.interaction-labs.com/esp/api/chat",
+        .uri = "ws://api.interaction-labs.com/tests/esp/api/chat",
         // .crt_bundle_attach = esp_crt_bundle_attach,
         .reconnect_timeout_ms = 5000,
         .network_timeout_ms = 10000,
@@ -451,7 +451,7 @@ static void ringbuf_monitor_task(void *arg)
             ESP_LOGI(TAG, "[RingBuf Monitor] used=%u, free=%u (of %u)",
                     (unsigned)used_bytes, (unsigned)free_bytes, (unsigned)total_size);
         }
-        vTaskDelay(pdMS_TO_TICKS(2000));
+        vTaskDelay(pdMS_TO_TICKS(200));
     }
     ESP_LOGI(TAG, "ringbuf_monitor_task stopping!");
     
@@ -528,7 +528,7 @@ static void websocket_event_handler(void *handler_args,
             
             if (prefix == 0x05) {
                 // 1) Received custom "Ping" from server => respond with Pong (0x06)
-                ESP_LOGI(TAG, "Received custom Ping (0x05) => sending Pong (0x06).");
+                // ESP_LOGI(TAG, "Received custom Ping (0x05) => sending Pong (0x06).");
                 uint8_t pong_data[1] = { 0x06 };
                 websocket_manager_send_bin((const char *)pong_data, 1);
 

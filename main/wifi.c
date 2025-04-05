@@ -231,7 +231,7 @@ static void wifi_event_handler(void *arg,
         xEventGroupSetBits(s_wifi_event_group, WIFI_CONNECTED_BIT);
 
         // Optionally start WebSocket or other tasks here
-        websocket_manager_init();
+        // websocket_manager_init();
     }
     // AP started
     else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_AP_START) {

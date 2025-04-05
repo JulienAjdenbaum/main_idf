@@ -112,13 +112,13 @@ static void audio_record_task(void *arg)
 
         if (audio_player_is_playing() && !check_button_press()) {
             // Send zeros if playing or card is not active
-            if (!check_button_press()) {
-                ESP_LOGI(TAG, "Button not pressed, sending zeros");
-            }
+            // if (!check_button_press()) {
+            //     ESP_LOGI(TAG, "Button not pressed, sending zeros");
+            // }
             memset(send_buf + 1, 0, out_index);
             turn_off_leds();
         }else if (!s_card_active){
-            ESP_LOGI(TAG, "Card not active, sending zeros");
+            // ESP_LOGI(TAG, "Card not active, sending zeros");
             memset(send_buf + 1, 0, out_index);
             set_leds_color(255, 0, 255, 0);
         } else {

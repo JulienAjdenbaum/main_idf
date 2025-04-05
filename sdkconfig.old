@@ -463,16 +463,16 @@ CONFIG_COMPILER_ORPHAN_SECTIONS_WARNING=y
 #
 
 #
-# !!! MINIMAL_BUILD is enabled !!!
+# Application Level Tracing
 #
-
-#
-# Only common components and those transitively required by the main component are listed
-#
-
-#
-# If a component configuration is missing, please add it to the main component's requirements
-#
+# CONFIG_APPTRACE_DEST_JTAG is not set
+CONFIG_APPTRACE_DEST_NONE=y
+# CONFIG_APPTRACE_DEST_UART1 is not set
+# CONFIG_APPTRACE_DEST_UART2 is not set
+CONFIG_APPTRACE_DEST_UART_NONE=y
+CONFIG_APPTRACE_UART_TASK_PRIO=1
+CONFIG_APPTRACE_LOCK_ENABLE=y
+# end of Application Level Tracing
 
 #
 # Bluetooth
@@ -727,10 +727,40 @@ CONFIG_SPI_SLAVE_ISR_IN_IRAM=y
 # end of ESP-Driver:SPI Configurations
 
 #
+# ESP-Driver:Touch Sensor Configurations
+#
+# CONFIG_TOUCH_CTRL_FUNC_IN_IRAM is not set
+# CONFIG_TOUCH_ISR_IRAM_SAFE is not set
+# CONFIG_TOUCH_ENABLE_DEBUG_LOG is not set
+# CONFIG_TOUCH_SKIP_FSM_CHECK is not set
+# end of ESP-Driver:Touch Sensor Configurations
+
+#
 # ESP-Driver:UART Configurations
 #
 # CONFIG_UART_ISR_IN_IRAM is not set
 # end of ESP-Driver:UART Configurations
+
+#
+# Ethernet
+#
+CONFIG_ETH_ENABLED=y
+CONFIG_ETH_USE_ESP32_EMAC=y
+CONFIG_ETH_PHY_INTERFACE_RMII=y
+CONFIG_ETH_RMII_CLK_INPUT=y
+# CONFIG_ETH_RMII_CLK_OUTPUT is not set
+CONFIG_ETH_RMII_CLK_IN_GPIO=0
+CONFIG_ETH_DMA_BUFFER_SIZE=512
+CONFIG_ETH_DMA_RX_BUFFER_NUM=10
+CONFIG_ETH_DMA_TX_BUFFER_NUM=10
+# CONFIG_ETH_IRAM_OPTIMIZATION is not set
+CONFIG_ETH_USE_SPI_ETHERNET=y
+# CONFIG_ETH_SPI_ETHERNET_DM9051 is not set
+# CONFIG_ETH_SPI_ETHERNET_W5500 is not set
+# CONFIG_ETH_SPI_ETHERNET_KSZ8851SNL is not set
+# CONFIG_ETH_USE_OPENETH is not set
+# CONFIG_ETH_TRANSMIT_MUTEX is not set
+# end of Ethernet
 
 #
 # Event Loop Library
@@ -748,6 +778,13 @@ CONFIG_ESP_GDBSTUB_ENABLED=y
 CONFIG_ESP_GDBSTUB_SUPPORT_TASKS=y
 CONFIG_ESP_GDBSTUB_MAX_TASKS=32
 # end of GDB Stub
+
+#
+# ESP HID
+#
+CONFIG_ESPHID_TASK_SIZE_BT=2048
+CONFIG_ESPHID_TASK_SIZE_BLE=4096
+# end of ESP HID
 
 #
 # ESP HTTP client
@@ -779,6 +816,14 @@ CONFIG_HTTPD_SERVER_EVENT_POST_TIMEOUT=2000
 # CONFIG_ESP_HTTPS_OTA_ALLOW_HTTP is not set
 CONFIG_ESP_HTTPS_OTA_EVENT_POST_TIMEOUT=2000
 # end of ESP HTTPS OTA
+
+#
+# ESP HTTPS server
+#
+# CONFIG_ESP_HTTPS_SERVER_ENABLE is not set
+CONFIG_ESP_HTTPS_SERVER_EVENT_POST_TIMEOUT=2000
+# CONFIG_ESP_HTTPS_SERVER_CERT_SELECT_HOOK is not set
+# end of ESP HTTPS server
 
 #
 # Hardware Settings
@@ -891,6 +936,12 @@ CONFIG_ESP_SPI_BUS_LOCK_ISR_FUNCS_IN_IRAM=y
 # end of Hardware Settings
 
 #
+# ESP-Driver:LCD Controller Configurations
+#
+# CONFIG_LCD_ENABLE_DEBUG_LOG is not set
+# end of ESP-Driver:LCD Controller Configurations
+
+#
 # ESP-MM: Memory Management Configurations
 #
 # end of ESP-MM: Memory Management Configurations
@@ -939,6 +990,12 @@ CONFIG_ESP_PHY_CALIBRATION_MODE=0
 # CONFIG_PM_ENABLE is not set
 # CONFIG_PM_SLP_IRAM_OPT is not set
 # end of Power Management
+
+#
+# ESP PSRAM
+#
+# CONFIG_SPIRAM is not set
+# end of ESP PSRAM
 
 #
 # ESP Ringbuf
@@ -1206,7 +1263,7 @@ CONFIG_FREERTOS_TLSP_DELETION_CALLBACKS=y
 # CONFIG_FREERTOS_TASK_PRE_DELETION_HOOK is not set
 # CONFIG_FREERTOS_ENABLE_STATIC_TASK_CLEAN_UP is not set
 CONFIG_FREERTOS_CHECK_MUTEX_GIVEN_BY_OWNER=y
-CONFIG_FREERTOS_ISR_STACKSIZE=1536
+CONFIG_FREERTOS_ISR_STACKSIZE=2096
 CONFIG_FREERTOS_INTERRUPT_BACKTRACE=y
 # CONFIG_FREERTOS_FPU_IN_ISR is not set
 CONFIG_FREERTOS_TICK_SUPPORT_CORETIMER=y
@@ -1637,6 +1694,22 @@ CONFIG_MBEDTLS_FS_IO=y
 # end of mbedTLS
 
 #
+# ESP-MQTT Configurations
+#
+CONFIG_MQTT_PROTOCOL_311=y
+# CONFIG_MQTT_PROTOCOL_5 is not set
+CONFIG_MQTT_TRANSPORT_SSL=y
+CONFIG_MQTT_TRANSPORT_WEBSOCKET=y
+CONFIG_MQTT_TRANSPORT_WEBSOCKET_SECURE=y
+# CONFIG_MQTT_MSG_ID_INCREMENTAL is not set
+# CONFIG_MQTT_SKIP_PUBLISH_IF_DISCONNECTED is not set
+# CONFIG_MQTT_REPORT_DELETED_MESSAGES is not set
+# CONFIG_MQTT_USE_CUSTOM_CONFIG is not set
+# CONFIG_MQTT_TASK_CORE_SELECTION_ENABLED is not set
+# CONFIG_MQTT_CUSTOM_OUTBOX is not set
+# end of ESP-MQTT Configurations
+
+#
 # LibC
 #
 CONFIG_LIBC_NEWLIB=y
@@ -1659,6 +1732,18 @@ CONFIG_LIBC_TIME_SYSCALL_USE_RTC_HRT=y
 # CONFIG_NVS_ASSERT_ERROR_CHECK is not set
 # CONFIG_NVS_LEGACY_DUP_KEYS_COMPATIBILITY is not set
 # end of NVS
+
+#
+# OpenThread
+#
+# CONFIG_OPENTHREAD_ENABLED is not set
+
+#
+# OpenThread Spinel
+#
+# CONFIG_OPENTHREAD_SPINEL_ONLY is not set
+# end of OpenThread Spinel
+# end of OpenThread
 
 #
 # Protocomm
@@ -1752,6 +1837,42 @@ CONFIG_SPI_FLASH_ENABLE_ENCRYPTED_READ_WRITE=y
 # end of SPI Flash driver
 
 #
+# SPIFFS Configuration
+#
+CONFIG_SPIFFS_MAX_PARTITIONS=3
+
+#
+# SPIFFS Cache Configuration
+#
+CONFIG_SPIFFS_CACHE=y
+CONFIG_SPIFFS_CACHE_WR=y
+# CONFIG_SPIFFS_CACHE_STATS is not set
+# end of SPIFFS Cache Configuration
+
+CONFIG_SPIFFS_PAGE_CHECK=y
+CONFIG_SPIFFS_GC_MAX_RUNS=10
+# CONFIG_SPIFFS_GC_STATS is not set
+CONFIG_SPIFFS_PAGE_SIZE=256
+CONFIG_SPIFFS_OBJ_NAME_LEN=32
+# CONFIG_SPIFFS_FOLLOW_SYMLINKS is not set
+CONFIG_SPIFFS_USE_MAGIC=y
+CONFIG_SPIFFS_USE_MAGIC_LENGTH=y
+CONFIG_SPIFFS_META_LENGTH=4
+CONFIG_SPIFFS_USE_MTIME=y
+
+#
+# Debug Configuration
+#
+# CONFIG_SPIFFS_DBG is not set
+# CONFIG_SPIFFS_API_DBG is not set
+# CONFIG_SPIFFS_GC_DBG is not set
+# CONFIG_SPIFFS_CACHE_DBG is not set
+# CONFIG_SPIFFS_CHECK_DBG is not set
+# CONFIG_SPIFFS_TEST_VISUALISATION is not set
+# end of Debug Configuration
+# end of SPIFFS Configuration
+
+#
 # TCP Transport
 #
 
@@ -1763,6 +1884,29 @@ CONFIG_WS_BUFFER_SIZE=1024
 # CONFIG_WS_DYNAMIC_BUFFER is not set
 # end of Websocket
 # end of TCP Transport
+
+#
+# Ultra Low Power (ULP) Co-processor
+#
+# CONFIG_ULP_COPROC_ENABLED is not set
+
+#
+# ULP Debugging Options
+#
+# end of ULP Debugging Options
+# end of Ultra Low Power (ULP) Co-processor
+
+#
+# Unity unit testing library
+#
+CONFIG_UNITY_ENABLE_FLOAT=y
+CONFIG_UNITY_ENABLE_DOUBLE=y
+# CONFIG_UNITY_ENABLE_64BIT is not set
+# CONFIG_UNITY_ENABLE_COLOR is not set
+CONFIG_UNITY_ENABLE_IDF_TEST_RUNNER=y
+# CONFIG_UNITY_ENABLE_FIXTURE is not set
+# CONFIG_UNITY_ENABLE_BACKTRACE_ON_FAIL is not set
+# end of Unity unit testing library
 
 #
 # Virtual file system
@@ -1866,6 +2010,7 @@ CONFIG_MDNS_MULTIPLE_INSTANCE=y
 #
 CONFIG_MDNS_PREDEF_NETIF_STA=y
 CONFIG_MDNS_PREDEF_NETIF_AP=y
+CONFIG_MDNS_PREDEF_NETIF_ETH=y
 # end of MDNS Predefined interfaces
 # end of mDNS
 # end of Component config
