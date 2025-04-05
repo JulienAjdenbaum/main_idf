@@ -1,0 +1,1395 @@
+Command: /home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/julien/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/julien/Documents/esp32IDF/hello_world/build/hello_world.elf /home/julien/Documents/esp32IDF/hello_world/build/bootloader/bootloader.elf -m '/home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python' '/home/julien/esp/esp-idf/tools/idf.py'
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6368
+load:0x40078000,len:15880
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Apr  4 2025 11:22:26[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (36) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (64) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (77) boot:  3 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (83) boot:  4 ota_0            OTA app          00 10 00110000 00100000[0m
+[0;32mI (90) boot:  5 ota_1            OTA app          00 11 00210000 00100000[0m
+[0;32mI (96) boot:  6 coredump         Unknown data     01 03 00310000 00010000[0m
+[0;32mI (103) boot: End of partition table[0m
+[0;32mI (106) boot: Defaulting to factory image[0m
+[0;32mI (110) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=29388h (168840) map[0m
+[0;32mI (175) esp_image: segment 1: paddr=000393b0 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (175) esp_image: segment 2: paddr=000393d4 vaddr=3ffb0000 size=048b4h ( 18612) load[0m
+[0;32mI (186) esp_image: segment 3: paddr=0003dc90 vaddr=40080000 size=02388h (  9096) load[0m
+[0;32mI (190) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=b3ae8h (735976) map[0m
+[0;32mI (445) esp_image: segment 5: paddr=000f3b10 vaddr=40082388 size=19044h (102468) load[0m
+[0;32mI (499) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (499) boot: Disabling RNG early entropy source...[0m
+[0;32mI (509) cpu_start: Multicore app[0m
+[0;32mI (518) cpu_start: Pro cpu start user code[0m
+[0;32mI (518) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (518) app_init: Application information:[0m
+[0;32mI (518) app_init: Project name:     hello_world[0m
+[0;32mI (522) app_init: App version:      3dbadab-dirty[0m
+[0;32mI (527) app_init: Compile time:     Apr  4 2025 11:22:21[0m
+[0;32mI (532) app_init: ELF file SHA256:  7de124505...[0m
+[0;32mI (536) app_init: ESP-IDF:          v5.5-dev-2290-g94cfe394fe[0m
+[0;32mI (541) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (545) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (549) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (553) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (559) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (564) heap_init: At 3FFBB8C0 len 00024740 (145 KiB): DRAM[0m
+[0;32mI (570) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (575) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (581) heap_init: At 4009B3CC len 00004C34 (19 KiB): IRAM[0m
+[0;32mI (587) spi_flash: detected chip: generic[0m
+[0;32mI (589) spi_flash: flash io: dio[0m
+[0;33mW (593) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
+[0;33mW (604) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;32mI (612) main_task: Started on CPU0[0m
+[0;32mI (622) main_task: Calling app_main()[0m
+[0;32mI (622) MAIN: Starting app_main...[0m
+[0;32mI (622) led_button_blink: Create RMT TX channel[0m
+[0;32mI (622) led_button_blink: Install LED strip encoder[0m
+[0;32mI (622) MAIN: Initializing Wi-Fi...[0m
+[0;32mI (662) WIFI_MGR: Loaded Wi-Fi creds from NVS: SSID=Partagedeco[0m
+[0;32mI (672) wifi:wifi driver task: 3ffc3c44, prio:23, stack:6656, core=0[0m
+[0;32mI (682) wifi:wifi firmware version: 3a3aca644[0m
+[0;32mI (682) wifi:wifi certification version: v7.0[0m
+[0;32mI (682) wifi:config NVS flash: enabled[0m
+[0;32mI (682) wifi:config nano formatting: disabled[0m
+[0;32mI (692) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (692) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (702) wifi:Init management short buffer num: 32[0m
+[0;32mI (702) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (712) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (712) wifi:Init static rx buffer num: 10[0m
+[0;32mI (712) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (722) wifi_init: rx ba win: 6[0m
+[0;32mI (722) wifi_init: accept mbox: 6[0m
+[0;32mI (722) wifi_init: tcpip mbox: 32[0m
+[0;32mI (732) wifi_init: udp mbox: 6[0m
+[0;32mI (732) wifi_init: tcp mbox: 6[0m
+[0;32mI (732) wifi_init: tcp tx win: 5760[0m
+[0;32mI (732) wifi_init: tcp rx win: 5760[0m
+[0;32mI (742) wifi_init: tcp mss: 1440[0m
+[0;32mI (742) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (742) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (772) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (842) wifi:mode : sta (94:54:c5:ae:fb:24)[0m
+[0;32mI (842) wifi:enable tsf[0m
+[0;32mI (842) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (852) WIFI_MGR: STA init done. Trying SSID: Partagedeco[0m
+[0;32mI (852) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (1852) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (2852) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (3262) WIFI_MGR: Retrying STA... (1/5)[0m
+[0;32mI (3852) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (4852) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (5682) WIFI_MGR: Retrying STA... (2/5)[0m
+[0;32mI (5852) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (6852) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (7852) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (8092) WIFI_MGR: Retrying STA... (3/5)[0m
+[0;32mI (8852) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (9852) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (10502) WIFI_MGR: Retrying STA... (4/5)[0m
+[0;32mI (10852) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (11852) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (12852) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (12922) WIFI_MGR: Retrying STA... (5/5)[0m
+[0;32mI (13852) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (14852) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[1;31mE (15332) WIFI_MGR: Failed STA after 5 retries; fallback to AP...[0m
+[0;32mI (15332) wifi:flush txq[0m
+[0;32mI (15332) wifi:stop sw txq[0m
+[0;32mI (15332) wifi:lmac stop hw txq[0m
+[0;32mI (15352) wifi:mode : softAP (94:54:c5:ae:fb:25)[0m
+[0;32mI (15362) wifi:Total power save buffer number: 16[0m
+[0;32mI (15362) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (15362) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (15362) WIFI_MGR: AP mode init done. SSID=Tolki (Open), Channel=1[0m
+[0;33mW (15372) MAIN: STA failed -> fallback AP is active. Not starting the rest...[0m
+[0;32mI (15372) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1[0m
+[0;32mI (15382) WIFI_MGR: AP started. SSID=Tolki, IP=192.168.4.1[0m
+[0;32mI (15392) HTTP_SERVER: Starting HTTP server on port 80[0m
+[0;32mI (15392) HTTP_SERVER: HTTP server started.[0m
+[0;32mI (15402) WIFI_MGR: AP started. SSID=Tolki, IP=192.168.4.1[0m
+[0;32mI (15402) DNS_SERVER: DNS server started on port 53, hijacking to 192.168.4.1[0m
+[0;32mI (15402) HTTP_SERVER: Starting HTTP server on port 80[0m
+[1;31mE (15412) httpd: httpd_server_init: error in listen (112)[0m
+[1;31mE (15422) HTTP_SERVER: Failed to start HTTP server.[0m
+[1;31mE (15422) DNS_SERVER: Bind failed on DNS port 53[0m
+[0;32mI (15852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (16852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (17852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (18852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (19852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (20852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (21852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (22852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (23852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (24852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (25852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (26852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (27852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (28852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (29852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (30852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (31852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (32852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (33852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (34852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (35852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (36852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (37852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (38852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (39852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (40852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (41852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (42852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (43852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (44852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (45852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (46852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (47852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (48852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (49852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (50852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (51852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (52852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (53852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (54852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (55852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (56852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (57852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (58852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (59852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (60852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (61852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (62852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (63852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+[0;32mI (64852) LED_DEBUG_TASK: Blinking YELLOW (fallback AP mode)[0m
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6368
+load:0x40078000,len:15880
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Apr  4 2025 11:22:26[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (36) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (63) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (76) boot:  3 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (83) boot:  4 ota_0            OTA app          00 10 00110000 00100000[0m
+[0;32mI (89) boot:  5 ota_1            OTA app          00 11 00210000 00100000[0m
+[0;32mI (96) boot:  6 coredump         Unknown data     01 03 00310000 00010000[0m
+[0;32mI (102) boot: End of partition table[0m
+[0;32mI (106) boot: Defaulting to factory image[0m
+[0;32mI (110) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=29388h (168840) map[0m
+[0;32mI (175) esp_image: segment 1: paddr=000393b0 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (175) esp_image: segment 2: paddr=000393d4 vaddr=3ffb0000 size=048b4h ( 18612) load[0m
+[0;32mI (186) esp_image: segment 3: paddr=0003dc90 vaddr=40080000 size=02388h (  9096) load[0m
+[0;32mI (190) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=b3ae8h (735976) map[0m
+[0;32mI (445) esp_image: segment 5: paddr=000f3b10 vaddr=40082388 size=19044h (102468) load[0m
+[0;32mI (498) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (499) boot: Disabling RNG early entropy source...[0m
+[0;32mI (509) cpu_start: Multicore app[0m
+[0;32mI (518) cpu_start: Pro cpu start user code[0m
+[0;32mI (518) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (518) app_init: Application information:[0m
+[0;32mI (518) app_init: Project name:     hello_world[0m
+[0;32mI (522) app_init: App version:      3dbadab-dirty[0m
+[0;32mI (526) app_init: Compile time:     Apr  4 2025 11:22:21[0m
+[0;32mI (531) app_init: ELF file SHA256:  7de124505...[0m
+[0;32mI (536) app_init: ESP-IDF:          v5.5-dev-2290-g94cfe394fe[0m
+[0;32mI (541) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (545) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (549) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (553) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (559) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (564) heap_init: At 3FFBB8C0 len 00024740 (145 KiB): DRAM[0m
+[0;32mI (569) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (575) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (580) heap_init: At 4009B3CC len 00004C34 (19 KiB): IRAM[0m
+[0;32mI (587) spi_flash: detected chip: generic[0m
+[0;32mI (589) spi_flash: flash io: dio[0m
+[0;33mW (592) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
+[0;33mW (604) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;32mI (612) main_task: Started on CPU0[0m
+[0;32mI (622) main_task: Calling app_main()[0m
+[0;32mI (622) MAIN: Starting app_main...[0m
+[0;32mI (622) led_button_blink: Create RMT TX channel[0m
+[0;32mI (622) led_button_blink: Install LED strip encoder[0m
+[0;32mI (622) MAIN: Initializing Wi-Fi...[0m
+[0;32mI (662) WIFI_MGR: Loaded Wi-Fi creds from NVS: SSID=Partagedeco[0m
+[0;32mI (672) wifi:wifi driver task: 3ffc3c44, prio:23, stack:6656, core=0[0m
+[0;32mI (682) wifi:wifi firmware version: 3a3aca644[0m
+[0;32mI (682) wifi:wifi certification version: v7.0[0m
+[0;32mI (682) wifi:config NVS flash: enabled[0m
+[0;32mI (682) wifi:config nano formatting: disabled[0m
+[0;32mI (692) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (692) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (702) wifi:Init management short buffer num: 32[0m
+[0;32mI (702) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (712) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (712) wifi:Init static rx buffer num: 10[0m
+[0;32mI (712) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (722) wifi_init: rx ba win: 6[0m
+[0;32mI (722) wifi_init: accept mbox: 6[0m
+[0;32mI (722) wifi_init: tcpip mbox: 32[0m
+[0;32mI (732) wifi_init: udp mbox: 6[0m
+[0;32mI (732) wifi_init: tcp mbox: 6[0m
+[0;32mI (732) wifi_init: tcp tx win: 5760[0m
+[0;32mI (732) wifi_init: tcp rx win: 5760[0m
+[0;32mI (742) wifi_init: tcp mss: 1440[0m
+[0;32mI (742) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (742) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (772) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (842) wifi:mode : sta (94:54:c5:ae:fb:24)[0m
+[0;32mI (842) wifi:enable tsf[0m
+[0;32mI (842) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (852) WIFI_MGR: STA init done. Trying SSID: Partagedeco[0m
+[0;32mI (852) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (1852) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (2062) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2062) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (2072) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (2082) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (2092) wifi:connected with Partagedeco, aid = 1, channel 11, BW20, bssid = aa:f0:fe:0d:99:0e[0m
+[0;32mI (2092) wifi:security: WPA2-PSK, phy: bgn, rssi: -58[0m
+[0;32mI (2122) wifi:pm start, type: 0[0m
+
+[0;32mI (2122) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (2152) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (2152) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (2852) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (3142) esp_netif_handlers: sta ip: 10.11.44.122, mask: 255.255.255.0, gw: 10.11.44.242[0m
+[0;32mI (3142) WIFI_MGR: STA got IP: 10.11.44.122[0m
+[0;32mI (3142) CORE_DUMP_MGR: No coredump or error reading offset: ESP_ERR_INVALID_SIZE[0m
+[0;32mI (3152) WS_MGR: Loaded existing API key from NVS: C2F94A01D7CD3D3DF45192A8A5771FEA[0m
+[0;32mI (3152) WS_MGR: Final WebSocket headers:[0m
+X-API-Key: C2F94A01D7CD3D3DF45192A8A5771FEA
+
+[0;32mI (3162) websocket_client: Started[0m
+[0;32mI (3162) WS_MGR: WebSocket started with header [X-API-Key: C2F94A01D7CD3D3DF45192A8A5771FEA[0m
+]
+[0;32mI (3172) WS_MGR: audio_consumer_task starting![0m
+[0;32mI (3172) MAIN: STA connected. Starting other services...[0m
+[0;32mI (3182) WS_MGR: ringbuf_monitor_task starting![0m
+[0;32mI (3182) CORE_DUMP_MGR: No coredump or error reading offset: ESP_ERR_INVALID_SIZE[0m
+[0;32mI (3182) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (3192) WS_MGR: Loaded existing API key from NVS: C2F94A01D7CD3D3DF45192A8A5771FEA[0m
+[0;32mI (3202) WS_MGR: Final WebSocket headers:[0m
+X-API-Key: C2F94A01D7CD3D3DF45192A8A5771FEA
+
+[0;32mI (3222) websocket_client: Started[0m
+[0;32mI (3222) WS_MGR: WebSocket started with header [X-API-Key: C2F94A01D7CD3D3DF45192A8A5771FEA[0m
+]
+[0;32mI (3232) WS_MGR: audio_consumer_task starting![0m
+[0;32mI (3232) led_button_blink: Configuring button on GPIO 14[0m
+[0;32mI (3232) WS_MGR: ringbuf_monitor_task starting![0m
+[0;32mI (3242) gpio: GPIO[14]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (3252) wifi:<ba-add>idx:0 (ifx:0, aa:f0:fe:0d:99:0e), tid:0, ssn:3, winSize:64[0m
+[0;32mI (3242) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (3262) AudioPlayer: audio_task started[0m
+[0;32mI (3272) AudioPlayer: Audio player initialized. sample_rate=8000[0m
+[0;32mI (3272) AUDIO_RECORD: I2S initialized for mic input (sr=8000, bits=32)[0m
+[0;32mI (3302) WS_MGR: WebSocket connected[0m
+[0;32mI (3302) WS_MGR: WebSocket connected[0m
+[0;32mI (3312) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;33mW (3322) WS_MGR: Unknown prefix=0x03 => ignoring[0m
+[0;32mI (3322) rc522: PCD (fw=v2.0) initialized[0m
+[0;32mI (3322) RC522_TAG_READER: RC522 tag reader initialized[0m
+[0;32mI (3342) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (3342) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (3402) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (3412) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (3462) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (3472) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (3532) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (3532) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (3592) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (3602) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (3662) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (3662) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (3722) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (3722) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (3782) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (3792) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (3852) LED_DEBUG_TASK: All connected => stopping LED debug[0m
+[0;32mI (3852) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (3852) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (3912) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (3922) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (3982) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (3982) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (4042) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (4052) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (4102) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (4112) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (4172) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (4172) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (4232) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (4242) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (4302) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (4302) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (4312) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (4312) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (4362) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (4372) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (4422) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (4432) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (4492) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (4492) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (4552) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (4562) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (4622) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (4622) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (4682) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (4682) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (4742) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (4752) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (4812) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (4812) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (4872) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (4882) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (4942) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (4942) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (5002) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (5012) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (5062) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (5072) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (5132) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (5142) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (5192) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (5202) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (5202) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (5262) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (5262) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (5262) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (5302) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (5322) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (5322) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (5382) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (5392) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (5452) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (5462) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (5512) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (5522) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (5582) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (5582) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (5642) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (5652) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (5702) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (5712) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (5772) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (5772) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (5832) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (5842) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (5902) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (5902) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (5962) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (5972) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (6022) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (6032) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (6092) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (6092) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (6152) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (6162) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (6222) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (6222) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (6282) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (6282) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (6302) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (6342) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (6352) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (6412) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (6412) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (6472) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (6482) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (6542) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (6542) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (6602) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (6612) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (6662) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (6672) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (6732) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (6732) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (6792) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (6802) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (6862) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (6862) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (6922) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (6922) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (6982) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (6992) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (7052) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (7052) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (7112) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (7122) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (7182) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (7182) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (7202) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (7242) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (7242) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (7262) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (7302) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (7312) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (7332) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (7372) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (7372) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (7432) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (7442) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (7502) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (7502) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (7562) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (7562) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (7622) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (7632) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (7692) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (7692) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (7752) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (7762) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (7822) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (7822) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (7882) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (7882) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (7942) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (7952) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (8012) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (8012) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (8072) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (8082) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (8142) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (8142) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (8202) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (8202) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (8262) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (8272) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (8312) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (8332) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (8332) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (8392) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (8402) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (8462) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (8462) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (8522) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (8532) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (8582) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (8592) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (8652) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (8652) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (8712) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (8722) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (8782) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (8782) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (8842) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (8852) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (8902) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (8912) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (8972) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (8972) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (9032) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (9042) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (9102) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (9102) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (9162) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (9172) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (9202) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (9222) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (9232) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (9262) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (9292) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (9302) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (9332) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (9352) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (9362) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (9422) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (9422) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (9482) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (9492) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (9542) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (9552) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (9612) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (9612) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (9672) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (9682) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (9742) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (9742) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (9802) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (9812) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (9862) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (9872) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (9932) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (9932) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (9992) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (10002) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (10062) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (10062) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (10122) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (10132) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (10182) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (10192) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (10252) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (10252) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (10312) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (10312) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (10322) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (10382) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (10382) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (10442) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (10442) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (10502) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (10512) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (10572) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (10582) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (10632) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (10642) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (10702) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (10702) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (10762) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (10772) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (10822) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (10832) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (10892) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (10902) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (10952) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (10962) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (11022) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (11022) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (11082) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (11092) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (11142) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (11152) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (11202) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (11212) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (11212) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (11262) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (11272) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (11282) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (11312) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (11342) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (11342) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (11402) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (11412) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (11462) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (11472) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (11532) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (11532) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (11592) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (11602) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (11662) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (11662) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (11722) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (11732) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (11782) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (11792) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (11852) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (11852) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (11912) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (11922) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (11982) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (11982) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (12042) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (12042) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (12102) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (12112) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (12172) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (12172) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (12232) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (12242) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (12302) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (12302) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (12312) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (12362) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (12362) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (12422) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (12432) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (12492) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (12492) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (12552) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (12562) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (12622) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (12622) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (12682) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (12682) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (12742) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (12752) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (12812) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (12812) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (12872) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (12882) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (12942) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (12942) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (13002) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (13002) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (13062) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (13072) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (13132) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (13132) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (13192) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (13202) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (13202) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (13262) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (13262) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (13262) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (13312) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (13322) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (13322) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (13382) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (13392) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (13452) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (13452) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (13512) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (13522) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (13582) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (13582) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (13642) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (13652) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (13702) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (13712) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (13772) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (13772) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (13832) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (13842) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (13902) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (14992) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15002) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15002) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (15032) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15032) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15042) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15072) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15072) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15082) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15132) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15132) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15142) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15142) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15142) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15162) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15172) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15172) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15182) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15202) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (15232) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15242) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15242) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15262) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (15262) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15272) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15282) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15302) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15312) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15322) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (15372) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15372) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15432) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15442) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15502) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15502) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15562) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15562) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15622) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15632) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15692) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15692) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15752) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15762) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15822) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15822) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15882) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15892) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15942) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (15952) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (16012) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (16012) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (16072) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (16082) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (16142) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (16142) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (16202) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (16202) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (16262) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (16272) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (16312) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (16332) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (16332) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (16392) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (16402) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (16462) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (16462) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (16522) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (16532) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (16582) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (16592) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (16652) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (16662) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (16712) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (16722) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (16782) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (16782) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (16842) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (16852) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (16902) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (16912) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (16972) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (16972) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (17032) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (17042) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (17102) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (17102) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (17162) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (17162) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (17202) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (17222) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (17232) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (17262) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (17292) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (17292) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (17322) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (17352) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (17362) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (17422) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (17422) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (17482) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (17482) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (17542) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (17552) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (17612) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (17612) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (17672) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (17682) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (17742) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (17742) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (17802) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (17802) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (17862) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (17872) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (17932) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (17932) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (17992) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (18002) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (18062) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (18062) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (18122) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (18132) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (18182) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (18192) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (18252) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (18252) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (18312) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (18322) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (18322) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (18382) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (18382) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (18442) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (18452) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (18502) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (18512) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (18572) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (18572) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (18632) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (18642) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (18702) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (18702) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (18762) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (18772) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (18822) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (18832) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (18892) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (18902) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (18952) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (18962) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (19022) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (19022) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (19082) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (19092) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (19142) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (19152) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (19202) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (19212) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (19212) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (19262) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (19272) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (19282) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (19322) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (19342) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (19342) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (19402) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (19412) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (19462) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (19472) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (19532) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (19532) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (19592) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (19602) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (19662) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (19662) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (19722) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (19722) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (19782) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (19792) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (19852) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (19852) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (19912) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (19922) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (19982) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (19982) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (20042) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (20042) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (20102) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (20112) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (20172) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (20172) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (20232) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (20242) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (20302) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (20302) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (20332) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (20362) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (20372) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (20422) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (20432) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (20492) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (20502) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (20552) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (20562) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (20622) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (20622) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (20682) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (20682) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (20742) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (20752) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (20812) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (20812) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (20872) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (20882) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (20942) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (20942) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (21002) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (21002) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (21062) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (21072) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (21132) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (21142) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (21192) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (21202) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (21202) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (21262) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (21262) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (21262) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (21322) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (21322) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (21332) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (21382) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (21392) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (21452) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (21452) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (21512) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (21522) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (21582) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (21582) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (21642) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (21652) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (21702) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (21712) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (21772) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (21772) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (21832) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (21842) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (21902) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (21902) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (21962) RC522_TAG_READER: New card present[0m
+[0;32mI (21962) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (21962) WS_MGR: Sending tag UID (0x03...) len=4[0m
+[0;32mI (22342) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (23202) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (23262) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (23322) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (24332) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (25202) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (25262) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (25332) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (25352) RC522_TAG_READER: Card removed[0m
+[0;32mI (25352) WS_MGR: Sending tag REMOVED (0x03)[0m
+[0;32mI (25352) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (25362) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (25422) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (25422) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (25482) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (25492) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (25542) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (25552) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (25612) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (25622) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (25672) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (25682) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (25742) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (25742) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (25802) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (25812) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (25862) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (25872) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (25932) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (25942) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (25992) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (26002) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (26062) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (26062) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (26122) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (26132) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (26182) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (26192) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (26252) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (26262) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (26312) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (26322) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (26332) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (26382) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (26382) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (26442) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (26452) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (26502) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (26512) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (26572) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (26582) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (26632) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (26642) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (26702) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (26702) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (26762) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (26772) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (26822) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (26832) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (26892) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (26892) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (26952) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (26962) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (27022) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (27022) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (27082) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (27092) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (27142) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (27152) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (27202) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (27212) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (27212) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (27262) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (27272) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (27282) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (27332) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (27342) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (27342) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (27402) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (27412) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (27462) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (27472) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (27532) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (27532) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (27592) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (27602) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (27662) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (27662) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (27722) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (27732) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (27782) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (27792) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (27852) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (27852) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (27912) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (27922) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (27982) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (27982) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (28042) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (28052) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (28102) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (28112) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (28172) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (28172) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (28232) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (28242) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (28302) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (28302) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (28332) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (28362) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (28362) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (28422) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (28432) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (28492) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (28502) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (28552) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (28562) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (28622) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (28622) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (28682) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (28692) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (28742) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (28752) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (28812) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (28812) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (28872) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (28882) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (28942) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (28942) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (29002) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (29012) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (29062) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (29072) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (29132) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (29142) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (29192) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (29202) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (29202) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (29262) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (29262) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (29262) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (29322) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (29332) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (29332) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (29382) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (29392) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (29452) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (29452) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (29512) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (29522) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (29582) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (29582) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (29642) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (29652) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (29702) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (29712) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (29772) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (29772) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (29832) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (29842) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (29902) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (29902) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (29962) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (29962) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (30022) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (30032) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (30092) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (30092) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (30152) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (30162) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (30222) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (30222) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (30282) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (30292) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (30332) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (30342) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (30352) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (30412) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (30422) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (30472) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (30482) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (30542) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (30542) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (30602) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (30612) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (30662) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (30672) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (30732) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (30732) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (30792) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (30802) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (30862) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (30862) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (30922) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (30932) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (30982) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (30992) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (31052) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (31062) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (31112) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (31122) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (31182) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (31182) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (31202) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (31242) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (31252) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (31262) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (31302) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (31312) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (31332) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (31372) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (31372) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (31432) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (31442) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (31502) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (31502) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (31562) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (31572) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (31622) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (31632) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (31692) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (31692) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (31752) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (31762) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (31822) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (31822) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (31882) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (31892) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (31942) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (31952) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (32012) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (32012) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (32072) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (32082) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (32142) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (32142) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (32202) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (32202) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (32262) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (32272) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (32332) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (32332) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (32342) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (32392) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (32402) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (32462) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (32462) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (32522) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (32522) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (32582) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (32592) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (32652) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (32652) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (32712) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (32722) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (32782) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (32782) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (32842) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (32852) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (32902) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (32912) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (32972) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (32972) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (33032) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (33042) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (33042) RC522_TAG_READER: New card present[0m
+[0;32mI (33052) WS_MGR: Sending tag UID (0x03...) len=4[0m
+[0;32mI (33202) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (33262) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (33332) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (33882) RC522_TAG_READER: Card removed[0m
+[0;32mI (33882) WS_MGR: Sending tag REMOVED (0x03)[0m
+[0;32mI (33932) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35092) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35092) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (35102) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35102) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35112) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35112) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35122) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35142) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35142) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35142) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35152) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35152) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35162) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35182) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35192) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35192) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35202) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (35202) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35202) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35222) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35222) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35262) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (35272) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35282) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35342) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35342) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (35352) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35402) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35412) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35462) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35472) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35532) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35542) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35592) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35602) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35662) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35662) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35722) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35732) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35782) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35792) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35852) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35852) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35912) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35922) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35982) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (35982) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (36042) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (36052) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (36102) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (36112) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (36172) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (36182) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (36232) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (36242) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (36302) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (36302) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (36342) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (36362) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (36362) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (36422) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (36432) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (36452) RC522_TAG_READER: New card present[0m
+[0;32mI (36452) WS_MGR: Sending tag UID (0x03...) len=4[0m
+[0;32mI (37202) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (37262) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (37342) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (38342) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (39202) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (39262) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (39352) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (40342) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (41202) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (41262) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (41342) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (42342) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (43202) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (43262) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (43352) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (44352) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (45202) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (45262) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (45352) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (46352) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (46982) RC522_TAG_READER: Card removed[0m
+[0;32mI (46982) WS_MGR: Sending tag REMOVED (0x03)[0m
+[0;32mI (46982) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (46992) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (47052) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (47062) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (47112) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (47122) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (47182) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (47182) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (47202) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (47242) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (47242) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (47262) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (47302) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (47312) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (47352) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (47372) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (47372) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (47432) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (47442) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (47502) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (47502) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (47562) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (47572) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (47622) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (47632) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (47692) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (47692) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (47752) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (47762) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (47822) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (47822) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (47882) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (47882) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (47942) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (47952) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (48012) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (48012) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (48072) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (48082) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (48142) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (48142) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (48202) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (48202) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (48262) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (48272) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (48332) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (48332) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (48352) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (48392) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (48402) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (48462) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (48462) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (48522) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (48532) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (48582) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (48592) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (48652) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (48662) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (48712) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (48722) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (48782) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (48782) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (48842) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (48852) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (48902) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (48912) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (48972) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (48972) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (49032) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (49042) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (49102) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (49102) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (49162) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (49162) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (49202) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (49222) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (49232) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (49262) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (49292) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (49302) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (49352) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (49352) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (49362) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (49422) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (49422) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (49482) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (49492) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (49542) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (49552) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (49612) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (49612) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (49672) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (49682) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (49742) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (49742) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (49802) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (49812) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (49862) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (49872) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (49932) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (49932) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (49992) AUDIO_RECORD: Card not active, sending zeros[0m
+[0;32mI (50002) AUDIO_RECORD: Card not active, sending zeros[0m

@@ -1,0 +1,2123 @@
+Command: /home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/julien/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/julien/Documents/esp32IDF/hello_world/build/hello_world.elf /home/julien/Documents/esp32IDF/hello_world/build/bootloader/bootloader.elf -m '/home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python' '/home/julien/esp/esp-idf/tools/idf.py'
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x12 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6368
+load:0x40078000,len:15880
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Apr  4 2025 11:22:26[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (36) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (63) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (76) boot:  3 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (83) boot:  4 ota_0            OTA app          00 10 00110000 00100000[0m
+[0;32mI (89) boot:  5 ota_1            OTA app          00 11 00210000 00100000[0m
+[0;32mI (96) boot:  6 coredump         Unknown data     01 03 00310000 00010000[0m
+[0;32mI (102) boot: End of partition table[0m
+[0;32mI (106) boot: Defaulting to factory image[0m
+[0;32mI (110) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=29368h (168808) map[0m
+[0;32mI (175) esp_image: segment 1: paddr=00039390 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (175) esp_image: segment 2: paddr=000393b4 vaddr=3ffb0000 size=048b4h ( 18612) load[0m
+[0;32mI (186) esp_image: segment 3: paddr=0003dc70 vaddr=40080000 size=023a8h (  9128) load[0m
+[0;32mI (190) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=b3ad0h (735952) map[0m
+[0;32mI (445) esp_image: segment 5: paddr=000f3af8 vaddr=400823a8 size=19024h (102436) load[0m
+[0;32mI (498) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (498) boot: Disabling RNG early entropy source...[0m
+[0;32mI (509) cpu_start: Multicore app[0m
+[0;32mI (517) cpu_start: Pro cpu start user code[0m
+[0;32mI (517) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (517) app_init: Application information:[0m
+[0;32mI (518) app_init: Project name:     hello_world[0m
+[0;32mI (522) app_init: App version:      3dbadab-dirty[0m
+[0;32mI (526) app_init: Compile time:     Apr  4 2025 11:22:21[0m
+[0;32mI (531) app_init: ELF file SHA256:  0f2584d21...[0m
+[0;32mI (536) app_init: ESP-IDF:          v5.5-dev-2290-g94cfe394fe[0m
+[0;32mI (541) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (545) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (549) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (553) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (559) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (564) heap_init: At 3FFBB8C0 len 00024740 (145 KiB): DRAM[0m
+[0;32mI (569) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (575) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (580) heap_init: At 4009B3CC len 00004C34 (19 KiB): IRAM[0m
+[0;32mI (587) spi_flash: detected chip: generic[0m
+[0;32mI (589) spi_flash: flash io: dio[0m
+[0;33mW (592) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
+[0;33mW (604) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;32mI (612) main_task: Started on CPU0[0m
+[0;32mI (622) main_task: Calling app_main()[0m
+[0;32mI (622) MAIN: Starting app_main...[0m
+[0;32mI (622) led_button_blink: Create RMT TX channel[0m
+[0;32mI (622) led_button_blink: Install LED strip encoder[0m
+[0;32mI (622) MAIN: Initializing Wi-Fi...[0m
+[0;32mI (662) WIFI_MGR: Loaded Wi-Fi creds from NVS: SSID=Partagedeco[0m
+[0;32mI (672) wifi:wifi driver task: 3ffc3c44, prio:23, stack:6656, core=0[0m
+[0;32mI (682) wifi:wifi firmware version: 3a3aca644[0m
+[0;32mI (682) wifi:wifi certification version: v7.0[0m
+[0;32mI (682) wifi:config NVS flash: enabled[0m
+[0;32mI (682) wifi:config nano formatting: disabled[0m
+[0;32mI (692) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (692) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (702) wifi:Init management short buffer num: 32[0m
+[0;32mI (702) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (712) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (712) wifi:Init static rx buffer num: 10[0m
+[0;32mI (712) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (722) wifi_init: rx ba win: 6[0m
+[0;32mI (722) wifi_init: accept mbox: 6[0m
+[0;32mI (722) wifi_init: tcpip mbox: 32[0m
+[0;32mI (732) wifi_init: udp mbox: 6[0m
+[0;32mI (732) wifi_init: tcp mbox: 6[0m
+[0;32mI (732) wifi_init: tcp tx win: 5760[0m
+[0;32mI (732) wifi_init: tcp rx win: 5760[0m
+[0;32mI (742) wifi_init: tcp mss: 1440[0m
+[0;32mI (742) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (742) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (762) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (842) wifi:mode : sta (94:54:c5:ae:fb:24)[0m
+[0;32mI (842) wifi:enable tsf[0m
+[0;32mI (842) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (842) WIFI_MGR: STA init done. Trying SSID: Partagedeco[0m
+[0;32mI (842) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (852) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (852) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (862) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (872) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (882) wifi:connected with Partagedeco, aid = 1, channel 11, BW20, bssid = aa:f0:fe:0d:99:0e[0m
+[0;32mI (882) wifi:security: WPA2-PSK, phy: bgn, rssi: -52[0m
+[0;32mI (902) wifi:pm start, type: 0[0m
+
+[0;32mI (902) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (902) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (912) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (922) wifi:<ba-add>idx:0 (ifx:0, aa:f0:fe:0d:99:0e), tid:0, ssn:0, winSize:64[0m
+[0;32mI (1852) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (1942) esp_netif_handlers: sta ip: 10.11.44.122, mask: 255.255.255.0, gw: 10.11.44.242[0m
+[0;32mI (1942) WIFI_MGR: STA got IP: 10.11.44.122[0m
+[0;32mI (1942) CORE_DUMP_MGR: No coredump or error reading offset: ESP_ERR_INVALID_SIZE[0m
+[0;32mI (1952) WS_MGR: Loaded existing API key from NVS: C2F94A01D7CD3D3DF45192A8A5771FEA[0m
+[0;32mI (1952) WS_MGR: Final WebSocket headers:[0m
+X-API-Key: C2F94A01D7CD3D3DF45192A8A5771FEA
+
+[0;32mI (1962) websocket_client: Started[0m
+[0;32mI (1962) WS_MGR: WebSocket started with header [X-API-Key: C2F94A01D7CD3D3DF45192A8A5771FEA[0m
+]
+[0;32mI (1972) WS_MGR: audio_consumer_task starting![0m
+[0;32mI (1972) MAIN: STA connected. Starting other services...[0m
+[0;32mI (1982) WS_MGR: ringbuf_monitor_task starting![0m
+[0;32mI (1982) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (1982) CORE_DUMP_MGR: No coredump or error reading offset: ESP_ERR_INVALID_SIZE[0m
+[0;32mI (2002) WS_MGR: Loaded existing API key from NVS: C2F94A01D7CD3D3DF45192A8A5771FEA[0m
+[0;32mI (2002) WS_MGR: Final WebSocket headers:[0m
+X-API-Key: C2F94A01D7CD3D3DF45192A8A5771FEA
+
+[0;32mI (2022) websocket_client: Started[0m
+[0;32mI (2022) WS_MGR: WebSocket started with header [X-API-Key: C2F94A01D7CD3D3DF45192A8A5771FEA[0m
+]
+[0;32mI (2022) WS_MGR: audio_consumer_task starting![0m
+[0;32mI (2022) led_button_blink: Configuring button on GPIO 14[0m
+[0;32mI (2032) WS_MGR: ringbuf_monitor_task starting![0m
+[0;32mI (2042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (2032) gpio: GPIO[14]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2052) AudioPlayer: audio_task started[0m
+[0;32mI (2062) AudioPlayer: Audio player initialized. sample_rate=8000[0m
+[0;32mI (2062) AUDIO_RECORD: I2S initialized for mic input (sr=8000, bits=32)[0m
+[0;32mI (2082) WS_MGR: WebSocket connected[0m
+[1;31mE (2082) websocket_client: Websocket client is not connected[0m
+[0;32mI (2092) rc522: PCD (fw=v2.0) initialized[0m
+[0;32mI (2092) RC522_TAG_READER: RC522 tag reader initialized[0m
+[0;32mI (2112) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[1;31mE (2112) websocket_client: Websocket client is not connected[0m
+[0;32mI (2122) WS_MGR: WebSocket connected[0m
+[0;33mW (2122) WS_MGR: Unknown prefix=0x03 => ignoring[0m
+[0;32mI (2852) LED_DEBUG_TASK: All connected => stopping LED debug[0m
+[0;32mI (3112) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (3122) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (3992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (4042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (4122) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (5122) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (5992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (6042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (6382) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (6562) RC522_TAG_READER: New card present[0m
+[0;32mI (6562) WS_MGR: Sending tag UID (0x03...) len=4[0m
+[0;32mI (7122) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (7572) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (7572) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (7632) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (7642) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (7692) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (7702) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (7762) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (7762) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (7822) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (7832) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (7892) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (7892) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (7952) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (7952) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (7992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (8012) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (8022) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (8042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (8082) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (8082) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (8122) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (8142) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (8152) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (8212) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (8212) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (8272) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (8272) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (8332) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (8342) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (8402) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (8402) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (8462) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (8472) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (8532) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (8532) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (8592) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (8602) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (8652) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (8662) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (8722) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (8732) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (8782) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (8792) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (8852) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (8852) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (8912) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (8922) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (8972) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (8982) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (9042) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (9042) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (9102) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (9112) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (9122) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (9172) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (9172) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (9232) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (9232) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (9292) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (9302) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (9362) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (9362) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (9422) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (9432) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (9492) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (9492) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (9552) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (9552) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (9612) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (9612) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (9622) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (9642) rc522: rc522_picc_transceive(206): F523[0m
+[1;31mE (9672) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (9682) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (9682) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (9702) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (9742) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (9752) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (9812) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (9812) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (9842) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (9872) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (9872) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (9932) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (9942) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (9942) rc522: rc522_picc_transceive(206): F523[0m
+[1;31mE (9972) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (9992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (10002) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (10002) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (10002) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (10022) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (10042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (10062) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (10072) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (10092) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (10132) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (10132) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (10132) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (10192) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (10192) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (10202) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (10222) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (10252) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (10262) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (10292) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (10322) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (10322) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (10332) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (10382) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (10392) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (10452) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (10452) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (10512) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (10522) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (10572) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (10582) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (10642) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (10642) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (10702) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (10712) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (10772) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (10772) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (10832) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (10842) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (10892) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (10902) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (10962) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (10972) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (11022) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (11032) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (11092) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (11092) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (11132) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (11152) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (11162) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (11212) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (11222) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (11282) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (11282) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (11342) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (11352) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (11412) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (11412) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (11472) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (11482) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (11532) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (11542) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (11602) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (11612) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (11662) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (11672) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (11732) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (11732) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (11792) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (11792) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (11852) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (11862) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (11922) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (11922) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (11982) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (11992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (11992) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (12042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (12052) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (12052) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (12112) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (12122) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (12132) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (12172) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (12182) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (12242) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (12242) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (12302) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (12312) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (12372) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (12372) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (13132) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (13992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (13992) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (14042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (14132) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[1;31mE (14522) rc522: rc522_picc_transceive(206): F523[0m
+[1;31mE (14832) rc522: rc522_picc_transceive(206): F523[0m
+[1;31mE (14862) rc522: rc522_picc_transceive(206): F523[0m
+[1;31mE (14892) rc522: rc522_picc_transceive(206): F523[0m
+[1;31mE (14912) rc522: rc522_picc_transceive(206): F523[0m
+[1;31mE (14982) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (15032) RC522_TAG_READER: Card removed[0m
+[0;32mI (15032) WS_MGR: Sending tag REMOVED (0x03)[0m
+[1;31mE (15152) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (15272) RC522_TAG_READER: New card present[0m
+[0;32mI (15272) WS_MGR: Sending tag UID (0x03...) len=4[0m
+[0;32mI (15992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (16042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (16192) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (16512) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (17422) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (17432) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (17492) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (17492) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (17522) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (17552) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (17552) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (17582) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (17612) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (17622) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (17662) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (17682) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (17682) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (17742) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (17752) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (17762) rc522: rc522_picc_transceive(206): F523[0m
+[1;31mE (17792) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (17812) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (17812) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (17822) rc522: rc522_picc_transceive(206): F523[0m
+[1;31mE (17842) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (17872) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (17882) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (17932) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (17942) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (17992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (18002) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (18002) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (18042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[1;31mE (18052) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (18062) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (18072) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (18132) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (18142) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (18152) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (18192) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (18202) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (18252) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (18262) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (18272) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (18322) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (18332) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (18382) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (18392) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (18432) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (18452) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (18462) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (18512) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (18522) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (18522) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[1;31mE (18532) rc522: rc522_picc_transceive(206): F523[0m
+[1;31mE (18562) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (18572) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (18582) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (18592) rc522: rc522_picc_transceive(206): F523[0m
+[1;31mE (18612) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (18642) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (18642) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (18692) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (18702) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (18712) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (18722) rc522: rc522_picc_transceive(206): F523[0m
+[1;31mE (18752) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (18772) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (18772) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (18772) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (18832) RC522_TAG_READER: Card removed[0m
+[0;32mI (18832) WS_MGR: Sending tag REMOVED (0x03)[0m
+[0;32mI (18832) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (18842) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (18892) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (18902) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (18952) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (18962) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (18962) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (19022) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (19032) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (19072) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (19092) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (19092) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (19152) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (19162) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (19192) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (19212) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (19222) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (19282) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (19282) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (19312) rc522: rc522_picc_transceive(206): F523[0m
+[0;33mW (19312) rc522: rc522_task(282): select failed (err=F524)[0m
+[0;32mI (19342) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (19352) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (19412) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (19412) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (19432) rc522: rc522_picc_transceive(206): F523[0m
+[0;32mI (19552) RC522_TAG_READER: New card present[0m
+[0;32mI (19552) WS_MGR: Sending tag UID (0x03...) len=4[0m
+[0;32mI (19992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (20042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (20632) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (21392) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (21402) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (21452) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (21462) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (21522) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (21522) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (21582) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (21592) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (21632) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (21652) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (21652) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (21712) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (21712) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (21772) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (21782) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (21842) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (21842) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (21902) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (21912) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (21972) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (21972) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (21992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (22032) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (22032) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (22042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (22092) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (22102) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (22162) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (22162) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (22222) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (22232) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (22292) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (22292) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (22352) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (22352) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (22412) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (22422) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (22482) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (22482) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (22542) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (22552) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (22612) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (22612) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (22632) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (22672) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (22672) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (22732) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (22742) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (22802) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (22812) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (22862) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (22872) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (22932) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (22942) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (22992) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (23002) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (23062) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (23062) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (23122) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (23132) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (23182) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (23192) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (23252) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (23252) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (23312) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (23322) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (23362) RC522_TAG_READER: Card removed[0m
+[0;32mI (23362) WS_MGR: Sending tag REMOVED (0x03)[0m
+[0;32mI (23372) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (23382) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (23442) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (23452) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (23502) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (23512) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (23572) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (23572) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (23632) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (23642) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (23692) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (23702) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (23762) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (23772) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (23822) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (23832) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (23892) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (23892) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (23992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (24042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (24922) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (25922) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (25992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (26042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (26922) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (27922) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (27992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (28042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (28922) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (29922) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (29992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (30042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (30932) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (31932) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (31992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (32042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (32932) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (33932) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (33992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (34042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (34932) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (35932) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (35992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (36042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (36932) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (37932) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (37992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (38042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (38932) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (39932) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (39992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (40042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (40932) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (41942) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (41992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (42042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (42342) RC522_TAG_READER: New card present[0m
+[0;32mI (42342) WS_MGR: Sending tag UID (0x03...) len=4[0m
+[0;32mI (42942) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (43942) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (43992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (44042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (44942) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (45942) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (45992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (46042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (46942) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (47942) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (47992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (48042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (48942) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (49942) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (49992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (50042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (50952) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (51952) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (51992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (52042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (52952) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (53952) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (53992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (54042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (54952) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (55952) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (55992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (56042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (56952) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (57952) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (57992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (58042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (58972) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (59962) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (59992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (60042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (60962) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (61962) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (61992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (62042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (62972) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (63992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (64042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (64772) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (64962) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (65962) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (65992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (66042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (66972) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (67972) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (67992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (68042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (68972) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (69972) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (69992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (70042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (70972) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (71972) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (71992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (72042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (72972) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (73972) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (73992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (74042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (74972) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (75972) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (75992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (76042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (76972) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (77982) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (77992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (78042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (78982) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (79982) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (79992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (80042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (80992) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (81982) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (81992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (82042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (82982) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (83982) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (83992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (84042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (85032) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (85982) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (85992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (86042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (86982) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (87982) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (87992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (88042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (88992) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (89982) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (89992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (90042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (91002) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (91992) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (91992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (92042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (92992) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (93992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (93992) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (94042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (94992) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (95992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (95992) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (96042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (96992) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (97992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (97992) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (98042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (98992) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (99992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (99992) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (100042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (100992) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (101992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (101992) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (102042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (103002) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (103992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (104002) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (104042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (105002) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (105992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (106002) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (106042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (107002) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (107992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (108002) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (108042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (109002) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (109992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (110002) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (110042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (111012) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (111992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (112002) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (112042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (113002) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (113992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (114012) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (114042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (115012) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (115992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (116012) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (116042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (117012) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (117992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (118012) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (118042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (119012) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (119992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (120012) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (120042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (121012) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (121992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (122012) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (122042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (123022) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (123992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (124022) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (124042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (124922) RC522_TAG_READER: Card removed[0m
+[0;32mI (124922) WS_MGR: Sending tag REMOVED (0x03)[0m
+[0;32mI (125022) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (125992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (126022) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (126042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (127022) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (127992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (128022) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (128042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (128962) RC522_TAG_READER: New card present[0m
+[0;32mI (128962) WS_MGR: Sending tag UID (0x03...) len=4[0m
+[0;32mI (129212) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (129932) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (129952) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (129992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (130002) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (130012) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (130042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (130062) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (130072) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (130132) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (130132) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (130192) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (130202) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (130212) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (130252) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (130262) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (130322) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (130322) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (130382) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (130392) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (130452) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (130452) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (130512) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (130512) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (130572) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (130582) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (130642) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (130642) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (130702) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (130712) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (130772) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (130772) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (130832) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (130832) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (130892) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (130902) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (130962) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (130962) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (131022) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (131032) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (131092) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (131092) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (131152) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (131152) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (131212) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (131212) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (131222) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (131282) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (131282) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (131342) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (131352) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (131412) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (131412) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (131472) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (131482) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (131532) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (131542) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (131602) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (131602) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (131662) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (131672) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (131732) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (131732) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (131792) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (131802) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (131852) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (131862) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (131922) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (131922) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (131982) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (131992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (131992) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (132042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (132052) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (132052) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (132112) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (132122) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (132172) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (132182) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (132222) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (132242) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (132242) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (132302) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (132312) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (132372) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (132372) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (132432) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (132442) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (132492) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (132502) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (132562) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (132562) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (132622) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (132632) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (132692) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (132692) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (132752) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (132752) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (132812) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (132822) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (132882) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (132882) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (132942) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (132952) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (133012) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (133012) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (133072) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (133072) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (133132) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (133142) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (133202) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (133202) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (133242) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (133262) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (133272) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (133332) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (133332) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (133392) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (133392) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (133452) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (133462) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (133522) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (133522) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (133582) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (133592) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (133652) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (133652) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (133712) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (133722) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (133772) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (133782) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (133842) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (133842) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (133902) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (133912) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (133972) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (133972) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (133992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (134032) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (134042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (134042) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (134092) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (134112) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (134162) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (134162) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (134222) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (134222) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (134232) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (134292) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (134302) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (134352) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (134362) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (134412) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (134422) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (134482) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (134492) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (134542) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (134552) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (134612) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (134612) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (134672) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (134682) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (134732) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (134742) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (134802) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (134802) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (134862) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (134872) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (134932) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (134932) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (134992) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (135002) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (135052) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (135062) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (135122) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (135122) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (135182) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (135192) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (135222) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (135992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (136042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (136222) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (137222) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (137992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (138042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (138232) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (139232) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (139342) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (139352) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (139412) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (139412) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (139472) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (139482) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (139532) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (139542) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (139602) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (139602) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (139662) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (139672) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (139732) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (139732) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (139792) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (139792) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (139852) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (139862) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (139922) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (139922) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (139982) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (139992) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (139992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (140042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (140052) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (140052) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (140112) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (140122) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (140172) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (140182) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (140232) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (140242) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (140242) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (140302) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (140312) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (140372) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (140372) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (140432) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (140432) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (140492) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (140502) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (140562) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (140562) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (140622) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (140632) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (140692) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (140692) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (140752) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (140752) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (140812) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (140822) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (140882) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (140882) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (140942) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (140952) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (141012) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (141012) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (141072) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (141082) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (141132) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (141142) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (141202) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (141202) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (141232) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (141262) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (141272) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (141332) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (141332) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (141392) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (141402) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (141462) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (141462) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (141522) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (141532) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (141582) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (141592) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (141652) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (141652) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (141712) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (141722) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (141772) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (141782) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (141842) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (141842) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (141902) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (141912) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (141972) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (141972) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (141992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (142032) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (142042) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (142042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (142092) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (142102) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (142162) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (142162) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (142222) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (142232) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (142232) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (142292) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (142292) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (142352) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (142352) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (142412) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (142422) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (142482) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (142482) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (142542) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (142552) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (142612) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (142612) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (142672) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (142672) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (142732) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (142742) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (142802) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (142802) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (142862) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (142872) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (142932) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (142932) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (142992) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (142992) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (143052) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (143062) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (143122) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (143122) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (143182) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (143192) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (143232) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (143252) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (143252) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (143312) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (143322) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (143372) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (143382) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (143442) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (143452) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (143502) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (143512) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (143572) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (143582) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (143632) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (143642) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (143692) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (143702) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (143762) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (143762) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (143822) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (143832) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (143892) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (143892) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (143952) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (143962) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (143992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (144012) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (144022) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (144042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (144082) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (144082) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (144142) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (144152) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (144212) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (144212) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (144242) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (144272) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (144282) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (144332) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (144342) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (144402) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (144402) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (144462) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (144472) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (144532) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (144532) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (144592) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (144602) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (144652) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (144662) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (144722) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (144722) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (144782) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (144792) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (145232) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (145992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (146042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (146242) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (147242) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (147982) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (147992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (147992) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (148042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (148052) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (148052) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (148112) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (148112) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (148172) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (148182) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (148242) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (148242) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (148252) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (148302) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (148312) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (148372) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (148372) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (148432) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (148432) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (148492) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (148502) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (148562) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (148562) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (148622) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (148632) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (148692) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (148692) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (148752) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (148752) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (148812) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (148822) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (148882) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (148882) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (148942) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (148952) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (149012) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (149012) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (149072) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (149082) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (149132) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (149142) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (149202) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (149202) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (149242) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (149262) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (149272) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (149332) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (149332) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (149392) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (149402) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (149452) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (149462) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (149522) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (149522) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (149582) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (149592) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (149652) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (149652) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (149712) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (149722) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (149772) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (149782) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (149842) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (149852) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (149902) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (149912) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (149972) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (149972) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (149992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (150032) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (150042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (150042) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (150092) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (150102) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (150162) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (150162) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (150222) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (150232) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (150242) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (150292) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (150292) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (150352) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (150362) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (150412) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (150422) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (150482) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (150482) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (150542) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (150552) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (150612) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (150612) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (150672) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (150672) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (150732) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (150742) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (150802) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (150802) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (150862) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (150872) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (150932) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (150932) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (150992) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (150992) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (151052) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (151062) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (151122) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (151122) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (151182) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (151192) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (151242) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (151252) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (151252) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (151312) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (151312) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (151372) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (151382) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (151442) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (151442) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (151502) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (151512) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (151572) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (151572) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (151632) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (151642) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (151692) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (151702) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (151762) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (151772) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (151822) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (151832) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (151892) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (151892) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (151952) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (151962) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (151992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (152012) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (152022) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (152042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (152082) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (152082) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (152142) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (152162) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (152212) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (152212) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (152252) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (152272) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (152282) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (152332) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (152342) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (152402) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (152402) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (152462) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (152472) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (152532) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (152532) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (152592) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (152592) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (152652) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (152662) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (152722) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (152722) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (152782) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (152792) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (152852) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (152852) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (152912) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (152912) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (152972) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (152982) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (153042) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (153042) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (153102) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (153112) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (153172) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (153172) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (153232) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (153242) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (153242) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (153292) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (153302) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (153362) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (153362) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (153422) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (153432) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (153492) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (153492) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (153552) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (153552) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (153612) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (153622) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (153682) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (153682) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (153742) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (153752) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (153812) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (153812) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (153872) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (153872) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (153932) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (153942) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (153992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (154002) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (154002) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (154042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (154062) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (154072) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (154132) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (154132) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (154192) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (154202) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (154242) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (154252) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (154262) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (154322) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (154322) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (154382) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (154392) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (154452) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (154462) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (154512) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (154522) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (154572) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (154582) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (154642) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (154642) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (154702) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (154712) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (154772) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (154772) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (154832) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (154842) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (154892) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (154902) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (154962) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (154962) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (155022) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (155032) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (155092) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (155092) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (155152) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (155162) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (155212) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (155222) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (155252) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (155282) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (155282) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (155342) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (155352) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (155412) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (155412) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (155472) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (155472) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (155532) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (155542) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (155602) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (155602) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (155662) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (155672) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (155732) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (155732) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (155792) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (155792) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (155852) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (155862) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (155922) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (155922) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (155982) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (155992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (155992) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (156042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (156052) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (156052) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (156112) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (156112) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (156172) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (156182) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (156242) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (156252) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (156252) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (156302) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (156312) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (156372) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (156372) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (156432) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (156442) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (156492) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (156502) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (156562) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (156562) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (156622) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (156632) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (156692) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (156692) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (156752) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (156762) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (156812) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (156822) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (156882) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (156892) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (156942) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (156952) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (157252) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (157992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (158042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (158252) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (159252) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (159992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (160042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (160252) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (160272) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (160272) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (160332) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (160342) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (160402) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (160402) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (160462) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (160472) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (160532) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (160532) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (160592) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (160592) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (160652) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (160662) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (160722) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (160722) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (160782) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (160792) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (160852) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (160852) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (160912) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (160912) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (160972) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (160982) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (161042) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (161042) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (161102) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (161112) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (161172) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (161172) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (161232) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (161242) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (161252) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (161302) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (161302) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (161362) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (161372) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (161422) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (161432) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (161492) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (161492) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (161552) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (161562) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (161612) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (161622) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (161682) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (161682) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (161742) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (161752) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (161812) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (161812) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (161872) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (161882) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (161932) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (161942) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (161992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (162002) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (162002) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (162042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (162062) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (162072) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (162132) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (162132) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (162192) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (162192) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (162252) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (162252) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (162262) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (162322) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (162322) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (162382) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (162392) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (162452) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (162452) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (162512) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (162512) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (162572) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (162582) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (162642) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (162642) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (162702) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (162712) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (162772) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (162772) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (162832) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (162842) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (162892) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (162902) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (162962) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (162962) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (163022) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (163032) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (163092) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (163092) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (163152) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (163162) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (163212) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (163222) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (163252) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (163282) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (163282) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (163342) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (163352) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (163412) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (163412) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (163472) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (163482) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (163542) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (163542) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (163602) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (163612) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (163662) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (163672) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (163732) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (163732) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (163792) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (163792) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (163852) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (163862) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (163922) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (163922) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (163982) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (163992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (163992) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (164042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (164052) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (164052) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (164112) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (164112) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (164172) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (164182) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (164242) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (164242) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (164252) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (164302) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (164312) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (164372) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (164372) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (164432) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (164442) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (164492) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (164502) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (164562) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (164562) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (164622) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (164632) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (164692) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (164692) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (164752) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (164762) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (164812) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (164822) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (164882) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (164882) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (164942) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (164952) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (165012) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (165012) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (165072) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (165072) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (165132) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (165142) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (165202) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (165202) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (165262) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (165262) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (165272) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (165332) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (165332) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (165392) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (165402) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (165452) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (165462) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (165522) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (165532) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (165582) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (165592) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (165652) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (165652) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (165712) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (165722) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (165772) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (165782) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (165842) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (165852) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (165902) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (165912) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (165972) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (165972) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (165992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (166032) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (166042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (166042) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (166092) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (166102) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (166162) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (166162) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (166222) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (166232) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (166262) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (166292) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (166292) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (166352) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (166352) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (166412) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (166422) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (166482) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (166482) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (166542) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (166552) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (166612) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (166612) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (166672) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (166672) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (166732) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (166742) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (166802) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (166802) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (166862) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (166872) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (166932) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (166932) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (166992) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (167002) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (167052) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (167062) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (167122) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (167122) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (167182) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (167192) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (167252) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (167252) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (167262) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (167312) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (167312) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (167372) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (167382) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (167442) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (167442) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (167502) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (167512) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (167572) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (167572) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (167632) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (167642) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (167692) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (167702) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (167762) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (167762) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (167822) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (167832) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (167892) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (167902) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (167952) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (167962) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (167992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (168012) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (168022) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (168042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (168082) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (168082) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (168142) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (168152) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (168212) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (168212) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (168262) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (168272) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (168272) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (168332) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (168342) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (168402) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (168402) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (168462) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (168472) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (168532) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (168532) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (168592) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (168592) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (168652) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (168662) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (168722) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (168722) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (168782) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (168792) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (168852) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (168852) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (168912) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (168922) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (168972) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (168982) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (169042) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (169042) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (169102) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (169112) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (169172) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (169172) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (169232) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (169232) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (169262) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (169292) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (169302) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (169362) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (169362) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (169422) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (169432) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (169492) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (169492) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (169552) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (169552) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (169612) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (169622) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (169682) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (169682) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (169742) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (169752) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (169812) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (169812) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (169872) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (169882) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (169932) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (169942) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (169992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (170002) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (170012) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (170042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (170062) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (170072) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (170132) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (170132) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (170192) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (170202) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (170252) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (170262) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (170262) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (170322) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (170322) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (170382) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (170392) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (170452) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (170452) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (170512) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (170512) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (170572) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (170582) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (170642) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (170642) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (170702) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (170712) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (170772) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (170772) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (170832) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (170832) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (170892) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (170902) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (170962) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (170962) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (171022) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (171032) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (171092) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (171092) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (171152) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (171152) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (171212) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (171222) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (171262) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (171282) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (171282) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (171342) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (171352) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (171412) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (171412) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (171472) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (171472) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (171532) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (171542) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (171602) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (171602) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (171662) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (171672) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (171732) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (171732) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (171792) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (171802) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (171852) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (171862) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (171922) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (171932) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (171982) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (171992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (172002) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (172042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (172052) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (172052) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (172112) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (172162) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (172172) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (173312) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (173322) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (173332) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (173342) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (173352) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (173352) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (173362) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (173372) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (173372) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (173412) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (173422) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (173432) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (173432) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (173432) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (173472) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (173472) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (173472) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (173482) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (173512) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (173512) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (173522) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (173522) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (173532) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (173612) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (173612) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (173652) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (173652) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (173712) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (173722) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (173772) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (173782) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (173842) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (173842) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (173902) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (173912) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (173992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (174042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (174612) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;33mW (174642) WS_MGR: Unknown prefix=0xD6 => ignoring[0m
+[0;32mI (174642) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (174672) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (174682) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;33mW (174712) WS_MGR: Unknown prefix=0x88 => ignoring[0m
+[0;32mI (174732) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (174742) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;33mW (174752) WS_MGR: Unknown prefix=0xAD => ignoring[0m
+[0;32mI (174802) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (174802) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (174812) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (174862) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;33mW (174882) WS_MGR: Unknown prefix=0x26 => ignoring[0m
+[0;32mI (174892) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (174932) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (174962) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (174962) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (175022) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (175022) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (175082) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (175082) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (175142) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (175142) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (175202) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (175202) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (175252) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (175252) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (175302) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (175302) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (175362) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (175362) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (175412) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (175412) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (175462) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (175462) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (175522) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (175522) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (175582) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (175582) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (175642) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (175642) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (175692) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (175692) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (175752) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (175752) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (175812) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (175812) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (175862) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (175862) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (175912) WS_MGR: Ring buffer full => dropped audio![0m
+[0;32mI (175912) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (175922) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (175922) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (175932) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (175942) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (175942) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (175952) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (175952) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (175972) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (175982) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (175982) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (175992) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (175992) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176002) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176022) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176022) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176032) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176042) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176042) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176062) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176082) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176082) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176142) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176152) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176212) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176212) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176272) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176282) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176302) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (176332) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176342) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176402) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176402) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176462) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176472) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176532) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176532) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176592) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176602) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176652) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176662) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176722) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176722) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176782) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176792) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176852) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176852) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176912) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176922) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176972) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (176982) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (177042) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (177042) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (177102) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (177112) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (177172) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (177172) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (177232) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (177242) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (177272) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (177292) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (177302) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (177362) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (177362) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (177422) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (177432) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (177492) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (177492) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (177552) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (177562) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (177612) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (177622) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (177682) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (177682) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (177742) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (177752) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (177812) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (177812) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (177872) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (177882) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (177932) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (177942) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (178002) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (178002) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (178062) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (178072) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (178132) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (178132) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (178192) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (178202) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (178252) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (178262) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (178272) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (178322) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (178322) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (178382) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (178392) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (178452) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (178452) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (178512) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (178522) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (178572) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (178582) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (178642) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (178642) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (178702) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (178712) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (178772) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (178772) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (178832) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (178842) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (178892) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (178902) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (178962) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (178962) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (179022) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (179032) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (179092) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (179092) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (179152) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (179162) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (179212) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (179222) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (179272) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (179282) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (179282) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (179342) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (179352) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (179412) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (179412) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (179472) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (179482) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (179532) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (179542) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (179602) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (179602) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[1;31mE (179602) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (179602) task_wdt:  - IDLE1 (CPU 1)[0m
+[1;31mE (179602) task_wdt: Tasks currently running:[0m
+[1;31mE (179602) task_wdt: CPU 0: rc522_polling_t[0m
+[1;31mE (179602) task_wdt: CPU 1: audio_consumer_[0m
+[1;31mE (179602) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x40084852:0x3FFB2BD0 0x40083761:0x3FFB2BF0 0x4000BFED:0x3FFDC8A0 0x4008C75A:0x3FFDC8B0 0x4008BE07:0x3FFDC8D0 0x400DA98A:0x3FFDC910 0x400DB722:0x3FFDC940 0x400DAE0C:0x3FFDC960 0x4008C3E1:0x3FFDC990
+
+[0;32mI (179662) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (179672) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (179732) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (179732) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (179792) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (179802) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (179852) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (179862) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (179922) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (179922) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (179982) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (179992) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (180052) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (180052) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (180112) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (180122) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (180172) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (180182) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (180242) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (180242) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (180272) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
+[0;32mI (180302) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (180312) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (180372) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (180372) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (180432) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (180442) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (180492) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (180502) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (180562) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (180562) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (180622) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (180632) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (180692) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (180692) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (180752) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (180762) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (180812) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (180822) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (180882) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (180882) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (180942) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (180952) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (181012) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (181012) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (181072) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (181082) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (181132) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (181142) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (181202) AUDIO_RECORD: Button not pressed, sending zeros[0m
+[0;32mI (181202) AUDIO_RECORD: Button not pressed, sending zeros[0m
