@@ -1,0 +1,262 @@
+Command: /home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/julien/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/julien/Documents/esp32IDF/hello_world/build/hello_world.elf /home/julien/Documents/esp32IDF/hello_world/build/bootloader/bootloader.elf -m '/home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python' '/home/julien/esp/esp-idf/tools/idf.py'
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6368
+load:0x40078000,len:15880
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Apr  5 2025 18:41:52[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (36) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (64) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (77) boot:  3 factory          factory app      00 00 00010000 00101000[0m
+[0;32mI (83) boot:  4 ota_0            OTA app          00 10 00120000 00101000[0m
+[0;32mI (90) boot:  5 ota_1            OTA app          00 11 00230000 00101000[0m
+[0;32mI (96) boot:  6 coredump         Unknown data     01 03 00331000 00010000[0m
+[0;32mI (103) boot: End of partition table[0m
+[0;32mI (106) boot: Defaulting to factory image[0m
+[0;32mI (110) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2aaa0h (174752) map[0m
+[0;32mI (177) esp_image: segment 1: paddr=0003aac8 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (177) esp_image: segment 2: paddr=0003aaec vaddr=3ffb0000 size=0492ch ( 18732) load[0m
+[0;32mI (188) esp_image: segment 3: paddr=0003f420 vaddr=40080000 size=00bf8h (  3064) load[0m
+[0;32mI (190) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=b5a7ch (744060) map[0m
+[0;32mI (450) esp_image: segment 5: paddr=000f5aa4 vaddr=40080bf8 size=1a87ch (108668) load[0m
+[0;32mI (506) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (506) boot: Disabling RNG early entropy source...[0m
+[0;32mI (517) cpu_start: Multicore app[0m
+[0;32mI (525) cpu_start: Pro cpu start user code[0m
+[0;32mI (525) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (525) app_init: Application information:[0m
+[0;32mI (525) app_init: Project name:     hello_world[0m
+[0;32mI (529) app_init: App version:      7a96c38-dirty[0m
+[0;32mI (534) app_init: Compile time:     Apr  5 2025 18:41:48[0m
+[0;32mI (539) app_init: ELF file SHA256:  1baefbeea...[0m
+[0;32mI (543) app_init: ESP-IDF:          v5.5-dev-2290-g94cfe394fe[0m
+[0;32mI (549) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (552) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (556) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (561) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (567) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (572) heap_init: At 3FFBBC68 len 00024398 (144 KiB): DRAM[0m
+[0;32mI (577) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (582) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (588) heap_init: At 4009B474 len 00004B8C (18 KiB): IRAM[0m
+[0;32mI (595) spi_flash: detected chip: generic[0m
+[0;32mI (597) spi_flash: flash io: dio[0m
+[0;33mW (600) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
+[0;33mW (611) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;32mI (619) esp_core_dump_flash: Init core dump to flash[0m
+[0;32mI (624) esp_core_dump_flash: Found partition 'coredump' @ 331000 65536 bytes[0m
+[0;32mI (641) esp_core_dump_flash: Core dump data checksum is correct[0m
+[0;32mI (641) esp_core_dump_flash: Found core dump 7844 bytes in flash @ 0x331000[0m
+[0;32mI (643) main_task: Started on CPU0[0m
+[0;32mI (653) main_task: Calling app_main()[0m
+[0;32mI (653) MAIN: Starting app_main...[0m
+[0;32mI (653) MAIN: Initializing LED strip...[0m
+[0;32mI (653) led_button_blink: Create RMT TX channel[0m
+[0;32mI (653) led_button_blink: Install LED strip encoder[0m
+[0;32mI (763) MAIN: Initializing Wi-Fi...[0m
+[0;32mI (793) WIFI_MGR: Loaded Wi-Fi creds from NVS: SSID=Partagedeco[0m
+[0;32mI (803) wifi:wifi driver task: 3ffc3fdc, prio:23, stack:6656, core=0[0m
+[0;32mI (813) wifi:wifi firmware version: 3a3aca644[0m
+[0;32mI (813) wifi:wifi certification version: v7.0[0m
+[0;32mI (813) wifi:config NVS flash: enabled[0m
+[0;32mI (813) wifi:config nano formatting: disabled[0m
+[0;32mI (823) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (823) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (833) wifi:Init management short buffer num: 32[0m
+[0;32mI (833) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (843) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (843) wifi:Init static rx buffer num: 10[0m
+[0;32mI (843) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (853) wifi_init: rx ba win: 6[0m
+[0;32mI (853) wifi_init: accept mbox: 6[0m
+[0;32mI (853) wifi_init: tcpip mbox: 32[0m
+[0;32mI (863) wifi_init: udp mbox: 6[0m
+[0;32mI (863) wifi_init: tcp mbox: 6[0m
+[0;32mI (863) wifi_init: tcp tx win: 5760[0m
+[0;32mI (873) wifi_init: tcp rx win: 5760[0m
+[0;32mI (873) wifi_init: tcp mss: 1440[0m
+[0;32mI (873) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (883) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (893) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (963) wifi:mode : sta (94:54:c5:ae:fb:24)[0m
+[0;32mI (963) wifi:enable tsf[0m
+[0;32mI (973) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (973) WIFI_MGR: STA init done. Trying SSID: Partagedeco[0m
+[0;32mI (1073) MAIN: Creating LED debug task...[0m
+[0;32mI (1073) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (1173) MAIN: Waiting for Wi-Fi connection result...[0m
+[0;32mI (2073) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (3073) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (3393) WIFI_MGR: Retrying STA... (1/5)[0m
+[0;32mI (4073) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (5073) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (5803) WIFI_MGR: Retrying STA... (2/5)[0m
+[0;32mI (5813) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (5813) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (6073) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (6813) wifi:state: auth -> init (0x200)[0m
+[0;32mI (6833) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (6833) WIFI_MGR: Retrying STA... (3/5)[0m
+[0;32mI (7073) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (8073) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (9073) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (9253) WIFI_MGR: Retrying STA... (4/5)[0m
+[0;32mI (9253) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (9263) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (9273) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (9283) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (9303) wifi:connected with Partagedeco, aid = 1, channel 11, BW20, bssid = aa:f0:fe:0d:99:0e[0m
+[0;32mI (9303) wifi:security: WPA2-PSK, phy: bgn, rssi: -54[0m
+[0;32mI (9313) wifi:pm start, type: 0[0m
+
+[0;32mI (9313) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (9483) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (9483) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (10073) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (10353) esp_netif_handlers: sta ip: 10.11.44.122, mask: 255.255.255.0, gw: 10.11.44.242[0m
+[0;32mI (10353) WIFI_MGR: STA got IP: 10.11.44.122[0m
+[0;32mI (10453) MAIN: Wi-Fi Connected (STA mode). Starting other services...[0m
+[0;32mI (10453) MAIN: Initializing WebSocket Manager...[0m
+[0;33mW (10453) CORE_DUMP_MGR: Coredump found at offset=0x00331000 size=7844 bytes[0m
+[1;31mE (10453) CORE_DUMP_MGR: Failed to read coredump from partition: ESP_ERR_INVALID_ARG[0m
+[0;32mI (10463) WS_MGR: Loaded existing API key from NVS: C2F94A01D7CD3D3DF45192A8A5771FEA[0m
+[0;32mI (10473) WS_MGR: Final WebSocket headers:[0m
+X-API-Key: C2F94A01D7CD3D3DF45192A8A5771FEA
+
+[0;32mI (10483) websocket_client: Started[0m
+[0;32mI (10483) WS_MGR: WebSocket started with header [X-API-Key: C2F94A01D7CD3D3DF45192A8A5771FEA[0m
+]
+[0;32mI (10493) WS_MGR: audio_consumer_task starting![0m
+[0;32mI (10493) WS_MGR: ringbuf_monitor_task starting![0m
+[0;32mI (10493) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (10593) MAIN: Initializing Button...[0m
+[0;32mI (10593) led_button_blink: Configuring button on GPIO 14[0m
+[0;32mI (10593) gpio: GPIO[14]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (10693) MAIN: Initializing Audio Player...[0m
+[0;32mI (10693) AudioPlayer: audio_task started[0m
+[0;32mI (10693) AudioPlayer: Audio player initialized. sample_rate=8000[0m
+[0;32mI (10703) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (10793) MAIN: Initializing Audio Recorder...[0m
+[0;32mI (10793) AUDIO_RECORD: I2S initialized for mic input (sr=8000, bits=32)[0m
+[0;32mI (10803) wifi:<ba-add>idx:0 (ifx:0, aa:f0:fe:0d:99:0e), tid:0, ssn:3, winSize:64[0m
+[0;32mI (10893) MAIN: Initializing Tag Reader...[0m
+[0;32mI (10903) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (10913) rc522: PCD (fw=v2.0) initialized[0m
+[0;32mI (10913) RC522_TAG_READER: RC522 tag reader initialized[0m
+[0;32mI (10963) WS_MGR: WebSocket connected[0m
+[0;32mI (11013) MAIN: All services initialized.[0m
+[0;32mI (11013) MAIN: Initialization complete. Main task entering idle loop.[0m
+[0;32mI (11073) LED_DEBUG_TASK: All connected => stopping LED debug[0m
+[0;32mI (11103) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (11133) WS_MGR: Received data length: 1 bytes, time since last packet: 10545 ms[0m
+[0;32mI (11143) WS_MGR: Received data length: 70 bytes, time since last packet: 10 ms[0m
+[0;32mI (11143) WS_MGR: Got server OTA message => OTA=http://api.interaction-labs.com/test/esp/software/hello_world.bin[0m
+[0;32mI (11153) WS_MGR: Server says new firmware at: http://api.interaction-labs.com/test/esp/software/hello_world.bin[0m
+[0;32mI (11163) OTA: LEDs set to blue[0m
+[0;32mI (11163) WS_MGR: Requesting shutdown...[0m
+[0;32mI (11173) AUDIO_RECORD: audio_record_task stopping![0m
+[0;32mI (11183) WS_MGR: audio_consumer_task stopping![0m
+[0;32mI (11303) WS_MGR: ringbuf_monitor_task stopping![0m
+[0;32mI (11483) WS_MGR: ws_monitor_task stopping![0m
+[0;32mI (11663) OTA: Stopping WebSocket to free heap before OTA...[0m
+[0;32mI (11663) WS_MGR: Stopping WebSocket client...[0m
+[0;32mI (11663) WS_MGR: Stopping audio consumer tasks...[0m
+[0;32mI (11663) WS_MGR: Waiting for audio_consumer_task to stop...[0m
+[0;32mI (11963) WS_MGR: Received data length: 1 bytes, time since last packet: 820 ms[0m
+[0;32mI (12963) WS_MGR: Received data length: 1 bytes, time since last packet: 999 ms[0m
+[0;32mI (14023) WS_MGR: Received data length: 1 bytes, time since last packet: 1055 ms[0m
+[0;32mI (15043) WS_MGR: Received data length: 1 bytes, time since last packet: 1023 ms[0m
+[0;32mI (15973) WS_MGR: Received data length: 1 bytes, time since last packet: 928 ms[0m
+[0;32mI (16993) WS_MGR: Received data length: 1 bytes, time since last packet: 1018 ms[0m
+[0;32mI (18063) WS_MGR: Received data length: 1 bytes, time since last packet: 1076 ms[0m
+[0;32mI (19043) WS_MGR: Received data length: 1 bytes, time since last packet: 977 ms[0m
+[0;32mI (19983) WS_MGR: Received data length: 1 bytes, time since last packet: 935 ms[0m
+[0;32mI (20983) WS_MGR: Received data length: 1 bytes, time since last packet: 1002 ms[0m
+[0;32mI (22003) WS_MGR: Received data length: 1 bytes, time since last packet: 1024 ms[0m
+[0;32mI (22983) WS_MGR: Received data length: 1 bytes, time since last packet: 978 ms[0m
+[0;32mI (23983) WS_MGR: Received data length: 1 bytes, time since last packet: 1002 ms[0m
+[0;32mI (24993) WS_MGR: Received data length: 1 bytes, time since last packet: 1002 ms[0m
+[0;32mI (25993) WS_MGR: Received data length: 1 bytes, time since last packet: 1000 ms[0m
+[0;32mI (26993) WS_MGR: Received data length: 1 bytes, time since last packet: 1004 ms[0m
+[0;32mI (28043) WS_MGR: Received data length: 1 bytes, time since last packet: 1053 ms[0m
+[0;32mI (28993) WS_MGR: Received data length: 1 bytes, time since last packet: 946 ms[0m
+[0;32mI (30093) WS_MGR: Received data length: 1 bytes, time since last packet: 1102 ms[0m
+[0;32mI (31113) WS_MGR: Received data length: 1 bytes, time since last packet: 1016 ms[0m
+[0;32mI (32003) WS_MGR: Received data length: 1 bytes, time since last packet: 885 ms[0m
+[0;32mI (33003) WS_MGR: Received data length: 1 bytes, time since last packet: 998 ms[0m
+[0;32mI (34233) WS_MGR: Received data length: 1 bytes, time since last packet: 1239 ms[0m
+[0;32mI (35043) WS_MGR: Received data length: 1 bytes, time since last packet: 808 ms[0m
+[0;32mI (36373) WS_MGR: Received data length: 1 bytes, time since last packet: 1323 ms[0m
+[0;32mI (37923) WS_MGR: Received data length: 1 bytes, time since last packet: 1554 ms[0m
+[0;32mI (38013) WS_MGR: Received data length: 1 bytes, time since last packet: 85 ms[0m
+[0;32mI (39353) WS_MGR: Received data length: 1 bytes, time since last packet: 1347 ms[0m
+[0;32mI (40583) WS_MGR: Received data length: 1 bytes, time since last packet: 1230 ms[0m
+[0;32mI (41013) WS_MGR: Received data length: 1 bytes, time since last packet: 429 ms[0m
+[0;32mI (42013) WS_MGR: Received data length: 1 bytes, time since last packet: 1000 ms[0m
+[0;32mI (43013) WS_MGR: Received data length: 1 bytes, time since last packet: 999 ms[0m
+[0;32mI (44023) WS_MGR: Received data length: 1 bytes, time since last packet: 1003 ms[0m
+[0;32mI (45023) WS_MGR: Received data length: 1 bytes, time since last packet: 1001 ms[0m
+[0;32mI (46023) WS_MGR: Received data length: 1 bytes, time since last packet: 999 ms[0m
+[0;32mI (47023) WS_MGR: Received data length: 1 bytes, time since last packet: 1005 ms[0m
+[0;32mI (48023) WS_MGR: Received data length: 1 bytes, time since last packet: 1000 ms[0m
+[0;32mI (49043) WS_MGR: Received data length: 1 bytes, time since last packet: 1016 ms[0m
+[0;32mI (50113) WS_MGR: Received data length: 1 bytes, time since last packet: 1065 ms[0m
+[0;32mI (51113) WS_MGR: Received data length: 1 bytes, time since last packet: 1005 ms[0m
+[0;32mI (52063) WS_MGR: Received data length: 1 bytes, time since last packet: 951 ms[0m
+[0;32mI (53033) WS_MGR: Received data length: 1 bytes, time since last packet: 968 ms[0m
+[0;32mI (54033) WS_MGR: Received data length: 1 bytes, time since last packet: 1002 ms[0m
+[0;32mI (55053) WS_MGR: Received data length: 1 bytes, time since last packet: 1012 ms[0m
+[0;32mI (56043) WS_MGR: Received data length: 1 bytes, time since last packet: 990 ms[0m
+[0;32mI (57053) WS_MGR: Received data length: 1 bytes, time since last packet: 1008 ms[0m
+[0;32mI (58043) WS_MGR: Received data length: 1 bytes, time since last packet: 998 ms[0m
+[0;32mI (59073) WS_MGR: Received data length: 1 bytes, time since last packet: 1025 ms[0m
+[0;32mI (60053) WS_MGR: Received data length: 1 bytes, time since last packet: 979 ms[0m
+[0;32mI (61123) WS_MGR: Received data length: 1 bytes, time since last packet: 1069 ms[0m
+[0;32mI (62163) WS_MGR: Received data length: 1 bytes, time since last packet: 1037 ms[0m
+[0;32mI (63053) WS_MGR: Received data length: 1 bytes, time since last packet: 897 ms[0m
+[0;32mI (64063) WS_MGR: Received data length: 1 bytes, time since last packet: 1001 ms[0m
+[0;32mI (65083) WS_MGR: Received data length: 1 bytes, time since last packet: 1019 ms[0m
+[0;32mI (66063) WS_MGR: Received data length: 1 bytes, time since last packet: 985 ms[0m
+[0;32mI (67063) WS_MGR: Received data length: 1 bytes, time since last packet: 1000 ms[0m
+[0;32mI (68123) WS_MGR: Received data length: 1 bytes, time since last packet: 1062 ms[0m
+[0;32mI (69063) WS_MGR: Received data length: 1 bytes, time since last packet: 941 ms[0m
+[0;32mI (70193) WS_MGR: Received data length: 1 bytes, time since last packet: 1120 ms[0m
+[0;32mI (71153) WS_MGR: Received data length: 1 bytes, time since last packet: 969 ms[0m
+[0;32mI (72073) WS_MGR: Received data length: 1 bytes, time since last packet: 913 ms[0m
+[0;32mI (73113) WS_MGR: Received data length: 1 bytes, time since last packet: 1039 ms[0m
+[0;32mI (74163) WS_MGR: Received data length: 1 bytes, time since last packet: 1056 ms[0m
+[0;32mI (75153) WS_MGR: Received data length: 1 bytes, time since last packet: 985 ms[0m
+[0;32mI (76113) WS_MGR: Received data length: 1 bytes, time since last packet: 959 ms[0m
+[0;32mI (77093) WS_MGR: Received data length: 1 bytes, time since last packet: 983 ms[0m
+[0;32mI (78163) WS_MGR: Received data length: 1 bytes, time since last packet: 1062 ms[0m
+[0;32mI (79143) WS_MGR: Received data length: 1 bytes, time since last packet: 987 ms[0m
+[0;32mI (80203) WS_MGR: Received data length: 1 bytes, time since last packet: 1062 ms[0m
+[0;32mI (81223) WS_MGR: Received data length: 1 bytes, time since last packet: 1014 ms[0m
+[0;32mI (82113) WS_MGR: Received data length: 1 bytes, time since last packet: 891 ms[0m
+[0;32mI (83133) WS_MGR: Received data length: 1 bytes, time since last packet: 1022 ms[0m
+[0;32mI (84183) WS_MGR: Received data length: 1 bytes, time since last packet: 1044 ms[0m
+[0;32mI (85093) WS_MGR: Received data length: 1 bytes, time since last packet: 913 ms[0m
+[0;32mI (86103) WS_MGR: Received data length: 1 bytes, time since last packet: 1011 ms[0m
+[0;32mI (87133) WS_MGR: Received data length: 1 bytes, time since last packet: 1025 ms[0m
+[0;32mI (88153) WS_MGR: Received data length: 1 bytes, time since last packet: 1023 ms[0m
+[0;32mI (89103) WS_MGR: Received data length: 1 bytes, time since last packet: 951 ms[0m
+[0;32mI (90113) WS_MGR: Received data length: 1 bytes, time since last packet: 1002 ms[0m
+[0;32mI (91133) WS_MGR: Received data length: 1 bytes, time since last packet: 1025 ms[0m
+[0;32mI (92153) WS_MGR: Received data length: 1 bytes, time since last packet: 1015 ms[0m
+[0;32mI (93113) WS_MGR: Received data length: 1 bytes, time since last packet: 964 ms[0m

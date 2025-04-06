@@ -120,6 +120,7 @@ static void ota_task(void *arg)
             esp_ota_abort(update_handle);
             goto OTA_FAIL;
         }
+        ESP_LOGI(TAG, "Wrote %d bytes to OTA partition", data_read);
     }
 
     if (data_read < 0) {

@@ -1,0 +1,1425 @@
+Command: /home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/julien/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/julien/Documents/esp32IDF/hello_world/build/hello_world.elf /home/julien/Documents/esp32IDF/hello_world/build/bootloader/bootloader.elf -m '/home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python' '/home/julien/esp/esp-idf/tools/idf.py'
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x12 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6368
+load:0x40078000,len:15880
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Apr  5 2025 18:41:52[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (36) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (63) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (76) boot:  3 factory          factory app      00 00 00010000 00101000[0m
+[0;32mI (83) boot:  4 ota_0            OTA app          00 10 00120000 00101000[0m
+[0;32mI (89) boot:  5 ota_1            OTA app          00 11 00230000 00101000[0m
+[0;32mI (96) boot:  6 coredump         Unknown data     01 03 00331000 00010000[0m
+[0;32mI (102) boot: End of partition table[0m
+[0;32mI (106) boot: Defaulting to factory image[0m
+[0;32mI (110) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2acb0h (175280) map[0m
+[0;32mI (177) esp_image: segment 1: paddr=0003acd8 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (177) esp_image: segment 2: paddr=0003acfc vaddr=3ffb0000 size=0492ch ( 18732) load[0m
+[0;32mI (188) esp_image: segment 3: paddr=0003f630 vaddr=40080000 size=009e8h (  2536) load[0m
+[0;32mI (189) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=b5b50h (744272) map[0m
+[0;32mI (450) esp_image: segment 5: paddr=000f5b78 vaddr=400809e8 size=1aa8ch (109196) load[0m
+[0;32mI (506) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (506) boot: Disabling RNG early entropy source...[0m
+[0;32mI (517) cpu_start: Multicore app[0m
+[0;32mI (525) cpu_start: Pro cpu start user code[0m
+[0;32mI (525) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (525) app_init: Application information:[0m
+[0;32mI (525) app_init: Project name:     hello_world[0m
+[0;32mI (530) app_init: App version:      7a96c38-dirty[0m
+[0;32mI (534) app_init: Compile time:     Apr  5 2025 18:41:48[0m
+[0;32mI (539) app_init: ELF file SHA256:  21cd518ed...[0m
+[0;32mI (543) app_init: ESP-IDF:          v5.5-dev-2290-g94cfe394fe[0m
+[0;32mI (549) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (553) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (557) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (561) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (567) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (572) heap_init: At 3FFBBC68 len 00024398 (144 KiB): DRAM[0m
+[0;32mI (577) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (582) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (588) heap_init: At 4009B474 len 00004B8C (18 KiB): IRAM[0m
+[0;32mI (595) spi_flash: detected chip: generic[0m
+[0;32mI (597) spi_flash: flash io: dio[0m
+[0;33mW (600) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
+[0;33mW (611) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;32mI (619) esp_core_dump_flash: Init core dump to flash[0m
+[0;32mI (624) esp_core_dump_flash: Found partition 'coredump' @ 331000 65536 bytes[0m
+[0;32mI (641) esp_core_dump_flash: Core dump data checksum is correct[0m
+[0;32mI (641) esp_core_dump_flash: Found core dump 7844 bytes in flash @ 0x331000[0m
+[0;32mI (643) main_task: Started on CPU0[0m
+[0;32mI (653) main_task: Calling app_main()[0m
+[0;32mI (653) MAIN: Starting app_main...[0m
+[0;32mI (653) MAIN: Initializing LED strip...[0m
+[0;32mI (653) led_button_blink: Create RMT TX channel[0m
+[0;32mI (653) led_button_blink: Install LED strip encoder[0m
+[0;32mI (763) MAIN: Initializing Wi-Fi...[0m
+[0;32mI (793) WIFI_MGR: Loaded Wi-Fi creds from NVS: SSID=Partagedeco[0m
+[0;32mI (803) wifi:wifi driver task: 3ffc3fdc, prio:23, stack:6656, core=0[0m
+[0;32mI (813) wifi:wifi firmware version: 3a3aca644[0m
+[0;32mI (813) wifi:wifi certification version: v7.0[0m
+[0;32mI (813) wifi:config NVS flash: enabled[0m
+[0;32mI (813) wifi:config nano formatting: disabled[0m
+[0;32mI (823) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (823) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (833) wifi:Init management short buffer num: 32[0m
+[0;32mI (833) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (843) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (843) wifi:Init static rx buffer num: 10[0m
+[0;32mI (843) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (853) wifi_init: rx ba win: 6[0m
+[0;32mI (853) wifi_init: accept mbox: 6[0m
+[0;32mI (853) wifi_init: tcpip mbox: 32[0m
+[0;32mI (863) wifi_init: udp mbox: 6[0m
+[0;32mI (863) wifi_init: tcp mbox: 6[0m
+[0;32mI (863) wifi_init: tcp tx win: 5760[0m
+[0;32mI (873) wifi_init: tcp rx win: 5760[0m
+[0;32mI (873) wifi_init: tcp mss: 1440[0m
+[0;32mI (873) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (883) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (893) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (973) wifi:mode : sta (94:54:c5:ae:fb:24)[0m
+[0;32mI (973) wifi:enable tsf[0m
+[0;32mI (973) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (983) WIFI_MGR: STA init done. Trying SSID: Partagedeco[0m
+[0;32mI (983) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (993) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (993) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1003) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1013) wifi:connected with Partagedeco, aid = 1, channel 11, BW20, bssid = aa:f0:fe:0d:99:0e[0m
+[0;32mI (1013) wifi:security: WPA2-PSK, phy: bgn, rssi: -48[0m
+[0;32mI (1023) wifi:pm start, type: 0[0m
+
+[0;32mI (1023) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1073) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (1073) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (1083) MAIN: Creating LED debug task...[0m
+[0;32mI (1083) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (1183) MAIN: Waiting for Wi-Fi connection result...[0m
+[0;32mI (2053) esp_netif_handlers: sta ip: 10.11.44.122, mask: 255.255.255.0, gw: 10.11.44.242[0m
+[0;32mI (2053) WIFI_MGR: STA got IP: 10.11.44.122[0m
+[0;32mI (2083) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (2153) MAIN: Wi-Fi Connected (STA mode). Starting other services...[0m
+[0;32mI (2153) MAIN: Initializing WebSocket Manager...[0m
+[0;33mW (2153) CORE_DUMP_MGR: Coredump found at offset=0x00331000 size=7844 bytes[0m
+[1;31mE (2153) CORE_DUMP_MGR: Failed to read coredump from partition: ESP_ERR_INVALID_ARG[0m
+[0;32mI (2163) WS_MGR: Loaded existing API key from NVS: C2F94A01D7CD3D3DF45192A8A5771FEA[0m
+[0;32mI (2173) WS_MGR: Final WebSocket headers:[0m
+X-API-Key: C2F94A01D7CD3D3DF45192A8A5771FEA
+
+[0;32mI (2183) websocket_client: Started[0m
+[0;32mI (2183) WS_MGR: WebSocket started with header [X-API-Key: C2F94A01D7CD3D3DF45192A8A5771FEA[0m
+]
+[0;32mI (2193) WS_MGR: audio_consumer_task starting![0m
+[0;32mI (2193) WS_MGR: ringbuf_monitor_task starting![0m
+[0;32mI (2193) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (2253) wifi:<ba-add>idx:0 (ifx:0, aa:f0:fe:0d:99:0e), tid:0, ssn:3, winSize:64[0m
+[0;32mI (2293) MAIN: Initializing Button...[0m
+[0;32mI (2293) led_button_blink: Configuring button on GPIO 14[0m
+[0;32mI (2293) gpio: GPIO[14]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2293) WS_MGR: WebSocket connected[0m
+[0;32mI (2393) MAIN: Initializing Audio Player...[0m
+[0;32mI (2393) AudioPlayer: audio_task started[0m
+[0;32mI (2393) AudioPlayer: Audio player initialized. sample_rate=8000[0m
+[0;32mI (2403) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (2403) WS_MGR: Received data length: 1 bytes, time since last packet: 1819 ms[0m
+[0;32mI (2413) WS_MGR: Received data length: 71 bytes, time since last packet: 9 ms[0m
+[0;32mI (2413) WS_MGR: Got server OTA message => OTA=http://api.interaction-labs.com/tests/esp/software/hello_world.bin[0m
+[0;32mI (2423) WS_MGR: Server says new firmware at: http://api.interaction-labs.com/tests/esp/software/hello_world.bin[0m
+[0;32mI (2433) OTA: LEDs set to blue[0m
+[0;32mI (2433) WS_MGR: Requesting shutdown...[0m
+[0;32mI (2453) WS_MGR: audio_consumer_task stopping![0m
+[0;32mI (2493) MAIN: Initializing Audio Recorder...[0m
+[0;32mI (2493) AUDIO_RECORD: I2S initialized for mic input (sr=8000, bits=32)[0m
+[0;32mI (2493) AUDIO_RECORD: audio_record_task stopping![0m
+[0;32mI (2593) MAIN: Initializing Tag Reader...[0m
+[0;32mI (2603) WS_MGR: ringbuf_monitor_task stopping![0m
+[0;32mI (2613) rc522: PCD (fw=v2.0) initialized[0m
+[0;32mI (2613) RC522_TAG_READER: RC522 tag reader initialized[0m
+[0;32mI (2713) MAIN: All services initialized.[0m
+[0;32mI (2713) MAIN: Initialization complete. Main task entering idle loop.[0m
+[0;32mI (2943) OTA: Stopping WebSocket to free heap before OTA...[0m
+[0;32mI (2943) WS_MGR: Stopping WebSocket client...[0m
+[0;32mI (2943) WS_MGR: Stopping audio consumer tasks...[0m
+[0;32mI (2943) WS_MGR: Waiting for audio_consumer_task to stop (1s timeout)...[0m
+[0;32mI (3083) LED_DEBUG_TASK: All connected => stopping LED debug[0m
+[0;32mI (3183) WS_MGR: ws_monitor_task stopping![0m
+[0;32mI (3363) WS_MGR: Received data length: 1 bytes, time since last packet: 948 ms[0m
+[0;33mW (3943) WS_MGR: audio_consumer_task did NOT stop in time => continuing anyway[0m
+[0;32mI (3943) WS_MGR: Waiting for ringbuf_monitor_task to stop (1s timeout)...[0m
+[0;32mI (4303) WS_MGR: Received data length: 1 bytes, time since last packet: 939 ms[0m
+[0;33mW (4943) WS_MGR: ringbuf_monitor_task did NOT stop in time => continuing anyway[0m
+[0;32mI (4943) WS_MGR: Deleting ring buffer...[0m
+[0;32mI (4943) WS_MGR: Audio consumer + ringbuf fully stopped (or forced).[0m
+[0;32mI (5323) WS_MGR: WebSocket + ring buffer fully stopped.[0m
+[0;32mI (5523) OTA: Proceeding with OTA download...[0m
+[0;32mI (5603) OTA: HTTP status code: 200, content length: 1049424[0m
+[0;32mI (5603) OTA: Free heap before OTA: 123368[0m
+[0;32mI (5603) OTA: Writing to OTA partition subtype 16 at offset 0x120000[0m
+[1;31mE (5783) rc522: rc522_picc_send(86): [0m
+[1;31mE (6063) rc522: rc522_picc_send(86): [0m
+[1;31mE (6173) rc522: rc522_picc_send(86): [0m
+[1;31mE (6633) rc522: rc522_picc_send(86): [0m
+[0;32mI (7133) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7143) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7143) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7153) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7163) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7173) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7173) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7183) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7193) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7233) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7243) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7243) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7253) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7293) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7303) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7303) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7303) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7373) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7373) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7383) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7383) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7443) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7523) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7533) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7533) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7553) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7553) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7563) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7563) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7583) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7593) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7603) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7603) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7613) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7623) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7623) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7633) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7643) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7663) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7663) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7673) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7683) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7693) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7693) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7703) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7723) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7723) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7733) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7753) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7753) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7763) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7763) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7783) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7783) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7803) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7803) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7813) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7823) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7833) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7843) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7853) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7853) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7863) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7873) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7873) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7883) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7903) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7903) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7913) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7923) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7933) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7933) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7943) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7953) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7953) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7973) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7983) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (7983) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8003) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8003) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8013) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8023) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8033) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8053) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8053) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8063) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8073) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8073) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8083) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8093) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8113) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8113) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8123) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8123) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8143) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8143) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8153) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8163) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8173) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8183) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8193) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8193) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8203) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8213) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8223) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8233) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8233) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8253) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8253) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8263) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8263) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8283) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8283) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8293) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8313) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8313) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8323) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8323) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8343) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8343) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8353) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8373) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8373) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8383) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8403) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8403) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8413) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8413) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8433) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8433) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8453) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8453) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8463) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8463) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8483) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8493) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8493) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8493) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8523) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8533) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8533) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8543) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8563) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8563) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8573) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8573) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8583) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8633) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8633) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8643) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8643) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8663) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8713) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8723) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8723) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8733) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8733) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8783) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8783) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8793) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8793) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8843) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8853) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8853) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8863) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8873) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8903) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8903) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8913) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8913) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8923) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8923) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8943) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8953) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8953) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8973) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8983) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8983) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (8993) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9003) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9013) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9013) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9033) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9043) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9043) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9063) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9063) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9073) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9083) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9093) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9103) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9113) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9113) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9123) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9143) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9143) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9153) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9163) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9173) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9173) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9183) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9193) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9203) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9203) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9223) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9223) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9233) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9243) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9253) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9253) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9263) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9303) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9303) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9313) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9313) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9313) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9333) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9343) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9353) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9363) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9373) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9383) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9393) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9393) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9413) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9413) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9413) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9433) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9453) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9453) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9463) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9463) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9483) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9493) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9503) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9513) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9513) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9523) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9523) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9543) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9543) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9553) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9573) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9573) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9583) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9583) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9603) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9603) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9613) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9633) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9633) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9643) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9643) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9663) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9663) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9683) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9683) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9693) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9703) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9713) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9713) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9723) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9743) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9753) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9753) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9773) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9773) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9783) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9783) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9803) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9823) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9823) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9833) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9843) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9853) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9853) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9863) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9883) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9883) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9893) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9903) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9913) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9913) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9943) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9943) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9943) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9963) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9973) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9983) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (9983) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10033) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10033) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10083) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10093) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10093) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10103) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10113) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10153) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10153) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10163) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10223) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10223) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10233) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10233) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10253) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10263) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10263) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10273) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10283) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10293) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10303) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10303) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10323) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10333) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10343) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10353) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10353) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10363) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10373) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10383) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10383) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10403) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10413) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10413) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10433) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10433) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10443) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10443) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10463) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10473) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10473) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10483) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10503) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10503) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10513) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10513) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10533) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10533) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10543) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10563) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10563) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10573) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10583) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10593) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10593) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10603) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10613) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10623) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10633) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10643) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10643) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10653) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10663) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10673) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10673) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10693) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10693) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10703) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10713) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10723) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10733) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10733) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10743) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10753) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10763) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10763) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10773) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10783) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10783) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10793) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10813) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10813) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10823) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10833) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10843) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10853) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10853) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10863) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10863) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10883) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10893) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10893) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10913) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10923) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10923) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10933) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10943) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10953) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10953) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10963) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10973) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10983) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (10983) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11003) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11003) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11013) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11023) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11033) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11043) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11043) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11063) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11073) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11073) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11093) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11093) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11103) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11103) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11123) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11133) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11143) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11143) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11153) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11163) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11173) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11183) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11193) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11193) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11203) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11223) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11233) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11233) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11263) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11263) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11273) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11273) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11293) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11293) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11303) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11313) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11323) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11323) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11333) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11333) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11353) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11353) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11363) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11383) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11383) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11433) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11443) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11443) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11453) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11493) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11503) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11503) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11513) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11553) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11563) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11563) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11573) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11593) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11603) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11623) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11623) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11633) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11653) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11663) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11663) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11673) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11683) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11703) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11703) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11713) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11713) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11733) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11743) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11743) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11753) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11763) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11763) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11773) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11783) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11793) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11803) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11813) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11813) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11823) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11833) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11843) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11843) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11853) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11893) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11893) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11903) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11903) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11903) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11923) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11933) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11943) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11953) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11963) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11963) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11983) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11983) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (11993) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12013) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12013) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12023) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12033) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12043) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12043) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12053) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12073) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12073) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12073) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12093) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12093) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12103) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12113) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12123) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12133) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12143) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12143) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12153) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12153) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12163) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12183) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12183) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12193) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12213) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12213) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12223) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12223) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12243) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12253) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12273) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12273) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12283) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12283) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12313) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12313) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12323) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12323) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12343) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12353) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12363) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12363) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12383) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12393) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12403) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12413) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12413) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12423) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12443) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12453) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12453) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12463) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12503) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12503) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12503) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12513) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12513) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12523) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12543) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12543) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12553) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12573) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12573) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12583) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12583) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12603) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12603) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12613) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12613) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12633) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12643) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12643) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12653) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12663) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12683) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12683) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12693) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12693) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12713) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12723) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12733) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12733) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12743) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12763) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12763) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12773) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12773) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12793) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12793) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12833) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12833) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12843) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12893) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12903) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12903) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12913) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12963) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12963) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12973) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12973) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12983) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (12993) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13013) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13023) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13053) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13053) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13063) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13063) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13073) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13093) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13103) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13103) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13113) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13133) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13143) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13143) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13153) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13173) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13173) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13173) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13183) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13203) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13213) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13223) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13223) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13233) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13243) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13263) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13263) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13273) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13273) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13303) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13303) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13313) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13313) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13333) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13343) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13353) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13353) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13363) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13373) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13383) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13393) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13393) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13413) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13423) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13433) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13433) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13443) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13463) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13463) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13473) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13473) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13493) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13493) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13503) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13523) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13523) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13533) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13533) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13553) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13553) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13563) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13563) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13583) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13583) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13603) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13613) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13613) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13623) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13633) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13633) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13643) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13663) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13663) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13673) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13693) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13693) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13703) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13703) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13723) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13733) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13743) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13753) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13753) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13763) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13783) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13783) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13793) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13813) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13823) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13823) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13823) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13843) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13853) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13863) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13873) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13873) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13883) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13883) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13903) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13903) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13913) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13933) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13933) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13943) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13943) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13963) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13963) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13973) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (13993) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14003) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14003) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14023) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14023) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14033) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14033) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14053) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14063) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14063) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14083) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14093) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14093) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14113) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14113) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14123) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14123) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14143) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14153) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14153) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14173) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14173) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14193) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14203) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14233) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14233) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14233) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14283) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14293) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14293) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14303) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14353) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14363) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14363) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14373) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14443) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14443) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14453) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14453) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14453) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14473) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14483) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14493) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14493) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14503) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14523) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14523) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14533) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14533) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14553) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14563) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14563) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14573) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14593) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14603) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14603) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14613) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14623) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14633) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14643) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14653) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14653) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14673) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14683) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14683) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14703) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14703) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14713) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14733) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14743) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14743) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14763) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14763) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14783) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14793) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14793) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14803) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14823) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14823) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14833) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14843) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14853) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14853) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14873) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14873) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14883) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14883) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14903) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14903) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14913) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14923) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14933) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14943) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14953) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14953) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14963) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14963) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14973) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14993) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (14993) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15003) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15013) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15023) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15023) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15053) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15063) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15063) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15073) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15083) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15083) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15093) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15113) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15123) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15133) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15143) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15143) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15153) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15153) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15163) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15183) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15183) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15193) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15213) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15213) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15223) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15223) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15243) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15253) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15263) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15273) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15273) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15283) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15303) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15303) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15313) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15323) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15353) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15353) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15363) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15363) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15363) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15383) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15393) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15403) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15403) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15413) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15433) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15433) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15443) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15443) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15463) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15463) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15473) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15493) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15493) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15503) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15503) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15523) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15523) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15533) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15553) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15553) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15563) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15563) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15593) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15593) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15633) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15643) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15643) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15713) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15723) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15723) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15733) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15783) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15783) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15793) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15793) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15793) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15813) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15843) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15853) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15873) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15883) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15883) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15893) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15893) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15913) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15923) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15933) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15943) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15943) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15963) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15963) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15973) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15983) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (15993) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16003) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16003) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16013) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16023) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16033) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16033) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16053) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16053) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16063) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16073) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16083) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16083) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16093) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16113) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16113) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16123) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16123) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16143) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16143) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16153) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16163) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16173) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16183) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16193) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16193) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16193) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16213) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16213) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16223) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16243) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16243) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16253) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16273) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16273) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16283) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16283) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16303) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16313) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16313) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16343) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16343) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16353) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16353) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16373) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16373) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16383) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16393) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16413) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16413) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16423) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16423) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16443) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16453) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16453) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16463) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16473) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16483) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16503) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16503) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16513) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16523) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16543) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16543) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16553) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16553) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16563) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16583) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16593) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16593) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16593) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16613) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16623) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16633) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16633) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16653) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16653) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16663) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16663) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16683) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16693) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16693) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16703) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16713) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16723) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16733) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16743) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16743) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16763) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16763) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16773) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16793) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16793) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16803) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16803) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16823) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16823) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16833) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16833) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16853) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16853) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16873) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16873) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16883) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16883) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16903) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16913) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16913) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16923) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16933) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16943) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16953) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16963) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16973) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16983) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16983) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (16993) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (17033) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (17033) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (17043) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (17093) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (17093) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (17103) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (17103) OTA: Wrote 1024 bytes to OTA partition[0m
+[0;32mI (17143) OTA: Wrote 848 bytes to OTA partition[0m
+[0;32mI (17143) OTA: OTA write complete. Downloaded 1049424 bytes. Closing HTTP client...[0m
+[0;32mI (17153) esp_image: segment 0: paddr=00120020 vaddr=3f400020 size=2aaa0h (174752) map[0m
+[0;32mI (17213) esp_image: segment 1: paddr=0014aac8 vaddr=3ff80000 size=0001ch (    28) [0m
+[0;32mI (17223) esp_image: segment 2: paddr=0014aaec vaddr=3ffb0000 size=0492ch ( 18732) [0m
+[0;32mI (17233) esp_image: segment 3: paddr=0014f420 vaddr=40080000 size=00bf8h (  3064) [0m
+[0;32mI (17233) esp_image: segment 4: paddr=00150020 vaddr=400d0020 size=b5a7ch (744060) map[0m
+[0;32mI (17483) esp_image: segment 5: paddr=00205aa4 vaddr=40080bf8 size=1a87ch (108668) [0m
+[0;32mI (17523) esp_image: segment 0: paddr=00120020 vaddr=3f400020 size=2aaa0h (174752) map[0m
+[0;32mI (17583) esp_image: segment 1: paddr=0014aac8 vaddr=3ff80000 size=0001ch (    28) [0m
+[0;32mI (17583) esp_image: segment 2: paddr=0014aaec vaddr=3ffb0000 size=0492ch ( 18732) [0m
+[0;32mI (17593) esp_image: segment 3: paddr=0014f420 vaddr=40080000 size=00bf8h (  3064) [0m
+[0;32mI (17603) esp_image: segment 4: paddr=00150020 vaddr=400d0020 size=b5a7ch (744060) map[0m
+[0;32mI (17853) esp_image: segment 5: paddr=00205aa4 vaddr=40080bf8 size=1a87ch (108668) [0m
+[0;32mI (17913) OTA: OTA succeeded! Rebooting...[0m
+[0;32mI (19913) wifi:state: run -> init (0x0)[0m
+[0;32mI (19923) wifi:pm stop, total sleep time: 0 us / 18898809 us[0m
+
+[0;32mI (19923) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (19923) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (19933) WIFI_MGR: Retrying STA... (1/5)[0m
+[0;32mI (19963) wifi:flush txq[0m
+[0;32mI (19963) wifi:stop sw txq[0m
+[0;32mI (19963) wifi:lmac stop hw txq[0m
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x12 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6368
+load:0x40078000,len:15880
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Apr  5 2025 18:41:52[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (64) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (77) boot:  3 factory          factory app      00 00 00010000 00101000[0m
+[0;32mI (83) boot:  4 ota_0            OTA app          00 10 00120000 00101000[0m
+[0;32mI (90) boot:  5 ota_1            OTA app          00 11 00230000 00101000[0m
+[0;32mI (96) boot:  6 coredump         Unknown data     01 03 00331000 00010000[0m
+[0;32mI (103) boot: End of partition table[0m
+[0;32mI (106) esp_image: segment 0: paddr=00120020 vaddr=3f400020 size=2aaa0h (174752) map[0m
+[0;32mI (174) esp_image: segment 1: paddr=0014aac8 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (174) esp_image: segment 2: paddr=0014aaec vaddr=3ffb0000 size=0492ch ( 18732) load[0m
+[0;32mI (184) esp_image: segment 3: paddr=0014f420 vaddr=40080000 size=00bf8h (  3064) load[0m
+[0;32mI (186) esp_image: segment 4: paddr=00150020 vaddr=400d0020 size=b5a7ch (744060) map[0m
+[0;32mI (447) esp_image: segment 5: paddr=00205aa4 vaddr=40080bf8 size=1a87ch (108668) load[0m
+[0;32mI (502) boot: Loaded app from partition at offset 0x120000[0m
+[0;32mI (502) boot: Disabling RNG early entropy source...[0m
+[0;32mI (513) cpu_start: Multicore app[0m
+[0;32mI (521) cpu_start: Pro cpu start user code[0m
+[0;32mI (521) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (522) app_init: Application information:[0m
+[0;32mI (522) app_init: Project name:     hello_world[0m
+[0;32mI (526) app_init: App version:      7a96c38-dirty[0m
+[0;32mI (530) app_init: Compile time:     Apr  5 2025 18:41:48[0m
+[0;32mI (535) app_init: ELF file SHA256:  1baefbeea...[0m
+[0;32mI (540) app_init: ESP-IDF:          v5.5-dev-2290-g94cfe394fe[0m
+[0;32mI (545) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (549) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (553) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (557) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (563) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (568) heap_init: At 3FFBBC68 len 00024398 (144 KiB): DRAM[0m
+[0;32mI (573) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (579) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (584) heap_init: At 4009B474 len 00004B8C (18 KiB): IRAM[0m
+[0;32mI (591) spi_flash: detected chip: generic[0m
+[0;32mI (593) spi_flash: flash io: dio[0m
+[0;33mW (596) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
+[0;33mW (608) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;32mI (615) esp_core_dump_flash: Init core dump to flash[0m
+[0;32mI (620) esp_core_dump_flash: Found partition 'coredump' @ 331000 65536 bytes[0m
+[0;32mI (637) esp_core_dump_flash: Core dump data checksum is correct[0m
+[0;32mI (637) esp_core_dump_flash: Found core dump 7844 bytes in flash @ 0x331000[0m
+[0;32mI (640) main_task: Started on CPU0[0m
+[0;32mI (650) main_task: Calling app_main()[0m
+[0;32mI (650) MAIN: Starting app_main...[0m
+[0;32mI (650) MAIN: Initializing LED strip...[0m
+[0;32mI (650) led_button_blink: Create RMT TX channel[0m
+[0;32mI (650) led_button_blink: Install LED strip encoder[0m
+[0;32mI (760) MAIN: Initializing Wi-Fi...[0m
+[0;32mI (790) WIFI_MGR: Loaded Wi-Fi creds from NVS: SSID=Partagedeco[0m
+[0;32mI (800) wifi:wifi driver task: 3ffc3fdc, prio:23, stack:6656, core=0[0m
+[0;32mI (810) wifi:wifi firmware version: 3a3aca644[0m
+[0;32mI (810) wifi:wifi certification version: v7.0[0m
+[0;32mI (810) wifi:config NVS flash: enabled[0m
+[0;32mI (810) wifi:config nano formatting: disabled[0m
+[0;32mI (820) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (820) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (830) wifi:Init management short buffer num: 32[0m
+[0;32mI (830) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (840) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (840) wifi:Init static rx buffer num: 10[0m
+[0;32mI (840) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (850) wifi_init: rx ba win: 6[0m
+[0;32mI (850) wifi_init: accept mbox: 6[0m
+[0;32mI (850) wifi_init: tcpip mbox: 32[0m
+[0;32mI (860) wifi_init: udp mbox: 6[0m
+[0;32mI (860) wifi_init: tcp mbox: 6[0m
+[0;32mI (860) wifi_init: tcp tx win: 5760[0m
+[0;32mI (870) wifi_init: tcp rx win: 5760[0m
+[0;32mI (870) wifi_init: tcp mss: 1440[0m
+[0;32mI (870) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (880) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (890) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (970) wifi:mode : sta (94:54:c5:ae:fb:24)[0m
+[0;32mI (970) wifi:enable tsf[0m
+[0;32mI (970) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (970) WIFI_MGR: STA init done. Trying SSID: Partagedeco[0m
+[0;32mI (980) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (990) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1000) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1010) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1020) wifi:connected with Partagedeco, aid = 1, channel 11, BW20, bssid = aa:f0:fe:0d:99:0e[0m
+[0;32mI (1020) wifi:security: WPA2-PSK, phy: bgn, rssi: -49[0m
+[0;32mI (1030) wifi:pm start, type: 0[0m
+
+[0;32mI (1030) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1070) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (1070) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (1080) MAIN: Creating LED debug task...[0m
+[0;32mI (1080) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (1180) MAIN: Waiting for Wi-Fi connection result...[0m
+[0;32mI (2070) esp_netif_handlers: sta ip: 10.11.44.122, mask: 255.255.255.0, gw: 10.11.44.242[0m
+[0;32mI (2070) WIFI_MGR: STA got IP: 10.11.44.122[0m
+[0;32mI (2080) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (2170) MAIN: Wi-Fi Connected (STA mode). Starting other services...[0m
+[0;32mI (2170) MAIN: Initializing WebSocket Manager...[0m
+[0;33mW (2170) CORE_DUMP_MGR: Coredump found at offset=0x00331000 size=7844 bytes[0m
+[1;31mE (2170) CORE_DUMP_MGR: Failed to read coredump from partition: ESP_ERR_INVALID_ARG[0m
+[0;32mI (2180) WS_MGR: Loaded existing API key from NVS: C2F94A01D7CD3D3DF45192A8A5771FEA[0m
+[0;32mI (2190) WS_MGR: Final WebSocket headers:[0m
+X-API-Key: C2F94A01D7CD3D3DF45192A8A5771FEA
+
+[0;32mI (2200) websocket_client: Started[0m
+[0;32mI (2200) WS_MGR: WebSocket started with header [X-API-Key: C2F94A01D7CD3D3DF45192A8A5771FEA[0m
+]
+[0;32mI (2210) WS_MGR: audio_consumer_task starting![0m
+[0;32mI (2210) WS_MGR: ringbuf_monitor_task starting![0m
+[0;32mI (2210) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (2250) wifi:<ba-add>idx:0 (ifx:0, aa:f0:fe:0d:99:0e), tid:0, ssn:3, winSize:64[0m
+[0;32mI (2290) WS_MGR: WebSocket connected[0m
+[0;32mI (2310) MAIN: Initializing Button...[0m
+[0;32mI (2310) led_button_blink: Configuring button on GPIO 14[0m
+[0;32mI (2310) gpio: GPIO[14]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2410) WS_MGR: Received data length: 1 bytes, time since last packet: 1820 ms[0m
+[0;32mI (2420) WS_MGR: Received data length: 71 bytes, time since last packet: 9 ms[0m
+[0;32mI (2420) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
+[0;32mI (2420) WS_MGR: Got server OTA message => OTA=http://api.interaction-labs.com/tests/esp/software/hello_world.bin[0m
+[0;32mI (2420) MAIN: Initializing Audio Player...[0m
+[0;32mI (2430) WS_MGR: Server says new firmware at: http://api.interaction-labs.com/tests/esp/software/hello_world.bin[0m
+[0;32mI (2440) OTA: LEDs set to blue[0m
+[0;32mI (2440) WS_MGR: Requesting shutdown...[0m
+[0;32mI (2450) AudioPlayer: audio_task started[0m
+[0;32mI (2450) AudioPlayer: Audio player initialized. sample_rate=8000[0m
+[0;32mI (2470) WS_MGR: audio_consumer_task stopping![0m
+[0;32mI (2560) MAIN: Initializing Audio Recorder...[0m
+[0;32mI (2560) AUDIO_RECORD: I2S initialized for mic input (sr=8000, bits=32)[0m
+[0;32mI (2560) AUDIO_RECORD: audio_record_task stopping![0m
+[0;32mI (2630) WS_MGR: ringbuf_monitor_task stopping![0m
+[0;32mI (2660) MAIN: Initializing Tag Reader...[0m
+[0;32mI (2680) rc522: PCD (fw=v2.0) initialized[0m
+[0;32mI (2680) RC522_TAG_READER: RC522 tag reader initialized[0m
+[0;32mI (2780) MAIN: All services initialized.[0m
+[0;32mI (2780) MAIN: Initialization complete. Main task entering idle loop.[0m
+[0;32mI (2950) OTA: Stopping WebSocket to free heap before OTA...[0m
+[0;32mI (2950) WS_MGR: Stopping WebSocket client...[0m
+[0;32mI (2950) WS_MGR: Stopping audio consumer tasks...[0m
+[0;32mI (2950) WS_MGR: Waiting for audio_consumer_task to stop...[0m
+[0;32mI (3080) LED_DEBUG_TASK: All connected => stopping LED debug[0m
+[0;32mI (3200) WS_MGR: ws_monitor_task stopping![0m
+[0;32mI (3410) WS_MGR: Received data length: 1 bytes, time since last packet: 989 ms[0m
+[0;32mI (4300) WS_MGR: Received data length: 1 bytes, time since last packet: 894 ms[0m
+[0;32mI (5300) WS_MGR: Received data length: 1 bytes, time since last packet: 1000 ms[0m
+[0;32mI (6330) WS_MGR: Received data length: 1 bytes, time since last packet: 1032 ms[0m
+[0;32mI (7300) WS_MGR: Received data length: 1 bytes, time since last packet: 972 ms[0m
+[0;32mI (8440) WS_MGR: Received data length: 1 bytes, time since last packet: 1133 ms[0m
+[0;32mI (9440) WS_MGR: Received data length: 1 bytes, time since last packet: 1005 ms[0m
+[0;32mI (10330) WS_MGR: Received data length: 1 bytes, time since last packet: 881 ms[0m
+[0;32mI (11390) WS_MGR: Received data length: 1 bytes, time since last packet: 1064 ms[0m
+[0;32mI (12370) WS_MGR: Received data length: 1 bytes, time since last packet: 983 ms[0m
+[0;32mI (13310) WS_MGR: Received data length: 1 bytes, time since last packet: 940 ms[0m
+[0;32mI (14460) WS_MGR: Received data length: 1 bytes, time since last packet: 1146 ms[0m
+����������������������������������������������������������������length: 1 bytes, time since last packet: 918 ms
+[0;32mI (16320) WS_MGR: Received data length: 1 bytes, time since last packet: 941 ms[0m
+[0;32mI (17320) WS_MGR: Received data length: 1 bytes, time since last packet: 1000 ms[0m
+[0;32mI (18320) WS_MGR: Received data length: 1 bytes, time since last packet: 1001 ms[0m
+[0;32mI (19320) WS_MGR: Received data length: 1 bytes, time since last packet: 1002 ms[0m
+[0;32mI (20330) WS_MGR: Received data length: 1 bytes, time since last packet: 1001 ms[0m
+[0;32mI (21330) WS_MGR: Received data length: 1 bytes, time since last packet: 1000 ms[0m
+[0;32mI (22340) WS_MGR: Received data length: 1 bytes, time since last packet: 1015 ms[0m
+[0;32mI (23330) WS_MGR: Received data length: 1 bytes, time since last packet: 987 ms[0m
+[0;32mI (24350) WS_MGR: Received data length: 1 bytes, time since last packet: 1022 ms[0m
+[0;32mI (25330) WS_MGR: Received data length: 1 bytes, time since last packet: 980 ms[0m
+[0;32mI (26450) WS_MGR: Received data length: 1 bytes, time since last packet: 1116 ms[0m
+[0;32mI (27370) WS_MGR: Received data length: 1 bytes, time since last packet: 917 ms[0m
+[0;32mI (28340) WS_MGR: Received data length: 1 bytes, time since last packet: 971 ms[0m
+[0;32mI (29420) WS_MGR: Received data length: 1 bytes, time since last packet: 1077 ms[0m
+[0;32mI (30340) WS_MGR: Received data length: 1 bytes, time since last packet: 926 ms[0m
+[0;32mI (31360) WS_MGR: Received data length: 1 bytes, time since last packet: 1016 ms[0m
+[0;32mI (32490) WS_MGR: Received data length: 1 bytes, time since last packet: 1130 ms[0m
+[0;32mI (33360) WS_MGR: Received data length: 1 bytes, time since last packet: 874 ms[0m
+[0;32mI (34430) WS_MGR: Received data length: 1 bytes, time since last packet: 1063 ms[0m
+[0;32mI (35350) WS_MGR: Received data length: 1 bytes, time since last packet: 923 ms[0m
+[0;32mI (36480) WS_MGR: Received data length: 1 bytes, time since last packet: 1125 ms[0m
+[0;32mI (37400) WS_MGR: Received data length: 1 bytes, time since last packet: 922 ms[0m
+[0;32mI (38420) WS_MGR: Received data length: 1 bytes, time since last packet: 1022 ms[0m
+[0;32mI (39410) WS_MGR: Received data length: 1 bytes, time since last packet: 984 ms[0m
+[0;32mI (40470) WS_MGR: Received data length: 1 bytes, time since last packet: 1066 ms[0m
+[0;32mI (41490) WS_MGR: Received data length: 1 bytes, time since last packet: 1020 ms[0m

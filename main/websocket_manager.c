@@ -146,37 +146,58 @@ static void stop_audio_consumer_and_ringbuf(void)
 {
     ESP_LOGI(TAG, "Stopping audio consumer tasks...");
 
+    // (A) Remember who is calling so tasks can notify us.
     s_ws_manager_task = xTaskGetCurrentTaskHandle();
 
-    // 1) Signal tasks to exit
+    // (B) Signal tasks to exit
     g_shutdown_requested = true;
 
-    // 2) Wait for audio_consumer_task to exit (if handle is known)
+    // (C) If the audio_consumer_task exists, wait for it to stop — with a timeout
     if (s_audio_consumer_handle) {
-        ESP_LOGI(TAG, "Waiting for audio_consumer_task to stop...");
-        // Wait until the task deletes itself
-        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
-        s_audio_consumer_handle = NULL; 
+        ESP_LOGI(TAG, "Waiting for audio_consumer_task to stop (1s timeout)...");
+        BaseType_t notified = ulTaskNotifyTake(pdTRUE, pdMS_TO_TICKS(1000));
+        if (notified == 0) {
+            ESP_LOGW(TAG, "audio_consumer_task did NOT stop in time => continuing anyway");
+            // We skip, but the task might still be stuck. 
+            // You could call vTaskDelete(s_audio_consumer_handle) forcibly if needed.
+        } else {
+            ESP_LOGI(TAG, "audio_consumer_task stopped cleanly");
+        }
+        s_audio_consumer_handle = NULL;
+    } else {
+        ESP_LOGI(TAG, "audio_consumer_task was not running => skipping");
     }
 
-    // 3) Also wait for ringbuf_monitor_task if you want
+    // (D) If the ringbuf_monitor_task exists, wait for it as well
     if (s_ringbuf_monitor_handle) {
-        ESP_LOGI(TAG, "Waiting for ringbuf_monitor_task to stop...");
-        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+        ESP_LOGI(TAG, "Waiting for ringbuf_monitor_task to stop (1s timeout)...");
+        BaseType_t notified = ulTaskNotifyTake(pdTRUE, pdMS_TO_TICKS(1000));
+        if (notified == 0) {
+            ESP_LOGW(TAG, "ringbuf_monitor_task did NOT stop in time => continuing anyway");
+            // Same idea: we *could* forcibly delete if needed
+        } else {
+            ESP_LOGI(TAG, "ringbuf_monitor_task stopped cleanly");
+        }
         s_ringbuf_monitor_handle = NULL;
+    } else {
+        ESP_LOGI(TAG, "ringbuf_monitor_task was not running => skipping");
     }
 
-    // 4) Now we can safely delete the ring buffer
+    // (E) Now we can safely delete the ring buffer if it’s still alive
     if (s_audio_rb) {
         ESP_LOGI(TAG, "Deleting ring buffer...");
         vRingbufferDelete(s_audio_rb);
         s_audio_rb = NULL;
+    } else {
+        ESP_LOGI(TAG, "Ring buffer was already NULL => skipping");
     }
-    s_ws_manager_task = NULL;
-    // Reset our shutdown flag for the next time
+
+    // (F) Reset our shutdown flag for the next time
     g_shutdown_requested = false;
-    ESP_LOGI(TAG, "Audio consumer + ringbuf fully stopped.");
+    s_ws_manager_task    = NULL;
+    ESP_LOGI(TAG, "Audio consumer + ringbuf fully stopped (or forced).");
 }
+
 
 
 static void ws_monitor_task(void *arg)
@@ -338,7 +359,7 @@ esp_err_t websocket_manager_init(void)
     );
 
     // Create ring buffer for inbound audio
-    s_audio_rb = xRingbufferCreate(16 * 1024, RINGBUF_TYPE_BYTEBUF);
+    s_audio_rb = xRingbufferCreate(32 * 1024, RINGBUF_TYPE_BYTEBUF);
     if (!s_audio_rb) {
         ESP_LOGE(TAG, "Failed to create ring buffer");
         return ESP_FAIL;
@@ -493,7 +514,7 @@ static void ringbuf_monitor_task(void *arg)
     ESP_LOGI(TAG, "ringbuf_monitor_task starting!");
     while (!g_shutdown_requested) {
         if (s_audio_rb) {
-            const size_t total_size = 16 * 1024; 
+            const size_t total_size = 32 * 1024; 
             size_t free_bytes = xRingbufferGetCurFreeSize(s_audio_rb);
             size_t used_bytes = total_size - free_bytes;
 
