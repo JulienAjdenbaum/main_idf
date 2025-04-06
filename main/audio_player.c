@@ -1,3 +1,6 @@
+// audio_player.c
+
+#include "esp_task_wdt.h"
 #include "audio_player.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/queue.h"
@@ -87,7 +90,7 @@ esp_err_t audio_player_init(void)
     }
 
     // Start tasks
-    xTaskCreatePinnedToCore(audio_task, "audioTask", 4096, NULL, 7, NULL, 1);
+    xTaskCreatePinnedToCore(audio_task, "audioTask", 4096, NULL, 3, NULL, 1);
     xTaskCreatePinnedToCore(audio_monitor_task, "audioMonitor", 2048, NULL, 4, NULL, 1);
     xTaskCreatePinnedToCore(volume_task, "volume_task", 2048, NULL, 5, NULL, 1);
 
@@ -120,9 +123,11 @@ static void audio_task(void *param)
 {
     ESP_LOGI(TAG, "audio_task started");
     while (1) {
+        // esp_task_wdt_reset();
         int buf_idx;
         // Wait up to 50ms for the next ready buffer
         if (xQueueReceive(s_ready_queue, &buf_idx, pdMS_TO_TICKS(50)) == pdTRUE) {
+            // esp_task_wdt_reset();
             s_last_audio_time = esp_timer_get_time();
 
             if (buf_idx < 0 || buf_idx >= NUM_AUDIO_BUFFERS) {
@@ -134,16 +139,11 @@ static void audio_task(void *param)
             // Write the buffer to I2S in small chunks to avoid long blocking
             uint8_t *ptr   = (uint8_t *)buf->data;
             size_t   remain = buf->length;
-
+            size_t chunks_processed = 0;
             while (remain > 0) {
                 size_t written = 0;
-                esp_err_t err = i2s_write(
-                    I2S_NUM,
-                    ptr,
-                    remain,
-                    &written,
-                    pdMS_TO_TICKS(20) // short timeout
-                );
+                size_t chunk_size = (remain > 1024) ? 1024 : remain; // Process in 1KB chunks
+                esp_err_t err = i2s_write(I2S_NUM, ptr, chunk_size, &written, pdMS_TO_TICKS(20));
 
                 if (err != ESP_OK) {
                     ESP_LOGE(TAG, "i2s_write error => %s", esp_err_to_name(err));
@@ -156,6 +156,12 @@ static void audio_task(void *param)
                 }
                 ptr    += written;
                 remain -= written;
+                if (remain > 0) {
+                    vTaskDelay(pdMS_TO_TICKS(1));
+                }
+                if ((chunks_processed++ % 2) == 0) {
+                    taskYIELD();
+                }
             }
 
             // Return the buffer to empty queue (short timeout again)
@@ -166,7 +172,7 @@ static void audio_task(void *param)
         // If xQueueReceive timed out, we just loop again.
 
         // **Important**: Let other tasks and the watchdog run
-        vTaskDelay(pdMS_TO_TICKS(1));
+        vTaskDelay(pdMS_TO_TICKS(5));
     }
     vTaskDelete(NULL);
 }
@@ -187,14 +193,16 @@ static void audio_monitor_task(void *param)
 audio_buffer_t *audio_player_get_buffer_blocking(void)
 {
     int idx;
-    // Instead of portMAX_DELAY, let's wait up to 50ms
-    if (xQueueReceive(s_empty_queue, &idx, pdMS_TO_TICKS(50)) == pdTRUE) {
-        s_buffers[idx].length = 0;
+    BaseType_t ret = xQueueReceive(s_empty_queue, &idx, pdMS_TO_TICKS(20)); // Reduce timeout
+    
+    if (ret == pdTRUE) {
         return &s_buffers[idx];
-    } else {
-        // Timed out => no available buffer
-        return NULL;
     }
+    
+    // Add more frequent yielding
+    taskYIELD();
+    vTaskDelay(pdMS_TO_TICKS(2));
+    return NULL;
 }
 
 bool audio_player_submit_buffer(audio_buffer_t *buf)
@@ -206,7 +214,7 @@ bool audio_player_submit_buffer(audio_buffer_t *buf)
     }
 
     // e.g. short timeout. If full, skip. 
-    if (xQueueSend(s_ready_queue, &idx, pdMS_TO_TICKS(10)) != pdTRUE) {
+    if (xQueueSend(s_ready_queue, &idx, pdMS_TO_TICKS(5)) != pdTRUE) {
         ESP_LOGW(TAG, "ready_queue is full; skipping this buffer!");
         return false;
     }

@@ -156,12 +156,11 @@ static esp_err_t post_set_creds_handler(httpd_req_t *req)
     }
 
     // 4) Send a response page
-    // (Optionally redirect using httpd_resp_set_status(req, "302 Found") + Location header)
     const char *resp_str = "<html><body><h2>Credentials saved. Trying to connect...</h2></body></html>";
     httpd_resp_set_type(req, "text/html");
     httpd_resp_send(req, resp_str, strlen(resp_str));
 
-        // 4) Delay briefly so the HTTP response can go out
+    // 4) Delay briefly so the HTTP response can go out
     vTaskDelay(pdMS_TO_TICKS(1000));
 
     // 5) Reboot
@@ -171,8 +170,28 @@ static esp_err_t post_set_creds_handler(httpd_req_t *req)
 }
 
 /**
+ * @brief Handler for the Apple captive-portal checks (hotspot-detect.html, success.html).
+ *        Return 200 OK with a short HTML that auto-redirects to "/".
+ *
+ *        This is more reliable for iOS/macOS because a 302 redirect can sometimes
+ *        make iOS/macOS think the network is "broken" instead of "captive portal."
+ */
+static esp_err_t get_apple_hotspot_handler(httpd_req_t *req)
+{
+    httpd_resp_set_status(req, "200 OK");
+    httpd_resp_set_type(req, "text/html");
+    // A quick meta-refresh to "/":
+    const char *redirect_page =
+        "<html>"
+        "<head><meta http-equiv=\"refresh\" content=\"0;url=/\"/></head>"
+        "<body>Redirecting to captive portal...</body>"
+        "</html>";
+    return httpd_resp_send(req, redirect_page, strlen(redirect_page));
+}
+
+/**
  * @brief Handler for GET /generate_204 or /gen_204 for captive portal checks.
- *        We do a 302 redirect to "/" so that clients load the form.
+ *        If you want, you can still do a 302 redirect here for Android/Chrome style checks.
  */
 static esp_err_t get_generate_204_handler(httpd_req_t *req)
 {
@@ -205,7 +224,24 @@ static void register_uris(httpd_handle_t server)
     };
     httpd_register_uri_handler(server, &set_creds_uri);
 
-    // For captive-portal OS checks: /generate_204 or /gen_204
+    // Apple captive-portal URIs:
+    httpd_uri_t apple_hotspot_uri = {
+        .uri      = "/hotspot-detect.html",
+        .method   = HTTP_GET,
+        .handler  = get_apple_hotspot_handler,
+        .user_ctx = NULL
+    };
+    httpd_register_uri_handler(server, &apple_hotspot_uri);
+
+    httpd_uri_t macos_success_uri = {
+        .uri      = "/library/test/success.html",
+        .method   = HTTP_GET,
+        .handler  = get_apple_hotspot_handler,
+        .user_ctx = NULL
+    };
+    httpd_register_uri_handler(server, &macos_success_uri);
+
+    // For Android/Chrome-style captive portal checks:
     httpd_uri_t gen204_uri = {
         .uri      = "/generate_204",
         .method   = HTTP_GET,

@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "hello_world",
-    "project_version":    "e86916e-dirty",
+    "project_version":    "eb7416e-dirty",
     "project_path":       "/home/julien/Documents/esp32IDF/hello_world",
     "idf_path":           "/home/julien/esp/esp-idf",
     "build_dir":          "/home/julien/Documents/esp32IDF/hello_world/build",
@@ -1270,7 +1270,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [ "abobija__rc522", "espressif__mdns" ],
             "file": "/home/julien/Documents/esp32IDF/hello_world/build/esp-idf/main/libmain.a",
-            "sources": [ "/home/julien/Documents/esp32IDF/hello_world/main/coredump_manager.c", "/home/julien/Documents/esp32IDF/hello_world/main/led_strip_encoder.c", "/home/julien/Documents/esp32IDF/hello_world/main/OTA.c", "/home/julien/Documents/esp32IDF/hello_world/main/http_server.c", "/home/julien/Documents/esp32IDF/hello_world/main/dns_server.c", "/home/julien/Documents/esp32IDF/hello_world/main/main.c", "/home/julien/Documents/esp32IDF/hello_world/main/LED_button.c", "/home/julien/Documents/esp32IDF/hello_world/main/sd_card_utils.c", "/home/julien/Documents/esp32IDF/hello_world/main/audio_player.c", "/home/julien/Documents/esp32IDF/hello_world/main/tag_reader.c", "/home/julien/Documents/esp32IDF/hello_world/main/audio_record.c", "/home/julien/Documents/esp32IDF/hello_world/main/websocket_manager.c", "/home/julien/Documents/esp32IDF/hello_world/main/audio_stream.c", "/home/julien/Documents/esp32IDF/hello_world/main/wifi.c", "/home/julien/Documents/esp32IDF/hello_world/build/server_cert.pem.S" ],
+            "sources": [ "/home/julien/Documents/esp32IDF/hello_world/main/coredump_manager.c", "/home/julien/Documents/esp32IDF/hello_world/main/led_strip_encoder.c", "/home/julien/Documents/esp32IDF/hello_world/main/OTA.c", "/home/julien/Documents/esp32IDF/hello_world/main/http_server.c", "/home/julien/Documents/esp32IDF/hello_world/main/dns_server.c", "/home/julien/Documents/esp32IDF/hello_world/main/main.c", "/home/julien/Documents/esp32IDF/hello_world/main/LED_button.c", "/home/julien/Documents/esp32IDF/hello_world/main/audio_player.c", "/home/julien/Documents/esp32IDF/hello_world/main/tag_reader.c", "/home/julien/Documents/esp32IDF/hello_world/main/audio_record.c", "/home/julien/Documents/esp32IDF/hello_world/main/websocket_manager.c", "/home/julien/Documents/esp32IDF/hello_world/main/audio_stream.c", "/home/julien/Documents/esp32IDF/hello_world/main/wifi.c", "/home/julien/Documents/esp32IDF/hello_world/build/server_cert.pem.S" ],
             "include_dirs": [ "." ]
         },
         "mbedtls": {

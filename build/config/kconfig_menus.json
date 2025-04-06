@@ -21307,7 +21307,10 @@
                         "help": "Size of the memory to be reserved for core dump stack. If 0 core dump process will run on\nthe stack of crashed task/ISR, otherwise special stack will be allocated.\nTo ensure that core dump itself will not overflow task/ISR stack set this to the value around 1300-1800\ndepending on the chosen checksum calculation method. SHA256 method needs more stack space than CRC32.\nNOTE: It eats DRAM.",
                         "id": "ESP_COREDUMP_STACK_SIZE",
                         "name": "ESP_COREDUMP_STACK_SIZE",
-                        "range": null,
+                        "range": [
+                            0,
+                            4096
+                        ],
                         "title": "Reserved stack size",
                         "type": "int"
                     },
@@ -22451,7 +22454,7 @@
                                 "id": "FREERTOS_ISR_STACKSIZE",
                                 "name": "FREERTOS_ISR_STACKSIZE",
                                 "range": [
-                                    1536,
+                                    2096,
                                     32768
                                 ],
                                 "title": "ISR stack size",

@@ -80,10 +80,10 @@ void coredump_manager_check_and_load(void)
     ESP_LOGI(TAG, "Coredump base64 length=%u", (unsigned)encoded_len);
 
     // 5) Optionally erase coredump so it’s not re-sent next time
-    err = esp_core_dump_image_erase();
-    if (err != ESP_OK) {
-        ESP_LOGE(TAG, "Failed to erase coredump: %s", esp_err_to_name(err));
-    }
+    // err = esp_core_dump_image_erase();
+    // if (err != ESP_OK) {
+    //     ESP_LOGE(TAG, "Failed to erase coredump: %s", esp_err_to_name(err));
+    // }
 }
 
 bool coredump_manager_found(void)

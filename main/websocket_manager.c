@@ -46,6 +46,10 @@ static volatile int64_t s_last_ping_time = 0;
 static volatile bool s_ws_just_connected = false;
 #define WS_CONNECT_DELAY_MS  1000
 #define WS_PING_TIMEOUT_MS   10000
+#define WS_SEND_TIMEOUT_MS 100  // Add timeout for WebSocket sends
+
+
+static int64_t s_last_data_time = 0;
 
 /**
  * Task handles for ringbuf monitor & audio consumer. 
@@ -72,26 +76,71 @@ static void websocket_event_handler(void *handler_args,
 static void audio_consumer_task(void *arg);
 static void ringbuf_monitor_task(void *arg);
 
-static bool s_crash_triggered = false;
+// static bool s_crash_triggered = false;
 
 static TaskHandle_t s_ws_manager_task = NULL;
 
-static void coredump_test_task(void *arg)
+static BaseType_t ringbuffer_send_overwrite(RingbufHandle_t rb,
+                                            const void *data,
+                                            size_t size,
+                                            TickType_t wait_ticks)
 {
-    // Wait a few seconds so logs can flush and Wi-Fi can stabilize
-    vTaskDelay(pdMS_TO_TICKS(5000));
+    // Optional: check if 'size' exceeds total ring buffer capacity:
+    // The IDF ring buffer does not provide an official "capacity" getter,
+    // but you likely know your own buffer size. If it’s bigger, it can never fit.
+    //  e.g. if (size > MY_RINGBUF_CAPACITY) return pdFALSE;
 
-    ESP_LOGW("CORE_TEST", "About to forcibly crash => testing coredump handling...");
+    while (true) {
+        // Attempt to send immediately (0 ticks). We do our own waiting logic below.
+        BaseType_t ok = xRingbufferSend(rb, data, size, 0);
+        if (ok == pdTRUE) {
+            // It worked — we’re done.
+            return pdTRUE;
+        }
 
-    // Option 1: Call abort() (preferred because it's a standard IDF panic)
-    abort();
-
-    // Option 2: Could do assert(0) or something similarly guaranteed to crash
-    // assert(false);
-
-    // We'll never get here, but in case:
-    vTaskDelete(NULL);
+        // If we reach here, the buffer is full.
+        // Remove the oldest item to free space, then retry.
+        size_t old_size;
+        void *old_data = xRingbufferReceive(rb, &old_size, 0);
+        if (!old_data) {
+            // Couldn’t remove anything. Either the buffer was empty (rare race),
+            // or the item(s) in the buffer cannot be split (e.g. big chunk).
+            // We can optionally wait a bit (wait_ticks) or just fail immediately.
+            // This example does a timed wait, then tries again if you want.
+            if (wait_ticks == 0) {
+                // We aren’t allowed to wait, so fail
+                return pdFALSE;
+            } else {
+                // Wait a bit, then try again
+                vTaskDelay(pdMS_TO_TICKS(10));
+                // Decrement wait_ticks in some fashion if you want a finite wait
+                // Or you could do wait_ticks-- if you want 1 tick at a time, etc.
+                // For simplicity, let's just ignore it or do a fixed delay in a loop.
+            }
+        } else {
+            // Freed the oldest item’s memory
+            vRingbufferReturnItem(rb, old_data);
+            // Now loop and try to send again
+        }
+    }
 }
+
+// static void coredump_test_task(void *arg)
+// {
+//     // Wait a few seconds so logs can flush and Wi-Fi can stabilize
+//     vTaskDelay(pdMS_TO_TICKS(5000));
+
+//     ESP_LOGW("CORE_TEST", "About to forcibly crash => testing coredump handling...");
+
+//     // Option 1: Call abort() (preferred because it's a standard IDF panic)
+//     abort();
+
+//     // Option 2: Could do assert(0) or something similarly guaranteed to crash
+//     // assert(false);
+
+//     // We'll never get here, but in case:
+//     vTaskDelete(NULL);
+// }
 
 static void stop_audio_consumer_and_ringbuf(void)
 {
@@ -289,7 +338,7 @@ esp_err_t websocket_manager_init(void)
     );
 
     // Create ring buffer for inbound audio
-    s_audio_rb = xRingbufferCreate(32 * 1024, RINGBUF_TYPE_BYTEBUF);
+    s_audio_rb = xRingbufferCreate(16 * 1024, RINGBUF_TYPE_BYTEBUF);
     if (!s_audio_rb) {
         ESP_LOGE(TAG, "Failed to create ring buffer");
         return ESP_FAIL;
@@ -444,7 +493,7 @@ static void ringbuf_monitor_task(void *arg)
     ESP_LOGI(TAG, "ringbuf_monitor_task starting!");
     while (!g_shutdown_requested) {
         if (s_audio_rb) {
-            const size_t total_size = 32 * 1024; 
+            const size_t total_size = 16 * 1024; 
             size_t free_bytes = xRingbufferGetCurFreeSize(s_audio_rb);
             size_t used_bytes = total_size - free_bytes;
 
@@ -469,14 +518,19 @@ static void audio_consumer_task(void *arg)
             size_t item_size = 0;
             // Wait for data from ring buffer
             uint8_t *audio_chunk = (uint8_t *) xRingbufferReceive(
-                s_audio_rb, &item_size, pdMS_TO_TICKS(100));
+                s_audio_rb, &item_size, pdMS_TO_TICKS(20));
             if (audio_chunk) {
-                // handle incoming audio
-                audio_stream_handle_incoming(audio_chunk, item_size);
-                // Return memory to ring buffer
-                vRingbufferReturnItem(s_audio_rb, (void*)audio_chunk);
+                // Process in smaller chunks
+                size_t processed = 0;
+                while (processed < item_size) {
+                    size_t chunk = (item_size - processed > 512) ? 512 : item_size - processed;
+                    audio_stream_handle_incoming(audio_chunk + processed, chunk);
+                    processed += chunk;
+                    taskYIELD();
+                }
+                vRingbufferReturnItem(s_audio_rb, audio_chunk);
             }
-            vTaskDelay(pdMS_TO_TICKS(1));
+            vTaskDelay(pdMS_TO_TICKS(3));
         }
         // else either no ringbuf or timed out => loop
     }
@@ -521,11 +575,26 @@ static void websocket_event_handler(void *handler_args,
         break;
 
     case WEBSOCKET_EVENT_DATA:
-        // handle inbound data (prefix 0x02 for audio, etc.)
+    {
+        esp_websocket_event_data_t *ws_data = (esp_websocket_event_data_t *) event_data;
+
+        // 1) Calculate how long since last packet
+        int64_t now_us = esp_timer_get_time();
+        int64_t elapsed_us = now_us - s_last_data_time;
+        // Convert to milliseconds for convenience
+        int elapsed_ms = (int)(elapsed_us / 1000);
+        s_last_data_time = now_us;  // update for next round
+
+        // 2) Print the packet length and time since last packet
+        ESP_LOGI(TAG, "Received data length: %d bytes, time since last packet: %d ms",
+                ws_data->data_len, elapsed_ms);
+
+        // 3) Continue your existing logic
         if (ws_data->data_len > 0) {
             const uint8_t *rx_buf = (const uint8_t *)ws_data->data_ptr;
             uint8_t prefix = rx_buf[0];
             size_t audio_len = ws_data->data_len - 1;
+
             
             if (prefix == 0x05) {
                 // 1) Received custom "Ping" from server => respond with Pong (0x06)
@@ -541,10 +610,12 @@ static void websocket_event_handler(void *handler_args,
 
                 if (s_audio_rb) {
                     // copy minus prefix
-                    BaseType_t ok = xRingbufferSend(s_audio_rb, 
-                                                    (void*)(rx_buf + 1),
-                                                    audio_len,
-                                                    pdMS_TO_TICKS(50));
+                    BaseType_t ok = ringbuffer_send_overwrite(
+                        s_audio_rb,
+                        (void *)(rx_buf + 1),
+                        audio_len,
+                        pdMS_TO_TICKS(50)  // or 0 if you never want to wait
+                    );
                     if (!ok) {
                         ESP_LOGE(TAG, "Ring buffer full => dropped audio!");
                     }
@@ -572,6 +643,7 @@ static void websocket_event_handler(void *handler_args,
             }
         }
         break;
+    }
 
     case WEBSOCKET_EVENT_ERROR:
         ESP_LOGW(TAG, "WebSocket error");

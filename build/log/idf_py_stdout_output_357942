@@ -1,619 +1,0 @@
-Command: /home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/julien/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/julien/Documents/esp32IDF/hello_world/build/hello_world.elf /home/julien/Documents/esp32IDF/hello_world/build/bootloader/bootloader.elf -m '/home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python' '/home/julien/esp/esp-idf/tools/idf.py'
-ets Jun  8 2016 00:22:57
-
-rst:0x1 (POWERON_RESET),boot:0x12 (SPI_FAST_FLASH_BOOT)
-configsip: 0, SPIWP:0xee
-clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
-mode:DIO, clock div:2
-load:0x3fff0030,len:6368
-load:0x40078000,len:15880
-load:0x40080400,len:3860
-entry 0x40080638
-[0;32mI (27) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
-[0;32mI (27) boot: compile time Apr  4 2025 11:22:26[0m
-[0;32mI (27) boot: Multicore bootloader[0m
-[0;32mI (30) boot: chip revision: v1.1[0m
-[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
-[0;32mI (36) boot.esp32: SPI Mode       : DIO[0m
-[0;32mI (40) boot.esp32: SPI Flash Size : 4MB[0m
-[0;32mI (43) boot: Enabling RNG early entropy source...[0m
-[0;32mI (48) boot: Partition Table:[0m
-[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
-[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
-[0;32mI (63) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
-[0;32mI (70) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
-[0;32mI (76) boot:  3 factory          factory app      00 00 00010000 00100000[0m
-[0;32mI (83) boot:  4 ota_0            OTA app          00 10 00110000 00100000[0m
-[0;32mI (89) boot:  5 ota_1            OTA app          00 11 00210000 00100000[0m
-[0;32mI (96) boot:  6 coredump         Unknown data     01 03 00310000 00010000[0m
-[0;32mI (102) boot: End of partition table[0m
-[0;32mI (106) boot: Defaulting to factory image[0m
-[0;32mI (110) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=29368h (168808) map[0m
-[0;32mI (175) esp_image: segment 1: paddr=00039390 vaddr=3ff80000 size=0001ch (    28) load[0m
-[0;32mI (175) esp_image: segment 2: paddr=000393b4 vaddr=3ffb0000 size=048b4h ( 18612) load[0m
-[0;32mI (186) esp_image: segment 3: paddr=0003dc70 vaddr=40080000 size=023a8h (  9128) load[0m
-[0;32mI (190) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=b3ad0h (735952) map[0m
-[0;32mI (445) esp_image: segment 5: paddr=000f3af8 vaddr=400823a8 size=19024h (102436) load[0m
-[0;32mI (498) boot: Loaded app from partition at offset 0x10000[0m
-[0;32mI (498) boot: Disabling RNG early entropy source...[0m
-[0;32mI (509) cpu_start: Multicore app[0m
-[0;32mI (517) cpu_start: Pro cpu start user code[0m
-[0;32mI (517) cpu_start: cpu freq: 160000000 Hz[0m
-[0;32mI (518) app_init: Application information:[0m
-[0;32mI (518) app_init: Project name:     hello_world[0m
-[0;32mI (522) app_init: App version:      3dbadab-dirty[0m
-[0;32mI (526) app_init: Compile time:     Apr  4 2025 11:22:21[0m
-[0;32mI (531) app_init: ELF file SHA256:  0f2584d21...[0m
-[0;32mI (536) app_init: ESP-IDF:          v5.5-dev-2290-g94cfe394fe[0m
-[0;32mI (541) efuse_init: Min chip rev:     v0.0[0m
-[0;32mI (545) efuse_init: Max chip rev:     v3.99 [0m
-[0;32mI (549) efuse_init: Chip rev:         v1.1[0m
-[0;32mI (553) heap_init: Initializing. RAM available for dynamic allocation:[0m
-[0;32mI (559) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
-[0;32mI (564) heap_init: At 3FFBB8C0 len 00024740 (145 KiB): DRAM[0m
-[0;32mI (569) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
-[0;32mI (575) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
-[0;32mI (580) heap_init: At 4009B3CC len 00004C34 (19 KiB): IRAM[0m
-[0;32mI (587) spi_flash: detected chip: generic[0m
-[0;32mI (589) spi_flash: flash io: dio[0m
-[0;33mW (592) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
-[0;33mW (604) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
-[0;32mI (612) main_task: Started on CPU0[0m
-[0;32mI (622) main_task: Calling app_main()[0m
-[0;32mI (622) MAIN: Starting app_main...[0m
-[0;32mI (622) led_button_blink: Create RMT TX channel[0m
-[0;32mI (622) led_button_blink: Install LED strip encoder[0m
-[0;32mI (622) MAIN: Initializing Wi-Fi...[0m
-[0;32mI (662) WIFI_MGR: Loaded Wi-Fi creds from NVS: SSID=Partagedeco[0m
-[0;32mI (682) wifi:wifi driver task: 3ffc3c44, prio:23, stack:6656, core=0[0m
-[0;32mI (692) wifi:wifi firmware version: 3a3aca644[0m
-[0;32mI (692) wifi:wifi certification version: v7.0[0m
-[0;32mI (692) wifi:config NVS flash: enabled[0m
-[0;32mI (692) wifi:config nano formatting: disabled[0m
-[0;32mI (702) wifi:Init data frame dynamic rx buffer num: 32[0m
-[0;32mI (702) wifi:Init static rx mgmt buffer num: 5[0m
-[0;32mI (712) wifi:Init management short buffer num: 32[0m
-[0;32mI (712) wifi:Init dynamic tx buffer num: 32[0m
-[0;32mI (722) wifi:Init static rx buffer size: 1600[0m
-[0;32mI (722) wifi:Init static rx buffer num: 10[0m
-[0;32mI (722) wifi:Init dynamic rx buffer num: 32[0m
-[0;32mI (732) wifi_init: rx ba win: 6[0m
-[0;32mI (732) wifi_init: accept mbox: 6[0m
-[0;32mI (732) wifi_init: tcpip mbox: 32[0m
-[0;32mI (742) wifi_init: udp mbox: 6[0m
-[0;32mI (742) wifi_init: tcp mbox: 6[0m
-[0;32mI (742) wifi_init: tcp tx win: 5760[0m
-[0;32mI (742) wifi_init: tcp rx win: 5760[0m
-[0;32mI (752) wifi_init: tcp mss: 1440[0m
-[0;32mI (752) wifi_init: WiFi IRAM OP enabled[0m
-[0;32mI (752) wifi_init: WiFi RX IRAM OP enabled[0m
-[0;32mI (772) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
-[0;32mI (842) wifi:mode : sta (94:54:c5:ae:fb:24)[0m
-[0;32mI (852) wifi:enable tsf[0m
-[0;32mI (852) wifi:Set ps type: 0, coexist: 0[0m
-
-[0;32mI (852) WIFI_MGR: STA init done. Trying SSID: Partagedeco[0m
-[0;32mI (852) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
-[0;32mI (862) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
-[0;32mI (862) wifi:state: init -> auth (0xb0)[0m
-[0;32mI (872) wifi:state: auth -> assoc (0x0)[0m
-[0;32mI (882) wifi:state: assoc -> run (0x10)[0m
-[0;32mI (892) wifi:connected with Partagedeco, aid = 1, channel 11, BW20, bssid = aa:f0:fe:0d:99:0e[0m
-[0;32mI (892) wifi:security: WPA2-PSK, phy: bgn, rssi: -53[0m
-[0;32mI (902) wifi:pm start, type: 0[0m
-
-[0;32mI (902) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
-[0;32mI (932) wifi:<ba-add>idx:0 (ifx:0, aa:f0:fe:0d:99:0e), tid:0, ssn:0, winSize:64[0m
-[0;32mI (962) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
-[0;32mI (962) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
-[0;32mI (1862) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
-[0;32mI (1942) esp_netif_handlers: sta ip: 10.11.44.122, mask: 255.255.255.0, gw: 10.11.44.242[0m
-[0;32mI (1942) WIFI_MGR: STA got IP: 10.11.44.122[0m
-[0;32mI (1942) CORE_DUMP_MGR: No coredump or error reading offset: ESP_ERR_INVALID_SIZE[0m
-[0;32mI (1952) WS_MGR: Loaded existing API key from NVS: C2F94A01D7CD3D3DF45192A8A5771FEA[0m
-[0;32mI (1952) WS_MGR: Final WebSocket headers:[0m
-X-API-Key: C2F94A01D7CD3D3DF45192A8A5771FEA
-
-[0;32mI (1962) websocket_client: Started[0m
-[0;32mI (1962) WS_MGR: WebSocket started with header [X-API-Key: C2F94A01D7CD3D3DF45192A8A5771FEA[0m
-]
-[0;32mI (1972) WS_MGR: audio_consumer_task starting![0m
-[0;32mI (1972) MAIN: STA connected. Starting other services...[0m
-[0;32mI (1982) WS_MGR: ringbuf_monitor_task starting![0m
-[0;32mI (1982) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (1982) CORE_DUMP_MGR: No coredump or error reading offset: ESP_ERR_INVALID_SIZE[0m
-[0;32mI (2002) WS_MGR: Loaded existing API key from NVS: C2F94A01D7CD3D3DF45192A8A5771FEA[0m
-[0;32mI (2002) WS_MGR: Final WebSocket headers:[0m
-X-API-Key: C2F94A01D7CD3D3DF45192A8A5771FEA
-
-[0;32mI (2022) websocket_client: Started[0m
-[0;32mI (2022) WS_MGR: WebSocket started with header [X-API-Key: C2F94A01D7CD3D3DF45192A8A5771FEA[0m
-]
-[0;32mI (2022) led_button_blink: Configuring button on GPIO 14[0m
-[0;32mI (2032) WS_MGR: audio_consumer_task starting![0m
-[0;32mI (2032) WS_MGR: ringbuf_monitor_task starting![0m
-[0;32mI (2032) gpio: GPIO[14]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
-[0;32mI (2042) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (2052) AudioPlayer: audio_task started[0m
-[0;32mI (2052) AudioPlayer: Audio player initialized. sample_rate=8000[0m
-[1;31mE (2062) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (2072) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[0;33mW (2082) WS_MGR: WebSocket error[0m
-[0;32mI (2092) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (2092) WS_MGR: WebSocket disconnected[0m
-[0;32mI (2092) AUDIO_RECORD: I2S initialized for mic input (sr=8000, bits=32)[0m
-[1;31mE (2092) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (2102) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[0;33mW (2122) WS_MGR: WebSocket error[0m
-[0;32mI (2122) rc522: PCD (fw=v2.0) initialized[0m
-[0;32mI (2122) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (2132) WS_MGR: WebSocket disconnected[0m
-[0;32mI (2132) RC522_TAG_READER: RC522 tag reader initialized[0m
-[0;32mI (2862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (3862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (3992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (4062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (4862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (5862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (5992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (6062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (6862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[1;31mE (7252) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (7252) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[0;33mW (7262) WS_MGR: WebSocket error[0m
-[0;32mI (7262) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (7272) WS_MGR: WebSocket disconnected[0m
-[0;32mI (7862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (7992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (8062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (8862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[1;31mE (9662) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (9662) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[0;33mW (9672) WS_MGR: WebSocket error[0m
-[0;32mI (9672) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (9682) WS_MGR: WebSocket disconnected[0m
-[0;32mI (9862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (9992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (10062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (10862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (11862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (11992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (12062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[1;31mE (12382) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (12382) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[0;33mW (12392) WS_MGR: WebSocket error[0m
-[0;32mI (12392) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (12402) WS_MGR: WebSocket disconnected[0m
-[0;32mI (12862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (13862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (13992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (14062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[1;31mE (14792) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (14792) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[0;33mW (14802) WS_MGR: WebSocket error[0m
-[0;32mI (14802) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (14812) WS_MGR: WebSocket disconnected[0m
-[0;32mI (14862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (15862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (15992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (16062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (16862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[1;31mE (17512) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (17512) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[0;33mW (17522) WS_MGR: WebSocket error[0m
-[0;32mI (17522) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (17532) WS_MGR: WebSocket disconnected[0m
-[0;32mI (17862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (17992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (18062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (18862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (19862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[1;31mE (19942) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (19942) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[0;33mW (19952) WS_MGR: WebSocket error[0m
-[0;32mI (19952) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (19962) WS_MGR: WebSocket disconnected[0m
-[0;32mI (19992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (20062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (20862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (21862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (21992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (22062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[1;31mE (22642) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (22642) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[0;33mW (22652) WS_MGR: WebSocket error[0m
-[0;32mI (22652) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (22662) WS_MGR: WebSocket disconnected[0m
-[0;32mI (22862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (23862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (23992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (24062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (24862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[1;31mE (25082) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (25082) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[0;33mW (25092) WS_MGR: WebSocket error[0m
-[0;32mI (25102) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (25102) WS_MGR: WebSocket disconnected[0m
-[0;32mI (25862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (25992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (26062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (26862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[1;31mE (27772) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (27772) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[0;33mW (27782) WS_MGR: WebSocket error[0m
-[0;32mI (27792) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (27792) WS_MGR: WebSocket disconnected[0m
-[0;32mI (27862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (27992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (28062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (28862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (29862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (29992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (30062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (30862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (31862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (31992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (32062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[1;31mE (32722) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (32722) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[0;33mW (32732) WS_MGR: WebSocket error[0m
-[0;32mI (32732) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (32732) WS_MGR: WebSocket disconnected[0m
-[0;32mI (32862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (33862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (33992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (34062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (34862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[1;31mE (35402) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (35402) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[0;33mW (35412) WS_MGR: WebSocket error[0m
-[0;32mI (35422) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (35422) WS_MGR: WebSocket disconnected[0m
-[0;32mI (35862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (35992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (36062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (36862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (37862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[1;31mE (37872) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (37872) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[0;33mW (37882) WS_MGR: WebSocket error[0m
-[0;32mI (37892) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (37892) WS_MGR: WebSocket disconnected[0m
-[0;32mI (37992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (38062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (38862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (39862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (39992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (40062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (40862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (41862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (41992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (42062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (42862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[1;31mE (43052) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (43052) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[0;33mW (43062) WS_MGR: WebSocket error[0m
-[0;32mI (43062) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (43072) WS_MGR: WebSocket disconnected[0m
-[0;32mI (43862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (43992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (44062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (44862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[1;31mE (45512) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (45512) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[0;33mW (45522) WS_MGR: WebSocket error[0m
-[0;32mI (45522) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (45522) WS_MGR: WebSocket disconnected[0m
-[0;32mI (45862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (45992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (46062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (46862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (47862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (47992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (48062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[1;31mE (48192) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (48192) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[0;33mW (48202) WS_MGR: WebSocket error[0m
-[0;32mI (48202) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (48202) WS_MGR: WebSocket disconnected[0m
-[0;32mI (48862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (49862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (49992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (50062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[1;31mE (50672) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (50672) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[0;33mW (50682) WS_MGR: WebSocket error[0m
-[0;32mI (50682) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (50692) WS_MGR: WebSocket disconnected[0m
-[0;32mI (50862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (51862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (51992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (52062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (52862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[1;31mE (53332) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (53332) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[0;33mW (53342) WS_MGR: WebSocket error[0m
-[0;32mI (53352) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (53352) WS_MGR: WebSocket disconnected[0m
-[0;32mI (53862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (53992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (54062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (54862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (55862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (55992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (56062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (56862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (57862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (57992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (58062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[1;31mE (58312) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (58312) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[0;33mW (58322) WS_MGR: WebSocket error[0m
-[0;32mI (58322) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (58322) WS_MGR: WebSocket disconnected[0m
-[0;32mI (58862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (59862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (59992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (60062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (60862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[1;31mE (60962) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (60962) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[0;33mW (60972) WS_MGR: WebSocket error[0m
-[0;32mI (60972) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (60982) WS_MGR: WebSocket disconnected[0m
-[0;32mI (61862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (61992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (62062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (62862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[1;31mE (63452) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (63452) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[0;33mW (63462) WS_MGR: WebSocket error[0m
-[0;32mI (63462) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (63472) WS_MGR: WebSocket disconnected[0m
-[0;32mI (63862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (63992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (64062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (64862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (65862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (65992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (66062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[1;31mE (66102) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (66102) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[0;33mW (66112) WS_MGR: WebSocket error[0m
-[0;32mI (66112) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (66112) WS_MGR: WebSocket disconnected[0m
-[0;32mI (66862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (67862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (67992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (68062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[1;31mE (68592) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (68592) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[0;33mW (68602) WS_MGR: WebSocket error[0m
-[0;32mI (68602) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (68612) WS_MGR: WebSocket disconnected[0m
-[0;32mI (68862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (69862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (69992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (70062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (70862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[1;31mE (71232) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (71232) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[0;33mW (71242) WS_MGR: WebSocket error[0m
-[0;32mI (71242) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (71252) WS_MGR: WebSocket disconnected[0m
-[0;32mI (71862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (71992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (72062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (72862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[1;31mE (73732) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (73732) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[0;33mW (73742) WS_MGR: WebSocket error[0m
-[0;32mI (73752) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (73752) WS_MGR: WebSocket disconnected[0m
-[0;32mI (73862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (73992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (74062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (74862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (75862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (75992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (76062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (76862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (77862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (77992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (78062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (78862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[1;31mE (78872) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (78872) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (78872) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[1;31mE (78872) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[0;33mW (78892) WS_MGR: WebSocket error[0m
-[0;33mW (78902) WS_MGR: WebSocket error[0m
-[0;32mI (78912) websocket_client: Reconnect after 5000 ms[0m
-[0;32mI (78912) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (78912) WS_MGR: WebSocket disconnected[0m
-[0;33mW (78922) WS_MGR: WebSocket disconnected[0m
-[0;32mI (79862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (79992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (80062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (80862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (81862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (81992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (82062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (82862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (83862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (83992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[1;31mE (84052) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (84052) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (84052) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[1;31mE (84052) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[0;33mW (84062) WS_MGR: WebSocket error[0m
-[0;33mW (84082) WS_MGR: WebSocket error[0m
-[0;32mI (84082) websocket_client: Reconnect after 5000 ms[0m
-[0;32mI (84092) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (84092) WS_MGR: WebSocket disconnected[0m
-[0;33mW (84092) WS_MGR: WebSocket disconnected[0m
-[0;32mI (84062) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (84862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (85862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (85992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (86112) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (86862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (87862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (87992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (88112) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (88862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[1;31mE (89222) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (89222) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (89222) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[1;31mE (89222) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[0;33mW (89232) WS_MGR: WebSocket error[0m
-[0;33mW (89242) WS_MGR: WebSocket error[0m
-[0;32mI (89252) websocket_client: Reconnect after 5000 ms[0m
-[0;32mI (89252) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (89262) WS_MGR: WebSocket disconnected[0m
-[0;33mW (89262) WS_MGR: WebSocket disconnected[0m
-[0;32mI (89862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (89992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (90112) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (90862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (91862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (91992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (92112) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (92862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (93862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (93992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (94112) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[1;31mE (94382) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (94392) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[1;31mE (94392) transport_ws: Sec-WebSocket-Accept not found[0m
-[0;33mW (94392) WS_MGR: WebSocket error[0m
-[1;31mE (94402) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[0;32mI (94402) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (94422) WS_MGR: WebSocket error[0m
-[0;33mW (94422) WS_MGR: WebSocket disconnected[0m
-[0;32mI (94432) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (94432) WS_MGR: WebSocket disconnected[0m
-[0;32mI (94862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (95862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (95992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (96112) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (96862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (97862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (97992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (98112) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (98862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[1;31mE (99512) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (99512) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[1;31mE (99512) transport_ws: Sec-WebSocket-Accept not found[0m
-[0;33mW (99522) WS_MGR: WebSocket error[0m
-[1;31mE (99522) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[0;32mI (99532) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (99542) WS_MGR: WebSocket error[0m
-[0;33mW (99542) WS_MGR: WebSocket disconnected[0m
-[0;32mI (99552) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (99552) WS_MGR: WebSocket disconnected[0m
-[0;32mI (99862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (99992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (100112) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (100862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (101862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (101992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (102112) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (102862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (103862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (103992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (104112) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[1;31mE (104672) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (104672) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (104672) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[1;31mE (104672) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[0;33mW (104692) WS_MGR: WebSocket error[0m
-[0;33mW (104702) WS_MGR: WebSocket error[0m
-[0;32mI (104712) websocket_client: Reconnect after 5000 ms[0m
-[0;32mI (104712) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (104712) WS_MGR: WebSocket disconnected[0m
-[0;33mW (104722) WS_MGR: WebSocket disconnected[0m
-[0;32mI (104862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (105862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (105992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (106112) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (106862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (107862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (107992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (108112) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (108862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[1;31mE (109832) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (109832) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[0;33mW (109842) WS_MGR: WebSocket error[0m
-[0;32mI (109852) websocket_client: Reconnect after 5000 ms[0m
-[1;31mE (109852) transport_ws: Sec-WebSocket-Accept not found[0m
-[0;33mW (109852) WS_MGR: WebSocket disconnected[0m
-[1;31mE (109862) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[0;32mI (109862) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;33mW (109872) WS_MGR: WebSocket error[0m
-[0;32mI (109892) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (109892) WS_MGR: WebSocket disconnected[0m
-[0;32mI (109992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (110112) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (110882) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (111882) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (111992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (112112) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (112882) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (113882) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (113992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (114112) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (114882) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[1;31mE (114982) transport_ws: Sec-WebSocket-Accept not found[0m
-[1;31mE (114982) websocket_client: esp_transport_connect() failed with -1, transport_error=ESP_OK, tls_error_code=0, tls_flags=0, esp_ws_handshake_status_code=502, errno=119[0m
-[0;33mW (114992) WS_MGR: WebSocket error[0m
-[0;32mI (114992) websocket_client: Reconnect after 5000 ms[0m
-[0;33mW (114992) WS_MGR: WebSocket disconnected[0m
-[0;32mI (115882) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (115992) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (116112) WS_MGR: [RingBuf Monitor] used=0, free=16384 (of 16384)[0m
-[0;32mI (116882) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
-[0;32mI (117502) WS_MGR: WebSocket connected[0m
-[0;32mI (117602) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
-[0;32mI (117602) WS_MGR: Got server OTA message => OTA=http://api.interaction-labs.com/esp/software/version_201.bin[0m
-[0;32mI (117612) WS_MGR: Server says new firmware at: http://api.interaction-labs.com/esp/software/version_201.bin[0m
-[0;32mI (117612) OTA: LEDs set to blue[0m
-[0;32mI (117622) WS_MGR: Requesting shutdown...[0m
-[0;32mI (117642) WS_MGR: audio_consumer_task stopping![0m
-[0;32mI (117642) AUDIO_RECORD: audio_record_task stopping![0m
-[0;32mI (117692) WS_MGR: audio_consumer_task stopping![0m
-[0;32mI (117882) LED_DEBUG_TASK: All connected => stopping LED debug[0m
-[0;32mI (117962) WS_MGR: ws_monitor_task stopping![0m
-[0;32mI (117992) WS_MGR: ringbuf_monitor_task stopping![0m
-[0;32mI (118012) WS_MGR: ws_monitor_task stopping![0m
-[0;32mI (118112) WS_MGR: ringbuf_monitor_task stopping![0m
-[0;32mI (118122) OTA: Stopping WebSocket to free heap before OTA...[0m
-[0;32mI (118122) WS_MGR: Stopping WebSocket client...[0m
-[0;32mI (118122) WS_MGR: Stopping audio consumer tasks...[0m
-[0;32mI (118122) WS_MGR: Waiting for audio_consumer_task to stop...[0m
-[0;32mI (118992) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
-[0;32mI (119912) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
-[0;32mI (120072) WS_MGR: WebSocket connected[0m
-[0;33mW (120072) WS_MGR: Unknown prefix=0x03 => ignoring[0m
-[0;32mI (121112) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
-[1;31mE (121112) websocket_client: Websocket client is not connected[0m
-[0;32mI (121112) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
-[1;31mE (121112) websocket_client: Websocket client is not connected[0m
-[0;32mI (122682) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
-[1;31mE (122682) websocket_client: Websocket client is not connected[0m
-[0;32mI (123602) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
-[1;31mE (123602) websocket_client: Websocket client is not connected[0m
-[0;32mI (124522) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
-[1;31mE (124522) websocket_client: Websocket client is not connected[0m
-[0;32mI (125442) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
-[1;31mE (125442) websocket_client: Websocket client is not connected[0m
-[0;32mI (126362) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
-[1;31mE (126362) websocket_client: Websocket client is not connected[0m
-[0;32mI (127282) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
-[1;31mE (127282) websocket_client: Websocket client is not connected[0m
-[0;32mI (128212) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
-[1;31mE (128212) websocket_client: Websocket client is not connected[0m
-[0;32mI (129132) WS_MGR: Received custom Ping (0x05) => sending Pong (0x06).[0m
-[1;31mE (129132) websocket_client: Websocket client is not connected[0m
-[0;33mW (130972) WS_MGR: Unknown prefix=0x03 => ignoring[0m
-�|� p p p�|pp�pppp|�����p�����|�|��p||�|||pppp||�� |�| pp���p����pp||�|�����|p p p�|pp�pppp|� �pppppp||���p� ||p�p|��p��p�|p��p��� p p p�|�|ppppp��p��p���p��p�ppp�|���p��p�|p��pp������p���|�| pp���p�ppp�p�p���p���� ��������|� p p p�| p�pppp��p��p�p��p��pp���p���p�� �����pp�p������p�|�|� p��p�|pp�p�p p��� �����p|�|�|�|� p��|p���pp|p p p�|p�pppp��p��p�p��p��pp��p��|��� ��p������p�|�|ppp�p ��p ��� |�|�|� p p p�|p�pppp��p��p�p��p��pp�����p��p��� ��p�|�| p������p�|�|ppp��|� p|p p p�|p�pppp��p��p�p��|�|���p��pp���pp�|��|ppp|�|����|p p p�|p�pppp��p��p�p��|�|���p��p||�| p��|p�|� ���p|���pp��p��� �|����|p p p�| p�pppp��p��p�pp||��p�� �� p��� �|�p���|�|�p��p�p�������p|���|�pp�p�p|p p p�| p�pppp��p��p�pp||��p��� ��p��p�p|���|�p�������p|���|�pp�p|p p p�|p�pppp��p��p�pp||��p|� |����|�|��p�|�|p�p�������p|���|�pp�p�p|p p p�|p�pppp��p��p�pp||��p���|�|�p��p�p�������p|���|�pp�p�p|p p p�|pp�pppp��p��p�pp||��p��� ��p��p�p�������p��p���pp�p| pp|p p p�|pp�pppp��p��p�pp||��p��� ��p��p�p�������p|���|�pp�pp|p p p�|pp�pppp��p��p�pp||��p���|�|�p��p�p�������p|���|�pp�p�p|p p p�||p�pppp��p��p��|�||���pp�p�� p��p|ppp|� p p p�||p�pppp��p��p��|�||���pp ������p|��| �pp|� p p p�||p�pppp��p��p��|�||���pp����pp|��| �pp�p�p|p p p�|�|ppppp��p��p��|�||���pp��p|��| �pp|� p p p�|�|ppppp��p��p��|�||���pp���p|��| �pp|� p p p�|�|ppppp��p��p��|�||���pp���p�p��p|ppp�p|�| p|p p p�|�|ppppp��p��p��|�||���pp���p�p��p|ppp�p|�| p|p p p�|�|ppppp��p��p��|�||���pp���p|�����pp�p|�| p|p p p�|�|ppppp��p��p��|�||���pp��p��pppp� �|pp � p|�|����|p p p�|�|ppppp��p��p��|�||���pp��p��ppp� ppp� �|pp � p|�|����|p p p�|�|ppppp|��|�||���pp|���������p�|�| p| p| p�|p�||����p����pp| p�pp�p�pp|pp|�|ppp|� p p p p|ppppp|��|�||���ppp� ��p|��p|����p�� ||p�� ��p�|�| p�� �� p����p��| p�|�����������|p�� �p|����p|pp|����� ���p�� ||p�� ��p�|�| p�� ��  p|�|��� ppp|p p pp�p�pppp��p��p�p|�|���p�pp��� pp|pp�p|pp���p�p ��p���p�p|� p p pp�p�pppp��p��p�p|�|��p�����|p p pp�p�pppp��p��p�pp��p��p�����ppp p��|���p����ppp|p � p p pp�p�pppp��p��p���p��p�ppp�� pp||��p��|�|�� p�����p|��pp�p�p��pp���� ��������|� p p pp�p�ppppp�������� ���������� �p��pp ||�||||�|��pp��p���p�|p��pp|�|��p��|�|�|��������pp|p p pp�p�pppp��p��p�p|�����pp�p�p pp p|�|���pp�p pp p �pp�p�p�ppp�p�pp p��� �pp�p�p pp p��|���p�p p�|����||��|����ppp|p p pp�p�pppp��p��p�p��� ���ppp||��p|ppp ���| p p�ppp|p p pp�p�pppp��p��p�p��� ���pp ���| p|ppp �����||p pppp|p p pp|ppppp��p��p�p �����||�p� ��p�|�| p���������p���|�|p� ��p|p��p�|�p�p�p|p p��|�|���� ����p��p�|�p�p�p|pp�����|�pp|p � p p p�|pp�pppp|�����p�����|�|��p||�|||pppp||�� |�| pp���p����pp||�|�����|p p p�|pp�pppp|� �pppppp||���p� ||p�p|��p��p�|p��p��� p p p�|�|ppppp��p��p���p��p�ppp�|���p��p�|p��pp������p���|�| pp���p�ppp�p�p���p���� ��������|� p p p�|�|ppppp��p��p�p��p��pp���p���p�� �����pp�p������p�|�|� p��p�|pp�p�p p��� �����p|�|�|�|� p��|p���pp|p p p�| p�pppp��p��p�p��p��pp��p��|��� ��p������p�|�|ppp�p ��p ��� |�|�|� p p p�| p�pppp��p��p�p��p��pp�����p��p��� ��p�|�| p������p�|�|ppp��|� p|p p p�| p�pppp��p��p�p��|�|���p��pp���pp�|��|ppp|�|����|p p p�| p�pppp��p��p�p��|�|���p��p||�| p��|p�|� ���p|���pp��p��� �|����|p p p�|p�pppp��p��p�pp||��p�� �� p��� �|�p���|�|�p��p�p�������p|���|�pp�p�p|p p p�|p�pppp��p��p�pp||��p��� ��p��p�p|���|�p�������p|���|�pp�p|p p p�| p�pppp��p��p�pp||��p|� |����|�|��p�|�|p�p�������p|���|�pp�p�p|p p p�| p�pppp��p��p�pp||��p���|�|�p��p�p�������p|���|�pp�p�p|p p p�|p�pppp��p��p�pp||��p��� ��p��p�p�������p��p���pp�p| pp|p p p�|p�pppp��p��p�pp||��p��� ��p��p�p�������p|���|�pp�pp|p p p�|p�pppp��p��p�pp||��p���|�|�p��p�p�������p|���|�pp�p�p|p p p�|pp�pppp��p��p��|�||���pp�p�� p��p|ppp|� p p p�|pp�pppp��p��p��|�||���pp ������p|��| �pp|� p p p�|pp�pppp��p��p��|�||���pp����pp|��| �pp�p�p|p p p�||p�pppp��p��p��|�||���pp��p|��| �pp|� p p p�||p�pppp��p��p��|�||���pp���p|��| �pp|� p p p�||p�pppp��p��p��|�||���pp���p�p��p|ppp�p|�| p|p p p�||p�pppp��p��p��|�||���pp���p�p��p|ppp�p|�| p|p p p�|�|ppppp��p��p��|�||���pp���p|�����pp�p|�| p|p p p�|�|ppppp��p��p��|�||���pp��p��pppp� �|pp � p|�|����|p p p�|�|ppppp��p��p��|�||���pp��p��ppp� ppp� �|pp � p|�|����|p p p�|�|ppppp|��|�||���pp|���������p�|�| p| p| p�|p�||����p����pp| p�pp�p�pp|pp|�|ppp|� p p p p�p�pppp��p��p�p|�|���p�pp��� pp|pp�p|pp���p�p ��p���p�p|� p p p p�p�pppp��p��p�p|�|��p�����|p p p p|ppppp��p��p�pp��p��p�����ppp p��|���p����ppp|p � p p p p|ppppp��p��p���p��p�ppp�� pp||��p��|�|�� p�����p|��pp�p�p��pp���� ��������|� p p p p|pppppp�������� ���������� �p��pp ||�||||�|��pp��p���p�|p��pp|�|��p��|�|�|��������pp|p p p p�p�pppp��p��p�p|�����pp�p�p pp p|�|���pp�p pp p �pp�p�p�ppp�p�pp p��� �pp�p�p pp p��|���p�p p�|����||��|����ppp|p p p p�p�pppp��p��p�p��� ���ppp||��p|ppp ���| p p�ppp|p p p p|ppppp��p��p�p��� ���pp ���| p|ppp �����||p pppp|p p p p|ppppp��p��p�p��� ���pp �����||p|ppp���| p p��pppp|p p p pp�pppp��p��p�p��|�|�|�������p��p�| p���� ��������|� p �p�p�pp�p p�||�|��| p�p�p p ���pp p������p�p�pp � �p�p�p���pp��p�p�p�pp�|p p p pp�pppp��p��p�p��������p����pp���p|p�|�|p� p|�pp���|� p������p�pp|p�p|� p p p p�p�pppp��p��p�p�|p��� �� p�����ppp|p � p p p p�p�pppp��p��p�p��pp�p p��p�pp�pp�p| pp p||ppp�p p���� |��p|||��| pp|������ | p���|�| p�pp|ppppp���p��| p�pp|ppppp����|p p p p�p�pppp��p��p�p��pp�p p��p�pp�pp�p| pp p||ppp|� p���� |��p|||��| pp|������ | p���|�| p�pp|ppppp���p��| p| p�p| ppp����|p p ppp�pppp��p��p�p ��p|p��� ���|�| pp|������ | p�pp�pp�p| ppp��� p���p�|p���p�|��p�pp�p|p p ppp|pppppp�������� ���������� �p��pp ||�||||�|��pp��p���p�|p��pp|�|��p��|�|�|��������pp|p p pp�p|ppppp�����|����p��� ||��|������pp��� pp�pp�ppp�p�|�|�p�p�p p|� �����pp�p�p�ppp�p�ppp�p�p p p����pp�ppp�p�|�|�pp|pp|p p pp�p|ppppp��p��p���p��p�ppp�� p��|��pp�ppp�ppp�p�|�|�p�p�p|p p pp�p|ppppp �pp�����������p ����p��p�ppp�| p��|p�����|p|pp���|pp��� ��p|��p|��������pp�p�����pp��p�p��� pp����|�pp����|p p pp�p�p�pppp��p���p��p�ppp�|���p�p����p|��p �p p����p���|�| pp���p�pp �p���p|p�p��||���p���p��|�|p�p�p p ��p|�|p��� �|p p pp�p�p�pppp��p���p��p�pp��p|| p����p�||����p|��� ������p|p  ���p�|p�����pp �p���p|p�p��||���p���p��|�|p�p�p p ��p|�|p��� �|� p � p p pp�p|ppppp������||������|||��|���ppp�� �����|p p pp�p|ppppp��p���p��p�pp����p�||����p��� ����p��p�| p|��� ���p|���p�|p�����pp �p���p|p�p��||���p���p��|�|p�p�p p ��p|�|p��� �|� p ��� p p pp�p|ppppp��p���p��p�pp ����p�|��|�|�||���|������� ����p��� ���p|��� p|p p pp�p|ppppp|� �pppppp�� p��|�|�|������� pp�� ���p|��p|��|���p�����p�������� p p pp�pp�pppp��p���p��p�pp��p|���������|�|�||���|p����� ����p��� ���p|��� p|p p pp�pp�pppp �pp�����������p ����p��p�ppp�| p��|p�����|p|pp���|pp��� ��p|��p|��������pp�p�����pp��p�p��� pp����|�pp����|p p pp�pp�pppp��p���p��p�pp|p�p|�� ���p|�|�||���|p��� p�������pp p������p�p||pp| p�|��p�p||pp|� p p pp�p�p�pppp��p���p��p�ppp�|���p�p����p|��p �p p����p���|�| pp���p�pp �p���p|p�p��||���p���p��|�|p�p�p p ��p|�|p��� �|p p pppp�p�pppp��p���p��p�pp��p|| p����p�||����p|��� ������p|p  ���p�|p�����pp �p���p|p�p��||���p���p��|�|p�p�p p ��p|�|p��� �|� p � p p pppp�p�pppp������||������|||��|���ppp�� �����|p p pppp�p�pppp��p���p��p�pp����p�||����p��� ����p��p�| p|��� ���p|���p�|p�����pp �p���p|p�p��||���p���p��|�|p�p�p p ��p|�|p��� �|� p ��� p p pppp�p�pppp��p���p��p�pp ����p�|��|�|�||���|������� ����p��� ���p|��� p|p p pppp�p�pppp|�����p�����|�|��p||�|||ppp �|�|���p������p|��p������|�| p|�| p��p�p p�p|� p p pppp�p�pppp��p���p��p�pp��p|���������|�|�||���|p����� ����p��� ���p|��� p|p p pppp�p�pppp��p�|ppp��p�p|�p|���pp| ����|ppp�ppp�������|pppppp �|���� �p|ppppp���|�|���pp�pp���|�|���|��|pppppp|����ppp|p p pppp�p�pppp��p��p�pp�� �|p ��pp��ppp|���pp p � �p�p�p���pp��p�p�p�pp�pp p��p��pp p���|pp�p p��p||�|p��p|�|� p p pppp|ppppp��p���p��p�pp|p�p|�� ���p|�|�||���|p��� p�������pp p������p�p||pp| p�|��p�p||pp|� p p pppp|ppppp ����p�| ��|�����pp ����p�|����� ����p��� �����|p p pppp|ppppp ����p�| ��|�����pp ����p�| p|����pp||���p� ||p�� p�� �||����p� ����ppppp|p p pppp|ppppp ������p�p��p���� �pp����ppp�pppp||���p� ||p��p��|pp|�p��pp| ���p|���ppppp p��p�����p�p�ppp|p p pppp�p�pppp��p���p��p�pp����p�||����p��|�|�|��������|p ��pppp�p�pppp������||������|||��|���pp������||����p�||��|��pp��p|�|��p��|�|�|��������|p p ppp�pp�pppp�����p�p�p�pp�|�p������p��p ppppp||���p� ||p���|p p ppp�pp�ppppp� ��p�p�p���� ����p���� ��p�ppp� ��p�p�pp�� ��p��� ���pp||���p� ||p���|p p ppp�pp�pppp��p���p��p�ppp�����p���p�������|�| p�|�|��p pp�pppp�ppp��|���p|��p��|�|��p pp|�� p ��ppp�p�p�pppp������||������|||��|���pp������||����p�||��|��pp��p|�|��p��|�|�|��������|p p ppp�p�p�pppp��p���p��p�pp����p�||����p��|�|�|��������|p ��ppp�p�p�pppp��p���p��p�pp���|||�|�|��| p����p��ppp�pp�pppp��|�|p�p|���|p p pppp|pppppp�������� ���������� �p��pp |�| p��|�|�|�������p�ppp���| �p|��pp���p��������|p 

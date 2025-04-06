@@ -36,7 +36,8 @@ static esp_netif_t* s_ap_netif = NULL;
 static int  s_retry_num       = 0;
 static bool s_wifi_connected  = false;
 static bool s_sta_init_done   = false;
-
+static bool s_wifi_inited = false;
+static bool s_servers_started = false;
 
 // Our global event group
 EventGroupHandle_t s_wifi_event_group = NULL;
@@ -103,6 +104,24 @@ esp_err_t wifi_manager_init(void)
     return ESP_OK;
 }
 
+static void wifi_common_init(void)
+{
+    if (!s_wifi_inited) {
+        wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
+        ESP_ERROR_CHECK(esp_wifi_init(&cfg));
+
+        // Register the event handler once
+        ESP_ERROR_CHECK(esp_event_handler_instance_register(
+            WIFI_EVENT, ESP_EVENT_ANY_ID,
+            &wifi_event_handler, NULL, NULL));
+        ESP_ERROR_CHECK(esp_event_handler_instance_register(
+            IP_EVENT, IP_EVENT_STA_GOT_IP,
+            &wifi_event_handler, NULL, NULL));
+
+        s_wifi_inited = true;
+    }
+}
+
 /**
  * @brief Initialize as a Wi-Fi station (STA).
  */
@@ -111,22 +130,7 @@ static void wifi_init_sta(const char* ssid, const char* pass)
     // Create default STA netif
     esp_netif_create_default_wifi_sta();
 
-    // Initialize Wi-Fi if not done
-    static bool wifi_inited = false;
-    if (!wifi_inited) {
-        wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
-        ESP_ERROR_CHECK(esp_wifi_init(&cfg));
-
-        // Register Wi-Fi & IP event handlers
-        ESP_ERROR_CHECK(esp_event_handler_instance_register(
-            WIFI_EVENT, ESP_EVENT_ANY_ID, 
-            &wifi_event_handler, NULL, NULL));
-        ESP_ERROR_CHECK(esp_event_handler_instance_register(
-            IP_EVENT, IP_EVENT_STA_GOT_IP, 
-            &wifi_event_handler, NULL, NULL));
-
-        wifi_inited = true;
-    }
+    wifi_common_init();
 
     // Set STA config
     wifi_config_t wifi_config = { 0 };
@@ -155,16 +159,7 @@ static void wifi_init_ap(void)
     // Create default AP netif
     s_ap_netif = esp_netif_create_default_wifi_ap();
 
-    // Initialize Wi-Fi if not done
-    static bool wifi_inited = false;
-    if (!wifi_inited) {
-        wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
-        ESP_ERROR_CHECK(esp_wifi_init(&cfg));
-        ESP_ERROR_CHECK(esp_event_handler_instance_register(
-            WIFI_EVENT, ESP_EVENT_ANY_ID, 
-            &wifi_event_handler, NULL, NULL));
-        wifi_inited = true;
-    }
+    wifi_common_init();
 
     // Configure open AP
     wifi_config_t ap_config = { 0 };
@@ -241,9 +236,12 @@ static void wifi_event_handler(void *arg,
                 ESP_LOGI(TAG, "AP started. SSID=%s, IP=" IPSTR, AP_SSID, IP2STR(&ip_info.ip));
             }
         }
-        // Start your HTTP server + DNS hijack for captive portal
-        http_server_start();
-        dns_server_start();
+
+        if (!s_servers_started) {
+            http_server_start();
+            dns_server_start();
+            s_servers_started = true;
+        }
     }
     // AP station connected
     else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_AP_STACONNECTED) {
