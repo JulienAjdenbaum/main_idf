@@ -4,7 +4,7 @@
     "download_url": "https://api.interaction-labs.com/esp/software/version_101.bin"
   },
   "HW_v2.0": {
-    "latest_version": "FW_v2.0.1",
-    "download_url": "http://api.interaction-labs.com/tests/esp/software/hello_world.bin"
+    "latest_version": "FW_v2.0.3",
+    "download_url": "http://api.interaction-labs.com/esp/software/hello_world.bin"
   }
 }

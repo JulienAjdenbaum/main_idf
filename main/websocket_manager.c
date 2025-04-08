@@ -337,7 +337,7 @@ esp_err_t websocket_manager_init(void)
 
     // 3. Prepare the WebSocket config, adding our custom header
     esp_websocket_client_config_t cfg = {
-        .uri = "ws://api.interaction-labs.com/tests/esp/api/chat",
+        .uri = "ws://api.interaction-labs.com/esp/api/chat",
         // .crt_bundle_attach = esp_crt_bundle_attach,
         .reconnect_timeout_ms = 5000,
         .network_timeout_ms = 10000,
