@@ -146,6 +146,8 @@ static void wifi_init_sta(const char* ssid, const char* pass)
     ESP_ERROR_CHECK(esp_wifi_start());
     ESP_ERROR_CHECK(esp_wifi_set_ps(WIFI_PS_NONE));
 
+    ESP_ERROR_CHECK(esp_wifi_set_max_tx_power(78));
+
     s_sta_init_done = true;
     s_retry_num     = 0; // reset retry count
     ESP_LOGI(TAG, "STA init done. Trying SSID: %s", ssid);

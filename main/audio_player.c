@@ -248,5 +248,5 @@ bool audio_player_is_playing(void)
     int64_t now_ms       = esp_timer_get_time() / 1000;
     int64_t last_time_ms = s_last_audio_time / 1000;
     // If time since last audio is <= 500ms => considered “playing”
-    return ((now_ms - last_time_ms) <= 500);
+    return ((now_ms - last_time_ms) <= 1000);
 }

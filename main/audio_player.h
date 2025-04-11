@@ -10,11 +10,11 @@
 // 24 kHz by default
 #define SAMPLE_RATE     (8000)
 
-#define DMA_BUF_COUNT   (16)
-#define DMA_BUF_LEN     (512)
+#define DMA_BUF_COUNT   (24)
+#define DMA_BUF_LEN     (1024)
 
 #define AUDIO_BUFFER_SIZE  512  // bytes
-#define NUM_AUDIO_BUFFERS  16
+#define NUM_AUDIO_BUFFERS  4
 
 typedef struct {
     uint8_t data[AUDIO_BUFFER_SIZE];

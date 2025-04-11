@@ -51,7 +51,7 @@
 #define RC522_SPI_SCANNER_GPIO_SDA (21)
 #define RC522_SCANNER_GPIO_RST     (-1) // soft-reset
 
-#define POT_PIN ADC1_CHANNEL_5  // Adjust as needed
+#define POT_PIN ADC1_CHANNEL_6  // Adjust as needed
 #define EXAMPLE_LED_NUMBERS          4                  // Number of LEDs in the strip
 
 #endif // PINS_H

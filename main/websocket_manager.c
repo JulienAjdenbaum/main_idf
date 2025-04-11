@@ -359,7 +359,7 @@ esp_err_t websocket_manager_init(void)
     );
 
     // Create ring buffer for inbound audio
-    s_audio_rb = xRingbufferCreate(32 * 1024, RINGBUF_TYPE_BYTEBUF);
+    s_audio_rb = xRingbufferCreate(8 * 1024, RINGBUF_TYPE_BYTEBUF);
     if (!s_audio_rb) {
         ESP_LOGE(TAG, "Failed to create ring buffer");
         return ESP_FAIL;
@@ -514,7 +514,7 @@ static void ringbuf_monitor_task(void *arg)
     ESP_LOGI(TAG, "ringbuf_monitor_task starting!");
     while (!g_shutdown_requested) {
         if (s_audio_rb) {
-            const size_t total_size = 32 * 1024; 
+            const size_t total_size = 8 * 1024; 
             size_t free_bytes = xRingbufferGetCurFreeSize(s_audio_rb);
             size_t used_bytes = total_size - free_bytes;
 
