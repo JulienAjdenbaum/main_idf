@@ -1,0 +1,200 @@
+Command: ninja flash
+[1/14] Performing build step for 'bootloader'
+[1/1] cd /home/julien/Documents/esp32IDF/hello_world/build/bootloader/esp-idf/esptool_py && /home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/julien/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/julien/Documents/esp32IDF/hello_world/build/bootloader/bootloader.bin
+Bootloader binary size 0x6650 bytes. 0x9b0 bytes (9%) free.
+[2/12] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/audio_stream.c.obj
+In file included from /home/julien/esp/esp-idf/components/driver/deprecated/driver/i2s.h:23,
+                 from /home/julien/Documents/esp32IDF/hello_world/main/audio_player.h:8,
+                 from /home/julien/Documents/esp32IDF/hello_world/main/audio_stream.c:2:
+/home/julien/esp/esp-idf/components/driver/deprecated/driver/adc.h:19:2: warning: #warning "legacy adc driver is deprecated, please migrate to use esp_adc/adc_oneshot.h and esp_adc/adc_continuous.h for oneshot mode and continuous mode drivers respectively" [-Wcpp]
+   19 | #warning "legacy adc driver is deprecated, please migrate to use esp_adc/adc_oneshot.h and esp_adc/adc_continuous.h for oneshot mode and continuous mode drivers respectively"
+      |  ^~~~~~~
+/home/julien/esp/esp-idf/components/driver/deprecated/driver/i2s.h:27:2: warning: #warning "This set of I2S APIs has been deprecated, please include 'driver/i2s_std.h', 'driver/i2s_pdm.h' or 'driver/i2s_tdm.h' instead. if you want to keep using the old APIs and ignore this warning, you can enable 'Suppress legacy driver deprecated warning' option under 'I2S Configuration' menu in Kconfig" [-Wcpp]
+   27 | #warning "This set of I2S APIs has been deprecated, \
+      |  ^~~~~~~
+[3/12] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/audio_record.c.obj
+In file included from /home/julien/esp/esp-idf/components/driver/deprecated/driver/i2s.h:23,
+                 from /home/julien/Documents/esp32IDF/hello_world/main/audio_record.c:10:
+/home/julien/esp/esp-idf/components/driver/deprecated/driver/adc.h:19:2: warning: #warning "legacy adc driver is deprecated, please migrate to use esp_adc/adc_oneshot.h and esp_adc/adc_continuous.h for oneshot mode and continuous mode drivers respectively" [-Wcpp]
+   19 | #warning "legacy adc driver is deprecated, please migrate to use esp_adc/adc_oneshot.h and esp_adc/adc_continuous.h for oneshot mode and continuous mode drivers respectively"
+      |  ^~~~~~~
+/home/julien/esp/esp-idf/components/driver/deprecated/driver/i2s.h:27:2: warning: #warning "This set of I2S APIs has been deprecated, please include 'driver/i2s_std.h', 'driver/i2s_pdm.h' or 'driver/i2s_tdm.h' instead. if you want to keep using the old APIs and ignore this warning, you can enable 'Suppress legacy driver deprecated warning' option under 'I2S Configuration' menu in Kconfig" [-Wcpp]
+   27 | #warning "This set of I2S APIs has been deprecated, \
+      |  ^~~~~~~
+In file included from /home/julien/Documents/esp32IDF/hello_world/main/audio_record.c:16:
+/home/julien/Documents/esp32IDF/hello_world/main/pins.h:45:9: warning: "BUTTON_GPIO" redefined
+   45 | #define BUTTON_GPIO                  14                  // GPIO for push button
+      |         ^~~~~~~~~~~
+In file included from /home/julien/Documents/esp32IDF/hello_world/main/audio_record.c:13:
+/home/julien/Documents/esp32IDF/hello_world/main/LED_button.h:12:9: note: this is the location of the previous definition
+   12 | #define BUTTON_GPIO                  4
+      |         ^~~~~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/pins.h:46:9: warning: "RMT_LED_STRIP_GPIO_NUM" redefined
+   46 | #define RMT_LED_STRIP_GPIO_NUM       13
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/LED_button.h:10:9: note: this is the location of the previous definition
+   10 | #define RMT_LED_STRIP_GPIO_NUM       15
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/pins.h:55:9: warning: "EXAMPLE_LED_NUMBERS" redefined
+   55 | #define EXAMPLE_LED_NUMBERS          4                  // Number of LEDs in the strip
+      |         ^~~~~~~~~~~~~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/LED_button.h:11:9: note: this is the location of the previous definition
+   11 | #define EXAMPLE_LED_NUMBERS          1
+      |         ^~~~~~~~~~~~~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/audio_record.c: In function 'i2s_init_for_mic':
+/home/julien/Documents/esp32IDF/hello_world/main/audio_record.c:39:9: warning: 'I2S_COMM_FORMAT_I2S_MSB' is deprecated [-Wdeprecated-declarations]
+   39 |         .communication_format = I2S_COMM_FORMAT_I2S_MSB, // yes it's deprecated
+      |         ^
+In file included from /home/julien/esp/esp-idf/components/driver/deprecated/driver/i2s.h:20:
+/home/julien/esp/esp-idf/components/driver/deprecated/driver/i2s_types_legacy.h:89:5: note: declared here
+   89 |     I2S_COMM_FORMAT_I2S_MSB   __attribute__((deprecated)) = 0x01, /*!< I2S format MSB, (I2S_COMM_FORMAT_I2S |I2S_COMM_FORMAT_I2S_MSB) correspond to `I2S_COMM_FORMAT_STAND_I2S`*/
+      |     ^~~~~~~~~~~~~~~~~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/audio_record.c: In function 'audio_record_task':
+/home/julien/Documents/esp32IDF/hello_world/main/audio_record.c:129:13: warning: unused variable 'ret' [-Wunused-variable]
+  129 |         int ret = websocket_manager_send_bin((const char *)send_buf, packet_size);
+      |             ^~~
+[4/12] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+In file included from /home/julien/esp/esp-idf/components/driver/deprecated/driver/i2s.h:23,
+                 from /home/julien/Documents/esp32IDF/hello_world/main/audio_player.h:8,
+                 from /home/julien/Documents/esp32IDF/hello_world/main/main.c:12:
+/home/julien/esp/esp-idf/components/driver/deprecated/driver/adc.h:19:2: warning: #warning "legacy adc driver is deprecated, please migrate to use esp_adc/adc_oneshot.h and esp_adc/adc_continuous.h for oneshot mode and continuous mode drivers respectively" [-Wcpp]
+   19 | #warning "legacy adc driver is deprecated, please migrate to use esp_adc/adc_oneshot.h and esp_adc/adc_continuous.h for oneshot mode and continuous mode drivers respectively"
+      |  ^~~~~~~
+/home/julien/esp/esp-idf/components/driver/deprecated/driver/i2s.h:27:2: warning: #warning "This set of I2S APIs has been deprecated, please include 'driver/i2s_std.h', 'driver/i2s_pdm.h' or 'driver/i2s_tdm.h' instead. if you want to keep using the old APIs and ignore this warning, you can enable 'Suppress legacy driver deprecated warning' option under 'I2S Configuration' menu in Kconfig" [-Wcpp]
+   27 | #warning "This set of I2S APIs has been deprecated, \
+      |  ^~~~~~~
+[5/12] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/OTA.c.obj
+In file included from /home/julien/esp/esp-idf/components/driver/deprecated/driver/i2s.h:23,
+                 from /home/julien/Documents/esp32IDF/hello_world/main/audio_player.h:8,
+                 from /home/julien/Documents/esp32IDF/hello_world/main/OTA.c:2:
+/home/julien/esp/esp-idf/components/driver/deprecated/driver/adc.h:19:2: warning: #warning "legacy adc driver is deprecated, please migrate to use esp_adc/adc_oneshot.h and esp_adc/adc_continuous.h for oneshot mode and continuous mode drivers respectively" [-Wcpp]
+   19 | #warning "legacy adc driver is deprecated, please migrate to use esp_adc/adc_oneshot.h and esp_adc/adc_continuous.h for oneshot mode and continuous mode drivers respectively"
+      |  ^~~~~~~
+/home/julien/esp/esp-idf/components/driver/deprecated/driver/i2s.h:27:2: warning: #warning "This set of I2S APIs has been deprecated, please include 'driver/i2s_std.h', 'driver/i2s_pdm.h' or 'driver/i2s_tdm.h' instead. if you want to keep using the old APIs and ignore this warning, you can enable 'Suppress legacy driver deprecated warning' option under 'I2S Configuration' menu in Kconfig" [-Wcpp]
+   27 | #warning "This set of I2S APIs has been deprecated, \
+      |  ^~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/OTA.c: In function 'ota_send_device_version':
+/home/julien/Documents/esp32IDF/hello_world/main/OTA.c:210:9: warning: unused variable 'sent' [-Wunused-variable]
+  210 |     int sent = websocket_manager_send_bin((const char *)buffer, len + 1);
+      |         ^~~~
+[6/12] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/audio_player.c.obj
+In file included from /home/julien/esp/esp-idf/components/driver/deprecated/driver/i2s.h:23,
+                 from /home/julien/Documents/esp32IDF/hello_world/main/audio_player.h:8,
+                 from /home/julien/Documents/esp32IDF/hello_world/main/audio_player.c:4:
+/home/julien/esp/esp-idf/components/driver/deprecated/driver/adc.h:19:2: warning: #warning "legacy adc driver is deprecated, please migrate to use esp_adc/adc_oneshot.h and esp_adc/adc_continuous.h for oneshot mode and continuous mode drivers respectively" [-Wcpp]
+   19 | #warning "legacy adc driver is deprecated, please migrate to use esp_adc/adc_oneshot.h and esp_adc/adc_continuous.h for oneshot mode and continuous mode drivers respectively"
+      |  ^~~~~~~
+/home/julien/esp/esp-idf/components/driver/deprecated/driver/i2s.h:27:2: warning: #warning "This set of I2S APIs has been deprecated, please include 'driver/i2s_std.h', 'driver/i2s_pdm.h' or 'driver/i2s_tdm.h' instead. if you want to keep using the old APIs and ignore this warning, you can enable 'Suppress legacy driver deprecated warning' option under 'I2S Configuration' menu in Kconfig" [-Wcpp]
+   27 | #warning "This set of I2S APIs has been deprecated, \
+      |  ^~~~~~~
+In file included from /home/julien/Documents/esp32IDF/hello_world/main/audio_player.c:11:
+/home/julien/esp/esp-idf/components/esp_adc/deprecated/include/esp_adc_cal.h:17:2: warning: #warning "legacy adc calibration driver is deprecated, please migrate to use esp_adc/adc_cali.h and esp_adc/adc_cali_scheme.h" [-Wcpp]
+   17 | #warning "legacy adc calibration driver is deprecated, please migrate to use esp_adc/adc_cali.h and esp_adc/adc_cali_scheme.h"
+      |  ^~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/audio_player.c: In function 'volume_task':
+/home/julien/Documents/esp32IDF/hello_world/main/audio_player.c:112:5: warning: 'ADC_ATTEN_DB_11' is deprecated [-Wdeprecated-declarations]
+  112 |     adc1_config_channel_atten(POT_PIN, ADC_ATTEN_DB_11);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/julien/esp/esp-idf/components/driver/deprecated/driver/adc_types_legacy.h:8,
+                 from /home/julien/esp/esp-idf/components/driver/deprecated/driver/adc.h:15:
+/home/julien/esp/esp-idf/components/hal/include/hal/adc_types.h:51:5: note: declared here
+   51 |     ADC_ATTEN_DB_11 __attribute__((deprecated)) = ADC_ATTEN_DB_12,  ///<This is deprecated, it behaves the same as `ADC_ATTEN_DB_12`
+      |     ^~~~~~~~~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/audio_player.c: In function 'audio_monitor_task':
+/home/julien/Documents/esp32IDF/hello_world/main/audio_player.c:185:21: warning: unused variable 'ready_count' [-Wunused-variable]
+  185 |         UBaseType_t ready_count = uxQueueMessagesWaiting(s_ready_queue);
+      |                     ^~~~~~~~~~~
+/home/julien/Documents/esp32IDF/hello_world/main/audio_player.c:184:21: warning: unused variable 'empty_count' [-Wunused-variable]
+  184 |         UBaseType_t empty_count = uxQueueMessagesWaiting(s_empty_queue);
+      |                     ^~~~~~~~~~~
+[7/12] Linking C static library esp-idf/main/libmain.a
+[8/12] Generating ld/sections.ld
+[9/12] Linking CXX executable hello_world.elf
+[10/12] Generating binary image from built executable
+esptool.py v4.9.dev6
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /home/julien/Documents/esp32IDF/hello_world/build/hello_world.bin
+[11/12] cd /home/julien/Documents/esp32IDF/hello_world/build/esp-idf/esptool_py && /home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/julien/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/julien/Documents/esp32IDF/hello_world/build/partition_table/partition-table.bin /home/julien/Documents/esp32IDF/hello_world/build/hello_world.bin
+hello_world.bin binary size 0x1006e0 bytes. Smallest app partition is 0x101000 bytes. 0x920 bytes (0%) free.
+Warning: The smallest app partition is nearly full (0% free space left)!
+[11/12] cd /home/julien/esp/esp-idf/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/home/julien/esp/esp-idf -D "SERIAL_TOOL=/home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python;;/home/julien/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/julien/Documents/esp32IDF/hello_world/build -P /home/julien/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32 -p /dev/ttyUSB0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 4MB 0x1000 bootloader/bootloader.bin 0x10000 hello_world.bin 0x8000 partition_table/partition-table.bin 0xd000 ota_data_initial.bin
+esptool.py v4.9.dev6
+Serial port /dev/ttyUSB0
+Connecting.....
+Chip is ESP32-D0WDQ6 (revision v1.1)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: 94:54:c5:b1:6d:3c
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x00110fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Flash will be erased from 0x0000d000 to 0x0000efff...
+SHA digest in image updated
+Compressed 26192 bytes to 16504...
+Writing at 0x00001000... (50 %)
+Writing at 0x000075ae... (100 %)
+Wrote 26192 bytes (16504 compressed) at 0x00001000 in 0.7 seconds (effective 318.9 kbit/s)...
+Hash of data verified.
+Compressed 1050336 bytes to 643380...
+Writing at 0x00010000... (2 %)
+Writing at 0x0001d40c... (5 %)
+Writing at 0x0002b252... (7 %)
+Writing at 0x0003421b... (10 %)
+Writing at 0x0003fe1e... (12 %)
+Writing at 0x00045d14... (15 %)
+Writing at 0x0004bb0b... (17 %)
+Writing at 0x0005153c... (20 %)
+Writing at 0x000571dd... (22 %)
+Writing at 0x0005d278... (25 %)
+Writing at 0x00062c6b... (27 %)
+Writing at 0x00068a28... (30 %)
+Writing at 0x0006e800... (32 %)
+Writing at 0x000744ab... (35 %)
+Writing at 0x0007ad23... (37 %)
+Writing at 0x000810c2... (40 %)
+Writing at 0x00086c6c... (42 %)
+Writing at 0x0008c857... (45 %)
+Writing at 0x00092ff3... (47 %)
+Writing at 0x00098de3... (50 %)
+Writing at 0x0009eb80... (52 %)
+Writing at 0x000a3f2a... (55 %)
+Writing at 0x000a91a7... (57 %)
+Writing at 0x000ae978... (60 %)
+Writing at 0x000b40f7... (62 %)
+Writing at 0x000b9473... (65 %)
+Writing at 0x000bea7c... (67 %)
+Writing at 0x000c45cb... (70 %)
+Writing at 0x000ca2aa... (72 %)
+Writing at 0x000cfd58... (75 %)
+Writing at 0x000d5a81... (77 %)
+Writing at 0x000db34d... (80 %)
+Writing at 0x000e3836... (82 %)
+Writing at 0x000ebf62... (85 %)
+Writing at 0x000f1ef6... (87 %)
+Writing at 0x000f800a... (90 %)
+Writing at 0x000fd961... (92 %)
+Writing at 0x001037d4... (95 %)
+Writing at 0x001096b0... (97 %)
+Writing at 0x0010ea05... (100 %)
+Wrote 1050336 bytes (643380 compressed) at 0x00010000 in 15.6 seconds (effective 538.2 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 159...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (159 compressed) at 0x00008000 in 0.0 seconds (effective 685.6 kbit/s)...
+Hash of data verified.
+Compressed 8192 bytes to 31...
+Writing at 0x0000d000... (100 %)
+Wrote 8192 bytes (31 compressed) at 0x0000d000 in 0.0 seconds (effective 1314.6 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
