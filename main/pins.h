@@ -45,10 +45,10 @@
 #define BUTTON_GPIO                  14                  // GPIO for push button
 #define RMT_LED_STRIP_GPIO_NUM       13
 
-#define RC522_SPI_BUS_GPIO_MISO    (5)
-#define RC522_SPI_BUS_GPIO_MOSI    (18)
-#define RC522_SPI_BUS_GPIO_SCLK    (19)
-#define RC522_SPI_SCANNER_GPIO_SDA (21)
+#define RC522_SPI_BUS_GPIO_MISO    (36)
+#define RC522_SPI_BUS_GPIO_MOSI    (40)
+#define RC522_SPI_BUS_GPIO_SCLK    (41)
+#define RC522_SPI_SCANNER_GPIO_SDA (42)
 #define RC522_SCANNER_GPIO_RST     (-1) // soft-reset
 
 #define POT_PIN ADC1_CHANNEL_6  // Adjust as needed

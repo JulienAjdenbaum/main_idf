@@ -1,0 +1,711 @@
+Command: /home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/julien/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /home/julien/Documents/esp32IDF/hello_world/build/hello_world.elf /home/julien/Documents/esp32IDF/hello_world/build/bootloader/bootloader.elf -m '/home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python' '/home/julien/esp/esp-idf/tools/idf.py'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x2b (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x15d0
+load:0x403c8700,len:0xd20
+load:0x403cb700,len:0x2f60
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Apr 11 2025 17:19:53[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (27) boot: chip revision: v0.2[0m
+[0;32mI (29) boot: efuse block revision: v1.3[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (37) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=29458h (169048) map[0m
+[0;32mI (118) esp_image: segment 1: paddr=00039480 vaddr=3fc9de00 size=04e8ch ( 20108) load[0m
+[0;32mI (122) esp_image: segment 2: paddr=0003e314 vaddr=40374000 size=01d04h (  7428) load[0m
+[0;32mI (124) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=b4364h (738148) map[0m
+[0;32mI (259) esp_image: segment 4: paddr=000f438c vaddr=40375d04 size=18054h ( 98388) load[0m
+[0;32mI (281) esp_image: segment 5: paddr=0010c3e8 vaddr=600fe000 size=0001ch (    28) load[0m
+[0;32mI (291) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (291) boot: Disabling RNG early entropy source...[0m
+[0;32mI (302) cpu_start: Multicore app[0m
+[0;32mI (311) cpu_start: Pro cpu start user code[0m
+[0;32mI (311) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (311) app_init: Application information:[0m
+[0;32mI (311) app_init: Project name:     hello_world[0m
+[0;32mI (315) app_init: App version:      2516b58-dirty[0m
+[0;32mI (319) app_init: Compile time:     Apr 11 2025 17:19:47[0m
+[0;32mI (324) app_init: ELF file SHA256:  cc3f6630d...[0m
+[0;32mI (329) app_init: ESP-IDF:          v5.5-dev-2290-g94cfe394fe[0m
+[0;32mI (334) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (338) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (342) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (346) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (352) heap_init: At 3FCA8E80 len 00040890 (258 KiB): RAM[0m
+[0;32mI (357) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (363) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (368) heap_init: At 600FE01C len 00001FCC (7 KiB): RTCRAM[0m
+[0;32mI (374) spi_flash: detected chip: generic[0m
+[0;32mI (377) spi_flash: flash io: dio[0m
+[0;33mW (380) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (392) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
+[0;33mW (404) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;32mI (411) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (417) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (424) main_task: Started on CPU0[0m
+[0;32mI (434) main_task: Calling app_main()[0m
+[0;32mI (434) MAIN: Starting app_main...[0m
+[0;32mI (434) MAIN: Initializing LED strip...[0m
+[0;32mI (434) led_button_blink: Create RMT TX channel[0m
+[0;32mI (444) led_button_blink: Install LED strip encoder[0m
+[0;32mI (544) MAIN: Initializing Wi-Fi...[0m
+[0;32mI (564) WIFI_MGR: Loaded Wi-Fi creds from NVS: SSID=Partagedeco[0m
+[0;32mI (564) pp: pp rom version: e7ae62f[0m
+[0;32mI (564) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (574) wifi:wifi driver task: 3fced778, prio:23, stack:6656, core=0[0m
+[0;32mI (584) wifi:wifi firmware version: 3a3aca644[0m
+[0;32mI (584) wifi:wifi certification version: v7.0[0m
+[0;32mI (584) wifi:config NVS flash: enabled[0m
+[0;32mI (584) wifi:config nano formatting: disabled[0m
+[0;32mI (594) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (594) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (604) wifi:Init management short buffer num: 32[0m
+[0;32mI (604) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (614) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (614) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (614) wifi:Init static rx buffer num: 10[0m
+[0;32mI (624) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (624) wifi_init: rx ba win: 6[0m
+[0;32mI (624) wifi_init: accept mbox: 6[0m
+[0;32mI (634) wifi_init: tcpip mbox: 32[0m
+[0;32mI (634) wifi_init: udp mbox: 6[0m
+[0;32mI (634) wifi_init: tcp mbox: 6[0m
+[0;32mI (644) wifi_init: tcp tx win: 5760[0m
+[0;32mI (644) wifi_init: tcp rx win: 5760[0m
+[0;32mI (644) wifi_init: tcp mss: 1440[0m
+[0;32mI (654) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (654) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (674) phy_init: phy_version 700,8582a7fd,Feb 10 2025,20:13:11[0m
+[0;32mI (714) wifi:mode : sta (d8:3b:da:77:87:38)[0m
+[0;32mI (714) wifi:enable tsf[0m
+[0;32mI (714) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (714) WIFI_MGR: STA init done. Trying SSID: Partagedeco[0m
+[0;32mI (724) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (724) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (734) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (744) wifi:Association refused temporarily time 1269, comeback time 1369 (TUs)[0m
+[0;32mI (814) MAIN: Creating LED debug task...[0m
+[0;32mI (814) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (914) MAIN: Waiting for Wi-Fi connection result...[0m
+[0;32mI (1814) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (2144) wifi:state: assoc -> assoc (0x0)[0m
+[0;32mI (2154) wifi:state: assoc -> init (0x6c0)[0m
+[0;32mI (2164) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2164) WIFI_MGR: Retrying STA... (1/5)[0m
+[0;32mI (2814) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (3814) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (4574) WIFI_MGR: Retrying STA... (2/5)[0m
+[0;32mI (4584) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (4584) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (4594) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (4604) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (4664) wifi:connected with Partagedeco, aid = 2, channel 1, BW20, bssid = aa:f0:fe:0d:99:0e[0m
+[0;32mI (4664) wifi:security: WPA2-PSK, phy: bgn, rssi: -33[0m
+[0;32mI (4674) wifi:pm start, type: 0[0m
+
+[0;32mI (4674) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (4674) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (4754) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (4764) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (4814) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (5724) esp_netif_handlers: sta ip: 10.189.25.35, mask: 255.255.255.0, gw: 10.189.25.30[0m
+[0;32mI (5724) WIFI_MGR: STA got IP: 10.189.25.35[0m
+[0;32mI (5814) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (5824) MAIN: Wi-Fi Connected (STA mode). Starting other services...[0m
+[0;32mI (5824) MAIN: Initializing WebSocket Manager...[0m
+[0;32mI (5824) CORE_DUMP_MGR: No coredump or error reading offset: ESP_ERR_NOT_FOUND[0m
+[0;32mI (5824) WS_MGR: Loaded existing API key from NVS: 32A9100ED5FAE4C1D62E7D02EA37AC9C[0m
+[0;32mI (5834) WS_MGR: Final WebSocket headers:[0m
+X-API-Key: 32A9100ED5FAE4C1D62E7D02EA37AC9C
+
+[0;32mI (5844) websocket_client: Started[0m
+[0;32mI (5844) WS_MGR: WebSocket started with header [X-API-Key: 32A9100ED5FAE4C1D62E7D02EA37AC9C[0m
+]
+[0;32mI (5854) WS_MGR: audio_consumer_task starting![0m
+[0;32mI (5854) WS_MGR: ringbuf_monitor_task starting![0m
+[0;32mI (5864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (5914) wifi:<ba-add>idx:0 (ifx:0, aa:f0:fe:0d:99:0e), tid:0, ssn:3, winSize:64[0m
+[0;32mI (5954) MAIN: Initializing Button...[0m
+[0;32mI (5954) led_button_blink: Configuring button on GPIO 14[0m
+[0;32mI (5954) gpio: GPIO[14]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (5954) WS_MGR: WebSocket connected[0m
+[0;32mI (6064) MAIN: Initializing Audio Player...[0m
+[1;31mE (6064) i2s(legacy): i2s_set_pin(1950): bck_io_num invalid[0m
+[1;31mE (6064) AudioPlayer: i2s_set_pin failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (6064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (6164) MAIN: Initializing Audio Recorder...[0m
+[0;32mI (6164) AUDIO_RECORD: I2S initialized for mic input (sr=8000, bits=32)[0m
+[0;32mI (6264) MAIN: Initializing Tag Reader...[0m
+[0;32mI (6264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[1;31mE (6424) rc522: rc522_start(85): 0107[0m
+[0;32mI (6424) RC522_TAG_READER: RC522 tag reader initialized[0m
+[0;32mI (6464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (6524) MAIN: All services initialized.[0m
+[0;32mI (6524) MAIN: Initialization complete. Main task entering idle loop.[0m
+[0;32mI (6664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (6814) LED_DEBUG_TASK: All connected => stopping LED debug[0m
+[0;32mI (6864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (6964) WS_MGR: Received data length: 1 bytes, time since last packet: 6588 ms[0m
+[0;32mI (6964) WS_MGR: Received data length: 1 bytes, time since last packet: 5 ms[0m
+[0;32mI (7064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (7264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (7464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (7664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (7864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (7954) WS_MGR: Received data length: 1 bytes, time since last packet: 991 ms[0m
+[0;32mI (8064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (8264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (8464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (8664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (8864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (8964) WS_MGR: Received data length: 1 bytes, time since last packet: 1002 ms[0m
+[0;32mI (9064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (9264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (9464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (9664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (9864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (9964) WS_MGR: Received data length: 1 bytes, time since last packet: 998 ms[0m
+[0;32mI (10064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (10264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (10464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (10664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (10864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (10964) WS_MGR: Received data length: 1 bytes, time since last packet: 1000 ms[0m
+[0;32mI (11064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (11264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (11464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (11664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (11864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (11964) WS_MGR: Received data length: 1 bytes, time since last packet: 1001 ms[0m
+[0;32mI (12064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (12264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (12464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (12664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (12864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (12964) WS_MGR: Received data length: 1 bytes, time since last packet: 998 ms[0m
+[0;32mI (13064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (13264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (13464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (13664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (13864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (13964) WS_MGR: Received data length: 1 bytes, time since last packet: 1001 ms[0m
+[0;32mI (14064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (14264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (14464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (14664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (14864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (14964) WS_MGR: Received data length: 1 bytes, time since last packet: 1002 ms[0m
+[0;32mI (15064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (15264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (15464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (15664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (15864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (15964) WS_MGR: Received data length: 1 bytes, time since last packet: 997 ms[0m
+[0;32mI (16064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (16264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (16464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (16664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (16864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (16964) WS_MGR: Received data length: 1 bytes, time since last packet: 1004 ms[0m
+[0;32mI (17064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (17264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (17464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (17664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (17864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (17964) WS_MGR: Received data length: 1 bytes, time since last packet: 1000 ms[0m
+[0;32mI (18064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (18264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (18464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (18664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (18864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (18974) WS_MGR: Received data length: 1 bytes, time since last packet: 1001 ms[0m
+[0;32mI (19064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (19264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (19464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (19664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (19864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (19964) WS_MGR: Received data length: 1 bytes, time since last packet: 998 ms[0m
+[0;32mI (20064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (20264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (20464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (20664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (20864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (20974) WS_MGR: Received data length: 1 bytes, time since last packet: 1000 ms[0m
+[0;32mI (21064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (21264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (21464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (21664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (21864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (21974) WS_MGR: Received data length: 1 bytes, time since last packet: 1004 ms[0m
+[0;32mI (22064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (22264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (22464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (22664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (22864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (22974) WS_MGR: Received data length: 1 bytes, time since last packet: 997 ms[0m
+[0;32mI (23064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (23264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (23464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (23664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (23864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (23974) WS_MGR: Received data length: 1 bytes, time since last packet: 1002 ms[0m
+[0;32mI (24064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (24264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (24464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (24664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (24864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (24984) WS_MGR: Received data length: 1 bytes, time since last packet: 1009 ms[0m
+[0;32mI (25064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (25264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (25464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (25664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (25864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (25974) WS_MGR: Received data length: 1 bytes, time since last packet: 993 ms[0m
+[0;32mI (26064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (26264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (26464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (26664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (26864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (26984) WS_MGR: Received data length: 1 bytes, time since last packet: 1003 ms[0m
+[0;32mI (27064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (27264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (27464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (27664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (27864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (27974) WS_MGR: Received data length: 1 bytes, time since last packet: 997 ms[0m
+[0;32mI (28064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (28264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (28464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (28664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (28864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (28984) WS_MGR: Received data length: 1 bytes, time since last packet: 1001 ms[0m
+[0;32mI (29064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (29264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (29464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (29664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (29864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (29984) WS_MGR: Received data length: 1 bytes, time since last packet: 1000 ms[0m
+[0;32mI (30064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (30264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (30464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (30664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (30864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (30984) WS_MGR: Received data length: 1 bytes, time since last packet: 1005 ms[0m
+[0;32mI (31064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (31264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (31464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (31664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (31864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (31984) WS_MGR: Received data length: 1 bytes, time since last packet: 996 ms[0m
+[0;32mI (32064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (32264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (32464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (32664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (32864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (32994) WS_MGR: Received data length: 1 bytes, time since last packet: 1007 ms[0m
+[0;32mI (33064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (33264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (33464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (33664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (33864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (33984) WS_MGR: Received data length: 1 bytes, time since last packet: 994 ms[0m
+[0;32mI (34064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (34264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (34464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (34664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (34864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (34984) WS_MGR: Received data length: 1 bytes, time since last packet: 999 ms[0m
+[0;32mI (35064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (35264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (35464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (35664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (35864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (35984) WS_MGR: Received data length: 1 bytes, time since last packet: 1002 ms[0m
+[0;32mI (36064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (36264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (36464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (36664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (36864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (36984) WS_MGR: Received data length: 1 bytes, time since last packet: 1000 ms[0m
+[0;32mI (37064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (37264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (37464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (37664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (37864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (37984) WS_MGR: Received data length: 1 bytes, time since last packet: 1002 ms[0m
+[0;32mI (38064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (38264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (38464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (38664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (38864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (38984) WS_MGR: Received data length: 1 bytes, time since last packet: 1000 ms[0m
+[0;32mI (39064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (39264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (39464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (39664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (39864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (39994) WS_MGR: Received data length: 1 bytes, time since last packet: 1000 ms[0m
+[0;32mI (40064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (40264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (40464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (40664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (40864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (40994) WS_MGR: Received data length: 1 bytes, time since last packet: 1002 ms[0m
+[0;32mI (41064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (41264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (41464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (41664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (41864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (42004) WS_MGR: Received data length: 1 bytes, time since last packet: 1009 ms[0m
+[0;32mI (42064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (42264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (42464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (42664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (42864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (42994) WS_MGR: Received data length: 1 bytes, time since last packet: 993 ms[0m
+[0;32mI (43064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (43264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (43464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (43664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (43864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (43994) WS_MGR: Received data length: 1 bytes, time since last packet: 999 ms[0m
+[0;32mI (44064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (44264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (44464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (44664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (44864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (44994) WS_MGR: Received data length: 1 bytes, time since last packet: 1001 ms[0m
+[0;32mI (45064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (45264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (45464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (45664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (45864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (45994) WS_MGR: Received data length: 1 bytes, time since last packet: 1001 ms[0m
+[0;32mI (46064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (46264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (46464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (46664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (46864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (47004) WS_MGR: Received data length: 1 bytes, time since last packet: 1002 ms[0m
+[0;32mI (47064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (47264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (47464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (47664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (47864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (48004) WS_MGR: Received data length: 1 bytes, time since last packet: 1003 ms[0m
+[0;32mI (48064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (48264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (48464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (48664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (48864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (49064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (49264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (49464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (49664) WS_MGR: Received data length: 1 bytes, time since last packet: 1658 ms[0m
+[0;32mI (49664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (49864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (50004) WS_MGR: Received data length: 1 bytes, time since last packet: 338 ms[0m
+[0;32mI (50064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (50264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (50464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (50664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (50864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (51004) WS_MGR: Received data length: 1 bytes, time since last packet: 1001 ms[0m
+[0;32mI (51064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (51264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (51464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (51664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (51864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (52004) WS_MGR: Received data length: 1 bytes, time since last packet: 999 ms[0m
+[0;32mI (52064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (52264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (52464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (52664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (52864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (53004) WS_MGR: Received data length: 1 bytes, time since last packet: 1004 ms[0m
+[0;32mI (53064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (53264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (53464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (53664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (53864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (54004) WS_MGR: Received data length: 1 bytes, time since last packet: 997 ms[0m
+[0;32mI (54064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (54264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (54464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (54664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (54864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (55004) WS_MGR: Received data length: 1 bytes, time since last packet: 1001 ms[0m
+[0;32mI (55064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (55264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (55464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (55664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (55864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (56004) WS_MGR: Received data length: 1 bytes, time since last packet: 1000 ms[0m
+[0;32mI (56064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (56264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (56464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (56664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (56864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (57004) WS_MGR: Received data length: 1 bytes, time since last packet: 1001 ms[0m
+[0;32mI (57064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (57264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (57464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (57664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (57864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (58014) WS_MGR: Received data length: 1 bytes, time since last packet: 1002 ms[0m
+[0;32mI (58064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (58264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (58464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (58664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (58864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (59014) WS_MGR: Received data length: 1 bytes, time since last packet: 1001 ms[0m
+[0;32mI (59064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (59264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (59464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (59664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (59864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (60014) WS_MGR: Received data length: 1 bytes, time since last packet: 999 ms[0m
+[0;32mI (60064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (60264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (60464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (60664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (60864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (61014) WS_MGR: Received data length: 1 bytes, time since last packet: 1002 ms[0m
+[0;32mI (61064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (61264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (61464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (61664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (61864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (62014) WS_MGR: Received data length: 1 bytes, time since last packet: 997 ms[0m
+[0;32mI (62064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (62264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (62464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (62664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (62864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (63014) WS_MGR: Received data length: 1 bytes, time since last packet: 1004 ms[0m
+[0;32mI (63064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (63264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (63464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (63664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (63864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (64024) WS_MGR: Received data length: 1 bytes, time since last packet: 1007 ms[0m
+[0;32mI (64064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (64264) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (64464) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (64664) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (64864) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (65014) WS_MGR: Received data length: 1 bytes, time since last packet: 993 ms[0m
+[0;32mI (65064) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x15d0
+load:0x403c8700,len:0xd20
+load:0x403cb700,len:0x2f60
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Apr 11 2025 17:19:53[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (27) boot: chip revision: v0.2[0m
+[0;32mI (29) boot: efuse block revision: v1.3[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (37) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=29458h (169048) map[0m
+[0;32mI (118) esp_image: segment 1: paddr=00039480 vaddr=3fc9de00 size=04e8ch ( 20108) load[0m
+[0;32mI (122) esp_image: segment 2: paddr=0003e314 vaddr=40374000 size=01d04h (  7428) load[0m
+[0;32mI (124) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=b4364h (738148) map[0m
+[0;32mI (259) esp_image: segment 4: paddr=000f438c vaddr=40375d04 size=18054h ( 98388) load[0m
+[0;32mI (281) esp_image: segment 5: paddr=0010c3e8 vaddr=600fe000 size=0001ch (    28) load[0m
+[0;32mI (291) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (291) boot: Disabling RNG early entropy source...[0m
+[0;32mI (301) cpu_start: Multicore app[0m
+[0;32mI (311) cpu_start: Pro cpu start user code[0m
+[0;32mI (311) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (311) app_init: Application information:[0m
+[0;32mI (311) app_init: Project name:     hello_world[0m
+[0;32mI (315) app_init: App version:      2516b58-dirty[0m
+[0;32mI (319) app_init: Compile time:     Apr 11 2025 17:19:47[0m
+[0;32mI (324) app_init: ELF file SHA256:  cc3f6630d...[0m
+[0;32mI (329) app_init: ESP-IDF:          v5.5-dev-2290-g94cfe394fe[0m
+[0;32mI (334) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (338) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (342) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (346) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (352) heap_init: At 3FCA8E80 len 00040890 (258 KiB): RAM[0m
+[0;32mI (357) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (362) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (368) heap_init: At 600FE01C len 00001FCC (7 KiB): RTCRAM[0m
+[0;32mI (374) spi_flash: detected chip: generic[0m
+[0;32mI (377) spi_flash: flash io: dio[0m
+[0;33mW (380) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (392) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
+[0;33mW (404) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;32mI (411) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (417) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (424) main_task: Started on CPU0[0m
+[0;32mI (434) main_task: Calling app_main()[0m
+[0;32mI (434) MAIN: Starting app_main...[0m
+[0;32mI (434) MAIN: Initializing LED strip...[0m
+[0;32mI (434) led_button_blink: Create RMT TX channel[0m
+[0;32mI (444) led_button_blink: Install LED strip encoder[0m
+[0;32mI (544) MAIN: Initializing Wi-Fi...[0m
+[0;32mI (564) WIFI_MGR: Loaded Wi-Fi creds from NVS: SSID=Partagedeco[0m
+[0;32mI (564) pp: pp rom version: e7ae62f[0m
+[0;32mI (564) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (574) wifi:wifi driver task: 3fced778, prio:23, stack:6656, core=0[0m
+[0;32mI (584) wifi:wifi firmware version: 3a3aca644[0m
+[0;32mI (584) wifi:wifi certification version: v7.0[0m
+[0;32mI (584) wifi:config NVS flash: enabled[0m
+[0;32mI (584) wifi:config nano formatting: disabled[0m
+[0;32mI (594) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (594) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (604) wifi:Init management short buffer num: 32[0m
+[0;32mI (604) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (614) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (614) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (614) wifi:Init static rx buffer num: 10[0m
+[0;32mI (624) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (624) wifi_init: rx ba win: 6[0m
+[0;32mI (624) wifi_init: accept mbox: 6[0m
+[0;32mI (634) wifi_init: tcpip mbox: 32[0m
+[0;32mI (634) wifi_init: udp mbox: 6[0m
+[0;32mI (634) wifi_init: tcp mbox: 6[0m
+[0;32mI (644) wifi_init: tcp tx win: 5760[0m
+[0;32mI (644) wifi_init: tcp rx win: 5760[0m
+[0;32mI (644) wifi_init: tcp mss: 1440[0m
+[0;32mI (654) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (654) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (674) phy_init: phy_version 700,8582a7fd,Feb 10 2025,20:13:11[0m
+[0;32mI (714) wifi:mode : sta (d8:3b:da:77:87:38)[0m
+[0;32mI (714) wifi:enable tsf[0m
+[0;32mI (714) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (714) WIFI_MGR: STA init done. Trying SSID: Partagedeco[0m
+[0;32mI (724) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (724) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (734) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (734) wifi:Association refused temporarily time 1269, comeback time 1369 (TUs)[0m
+[0;32mI (814) MAIN: Creating LED debug task...[0m
+[0;32mI (814) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (914) MAIN: Waiting for Wi-Fi connection result...[0m
+[0;32mI (1814) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (2144) wifi:state: assoc -> assoc (0x0)[0m
+[0;32mI (2144) wifi:state: assoc -> init (0x6c0)[0m
+[0;32mI (2154) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2154) WIFI_MGR: Retrying STA... (1/5)[0m
+[0;32mI (2814) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (3814) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (4564) WIFI_MGR: Retrying STA... (2/5)[0m
+[0;32mI (4584) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (4584) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (4594) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (4604) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (4614) wifi:connected with Partagedeco, aid = 2, channel 1, BW20, bssid = aa:f0:fe:0d:99:0e[0m
+[0;32mI (4614) wifi:security: WPA2-PSK, phy: bgn, rssi: -41[0m
+[0;32mI (4624) wifi:pm start, type: 0[0m
+
+[0;32mI (4624) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (4624) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (4684) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (4684) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (4814) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (5274) wifi:<ba-add>idx:0 (ifx:0, aa:f0:fe:0d:99:0e), tid:0, ssn:2, winSize:64[0m
+[0;32mI (5664) esp_netif_handlers: sta ip: 10.189.25.35, mask: 255.255.255.0, gw: 10.189.25.30[0m
+[0;32mI (5664) WIFI_MGR: STA got IP: 10.189.25.35[0m
+[0;32mI (5764) MAIN: Wi-Fi Connected (STA mode). Starting other services...[0m
+[0;32mI (5764) MAIN: Initializing WebSocket Manager...[0m
+[0;32mI (5764) CORE_DUMP_MGR: No coredump or error reading offset: ESP_ERR_NOT_FOUND[0m
+[0;32mI (5764) WS_MGR: Loaded existing API key from NVS: 32A9100ED5FAE4C1D62E7D02EA37AC9C[0m
+[0;32mI (5774) WS_MGR: Final WebSocket headers:[0m
+X-API-Key: 32A9100ED5FAE4C1D62E7D02EA37AC9C
+
+[0;32mI (5784) websocket_client: Started[0m
+[0;32mI (5784) WS_MGR: WebSocket started with header [X-API-Key: 32A9100ED5FAE4C1D62E7D02EA37AC9C[0m
+]
+[0;32mI (5794) WS_MGR: audio_consumer_task starting![0m
+[0;32mI (5794) WS_MGR: ringbuf_monitor_task starting![0m
+[0;32mI (5804) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (5814) LED_DEBUG_TASK: Solid RED (Wi-Fi connected, WS not connected)[0m
+[0;32mI (5894) MAIN: Initializing Button...[0m
+[0;32mI (5894) led_button_blink: Configuring button on GPIO 14[0m
+[0;32mI (5894) gpio: GPIO[14]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (5904) WS_MGR: WebSocket connected[0m
+[0;32mI (5994) MAIN: Initializing Audio Player...[0m
+[1;31mE (5994) i2s(legacy): i2s_set_pin(1950): bck_io_num invalid[0m
+[1;31mE (5994) AudioPlayer: i2s_set_pin failed: ESP_ERR_INVALID_ARG[0m
+[0;32mI (6004) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (6094) MAIN: Initializing Audio Recorder...[0m
+[0;32mI (6094) AUDIO_RECORD: I2S initialized for mic input (sr=8000, bits=32)[0m
+[0;32mI (6194) MAIN: Initializing Tag Reader...[0m
+[0;32mI (6204) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[1;31mE (6354) rc522: rc522_start(85): 0107[0m
+[0;32mI (6354) RC522_TAG_READER: RC522 tag reader initialized[0m
+[0;32mI (6404) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (6454) MAIN: All services initialized.[0m
+[0;32mI (6454) MAIN: Initialization complete. Main task entering idle loop.[0m
+[0;32mI (6604) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (6804) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (6814) LED_DEBUG_TASK: All connected => stopping LED debug[0m
+[0;32mI (6904) WS_MGR: Received data length: 1 bytes, time since last packet: 6528 ms[0m
+[0;32mI (6904) WS_MGR: Received data length: 1 bytes, time since last packet: 5 ms[0m
+[0;32mI (7004) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (7204) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (7404) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (7604) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (7804) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (7904) WS_MGR: Received data length: 1 bytes, time since last packet: 996 ms[0m
+[0;32mI (8004) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (8204) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (8404) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (8604) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (8804) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (8904) WS_MGR: Received data length: 1 bytes, time since last packet: 1000 ms[0m
+[0;32mI (9004) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (9204) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (9404) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (9604) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (9804) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (9914) WS_MGR: Received data length: 1 bytes, time since last packet: 1006 ms[0m
+[0;32mI (10004) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (10204) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (10404) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (10604) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (10804) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (10904) WS_MGR: Received data length: 1 bytes, time since last packet: 996 ms[0m
+[0;32mI (11004) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (11204) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (11404) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (11604) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (11804) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (11904) WS_MGR: Received data length: 1 bytes, time since last packet: 999 ms[0m
+[0;32mI (12004) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (12204) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (12404) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (12604) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (12804) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (12914) WS_MGR: Received data length: 1 bytes, time since last packet: 1001 ms[0m
+[0;32mI (13004) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m

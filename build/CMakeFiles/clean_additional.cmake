@@ -20,7 +20,7 @@ if("${CONFIG}" STREQUAL "" OR "${CONFIG}" STREQUAL "")
   "index.html.S"
   "ldgen_libraries"
   "ldgen_libraries.in"
-  "project_elf_src_esp32.c"
+  "project_elf_src_esp32s3.c"
   "server_cert.pem.S"
   "style.css.S"
   "x509_crt_bundle.S"
