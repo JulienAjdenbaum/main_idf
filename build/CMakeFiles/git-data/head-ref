@@ -1,1 +1,39 @@
-e03c82be02b1215e8ec18a2e1ceea593a964e5c7
+0000000000000000000000000000000000000000 023147f47724ba113b6ec633ff327c4e1796c6d1 JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1741655332 -0700	commit (initial): first
+023147f47724ba113b6ec633ff327c4e1796c6d1 01f5b0f22b105c2fa4ee34fcb0c0048860f611ed JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1741664164 -0700	commit: working mono
+01f5b0f22b105c2fa4ee34fcb0c0048860f611ed c0cde59366207975a6509a55155a93b01b95c7d8 JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1741668765 -0700	commit: sending almost working
+c0cde59366207975a6509a55155a93b01b95c7d8 b335868bb14cd2aaf29d2dfa119ca55874847bf1 JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1741668782 -0700	commit: sending almost working
+b335868bb14cd2aaf29d2dfa119ca55874847bf1 4088106f4e4fcf13cf4ba1da6b3aecad3746e18c JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1741668880 -0700	commit: sending almost working
+4088106f4e4fcf13cf4ba1da6b3aecad3746e18c 7befc2e67cc201586a55a4339cf9645bb50f380f JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1741668912 -0700	commit: sending almost working
+7befc2e67cc201586a55a4339cf9645bb50f380f 92d3817bd66d9c9e704f143fb7fbe0ce7c980e76 JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1741669910 -0700	commit: sending working ?
+92d3817bd66d9c9e704f143fb7fbe0ce7c980e76 84107b46a9fc4db9e89ab50928f32b109dc11e12 JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1741752738 -0700	commit: ouin ouin
+84107b46a9fc4db9e89ab50928f32b109dc11e12 5f178fd5652a47946dfacb6135b64db378eae50e JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1741753492 -0700	commit: audio streaming working
+5f178fd5652a47946dfacb6135b64db378eae50e c93ee11bc8e4d02803436695afa1e218f3e18c8d JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1741754015 -0700	commit: audio streaming working ! cleaned
+c93ee11bc8e4d02803436695afa1e218f3e18c8d c93ee11bc8e4d02803436695afa1e218f3e18c8d JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1741754072 -0700	Branch: renamed refs/heads/master to refs/heads/main
+c93ee11bc8e4d02803436695afa1e218f3e18c8d 02d092cf8dfd3d0df8c577b4702c00f7b7e89689 JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1741754272 -0700	commit: audio streaming working ! cleaned
+8d31f32dded67924cb2b3be6eba5005a6ee22370 36b73a168f89d2ef94406fadbc016f36ff694666 JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1741812014 -0700	commit: working to keep
+36b73a168f89d2ef94406fadbc016f36ff694666 4a322a00e0ecb97926df839ddde5fff6f9060957 JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1741848743 -0700	commit: working both ways
+4a322a00e0ecb97926df839ddde5fff6f9060957 53fdd89b4fac46cfd18eee56f298b4a69c87410a JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1741931026 -0700	commit: main old changed
+53fdd89b4fac46cfd18eee56f298b4a69c87410a 0925295de0cf10e0ea3c66df115e9242599838be JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1741931758 -0700	commit: incoming audio working !
+0925295de0cf10e0ea3c66df115e9242599838be cdf8a71c2698c514351c22f38ada6e0d2c93a01a JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1742791985 -0700	commit: working
+cdf8a71c2698c514351c22f38ada6e0d2c93a01a 9094d6d25bfc915d9599bc5a3661191d328892bf JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1742845757 -0700	commit: working(
+9094d6d25bfc915d9599bc5a3661191d328892bf 5a1f48d398b8e79d28d888ece97a61dde89bff78 JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1742862355 -0700	commit: working much better
+5a1f48d398b8e79d28d888ece97a61dde89bff78 d4a2b16efcf20b1bb4a719b83e2af476a19cda00 JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1742884113 -0700	commit: working
+d4a2b16efcf20b1bb4a719b83e2af476a19cda00 d4a2b16efcf20b1bb4a719b83e2af476a19cda00 JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1742884140 -0700	Branch: renamed refs/heads/main to refs/heads/working
+d4a2b16efcf20b1bb4a719b83e2af476a19cda00 1a9b209017e48d5acacb25e9059cbc09b0a7c2ff JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1742971044 -0700	commit: working !
+1a9b209017e48d5acacb25e9059cbc09b0a7c2ff c0bd99c1a6a46f427605047cb46039c469711e00 JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1742971447 -0700	commit: working !
+c0bd99c1a6a46f427605047cb46039c469711e00 98470d51bd369c08c5186cb465cfa1f960ed46da JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1743135889 -0700	commit: working(
+98470d51bd369c08c5186cb465cfa1f960ed46da afc293f878156bf6a8bbde8391fded84a7e2c5ec JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1743745435 -0700	commit: bof working before http
+afc293f878156bf6a8bbde8391fded84a7e2c5ec 483effa2485ac15a3aed6a51131285db51b2fba0 JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1743745694 -0700	commit: bof working before http
+483effa2485ac15a3aed6a51131285db51b2fba0 52cfeb89a9923ae07b481dc5bc2a10bb4b8d8f3b JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1743748004 -0700	commit: working with reconnect
+52cfeb89a9923ae07b481dc5bc2a10bb4b8d8f3b e3c5bdec31e4a8e0483f07c3a56339fd5d0e03fb JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1743752380 -0700	commit: working except ETA and crash logs
+e3c5bdec31e4a8e0483f07c3a56339fd5d0e03fb 3dbadabecea4ccd89afbc1804dee895493b8b2a0 JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1743753632 -0700	commit: OTA fixed
+3dbadabecea4ccd89afbc1804dee895493b8b2a0 c6b557294dccb0201cbb10186396335fe96e3c37 JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1743825887 -0700	commit: almost working
+c6b557294dccb0201cbb10186396335fe96e3c37 c413dc9f16bc0f9301640aaff52c6f8241301063 JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1743825891 -0700	commit: almost working
+c413dc9f16bc0f9301640aaff52c6f8241301063 e86916e9ba2e7bb86cffb9d056e9fa25eca76de0 JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1743829094 -0700	commit: before lenght tagged
+e86916e9ba2e7bb86cffb9d056e9fa25eca76de0 eb7416ed659adebd422c81656cfdd4bce4fe33c6 JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1743832551 -0700	commit: working ~
+eb7416ed659adebd422c81656cfdd4bce4fe33c6 7a96c38eaecac35d208291439a311efab2fb8786 JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1743903200 -0700	commit: crashing fast
+7a96c38eaecac35d208291439a311efab2fb8786 c857576ffe162a7b23ec9960e331174077d0dc41 JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1743907956 -0700	commit: working so and so
+c857576ffe162a7b23ec9960e331174077d0dc41 903f92b0e67444713525a929529cea364d56bd6e JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1744072815 -0700	commit: au secours
+903f92b0e67444713525a929529cea364d56bd6e 7032f64c26d21d15445ae0d5ebfc6b075deb73d7 JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1744331642 -0700	commit: first shipped version
+7032f64c26d21d15445ae0d5ebfc6b075deb73d7 e03c82be02b1215e8ec18a2e1ceea593a964e5c7 JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1744354548 -0700	commit: fixed saves"
+e03c82be02b1215e8ec18a2e1ceea593a964e5c7 2516b5861cdeaecda3ecd3a20a37fd325f9a3841 JulienAjdenbaum <julien.ajdenbaum@gmail.com> 1744417045 -0700	commit: working
