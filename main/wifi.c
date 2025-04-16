@@ -84,11 +84,15 @@ esp_err_t wifi_manager_init(void)
     // Load credentials from NVS (if any)
     char ssid[32] = {0};
     char pass[64] = {0};
-    bool has_creds = false;
+    bool has_creds = false; // Will set to true if both SSID & PASS are non-empty
     if (load_wifi_creds_from_nvs(ssid, sizeof(ssid), pass, sizeof(pass)) == ESP_OK) {
-        if (strlen(ssid) > 0) {
-            ESP_LOGI(TAG, "Loaded Wi-Fi creds from NVS: SSID=%s", ssid);
-            has_creds = true;
+        // Check both SSID and PASS
+        if ((strlen(ssid) > 0) && (strlen(pass) > 0)) {
+            ESP_LOGI(TAG, "Loaded Wi-Fi creds from NVS: SSID=\"%s\", PASS length=%u",
+                     ssid, (unsigned)strlen(pass));
+            has_creds = true; 
+        } else {
+            ESP_LOGW(TAG, "SSID or password is empty — skipping STA mode");
         }
     }
 
@@ -127,31 +131,29 @@ static void wifi_common_init(void)
  */
 static void wifi_init_sta(const char* ssid, const char* pass)
 {
-    // Create default STA netif
     esp_netif_create_default_wifi_sta();
-
     wifi_common_init();
 
-    // Set STA config
     wifi_config_t wifi_config = { 0 };
     strncpy((char *)wifi_config.sta.ssid, ssid, sizeof(wifi_config.sta.ssid));
     strncpy((char *)wifi_config.sta.password, pass, sizeof(wifi_config.sta.password));
-    // Use a threshold, or set it to WIFI_AUTH_OPEN if you want to allow all
     wifi_config.sta.threshold.authmode = WIFI_AUTH_WPA2_PSK;
 
-    // Start in STA mode
+    // FIX: Move mode setting before config
     ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA));
+
+    // Only set config after mode is set
     ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &wifi_config));
 
     ESP_ERROR_CHECK(esp_wifi_start());
     ESP_ERROR_CHECK(esp_wifi_set_ps(WIFI_PS_NONE));
-
     ESP_ERROR_CHECK(esp_wifi_set_max_tx_power(78));
 
     s_sta_init_done = true;
-    s_retry_num     = 0; // reset retry count
+    s_retry_num     = 0;
     ESP_LOGI(TAG, "STA init done. Trying SSID: %s", ssid);
 }
+
 
 /**
  * @brief Initialize as an open AP.
@@ -259,7 +261,11 @@ static void wifi_event_handler(void *arg,
  */
 esp_err_t wifi_manager_set_sta_credentials(const char *ssid, const char *pass)
 {
-    if (!ssid || !pass) {
+    // Reject if either is NULL or empty
+    if (!ssid || (strlen(ssid) == 0) ||
+        !pass || (strlen(pass) == 0)) 
+    {
+        ESP_LOGW(TAG, "Attempted to set empty SSID or password => rejected");
         return ESP_ERR_INVALID_ARG;
     }
 
