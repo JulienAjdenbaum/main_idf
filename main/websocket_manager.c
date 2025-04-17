@@ -596,7 +596,13 @@ static void audio_consumer_task(void *arg)
     }
 
     ESP_LOGI(TAG, "audio_consumer_task stopping!");
-    /* … notify manager & delete task … */
+
+    /*  ⬇️   ADD THIS BLOCK  ⬇️  */
+    if (s_ws_manager_task != NULL) {
+        xTaskNotifyGive(s_ws_manager_task);
+    }
+    vTaskDelete(NULL);       // <- never return!
+    /*  ⬆️   END BLOCK     ⬆️  */
 }
 
 
