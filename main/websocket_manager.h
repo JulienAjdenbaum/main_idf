@@ -4,6 +4,8 @@
 #include <stddef.h>
 #include <stdbool.h>
 #include "esp_err.h"
+#include <sys/param.h>   /* gives MIN/MAX on ESP‑IDF; if missing, define it: */
+
 
 #ifdef __cplusplus
 extern "C" {

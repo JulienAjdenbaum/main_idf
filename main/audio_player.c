@@ -143,7 +143,8 @@ static void audio_task(void *param)
             while (remain > 0) {
                 size_t written = 0;
                 size_t chunk_size = (remain > 1024) ? 1024 : remain; // Process in 1KB chunks
-                esp_err_t err = i2s_write(I2S_NUM, ptr, chunk_size, &written, pdMS_TO_TICKS(20));
+                esp_err_t err = i2s_write(I2S_NUM, ptr, chunk_size,
+                           &written, pdMS_TO_TICKS(60));   // ≥ 2 × 32 ms
 
                 if (err != ESP_OK) {
                     ESP_LOGE(TAG, "i2s_write error => %s", esp_err_to_name(err));

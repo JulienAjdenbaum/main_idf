@@ -28,6 +28,9 @@
 #define NVS_NAMESPACE_API_KEY   "api_store"
 #define NVS_KEY_API_KEY         "api_key"
 
+#define RINGBUF_TOTAL_BYTES    (8 * 1024)      // you created it like this
+#define START_PLAY_THRESHOLD   (320 * 3)       // 120 ms   ( ≈ 1920 B )
+#define PAUSE_PLAY_THRESHOLD   (320 * 1)       // 40 ms    ( ≈ 640  B )
 
 static const char *TAG = "WS_MGR";
 
@@ -48,6 +51,9 @@ static volatile bool s_ws_just_connected = false;
 #define WS_PING_TIMEOUT_MS   10000
 #define WS_SEND_TIMEOUT_MS 100  // Add timeout for WebSocket sends
 
+#ifndef MIN
+#define MIN(a,b) (( (a)<(b) ) ? (a) : (b))
+#endif
 
 static int64_t s_last_data_time = 0;
 
@@ -204,7 +210,7 @@ static void ws_monitor_task(void *arg)
 {
     // Convert ms => microseconds for our checks
     int64_t ping_timeout_us  = WS_PING_TIMEOUT_MS * 1000;  // 4000 ms
-    int64_t connect_delay_us = WS_CONNECT_DELAY_MS * 1000; // 1000 ms
+    // int64_t connect_delay_us = WS_CONNECT_DELAY_MS * 1000; // 1000 ms
 
     while (!g_shutdown_requested) {
         if (s_ws_connected) {
@@ -337,7 +343,7 @@ esp_err_t websocket_manager_init(void)
 
     // 3. Prepare the WebSocket config, adding our custom header
     esp_websocket_client_config_t cfg = {
-        .uri = "ws://api.interaction-labs.com/esp/api/chat",
+        .uri = "ws://api.interaction-labs.com/tests/esp/api/chat",
         // .crt_bundle_attach = esp_crt_bundle_attach,
         .reconnect_timeout_ms = 5000,
         .network_timeout_ms = 10000,
@@ -359,7 +365,7 @@ esp_err_t websocket_manager_init(void)
     );
 
     // Create ring buffer for inbound audio
-    s_audio_rb = xRingbufferCreate(8 * 1024, RINGBUF_TYPE_BYTEBUF);
+     s_audio_rb = xRingbufferCreate(RINGBUF_TOTAL_BYTES, RINGBUF_TYPE_BYTEBUF);
     if (!s_audio_rb) {
         ESP_LOGE(TAG, "Failed to create ring buffer");
         return ESP_FAIL;
@@ -478,7 +484,10 @@ int websocket_manager_send_bin(const char *data, size_t len)
     if (!s_ws_connected || !s_ws_client) {
         return -1;
     }
-    int ret = esp_websocket_client_send_bin(s_ws_client, data, len, portMAX_DELAY);
+    int ret = esp_websocket_client_send_bin(s_ws_client,
+                                            data,
+                                            len,
+                                            portMAX_DELAY);
     return (ret == ESP_OK) ? (int)len : -1;
 }
 
@@ -514,7 +523,7 @@ static void ringbuf_monitor_task(void *arg)
     ESP_LOGI(TAG, "ringbuf_monitor_task starting!");
     while (!g_shutdown_requested) {
         if (s_audio_rb) {
-            const size_t total_size = 8 * 1024; 
+            const size_t total_size = RINGBUF_TOTAL_BYTES;
             size_t free_bytes = xRingbufferGetCurFreeSize(s_audio_rb);
             size_t used_bytes = total_size - free_bytes;
 
@@ -533,36 +542,63 @@ static void ringbuf_monitor_task(void *arg)
 
 static void audio_consumer_task(void *arg)
 {
-    ESP_LOGI(TAG, "audio_consumer_task starting!");
+    bool buffering   = true;   // true  = filling buffer
+    bool underrun    __attribute__((unused)) = false;
+
+    ESP_LOGI(TAG, "audio_consumer_task starting (pre‑buffer mode)");
+    const size_t total_size = RINGBUF_TOTAL_BYTES;
+
     while (!g_shutdown_requested) {
+
+        /* ---------- ①  check buffer fill level ---------- */
         if (s_audio_rb) {
-            size_t item_size = 0;
-            // Wait for data from ring buffer
-            uint8_t *audio_chunk = (uint8_t *) xRingbufferReceive(
-                s_audio_rb, &item_size, pdMS_TO_TICKS(20));
-            if (audio_chunk) {
-                // Process in smaller chunks
-                size_t processed = 0;
-                while (processed < item_size) {
-                    size_t chunk = (item_size - processed > 512) ? 512 : item_size - processed;
-                    audio_stream_handle_incoming(audio_chunk + processed, chunk);
-                    processed += chunk;
-                    taskYIELD();
-                }
-                vRingbufferReturnItem(s_audio_rb, audio_chunk);
+            size_t free  = xRingbufferGetCurFreeSize(s_audio_rb);
+            size_t used  = total_size - free;
+
+            if (buffering && used >= START_PLAY_THRESHOLD) {
+                buffering = false;            // ready – start playing
+                underrun  = false;
+                ESP_LOGI(TAG, "[BUFFER] primed (%u B). Playback starts.", (unsigned)used);
             }
-            vTaskDelay(pdMS_TO_TICKS(3));
+            else if (!buffering && used <= PAUSE_PLAY_THRESHOLD) {
+                buffering = true;             // pause and re‑prime
+                underrun  = true;
+                ESP_LOGW(TAG, "[BUFFER] underrun (%u B). Re‑buffering…", (unsigned)used);
+            }
         }
-        // else either no ringbuf or timed out => loop
+
+        /* ---------- ②  if buffering just sleep ---------- */
+        if (buffering) {
+            vTaskDelay(pdMS_TO_TICKS(10));
+            continue;
+        }
+
+        /* ---------- ③  normal dequeue → audio_player ---------- */
+        size_t item_size = 0;
+        uint8_t *pcm = (uint8_t *)xRingbufferReceive(s_audio_rb,
+                                                     &item_size,
+                                                     pdMS_TO_TICKS(20));
+
+        if (pcm) {
+            /* break big packet into ≤512 B chunks as you already do */
+            size_t processed = 0;
+            while (processed < item_size && !buffering) {
+                size_t chunk = MIN(512, item_size - processed);
+                audio_stream_handle_incoming(pcm + processed, chunk);
+                processed += chunk;
+                taskYIELD();
+            }
+            vRingbufferReturnItem(s_audio_rb, pcm);
+        } else {
+            /* nothing ready – tiny nap before looping */
+            vTaskDelay(pdMS_TO_TICKS(2));
+        }
     }
+
     ESP_LOGI(TAG, "audio_consumer_task stopping!");
-    
-    if (s_ws_manager_task) {
-        xTaskNotifyGive(s_ws_manager_task);
-    }
-    // xTaskNotifyGive(xTaskGetCurrentTaskHandle());
-    vTaskDelete(NULL);
+    /* … notify manager & delete task … */
 }
+
 
 
 // ============================= WS EVENT HANDLER =============================
