@@ -28,6 +28,50 @@ static void volume_task(void *param);
 
 static float s_volume = 1.0f;
 
+/* ---- playback‑state machine ------------------------------------------ */
+typedef enum {
+    AUD_STATE_IDLE,        // no data yet
+    AUD_STATE_BUFFERING,   // filling queues
+    AUD_STATE_PLAYING,     // DMA continuously feeding the codec
+    AUD_STATE_UNDERRUN     // DMA starved – waiting for new data
+} audio_state_t;
+
+static volatile audio_state_t s_play_state = AUD_STATE_IDLE;
+
+/* thresholds (bytes in your ready queue ≈ AUDIO_BUFFER_SIZE = 512)       */
+#define START_PLAY_THRESHOLD   (AUDIO_BUFFER_SIZE * 3)   // ≈120 ms
+#define PAUSE_PLAY_THRESHOLD   (AUDIO_BUFFER_SIZE * 1)   // ≈40 ms
+#define PCM_TIMEOUT_MS         300                       // net‑hiccup guard
+
+/* I2S event queue for underrun detection */
+static QueueHandle_t  s_i2s_evt_q = NULL;
+static TaskHandle_t   s_dma_evt_task = NULL;
+
+/* ───────────────── dma_evt_task – watch I²S event queue ───────────────── */
+/* ───────────────── dma_evt_task – watch I²S event queue ───────────────── */
+static void dma_evt_task(void *param)
+{
+    i2s_event_t evt;
+
+    while (1) {
+        if (xQueueReceive(s_i2s_evt_q, &evt, portMAX_DELAY) == pdTRUE) {
+            switch (evt.type) {
+
+            case I2S_EVENT_DMA_ERROR:          /* DMA starved → UNDERRUN */
+                s_play_state = AUD_STATE_UNDERRUN;
+                ESP_EARLY_LOGW(TAG, "I²S DMA_ERROR → entering UNDERRUN");
+                break;
+
+            /* **DON’T** touch s_last_audio_time here – it masks real stalls */
+            case I2S_EVENT_TX_DONE:
+            default:
+                break;
+            }
+        }
+    }
+}
+
+
 void audio_player_set_volume(float vol)
 {
     if (vol < 0.0f) vol = 0.0f;
@@ -63,7 +107,9 @@ esp_err_t audio_player_init(void)
         .data_in_num = I2S_DI_IO
     };
 
-    esp_err_t ret = i2s_driver_install(I2S_NUM, &i2s_config, 0, NULL);
+    esp_err_t ret = i2s_driver_install(I2S_NUM, &i2s_config,
+                                   8,                // <- queue depth
+                                   &s_i2s_evt_q);    // <- NEW: event queue
     if (ret != ESP_OK) {
         ESP_LOGE(TAG, "i2s_driver_install failed: %s", esp_err_to_name(ret));
         return ret;
@@ -93,7 +139,8 @@ esp_err_t audio_player_init(void)
     xTaskCreatePinnedToCore(audio_task, "audioTask", 4096, NULL, 3, NULL, 1);
     xTaskCreatePinnedToCore(audio_monitor_task, "audioMonitor", 2048, NULL, 4, NULL, 1);
     xTaskCreatePinnedToCore(volume_task, "volume_task", 2048, NULL, 5, NULL, 1);
-
+    xTaskCreatePinnedToCore(dma_evt_task, "dma_evt", 2048,
+                        NULL, 4, &s_dma_evt_task, 1);
     ESP_LOGI(TAG, "Audio player initialized. sample_rate=%d", SAMPLE_RATE);
     return ESP_OK;
 }
@@ -119,65 +166,99 @@ static void volume_task(void *param)
         vTaskDelay(pdMS_TO_TICKS(200));
     }
 }
+
 static void audio_task(void *param)
 {
     ESP_LOGI(TAG, "audio_task started");
+    s_play_state = AUD_STATE_IDLE;
+
     while (1) {
-        // esp_task_wdt_reset();
-        int buf_idx;
-        // Wait up to 50ms for the next ready buffer
-        if (xQueueReceive(s_ready_queue, &buf_idx, pdMS_TO_TICKS(50)) == pdTRUE) {
-            // esp_task_wdt_reset();
-            s_last_audio_time = esp_timer_get_time();
 
-            if (buf_idx < 0 || buf_idx >= NUM_AUDIO_BUFFERS) {
-                ESP_LOGE(TAG, "Invalid buffer index: %d", buf_idx);
-                continue;
-            }
-            audio_buffer_t *buf = &s_buffers[buf_idx];
+        /* ---------- ①  determine queue fill & time since last DMA ---------- */
+        UBaseType_t ready_cnt   = uxQueueMessagesWaiting(s_ready_queue);
+        size_t      ready_bytes = ready_cnt * AUDIO_BUFFER_SIZE;
 
-            // Write the buffer to I2S in small chunks to avoid long blocking
-            uint8_t *ptr   = (uint8_t *)buf->data;
-            size_t   remain = buf->length;
-            size_t chunks_processed = 0;
-            while (remain > 0) {
-                size_t written = 0;
-                size_t chunk_size = (remain > 1024) ? 1024 : remain; // Process in 1KB chunks
-                esp_err_t err = i2s_write(I2S_NUM, ptr, chunk_size,
-                           &written, pdMS_TO_TICKS(60));   // ≥ 2 × 32 ms
+        int64_t now_us         = esp_timer_get_time();
+        int64_t since_last_ms  = (now_us - s_last_audio_time) / 1000;
 
-                if (err != ESP_OK) {
-                    ESP_LOGE(TAG, "i2s_write error => %s", esp_err_to_name(err));
-                    break;  // stop trying to write the rest
-                }
-                if (written == 0) {
-                    // If we wrote zero, it means i2s_write() timed out
-                    ESP_LOGW(TAG, "i2s_write wrote 0 => skipping remainder");
-                    break;
-                }
-                ptr    += written;
-                remain -= written;
-                if (remain > 0) {
-                    vTaskDelay(pdMS_TO_TICKS(1));
-                }
-                if ((chunks_processed++ % 2) == 0) {
-                    taskYIELD();
-                }
-            }
+        /* ---------- ②  state‑machine transitions -------------------------- */
+        switch (s_play_state) {
 
-            // Return the buffer to empty queue (short timeout again)
-            if (xQueueSend(s_empty_queue, &buf_idx, pdMS_TO_TICKS(20)) != pdTRUE) {
-                ESP_LOGW(TAG, "Failed to return buffer to empty queue!");
+            case AUD_STATE_IDLE:
+            case AUD_STATE_BUFFERING:
+            case AUD_STATE_UNDERRUN:
+                if (ready_bytes >= START_PLAY_THRESHOLD) {
+                    s_play_state = AUD_STATE_PLAYING;
+                    ESP_LOGI(TAG, "[PLAY] start – buffer primed (%u B)", (unsigned)ready_bytes);
+                }
+                break;
+
+            case AUD_STATE_PLAYING: {
+                bool buffer_empty   = (ready_bytes == 0);           /* not ≤ 512   */
+                bool writer_stalled = (since_last_ms > PCM_TIMEOUT_MS);
+
+                if (buffer_empty && writer_stalled) {               /* need both   */
+                    s_play_state = AUD_STATE_UNDERRUN;
+                    ESP_LOGW(TAG, "[PLAY] real underrun (0 B, %lld ms)", since_last_ms);
+                }
+                break;
             }
         }
-        // If xQueueReceive timed out, we just loop again.
+        /* ---------- ③  if not PLAYING just sleep a little ----------------- */
+        if (s_play_state != AUD_STATE_PLAYING) {
+            vTaskDelay(pdMS_TO_TICKS(10));
+            continue;
+        }
 
-        // **Important**: Let other tasks and the watchdog run
-        vTaskDelay(pdMS_TO_TICKS(5));
+        /* ---------- ④  dequeue one buffer and push it to I²S -------------- */
+        int buf_idx;
+        if (xQueueReceive(s_ready_queue, &buf_idx, pdMS_TO_TICKS(10)) != pdTRUE) {
+            /* shouldn’t happen often while PLAYING, but guard anyway */
+            vTaskDelay(pdMS_TO_TICKS(2));
+            continue;
+        }
+
+        if (buf_idx < 0 || buf_idx >= NUM_AUDIO_BUFFERS) {
+            ESP_LOGE(TAG, "Invalid buffer index: %d", buf_idx);
+            continue;
+        }
+
+        audio_buffer_t *buf = &s_buffers[buf_idx];
+        uint8_t *ptr        = (uint8_t *)buf->data;
+        size_t   remain     = buf->length;
+
+        while (remain > 0) {
+            size_t written     = 0;
+            size_t chunk       = (remain > 1024) ? 1024 : remain;
+
+            esp_err_t err = i2s_write(I2S_NUM, ptr, chunk,
+                                      &written, pdMS_TO_TICKS(60));
+
+            if (err != ESP_OK || written == 0) {
+                ESP_LOGE(TAG, "i2s_write err=%s / wrote=%u – enter UNDERRUN",
+                         esp_err_to_name(err), (unsigned)written);
+                s_play_state = AUD_STATE_UNDERRUN;
+                break;
+            }
+
+            ptr    += written;
+            remain -= written;
+            if (remain) vTaskDelay(pdMS_TO_TICKS(1));
+        }
+
+        /* Mark time of last successful DMA feed */
+        s_last_audio_time = esp_timer_get_time();
+
+        /* ---------- ⑤  recycle buffer ------------------------------------ */
+        if (xQueueSend(s_empty_queue, &buf_idx, pdMS_TO_TICKS(20)) != pdTRUE) {
+            ESP_LOGW(TAG, "Failed to return buffer %d to empty queue", buf_idx);
+        }
+
+        /* ---------- ⑥  tiny yield so other tasks get CPU ------------------ */
+        taskYIELD();
     }
-    vTaskDelete(NULL);
+    /* never reached */
 }
-
 
 static void audio_monitor_task(void *param)
 {
@@ -246,8 +327,5 @@ void audio_player_shutdown(void)
 
 bool audio_player_is_playing(void)
 {
-    int64_t now_ms       = esp_timer_get_time() / 1000;
-    int64_t last_time_ms = s_last_audio_time / 1000;
-    // If time since last audio is <= 500ms => considered “playing”
-    return ((now_ms - last_time_ms) <= 1000);
+    return s_play_state == AUD_STATE_PLAYING;
 }
