@@ -8,13 +8,13 @@
 #include "driver/i2s.h"
 
 // 24 kHz by default
-#define SAMPLE_RATE     (8000)
+#define SAMPLE_RATE_PLAYER     (8000)
 
 #define DMA_BUF_COUNT   (24)
 #define DMA_BUF_LEN     (1024)
 
-#define AUDIO_BUFFER_SIZE  512  // bytes
-#define NUM_AUDIO_BUFFERS  4
+#define AUDIO_BUFFER_SIZE  1024  // bytes
+#define NUM_AUDIO_BUFFERS  12
 
 typedef struct {
     uint8_t data[AUDIO_BUFFER_SIZE];

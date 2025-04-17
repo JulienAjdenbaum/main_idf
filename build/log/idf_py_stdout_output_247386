@@ -1,0 +1,720 @@
+Command: /home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python /home/julien/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/julien/Documents/esp32IDF/hello_world/build/hello_world.elf /home/julien/Documents/esp32IDF/hello_world/build/bootloader/bootloader.elf -m '/home/julien/.espressif/python_env/idf5.5_py3.10_env/bin/python' '/home/julien/esp/esp-idf/tools/idf.py'
+et Jn  8 206 0:25
+rt:0x1 (OWE��UMQ)I��:0x2 (SIFS_LAH_BOOT
+cofgi:0 SPIP:0xee
+ckdv0xb\E��:000,_rv00,s0_drv0x00,ddv00,wp_dv:0x00
+oeDO,�����div:
+od0xff030,len6368
+od04078000len:180
+od0x4008400,le:80
+nry 0x408063
+[0;32mI (26) boot: ESP-IDF v5.5-dev-2290-g94cfe394fe 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time Apr 16 2025 17:40:19[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v1.1[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (36) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (63) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (70) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (76) boot:  3 factory          factory app      00 00 00010000 00101000[0m
+[0;32mI (83) boot:  4 ota_0            OTA app          00 10 00120000 00101000[0m
+[0;32mI (89) boot:  5 ota_1            OTA app          00 11 00230000 00101000[0m
+[0;32mI (96) boot:  6 coredump         Unknown data     01 03 00331000 00010000[0m
+[0;32mI (102) boot: End of partition table[0m
+[0;32mI (105) boot: Defaulting to factory image[0m
+[0;32mI (109) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2af40h (175936) map[0m
+[0;32mI (177) esp_image: segment 1: paddr=0003af68 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (177) esp_image: segment 2: paddr=0003af8c vaddr=3ffb0000 size=0492ch ( 18732) load[0m
+[0;32mI (188) esp_image: segment 3: paddr=0003f8c0 vaddr=40080000 size=00758h (  1880) load[0m
+[0;32mI (189) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=b5e14h (744980) map[0m
+[0;32mI (450) esp_image: segment 5: paddr=000f5e3c vaddr=40080758 size=1ad1ch (109852) load[0m
+[0;32mI (506) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (507) boot: Disabling RNG early entropy source...[0m
+[0;32mI (517) cpu_start: Multicore app[0m
+[0;32mI (526) cpu_start: Pro cpu start user code[0m
+[0;32mI (526) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (526) app_init: Application information:[0m
+[0;32mI (526) app_init: Project name:     hello_world[0m
+[0;32mI (530) app_init: App version:      9edb621-dirty[0m
+[0;32mI (534) app_init: Compile time:     Apr 16 2025 17:40:13[0m
+[0;32mI (539) app_init: ELF file SHA256:  5192cbdf7...[0m
+[0;32mI (544) app_init: ESP-IDF:          v5.5-dev-2290-g94cfe394fe[0m
+[0;32mI (549) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (553) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (557) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (561) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (567) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (572) heap_init: At 3FFBB458 len 00024BA8 (146 KiB): DRAM[0m
+[0;32mI (577) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (583) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (588) heap_init: At 4009B474 len 00004B8C (18 KiB): IRAM[0m
+[0;32mI (595) spi_flash: detected chip: generic[0m
+[0;32mI (597) spi_flash: flash io: dio[0m
+[0;33mW (600) i2s(legacy): legacy i2s driver is deprecated, please migrate to use driver/i2s_std.h, driver/i2s_pdm.h or driver/i2s_tdm.h[0m
+[0;33mW (612) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;32mI (620) esp_core_dump_flash: Init core dump to flash[0m
+[0;32mI (624) esp_core_dump_flash: Found partition 'coredump' @ 331000 65536 bytes[0m
+[0;32mI (632) main_task: Started on CPU0[0m
+[0;32mI (642) main_task: Calling app_main()[0m
+[0;32mI (642) MAIN: Starting app_main...[0m
+[0;32mI (642) MAIN: Initializing LED strip...[0m
+[0;32mI (642) led_button_blink: Create RMT TX channel[0m
+[0;32mI (642) led_button_blink: Install LED strip encoder[0m
+[0;32mI (752) MAIN: Initializing Wi-Fi...[0m
+[0;32mI (782) WIFI_MGR: Loaded Wi-Fi creds from NVS: SSID="Partagedeco", PASS length=19[0m
+[0;32mI (792) wifi:wifi driver task: 3ffc37cc, prio:23, stack:6656, core=0[0m
+[0;32mI (802) wifi:wifi firmware version: 3a3aca644[0m
+[0;32mI (802) wifi:wifi certification version: v7.0[0m
+[0;32mI (802) wifi:config NVS flash: enabled[0m
+[0;32mI (802) wifi:config nano formatting: disabled[0m
+[0;32mI (812) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (812) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (822) wifi:Init management short buffer num: 32[0m
+[0;32mI (822) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (832) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (832) wifi:Init static rx buffer num: 10[0m
+[0;32mI (832) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (842) wifi_init: rx ba win: 6[0m
+[0;32mI (842) wifi_init: accept mbox: 6[0m
+[0;32mI (842) wifi_init: tcpip mbox: 32[0m
+[0;32mI (852) wifi_init: udp mbox: 6[0m
+[0;32mI (852) wifi_init: tcp mbox: 6[0m
+[0;32mI (852) wifi_init: tcp tx win: 5760[0m
+[0;32mI (862) wifi_init: tcp rx win: 5760[0m
+[0;32mI (862) wifi_init: tcp mss: 1440[0m
+[0;32mI (862) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (862) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (892) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (962) wifi:mode : sta (94:54:c5:b0:b3:b4)[0m
+[0;32mI (962) wifi:enable tsf[0m
+[0;32mI (962) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (972) WIFI_MGR: STA init done. Trying SSID: Partagedeco[0m
+[0;32mI (982) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (982) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (992) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1002) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1012) wifi:connected with Partagedeco, aid = 1, channel 6, BW20, bssid = aa:0f:fe:0d:99:0e[0m
+[0;32mI (1012) wifi:security: WPA2-PSK, phy: bgn, rssi: -71[0m
+[0;32mI (1032) wifi:pm start, type: 0[0m
+
+[0;32mI (1032) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1072) MAIN: Creating LED debug task...[0m
+[0;32mI (1072) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (1082) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (1082) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (1172) MAIN: Waiting for Wi-Fi connection result...[0m
+[0;32mI (2072) LED_DEBUG_TASK: Blinking RED (Wi-Fi not connected)[0m
+[0;32mI (2202) esp_netif_handlers: sta ip: 10.196.97.196, mask: 255.255.255.0, gw: 10.196.97.58[0m
+[0;32mI (2202) WIFI_MGR: STA got IP: 10.196.97.196[0m
+[0;32mI (2302) MAIN: Wi-Fi Connected (STA mode). Starting other services...[0m
+[0;32mI (2302) MAIN: Initializing WebSocket Manager...[0m
+[0;32mI (2302) CORE_DUMP_MGR: No coredump or error reading offset: ESP_ERR_INVALID_SIZE[0m
+[0;32mI (2302) WS_MGR: Loaded existing API key from NVS: 2E85B8D8D7109641A879B70A056597D4[0m
+[0;32mI (2312) WS_MGR: Final WebSocket headers:[0m
+X-API-Key: 2E85B8D8D7109641A879B70A056597D4
+
+[0;32mI (2322) websocket_client: Started[0m
+[0;32mI (2322) WS_MGR: WebSocket started with header [X-API-Key: 2E85B8D8D7109641A879B70A056597D4[0m
+]
+[0;32mI (2332) wifi:<ba-add>idx:0 (ifx:0, aa:0f:fe:0d:99:0e), tid:0, ssn:2, winSize:64[0m
+[0;32mI (2342) WS_MGR: audio_consumer_task starting (pre‑buffer mode)[0m
+[0;32mI (2342) WS_MGR: ringbuf_monitor_task starting![0m
+[0;32mI (2352) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (2442) MAIN: Initializing Button...[0m
+[0;32mI (2442) led_button_blink: Configuring button on GPIO 14[0m
+[0;32mI (2442) gpio: GPIO[14]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (2542) MAIN: Initializing Audio Player...[0m
+[0;32mI (2552) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (2552) AudioPlayer: Audio player initialized. sample_rate=8000[0m
+[0;32mI (2552) AudioPlayer: audio_task started[0m
+[0;32mI (2612) WS_MGR: WebSocket connected[0m
+[0;32mI (2652) MAIN: Initializing Audio Recorder...[0m
+[0;32mI (2652) AUDIO_RECORD: I2S initialized for mic input (sr=8000, bits=32)[0m
+[0;32mI (2752) MAIN: Initializing Tag Reader...[0m
+[0;32mI (2752) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (2772) rc522: PCD (fw=v2.0) initialized[0m
+[0;32mI (2772) RC522_TAG_READER: RC522 tag reader initialized[0m
+[0;32mI (2872) MAIN: All services initialized.[0m
+[0;32mI (2872) MAIN: Initialization complete. Main task entering idle loop.[0m
+[0;32mI (2902) RC522_TAG_READER: New card present[0m
+[0;32mI (2902) WS_MGR: Sending tag UID (0x03...) len=4[0m
+[0;32mI (2952) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (3072) LED_DEBUG_TASK: All connected => stopping LED debug[0m
+[0;32mI (3152) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (3352) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (3552) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (3752) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (3952) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (4152) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (4352) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (4552) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (4752) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (4882) WS_MGR: Received data length: 1 bytes, time since last packet: 4289 ms[0m
+[0;32mI (4892) WS_MGR: Received data length: 1 bytes, time since last packet: 11 ms[0m
+[0;32mI (4902) WS_MGR: Received data length: 133 bytes, time since last packet: 12 ms[0m
+[0;32mI (4912) WS_MGR: Received data length: 133 bytes, time since last packet: 8 ms[0m
+[0;32mI (4922) WS_MGR: Received data length: 133 bytes, time since last packet: 7 ms[0m
+[0;32mI (4922) WS_MGR: Received data length: 133 bytes, time since last packet: 8 ms[0m
+[0;32mI (4942) WS_MGR: Received data length: 133 bytes, time since last packet: 18 ms[0m
+[0;32mI (4952) WS_MGR: [RingBuf Monitor] used=665, free=7527 (of 8192)[0m
+[0;32mI (4952) WS_MGR: Received data length: 133 bytes, time since last packet: 10 ms[0m
+[0;32mI (5152) WS_MGR: [RingBuf Monitor] used=798, free=7394 (of 8192)[0m
+[0;32mI (5352) WS_MGR: [RingBuf Monitor] used=798, free=7394 (of 8192)[0m
+[0;32mI (5552) WS_MGR: [RingBuf Monitor] used=798, free=7394 (of 8192)[0m
+[0;32mI (5752) WS_MGR: [RingBuf Monitor] used=798, free=7394 (of 8192)[0m
+[0;32mI (5952) WS_MGR: [RingBuf Monitor] used=798, free=7394 (of 8192)[0m
+[0;32mI (6152) WS_MGR: [RingBuf Monitor] used=798, free=7394 (of 8192)[0m
+[0;32mI (6352) WS_MGR: [RingBuf Monitor] used=798, free=7394 (of 8192)[0m
+[0;32mI (6502) WS_MGR: Received data length: 133 bytes, time since last packet: 1549 ms[0m
+[0;32mI (6512) WS_MGR: Received data length: 133 bytes, time since last packet: 7 ms[0m
+[0;32mI (6522) WS_MGR: [BUFFER] primed (1064 B). Playback starts.[0m
+[0;32mI (6522) WS_MGR: Received data length: 133 bytes, time since last packet: 11 ms[0m
+[0;33mW (6522) WS_MGR: [BUFFER] underrun (0 B). Re‑buffering…[0m
+[0;32mI (6532) WS_MGR: Received data length: 133 bytes, time since last packet: 9 ms[0m
+[0;32mI (6542) WS_MGR: Received data length: 133 bytes, time since last packet: 8 ms[0m
+[0;32mI (6552) WS_MGR: [RingBuf Monitor] used=399, free=7793 (of 8192)[0m
+[0;32mI (6552) WS_MGR: Received data length: 133 bytes, time since last packet: 10 ms[0m
+[0;32mI (6562) WS_MGR: Received data length: 133 bytes, time since last packet: 9 ms[0m
+[0;32mI (6572) WS_MGR: Received data length: 133 bytes, time since last packet: 6 ms[0m
+[0;32mI (6582) WS_MGR: Received data length: 133 bytes, time since last packet: 8 ms[0m
+[0;32mI (6582) WS_MGR: Received data length: 133 bytes, time since last packet: 9 ms[0m
+[0;32mI (6592) WS_MGR: [BUFFER] primed (1064 B). Playback starts.[0m
+[0;33mW (6592) WS_MGR: [BUFFER] underrun (0 B). Re‑buffering…[0m
+[0;32mI (6592) WS_MGR: Received data length: 133 bytes, time since last packet: 7 ms[0m
+[0;32mI (6612) WS_MGR: Received data length: 133 bytes, time since last packet: 17 ms[0m
+[0;32mI (6622) WS_MGR: Received data length: 133 bytes, time since last packet: 8 ms[0m
+[0;32mI (6632) WS_MGR: Received data length: 133 bytes, time since last packet: 9 ms[0m
+[0;32mI (6652) WS_MGR: Received data length: 1 bytes, time since last packet: 21 ms[0m
+[0;32mI (6662) WS_MGR: Received data length: 133 bytes, time since last packet: 11 ms[0m
+[0;32mI (6672) WS_MGR: Received data length: 133 bytes, time since last packet: 9 ms[0m
+[0;32mI (6682) WS_MGR: Received data length: 133 bytes, time since last packet: 8 ms[0m
+[0;32mI (6692) WS_MGR: Received data length: 133 bytes, time since last packet: 9 ms[0m
+[0;32mI (6692) WS_MGR: Received data length: 133 bytes, time since last packet: 7 ms[0m
+[0;32mI (6702) WS_MGR: [BUFFER] primed (1197 B). Playback starts.[0m
+[0;33mW (6702) WS_MGR: [BUFFER] underrun (0 B). Re‑buffering…[0m
+[0;32mI (6732) WS_MGR: Received data length: 133 bytes, time since last packet: 30 ms[0m
+[0;32mI (6732) WS_MGR: Received data length: 133 bytes, time since last packet: 8 ms[0m
+[0;32mI (6742) WS_MGR: Received data length: 133 bytes, time since last packet: 4 ms[0m
+[0;32mI (6742) WS_MGR: Received data length: 133 bytes, time since last packet: 4 ms[0m
+[0;32mI (6752) WS_MGR: [RingBuf Monitor] used=532, free=7660 (of 8192)[0m
+[0;32mI (6762) WS_MGR: Received data length: 133 bytes, time since last packet: 11 ms[0m
+[0;32mI (6772) WS_MGR: Received data length: 133 bytes, time since last packet: 10 ms[0m
+[0;32mI (6772) WS_MGR: Received data length: 133 bytes, time since last packet: 4 ms[0m
+[0;32mI (6782) WS_MGR: Received data length: 133 bytes, time since last packet: 4 ms[0m
+[0;32mI (6782) WS_MGR: [BUFFER] primed (1064 B). Playback starts.[0m
+[0;32mI (6792) WS_MGR: Received data length: 133 bytes, time since last packet: 13 ms[0m
+[0;32mI (6802) WS_MGR: Received data length: 133 bytes, time since last packet: 6 ms[0m
+[0;32mI (6802) WS_MGR: Received data length: 133 bytes, time since last packet: 6 ms[0m
+[0;32mI (6812) WS_MGR: Received data length: 133 bytes, time since last packet: 8 ms[0m
+[0;33mW (6812) WS_MGR: [BUFFER] underrun (0 B). Re‑buffering…[0m
+[0;32mI (6822) WS_MGR: Received data length: 133 bytes, time since last packet: 10 ms[0m
+[0;32mI (6832) WS_MGR: Received data length: 133 bytes, time since last packet: 13 ms[0m
+[0;32mI (6842) WS_MGR: Received data length: 133 bytes, time since last packet: 4 ms[0m
+[0;32mI (6842) WS_MGR: Received data length: 133 bytes, time since last packet: 4 ms[0m
+[0;32mI (6852) WS_MGR: Received data length: 133 bytes, time since last packet: 6 ms[0m
+[0;32mI (6862) WS_MGR: Received data length: 133 bytes, time since last packet: 6 ms[0m
+[0;32mI (6862) WS_MGR: Received data length: 133 bytes, time since last packet: 6 ms[0m
+[0;32mI (6872) WS_MGR: Received data length: 133 bytes, time since last packet: 7 ms[0m
+[0;32mI (6882) WS_MGR: [BUFFER] primed (1197 B). Playback starts.[0m
+[0;32mI (6882) WS_MGR: Received data length: 133 bytes, time since last packet: 11 ms[0m
+[0;33mW (6892) WS_MGR: [BUFFER] underrun (133 B). Re‑buffering…[0m
+[0;32mI (6902) WS_MGR: Received data length: 133 bytes, time since last packet: 14 ms[0m
+[0;32mI (6902) WS_MGR: Received data length: 133 bytes, time since last packet: 7 ms[0m
+[0;32mI (6912) WS_MGR: Received data length: 133 bytes, time since last packet: 6 ms[0m
+[0;32mI (6922) WS_MGR: Received data length: 133 bytes, time since last packet: 6 ms[0m
+[0;32mI (6922) WS_MGR: Received data length: 66 bytes, time since last packet: 6 ms[0m
+[0;32mI (6952) WS_MGR: [RingBuf Monitor] used=731, free=7461 (of 8192)[0m
+[0;32mI (7002) WS_MGR: Received data length: 67 bytes, time since last packet: 78 ms[0m
+[0;33mW (7002) WS_MGR: Unknown prefix=0xC9 => ignoring[0m
+[0;32mI (7012) WS_MGR: Received data length: 133 bytes, time since last packet: 10 ms[0m
+[0;32mI (7022) WS_MGR: Received data length: 133 bytes, time since last packet: 8 ms[0m
+[0;32mI (7032) WS_MGR: [BUFFER] primed (997 B). Playback starts.[0m
+[0;32mI (7032) WS_MGR: Received data length: 1 bytes, time since last packet: 8 ms[0m
+[0;33mW (7032) WS_MGR: Unknown audio marker 0x1A[0m
+[0;33mW (7032) WS_MGR: [BUFFER] underrun (0 B). Re‑buffering…[0m
+[0;32mI (7042) WS_MGR: Received data length: 133 bytes, time since last packet: 8 ms[0m
+[0;32mI (7052) WS_MGR: Received data length: 133 bytes, time since last packet: 17 ms[0m
+[0;32mI (7062) WS_MGR: Received data length: 133 bytes, time since last packet: 4 ms[0m
+[0;32mI (7072) WS_MGR: Received data length: 133 bytes, time since last packet: 6 ms[0m
+[0;32mI (7072) WS_MGR: Received data length: 133 bytes, time since last packet: 8 ms[0m
+[0;32mI (7082) WS_MGR: Received data length: 133 bytes, time since last packet: 7 ms[0m
+[0;32mI (7092) WS_MGR: Received data length: 133 bytes, time since last packet: 3 ms[0m
+[0;32mI (7092) WS_MGR: Received data length: 133 bytes, time since last packet: 6 ms[0m
+[0;32mI (7102) WS_MGR: [BUFFER] primed (1064 B). Playback starts.[0m
+[0;32mI (7102) WS_MGR: Received data length: 133 bytes, time since last packet: 9 ms[0m
+[0;32mI (7112) WS_MGR: Received data length: 133 bytes, time since last packet: 10 ms[0m
+[0;33mW (7122) WS_MGR: [BUFFER] underrun (133 B). Re‑buffering…[0m
+[0;32mI (7122) WS_MGR: Received data length: 133 bytes, time since last packet: 6 ms[0m
+[0;32mI (7132) WS_MGR: Received data length: 133 bytes, time since last packet: 12 ms[0m
+[0;32mI (7142) WS_MGR: Received data length: 133 bytes, time since last packet: 10 ms[0m
+[0;32mI (7152) WS_MGR: [RingBuf Monitor] used=532, free=7660 (of 8192)[0m
+[0;32mI (7152) WS_MGR: Received data length: 133 bytes, time since last packet: 7 ms[0m
+[0;32mI (7162) WS_MGR: Received data length: 133 bytes, time since last packet: 7 ms[0m
+[0;32mI (7162) WS_MGR: Received data length: 133 bytes, time since last packet: 6 ms[0m
+[0;32mI (7172) WS_MGR: Received data length: 133 bytes, time since last packet: 6 ms[0m
+[0;32mI (7182) WS_MGR: [BUFFER] primed (1064 B). Playback starts.[0m
+[0;32mI (7182) WS_MGR: Received data length: 133 bytes, time since last packet: 6 ms[0m
+[0;33mW (7182) WS_MGR: Unknown audio marker 0xCB[0m
+[0;33mW (7192) WS_MGR: [BUFFER] underrun (133 B). Re‑buffering…[0m
+[0;32mI (7192) WS_MGR: Received data length: 133 bytes, time since last packet: 12 ms[0m
+[0;32mI (7212) WS_MGR: Received data length: 133 bytes, time since last packet: 23 ms[0m
+[0;32mI (7222) WS_MGR: Received data length: 133 bytes, time since last packet: 8 ms[0m
+[0;32mI (7232) WS_MGR: Received data length: 133 bytes, time since last packet: 4 ms[0m
+[0;32mI (7232) WS_MGR: Received data length: 133 bytes, time since last packet: 3 ms[0m
+[0;32mI (7242) WS_MGR: Received data length: 133 bytes, time since last packet: 7 ms[0m
+[0;32mI (7242) WS_MGR: Received data length: 133 bytes, time since last packet: 5 ms[0m
+[0;32mI (7252) WS_MGR: Received data length: 133 bytes, time since last packet: 6 ms[0m
+[0;32mI (7262) WS_MGR: [BUFFER] primed (1197 B). Playback starts.[0m
+[0;32mI (7262) WS_MGR: Received data length: 133 bytes, time since last packet: 7 ms[0m
+[0;33mW (7262) WS_MGR: [BUFFER] underrun (0 B). Re‑buffering…[0m
+[0;32mI (7272) WS_MGR: Received data length: 133 bytes, time since last packet: 12 ms[0m
+[0;32mI (7292) WS_MGR: Received data length: 133 bytes, time since last packet: 17 ms[0m
+[0;32mI (7302) WS_MGR: Received data length: 133 bytes, time since last packet: 9 ms[0m
+[0;32mI (7302) WS_MGR: Received data length: 133 bytes, time since last packet: 4 ms[0m
+[0;32mI (7302) WS_MGR: Received data length: 1 bytes, time since last packet: 3 ms[0m
+[0;32mI (7352) WS_MGR: [RingBuf Monitor] used=665, free=7527 (of 8192)[0m
+[0;32mI (7552) WS_MGR: [RingBuf Monitor] used=665, free=7527 (of 8192)[0m
+[0;32mI (7752) WS_MGR: [RingBuf Monitor] used=665, free=7527 (of 8192)[0m
+[0;32mI (7952) WS_MGR: [RingBuf Monitor] used=665, free=7527 (of 8192)[0m
+[0;32mI (8152) WS_MGR: [RingBuf Monitor] used=665, free=7527 (of 8192)[0m
+[0;32mI (8342) WS_MGR: Received data length: 133 bytes, time since last packet: 1038 ms[0m
+[0;32mI (8352) WS_MGR: [RingBuf Monitor] used=798, free=7394 (of 8192)[0m
+[0;32mI (8352) WS_MGR: Received data length: 133 bytes, time since last packet: 8 ms[0m
+[0;32mI (8362) WS_MGR: Received data length: 133 bytes, time since last packet: 9 ms[0m
+[0;32mI (8372) WS_MGR: [BUFFER] primed (1064 B). Playback starts.[0m
+[0;33mW (8372) WS_MGR: [BUFFER] underrun (0 B). Re‑buffering…[0m
+[0;32mI (8372) WS_MGR: Received data length: 133 bytes, time since last packet: 10 ms[0m
+[0;32mI (8382) WS_MGR: Received data length: 133 bytes, time since last packet: 11 ms[0m
+[0;32mI (8392) WS_MGR: Received data length: 133 bytes, time since last packet: 9 ms[0m
+[0;32mI (8402) WS_MGR: Received data length: 133 bytes, time since last packet: 7 ms[0m
+[0;32mI (8412) WS_MGR: Received data length: 133 bytes, time since last packet: 8 ms[0m
+[0;32mI (8432) WS_MGR: Received data length: 133 bytes, time since last packet: 20 ms[0m
+[0;32mI (8442) WS_MGR: Received data length: 133 bytes, time since last packet: 7 ms[0m
+[0;32mI (8452) WS_MGR: Received data length: 133 bytes, time since last packet: 10 ms[0m
+[0;32mI (8462) WS_MGR: [BUFFER] primed (1064 B). Playback starts.[0m
+[0;32mI (8462) WS_MGR: Received data length: 133 bytes, time since last packet: 10 ms[0m
+[0;33mW (8462) WS_MGR: [BUFFER] underrun (133 B). Re‑buffering…[0m
+[0;32mI (8472) WS_MGR: Received data length: 133 bytes, time since last packet: 8 ms[0m
+[0;32mI (8482) WS_MGR: Received data length: 133 bytes, time since last packet: 14 ms[0m
+[0;32mI (8492) WS_MGR: Received data length: 133 bytes, time since last packet: 8 ms[0m
+[0;32mI (8502) WS_MGR: Received data length: 133 bytes, time since last packet: 9 ms[0m
+[0;32mI (8512) WS_MGR: Received data length: 133 bytes, time since last packet: 9 ms[0m
+[0;32mI (8522) WS_MGR: Received data length: 133 bytes, time since last packet: 9 ms[0m
+[0;32mI (8532) WS_MGR: Received data length: 133 bytes, time since last packet: 9 ms[0m
+[0;32mI (8542) WS_MGR: [BUFFER] primed (1064 B). Playback starts.[0m
+[0;33mW (8542) WS_MGR: [BUFFER] underrun (0 B). Re‑buffering…[0m
+[0;32mI (8552) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (8572) WS_MGR: Received data length: 133 bytes, time since last packet: 37 ms[0m
+[0;32mI (8572) WS_MGR: Received data length: 133 bytes, time since last packet: 8 ms[0m
+[0;32mI (8582) WS_MGR: Received data length: 133 bytes, time since last packet: 9 ms[0m
+[0;32mI (8592) WS_MGR: Received data length: 133 bytes, time since last packet: 4 ms[0m
+[0;32mI (8592) WS_MGR: Received data length: 133 bytes, time since last packet: 4 ms[0m
+[0;32mI (8602) WS_MGR: Received data length: 133 bytes, time since last packet: 4 ms[0m
+[0;32mI (8612) WS_MGR: Received data length: 133 bytes, time since last packet: 10 ms[0m
+[0;32mI (8622) WS_MGR: Received data length: 133 bytes, time since last packet: 9 ms[0m
+[0;32mI (8622) WS_MGR: Received data length: 133 bytes, time since last packet: 4 ms[0m
+[0;32mI (8632) WS_MGR: [BUFFER] primed (1197 B). Playback starts.[0m
+[0;32mI (8632) WS_MGR: Received data length: 133 bytes, time since last packet: 6 ms[0m
+[0;32mI (8642) WS_MGR: Received data length: 133 bytes, time since last packet: 10 ms[0m
+[0;33mW (8642) WS_MGR: [BUFFER] underrun (133 B). Re‑buffering…[0m
+[0;32mI (8652) WS_MGR: Received data length: 133 bytes, time since last packet: 6 ms[0m
+[0;32mI (8662) WS_MGR: Received data length: 1 bytes, time since last packet: 12 ms[0m
+[0;32mI (8672) WS_MGR: Received data length: 133 bytes, time since last packet: 16 ms[0m
+[0;32mI (8682) WS_MGR: Received data length: 133 bytes, time since last packet: 9 ms[0m
+[0;32mI (8692) WS_MGR: Received data length: 133 bytes, time since last packet: 3 ms[0m
+[0;32mI (8692) WS_MGR: Received data length: 133 bytes, time since last packet: 3 ms[0m
+[0;32mI (8702) WS_MGR: Received data length: 133 bytes, time since last packet: 6 ms[0m
+[0;32mI (8712) WS_MGR: Received data length: 133 bytes, time since last packet: 7 ms[0m
+[0;32mI (8712) WS_MGR: [BUFFER] primed (1064 B). Playback starts.[0m
+[0;32mI (8712) WS_MGR: Received data length: 133 bytes, time since last packet: 6 ms[0m
+[0;32mI (8732) WS_MGR: Received data length: 133 bytes, time since last packet: 13 ms[0m
+[0;33mW (8732) WS_MGR: [BUFFER] underrun (133 B). Re‑buffering…[0m
+[0;32mI (8732) WS_MGR: Received data length: 133 bytes, time since last packet: 5 ms[0m
+[0;32mI (8752) WS_MGR: [RingBuf Monitor] used=399, free=7793 (of 8192)[0m
+[0;32mI (8752) WS_MGR: Received data length: 133 bytes, time since last packet: 16 ms[0m
+[0;32mI (8762) WS_MGR: Received data length: 133 bytes, time since last packet: 12 ms[0m
+[0;32mI (8762) WS_MGR: Received data length: 133 bytes, time since last packet: 4 ms[0m
+[0;32mI (8772) WS_MGR: Received data length: 133 bytes, time since last packet: 5 ms[0m
+[0;32mI (8782) WS_MGR: Received data length: 133 bytes, time since last packet: 6 ms[0m
+[0;32mI (8782) WS_MGR: Received data length: 133 bytes, time since last packet: 7 ms[0m
+[0;32mI (8792) WS_MGR: [BUFFER] primed (1197 B). Playback starts.[0m
+[0;32mI (8792) WS_MGR: Received data length: 133 bytes, time since last packet: 8 ms[0m
+[0;33mW (8792) WS_MGR: Unknown audio marker 0x9F[0m
+[0;33mW (8802) WS_MGR: [BUFFER] underrun (133 B). Re‑buffering…[0m
+[0;32mI (8802) WS_MGR: Received data length: 133 bytes, time since last packet: 10 ms[0m
+[0;32mI (8822) WS_MGR: Received data length: 133 bytes, time since last packet: 20 ms[0m
+[0;32mI (8832) WS_MGR: Received data length: 133 bytes, time since last packet: 7 ms[0m
+[0;32mI (8842) WS_MGR: Received data length: 133 bytes, time since last packet: 4 ms[0m
+[0;32mI (8842) WS_MGR: Received data length: 133 bytes, time since last packet: 5 ms[0m
+[0;32mI (8852) WS_MGR: Received data length: 133 bytes, time since last packet: 7 ms[0m
+[0;32mI (8852) WS_MGR: Received data length: 133 bytes, time since last packet: 6 ms[0m
+[0;32mI (8862) WS_MGR: [BUFFER] primed (1064 B). Playback starts.[0m
+[0;33mW (8872) WS_MGR: [BUFFER] underrun (0 B). Re‑buffering…[0m
+[0;32mI (8872) WS_MGR: Received data length: 133 bytes, time since last packet: 12 ms[0m
+[0;32mI (8882) WS_MGR: Received data length: 133 bytes, time since last packet: 17 ms[0m
+[0;32mI (8892) WS_MGR: Received data length: 133 bytes, time since last packet: 4 ms[0m
+[0;32mI (8892) WS_MGR: Received data length: 133 bytes, time since last packet: 4 ms[0m
+[0;32mI (8902) WS_MGR: Received data length: 133 bytes, time since last packet: 6 ms[0m
+[0;32mI (8912) WS_MGR: Received data length: 133 bytes, time since last packet: 8 ms[0m
+[0;32mI (8912) WS_MGR: Received data length: 133 bytes, time since last packet: 5 ms[0m
+[0;32mI (8922) WS_MGR: Received data length: 133 bytes, time since last packet: 6 ms[0m
+[0;32mI (8932) WS_MGR: [BUFFER] primed (1064 B). Playback starts.[0m
+[0;32mI (8932) WS_MGR: Received data length: 1 bytes, time since last packet: 9 ms[0m
+[0;33mW (8932) WS_MGR: [BUFFER] underrun (0 B). Re‑buffering…[0m
+[0;32mI (8952) WS_MGR: Received data length: 133 bytes, time since last packet: 15 ms[0m
+[0;32mI (8952) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (8962) WS_MGR: Received data length: 133 bytes, time since last packet: 12 ms[0m
+[0;32mI (8972) WS_MGR: Received data length: 133 bytes, time since last packet: 7 ms[0m
+[0;32mI (8982) WS_MGR: Received data length: 133 bytes, time since last packet: 8 ms[0m
+[0;32mI (8982) WS_MGR: Received data length: 133 bytes, time since last packet: 4 ms[0m
+[0;32mI (8992) WS_MGR: Received data length: 133 bytes, time since last packet: 6 ms[0m
+[0;32mI (9002) WS_MGR: Received data length: 133 bytes, time since last packet: 11 ms[0m
+[0;32mI (9012) WS_MGR: Received data length: 133 bytes, time since last packet: 9 ms[0m
+[0;32mI (9022) WS_MGR: [BUFFER] primed (1064 B). Playback starts.[0m
+[0;33mW (9022) WS_MGR: [BUFFER] underrun (0 B). Re‑buffering…[0m
+[0;32mI (9152) WS_MGR: Received data length: 133 bytes, time since last packet: 141 ms[0m
+[0;32mI (9152) WS_MGR: Received data length: 133 bytes, time since last packet: 4 ms[0m
+[0;32mI (9162) WS_MGR: [RingBuf Monitor] used=266, free=7926 (of 8192)[0m
+[0;32mI (9162) WS_MGR: Received data length: 133 bytes, time since last packet: 3 ms[0m
+[0;32mI (9172) WS_MGR: Received data length: 133 bytes, time since last packet: 13 ms[0m
+[0;32mI (9182) WS_MGR: Received data length: 133 bytes, time since last packet: 6 ms[0m
+[0;32mI (9192) WS_MGR: Received data length: 133 bytes, time since last packet: 11 ms[0m
+[0;32mI (9202) WS_MGR: Received data length: 133 bytes, time since last packet: 9 ms[0m
+[0;32mI (9202) WS_MGR: Received data length: 133 bytes, time since last packet: 4 ms[0m
+[0;32mI (9212) WS_MGR: [BUFFER] primed (1064 B). Playback starts.[0m
+[0;32mI (9212) WS_MGR: Received data length: 133 bytes, time since last packet: 4 ms[0m
+[0;33mW (9212) WS_MGR: [BUFFER] underrun (0 B). Re‑buffering…[0m
+[0;32mI (9222) WS_MGR: Received data length: 133 bytes, time since last packet: 11 ms[0m
+[0;32mI (9232) WS_MGR: Received data length: 133 bytes, time since last packet: 12 ms[0m
+[0;32mI (9242) WS_MGR: Received data length: 133 bytes, time since last packet: 6 ms[0m
+[0;32mI (9262) WS_MGR: Received data length: 133 bytes, time since last packet: 24 ms[0m
+[0;32mI (9292) WS_MGR: Received data length: 133 bytes, time since last packet: 32 ms[0m
+[0;32mI (9322) WS_MGR: Received data length: 133 bytes, time since last packet: 30 ms[0m
+[0;32mI (9362) WS_MGR: Received data length: 133 bytes, time since last packet: 35 ms[0m
+[0;32mI (9372) WS_MGR: [BUFFER] primed (1064 B). Playback starts.[0m
+[0;32mI (9372) WS_MGR: [RingBuf Monitor] used=1064, free=7128 (of 8192)[0m
+[0;33mW (9372) WS_MGR: [BUFFER] underrun (0 B). Re‑buffering…[0m
+[0;32mI (9392) WS_MGR: Received data length: 133 bytes, time since last packet: 29 ms[0m
+[0;32mI (9432) WS_MGR: Received data length: 133 bytes, time since last packet: 35 ms[0m
+[0;32mI (9452) WS_MGR: Received data length: 133 bytes, time since last packet: 29 ms[0m
+[0;32mI (9492) WS_MGR: Received data length: 133 bytes, time since last packet: 33 ms[0m
+[0;32mI (9522) WS_MGR: Received data length: 133 bytes, time since last packet: 30 ms[0m
+[0;32mI (9552) WS_MGR: Received data length: 133 bytes, time since last packet: 31 ms[0m
+[0;32mI (9572) WS_MGR: [RingBuf Monitor] used=798, free=7394 (of 8192)[0m
+[0;32mI (9582) WS_MGR: Received data length: 133 bytes, time since last packet: 31 ms[0m
+[0;32mI (9622) WS_MGR: Received data length: 133 bytes, time since last packet: 34 ms[0m
+[0;32mI (9622) WS_MGR: Received data length: 1 bytes, time since last packet: 6 ms[0m
+[0;32mI (9632) WS_MGR: [BUFFER] primed (1064 B). Playback starts.[0m
+[0;33mW (9632) WS_MGR: [BUFFER] underrun (0 B). Re‑buffering…[0m
+[0;32mI (9652) WS_MGR: Received data length: 133 bytes, time since last packet: 22 ms[0m
+[0;32mI (9702) WS_MGR: Received data length: 133 bytes, time since last packet: 56 ms[0m
+[0;32mI (9712) WS_MGR: Received data length: 133 bytes, time since last packet: 8 ms[0m
+[0;32mI (9742) WS_MGR: Received data length: 133 bytes, time since last packet: 31 ms[0m
+[0;32mI (9772) WS_MGR: [RingBuf Monitor] used=532, free=7660 (of 8192)[0m
+[0;32mI (9772) WS_MGR: Received data length: 133 bytes, time since last packet: 30 ms[0m
+[0;32mI (9812) WS_MGR: Received data length: 133 bytes, time since last packet: 34 ms[0m
+[0;32mI (9842) WS_MGR: Received data length: 133 bytes, time since last packet: 30 ms[0m
+[0;32mI (9872) WS_MGR: Received data length: 133 bytes, time since last packet: 35 ms[0m
+[0;32mI (9882) WS_MGR: [BUFFER] primed (1064 B). Playback starts.[0m
+[0;33mW (9882) WS_MGR: [BUFFER] underrun (95 B). Re‑buffering…[0m
+[0;32mI (9902) WS_MGR: Received data length: 133 bytes, time since last packet: 29 ms[0m
+[0;32mI (9942) WS_MGR: Received data length: 133 bytes, time since last packet: 34 ms[0m
+[0;32mI (9972) WS_MGR: Received data length: 133 bytes, time since last packet: 29 ms[0m
+[0;32mI (9972) WS_MGR: [RingBuf Monitor] used=494, free=7698 (of 8192)[0m
+[0;32mI (10002) WS_MGR: Received data length: 133 bytes, time since last packet: 33 ms[0m
+[0;32mI (10052) WS_MGR: Received data length: 133 bytes, time since last packet: 51 ms[0m
+[0;32mI (10062) WS_MGR: Received data length: 133 bytes, time since last packet: 9 ms[0m
+[0;32mI (10102) WS_MGR: Received data length: 133 bytes, time since last packet: 33 ms[0m
+[0;32mI (10112) WS_MGR: [BUFFER] primed (1026 B). Playback starts.[0m
+[0;33mW (10112) WS_MGR: Unknown audio marker 0x67[0m
+[0;33mW (10112) WS_MGR: [BUFFER] underrun (0 B). Re‑buffering…[0m
+[0;32mI (10132) WS_MGR: Received data length: 133 bytes, time since last packet: 31 ms[0m
+[0;32mI (10162) WS_MGR: Received data length: 133 bytes, time since last packet: 32 ms[0m
+[0;32mI (10172) WS_MGR: [RingBuf Monitor] used=266, free=7926 (of 8192)[0m
+[0;32mI (10192) WS_MGR: Received data length: 133 bytes, time since last packet: 31 ms[0m
+[0;32mI (10222) WS_MGR: Received data length: 133 bytes, time since last packet: 31 ms[0m
+[0;32mI (10252) WS_MGR: Received data length: 133 bytes, time since last packet: 32 ms[0m
+[0;32mI (10292) WS_MGR: Received data length: 133 bytes, time since last packet: 32 ms[0m
+[0;32mI (10342) WS_MGR: Received data length: 133 bytes, time since last packet: 55 ms[0m
+[0;32mI (10352) WS_MGR: Received data length: 133 bytes, time since last packet: 8 ms[0m
+[0;32mI (10362) WS_MGR: [BUFFER] primed (1064 B). Playback starts.[0m
+[0;33mW (10362) WS_MGR: [BUFFER] underrun (0 B). Re‑buffering…[0m
+[0;32mI (10372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (10382) WS_MGR: Received data length: 133 bytes, time since last packet: 33 ms[0m
+[0;32mI (10422) WS_MGR: Received data length: 133 bytes, time since last packet: 30 ms[0m
+[0;32mI (10452) WS_MGR: Received data length: 133 bytes, time since last packet: 30 ms[0m
+[0;32mI (10482) WS_MGR: Received data length: 133 bytes, time since last packet: 31 ms[0m
+[0;32mI (10512) WS_MGR: Received data length: 133 bytes, time since last packet: 32 ms[0m
+[0;32mI (10542) WS_MGR: Received data length: 133 bytes, time since last packet: 31 ms[0m
+[0;32mI (10572) WS_MGR: [RingBuf Monitor] used=798, free=7394 (of 8192)[0m
+[0;32mI (10572) WS_MGR: Received data length: 133 bytes, time since last packet: 31 ms[0m
+[0;32mI (10612) WS_MGR: Received data length: 133 bytes, time since last packet: 33 ms[0m
+[0;32mI (10622) WS_MGR: [BUFFER] primed (1064 B). Playback starts.[0m
+[0;33mW (10622) WS_MGR: [BUFFER] underrun (0 B). Re‑buffering…[0m
+[0;32mI (10622) WS_MGR: Received data length: 1 bytes, time since last packet: 16 ms[0m
+[0;32mI (10642) WS_MGR: Received data length: 133 bytes, time since last packet: 14 ms[0m
+[0;32mI (10672) WS_MGR: Received data length: 133 bytes, time since last packet: 31 ms[0m
+[0;32mI (10702) WS_MGR: Received data length: 133 bytes, time since last packet: 30 ms[0m
+[0;32mI (10732) WS_MGR: Received data length: 133 bytes, time since last packet: 32 ms[0m
+[0;32mI (10772) WS_MGR: [RingBuf Monitor] used=532, free=7660 (of 8192)[0m
+[0;32mI (10772) WS_MGR: Received data length: 133 bytes, time since last packet: 31 ms[0m
+[0;32mI (10802) WS_MGR: Received data length: 133 bytes, time since last packet: 32 ms[0m
+[0;32mI (10832) WS_MGR: Received data length: 133 bytes, time since last packet: 34 ms[0m
+[0;32mI (10862) WS_MGR: Received data length: 133 bytes, time since last packet: 29 ms[0m
+[0;32mI (10872) WS_MGR: [BUFFER] primed (1064 B). Playback starts.[0m
+[0;33mW (10872) WS_MGR: [BUFFER] underrun (0 B). Re‑buffering…[0m
+[0;32mI (10892) WS_MGR: Received data length: 133 bytes, time since last packet: 30 ms[0m
+[0;32mI (10932) WS_MGR: Received data length: 133 bytes, time since last packet: 35 ms[0m
+[0;32mI (10972) WS_MGR: [RingBuf Monitor] used=266, free=7926 (of 8192)[0m
+[0;32mI (10982) WS_MGR: Received data length: 133 bytes, time since last packet: 50 ms[0m
+[0;32mI (10992) WS_MGR: Received data length: 133 bytes, time since last packet: 12 ms[0m
+[0;32mI (11022) WS_MGR: Received data length: 133 bytes, time since last packet: 29 ms[0m
+[0;32mI (11062) WS_MGR: Received data length: 133 bytes, time since last packet: 35 ms[0m
+[0;32mI (11092) WS_MGR: Received data length: 133 bytes, time since last packet: 30 ms[0m
+[0;32mI (11122) WS_MGR: Received data length: 133 bytes, time since last packet: 32 ms[0m
+[0;32mI (11132) WS_MGR: [BUFFER] primed (1064 B). Playback starts.[0m
+[0;33mW (11132) WS_MGR: [BUFFER] underrun (0 B). Re‑buffering…[0m
+[0;32mI (11162) WS_MGR: Received data length: 133 bytes, time since last packet: 37 ms[0m
+[0;32mI (11172) WS_MGR: [RingBuf Monitor] used=133, free=8059 (of 8192)[0m
+[0;32mI (11182) WS_MGR: Received data length: 133 bytes, time since last packet: 26 ms[0m
+[0;32mI (11212) WS_MGR: Received data length: 133 bytes, time since last packet: 31 ms[0m
+[0;32mI (11252) WS_MGR: Received data length: 133 bytes, time since last packet: 31 ms[0m
+[0;32mI (11282) WS_MGR: Received data length: 133 bytes, time since last packet: 32 ms[0m
+[0;32mI (11312) WS_MGR: Received data length: 133 bytes, time since last packet: 29 ms[0m
+[0;32mI (11342) WS_MGR: Received data length: 133 bytes, time since last packet: 32 ms[0m
+[0;32mI (11372) WS_MGR: [RingBuf Monitor] used=931, free=7261 (of 8192)[0m
+[0;32mI (11382) WS_MGR: Received data length: 133 bytes, time since last packet: 33 ms[0m
+[0;32mI (11392) WS_MGR: [BUFFER] primed (1064 B). Playback starts.[0m
+[0;33mW (11392) WS_MGR: [BUFFER] underrun (0 B). Re‑buffering…[0m
+[0;32mI (11412) WS_MGR: Received data length: 133 bytes, time since last packet: 31 ms[0m
+[0;32mI (11442) WS_MGR: Received data length: 133 bytes, time since last packet: 31 ms[0m
+[0;32mI (11472) WS_MGR: Received data length: 133 bytes, time since last packet: 31 ms[0m
+[0;32mI (11502) WS_MGR: Received data length: 133 bytes, time since last packet: 32 ms[0m
+[0;32mI (11532) WS_MGR: Received data length: 133 bytes, time since last packet: 30 ms[0m
+[0;32mI (11572) WS_MGR: Received data length: 133 bytes, time since last packet: 32 ms[0m
+[0;32mI (11572) WS_MGR: [RingBuf Monitor] used=798, free=7394 (of 8192)[0m
+[0;32mI (11622) WS_MGR: Received data length: 133 bytes, time since last packet: 54 ms[0m
+[0;32mI (11632) WS_MGR: Received data length: 1 bytes, time since last packet: 6 ms[0m
+[0;32mI (11632) WS_MGR: Received data length: 133 bytes, time since last packet: 6 ms[0m
+[0;32mI (11642) WS_MGR: [BUFFER] primed (1064 B). Playback starts.[0m
+[0;33mW (11642) WS_MGR: [BUFFER] underrun (0 B). Re‑buffering…[0m
+[0;32mI (11662) WS_MGR: Received data length: 133 bytes, time since last packet: 30 ms[0m
+[0;32mI (11692) WS_MGR: Received data length: 133 bytes, time since last packet: 29 ms[0m
+[0;32mI (11732) WS_MGR: Received data length: 133 bytes, time since last packet: 39 ms[0m
+[0;32mI (11762) WS_MGR: Received data length: 133 bytes, time since last packet: 24 ms[0m
+[0;32mI (11772) WS_MGR: [RingBuf Monitor] used=532, free=7660 (of 8192)[0m
+[0;32mI (11792) WS_MGR: Received data length: 133 bytes, time since last packet: 31 ms[0m
+[0;32mI (11822) WS_MGR: Received data length: 133 bytes, time since last packet: 33 ms[0m
+[0;32mI (11852) WS_MGR: Received data length: 133 bytes, time since last packet: 30 ms[0m
+[0;32mI (11892) WS_MGR: Received data length: 133 bytes, time since last packet: 32 ms[0m
+[0;32mI (11902) WS_MGR: [BUFFER] primed (1064 B). Playback starts.[0m
+[0;33mW (11902) WS_MGR: [BUFFER] underrun (282 B). Re‑buffering…[0m
+[0;32mI (11922) WS_MGR: Received data length: 133 bytes, time since last packet: 33 ms[0m
+[0;32mI (11952) WS_MGR: Received data length: 133 bytes, time since last packet: 32 ms[0m
+[0;32mI (11972) WS_MGR: [RingBuf Monitor] used=548, free=7644 (of 8192)[0m
+[0;32mI (11982) WS_MGR: Received data length: 133 bytes, time since last packet: 30 ms[0m
+[0;32mI (12012) WS_MGR: Received data length: 133 bytes, time since last packet: 30 ms[0m
+[0;32mI (12052) WS_MGR: Received data length: 133 bytes, time since last packet: 32 ms[0m
+[0;32mI (12082) WS_MGR: Received data length: 133 bytes, time since last packet: 31 ms[0m
+[0;32mI (12092) WS_MGR: [BUFFER] primed (1080 B). Playback starts.[0m
+[0;33mW (12092) WS_MGR: Unknown audio marker 0xAA[0m
+[0;33mW (12092) WS_MGR: [BUFFER] underrun (0 B). Re‑buffering…[0m
+[0;32mI (12112) WS_MGR: Received data length: 133 bytes, time since last packet: 33 ms[0m
+[0;32mI (12142) WS_MGR: Received data length: 133 bytes, time since last packet: 31 ms[0m
+[0;32mI (12172) WS_MGR: [RingBuf Monitor] used=266, free=7926 (of 8192)[0m
+[0;32mI (12182) WS_MGR: Received data length: 133 bytes, time since last packet: 36 ms[0m
+[0;32mI (12212) WS_MGR: Received data length: 133 bytes, time since last packet: 28 ms[0m
+[0;32mI (12262) WS_MGR: Received data length: 133 bytes, time since last packet: 55 ms[0m
+[0;32mI (12272) WS_MGR: Received data length: 133 bytes, time since last packet: 5 ms[0m
+[0;32mI (12302) WS_MGR: Received data length: 133 bytes, time since last packet: 33 ms[0m
+[0;32mI (12332) WS_MGR: Received data length: 133 bytes, time since last packet: 30 ms[0m
+[0;32mI (12342) WS_MGR: [BUFFER] primed (1064 B). Playback starts.[0m
+[0;33mW (12342) WS_MGR: [BUFFER] underrun (0 B). Re‑buffering…[0m
+[0;32mI (12372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (12572) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (12622) WS_MGR: Received data length: 1 bytes, time since last packet: 291 ms[0m
+[0;32mI (12772) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (12972) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (13172) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (13372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (13572) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (13632) WS_MGR: Received data length: 1 bytes, time since last packet: 1001 ms[0m
+[0;32mI (13772) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (13972) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (14172) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (14372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (14572) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (14772) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (14972) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (15172) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[1;31mE (15322) transport_ws: Error read data[0m
+[1;31mE (15322) websocket_client: esp_transport_read() failed with -1, transport_error=ESP_ERR_ESP_TLS_TCP_CLOSED_FIN, tls_error_code=0, tls_flags=0, errno=128[0m
+[0;33mW (15332) WS_MGR: WebSocket error[0m
+[1;31mE (15332) websocket_client: Error receive data[0m
+[0;32mI (15342) websocket_client: Reconnect after 5000 ms[0m
+[0;33mW (15342) WS_MGR: WebSocket disconnected[0m
+[0;32mI (15372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (15572) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (15772) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (15972) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (16172) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (16372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (16572) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (16772) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (16972) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (17172) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (17372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (17572) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (17772) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (17972) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (18172) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (18372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (18572) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (18772) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+����������������������������������������������������������������or] used=0, free=8192 (of 8192)
+[0;32mI (19172) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (19372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (19572) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (19772) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (19972) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (20172) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (20372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (20572) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (20772) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (20972) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (21172) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (21372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (21572) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (21772) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (21972) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (22172) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (22372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (22572) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (22772) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (22972) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (23172) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (23372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (23572) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (23772) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (23972) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (24172) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (24372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (24572) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (24772) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (24972) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (25172) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (25372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (25572) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (25772) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (25972) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (26172) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (26372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (26572) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (26772) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (26972) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (27172) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (27372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (27572) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (27772) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (27972) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (28172) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (28372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (28572) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (28772) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (28972) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (29172) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (29372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (29572) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (29772) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (29972) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (30172) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (30372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (30572) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (30772) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (30972) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (31172) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (31372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (31572) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (31772) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (31972) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (32172) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (32372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (32572) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (32772) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (32972) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (33172) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (33372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (33572) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (33772) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (33972) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (34172) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (34372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (34572) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (34772) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (34972) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (35172) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (35372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (35572) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (35772) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (35972) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (36172) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (36372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (36572) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (36772) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (36972) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (37172) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (37372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (37572) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (37772) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (37972) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (38172) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (38372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (38572) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (38772) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (38972) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (39172) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (39372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (39572) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (39772) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (39972) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (40172) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (40372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (40572) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (40772) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (40972) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (41172) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (41372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (41572) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (41772) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (41972) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (42172) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (42372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (42572) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (42772) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (42972) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (43172) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (43372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (43572) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (43772) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (43972) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (44172) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (44372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (44572) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (44772) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (44972) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (45172) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (45372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (45572) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (45772) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (45972) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (46172) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (46372) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (46572) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (46772) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m
+[0;32mI (46972) WS_MGR: [RingBuf Monitor] used=0, free=8192 (of 8192)[0m

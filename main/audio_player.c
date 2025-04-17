@@ -44,7 +44,7 @@ esp_err_t audio_player_init(void)
 {
     i2s_config_t i2s_config = {
         .mode = I2S_MODE_MASTER | I2S_MODE_TX,
-        .sample_rate = SAMPLE_RATE,
+        .sample_rate = SAMPLE_RATE_PLAYER,
         .bits_per_sample = I2S_BITS_PER_SAMPLE_16BIT,
         .channel_format = I2S_CHANNEL_FMT_RIGHT_LEFT,
         .communication_format = I2S_COMM_FORMAT_STAND_I2S,
@@ -94,7 +94,7 @@ esp_err_t audio_player_init(void)
     xTaskCreatePinnedToCore(audio_monitor_task, "audioMonitor", 2048, NULL, 4, NULL, 1);
     xTaskCreatePinnedToCore(volume_task, "volume_task", 2048, NULL, 5, NULL, 1);
 
-    ESP_LOGI(TAG, "Audio player initialized. sample_rate=%d", SAMPLE_RATE);
+    ESP_LOGI(TAG, "Audio player initialized. sample_rate=%d", SAMPLE_RATE_PLAYER);
     return ESP_OK;
 }
 

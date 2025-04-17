@@ -1,57 +1,82 @@
-#include <stdint.h>   // <-- gives uint8_t, int8_t, …
-#include <stddef.h>   // <-- gives size_t
+#include <stdint.h>
+#include <stddef.h>
 #include "audio_stream.h"
 #include "audio_player.h"
 #include "esp_log.h"
-#define SAMPLE_SIZE_BYTES 1  // incoming is now 8‑bit
-#define PCM_SAMPLE_RATE   8000
+#include "adpcm_ima.h"
+
+#ifndef MIN
+#   define MIN(a,b)  (( (a) < (b) ) ? (a) : (b))
+#endif
 
 static const char *TAG = "AUDIO_STREAM";
 
-void audio_stream_handle_incoming(const uint8_t *data, size_t length)
+/* forward‑declared legacy path */
+static void legacy_pcm_handler(const uint8_t *data, size_t len);
+
+/* persistent ADPCM state */
+static ima_state_t g_state = {0, 0};
+
+void audio_stream_handle_incoming(const uint8_t *data, size_t len)
 {
-    /* incoming ‘data’ is:
-     *   – mono, 8‑bit, signed (two‑s complement)
-     *   – prefixed with 0x02 already stripped by caller
-     * We expand each 8‑bit sample to 16‑bit and duplicate to L/R.        */
+    if (!len) return;
 
-    while (length > 0) {
+    /* ── legacy 0x02 → 8‑bit PCM ─────────────────────────── */
+    if (data[0] == 0x02) {
+        legacy_pcm_handler(data + 1, len - 1);
+        return;
+    }
+
+    /* ── 0x12 → IMA‑ADPCM (132‑byte frame) ──────────────── */
+    if (data[0] != 0x12 || len < 133) {
+        ESP_LOGW(TAG, "Dropped unknown frame (marker 0x%02X)", data[0]);
+        return;
+    }
+
+    g_state.predictor = (int16_t)(data[1] | (data[2] << 8)); // keep
+    g_state.index     = data[3] & 0x7F;                      // was data[3]
+    const uint8_t *adpcm = data + 4;                         // OK
+
+    int16_t pcm16[256];
+    ima_decode_block(adpcm, pcm16, &g_state, 256);
+
+    audio_buffer_t *buf = audio_player_get_buffer_blocking();
+    if (!buf) return;
+
+    float vol = audio_player_get_volume();
+    uint16_t *dst = (uint16_t *)buf->data;
+
+    for (size_t i = 0; i < 256; ++i) {
+        int16_t s = (int16_t)(pcm16[i] * vol);
+        dst[2*i] = dst[2*i+1] = s;
+    }
+    buf->length = 256 * 2 * sizeof(uint16_t);
+    audio_player_submit_buffer(buf);
+}
+
+/* ── legacy helper ──────────────────────────────────────── */
+static void legacy_pcm_handler(const uint8_t *data, size_t len)
+{
+    while (len) {
         audio_buffer_t *buf = audio_player_get_buffer_blocking();
-        if (!buf) {
-            ESP_LOGW(TAG, "No free buffer => skipping %u bytes",
-                     (unsigned)length);
-            return;
+        if (!buf) return;
+
+        size_t max_mono = AUDIO_BUFFER_SIZE / (2 * sizeof(uint16_t));
+        size_t todo     = MIN(max_mono, len);
+
+        float vol = audio_player_get_volume();
+        uint16_t *dst = (uint16_t *)buf->data;
+
+        for (size_t i = 0; i < todo; ++i) {
+            int16_t s = ((int16_t)((int8_t)data[i])) << 8;
+            s = (int16_t)(s * vol);
+            dst[2*i] = dst[2*i+1] = s;
         }
 
-        size_t max_stereo_bytes  = AUDIO_BUFFER_SIZE;
-        size_t max_mono_samples  = max_stereo_bytes / (2 * sizeof(uint16_t));
-        size_t available_mono_samples = length;              /* 1 byte/sample */
-        size_t convert_samples   = (available_mono_samples < max_mono_samples)
-                                   ? available_mono_samples
-                                   : max_mono_samples;
+        buf->length = todo * 2 * sizeof(uint16_t);
+        audio_player_submit_buffer(buf);
 
-        const uint8_t  *src8 = data;                         /* 8‑bit source */
-        uint16_t *dst       = (uint16_t *)buf->data;
-        float volume        = audio_player_get_volume();
-
-        for (size_t i = 0; i < convert_samples; i++) {
-            /* centred signed 8‑bit → signed 16‑bit */
-            int16_t s = ((int16_t)( (int8_t)src8[i] )) << 8;
-            s = (int16_t)(s * volume);
-            dst[2*i]   = s; /* L */
-            dst[2*i+1] = s; /* R */
-        }
-
-        size_t bytes_converted = convert_samples * 2 * sizeof(uint16_t);
-        buf->length            = bytes_converted;
-
-        data   += convert_samples;  /* 1 byte / sample consumed */
-        length -= convert_samples;
-
-        if (!audio_player_submit_buffer(buf)) {
-            ESP_LOGW(TAG, "submit_buffer failed => skipping remaining %u bytes",
-                     (unsigned)length);
-            return;
-        }
+        data += todo;
+        len  -= todo;
     }
 }

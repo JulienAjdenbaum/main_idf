@@ -1,3 +1,8 @@
+/******************************************************************************
+ * websocket_manager.c  ── ESP32 side WebSocket + audio ring‑buffer manager   *
+ * Transport:  0x02 = 8‑bit PCM   |   0x12 = IMA‑ADPCM (preferred)            *
+ ******************************************************************************/
+
 #include "websocket_manager.h"
 #include "esp_websocket_client.h"
 #include "esp_crt_bundle.h"
@@ -8,7 +13,6 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdbool.h>
-
 // Include NVS headers for storing/loading API key
 #include "nvs_flash.h"
 #include "nvs.h"
@@ -28,9 +32,9 @@
 #define NVS_NAMESPACE_API_KEY   "api_store"
 #define NVS_KEY_API_KEY         "api_key"
 
-#define RINGBUF_TOTAL_BYTES    (8 * 1024)      // you created it like this
-#define START_PLAY_THRESHOLD   (320 * 3)       // 120 ms   ( ≈ 1920 B )
-#define PAUSE_PLAY_THRESHOLD   (320 * 1)       // 40 ms    ( ≈ 640  B )
+#define RINGBUF_TOTAL_BYTES   (24 * 1024)   // 24 k is still small
+#define START_PLAY_THRESHOLD  (6 * 1024)    // ~250 ms of audio
+#define PAUSE_PLAY_THRESHOLD  (2 * 1024)    // ~ 80 ms
 
 static const char *TAG = "WS_MGR";
 
@@ -583,9 +587,26 @@ static void audio_consumer_task(void *arg)
             /* break big packet into ≤512 B chunks as you already do */
             size_t processed = 0;
             while (processed < item_size && !buffering) {
-                size_t chunk = MIN(512, item_size - processed);
-                audio_stream_handle_incoming(pcm + processed, chunk);
-                processed += chunk;
+                const uint8_t *frame = pcm + processed;
+                uint8_t marker       = frame[0];
+
+                if (marker == 0x02) {                     /* legacy PCM    */
+                    size_t payload = MIN(512, item_size - processed - 1);
+                    audio_stream_handle_incoming(frame,        /* keep marker! */
+                                                 1 + payload);
+                    processed += 1 + payload;
+
+                } else if (marker == 0x12) {              /* ADPCM frame   */
+                    const size_t FRAME_SZ = 133;          /* 1 + 3 + 128   */
+                    if (item_size - processed < FRAME_SZ) break;
+
+                    audio_stream_handle_incoming(frame, FRAME_SZ);
+                    processed += FRAME_SZ;
+
+                } else {
+                    ESP_LOGW(TAG, "Unknown audio marker 0x%02X", marker);
+                    processed = item_size;               /* drop packet   */
+                }
                 taskYIELD();
             }
             vRingbufferReturnItem(s_audio_rb, pcm);
@@ -663,14 +684,14 @@ static void websocket_event_handler(void *handler_args,
                 s_last_ping_time = esp_timer_get_time();
             }
 
-            else if (prefix == 0x02 && audio_len > 0) {
+            else if ((prefix == 0x02 || prefix == 0x12) && audio_len > 0) {
 
                 if (s_audio_rb) {
                     // copy minus prefix
                     BaseType_t ok = ringbuffer_send_overwrite(
                         s_audio_rb,
-                        (void *)(rx_buf + 1),
-                        audio_len,
+                        rx_buf,
+                        audio_len + 1,
                         pdMS_TO_TICKS(50)  // or 0 if you never want to wait
                     );
                     if (!ok) {
