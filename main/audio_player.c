@@ -76,7 +76,7 @@ void audio_player_set_volume(float vol)
 {
     if (vol < 0.0f) vol = 0.0f;
     if (vol > 1.0f) vol = 1.0f;
-    s_volume = (1.0f - vol) * 0.08f;
+    s_volume = (vol) * 0.08f;
 }
 
 float audio_player_get_volume(void)

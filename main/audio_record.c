@@ -121,7 +121,7 @@ static void audio_record_task(void *arg)
 
         for (int i = 0; i < num_samples_32; ++i) {
             int32_t s_32 = s_audio_buf[i];
-            int16_t s_16 = (int16_t)(s_32 >> 13);   // keep same gain as before
+            int16_t s_16 = (int16_t)(s_32 >> 12);   // keep same gain as before
             conv_buf[out_index++] = linear_to_ulaw(s_16);
         }
 
