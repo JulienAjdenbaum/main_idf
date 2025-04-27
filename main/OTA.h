@@ -7,7 +7,7 @@
 #include "esp_err.h"
 
 #define OTA_HARDWARE_VERSION  "HW_v2.0"
-#define OTA_SOFTWARE_VERSION  "FW_v2.0.5"
+#define OTA_SOFTWARE_VERSION  "FW_v2.0.6"
 
 esp_err_t ota_init(void);
 void ota_send_device_version(void);

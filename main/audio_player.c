@@ -24,6 +24,7 @@ static void audio_task(void *param);
 static void audio_monitor_task(void *param);
 static void volume_task(void *param);
 
+#define PLAYBACK_GRACE_MS   1000   // <- keep “playing” for this long
 #define DEFAULT_VREF 1100
 
 static float s_volume = 1.0f;
@@ -39,9 +40,9 @@ typedef enum {
 static volatile audio_state_t s_play_state = AUD_STATE_IDLE;
 
 /* thresholds (bytes in your ready queue ≈ AUDIO_BUFFER_SIZE = 512)       */
-#define START_PLAY_THRESHOLD   (AUDIO_BUFFER_SIZE * 3)   // ≈120 ms
-#define PAUSE_PLAY_THRESHOLD   (AUDIO_BUFFER_SIZE * 1)   // ≈40 ms
-#define PCM_TIMEOUT_MS         300                       // net‑hiccup guard
+#define START_PLAY_THRESHOLD   (1)   // ≈120 ms
+#define PAUSE_PLAY_THRESHOLD   (AUDIO_BUFFER_SIZE * 0)   // ≈40 ms
+#define PCM_TIMEOUT_MS         400                       // net‑hiccup guard
 
 /* I2S event queue for underrun detection */
 static QueueHandle_t  s_i2s_evt_q = NULL;
@@ -64,6 +65,13 @@ static void dma_evt_task(void *param)
 
             /* **DON’T** touch s_last_audio_time here – it masks real stalls */
             case I2S_EVENT_TX_DONE:
+                if (s_play_state == AUD_STATE_PLAYING &&
+                    uxQueueMessagesWaitingFromISR(s_ready_queue) == 0)
+                {
+                    /* we just shifted-out the very last buffer            */
+                    s_play_state = AUD_STATE_UNDERRUN;
+                    ESP_EARLY_LOGW(TAG, "TX_DONE & queue empty → UNDERRUN");
+                }
             default:
                 break;
             }
@@ -76,7 +84,7 @@ void audio_player_set_volume(float vol)
 {
     if (vol < 0.0f) vol = 0.0f;
     if (vol > 1.0f) vol = 1.0f;
-    s_volume = (vol) * 0.08f;
+    s_volume = (1.0f - vol) * 0.08f;
 }
 
 float audio_player_get_volume(void)
@@ -327,5 +335,12 @@ void audio_player_shutdown(void)
 
 bool audio_player_is_playing(void)
 {
-    return s_play_state == AUD_STATE_PLAYING;
+    /* 1) must be in PLAYING                     */
+    if (s_play_state == AUD_STATE_PLAYING) {
+        return true;
+    }
+
+    /* 2) …AND must have been fed not too long ago */
+    int64_t idle_ms = (esp_timer_get_time() - s_last_audio_time) / 1000;
+    return (idle_ms < PLAYBACK_GRACE_MS);
 }

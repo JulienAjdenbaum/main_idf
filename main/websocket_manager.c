@@ -29,7 +29,7 @@
 #define NVS_KEY_API_KEY         "api_key"
 
 #define RINGBUF_TOTAL_BYTES    (8 * 1024)      // you created it like this
-#define START_PLAY_THRESHOLD   (320 * 3)       // 120 ms   ( ≈ 1920 B )
+#define START_PLAY_THRESHOLD   (320 * 1)       // 120 ms   ( ≈ 1920 B )
 #define PAUSE_PLAY_THRESHOLD   (320 * 1)       // 40 ms    ( ≈ 640  B )
 
 static const char *TAG = "WS_MGR";
